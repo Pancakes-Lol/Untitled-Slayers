@@ -63,7 +63,7 @@ createButton("Punch", 35)
 createButton("Kick", 75)
 
 
--- Animate Motor6D C0 locally so the move is immediately visible.
+-- Animate Motor6D or AnimationConstraint locally so the move is visible.
 -- Supports both R6 and R15 rigs without published animation IDs.
 local animationSerial = 0
 local function animateMove(move)
@@ -73,7 +73,7 @@ local function animateMove(move)
 	if not humanoid then return end
 	local joints = {}
 	for _, descendant in character:GetDescendants() do
-		if descendant:IsA("Motor6D") then
+		if descendant:IsA("Motor6D") or descendant:IsA("AnimationConstraint") then
 			joints[descendant.Name] = descendant
 		end
 	end
@@ -88,13 +88,13 @@ local function animateMove(move)
 	local serial = animationSerial
 	local original = {}
 	for _, joint in {arm, leg, torso} do
-		if joint then original[joint] = joint.C0 end
+		if joint then original[joint] = joint:IsA("Motor6D") and joint.C0 or joint.Transform end
 	end
 	local function pose(duration, offsets)
 		for joint, rotation in pairs(offsets) do
 			if joint.Parent then
 				TweenService:Create(joint, TweenInfo.new(duration, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
-					C0 = original[joint] * rotation
+					[joint:IsA("Motor6D") and "C0" or "Transform"] = original[joint] * rotation
 				}):Play()
 			end
 		end
@@ -115,7 +115,7 @@ local function animateMove(move)
 	if serial ~= animationSerial or player.Character ~= character then return end
 	for joint, base in pairs(original) do
 		if joint.Parent then
-			TweenService:Create(joint, TweenInfo.new(move == "Punch" and 0.20 or 0.40, Enum.EasingStyle.Sine, Enum.EasingDirection.Out), {C0 = base}):Play()
+			TweenService:Create(joint, TweenInfo.new(move == "Punch" and 0.20 or 0.40, Enum.EasingStyle.Sine, Enum.EasingDirection.Out), {[joint:IsA("Motor6D") and "C0" or "Transform"] = base}):Play()
 		end
 	end
 end
