@@ -90,11 +90,29 @@
       "path": "Workspace/Camera",
       "properties": {
         "FieldOfView": 70,
-        "CFrame": "0, 20, 20, 1, 0, -0, -0, 0.780868828, 0.624695063, 0, -0.624695063, 0.780868828",
+        "CFrame": "-23.25, 20, 20, 1, 0, -0, -0, 0.780868828, 0.624695063, 0, -0.624695063, 0.780868828",
         "Archivable": true,
         "Name": "Camera"
       },
       "class": "Camera"
+    },
+    {
+      "path": "Workspace/Float Brick",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.639216, 0.635294, 0.647059",
+        "Anchored": false,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, 0, 0",
+        "Transparency": 0,
+        "Name": "Float Brick",
+        "Position": "-21, 0.5000000596046448, -20",
+        "CFrame": "-21, 0.50000006, -20, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Material": "Enum.Material.Plastic",
+        "Archivable": true,
+        "Size": "4, 1, 2"
+      },
+      "class": "Part"
     },
     {
       "path": "ReplicatedStorage",
@@ -147,6 +165,14 @@
         "Archivable": true
       },
       "class": "ServerStorage"
+    },
+    {
+      "path": "ServerStorage/__Rojo_SessionLock",
+      "properties": {
+        "Name": "__Rojo_SessionLock",
+        "Archivable": false
+      },
+      "class": "ObjectValue"
     },
     {
       "path": "StarterGui",
@@ -482,9 +508,9 @@
       "class": "Teams"
     }
   ],
-  "placeName": "Place1",
+  "placeName": "Untitled Slayers",
   "warnings": [],
   "format": "untitled-slayers-studio-v1",
-  "createdAt": 1793242284,
+  "createdAt": 1793242731,
   "placeId": 97326330714117
 }
