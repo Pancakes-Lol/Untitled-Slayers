@@ -1,0 +1,490 @@
+{
+  "objects": [
+    {
+      "path": "Workspace",
+      "properties": {
+        "Name": "Workspace",
+        "Archivable": true
+      },
+      "class": "Workspace"
+    },
+    {
+      "path": "Workspace/Terrain",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.639216, 0.635294, 0.647059",
+        "Anchored": true,
+        "Rotation": "0, 0, 0",
+        "Transparency": 0,
+        "Name": "Terrain",
+        "Position": "0, 0, 0",
+        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Material": "Enum.Material.Plastic",
+        "Archivable": true,
+        "Size": "2044, 252, 2044"
+      },
+      "class": "Terrain"
+    },
+    {
+      "path": "Workspace/Baseplate",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.356863, 0.356863, 0.356863",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, 0, 0",
+        "Transparency": 0,
+        "Name": "Baseplate",
+        "Position": "0, -8, 0",
+        "CFrame": "0, -8, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Material": "Enum.Material.Plastic",
+        "Archivable": true,
+        "Size": "2048, 16, 2048"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Baseplate/Texture",
+      "properties": {
+        "Rotation": 0,
+        "Transparency": 0.800000011920929,
+        "Name": "Texture",
+        "ZIndex": 1,
+        "Archivable": true,
+        "Texture": "rbxassetid://6372755229"
+      },
+      "class": "Texture"
+    },
+    {
+      "path": "Workspace/SpawnLocation",
+      "properties": {
+        "Enabled": true,
+        "CanCollide": true,
+        "Color": "0.639216, 0.635294, 0.647059",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, 0, 0",
+        "Transparency": 0,
+        "Name": "SpawnLocation",
+        "Position": "0, 0.5, 0",
+        "CFrame": "0, 0.5, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Material": "Enum.Material.Plastic",
+        "Archivable": true,
+        "Size": "12, 1, 12"
+      },
+      "class": "SpawnLocation"
+    },
+    {
+      "path": "Workspace/SpawnLocation/Decal",
+      "properties": {
+        "Rotation": 0,
+        "Transparency": 0,
+        "Name": "Decal",
+        "ZIndex": 1,
+        "Archivable": true,
+        "Texture": "rbxasset://textures/SpawnLocation.png"
+      },
+      "class": "Decal"
+    },
+    {
+      "path": "Workspace/Camera",
+      "properties": {
+        "FieldOfView": 70,
+        "CFrame": "0, 20, 20, 1, 0, -0, -0, 0.780868828, 0.624695063, 0, -0.624695063, 0.780868828",
+        "Archivable": true,
+        "Name": "Camera"
+      },
+      "class": "Camera"
+    },
+    {
+      "path": "ReplicatedStorage",
+      "properties": {
+        "Name": "ReplicatedStorage",
+        "Archivable": true
+      },
+      "class": "ReplicatedStorage"
+    },
+    {
+      "path": "ReplicatedStorage/GameShared",
+      "properties": {
+        "Name": "GameShared",
+        "Archivable": true
+      },
+      "class": "Folder"
+    },
+    {
+      "path": "ServerScriptService",
+      "properties": {
+        "Name": "ServerScriptService",
+        "Archivable": true
+      },
+      "class": "ServerScriptService"
+    },
+    {
+      "properties": {
+        "Enabled": true,
+        "Archivable": true,
+        "Name": "GameServer"
+      },
+      "path": "ServerScriptService/GameServer",
+      "source": "-- Untitled Slayers server entry point.\n-- Add server-only gameplay systems here.\nprint(\"[Untitled Slayers] Server initialized\")\n",
+      "class": "Script"
+    },
+    {
+      "properties": {
+        "Enabled": true,
+        "Archivable": true,
+        "Name": "Init"
+      },
+      "path": "ServerScriptService/GameServer/Init",
+      "source": "-- Untitled Slayers server entry point.\n-- Add server-only gameplay systems here.\nprint(\"[Untitled Slayers] Server initialized\")\n\n-- GitHub-to-Rojo synchronization test (safe to remove later).\nprint(\"[Untitled Slayers] GitHub sync test successful!\")\n",
+      "class": "Script"
+    },
+    {
+      "path": "ServerStorage",
+      "properties": {
+        "Name": "ServerStorage",
+        "Archivable": true
+      },
+      "class": "ServerStorage"
+    },
+    {
+      "path": "StarterGui",
+      "properties": {
+        "Name": "StarterGui",
+        "Archivable": true
+      },
+      "class": "StarterGui"
+    },
+    {
+      "path": "StarterGui/MainUI",
+      "properties": {
+        "Enabled": true,
+        "ResetOnSpawn": true,
+        "Archivable": true,
+        "Name": "MainUI"
+      },
+      "class": "ScreenGui"
+    },
+    {
+      "path": "StarterGui/MainUI/MainFrame",
+      "properties": {
+        "Visible": true,
+        "ClipsDescendants": false,
+        "Active": false,
+        "LayoutOrder": 0,
+        "AutomaticSize": "Enum.AutomaticSize.None",
+        "Rotation": 0,
+        "Size": "{1, 0}, {1, 0}",
+        "AnchorPoint": "0.5, 0.5",
+        "Transparency": 1,
+        "BackgroundTransparency": 1,
+        "Position": "{0.5, 0}, {0.5, 0}",
+        "Name": "MainFrame",
+        "ZIndex": 1,
+        "Archivable": true,
+        "BackgroundColor3": "1, 1, 1"
+      },
+      "class": "Frame"
+    },
+    {
+      "path": "StarterGui/MainUI/MainFrame/CashLabel",
+      "properties": {
+        "Visible": true,
+        "Active": false,
+        "AnchorPoint": "0, 0",
+        "ZIndex": 1,
+        "Archivable": true,
+        "Size": "{0.0841472596, 0}, {0.0471544713, 0}",
+        "TextColor3": "1, 1, 1",
+        "ClipsDescendants": false,
+        "Text": "100,000,000$",
+        "LayoutOrder": 0,
+        "AutomaticSize": "Enum.AutomaticSize.None",
+        "Rotation": 0,
+        "Transparency": 1,
+        "Name": "CashLabel",
+        "Position": "{0.0458302014, 0}, {0.934782624, 0}",
+        "Font": "Enum.Font.FredokaOne",
+        "BackgroundTransparency": 1,
+        "TextSize": 14,
+        "BackgroundColor3": "1, 1, 1"
+      },
+      "class": "TextLabel"
+    },
+    {
+      "properties": {
+        "Enabled": true,
+        "Archivable": true,
+        "Name": "CoinsLabel"
+      },
+      "path": "StarterGui/MainUI/MainFrame/CashLabel/CoinsLabel",
+      "source": "-- CoinsLabel (LocalScript) > TextLabel\nlocal Players = game:GetService(\"Players\")\n\nlocal player      = Players.LocalPlayer\nlocal coinsLabel  = script.Parent\n\n-- ─── Format number with commas ────────────────────────────────────────────────\n\nlocal function formatCoins(n)\n\tlocal str     = tostring(math.floor(n))\n\tlocal result  = \"\"\n\tlocal count   = 0\n\n\tfor i = #str, 1, -1 do\n\t\tif count > 0 and count % 3 == 0 then\n\t\t\tresult = \",\" .. result\n\t\tend\n\t\tresult = str:sub(i, i) .. result\n\t\tcount += 1\n\tend\n\n\treturn result .. \"$\"\nend\n\n-- ─── Update label ─────────────────────────────────────────────────────────────\n\nlocal function updateLabel(coins)\n\tcoinsLabel.Text = formatCoins(coins)\nend\n\n-- ─── Hook into leaderstats ────────────────────────────────────────────────────\n\nlocal function setupCoins()\n\tlocal leaderstats = player:WaitForChild(\"leaderstats\")\n\tlocal coins       = leaderstats:WaitForChild(\"Coins\")\n\n\tupdateLabel(coins.Value)\n\n\tcoins:GetPropertyChangedSignal(\"Value\"):Connect(function()\n\t\tupdateLabel(coins.Value)\n\tend)\nend\n\nsetupCoins()",
+      "class": "LocalScript"
+    },
+    {
+      "path": "StarterGui/MainUI/MainFrame/CashLabel/UIStroke",
+      "properties": {
+        "Enabled": true,
+        "Transparency": 0,
+        "Name": "UIStroke",
+        "Color": "0.352941, 0.235294, 0",
+        "ZIndex": 1,
+        "Archivable": true
+      },
+      "class": "UIStroke"
+    },
+    {
+      "path": "StarterGui/MainUI/MainFrame/CashLabel/ImageLabel",
+      "properties": {
+        "ImageColor3": "1, 1, 1",
+        "ImageTransparency": 0,
+        "AnchorPoint": "0, 0",
+        "Image": "rbxassetid://96578222489735",
+        "ZIndex": 1,
+        "Archivable": true,
+        "Size": "{0.400000006, 0}, {1.60000002, 0}",
+        "ClipsDescendants": false,
+        "LayoutOrder": 0,
+        "Visible": true,
+        "Rotation": 0,
+        "Transparency": 1,
+        "Name": "ImageLabel",
+        "Position": "{-0.400000006, 0}, {-0.300000429, 0}",
+        "AutomaticSize": "Enum.AutomaticSize.None",
+        "Active": false,
+        "BackgroundTransparency": 1,
+        "BackgroundColor3": "1, 1, 1"
+      },
+      "class": "ImageLabel"
+    },
+    {
+      "path": "StarterGui/MainUI/MainFrame/CashLabel/UIGradient",
+      "properties": {
+        "Rotation": 80,
+        "Name": "UIGradient",
+        "Scale": 1,
+        "Archivable": true,
+        "Enabled": true
+      },
+      "class": "UIGradient"
+    },
+    {
+      "path": "StarterGui/MainUI/MainFrame/GemLabel",
+      "properties": {
+        "Visible": true,
+        "Active": false,
+        "AnchorPoint": "0, 0",
+        "ZIndex": 1,
+        "Archivable": true,
+        "Size": "{0.0841472596, 0}, {0.0471544713, 0}",
+        "TextColor3": "1, 1, 1",
+        "ClipsDescendants": false,
+        "Text": "100,000,000",
+        "LayoutOrder": 0,
+        "AutomaticSize": "Enum.AutomaticSize.None",
+        "Rotation": 0,
+        "Transparency": 1,
+        "Name": "GemLabel",
+        "Position": "{0.0458302014, 0}, {0.87577641, 0}",
+        "Font": "Enum.Font.FredokaOne",
+        "BackgroundTransparency": 1,
+        "TextSize": 14,
+        "BackgroundColor3": "1, 1, 1"
+      },
+      "class": "TextLabel"
+    },
+    {
+      "properties": {
+        "Enabled": true,
+        "Archivable": true,
+        "Name": "GemsLabel"
+      },
+      "path": "StarterGui/MainUI/MainFrame/GemLabel/GemsLabel",
+      "source": "-- CoinsLabel (LocalScript) > TextLabel\nlocal Players = game:GetService(\"Players\")\n\nlocal player      = Players.LocalPlayer\nlocal coinsLabel  = script.Parent\n\n-- ─── Format number with commas ────────────────────────────────────────────────\n\nlocal function formatCoins(n)\n\tlocal str     = tostring(math.floor(n))\n\tlocal result  = \"\"\n\tlocal count   = 0\n\n\tfor i = #str, 1, -1 do\n\t\tif count > 0 and count % 3 == 0 then\n\t\t\tresult = \",\" .. result\n\t\tend\n\t\tresult = str:sub(i, i) .. result\n\t\tcount += 1\n\tend\n\n\treturn result .. \"\"\nend\n\n-- ─── Update label ─────────────────────────────────────────────────────────────\n\nlocal function updateLabel(coins)\n\tcoinsLabel.Text = formatCoins(coins)\nend\n\n-- ─── Hook into leaderstats ────────────────────────────────────────────────────\n\nlocal function setupCoins()\n\tlocal leaderstats = player:WaitForChild(\"leaderstats\")\n\tlocal coins       = leaderstats:WaitForChild(\"Gems\")\n\n\tupdateLabel(coins.Value)\n\n\tcoins:GetPropertyChangedSignal(\"Value\"):Connect(function()\n\t\tupdateLabel(coins.Value)\n\tend)\nend\n\nsetupCoins()",
+      "class": "LocalScript"
+    },
+    {
+      "path": "StarterGui/MainUI/MainFrame/GemLabel/UIStroke",
+      "properties": {
+        "Enabled": true,
+        "Transparency": 0,
+        "Name": "UIStroke",
+        "Color": "0, 0.00392157, 0.345098",
+        "ZIndex": 1,
+        "Archivable": true
+      },
+      "class": "UIStroke"
+    },
+    {
+      "path": "StarterGui/MainUI/MainFrame/GemLabel/ImageLabel",
+      "properties": {
+        "ImageColor3": "1, 1, 1",
+        "ImageTransparency": 0,
+        "AnchorPoint": "0, 0",
+        "Image": "rbxassetid://135227335050960",
+        "ZIndex": 1,
+        "Archivable": true,
+        "Size": "{0.400000006, 0}, {1.60000002, 0}",
+        "ClipsDescendants": false,
+        "LayoutOrder": 0,
+        "Visible": true,
+        "Rotation": 0,
+        "Transparency": 1,
+        "Name": "ImageLabel",
+        "Position": "{-0.400000006, 0}, {-0.300000012, 0}",
+        "AutomaticSize": "Enum.AutomaticSize.None",
+        "Active": false,
+        "BackgroundTransparency": 1,
+        "BackgroundColor3": "1, 1, 1"
+      },
+      "class": "ImageLabel"
+    },
+    {
+      "path": "StarterGui/MainUI/MainFrame/GemLabel/UIGradient",
+      "properties": {
+        "Rotation": 80,
+        "Name": "UIGradient",
+        "Scale": 1,
+        "Archivable": true,
+        "Enabled": true
+      },
+      "class": "UIGradient"
+    },
+    {
+      "path": "StarterPack",
+      "properties": {
+        "Name": "StarterPack",
+        "Archivable": true
+      },
+      "class": "StarterPack"
+    },
+    {
+      "path": "StarterPlayer",
+      "properties": {
+        "Name": "StarterPlayer",
+        "Archivable": true
+      },
+      "class": "StarterPlayer"
+    },
+    {
+      "path": "StarterPlayer/StarterPlayerScripts",
+      "properties": {
+        "Name": "StarterPlayerScripts",
+        "Archivable": true
+      },
+      "class": "StarterPlayerScripts"
+    },
+    {
+      "properties": {
+        "Enabled": true,
+        "Archivable": true,
+        "Name": "GameClient"
+      },
+      "path": "StarterPlayer/StarterPlayerScripts/GameClient",
+      "source": "-- Untitled Slayers client entry point.\n-- Add client-side controls, UI, and effects here.\nprint(\"[Untitled Slayers] Client initialized\")\n",
+      "class": "LocalScript"
+    },
+    {
+      "properties": {
+        "Enabled": true,
+        "Archivable": true,
+        "Name": "Init"
+      },
+      "path": "StarterPlayer/StarterPlayerScripts/GameClient/Init",
+      "source": "-- Untitled Slayers client entry point.\n-- Add client-side controls, UI, and effects here.\nprint(\"[Untitled Slayers] Client initialized\")\n",
+      "class": "LocalScript"
+    },
+    {
+      "path": "StarterPlayer/StarterCharacterScripts",
+      "properties": {
+        "Name": "StarterCharacterScripts",
+        "Archivable": true
+      },
+      "class": "StarterCharacterScripts"
+    },
+    {
+      "path": "ReplicatedFirst",
+      "properties": {
+        "Name": "ReplicatedFirst",
+        "Archivable": true
+      },
+      "class": "ReplicatedFirst"
+    },
+    {
+      "path": "Lighting",
+      "properties": {
+        "Brightness": 2,
+        "Archivable": true,
+        "Name": "Lighting"
+      },
+      "class": "Lighting"
+    },
+    {
+      "path": "Lighting/Atmosphere",
+      "properties": {
+        "Color": "0.780392, 0.780392, 0.780392",
+        "Archivable": true,
+        "Name": "Atmosphere"
+      },
+      "class": "Atmosphere"
+    },
+    {
+      "path": "Lighting/Sky",
+      "properties": {
+        "Name": "Sky",
+        "Archivable": true
+      },
+      "class": "Sky"
+    },
+    {
+      "path": "Lighting/Bloom",
+      "properties": {
+        "Enabled": true,
+        "Name": "Bloom",
+        "Archivable": true,
+        "Size": 24
+      },
+      "class": "BloomEffect"
+    },
+    {
+      "path": "Lighting/DepthOfField",
+      "properties": {
+        "Enabled": false,
+        "Archivable": true,
+        "Name": "DepthOfField"
+      },
+      "class": "DepthOfFieldEffect"
+    },
+    {
+      "path": "Lighting/SunRays",
+      "properties": {
+        "Enabled": true,
+        "Archivable": true,
+        "Name": "SunRays"
+      },
+      "class": "SunRaysEffect"
+    },
+    {
+      "path": "SoundService",
+      "properties": {
+        "Name": "SoundService",
+        "Archivable": true
+      },
+      "class": "SoundService"
+    },
+    {
+      "path": "Teams",
+      "properties": {
+        "Name": "Teams",
+        "Archivable": true
+      },
+      "class": "Teams"
+    }
+  ],
+  "placeName": "Place1",
+  "warnings": [],
+  "format": "untitled-slayers-studio-v1",
+  "createdAt": 1793242284,
+  "placeId": 97326330714117
+}
