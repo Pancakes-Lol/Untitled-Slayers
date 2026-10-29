@@ -97,7 +97,7 @@ remote.OnServerEvent:Connect(function(player, move)
 	if not humanoid or humanoid.Health <= 0 or not root then return end
 	local config = MOVES[move]
 	busyUntil[player] = now + config.duration
-	task.spawn(animate, character, move, config.duration)
+	-- Visual animation runs locally for responsive playback; damage remains server-side.
 	task.delay(config.hitAt, function()
 		if player.Character == character and humanoid.Health > 0 then
 			strike(player, character, move)
