@@ -1,4 +1,4 @@
--- Tetsu dialogue: interactive choices, keyboard shortcuts and mobile buttons.
+-- Tetsu dialogue UI: choices, custom name entry, quest notifications.
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local UserInputService = game:GetService("UserInputService")
@@ -8,182 +8,160 @@ local remote = ReplicatedStorage:WaitForChild("TetsuDialogue")
 local gui = Instance.new("ScreenGui")
 gui.Name = "TetsuDialogueUI"
 gui.ResetOnSpawn = false
-gui.IgnoreGuiInset = false
 gui.DisplayOrder = 40
 gui.Parent = player:WaitForChild("PlayerGui")
-
 local panel = Instance.new("Frame")
 panel.Name = "DialoguePanel"
 panel.AnchorPoint = Vector2.new(0.5, 1)
-panel.Position = UDim2.new(0.5, 0, 1, -32)
-panel.Size = UDim2.new(0.88, 0, 0, 286)
+panel.Position = UDim2.new(0.5, 0, 1, -28)
+panel.Size = UDim2.new(0.9, 0, 0, 280)
 panel.BackgroundColor3 = Color3.fromRGB(18, 22, 34)
 panel.BorderSizePixel = 0
 panel.Visible = false
 panel.Parent = gui
-local sizeLimit = Instance.new("UISizeConstraint")
-sizeLimit.MaxSize = Vector2.new(570, 286)
-sizeLimit.Parent = panel
+local limit = Instance.new("UISizeConstraint")
+limit.MaxSize = Vector2.new(570, 280)
+limit.Parent = panel
 Instance.new("UICorner", panel).CornerRadius = UDim.new(0, 14)
-local outline = Instance.new("UIStroke", panel)
-outline.Color = Color3.fromRGB(130, 112, 235)
-outline.Thickness = 2
+local stroke = Instance.new("UIStroke")
+stroke.Color = Color3.fromRGB(130, 112, 235)
+stroke.Thickness = 2
+stroke.Parent = panel
 
-local function label(name, text, y, height, font, size, color)
-	local obj = Instance.new("TextLabel")
-	obj.Name = name
-	obj.BackgroundTransparency = 1
-	obj.Position = UDim2.new(0, 18, 0, y)
-	obj.Size = UDim2.new(1, -36, 0, height)
-	obj.Text = text
-	obj.TextColor3 = color
-	obj.TextSize = size
-	obj.Font = font
-	obj.TextWrapped = true
-	obj.TextXAlignment = Enum.TextXAlignment.Left
-	obj.TextYAlignment = Enum.TextYAlignment.Center
-	obj.Parent = panel
-	return obj
+local function textLabel(name, value, y, height, size)
+	local label = Instance.new("TextLabel")
+	label.Name = name
+	label.BackgroundTransparency = 1
+	label.Position = UDim2.new(0, 18, 0, y)
+	label.Size = UDim2.new(1, -36, 0, height)
+	label.Font = Enum.Font.GothamSemibold
+	label.TextColor3 = Color3.new(1, 1, 1)
+	label.TextSize = size
+	label.TextWrapped = true
+	label.TextXAlignment = Enum.TextXAlignment.Left
+	label.Text = value
+	label.Parent = panel
+	return label
 end
-label("Name", "TETSU  •  THE WANDERING WARRIOR", 9, 26, Enum.Font.GothamBold, 15, Color3.fromRGB(193, 180, 255))
-local question = label("Question", "", 40, 52, Enum.Font.GothamSemibold, 17, Color3.fromRGB(255, 255, 255))
-
-local buttons = {}
-for i = 1, 3 do
-	local button = Instance.new("TextButton")
-	button.Name = "Choice" .. i
-	button.Position = UDim2.new(0, 18, 0, 96 + (i-1)*45)
-	button.Size = UDim2.new(1, -36, 0, 39)
-	button.BackgroundColor3 = Color3.fromRGB(42, 49, 72)
-	button.TextColor3 = Color3.fromRGB(247, 247, 255)
-	button.TextSize = 14
-	button.Font = Enum.Font.GothamMedium
-	button.TextXAlignment = Enum.TextXAlignment.Left
-	button.TextWrapped = true
-	button.Parent = panel
-	Instance.new("UICorner", button).CornerRadius = UDim.new(0, 8)
-	buttons[i] = button
+textLabel("Heading", "TETSU  •  YOUR SLAYER JOURNEY", 7, 29, 14)
+local message = textLabel("Message", "", 40, 62, 17)
+local function button(name, y, height)
+	local b = Instance.new("TextButton")
+	b.Name = name
+	b.Position = UDim2.new(0, 18, 0, y)
+	b.Size = UDim2.new(1, -36, 0, height)
+	b.BackgroundColor3 = Color3.fromRGB(52, 58, 83)
+	b.TextColor3 = Color3.new(1, 1, 1)
+	b.TextSize = 15
+	b.Font = Enum.Font.GothamMedium
+	b.TextWrapped = true
+	b.Parent = panel
+	Instance.new("UICorner", b).CornerRadius = UDim.new(0, 8)
+	return b
 end
-local nextButton = Instance.new("TextButton")
-nextButton.Name = "Next"
-nextButton.Position = UDim2.new(0, 18, 0, 118)
-nextButton.Size = UDim2.new(1, -36, 0, 47)
-nextButton.BackgroundColor3 = Color3.fromRGB(91, 73, 180)
-nextButton.TextColor3 = Color3.new(1, 1, 1)
-nextButton.Font = Enum.Font.GothamBold
-nextButton.TextSize = 15
-nextButton.Text = "Another question  →"
+local choices = {button("Choice1", 103, 40), button("Choice2", 148, 40), button("Choice3", 193, 40)}
+local nextButton = button("Continue", 137, 46)
 nextButton.Visible = false
-nextButton.Parent = panel
-Instance.new("UICorner", nextButton).CornerRadius = UDim.new(0, 8)
-
-local close = Instance.new("TextButton")
-close.Name = "Close"
-close.Position = UDim2.new(1, -50, 0, 7)
-close.Size = UDim2.fromOffset(34, 30)
-close.BackgroundTransparency = 1
-close.TextColor3 = Color3.fromRGB(200, 200, 215)
-close.Text = "✕"
-close.Font = Enum.Font.GothamBold
-close.TextSize = 20
-close.Parent = panel
-
-local phase = "Closed"
-
 local nameInput = Instance.new("TextBox")
-nameInput.Name = "SlayerNameInput"
-nameInput.Position = UDim2.new(0,18,0,105)
-nameInput.Size = UDim2.new(1,-36,0,43)
-nameInput.PlaceholderText = "Enter your slayer name"
+nameInput.Name = "CustomName"
+nameInput.Position = UDim2.new(0, 18, 0, 113)
+nameInput.Size = UDim2.new(1, -36, 0, 43)
+nameInput.BackgroundColor3 = Color3.fromRGB(43, 48, 68)
+nameInput.TextColor3 = Color3.new(1, 1, 1)
+nameInput.PlaceholderText = "Your slayer name (3–20 characters)"
 nameInput.Text = ""
-nameInput.TextColor3 = Color3.new(1,1,1)
-nameInput.BackgroundColor3 = Color3.fromRGB(42,49,72)
+nameInput.ClearTextOnFocus = false
 nameInput.Font = Enum.Font.GothamMedium
-nameInput.TextSize = 16
+nameInput.TextSize = 15
 nameInput.Visible = false
 nameInput.Parent = panel
-Instance.new("UICorner",nameInput).CornerRadius = UDim.new(0,8)
-local confirm = Instance.new("TextButton")
-confirm.Position = UDim2.new(0,18,0,158)
-confirm.Size = UDim2.new(1,-36,0,40)
-confirm.Text = "Use this name"
-confirm.Font = Enum.Font.GothamBold
-confirm.TextSize = 15
-confirm.TextColor3 = Color3.new(1,1,1)
-confirm.BackgroundColor3 = Color3.fromRGB(91,73,180)
+Instance.new("UICorner", nameInput).CornerRadius = UDim.new(0, 8)
+local confirm = button("ConfirmName", 166, 43)
+confirm.Text = "Confirm my name"
 confirm.Visible = false
-confirm.Parent = panel
-Instance.new("UICorner",confirm).CornerRadius = UDim.new(0,8)
-confirm.Activated:Connect(function()
-	if phase ~= "NameEntry" then return end
-	remote:FireServer("CustomName",nameInput.Text)
-end)
-
+local close = Instance.new("TextButton")
+close.Name = "Close"
+close.Position = UDim2.new(1, -50, 0, 6)
+close.Size = UDim2.fromOffset(34, 30)
+close.BackgroundTransparency = 1
+close.TextColor3 = Color3.new(1, 1, 1)
+close.Text = "X"
+close.Font = Enum.Font.GothamBold
+close.TextSize = 17
+close.Parent = panel
+local phase = "Closed"
+local storyAction = "Continue"
+local function hideControls()
+	for _, b in ipairs(choices) do b.Visible = false end
+	nextButton.Visible = false
+	nameInput.Visible = false
+	confirm.Visible = false
+end
 local function dismiss()
 	panel.Visible = false
 	phase = "Closed"
-	nameInput.Visible = false
-	confirm.Visible = false
 	remote:FireServer("Close")
 end
 close.Activated:Connect(dismiss)
 local function choose(i)
 	if phase ~= "Question" then return end
 	phase = "Waiting"
-	remote:FireServer("Answer", i)
+	remote:FireServer("Choose", i)
 end
-for i, button in ipairs(buttons) do
-	button.Activated:Connect(function() choose(i) end)
+for i, b in ipairs(choices) do
+	b.Activated:Connect(function() choose(i) end)
 end
+confirm.Activated:Connect(function()
+	if phase ~= "NameEntry" then return end
+	phase = "Waiting"
+	remote:FireServer("CustomName", nameInput.Text)
+end)
 nextButton.Activated:Connect(function()
-	if phase == "Response" then
-		phase = "Waiting"
-		remote:FireServer("Next")
-	end
+	if phase ~= "Story" then return end
+	phase = "Waiting"
+	remote:FireServer(storyAction)
 end)
 remote.OnClientEvent:Connect(function(action, data)
+	data = data or {}
 	if action == "Close" then
-		nameInput.Visible = false
-		confirm.Visible = false
 		panel.Visible = false
 		phase = "Closed"
-	elseif action == "Question" then
-		nameInput.Visible = false
-		confirm.Visible = false
+		return
+	end
+	if action == "Quest" then
 		panel.Visible = true
+		hideControls()
+		phase = "Story"
+		storyAction = "Continue"
+		message.Text = data.text
+		nextButton.Text = "Got it"
+		nextButton.Visible = true
+		return
+	end
+	panel.Visible = true
+	hideControls()
+	if action == "Question" then
 		phase = "Question"
-		question.Text = data.question
-		for i, button in ipairs(buttons) do
-			button.Visible = true
-			button.Text = tostring(i) .. ".  " .. tostring(data.answers[i])
+		message.Text = data.question
+		for i, b in ipairs(choices) do
+			b.Text = tostring(i)..".  "..tostring(data.answers[i])
+			b.Visible = true
 		end
-		nextButton.Visible = false
 	elseif action == "NameEntry" or action == "NameError" then
-		panel.Visible = true
 		phase = "NameEntry"
-		question.Text = action == "NameError" and data.text or "Choose your custom slayer name (3–20 characters)."
-		for _, button in ipairs(buttons) do button.Visible = false end
-		nextButton.Visible = false
+		message.Text = action == "NameError" and data.text or "Choose your custom in-game slayer name."
 		nameInput.Visible = true
 		confirm.Visible = true
 	elseif action == "Story" then
-		panel.Visible = true
-		phase = "Response"
-		question.Text = data.text
-		for _, button in ipairs(buttons) do button.Visible = false end
-		nameInput.Visible = false
-		confirm.Visible = false
-		nextButton.Visible = false
-	elseif action == "Response" then
-		panel.Visible = true
-		phase = "Response"
-		question.Text = data.text
-		for _, button in ipairs(buttons) do button.Visible = false end
+		phase = "Story"
+		message.Text = data.text
+		nextButton.Text = data.button or "Continue"
+		storyAction = data.button == "Accept sword & quest" and "Accept" or "Continue"
 		nextButton.Visible = true
 	end
 end)
 UserInputService.InputBegan:Connect(function(input, processed)
 	if processed or phase ~= "Question" or UserInputService:GetFocusedTextBox() then return end
-	local number = ({[Enum.KeyCode.One]=1, [Enum.KeyCode.Two]=2, [Enum.KeyCode.Three]=3})[input.KeyCode]
-	if number then choose(number) end
+	local keys = {[Enum.KeyCode.One]=1, [Enum.KeyCode.Two]=2, [Enum.KeyCode.Three]=3}
+	if keys[input.KeyCode] then choose(keys[input.KeyCode]) end
 end)
