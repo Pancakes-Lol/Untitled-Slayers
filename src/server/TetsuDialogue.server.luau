@@ -1,5 +1,6 @@
 -- Tetsu dialogue NPC: server owns questions, correct answers and interaction range.
 local Players = game:GetService("Players")
+local TextService = game:GetService("TextService")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local npc = workspace:WaitForChild("Tetsu", 30)
@@ -29,6 +30,7 @@ prompt.RequiresLineOfSight = false
 
 local rng = Random.new()
 local active = {}
+local slayerNames = {}
 local questions = {
 	{question="What is the best way to get stronger?", answers={"Train every day", "Eat 900 donuts", "Sleep for 100 years"}, correct=1, right="Exactly. Consistency builds strength!", wrong="Ha! Maybe try training instead."},
 	{question="Which weapon would you take into battle?", answers={"A legendary sword", "A rubber chicken", "A spoon"}, correct=1, right="A warrior's choice. I respect it.", wrong="Bold choice. You might surprise someone!"},
@@ -51,8 +53,8 @@ local function newQuestion(player)
 	if active[player] and active[player].index == index then index = index % (#questions + 1) + 1 end
 	local q
 	if index == #questions + 1 then
-		local actual = player.DisplayName
-		q = {question="Tell me, what's your name?", answers={"Captain Noodles", actual, "Shadow McFluffy"}, correct=2,
+		local actual = slayerNames[player] or player.DisplayName
+		q = {question="Tell me, what's your name?", answers={"Captain Noodles", actual, "Choose a custom name"}, correct=2,
 			right="Of course! Nice to meet you, " .. actual .. ".", wrong="Haha, you almost had me! You're " .. actual .. "."}
 	else
 		q = questions[index]
@@ -69,17 +71,49 @@ remote.OnServerEvent:Connect(function(player, action, choice)
 	if not nearby(player) then active[player] = nil remote:FireClient(player, "Close") return end
 	local session = active[player]
 	if action == "Close" then active[player] = nil return end
+	if action == "CustomName" and type(choice) == "string" then
+		local name = choice:match("^%s*(.-)%s*$")
+		if #name < 3 or #name > 20 or not name:match("^[%w_ ]+$") then
+			remote:FireClient(player, "NameError", {text="Use 3–20 letters, numbers, spaces or underscores."})
+			return
+		end
+		local ok, filtered = pcall(function()
+			return TextService:FilterStringAsync(name, player.UserId):GetNonChatStringForBroadcastAsync()
+		end)
+		if not ok or not filtered or filtered == "" or filtered:find("#", 1, true) then
+			remote:FireClient(player, "NameError", {text="Please choose another name."})
+			return
+		end
+		slayerNames[player] = filtered
+		player:SetAttribute("SlayerName", filtered)
+		local humanoid = player.Character and player.Character:FindFirstChildOfClass("Humanoid")
+		if humanoid then humanoid.DisplayName = filtered end
+		remote:FireClient(player, "Story", {text="Welcome, " .. filtered .. "! Your journey begins now. Seek a sword and prepare to slay your first enemy!"})
+		active[player] = nil
+		return
+	end
 	if not session then return end
 	if action == "Answer" then
 		if type(choice) ~= "number" or choice % 1 ~= 0 or choice < 1 or choice > 3 then return end
 		if session.answered then return end
 		session.answered = true
 		local q = session.question
-		remote:FireClient(player, "Response", {text=choice == q.correct and q.right or q.wrong})
+		if session.index == #questions + 1 and choice == 3 then
+			remote:FireClient(player, "NameEntry")
+			return
+		end
+		if session.index == #questions + 1 then
+			local chosen = choice == 1 and "Captain Noodles" or player.DisplayName
+			slayerNames[player] = chosen
+			player:SetAttribute("SlayerName", chosen)
+			local humanoid = player.Character and player.Character:FindFirstChildOfClass("Humanoid")
+			if humanoid then humanoid.DisplayName = chosen end
+		end
+		remote:FireClient(player, "Response", {text=(choice == q.correct and q.right or q.wrong) .. " Every slayer needs a sword. Find one and begin your slaying journey!"})
 	elseif action == "Next" and session.answered then
 		if os.clock() - session.opened < 0.15 then return end
 		newQuestion(player)
 	end
 end)
 
-Players.PlayerRemoving:Connect(function(player) active[player] = nil end)
+Players.PlayerRemoving:Connect(function(player) active[player] = nil slayerNames[player] = nil end)
