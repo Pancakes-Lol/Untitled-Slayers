@@ -82,9 +82,9 @@ local function grantSword(player)
 	weld.Part0 = handle
 	weld.Part1 = gripPart
 	weld.Parent = gripPart
-	-- Place the hand around the dark hilt, not the silver blade.
-	-- The hilt center is 1.75 studs below the blade Handle center.
-	tool.Grip = CFrame.new(0, 1.75, 0)
+	-- Tool Grip is the inverse of the Handle-to-hand offset.
+	-- Shift the blade upward so the dark hilt rests in the hand.
+	tool.Grip = CFrame.new(0, -1.75, 0)
 	local lastAttack = 0
 	tool.Activated:Connect(function()
 		if os.clock() - lastAttack < 0.55 then return end
