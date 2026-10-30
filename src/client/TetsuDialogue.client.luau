@@ -95,12 +95,13 @@ local function dismiss()
 	remote:FireServer("Close")
 end
 close.Activated:Connect(dismiss)
+local function choose(i)
+	if phase ~= "Question" then return end
+	phase = "Waiting"
+	remote:FireServer("Answer", i)
+end
 for i, button in ipairs(buttons) do
-	button.Activated:Connect(function()
-		if phase ~= "Question" then return end
-		phase = "Waiting"
-		remote:FireServer("Answer", i)
-	end)
+	button.Activated:Connect(function() choose(i) end)
 end
 nextButton.Activated:Connect(function()
 	if phase == "Response" then
@@ -132,5 +133,5 @@ end)
 UserInputService.InputBegan:Connect(function(input, processed)
 	if processed or phase ~= "Question" or UserInputService:GetFocusedTextBox() then return end
 	local number = ({[Enum.KeyCode.One]=1, [Enum.KeyCode.Two]=2, [Enum.KeyCode.Three]=3})[input.KeyCode]
-	if number then buttons[number]:Activate() end
+	if number then choose(number) end
 end)
