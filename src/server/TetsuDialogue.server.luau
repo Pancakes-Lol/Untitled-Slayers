@@ -61,30 +61,47 @@ local function grantSword(player)
 	tool.ToolTip = "Your first weapon. Click to strike the training enemy."
 	tool.RequiresHandle = true
 	tool.CanBeDropped = false
+	-- Roblox attaches the character's hand to the Tool's Handle.
+	-- Make the HANDLE the hilt itself, rather than the blade, so grip offsets cannot misplace the hand.
 	local handle = Instance.new("Part")
 	handle.Name = "Handle"
-	handle.Size = Vector3.new(0.28, 3.1, 0.6)
-	handle.Color = Color3.fromRGB(205, 215, 233)
-	handle.Material = Enum.Material.Metal
+	handle.Size = Vector3.new(0.4, 1.2, 0.5)
+	handle.Color = Color3.fromRGB(36, 34, 49)
+	handle.Material = Enum.Material.SmoothPlastic
 	handle.CanCollide = false
 	handle.Massless = true
 	handle.Parent = tool
-	local gripPart = Instance.new("Part")
-	gripPart.Name = "SwordGrip"
-	gripPart.Size = Vector3.new(0.38, 1.1, 0.5)
-	gripPart.Color = Color3.fromRGB(36, 34, 49)
-	gripPart.Material = Enum.Material.SmoothPlastic
-	gripPart.CanCollide = false
-	gripPart.Massless = true
-	gripPart.CFrame = handle.CFrame * CFrame.new(0, -1.75, 0)
-	gripPart.Parent = tool
-	local weld = Instance.new("WeldConstraint")
-	weld.Part0 = handle
-	weld.Part1 = gripPart
-	weld.Parent = gripPart
-	-- Tool Grip is the inverse of the Handle-to-hand offset.
-	-- Shift the blade upward so the dark hilt rests in the hand.
-	tool.Grip = CFrame.new(0, -1.75, 0)
+
+	local blade = Instance.new("Part")
+	blade.Name = "Blade"
+	blade.Size = Vector3.new(0.28, 3.1, 0.6)
+	blade.Color = Color3.fromRGB(205, 215, 233)
+	blade.Material = Enum.Material.Metal
+	blade.CanCollide = false
+	blade.Massless = true
+	blade.CFrame = handle.CFrame * CFrame.new(0, 2.15, 0)
+	blade.Parent = tool
+	local bladeWeld = Instance.new("WeldConstraint")
+	bladeWeld.Part0 = handle
+	bladeWeld.Part1 = blade
+	bladeWeld.Parent = blade
+
+	local guard = Instance.new("Part")
+	guard.Name = "Crossguard"
+	guard.Size = Vector3.new(1.35, 0.2, 0.7)
+	guard.Color = Color3.fromRGB(85, 79, 110)
+	guard.Material = Enum.Material.Metal
+	guard.CanCollide = false
+	guard.Massless = true
+	guard.CFrame = handle.CFrame * CFrame.new(0, 0.68, 0)
+	guard.Parent = tool
+	local guardWeld = Instance.new("WeldConstraint")
+	guardWeld.Part0 = handle
+	guardWeld.Part1 = guard
+	guardWeld.Parent = guard
+
+	-- The hand now naturally holds the middle of the dark Handle.
+	tool.Grip = CFrame.new(0, 0, 0)
 	local lastAttack = 0
 	tool.Activated:Connect(function()
 		if os.clock() - lastAttack < 0.55 then return end
