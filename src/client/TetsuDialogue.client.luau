@@ -89,9 +89,41 @@ close.TextSize = 20
 close.Parent = panel
 
 local phase = "Closed"
+
+local nameInput = Instance.new("TextBox")
+nameInput.Name = "SlayerNameInput"
+nameInput.Position = UDim2.new(0,18,0,105)
+nameInput.Size = UDim2.new(1,-36,0,43)
+nameInput.PlaceholderText = "Enter your slayer name"
+nameInput.Text = ""
+nameInput.TextColor3 = Color3.new(1,1,1)
+nameInput.BackgroundColor3 = Color3.fromRGB(42,49,72)
+nameInput.Font = Enum.Font.GothamMedium
+nameInput.TextSize = 16
+nameInput.Visible = false
+nameInput.Parent = panel
+Instance.new("UICorner",nameInput).CornerRadius = UDim.new(0,8)
+local confirm = Instance.new("TextButton")
+confirm.Position = UDim2.new(0,18,0,158)
+confirm.Size = UDim2.new(1,-36,0,40)
+confirm.Text = "Use this name"
+confirm.Font = Enum.Font.GothamBold
+confirm.TextSize = 15
+confirm.TextColor3 = Color3.new(1,1,1)
+confirm.BackgroundColor3 = Color3.fromRGB(91,73,180)
+confirm.Visible = false
+confirm.Parent = panel
+Instance.new("UICorner",confirm).CornerRadius = UDim.new(0,8)
+confirm.Activated:Connect(function()
+	if phase ~= "NameEntry" then return end
+	remote:FireServer("CustomName",nameInput.Text)
+end)
+
 local function dismiss()
 	panel.Visible = false
 	phase = "Closed"
+	nameInput.Visible = false
+	confirm.Visible = false
 	remote:FireServer("Close")
 end
 close.Activated:Connect(dismiss)
@@ -111,9 +143,13 @@ nextButton.Activated:Connect(function()
 end)
 remote.OnClientEvent:Connect(function(action, data)
 	if action == "Close" then
+		nameInput.Visible = false
+		confirm.Visible = false
 		panel.Visible = false
 		phase = "Closed"
 	elseif action == "Question" then
+		nameInput.Visible = false
+		confirm.Visible = false
 		panel.Visible = true
 		phase = "Question"
 		question.Text = data.question
@@ -121,6 +157,22 @@ remote.OnClientEvent:Connect(function(action, data)
 			button.Visible = true
 			button.Text = tostring(i) .. ".  " .. tostring(data.answers[i])
 		end
+		nextButton.Visible = false
+	elseif action == "NameEntry" or action == "NameError" then
+		panel.Visible = true
+		phase = "NameEntry"
+		question.Text = action == "NameError" and data.text or "Choose your custom slayer name (3–20 characters)."
+		for _, button in ipairs(buttons) do button.Visible = false end
+		nextButton.Visible = false
+		nameInput.Visible = true
+		confirm.Visible = true
+	elseif action == "Story" then
+		panel.Visible = true
+		phase = "Response"
+		question.Text = data.text
+		for _, button in ipairs(buttons) do button.Visible = false end
+		nameInput.Visible = false
+		confirm.Visible = false
 		nextButton.Visible = false
 	elseif action == "Response" then
 		panel.Visible = true
