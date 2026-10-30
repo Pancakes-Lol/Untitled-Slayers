@@ -40,21 +40,25 @@ local function bindSword(tool)
 			target.Name = "LocalSwordSwingTarget"
 			target.Size = Vector3.new(0.2,0.2,0.2)
 			target.Transparency = 1
-			target.Anchored = true
+			target.Anchored = false
 			target.CanCollide = false
 			target.CanTouch = false
 			target.CanQuery = false
 			target.CFrame = hand.CFrame
-			target.Parent = workspace
+			target.Parent = root
+			local targetWeld = Instance.new("WeldConstraint")
+			targetWeld.Part0 = root
+			targetWeld.Part1 = target
+			targetWeld.Parent = target
 			ik = Instance.new("IKControl")
 			ik.Name = "SwordSwingArmIK"
 			ik.Type = Enum.IKControlType.Position
 			ik.ChainRoot = upper
 			ik.EndEffector = hand
 			ik.Target = target
-			ik.SmoothTime = 0.04
+			ik.SmoothTime = 0.08
 			ik.Weight = 0
-			ik.Priority = 20
+			ik.Priority = 10
 			ik.Parent = humanoid
 		end
 	end
@@ -87,14 +91,30 @@ local function bindSword(tool)
 		elseif ik and target and target.Parent then
 			local torso = character:FindFirstChild("UpperTorso")
 			if torso then
+				-- Keep the hand near the shoulder instead of pulling it across the body.
+				-- A torso-relative attachment avoids world-space snapping while moving.
 				local rest = target.CFrame
-				ik.Weight = 1
-				animate(target, WINDUP, {CFrame=torso.CFrame * CFrame.new(1.2,1.1,0.6)})
+				local originalWeld = target:FindFirstChildOfClass("WeldConstraint")
+				if originalWeld then originalWeld:Destroy() end
+				local function aim(localOffset, info)
+					if not torso.Parent or not target.Parent then return end
+					animate(target, info, {CFrame=torso.CFrame * CFrame.new(localOffset)})
+				end
+				ik.Weight = 0.75
+				aim(Vector3.new(1.1, 0.2, -0.4), WINDUP)
 				if tool.Parent == character then
-					animate(target, SLASH, {CFrame=torso.CFrame * CFrame.new(1.0,-0.7,-2.2)})
+					aim(Vector3.new(1.0, -0.5, -1.25), SLASH)
 				end
 				animate(target, RECOVER, {CFrame=rest})
 				ik.Weight = 0
+				-- Reattach the target to the torso for the next swing.
+				if target.Parent and torso.Parent then
+					target.CFrame = torso.CFrame * CFrame.new(1.1, -0.8, 0)
+					local weld = Instance.new("WeldConstraint")
+					weld.Part0 = torso
+					weld.Part1 = target
+					weld.Parent = target
+				end
 			end
 		end
 		swinging = false
