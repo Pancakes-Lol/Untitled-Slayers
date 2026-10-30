@@ -31,6 +31,7 @@ prompt.RequiresLineOfSight = false
 local rng = Random.new()
 local active = {}
 local slayerNames = {}
+local introduced = {}
 local questions = {
 	{question="What is the best way to get stronger?", answers={"Train every day", "Eat 900 donuts", "Sleep for 100 years"}, correct=1, right="Exactly. Consistency builds strength!", wrong="Ha! Maybe try training instead."},
 	{question="Which weapon would you take into battle?", answers={"A legendary sword", "A rubber chicken", "A spoon"}, correct=1, right="A warrior's choice. I respect it.", wrong="Bold choice. You might surprise someone!"},
@@ -49,11 +50,11 @@ local function nearby(player)
 end
 
 local function newQuestion(player)
-	local index = rng:NextInteger(1, #questions + 1)
+	local index = not slayerNames[player] and #questions + 1 or rng:NextInteger(1, #questions)
 	if active[player] and active[player].index == index then index = index % (#questions + 1) + 1 end
 	local q
 	if index == #questions + 1 then
-		local actual = slayerNames[player] or player.DisplayName
+		local actual = player.DisplayName
 		q = {question="Tell me, what's your name?", answers={"Captain Noodles", actual, "Choose a custom name"}, correct=2,
 			right="Of course! Nice to meet you, " .. actual .. ".", wrong="Haha, you almost had me! You're " .. actual .. "."}
 	else
@@ -85,6 +86,7 @@ remote.OnServerEvent:Connect(function(player, action, choice)
 			return
 		end
 		slayerNames[player] = filtered
+		introduced[player] = true
 		player:SetAttribute("SlayerName", filtered)
 		local humanoid = player.Character and player.Character:FindFirstChildOfClass("Humanoid")
 		if humanoid then humanoid.DisplayName = filtered end
@@ -105,6 +107,7 @@ remote.OnServerEvent:Connect(function(player, action, choice)
 		if session.index == #questions + 1 then
 			local chosen = choice == 1 and "Captain Noodles" or player.DisplayName
 			slayerNames[player] = chosen
+			introduced[player] = true
 			player:SetAttribute("SlayerName", chosen)
 			local humanoid = player.Character and player.Character:FindFirstChildOfClass("Humanoid")
 			if humanoid then humanoid.DisplayName = chosen end
@@ -116,4 +119,4 @@ remote.OnServerEvent:Connect(function(player, action, choice)
 	end
 end)
 
-Players.PlayerRemoving:Connect(function(player) active[player] = nil slayerNames[player] = nil end)
+Players.PlayerRemoving:Connect(function(player) active[player] = nil slayerNames[player] = nil introduced[player] = nil end)
