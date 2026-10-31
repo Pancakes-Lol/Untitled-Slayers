@@ -2,10 +2,6 @@
 -- Saving is intentionally disabled for now.
 local Players = game:GetService("Players")
 
-local function xpNeededForLevel(level)
-	return 100 + math.max(0, level - 1) * 50
-end
-
 local function ensureInt(folder, name, defaultValue)
 	local value = folder:FindFirstChild(name)
 	if not value then
@@ -27,9 +23,11 @@ local function setup(player)
 
 	ensureInt(stats, "Level", 1)
 	ensureInt(stats, "XP", 0)
-	ensureInt(stats, "XPToNextLevel", xpNeededForLevel(1))
 	ensureInt(stats, "Coins", 0)
 	ensureInt(stats, "Gems", 0)
+
+	local oldXpToNext = stats:FindFirstChild("XPToNextLevel")
+	if oldXpToNext then oldXpToNext:Destroy() end
 end
 
 Players.PlayerAdded:Connect(setup)
