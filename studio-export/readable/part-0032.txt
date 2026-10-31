@@ -1,311 +1,195 @@
-        "Material": "Enum.Material.Sand",
-        "Archivable": true,
-        "Size": "18.5, 6.5, 25.25"
-      },
-      "class": "Part"
+      "source": "-- humanoidAnimatePlayEmote.lua\n\nlocal Figure = script.Parent\nlocal Torso = Figure:WaitForChild(\"Torso\")\nlocal RightShoulder = Torso:WaitForChild(\"Right Shoulder\")\nlocal LeftShoulder = Torso:WaitForChild(\"Left Shoulder\")\nlocal RightHip = Torso:WaitForChild(\"Right Hip\")\nlocal LeftHip = Torso:WaitForChild(\"Left Hip\")\nlocal Neck = Torso:WaitForChild(\"Neck\")\nlocal Humanoid = Figure:WaitForChild(\"Humanoid\")\nlocal pose = \"Standing\"\n\nlocal FFlagUserAnimateRemoveEmoteChatHook\ndo\n\tlocal success, result = pcall(function()\n\t\treturn UserSettings():IsUserFeatureEnabled(\"UserAnimateRemoveEmoteChatHook\")\n\tend)\n\tFFlagUserAnimateRemoveEmoteChatHook = success and result\nend\n\nlocal EMOTE_TRANSITION_TIME = 0.1\n\nlocal function getRigScale()\n\treturn Figure:GetScale()\nend\n\nlocal currentAnim = \"\"\nlocal currentAnimInstance = nil\nlocal currentAnimTrack = nil\nlocal currentAnimKeyframeHandler = nil\nlocal currentAnimSpeed = 1.0\nlocal animTable = {}\nlocal animNames = { \n\tidle = \t{\t\n\t\t\t\t{ id = \"http://www.roblox.com/asset/?id=180435571\", weight = 9 },\n\t\t\t\t{ id = \"http://www.roblox.com/asset/?id=180435792\", weight = 1 }\n\t\t\t},\n\twalk = \t{ \t\n\t\t\t\t{ id = \"http://www.roblox.com/asset/?id=180426354\", weight = 10 } \n\t\t\t}, \n\trun = \t{\n\t\t\t\t{ id = \"run.xml\", weight = 10 } \n\t\t\t}, \n\tjump = \t{\n\t\t\t\t{ id = \"http://www.roblox.com/asset/?id=125750702\", weight = 10 } \n\t\t\t}, \n\tfall = \t{\n\t\t\t\t{ id = \"http://www.roblox.com/asset/?id=180436148\", weight = 10 } \n\t\t\t}, \n\tclimb = {\n\t\t\t\t{ id = \"http://www.roblox.com/asset/?id=180436334\", weight = 10 } \n\t\t\t}, \n\tsit = \t{\n\t\t\t\t{ id = \"http://www.roblox.com/asset/?id=178130996\", weight = 10 } \n\t\t\t},\t\n\ttoolnone = {\n\t\t\t\t{ id = \"http://www.roblox.com/asset/?id=182393478\", weight = 10 } \n\t\t\t},\n\ttoolslash = {\n\t\t\t\t{ id = \"http://www.roblox.com/asset/?id=129967390\", weight = 10 } \n--\t\t\t\t{ id = \"slash.xml\", weight = 10 } \n\t\t\t},\n\ttoollunge = {\n\t\t\t\t{ id = \"http://www.roblox.com/asset/?id=129967478\", weight = 10 } \n\t\t\t},\n\twave = {\n\t\t\t\t{ id = \"http://www.roblox.com/asset/?id=128777973\", weight = 10 } \n\t\t\t},\n\tpoint = {\n\t\t\t\t{ id = \"http://www.roblox.com/asset/?id=128853357\", weight = 10 } \n\t\t\t},\n\tdance1 = {\n\t\t\t\t{ id = \"http://www.roblox.com/asset/?id=182435998\", weight = 10 }, \n\t\t\t\t{ id = \"http://www.roblox.com/asset/?id=182491037\", weight = 10 }, \n\t\t\t\t{ id = \"http://www.roblox.com/asset/?id=182491065\", weight = 10 } \n\t\t\t},\n\tdance2 = {\n\t\t\t\t{ id = \"http://www.roblox.com/asset/?id=182436842\", weight = 10 }, \n\t\t\t\t{ id = \"http://www.roblox.com/asset/?id=182491248\", weight = 10 }, \n\t\t\t\t{ id = \"http://www.roblox.com/asset/?id=182491277\", weight = 10 } \n\t\t\t},\n\tdance3 = {\n\t\t\t\t{ id = \"http://www.roblox.com/asset/?id=182436935\", weight = 10 }, \n\t\t\t\t{ id = \"http://www.roblox.com/asset/?id=182491368\", weight = 10 }, \n\t\t\t\t{ id = \"http://www.roblox.com/asset/?id=182491423\", weight = 10 } \n\t\t\t},\n\tlaugh = {\n\t\t\t\t{ id = \"http://www.roblox.com/asset/?id=129423131\", weight = 10 } \n\t\t\t},\n\tcheer = {\n\t\t\t\t{ id = \"http://www.roblox.com/asset/?id=129423030\", weight = 10 } \n\t\t\t},\n}\nlocal dances = {\"dance1\", \"dance2\", \"dance3\"}\n\n-- Existance in this list signifies that it is an emote, the value indicates if it is a looping emote\nlocal emoteNames = { wave = false, point = false, dance1 = true, dance2 = true, dance3 = true, laugh = false, cheer = false}\n\nfunction configureAnimationSet(name, fileList)\n\tif (animTable[name] ~= nil) then\n\t\tfor _, connection in pairs(animTable[name].connections) do\n\t\t\tconnection:disconnect()\n\t\tend\n\tend\n\tanimTable[name] = {}\n\tanimTable[name].count = 0\n\tanimTable[name].totalWeight = 0\t\n\tanimTable[name].connections = {}\n\n\t-- check for config values\n\tlocal config = script:FindFirstChild(name)\n\tif (config ~= nil) then\n--\t\tprint(\"Loading anims \" .. name)\n\t\ttable.insert(animTable[name].connections, config.ChildAdded:connect(function(child) configureAnimationSet(name, fileList) end))\n\t\ttable.insert(animTable[name].connections, config.ChildRemoved:connect(function(child) configureAnimationSet(name, fileList) end))\n\t\tlocal idx = 1\n\t\tfor _, childPart in pairs(config:GetChildren()) do\n\t\t\tif (childPart:IsA(\"Animation\")) then\n\t\t\t\ttable.insert(animTable[name].connections, childPart.Changed:connect(function(property) configureAnimationSet(name, fileList) end))\n\t\t\t\tanimTable[name][idx] = {}\n\t\t\t\tanimTable[name][idx].anim = childPart\n\t\t\t\tlocal weightObject = childPart:FindFirstChild(\"Weight\")\n\t\t\t\tif (weightObject == nil) then\n\t\t\t\t\tanimTable[name][idx].weight = 1\n\t\t\t\telse\n\t\t\t\t\tanimTable[name][idx].weight = weightObject.Value\n\t\t\t\tend\n\t\t\t\tanimTable[name].count = animTable[name].count + 1\n\t\t\t\tanimTable[name].totalWeight = animTable[name].totalWeight + animTable[name][idx].weight\n\t--\t\t\tprint(name .. \" [\" .. idx .. \"] \" .. animTable[name][idx].anim.AnimationId .. \" (\" .. animTable[name][idx].weight .. \")\")\n\t\t\t\tidx = idx + 1\n\t\t\tend\n\t\tend\n\tend\n\n\t-- fallback to defaults\n\tif (animTable[name].count <= 0) then\n\t\tfor idx, anim in pairs(fileList) do\n\t\t\tanimTable[name][idx] = {}\n\t\t\tanimTable[name][idx].anim = Instance.new(\"Animation\")\n\t\t\tanimTable[name][idx].anim.Name = name\n\t\t\tanimTable[name][idx].anim.AnimationId = anim.id\n\t\t\tanimTable[name][idx].weight = anim.weight\n\t\t\tanimTable[name].count = animTable[name].count + 1\n\t\t\tanimTable[name].totalWeight = animTable[name].totalWeight + anim.weight\n--\t\t\tprint(name .. \" [\" .. idx .. \"] \" .. anim.id .. \" (\" .. anim.weight .. \")\")\n\t\tend\n\tend\nend\n\n-- Setup animation objects\nfunction scriptChildModified(child)\n\tlocal fileList = animNames[child.Name]\n\tif (fileList ~= nil) then\n\t\tconfigureAnimationSet(child.Name, fileList)\n\tend\t\nend\n\nscript.ChildAdded:connect(scriptChildModified)\nscript.ChildRemoved:connect(scriptChildModified)\n\n-- Clear any existing animation tracks\n-- Fixes issue with characters that are moved in and out of the Workspace accumulating tracks\nlocal animator = if Humanoid then Humanoid:FindFirstChildOfClass(\"Animator\") else nil\nif animator then\n\tlocal animTracks = animator:GetPlayingAnimationTracks()\n\tfor i,track in ipairs(animTracks) do\n\t\ttrack:Stop(0)\n\t\ttrack:Destroy()\n\tend\nend\n\n\nfor name, fileList in pairs(animNames) do \n\tconfigureAnimationSet(name, fileList)\nend\t\n\n-- ANIMATION\n\n-- declarations\nlocal toolAnim = \"None\"\nlocal toolAnimTime = 0\n\nlocal jumpAnimTime = 0\nlocal jumpAnimDuration = 0.3\n\nlocal toolTransitionTime = 0.1\nlocal fallTransitionTime = 0.3\nlocal jumpMaxLimbVelocity = 0.75\n\n-- functions\n\nfunction stopAllAnimations()\n\tlocal oldAnim = currentAnim\n\n\t-- return to idle if finishing an emote\n\tif (emoteNames[oldAnim] ~= nil and emoteNames[oldAnim] == false) then\n\t\toldAnim = \"idle\"\n\tend\n\n\tcurrentAnim = \"\"\n\tcurrentAnimInstance = nil\n\tif (currentAnimKeyframeHandler ~= nil) then\n\t\tcurrentAnimKeyframeHandler:disconnect()\n\tend\n\n\tif (currentAnimTrack ~= nil) then\n\t\tcurrentAnimTrack:Stop()\n\t\tcurrentAnimTrack:Destroy()\n\t\tcurrentAnimTrack = nil\n\tend\n\treturn oldAnim\nend\n\nfunction setAnimationSpeed(speed)\n\tif speed ~= currentAnimSpeed then\n\t\tcurrentAnimSpeed = speed\n\t\tcurrentAnimTrack:AdjustSpeed(currentAnimSpeed)\n\tend\nend\n\nfunction keyFrameReachedFunc(frameName)\n\tif (frameName == \"End\") then\n\n\t\tlocal repeatAnim = currentAnim\n\t\t-- return to idle if finishing an emote\n\t\tif (emoteNames[repeatAnim] ~= nil and emoteNames[repeatAnim] == false) then\n\t\t\trepeatAnim = \"idle\"\n\t\tend\n\t\t\n\t\tlocal animSpeed = currentAnimSpeed\n\t\tplayAnimation(repeatAnim, 0.0, Humanoid)\n\t\tsetAnimationSpeed(animSpeed)\n\tend\nend\n\n-- Preload animations\nfunction playAnimation(animName, transitionTime, humanoid) \n\t\t\n\tlocal roll = math.random(1, animTable[animName].totalWeight) \n\tlocal origRoll = roll\n\tlocal idx = 1\n\twhile (roll > animTable[animName][idx].weight) do\n\t\troll = roll - animTable[animName][idx].weight\n\t\tidx = idx + 1\n\tend\n--\t\tprint(animName .. \" \" .. idx .. \" [\" .. origRoll .. \"]\")\n\tlocal anim = animTable[animName][idx].anim\n\n\t-- switch animation\t\t\n\tif (anim ~= currentAnimInstance) then\n\t\t\n\t\tif (currentAnimTrack ~= nil) then\n\t\t\tcurrentAnimTrack:Stop(transitionTime)\n\t\t\tcurrentAnimTrack:Destroy()\n\t\tend\n\n\t\tcurrentAnimSpeed = 1.0\n\t\n\t\t-- load it to the humanoid; get AnimationTrack\n\t\tcurrentAnimTrack = humanoid:LoadAnimation(anim)\n\t\tcurrentAnimTrack.Priority = Enum.AnimationPriority.Core\n\t\t \n\t\t-- play the animation\n\t\tcurrentAnimTrack:Play(transitionTime)\n\t\tcurrentAnim = animName\n\t\tcurrentAnimInstance = anim\n\n\t\t-- set up keyframe name triggers\n\t\tif (currentAnimKeyframeHandler ~= nil) then\n\t\t\tcurrentAnimKeyframeHandler:disconnect()\n\t\tend\n\t\tcurrentAnimKeyframeHandler = currentAnimTrack.KeyframeReached:connect(keyFrameReachedFunc)\n\t\t\n\tend\n\nend\n\n-------------------------------------------------------------------------------------------\n-------------------------------------------------------------------------------------------\n\nlocal toolAnimName = \"\"\nlocal toolAnimTrack = nil\nlocal toolAnimInstance = nil\nlocal currentToolAnimKeyframeHandler = nil\n\nfunction toolKeyFrameReachedFunc(frameName)\n\tif (frameName == \"End\") then\n--\t\tprint(\"Keyframe : \".. frameName)\t\n\t\tplayToolAnimation(toolAnimName, 0.0, Humanoid)\n\tend\nend\n\n\nfunction playToolAnimation(animName, transitionTime, humanoid, priority)\t \n\t\t\n\t\tlocal roll = math.random(1, animTable[animName].totalWeight) \n\t\tlocal origRoll = roll\n\t\tlocal idx = 1\n\t\twhile (roll > animTable[animName][idx].weight) do\n\t\t\troll = roll - animTable[animName][idx].weight\n\t\t\tidx = idx + 1\n\t\tend\n--\t\tprint(animName .. \" * \" .. idx .. \" [\" .. origRoll .. \"]\")\n\t\tlocal anim = animTable[animName][idx].anim\n\n\t\tif (toolAnimInstance ~= anim) then\n\t\t\t\n\t\t\tif (toolAnimTrack ~= nil) then\n\t\t\t\ttoolAnimTrack:Stop()\n\t\t\t\ttoolAnimTrack:Destroy()\n\t\t\t\ttransitionTime = 0\n\t\t\tend\n\t\t\t\t\t\n\t\t\t-- load it to the humanoid; get AnimationTrack\n\t\t\ttoolAnimTrack = humanoid:LoadAnimation(anim)\n\t\t\tif priority then\n\t\t\t\ttoolAnimTrack.Priority = priority\n\t\t\tend\n\t\t\t \n\t\t\t-- play the animation\n\t\t\ttoolAnimTrack:Play(transitionTime)\n\t\t\ttoolAnimName = animName\n\t\t\ttoolAnimInstance = anim\n\n\t\t\tcurrentToolAnimKeyframeHandler = toolAnimTrack.KeyframeReached:connect(toolKeyFrameReachedFunc)\n\t\tend\nend\n\nfunction stopToolAnimations()\n\tlocal oldAnim = toolAnimName\n\n\tif (currentToolAnimKeyframeHandler ~= nil) then\n\t\tcurrentToolAnimKeyframeHandler:disconnect()\n\tend\n\n\ttoolAnimName = \"\"\n\ttoolAnimInstance = nil\n\tif (toolAnimTrack ~= nil) then\n\t\ttoolAnimTrack:Stop()\n\t\ttoolAnimTrack:Destroy()\n\t\ttoolAnimTrack = nil\n\tend\n\n\n\treturn oldAnim\nend\n\n-------------------------------------------------------------------------------------------\n-------------------------------------------------------------------------------------------\n\n\nfunction onRunning(speed)\n\tspeed /= getRigScale()\n\t\n\tif speed > 0.01 then\n\t\tplayAnimation(\"walk\", 0.1, Humanoid)\n\t\tif currentAnimInstance and currentAnimInstance.AnimationId == \"http://www.roblox.com/asset/?id=180426354\" then\n\t\t\tsetAnimationSpeed(speed / 14.5)\n\t\tend\n\t\tpose = \"Running\"\n\telse\n\t\tif emoteNames[currentAnim] == nil then\n\t\t\tplayAnimation(\"idle\", 0.1, Humanoid)\n\t\t\tpose = \"Standing\"\n\t\tend\n\tend\nend\n\nfunction onDied()\n\tpose = \"Dead\"\nend\n\nfunction onJumping()\n\tplayAnimation(\"jump\", 0.1, Humanoid)\n\tjumpAnimTime = jumpAnimDuration\n\tpose = \"Jumping\"\nend\n\nfunction onClimbing(speed)\n\tspeed /= getRigScale()\n\t\n\tplayAnimation(\"climb\", 0.1, Humanoid)\n\tsetAnimationSpeed(speed / 12.0)\n\tpose = \"Climbing\"\nend\n\nfunction onGettingUp()\n\tpose = \"GettingUp\"\nend\n\nfunction onFreeFall()\n\tif (jumpAnimTime <= 0) then\n\t\tplayAnimation(\"fall\", fallTransitionTime, Humanoid)\n\tend\n\tpose = \"FreeFall\"\nend\n\nfunction onFallingDown()\n\tpose = \"FallingDown\"\nend\n\nfunction onSeated()\n\tpose = \"Seated\"\nend\n\nfunction onPlatformStanding()\n\tpose = \"PlatformStanding\"\nend\n\nfunction onSwimming(speed)\n\tif speed > 0 then\n\t\tpose = \"Running\"\n\telse\n\t\tpose = \"Standing\"\n\tend\nend\n\nfunction getTool()\t\n\tfor _, kid in ipairs(Figure:GetChildren()) do\n\t\tif kid.className == \"Tool\" then return kid end\n\tend\n\treturn nil\nend\n\nfunction getToolAnim(tool)\n\tfor _, c in ipairs(tool:GetChildren()) do\n\t\tif c.Name == \"toolanim\" and c.className == \"StringValue\" then\n\t\t\treturn c\n\t\tend\n\tend\n\treturn nil\nend\n\nfunction animateTool()\n\t\n\tif (toolAnim == \"None\") then\n\t\tplayToolAnimation(\"toolnone\", toolTransitionTime, Humanoid, Enum.AnimationPriority.Idle)\n\t\treturn\n\tend\n\n\tif (toolAnim == \"Slash\") then\n\t\tplayToolAnimation(\"toolslash\", 0, Humanoid, Enum.AnimationPriority.Action)\n\t\treturn\n\tend\n\n\tif (toolAnim == \"Lunge\") then\n\t\tplayToolAnimation(\"toollunge\", 0, Humanoid, Enum.AnimationPriority.Action)\n\t\treturn\n\tend\nend\n\nfunction moveSit()\n\tRightShoulder.MaxVelocity = 0.15\n\tLeftShoulder.MaxVelocity = 0.15\n\tRightShoulder:SetDesiredAngle(3.14 /2)\n\tLeftShoulder:SetDesiredAngle(-3.14 /2)\n\tRightHip:SetDesiredAngle(3.14 /2)\n\tLeftHip:SetDesiredAngle(-3.14 /2)\nend\n\nlocal lastTick = 0\n\nfunction move(time)\n\tlocal amplitude = 1\n\tlocal frequency = 1\n  \tlocal deltaTime = time - lastTick\n  \tlastTick = time\n\n\tlocal climbFudge = 0\n\tlocal setAngles = false\n\n  \tif (jumpAnimTime > 0) then\n  \t\tjumpAnimTime = jumpAnimTime - deltaTime\n  \tend\n\n\tif (pose == \"FreeFall\" and jumpAnimTime <= 0) then\n\t\tplayAnimation(\"fall\", fallTransitionTime, Humanoid)\n\telseif (pose == \"Seated\") then\n\t\tplayAnimation(\"sit\", 0.5, Humanoid)\n\t\treturn\n\telseif (pose == \"Running\") then\n\t\tplayAnimation(\"walk\", 0.1, Humanoid)\n\telseif (pose == \"Dead\" or pose == \"GettingUp\" or pose == \"FallingDown\" or pose == \"Seated\" or pose == \"PlatformStanding\") then\n--\t\tprint(\"Wha \" .. pose)\n\t\tstopAllAnimations()\n\t\tamplitude = 0.1\n\t\tfrequency = 1\n\t\tsetAngles = true\n\tend\n\n\tif (setAngles) then\n\t\tlocal desiredAngle = amplitude * math.sin(time * frequency)\n\n\t\tRightShoulder:SetDesiredAngle(desiredAngle + climbFudge)\n\t\tLeftShoulder:SetDesiredAngle(desiredAngle - climbFudge)\n\t\tRightHip:SetDesiredAngle(-desiredAngle)\n\t\tLeftHip:SetDesiredAngle(-desiredAngle)\n\tend\n\n\t-- Tool Animation handling\n\tlocal tool = getTool()\n\tif tool and tool:FindFirstChild(\"Handle\") then\n\t\n\t\tlocal animStringValueObject = getToolAnim(tool)\n\n\t\tif animStringValueObject then\n\t\t\ttoolAnim = animStringValueObject.Value\n\t\t\t-- message recieved, delete StringValue\n\t\t\tanimStringValueObject.Parent = nil\n\t\t\ttoolAnimTime = time + .3\n\t\tend\n\n\t\tif time > toolAnimTime then\n\t\t\ttoolAnimTime = 0\n\t\t\ttoolAnim = \"None\"\n\t\tend\n\n\t\tanimateTool()\t\t\n\telse\n\t\tstopToolAnimations()\n\t\ttoolAnim = \"None\"\n\t\ttoolAnimInstance = nil\n\t\ttoolAnimTime = 0\n\tend\nend\n\n-- connect events\nHumanoid.Died:connect(onDied)\nHumanoid.Running:connect(onRunning)\nHumanoid.Jumping:connect(onJumping)\nHumanoid.Climbing:connect(onClimbing)\nHumanoid.GettingUp:connect(onGettingUp)\nHumanoid.FreeFalling:connect(onFreeFall)\nHumanoid.FallingDown:connect(onFallingDown)\nHumanoid.Seated:connect(onSeated)\nHumanoid.PlatformStanding:connect(onPlatformStanding)\nHumanoid.Swimming:connect(onSwimming)\n\nif not FFlagUserAnimateRemoveEmoteChatHook then\n\t---- setup emote chat hook\n\tgame:GetService(\"Players\").LocalPlayer.Chatted:connect(function(msg)\n\t\tlocal emote = \"\"\n\t\tif msg == \"/e dance\" then\n\t\t\temote = dances[math.random(1, #dances)]\n\t\telseif (string.sub(msg, 1, 3) == \"/e \") then\n\t\t\temote = string.sub(msg, 4)\n\t\telseif (string.sub(msg, 1, 7) == \"/emote \") then\n\t\t\temote = string.sub(msg, 8)\n\t\tend\n\t\t\n\t\tif (pose == \"Standing\" and emoteNames[emote] ~= nil) then\n\t\t\tplayAnimation(emote, 0.1, Humanoid)\n\t\tend\n\tend)\nend\n\n-- emote bindable hook\nscript:WaitForChild(\"PlayEmote\").OnInvoke = function(emote)\n\t-- Only play emotes when idling\n\tif pose ~= \"Standing\" then\n\t\treturn\n\tend\n\tif emoteNames[emote] ~= nil then\n\t\t-- Default emotes\n\t\tplayAnimation(emote, EMOTE_TRANSITION_TIME, Humanoid)\n\n\t\treturn true, currentAnimTrack\n\tend\n\n\t-- Return false to indicate that the emote could not be played\n\treturn false\nend\n-- main program\n\n-- initialize to idle\nplayAnimation(\"idle\", 0.1, Humanoid)\npose = \"Standing\"\n\nwhile Figure.Parent ~= nil do\n\tlocal _, time = wait(0.1)\n\tmove(time)\nend\n\n\n",
+      "class": "LocalScript"
     },
     {
-      "path": "Workspace/Part",
+      "path": "Workspace/Tetsu/Animate/PlayEmote",
       "properties": {
-        "CanCollide": true,
-        "Color": "0.384314, 0.419608, 0.443137",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "0, 7.979000091552734, 0",
-        "Transparency": 0,
-        "Name": "Part",
-        "Position": "-58.33763122558594, 11, 62.255859375",
-        "CFrame": "-58.3376312, 11, 62.2558594, 0.990318298, 0, 0.138815001, 0, 1, 0, -0.138815001, 0, 0.990318298",
-        "Material": "Enum.Material.Slate",
-        "Archivable": true,
-        "Size": "33.75, 22, 30"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Part",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.92549, 0.917647, 0.937255",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "0, 13.519000053405762, 0",
-        "Transparency": 0,
-        "Name": "Part",
-        "Position": "-68.3913803100586, 1.125, 40.28675842285156",
-        "CFrame": "-68.3913803, 1.125, 40.2867584, 0.972290218, 0, 0.2337735, 0, 1, 0, -0.233772472, 0, 0.972290218",
-        "Material": "Enum.Material.Sand",
-        "Archivable": true,
-        "Size": "22.25, 0.25, 12.75"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Part",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.352941, 0.282353, 0.231373",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "0, 0, 0",
-        "Transparency": 0,
-        "Name": "Part",
-        "Position": "-71.5, 3.75, 2.999988555908203",
-        "CFrame": "-71.5, 3.75, 2.99998856, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Material": "Enum.Material.Brick",
-        "Archivable": true,
-        "Size": "8, 0.5, 13.999977111816406"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Part",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.92549, 0.917647, 0.937255",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "0, -9.27299976348877, 0",
-        "Transparency": 0,
-        "Name": "Part",
-        "Position": "-89.38580322265625, 1.125, 37.21635818481445",
-        "CFrame": "-89.3858032, 1.125, 37.2163582, 0.986932635, 0, -0.161132663, 0, 1, 0, 0.161132783, 0, 0.986932635",
-        "Material": "Enum.Material.Sand",
-        "Archivable": true,
-        "Size": "12, 0.25, 11.75"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Part",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.92549, 0.917647, 0.937255",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "0, -0.27300000190734863, 0",
-        "Transparency": 0,
-        "Name": "Part",
-        "Position": "-93.07177734375, 1.25, 27.131521224975586",
-        "CFrame": "-93.0717773, 1.25, 27.1315212, 0.999988675, 0, -0.00476483116, 0, 1, 0, 0.00476483116, 0, 0.999988675",
-        "Material": "Enum.Material.Sand",
-        "Archivable": true,
-        "Size": "13.5, 0.5, 24.5"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Part",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.45098, 0.423529, 0.380392",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "0, 29.67799949645996, 0",
-        "Transparency": 0,
-        "Name": "Part",
-        "Position": "-101.12626647949219, 6.75, -35.09248733520508",
-        "CFrame": "-101.126266, 6.75, -35.0924873, 0.868817389, 0, 0.495132387, 0, 1, 0, -0.495132387, 0, 0.868817389",
-        "Material": "Enum.Material.Grass",
-        "Archivable": true,
-        "Size": "33.25, 13, 29.5"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Part",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.45098, 0.423529, 0.380392",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "0, 66.04499816894531, 0",
-        "Transparency": 0,
-        "Name": "Part",
-        "Position": "-124.62626647949219, 4.5, -8.342491149902344",
-        "CFrame": "-124.626266, 4.5, -8.34249115, 0.406013846, 0, 0.913866878, 0, 1, 0, -0.913866878, 0, 0.406013846",
-        "Material": "Enum.Material.Grass",
-        "Archivable": true,
-        "Size": "33.25, 13, 29.5"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Part",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.92549, 0.917647, 0.937255",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "-1.5980000495910645, -25.139999389648438, 8.524999618530273",
-        "Transparency": 0,
-        "Name": "Part",
-        "Position": "-32.43510437011719, 16.647815704345703, 18.002931594848633",
-        "CFrame": "-32.4351044, 16.6478157, 18.0029316, 0.895267248, -0.134199917, -0.424838215, 0.159900516, 0.986810327, 0.0252418779, 0.415847242, -0.0905300081, 0.904917479",
-        "Material": "Enum.Material.Sand",
-        "Archivable": true,
-        "Size": "22, 2.5, 20.75"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Part",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.45098, 0.423529, 0.380392",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "0, 10.043000221252441, 0",
-        "Transparency": 0,
-        "Name": "Part",
-        "Position": "-26.088851928710938, 5, -19.13930320739746",
-        "CFrame": "-26.0888519, 5, -19.1393032, 0.984676778, 0, 0.174393311, 0, 1, 0, -0.174393311, 0, 0.984676778",
-        "Material": "Enum.Material.Grass",
-        "Archivable": true,
-        "Size": "43.75, 10, 51.5"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Part",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.45098, 0.423529, 0.380392",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "0, 0, 0",
-        "Transparency": 0,
-        "Name": "Part",
-        "Position": "-71.25, 0.4999999403953552, 33.75",
-        "CFrame": "-71.25, 0.49999994, 33.75, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Material": "Enum.Material.Grass",
-        "Archivable": true,
-        "Size": "66, 1, 78"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Part",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.352941, 0.282353, 0.231373",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "22.333999633789062, 0, 0",
-        "Transparency": 0,
-        "Name": "Part",
-        "Position": "-71.5, 1.178857684135437, 16.173158645629883",
-        "CFrame": "-71.5, 1.17885768, 16.1731586, 1, 0, 0, 0, 0.924983799, -0.380006492, 0, 0.380006492, 0.924983799",
-        "Material": "Enum.Material.Brick",
-        "Archivable": true,
-        "Size": "8, 0.5, 13.625550270080566"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Part",
-      "properties": {
-        "CanCollide": false,
-        "Color": "0.639216, 0.294118, 0.294118",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "-90, 0, 180",
-        "Transparency": 1,
-        "Name": "Part",
-        "Position": "-66.3676528930664, 47.803165435791016, -78.62757873535156",
-        "CFrame": "-66.3676529, 47.8031654, -78.6275787, -1, 0, 0, 0, 0, 1, 0, 1, -0",
-        "Material": "Enum.Material.Plastic",
-        "Archivable": true,
-        "Size": "502.5599365234375, 3.7055556774139404, 93.10633087158203"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Part/ParticleEmitter",
-      "properties": {
-        "Enabled": true,
-        "Name": "ParticleEmitter",
-        "Shape": "Enum.ParticleEmitterShape.Box",
-        "LightEmission": 1,
-        "Brightness": 1,
-        "Archivable": true,
-        "Texture": "rbxassetid://13948905289"
-      },
-      "class": "ParticleEmitter"
-    },
-    {
-      "path": "Workspace/Part",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.384314, 0.419608, 0.443137",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "-5.894999980926514, 12.63700008392334, 6.422999858856201",
-        "Transparency": 0,
-        "Name": "Part",
-        "Position": "-30.910484313964844, 8.250000953674316, 12.236714363098145",
-        "CFrame": "-30.9104843, 8.25000095, 12.2367144, 0.969649136, -0.109165847, 0.218777671, 0.0889564827, 0.990981221, 0.100214824, -0.227744669, -0.0777114332, 0.97061497",
-        "Material": "Enum.Material.Slate",
-        "Archivable": true,
-        "Size": "30.528846740722656, 16.5, 30.528846740722656"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/SpawnLocation",
-      "properties": {
-        "Enabled": true,
-        "CanCollide": false,
-        "Color": "0.639216, 0.635294, 0.647059",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "0, 0, 0",
-        "Transparency": 1,
-        "Name": "SpawnLocation",
-        "Position": "-72, 2, 33.25",
-        "CFrame": "-72, 2, 33.25, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Material": "Enum.Material.Plastic",
-        "Archivable": true,
-        "Size": "12, 1, 12"
-      },
-      "class": "SpawnLocation"
-    },
-    {
-      "path": "Workspace/Camera",
-      "properties": {
-        "FieldOfView": 70,
-        "CFrame": "-84.9155579, 41.5176392, -11.6873779, -0.984796941, 0.0899904817, -0.148582458, 7.4505806e-09, 0.85534966, 0.518051147, 0.173709631, 0.510175169, -0.842345715",
-        "Archivable": true,
-        "Name": "Camera"
-      },
-      "class": "Camera"
-    },
-    {
-      "path": "Workspace/AshenPup",
-      "properties": {
-        "Name": "AshenPup",
+        "Name": "PlayEmote",
         "Archivable": true
       },
-      "class": "Model"
+      "class": "BindableFunction"
     },
     {
-      "path": "Workspace/AshenPup/Body Colors",
+      "path": "Workspace/Tetsu/Animate/toolnone",
       "properties": {
-        "Name": "Body Colors",
+        "Value": "",
+        "Archivable": true,
+        "Name": "toolnone"
+      },
+      "class": "StringValue"
+    },
+    {
+      "path": "Workspace/Tetsu/Animate/toolnone/ToolNoneAnim",
+      "properties": {
+        "Name": "ToolNoneAnim",
         "Archivable": true
       },
-      "class": "BodyColors"
+      "class": "Animation"
     },
     {
-      "path": "Workspace/AshenPup/Accessory (L Black Hair)",
+      "path": "Workspace/Tetsu/Animate/run",
       "properties": {
-        "Name": "Accessory (L Black Hair)",
+        "Value": "",
+        "Archivable": true,
+        "Name": "run"
+      },
+      "class": "StringValue"
+    },
+    {
+      "path": "Workspace/Tetsu/Animate/run/RunAnim",
+      "properties": {
+        "Name": "RunAnim",
+        "Archivable": true
+      },
+      "class": "Animation"
+    },
+    {
+      "path": "Workspace/Tetsu/Animate/walk",
+      "properties": {
+        "Value": "",
+        "Archivable": true,
+        "Name": "walk"
+      },
+      "class": "StringValue"
+    },
+    {
+      "path": "Workspace/Tetsu/Animate/walk/WalkAnim",
+      "properties": {
+        "Name": "WalkAnim",
+        "Archivable": true
+      },
+      "class": "Animation"
+    },
+    {
+      "path": "Workspace/Tetsu/Animate/idle",
+      "properties": {
+        "Value": "",
+        "Archivable": true,
+        "Name": "idle"
+      },
+      "class": "StringValue"
+    },
+    {
+      "path": "Workspace/Tetsu/Animate/idle/Animation1",
+      "properties": {
+        "Name": "Animation1",
+        "Archivable": true
+      },
+      "class": "Animation"
+    },
+    {
+      "path": "Workspace/Tetsu/Animate/idle/Animation1/Weight",
+      "properties": {
+        "Value": 9,
+        "Archivable": true,
+        "Name": "Weight"
+      },
+      "class": "NumberValue"
+    },
+    {
+      "path": "Workspace/Tetsu/Animate/idle/Animation2",
+      "properties": {
+        "Name": "Animation2",
+        "Archivable": true
+      },
+      "class": "Animation"
+    },
+    {
+      "path": "Workspace/Tetsu/Animate/idle/Animation2/Weight",
+      "properties": {
+        "Value": 1,
+        "Archivable": true,
+        "Name": "Weight"
+      },
+      "class": "NumberValue"
+    },
+    {
+      "path": "Workspace/Tetsu/Animate/jump",
+      "properties": {
+        "Value": "",
+        "Archivable": true,
+        "Name": "jump"
+      },
+      "class": "StringValue"
+    },
+    {
+      "path": "Workspace/Tetsu/Animate/jump/JumpAnim",
+      "properties": {
+        "Name": "JumpAnim",
+        "Archivable": true
+      },
+      "class": "Animation"
+    },
+    {
+      "path": "Workspace/Tetsu/Animate/fall",
+      "properties": {
+        "Value": "",
+        "Archivable": true,
+        "Name": "fall"
+      },
+      "class": "StringValue"
+    },
+    {
+      "path": "Workspace/Tetsu/Animate/fall/FallAnim",
+      "properties": {
+        "Name": "FallAnim",
+        "Archivable": true
+      },
+      "class": "Animation"
+    },
+    {
+      "path": "Workspace/Tetsu/Animate/climb",
+      "properties": {
+        "Value": "",
+        "Archivable": true,
+        "Name": "climb"
+      },
+      "class": "StringValue"
+    },
+    {
+      "path": "Workspace/Tetsu/Animate/climb/ClimbAnim",
+      "properties": {
+        "Name": "ClimbAnim",
+        "Archivable": true
+      },
+      "class": "Animation"
+    },
+    {
+      "path": "Workspace/Tetsu/Animate/sit",
+      "properties": {
+        "Value": "",
+        "Archivable": true,
+        "Name": "sit"
+      },
+      "class": "StringValue"
+    },
+    {
+      "path": "Workspace/Tetsu/Animate/sit/SitAnim",
+      "properties": {
+        "Name": "SitAnim",
+        "Archivable": true
+      },
+      "class": "Animation"
+    },
+    {
+      "path": "Workspace/Tetsu/Animate/ScaleDampeningPercent",
+      "properties": {
+        "Value": 1,
+        "Archivable": true,
+        "Name": "ScaleDampeningPercent"
+      },
+      "class": "NumberValue"
+    },
+    {
+      "path": "Workspace/Tetsu/Accessory (Old Joseph)",
+      "properties": {
+        "Name": "Accessory (Old Joseph)",
         "Archivable": true
       },
       "class": "Accessory"
     },
     {
-      "path": "Workspace/AshenPup/Accessory (L Black Hair)/ThumbnailConfiguration",
+      "path": "Workspace/Tetsu/Accessory (Old Joseph)/ThumbnailConfiguration",
       "properties": {
         "Name": "ThumbnailConfiguration",
         "Archivable": true
@@ -313,7 +197,16 @@
       "class": "Configuration"
     },
     {
-      "path": "Workspace/AshenPup/Accessory (L Black Hair)/ThumbnailConfiguration/ThumbnailCameraTarget",
+      "path": "Workspace/Tetsu/Accessory (Old Joseph)/ThumbnailConfiguration/ThumbnailCameraValue",
+      "properties": {
+        "Value": "-3.70375972e-07, -0.0576789081, -4.23660707, -1, -1.19009913e-09, -8.74146764e-08, 0, 0.999907315, -0.0136131477, 8.74227766e-08, -0.0136131477, -0.999907315",
+        "Archivable": true,
+        "Name": "ThumbnailCameraValue"
+      },
+      "class": "CFrameValue"
+    },
+    {
+      "path": "Workspace/Tetsu/Accessory (Old Joseph)/ThumbnailConfiguration/ThumbnailCameraTarget",
       "properties": {
         "Name": "ThumbnailCameraTarget",
         "Archivable": true
@@ -321,26 +214,17 @@
       "class": "ObjectValue"
     },
     {
-      "path": "Workspace/AshenPup/Accessory (L Black Hair)/ThumbnailConfiguration/ThumbnailCameraValue",
-      "properties": {
-        "Value": "-5.61858997e-06, 0.649507105, -37.2102394, -1, 2.63524003e-09, -1.50972809e-07, 0, 0.99984771, 0.0174524058, 1.50995803e-07, 0.0174524058, -0.99984771",
-        "Archivable": true,
-        "Name": "ThumbnailCameraValue"
-      },
-      "class": "CFrameValue"
-    },
-    {
-      "path": "Workspace/AshenPup/Accessory (L Black Hair)/Handle",
+      "path": "Workspace/Tetsu/Accessory (Old Joseph)/Handle",
       "properties": {
         "CanCollide": false,
         "Color": "0.639216, 0.635294, 0.647059",
         "Anchored": false,
         "Shape": "Enum.PartType.Block",
-        "Rotation": "0.0020000000949949026, 0.0010000000474974513, 0.003000000026077032",
+        "Rotation": "0, 41.63399887084961, 0",
         "Transparency": 0,
         "Name": "Handle",
-        "Position": "-63.59499740600586, 6.294000148773193, 25.766996383666992",
-        "CFrame": "-63.5949974, 6.29400015, 25.7669964, 1, -5.23592753e-05, 1.74532943e-05, 5.23598828e-05, 1, -3.49065886e-05, -1.74514662e-05, 3.49075017e-05, 1",
+        "Position": "-65.25634765625, 6, 39.32242202758789",
+        "CFrame": "-65.2563477, 6, 39.322422, 0.747401714, 0, 0.664372444, 0, 1, 0, -0.664372444, 0, 0.747401714",
         "Material": "Enum.Material.Plastic",
         "Archivable": true,
         "Size": "1, 1, 1"
@@ -348,7 +232,7 @@
       "class": "Part"
     },
     {
-      "path": "Workspace/AshenPup/Accessory (L Black Hair)/Handle/AccessoryWeld",
+      "path": "Workspace/Tetsu/Accessory (Old Joseph)/Handle/AccessoryWeld",
       "properties": {
         "Enabled": true,
         "Name": "AccessoryWeld",
@@ -358,7 +242,19 @@
       "class": "Weld"
     },
     {
-      "path": "Workspace/AshenPup/Accessory (L Black Hair)/Handle/OriginalSize",
+      "path": "Workspace/Tetsu/Accessory (Old Joseph)/Handle/FaceCenterAttachment",
+      "properties": {
+        "Visible": false,
+        "Name": "FaceCenterAttachment",
+        "Position": "-0.0002288818359375, 0, 0.00049591064453125",
+        "CFrame": "-0.000228881836, 0, 0.000495910645, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Rotation": "-0, 0, -0"
+      },
+      "class": "Attachment"
+    },
+    {
+      "path": "Workspace/Tetsu/Accessory (Old Joseph)/Handle/OriginalSize",
       "properties": {
         "Value": "1, 1, 1",
         "Archivable": true,
@@ -367,7 +263,17 @@
       "class": "Vector3Value"
     },
     {
-      "path": "Workspace/AshenPup/Accessory (L Black Hair)/Handle/AvatarPartScaleType",
+      "path": "Workspace/Tetsu/Accessory (Old Joseph)/Handle/SpecialMesh",
+      "properties": {
+        "Scale": "1, 1, 1",
+        "MeshId": "rbxassetid://17489906130",
+        "Archivable": true,
+        "Name": "SpecialMesh"
+      },
+      "class": "SpecialMesh"
+    },
+    {
+      "path": "Workspace/Tetsu/Accessory (Old Joseph)/Handle/AvatarPartScaleType",
       "properties": {
         "Value": "Classic",
         "Archivable": true,
@@ -376,60 +282,138 @@
       "class": "StringValue"
     },
     {
-      "path": "Workspace/AshenPup/Accessory (L Black Hair)/Handle/HairAttachment",
+      "path": "Workspace/Tetsu/Head",
       "properties": {
-        "Visible": false,
-        "Name": "HairAttachment",
-        "Position": "0.09501838684082031, 0.3059854507446289, -0.26700592041015625",
-        "CFrame": "0.0950183868, 0.305985451, -0.26700592, 1, 5.23598828e-05, -1.74514662e-05, -5.23592753e-05, 1, 3.49075017e-05, 1.74532943e-05, -3.49065886e-05, 1",
-        "Archivable": true,
-        "Rotation": "-0.0020000524818897247, -0.0009998953901231289, -0.003000000026077032"
-      },
-      "class": "Attachment"
-    },
-    {
-      "path": "Workspace/AshenPup/Accessory (L Black Hair)/Handle/SpecialMesh",
-      "properties": {
-        "Scale": "1, 1, 1",
-        "MeshId": "rbxassetid://78033309787224",
-        "Archivable": true,
-        "Name": "SpecialMesh"
-      },
-      "class": "SpecialMesh"
-    },
-    {
-      "path": "Workspace/AshenPup/HumanoidRootPart",
-      "properties": {
-        "CanCollide": false,
-        "Color": "0.639216, 0.635294, 0.647059",
-        "Anchored": true,
+        "CanCollide": true,
+        "Color": "0.913725, 0.843137, 0.772549",
+        "Anchored": false,
         "Shape": "Enum.PartType.Block",
-        "Rotation": "0, 0, 0",
-        "Transparency": 1,
-        "Name": "HumanoidRootPart",
-        "Position": "-63.5, 4.5, 25.5",
-        "CFrame": "-63.5, 4.5, 25.5, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Rotation": "0, 41.63399887084961, 0",
+        "Transparency": 0,
+        "Name": "Head",
+        "Position": "-65.25618743896484, 6, 39.32294464111328",
+        "CFrame": "-65.2561874, 6, 39.3229446, 0.747401714, 0, 0.664372444, 0, 1, 0, -0.664372444, 0, 0.747401714",
         "Material": "Enum.Material.Plastic",
         "Archivable": true,
-        "Size": "2, 2, 1"
+        "Size": "2, 1, 1"
       },
       "class": "Part"
     },
     {
-      "path": "Workspace/AshenPup/HumanoidRootPart/RootJoint",
+      "path": "Workspace/Tetsu/Head/face",
       "properties": {
-        "Enabled": true,
-        "Name": "RootJoint",
+        "Rotation": 0,
+        "Transparency": 0,
+        "Name": "face",
+        "ZIndex": 1,
         "Archivable": true,
-        "Active": true
+        "Texture": "rbxasset://textures/face.png"
       },
-      "class": "Motor6D"
+      "class": "Decal"
     },
     {
-      "path": "Workspace/AshenPup/HumanoidRootPart/RootAttachment",
+      "path": "Workspace/Tetsu/Head/DisplayAttachement",
       "properties": {
         "Visible": false,
-        "Name": "RootAttachment",
+        "Name": "DisplayAttachement",
+        "Position": "0, 1.25, 0",
+        "CFrame": "0, 1.25, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Rotation": "-0, 0, -0"
+      },
+      "class": "Attachment"
+    },
+    {
+      "path": "Workspace/Tetsu/Head/DisplayAttachement/NameDisplayer",
+      "properties": {
+        "Enabled": true,
+        "Active": true,
+        "ResetOnSpawn": true,
+        "Name": "NameDisplayer",
+        "ClipsDescendants": true,
+        "StudsOffset": "0, 0, 0",
+        "Brightness": 1,
+        "Archivable": true,
+        "Size": "{4, 0}, {1, 0}"
+      },
+      "class": "BillboardGui"
+    },
+    {
+      "path": "Workspace/Tetsu/Head/DisplayAttachement/NameDisplayer/TextLabel",
+      "properties": {
+        "Visible": true,
+        "Active": false,
+        "AnchorPoint": "0, 0",
+        "ZIndex": 1,
+        "Archivable": true,
+        "Size": "{1, 0}, {1, 0}",
+        "TextColor3": "0.976471, 0.976471, 0.976471",
+        "ClipsDescendants": false,
+        "Text": "Tetsu",
+        "LayoutOrder": 0,
+        "AutomaticSize": "Enum.AutomaticSize.None",
+        "Rotation": 0,
+        "Transparency": 1,
+        "Name": "TextLabel",
+        "Position": "{0, 0}, {0, 0}",
+        "Font": "Enum.Font.TitilliumWeb",
+        "BackgroundTransparency": 1,
+        "TextSize": 14,
+        "BackgroundColor3": "1, 1, 1"
+      },
+      "class": "TextLabel"
+    },
+    {
+      "path": "Workspace/Tetsu/Head/DisplayAttachement/NameDisplayer/TextLabel/UIStroke",
+      "properties": {
+        "Enabled": true,
+        "Transparency": 0,
+        "Name": "UIStroke",
+        "Color": "0.152941, 0.152941, 0.152941",
+        "ZIndex": 1,
+        "Archivable": true
+      },
+      "class": "UIStroke"
+    },
+    {
+      "path": "Workspace/Tetsu/Head/Mesh",
+      "properties": {
+        "Scale": "1.25, 1.25, 1.25",
+        "MeshId": "",
+        "Archivable": true,
+        "Name": "Mesh"
+      },
+      "class": "SpecialMesh"
+    },
+    {
+      "path": "Workspace/Tetsu/Head/HatAttachment",
+      "properties": {
+        "Visible": false,
+        "Name": "HatAttachment",
+        "Position": "0, 0.6000000238418579, 0",
+        "CFrame": "0, 0.600000024, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Rotation": "-0, 0, -0"
+      },
+      "class": "Attachment"
+    },
+    {
+      "path": "Workspace/Tetsu/Head/HairAttachment",
+      "properties": {
+        "Visible": false,
+        "Name": "HairAttachment",
+        "Position": "0, 0.6000000238418579, 0",
+        "CFrame": "0, 0.600000024, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Rotation": "-0, 0, -0"
+      },
+      "class": "Attachment"
+    },
+    {
+      "path": "Workspace/Tetsu/Head/FaceCenterAttachment",
+      "properties": {
+        "Visible": false,
+        "Name": "FaceCenterAttachment",
         "Position": "0, 0, 0",
         "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
         "Archivable": true,
@@ -438,396 +422,19 @@
       "class": "Attachment"
     },
     {
-      "path": "Workspace/AshenPup/Torso",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.917647, 0.721569, 0.572549",
-        "Anchored": false,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "0, 0, 0",
-        "Transparency": 0,
-        "Name": "Torso",
-        "Position": "-63.5, 4.5, 25.5",
-        "CFrame": "-63.5, 4.5, 25.5, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Material": "Enum.Material.Plastic",
-        "Archivable": true,
-        "Size": "2, 2, 1"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/AshenPup/Torso/Weld",
-      "properties": {
-        "Enabled": true,
-        "Name": "Weld",
-        "Archivable": true,
-        "Active": false
-      },
-      "class": "Weld"
-    },
-    {
-      "path": "Workspace/AshenPup/Torso/NeckAttachment",
+      "path": "Workspace/Tetsu/Head/FaceFrontAttachment",
       "properties": {
         "Visible": false,
-        "Name": "NeckAttachment",
-        "Position": "0, 1, 0",
-        "CFrame": "0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Name": "FaceFrontAttachment",
+        "Position": "0, 0, -0.6000000238418579",
+        "CFrame": "0, 0, -0.600000024, 1, 0, 0, 0, 1, 0, 0, 0, 1",
         "Archivable": true,
         "Rotation": "-0, 0, -0"
       },
       "class": "Attachment"
     },
     {
-      "path": "Workspace/AshenPup/Torso/BodyFrontAttachment",
-      "properties": {
-        "Visible": false,
-        "Name": "BodyFrontAttachment",
-        "Position": "0, 0, -0.5",
-        "CFrame": "0, 0, -0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Rotation": "-0, 0, -0"
-      },
-      "class": "Attachment"
-    },
-    {
-      "path": "Workspace/AshenPup/Torso/RightCollarAttachment",
-      "properties": {
-        "Visible": false,
-        "Name": "RightCollarAttachment",
-        "Position": "1, 1, 0",
-        "CFrame": "1, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Rotation": "-0, 0, -0"
-      },
-      "class": "Attachment"
-    },
-    {
-      "path": "Workspace/AshenPup/Torso/Weld",
-      "properties": {
-        "Enabled": true,
-        "Name": "Weld",
-        "Archivable": true,
-        "Active": false
-      },
-      "class": "Weld"
-    },
-    {
-      "path": "Workspace/AshenPup/Torso/LeftCollarAttachment",
-      "properties": {
-        "Visible": false,
-        "Name": "LeftCollarAttachment",
-        "Position": "-1, 1, 0",
-        "CFrame": "-1, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Rotation": "-0, 0, -0"
-      },
-      "class": "Attachment"
-    },
-    {
-      "path": "Workspace/AshenPup/Torso/Weld",
-      "properties": {
-        "Enabled": true,
-        "Name": "Weld",
-        "Archivable": true,
-        "Active": false
-      },
-      "class": "Weld"
-    },
-    {
-      "path": "Workspace/AshenPup/Torso/WaistCenterAttachment",
-      "properties": {
-        "Visible": false,
-        "Name": "WaistCenterAttachment",
-        "Position": "0, -1, 0",
-        "CFrame": "0, -1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Rotation": "-0, 0, -0"
-      },
-      "class": "Attachment"
-    },
-    {
-      "path": "Workspace/AshenPup/Torso/WaistFrontAttachment",
-      "properties": {
-        "Visible": false,
-        "Name": "WaistFrontAttachment",
-        "Position": "0, -1, -0.5",
-        "CFrame": "0, -1, -0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Rotation": "-0, 0, -0"
-      },
-      "class": "Attachment"
-    },
-    {
-      "path": "Workspace/AshenPup/Torso/Weld",
-      "properties": {
-        "Enabled": true,
-        "Name": "Weld",
-        "Archivable": true,
-        "Active": false
-      },
-      "class": "Weld"
-    },
-    {
-      "path": "Workspace/AshenPup/Torso/Weld",
-      "properties": {
-        "Enabled": true,
-        "Name": "Weld",
-        "Archivable": true,
-        "Active": false
-      },
-      "class": "Weld"
-    },
-    {
-      "path": "Workspace/AshenPup/Torso/BodyBackAttachment",
-      "properties": {
-        "Visible": false,
-        "Name": "BodyBackAttachment",
-        "Position": "0, 0, 0.5",
-        "CFrame": "0, 0, 0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Rotation": "-0, 0, -0"
-      },
-      "class": "Attachment"
-    },
-    {
-      "path": "Workspace/AshenPup/Torso/WaistBackAttachment",
-      "properties": {
-        "Visible": false,
-        "Name": "WaistBackAttachment",
-        "Position": "0, -1, 0.5",
-        "CFrame": "0, -1, 0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Rotation": "-0, 0, -0"
-      },
-      "class": "Attachment"
-    },
-    {
-      "path": "Workspace/AshenPup/Torso/Left Hip",
-      "properties": {
-        "Enabled": true,
-        "Name": "Left Hip",
-        "Archivable": true,
-        "Active": true
-      },
-      "class": "Motor6D"
-    },
-    {
-      "path": "Workspace/AshenPup/Torso/Right Shoulder",
-      "properties": {
-        "Enabled": true,
-        "Name": "Right Shoulder",
-        "Archivable": true,
-        "Active": true
-      },
-      "class": "Motor6D"
-    },
-    {
-      "path": "Workspace/AshenPup/Torso/Neck",
-      "properties": {
-        "Enabled": true,
-        "Name": "Neck",
-        "Archivable": true,
-        "Active": true
-      },
-      "class": "Motor6D"
-    },
-    {
-      "path": "Workspace/AshenPup/Torso/Right Hip",
-      "properties": {
-        "Enabled": true,
-        "Name": "Right Hip",
-        "Archivable": true,
-        "Active": true
-      },
-      "class": "Motor6D"
-    },
-    {
-      "path": "Workspace/AshenPup/Torso/Left Shoulder",
-      "properties": {
-        "Enabled": true,
-        "Name": "Left Shoulder",
-        "Archivable": true,
-        "Active": true
-      },
-      "class": "Motor6D"
-    },
-    {
-      "path": "Workspace/AshenPup/Accessory (MeshPartAccessory)",
-      "properties": {
-        "Name": "Accessory (MeshPartAccessory)",
-        "Archivable": true
-      },
-      "class": "Accessory"
-    },
-    {
-      "path": "Workspace/AshenPup/Accessory (MeshPartAccessory)/ThumbnailConfiguration",
-      "properties": {
-        "Name": "ThumbnailConfiguration",
-        "Archivable": true
-      },
-      "class": "Configuration"
-    },
-    {
-      "path": "Workspace/AshenPup/Accessory (MeshPartAccessory)/ThumbnailConfiguration/ThumbnailCameraTarget",
-      "properties": {
-        "Name": "ThumbnailCameraTarget",
-        "Archivable": true
-      },
-      "class": "ObjectValue"
-    },
-    {
-      "path": "Workspace/AshenPup/Accessory (MeshPartAccessory)/ThumbnailConfiguration/ThumbnailCameraValue",
-      "properties": {
-        "Value": "0.0590590537, -0.314047575, 3.00223684, 0.999806583, 0.00204579369, 0.019561192, 0, 0.99457556, -0.104016982, -0.0196678806, 0.103996865, 0.994383156",
-        "Archivable": true,
-        "Name": "ThumbnailCameraValue"
-      },
-      "class": "CFrameValue"
-    },
-    {
-      "path": "Workspace/AshenPup/Accessory (MeshPartAccessory)/Handle",
-      "properties": {
-        "CanCollide": false,
-        "Color": "0.639216, 0.635294, 0.647059",
-        "Anchored": false,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "180, 0, 180",
-        "Transparency": 0,
-        "Name": "Handle",
-        "Position": "-63.499996185302734, 4.599414348602295, 25.50379753112793",
-        "CFrame": "-63.4999962, 4.59941435, 25.5037975, -1, 0, 0, 0, 1, 0, 0, 0, -1",
-        "Material": "Enum.Material.Plastic",
-        "Archivable": true,
-        "Size": "1, 1, 1"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/AshenPup/Accessory (MeshPartAccessory)/Handle/AvatarPartScaleType",
-      "properties": {
-        "Value": "Classic",
-        "Archivable": true,
-        "Name": "AvatarPartScaleType"
-      },
-      "class": "StringValue"
-    },
-    {
-      "path": "Workspace/AshenPup/Accessory (MeshPartAccessory)/Handle/BodyFrontAttachment",
-      "properties": {
-        "Visible": false,
-        "Name": "BodyFrontAttachment",
-        "Position": "0.0000050067901611328125, -0.09941434860229492, 0.5037980079650879",
-        "CFrame": "5.00679016e-06, -0.0994143486, 0.503798008, -1, 0, 0, 0, 1, 0, 0, 0, -1",
-        "Archivable": true,
-        "Rotation": "-180, 0, -180"
-      },
-      "class": "Attachment"
-    },
-    {
-      "path": "Workspace/AshenPup/Accessory (MeshPartAccessory)/Handle/OriginalSize",
-      "properties": {
-        "Value": "1, 1, 1",
-        "Archivable": true,
-        "Name": "OriginalSize"
-      },
-      "class": "Vector3Value"
-    },
-    {
-      "path": "Workspace/AshenPup/Accessory (MeshPartAccessory)/Handle/SpecialMesh",
-      "properties": {
-        "Scale": "1, 1, 1",
-        "MeshId": "rbxassetid://127405327108410",
-        "Archivable": true,
-        "Name": "SpecialMesh"
-      },
-      "class": "SpecialMesh"
-    },
-    {
-      "path": "Workspace/AshenPup/Accessory (MeshPartAccessory)/Handle/AccessoryWeld",
-      "properties": {
-        "Enabled": true,
-        "Name": "AccessoryWeld",
-        "Archivable": true,
-        "Active": true
-      },
-      "class": "Weld"
-    },
-    {
-      "path": "Workspace/AshenPup/Humanoid",
-      "properties": {
-        "Name": "Humanoid",
-        "JumpPower": 50,
-        "WalkSpeed": 16,
-        "Health": 100,
-        "Archivable": true,
-        "MaxHealth": 100
-      },
-      "class": "Humanoid"
-    },
-    {
-      "path": "Workspace/AshenPup/Humanoid/HumanoidDescription",
-      "properties": {
-        "Name": "HumanoidDescription",
-        "Archivable": true
-      },
-      "class": "HumanoidDescription"
-    },
-    {
-      "path": "Workspace/AshenPup/Humanoid/HumanoidDescription/BodyPartDescription",
-      "properties": {
-        "Color": "0.639216, 0.635294, 0.647059",
-        "Archivable": true,
-        "Name": "BodyPartDescription"
-      },
-      "class": "BodyPartDescription"
-    },
-    {
-      "path": "Workspace/AshenPup/Humanoid/HumanoidDescription/BodyPartDescription",
-      "properties": {
-        "Color": "0.639216, 0.635294, 0.647059",
-        "Archivable": true,
-        "Name": "BodyPartDescription"
-      },
-      "class": "BodyPartDescription"
-    },
-    {
-      "path": "Workspace/AshenPup/Humanoid/HumanoidDescription/BodyPartDescription",
-      "properties": {
-        "Color": "0.639216, 0.635294, 0.647059",
-        "Archivable": true,
-        "Name": "BodyPartDescription"
-      },
-      "class": "BodyPartDescription"
-    },
-    {
-      "path": "Workspace/AshenPup/Humanoid/HumanoidDescription/BodyPartDescription",
-      "properties": {
-        "Color": "0.639216, 0.635294, 0.647059",
-        "Archivable": true,
-        "Name": "BodyPartDescription"
-      },
-      "class": "BodyPartDescription"
-    },
-    {
-      "path": "Workspace/AshenPup/Humanoid/HumanoidDescription/BodyPartDescription",
-      "properties": {
-        "Color": "0.388235, 0.372549, 0.384314",
-        "Archivable": true,
-        "Name": "BodyPartDescription"
-      },
-      "class": "BodyPartDescription"
-    },
-    {
-      "path": "Workspace/AshenPup/Humanoid/HumanoidDescription/BodyPartDescription",
-      "properties": {
-        "Color": "0.639216, 0.635294, 0.647059",
-        "Archivable": true,
-        "Name": "BodyPartDescription"
-      },
-      "class": "BodyPartDescription"
-    },
-    {
-      "path": "Workspace/AshenPup/Clothing",
+      "path": "Workspace/Tetsu/Clothing",
       "properties": {
         "Name": "Clothing",
         "Archivable": true
@@ -835,50 +442,25 @@
       "class": "Shirt"
     },
     {
-      "path": "Workspace/AshenPup/Accessory (Baki_HeadTemplate)",
+      "path": "Workspace/Tetsu/Accessory (LongAccessory)",
       "properties": {
-        "Name": "Accessory (Baki_HeadTemplate)",
+        "Name": "Accessory (LongAccessory)",
         "Archivable": true
       },
       "class": "Accessory"
     },
     {
-      "path": "Workspace/AshenPup/Accessory (Baki_HeadTemplate)/ThumbnailConfiguration",
-      "properties": {
-        "Name": "ThumbnailConfiguration",
-        "Archivable": true
-      },
-      "class": "Configuration"
-    },
-    {
-      "path": "Workspace/AshenPup/Accessory (Baki_HeadTemplate)/ThumbnailConfiguration/ThumbnailCameraTarget",
-      "properties": {
-        "Name": "ThumbnailCameraTarget",
-        "Archivable": true
-      },
-      "class": "ObjectValue"
-    },
-    {
-      "path": "Workspace/AshenPup/Accessory (Baki_HeadTemplate)/ThumbnailConfiguration/ThumbnailCameraValue",
-      "properties": {
-        "Value": "-1.45333456e-06, 0, -9.625, -1, 0, -1.50995803e-07, 0, 1, 0, 1.50995803e-07, 0, -1",
-        "Archivable": true,
-        "Name": "ThumbnailCameraValue"
-      },
-      "class": "CFrameValue"
-    },
-    {
-      "path": "Workspace/AshenPup/Accessory (Baki_HeadTemplate)/Handle",
+      "path": "Workspace/Tetsu/Accessory (LongAccessory)/Handle",
       "properties": {
         "CanCollide": false,
         "Color": "0.639216, 0.635294, 0.647059",
         "Anchored": false,
         "Shape": "Enum.PartType.Block",
-        "Rotation": "0, 0, 0",
+        "Rotation": "180, -41.63399887084961, 180",
         "Transparency": 0,
         "Name": "Handle",
-        "Position": "-63.50093078613281, 6.00095272064209, 25.499427795410156",
-        "CFrame": "-63.5009308, 6.00095272, 25.4994278, 1, -1.27080668e-07, 4.76835282e-07, 1.27080725e-07, 1, -1.19208728e-07, -4.76835254e-07, 1.19208792e-07, 1",
+        "Position": "-65.3000259399414, 5.267638206481934, 39.26431655883789",
+        "CFrame": "-65.3000259, 5.26763821, 39.2643166, -0.747401059, -1.97963459e-08, -0.664373159, -2.38418778e-07, 1, 2.38417385e-07, 0.664373159, 3.3659245e-07, -0.747401059",
         "Material": "Enum.Material.Plastic",
         "Archivable": true,
         "Size": "1, 1, 1"
@@ -886,7 +468,7 @@
       "class": "Part"
     },
     {
-      "path": "Workspace/AshenPup/Accessory (Baki_HeadTemplate)/Handle/AccessoryWeld",
+      "path": "Workspace/Tetsu/Accessory (LongAccessory)/Handle/AccessoryWeld",
       "properties": {
         "Enabled": true,
         "Name": "AccessoryWeld",
@@ -896,38 +478,17 @@
       "class": "Weld"
     },
     {
-      "path": "Workspace/AshenPup/Accessory (Baki_HeadTemplate)/Handle/SpecialMesh",
+      "path": "Workspace/Tetsu/Accessory (LongAccessory)/Handle/SpecialMesh",
       "properties": {
         "Scale": "1, 1, 1",
-        "MeshId": "rbxassetid://125003079967767",
+        "MeshId": "rbxassetid://75887919688804",
         "Archivable": true,
         "Name": "SpecialMesh"
       },
       "class": "SpecialMesh"
     },
     {
-      "path": "Workspace/AshenPup/Accessory (Baki_HeadTemplate)/Handle/AvatarPartScaleType",
-      "properties": {
-        "Value": "Classic",
-        "Archivable": true,
-        "Name": "AvatarPartScaleType"
-      },
-      "class": "StringValue"
-    },
-    {
-      "path": "Workspace/AshenPup/Accessory (Baki_HeadTemplate)/Handle/FaceCenterAttachment",
-      "properties": {
-        "Visible": false,
-        "Name": "FaceCenterAttachment",
-        "Position": "0.0009307861328125, -0.0009529590606689453, 0.00057220458984375",
-        "CFrame": "0.000930786133, -0.000952959061, 0.00057220459, 1, 1.27080725e-07, -4.76835254e-07, -1.27080668e-07, 1, 1.19208792e-07, 4.76835282e-07, -1.19208728e-07, 1",
-        "Archivable": true,
-        "Rotation": "-0.000006830160600657109, -0.000027320647859596647, -0.000007281189027708024"
-      },
-      "class": "Attachment"
-    },
-    {
-      "path": "Workspace/AshenPup/Accessory (Baki_HeadTemplate)/Handle/OriginalSize",
+      "path": "Workspace/Tetsu/Accessory (LongAccessory)/Handle/OriginalSize",
       "properties": {
         "Value": "1, 1, 1",
         "Archivable": true,
@@ -936,463 +497,53 @@
       "class": "Vector3Value"
     },
     {
-      "path": "Workspace/AshenPup/Clothing",
+      "path": "Workspace/Tetsu/Accessory (LongAccessory)/Handle/AvatarPartScaleType",
       "properties": {
-        "Name": "Clothing",
-        "Archivable": true
-      },
-      "class": "Pants"
-    },
-    {
-      "path": "Workspace/AshenPup/Left Leg",
-      "properties": {
-        "CanCollide": false,
-        "Color": "0.917647, 0.721569, 0.572549",
-        "Anchored": false,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "0, 0, 0",
-        "Transparency": 0,
-        "Name": "Left Leg",
-        "Position": "-64, 2.5, 25.5",
-        "CFrame": "-64, 2.5, 25.5, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Material": "Enum.Material.Plastic",
+        "Value": "Classic",
         "Archivable": true,
-        "Size": "1, 2, 1"
+        "Name": "AvatarPartScaleType"
       },
-      "class": "Part"
+      "class": "StringValue"
     },
     {
-      "path": "Workspace/AshenPup/Left Leg/Snap",
-      "properties": {
-        "Enabled": true,
-        "Name": "Snap",
-        "Archivable": true,
-        "Active": false
-      },
-      "class": "Snap"
-    },
-    {
-      "path": "Workspace/AshenPup/Left Leg/Snap",
-      "properties": {
-        "Enabled": true,
-        "Name": "Snap",
-        "Archivable": true,
-        "Active": false
-      },
-      "class": "Snap"
-    },
-    {
-      "path": "Workspace/AshenPup/Left Leg/Snap",
-      "properties": {
-        "Enabled": true,
-        "Name": "Snap",
-        "Archivable": true,
-        "Active": false
-      },
-      "class": "Snap"
-    },
-    {
-      "path": "Workspace/AshenPup/Left Leg/Snap",
-      "properties": {
-        "Enabled": true,
-        "Name": "Snap",
-        "Archivable": true,
-        "Active": false
-      },
-      "class": "Snap"
-    },
-    {
-      "path": "Workspace/AshenPup/Left Leg/Snap",
-      "properties": {
-        "Enabled": true,
-        "Name": "Snap",
-        "Archivable": true,
-        "Active": false
-      },
-      "class": "Snap"
-    },
-    {
-      "path": "Workspace/AshenPup/Left Leg/LeftFootAttachment",
-      "properties": {
-        "Visible": false,
-        "Name": "LeftFootAttachment",
-        "Position": "0, -1, 0",
-        "CFrame": "0, -1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Rotation": "-0, 0, -0"
-      },
-      "class": "Attachment"
-    },
-    {
-      "path": "Workspace/AshenPup/Right Arm",
-      "properties": {
-        "CanCollide": false,
-        "Color": "0.917647, 0.721569, 0.572549",
-        "Anchored": false,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "0, 0, 0",
-        "Transparency": 0,
-        "Name": "Right Arm",
-        "Position": "-62, 4.5, 25.5",
-        "CFrame": "-62, 4.5, 25.5, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Material": "Enum.Material.Plastic",
-        "Archivable": true,
-        "Size": "1, 2, 1"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/AshenPup/Right Arm/RightShoulderAttachment",
-      "properties": {
-        "Visible": false,
-        "Name": "RightShoulderAttachment",
-        "Position": "0, 1, 0",
-        "CFrame": "0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Rotation": "-0, 0, -0"
-      },
-      "class": "Attachment"
-    },
-    {
-      "path": "Workspace/AshenPup/Right Arm/RightGripAttachment",
-      "properties": {
-        "Visible": false,
-        "Name": "RightGripAttachment",
-        "Position": "0, -1, 0",
-        "CFrame": "0, -1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Rotation": "-0, 0, -0"
-      },
-      "class": "Attachment"
-    },
-    {
-      "path": "Workspace/AshenPup/Right Arm/RightGrip",
-      "properties": {
-        "Enabled": true,
-        "Name": "RightGrip",
-        "Archivable": true,
-        "Active": true
-      },
-      "class": "Weld"
-    },
-    {
-      "path": "Workspace/AshenPup/Head",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.917647, 0.721569, 0.572549",
-        "Anchored": false,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "0, 0, 0",
-        "Transparency": 0,
-        "Name": "Head",
-        "Position": "-63.5, 6, 25.5",
-        "CFrame": "-63.5, 6, 25.5, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Material": "Enum.Material.Plastic",
-        "Archivable": true,
-        "Size": "2, 1, 1"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/AshenPup/Head/Mesh",
-      "properties": {
-        "Scale": "1.25, 1.25, 1.25",
-        "MeshId": "",
-        "Archivable": true,
-        "Name": "Mesh"
-      },
-      "class": "SpecialMesh"
-    },
-    {
-      "path": "Workspace/AshenPup/Head/FaceCenterAttachment",
-      "properties": {
-        "Visible": false,
-        "Name": "FaceCenterAttachment",
-        "Position": "0, 0, 0",
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Rotation": "-0, 0, -0"
-      },
-      "class": "Attachment"
-    },
-    {
-      "path": "Workspace/AshenPup/Head/HairAttachment",
+      "path": "Workspace/Tetsu/Accessory (LongAccessory)/Handle/HairAttachment",
       "properties": {
         "Visible": false,
         "Name": "HairAttachment",
-        "Position": "0, 0.6000000238418579, 0",
-        "CFrame": "0, 0.600000024, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Position": "0.006184533704072237, 1.3323616981506348, -0.07294578850269318",
+        "CFrame": "0.0061845337, 1.3323617, -0.0729457885, -1, -2.38418778e-07, 9.53670394e-07, -2.38418551e-07, 1, 2.38417613e-07, -9.53670451e-07, 2.38417385e-07, -1",
         "Archivable": true,
-        "Rotation": "-0, 0, -0"
+        "Rotation": "-179.99998474121094, 0.00005464128480525687, 179.99998474121094"
       },
       "class": "Attachment"
     },
     {
-      "path": "Workspace/AshenPup/Head/FaceFrontAttachment",
+      "path": "Workspace/Tetsu/Accessory (LongAccessory)/ThumbnailConfiguration",
       "properties": {
-        "Visible": false,
-        "Name": "FaceFrontAttachment",
-        "Position": "0, 0, -0.6000000238418579",
-        "CFrame": "0, 0, -0.600000024, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Rotation": "-0, 0, -0"
-      },
-      "class": "Attachment"
-    },
-    {
-      "path": "Workspace/AshenPup/Head/HatAttachment",
-      "properties": {
-        "Visible": false,
-        "Name": "HatAttachment",
-        "Position": "0, 0.6000000238418579, 0",
-        "CFrame": "0, 0.600000024, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Rotation": "-0, 0, -0"
-      },
-      "class": "Attachment"
-    },
-    {
-      "path": "Workspace/AshenPup/Head/face",
-      "properties": {
-        "Rotation": 0,
-        "Transparency": 0,
-        "Name": "face",
-        "ZIndex": 1,
-        "Archivable": true,
-        "Texture": "rbxasset://textures/face.png"
-      },
-      "class": "Decal"
-    },
-    {
-      "path": "Workspace/AshenPup/Right Leg",
-      "properties": {
-        "CanCollide": false,
-        "Color": "0.917647, 0.721569, 0.572549",
-        "Anchored": false,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "0, 0, 0",
-        "Transparency": 0,
-        "Name": "Right Leg",
-        "Position": "-63, 2.5, 25.5",
-        "CFrame": "-63, 2.5, 25.5, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Material": "Enum.Material.Plastic",
-        "Archivable": true,
-        "Size": "1, 2, 1"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/AshenPup/Right Leg/Snap",
-      "properties": {
-        "Enabled": true,
-        "Name": "Snap",
-        "Archivable": true,
-        "Active": false
-      },
-      "class": "Snap"
-    },
-    {
-      "path": "Workspace/AshenPup/Right Leg/Snap",
-      "properties": {
-        "Enabled": true,
-        "Name": "Snap",
-        "Archivable": true,
-        "Active": false
-      },
-      "class": "Snap"
-    },
-    {
-      "path": "Workspace/AshenPup/Right Leg/RightFootAttachment",
-      "properties": {
-        "Visible": false,
-        "Name": "RightFootAttachment",
-        "Position": "0, -1, 0",
-        "CFrame": "0, -1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Rotation": "-0, 0, -0"
-      },
-      "class": "Attachment"
-    },
-    {
-      "path": "Workspace/AshenPup/Right Leg/Snap",
-      "properties": {
-        "Enabled": true,
-        "Name": "Snap",
-        "Archivable": true,
-        "Active": false
-      },
-      "class": "Snap"
-    },
-    {
-      "path": "Workspace/AshenPup/Left Arm",
-      "properties": {
-        "CanCollide": false,
-        "Color": "0.917647, 0.721569, 0.572549",
-        "Anchored": false,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "0, 0, 0",
-        "Transparency": 0,
-        "Name": "Left Arm",
-        "Position": "-65, 4.5, 25.5",
-        "CFrame": "-65, 4.5, 25.5, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Material": "Enum.Material.Plastic",
-        "Archivable": true,
-        "Size": "1, 2, 1"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/AshenPup/Left Arm/LeftGripAttachment",
-      "properties": {
-        "Visible": false,
-        "Name": "LeftGripAttachment",
-        "Position": "0, -1, 0",
-        "CFrame": "0, -1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Rotation": "-0, 0, -0"
-      },
-      "class": "Attachment"
-    },
-    {
-      "path": "Workspace/AshenPup/Left Arm/LeftShoulderAttachment",
-      "properties": {
-        "Visible": false,
-        "Name": "LeftShoulderAttachment",
-        "Position": "0, 1, 0",
-        "CFrame": "0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Rotation": "-0, 0, -0"
-      },
-      "class": "Attachment"
-    },
-    {
-      "path": "Workspace/AshenPup/Sword",
-      "properties": {
-        "Enabled": true,
-        "Archivable": true,
-        "Name": "Sword"
-      },
-      "class": "Tool"
-    },
-    {
-      "path": "Workspace/AshenPup/Sword/Handle",
-      "properties": {
-        "CanCollide": false,
-        "Color": "0.454902, 0.305882, 0.180392",
-        "Anchored": false,
-        "TextureID": "",
-        "MeshId": "rbxassetid://13662643071",
-        "Rotation": "-84.81900024414062, 84.8290023803711, 0",
-        "Transparency": 0,
-        "Name": "Handle",
-        "Position": "-62, 3.6130990982055664, 23.5081729888916",
-        "CFrame": "-62, 3.6130991, 23.508173, 0.0901361629, 3.16649675e-08, 0.99592948, -0.991860032, 0.0903079733, 0.0897678584, -0.0899403691, -0.995913923, 0.00814004615",
-        "Material": "Enum.Material.Wood",
-        "Archivable": true,
-        "Size": "0.4206775724887848, 4.6761860847473145, 0.39863264560699463"
-      },
-      "class": "MeshPart"
-    },
-    {
-      "path": "Workspace/AshenPup/Sword/Handle/Trail",
-      "properties": {
-        "Enabled": true,
-        "Name": "Trail",
-        "LightEmission": 0.3499999940395355,
-        "Brightness": 2,
-        "Archivable": true,
-        "Texture": "rbxassetid://9035801067"
-      },
-      "class": "Trail"
-    },
-    {
-      "path": "Workspace/AshenPup/Sword/Handle/ManualWeld",
-      "properties": {
-        "Enabled": true,
-        "Name": "ManualWeld",
-        "Archivable": true,
-        "Active": false
-      },
-      "class": "ManualWeld"
-    },
-    {
-      "path": "Workspace/AshenPup/Sword/Handle/SwordLines",
-      "properties": {
-        "Enabled": true,
-        "Name": "SwordLines",
-        "Archivable": true,
-        "Active": false
-      },
-      "class": "Motor6D"
-    },
-    {
-      "path": "Workspace/AshenPup/Sword/Handle/Weld",
-      "properties": {
-        "Enabled": true,
-        "Name": "Weld",
-        "Archivable": true,
-        "Active": false
-      },
-      "class": "Weld"
-    },
-    {
-      "path": "Workspace/AshenPup/Sword/Handle/Trail2",
-      "properties": {
-        "Enabled": true,
-        "Name": "Trail2",
-        "LightEmission": 0.44999998807907104,
-        "Brightness": 10,
-        "Archivable": true,
-        "Texture": "rbxassetid://9035800962"
-      },
-      "class": "Trail"
-    },
-    {
-      "path": "Workspace/AshenPup/Sword/Handle/Attachment",
-      "properties": {
-        "Visible": false,
-        "Name": "Attachment",
-        "Position": "-0.12395477294921875, 2.261444091796875, -0.000030517578125",
-        "CFrame": "-0.123954773, 2.26144409, -3.05175781e-05, 0.999358952, -0.0358029418, -2.44915987e-06, 0.0358029455, 0.999358892, 1.06095357e-07, 2.44379112e-06, -1.93714442e-07, 1.00000012",
-        "Archivable": true,
-        "Rotation": "-0.00000607881520409137, -0.00014032651961315423, 2.051795721054077"
-      },
-      "class": "Attachment"
-    },
-    {
-      "path": "Workspace/AshenPup/Sword/Handle/Trail3",
-      "properties": {
-        "Enabled": true,
-        "Name": "Trail3",
-        "LightEmission": 0.3499999940395355,
-        "Brightness": 2,
-        "Archivable": true,
-        "Texture": "rbxassetid://9035819980"
-      },
-      "class": "Trail"
-    },
-    {
-      "path": "Workspace/AshenPup/Sword/Handle/Attachment",
-      "properties": {
-        "Visible": false,
-        "Name": "Attachment",
-        "Position": "-0.010235786437988281, -0.9125518798828125, -0.0000457763671875",
-        "CFrame": "-0.0102357864, -0.91255188, -4.57763672e-05, 0.999358892, -0.035803061, -1.94044401e-06, 0.035803061, 0.999358892, 5.72221595e-08, 1.93715118e-06, -1.26659302e-07, 1.00000012",
-        "Archivable": true,
-        "Rotation": "-0.000003278587655586307, -0.00011117925168946385, 2.051802635192871"
-      },
-      "class": "Attachment"
-    },
-    {
-      "path": "Workspace/WolfScout",
-      "properties": {
-        "Name": "WolfScout",
+        "Name": "ThumbnailConfiguration",
         "Archivable": true
       },
-      "class": "Model"
+      "class": "Configuration"
     },
     {
-      "path": "Workspace/WolfScout/Humanoid",
+      "path": "Workspace/Tetsu/Accessory (LongAccessory)/ThumbnailConfiguration/ThumbnailCameraValue",
+      "properties": {
+        "Value": "0.682114601, 0.488521576, 3.1539619, 0.972663939, -0.0462950133, 0.22755006, -1.0477379e-09, 0.979927778, 0.199365288, -0.232211173, -0.193916321, 0.953141391",
+        "Archivable": true,
+        "Name": "ThumbnailCameraValue"
+      },
+      "class": "CFrameValue"
+    },
+    {
+      "path": "Workspace/Tetsu/Accessory (LongAccessory)/ThumbnailConfiguration/ThumbnailCameraTarget",
+      "properties": {
+        "Name": "ThumbnailCameraTarget",
+        "Archivable": true
+      },
+      "class": "ObjectValue"
+    },
+    {
+      "path": "Workspace/Tetsu/Humanoid",
       "properties": {
         "Name": "Humanoid",
         "JumpPower": 50,
@@ -1404,7 +555,15 @@
       "class": "Humanoid"
     },
     {
-      "path": "Workspace/WolfScout/Humanoid/HumanoidDescription",
+      "path": "Workspace/Tetsu/Humanoid/Animator",
+      "properties": {
+        "Name": "Animator",
+        "Archivable": true
+      },
+      "class": "Animator"
+    },
+    {
+      "path": "Workspace/Tetsu/Humanoid/HumanoidDescription",
       "properties": {
         "Name": "HumanoidDescription",
         "Archivable": true
@@ -1412,473 +571,71 @@
       "class": "HumanoidDescription"
     },
     {
-      "path": "Workspace/WolfScout/Humanoid/HumanoidDescription/BodyPartDescription",
+      "path": "Workspace/Tetsu/Humanoid/HumanoidDescription/BodyPartDescription",
       "properties": {
-        "Color": "0.639216, 0.635294, 0.647059",
+        "Color": "0.5, 0.5, 0.5",
         "Archivable": true,
         "Name": "BodyPartDescription"
       },
       "class": "BodyPartDescription"
     },
     {
-      "path": "Workspace/WolfScout/Humanoid/HumanoidDescription/BodyPartDescription",
+      "path": "Workspace/Tetsu/Humanoid/HumanoidDescription/BodyPartDescription",
       "properties": {
-        "Color": "0.388235, 0.372549, 0.384314",
+        "Color": "0.5, 0.5, 0.5",
         "Archivable": true,
         "Name": "BodyPartDescription"
       },
       "class": "BodyPartDescription"
     },
     {
-      "path": "Workspace/WolfScout/Humanoid/HumanoidDescription/BodyPartDescription",
+      "path": "Workspace/Tetsu/Humanoid/HumanoidDescription/BodyPartDescription",
       "properties": {
-        "Color": "0.639216, 0.635294, 0.647059",
+        "Color": "0.5, 0.5, 0.5",
         "Archivable": true,
         "Name": "BodyPartDescription"
       },
       "class": "BodyPartDescription"
     },
     {
-      "path": "Workspace/WolfScout/Humanoid/HumanoidDescription/BodyPartDescription",
+      "path": "Workspace/Tetsu/Humanoid/HumanoidDescription/BodyPartDescription",
       "properties": {
-        "Color": "0.639216, 0.635294, 0.647059",
+        "Color": "0.5, 0.5, 0.5",
         "Archivable": true,
         "Name": "BodyPartDescription"
       },
       "class": "BodyPartDescription"
     },
     {
-      "path": "Workspace/WolfScout/Humanoid/HumanoidDescription/BodyPartDescription",
+      "path": "Workspace/Tetsu/Humanoid/HumanoidDescription/BodyPartDescription",
       "properties": {
-        "Color": "0.639216, 0.635294, 0.647059",
+        "Color": "0.5, 0.5, 0.5",
         "Archivable": true,
         "Name": "BodyPartDescription"
       },
       "class": "BodyPartDescription"
     },
     {
-      "path": "Workspace/WolfScout/Humanoid/HumanoidDescription/BodyPartDescription",
+      "path": "Workspace/Tetsu/Humanoid/HumanoidDescription/BodyPartDescription",
       "properties": {
-        "Color": "0.639216, 0.635294, 0.647059",
+        "Color": "0.5, 0.5, 0.5",
         "Archivable": true,
         "Name": "BodyPartDescription"
       },
       "class": "BodyPartDescription"
     },
     {
-      "path": "Workspace/WolfScout/Head",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.917647, 0.721569, 0.572549",
-        "Anchored": false,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "0, 0, 0",
-        "Transparency": 0,
-        "Name": "Head",
-        "Position": "-67.75, 6, 25.5",
-        "CFrame": "-67.75, 6, 25.5, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Material": "Enum.Material.Plastic",
-        "Archivable": true,
-        "Size": "2, 1, 1"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/WolfScout/Head/FaceFrontAttachment",
-      "properties": {
-        "Visible": false,
-        "Name": "FaceFrontAttachment",
-        "Position": "0, 0, -0.6000000238418579",
-        "CFrame": "0, 0, -0.600000024, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Rotation": "-0, 0, -0"
-      },
-      "class": "Attachment"
-    },
-    {
-      "path": "Workspace/WolfScout/Head/face",
-      "properties": {
-        "Rotation": 0,
-        "Transparency": 0,
-        "Name": "face",
-        "ZIndex": 1,
-        "Archivable": true,
-        "Texture": "rbxasset://textures/face.png"
-      },
-      "class": "Decal"
-    },
-    {
-      "path": "Workspace/WolfScout/Head/HatAttachment",
-      "properties": {
-        "Visible": false,
-        "Name": "HatAttachment",
-        "Position": "0, 0.6000000238418579, 0",
-        "CFrame": "0, 0.600000024, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Rotation": "-0, 0, -0"
-      },
-      "class": "Attachment"
-    },
-    {
-      "path": "Workspace/WolfScout/Head/HairAttachment",
-      "properties": {
-        "Visible": false,
-        "Name": "HairAttachment",
-        "Position": "0, 0.6000000238418579, 0",
-        "CFrame": "0, 0.600000024, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Rotation": "-0, 0, -0"
-      },
-      "class": "Attachment"
-    },
-    {
-      "path": "Workspace/WolfScout/Head/Mesh",
-      "properties": {
-        "Scale": "1.25, 1.25, 1.25",
-        "MeshId": "",
-        "Archivable": true,
-        "Name": "Mesh"
-      },
-      "class": "SpecialMesh"
-    },
-    {
-      "path": "Workspace/WolfScout/Head/FaceCenterAttachment",
-      "properties": {
-        "Visible": false,
-        "Name": "FaceCenterAttachment",
-        "Position": "0, 0, 0",
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Rotation": "-0, 0, -0"
-      },
-      "class": "Attachment"
-    },
-    {
-      "path": "Workspace/WolfScout/HumanoidRootPart",
+      "path": "Workspace/Tetsu/Left Arm",
       "properties": {
         "CanCollide": false,
-        "Color": "0.639216, 0.635294, 0.647059",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "0, 0, 0",
-        "Transparency": 1,
-        "Name": "HumanoidRootPart",
-        "Position": "-67.75, 4.5, 25.5",
-        "CFrame": "-67.75, 4.5, 25.5, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Material": "Enum.Material.Plastic",
-        "Archivable": true,
-        "Size": "2, 2, 1"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/WolfScout/HumanoidRootPart/RootAttachment",
-      "properties": {
-        "Visible": false,
-        "Name": "RootAttachment",
-        "Position": "0, 0, 0",
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Rotation": "-0, 0, -0"
-      },
-      "class": "Attachment"
-    },
-    {
-      "path": "Workspace/WolfScout/HumanoidRootPart/RootJoint",
-      "properties": {
-        "Enabled": true,
-        "Name": "RootJoint",
-        "Archivable": true,
-        "Active": true
-      },
-      "class": "Motor6D"
-    },
-    {
-      "path": "Workspace/WolfScout/Torso",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.917647, 0.721569, 0.572549",
+        "Color": "0.913725, 0.843137, 0.772549",
         "Anchored": false,
         "Shape": "Enum.PartType.Block",
-        "Rotation": "0, 0, 0",
-        "Transparency": 0,
-        "Name": "Torso",
-        "Position": "-67.75, 4.5, 25.5",
-        "CFrame": "-67.75, 4.5, 25.5, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Material": "Enum.Material.Plastic",
-        "Archivable": true,
-        "Size": "2, 2, 1"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/WolfScout/Torso/BodyFrontAttachment",
-      "properties": {
-        "Visible": false,
-        "Name": "BodyFrontAttachment",
-        "Position": "0, 0, -0.5",
-        "CFrame": "0, 0, -0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Rotation": "-0, 0, -0"
-      },
-      "class": "Attachment"
-    },
-    {
-      "path": "Workspace/WolfScout/Torso/Weld",
-      "properties": {
-        "Enabled": true,
-        "Name": "Weld",
-        "Archivable": true,
-        "Active": false
-      },
-      "class": "Weld"
-    },
-    {
-      "path": "Workspace/WolfScout/Torso/Weld",
-      "properties": {
-        "Enabled": true,
-        "Name": "Weld",
-        "Archivable": true,
-        "Active": false
-      },
-      "class": "Weld"
-    },
-    {
-      "path": "Workspace/WolfScout/Torso/Weld",
-      "properties": {
-        "Enabled": true,
-        "Name": "Weld",
-        "Archivable": true,
-        "Active": false
-      },
-      "class": "Weld"
-    },
-    {
-      "path": "Workspace/WolfScout/Torso/NeckAttachment",
-      "properties": {
-        "Visible": false,
-        "Name": "NeckAttachment",
-        "Position": "0, 1, 0",
-        "CFrame": "0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Rotation": "-0, 0, -0"
-      },
-      "class": "Attachment"
-    },
-    {
-      "path": "Workspace/WolfScout/Torso/Weld",
-      "properties": {
-        "Enabled": true,
-        "Name": "Weld",
-        "Archivable": true,
-        "Active": false
-      },
-      "class": "Weld"
-    },
-    {
-      "path": "Workspace/WolfScout/Torso/RightCollarAttachment",
-      "properties": {
-        "Visible": false,
-        "Name": "RightCollarAttachment",
-        "Position": "1, 1, 0",
-        "CFrame": "1, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Rotation": "-0, 0, -0"
-      },
-      "class": "Attachment"
-    },
-    {
-      "path": "Workspace/WolfScout/Torso/WaistCenterAttachment",
-      "properties": {
-        "Visible": false,
-        "Name": "WaistCenterAttachment",
-        "Position": "0, -1, 0",
-        "CFrame": "0, -1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Rotation": "-0, 0, -0"
-      },
-      "class": "Attachment"
-    },
-    {
-      "path": "Workspace/WolfScout/Torso/WaistBackAttachment",
-      "properties": {
-        "Visible": false,
-        "Name": "WaistBackAttachment",
-        "Position": "0, -1, 0.5",
-        "CFrame": "0, -1, 0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Rotation": "-0, 0, -0"
-      },
-      "class": "Attachment"
-    },
-    {
-      "path": "Workspace/WolfScout/Torso/WaistFrontAttachment",
-      "properties": {
-        "Visible": false,
-        "Name": "WaistFrontAttachment",
-        "Position": "0, -1, -0.5",
-        "CFrame": "0, -1, -0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Rotation": "-0, 0, -0"
-      },
-      "class": "Attachment"
-    },
-    {
-      "path": "Workspace/WolfScout/Torso/LeftCollarAttachment",
-      "properties": {
-        "Visible": false,
-        "Name": "LeftCollarAttachment",
-        "Position": "-1, 1, 0",
-        "CFrame": "-1, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Rotation": "-0, 0, -0"
-      },
-      "class": "Attachment"
-    },
-    {
-      "path": "Workspace/WolfScout/Torso/Neck",
-      "properties": {
-        "Enabled": true,
-        "Name": "Neck",
-        "Archivable": true,
-        "Active": true
-      },
-      "class": "Motor6D"
-    },
-    {
-      "path": "Workspace/WolfScout/Torso/BodyBackAttachment",
-      "properties": {
-        "Visible": false,
-        "Name": "BodyBackAttachment",
-        "Position": "0, 0, 0.5",
-        "CFrame": "0, 0, 0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Rotation": "-0, 0, -0"
-      },
-      "class": "Attachment"
-    },
-    {
-      "path": "Workspace/WolfScout/Torso/Weld",
-      "properties": {
-        "Enabled": true,
-        "Name": "Weld",
-        "Archivable": true,
-        "Active": false
-      },
-      "class": "Weld"
-    },
-    {
-      "path": "Workspace/WolfScout/Torso/Right Hip",
-      "properties": {
-        "Enabled": true,
-        "Name": "Right Hip",
-        "Archivable": true,
-        "Active": true
-      },
-      "class": "Motor6D"
-    },
-    {
-      "path": "Workspace/WolfScout/Torso/Left Shoulder",
-      "properties": {
-        "Enabled": true,
-        "Name": "Left Shoulder",
-        "Archivable": true,
-        "Active": true
-      },
-      "class": "Motor6D"
-    },
-    {
-      "path": "Workspace/WolfScout/Torso/Left Hip",
-      "properties": {
-        "Enabled": true,
-        "Name": "Left Hip",
-        "Archivable": true,
-        "Active": true
-      },
-      "class": "Motor6D"
-    },
-    {
-      "path": "Workspace/WolfScout/Torso/Right Shoulder",
-      "properties": {
-        "Enabled": true,
-        "Name": "Right Shoulder",
-        "Archivable": true,
-        "Active": true
-      },
-      "class": "Motor6D"
-    },
-    {
-      "path": "Workspace/WolfScout/Right Leg",
-      "properties": {
-        "CanCollide": false,
-        "Color": "0.917647, 0.721569, 0.572549",
-        "Anchored": false,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "0, 0, 0",
-        "Transparency": 0,
-        "Name": "Right Leg",
-        "Position": "-67.25, 2.5, 25.5",
-        "CFrame": "-67.25, 2.5, 25.5, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Material": "Enum.Material.Plastic",
-        "Archivable": true,
-        "Size": "1, 2, 1"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/WolfScout/Right Leg/RightFootAttachment",
-      "properties": {
-        "Visible": false,
-        "Name": "RightFootAttachment",
-        "Position": "0, -1, 0",
-        "CFrame": "0, -1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Rotation": "-0, 0, -0"
-      },
-      "class": "Attachment"
-    },
-    {
-      "path": "Workspace/WolfScout/Right Leg/Snap",
-      "properties": {
-        "Enabled": true,
-        "Name": "Snap",
-        "Archivable": true,
-        "Active": false
-      },
-      "class": "Snap"
-    },
-    {
-      "path": "Workspace/WolfScout/Right Leg/Snap",
-      "properties": {
-        "Enabled": true,
-        "Name": "Snap",
-        "Archivable": true,
-        "Active": false
-      },
-      "class": "Snap"
-    },
-    {
-      "path": "Workspace/WolfScout/Right Leg/Snap",
-      "properties": {
-        "Enabled": true,
-        "Name": "Snap",
-        "Archivable": true,
-        "Active": false
-      },
-      "class": "Snap"
-    },
-    {
-      "path": "Workspace/WolfScout/Left Arm",
-      "properties": {
-        "CanCollide": false,
-        "Color": "0.917647, 0.721569, 0.572549",
-        "Anchored": false,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "0, 0, 0",
+        "Rotation": "0, 41.63399887084961, 0",
         "Transparency": 0,
         "Name": "Left Arm",
-        "Position": "-69.25, 4.5, 25.5",
-        "CFrame": "-69.25, 4.5, 25.5, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Position": "-66.37728881835938, 4.5, 40.31950378417969",
+        "CFrame": "-66.3772888, 4.5, 40.3195038, 0.747401714, 0, 0.664372444, 0, 1, 0, -0.664372444, 0, 0.747401714",
         "Material": "Enum.Material.Plastic",
         "Archivable": true,
         "Size": "1, 2, 1"
@@ -1886,7 +643,7 @@
       "class": "Part"
     },
     {
-      "path": "Workspace/WolfScout/Left Arm/LeftGripAttachment",
+      "path": "Workspace/Tetsu/Left Arm/LeftGripAttachment",
       "properties": {
         "Visible": false,
         "Name": "LeftGripAttachment",
@@ -1898,7 +655,7 @@
       "class": "Attachment"
     },
     {
-      "path": "Workspace/WolfScout/Left Arm/LeftShoulderAttachment",
+      "path": "Workspace/Tetsu/Left Arm/LeftShoulderAttachment",
       "properties": {
         "Visible": false,
         "Name": "LeftShoulderAttachment",
@@ -1910,17 +667,193 @@
       "class": "Attachment"
     },
     {
-      "path": "Workspace/WolfScout/Left Leg",
+      "path": "Workspace/Tetsu/Torso",
       "properties": {
-        "CanCollide": false,
-        "Color": "0.917647, 0.721569, 0.572549",
+        "CanCollide": true,
+        "Color": "0.913725, 0.843137, 0.772549",
         "Anchored": false,
         "Shape": "Enum.PartType.Block",
-        "Rotation": "0, 0, 0",
+        "Rotation": "0, 41.63399887084961, 0",
+        "Transparency": 0,
+        "Name": "Torso",
+        "Position": "-65.25618743896484, 4.5, 39.32294464111328",
+        "CFrame": "-65.2561874, 4.5, 39.3229446, 0.747401714, 0, 0.664372444, 0, 1, 0, -0.664372444, 0, 0.747401714",
+        "Material": "Enum.Material.Plastic",
+        "Archivable": true,
+        "Size": "2, 2, 1"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Tetsu/Torso/NeckAttachment",
+      "properties": {
+        "Visible": false,
+        "Name": "NeckAttachment",
+        "Position": "0, 1, 0",
+        "CFrame": "0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Rotation": "-0, 0, -0"
+      },
+      "class": "Attachment"
+    },
+    {
+      "path": "Workspace/Tetsu/Torso/Left Hip",
+      "properties": {
+        "Enabled": true,
+        "Name": "Left Hip",
+        "Archivable": true,
+        "Active": true
+      },
+      "class": "Motor6D"
+    },
+    {
+      "path": "Workspace/Tetsu/Torso/roblox",
+      "properties": {
+        "Rotation": 0,
+        "Transparency": 0,
+        "Name": "roblox",
+        "ZIndex": 1,
+        "Archivable": true,
+        "Texture": ""
+      },
+      "class": "Decal"
+    },
+    {
+      "path": "Workspace/Tetsu/Torso/Neck",
+      "properties": {
+        "Enabled": true,
+        "Name": "Neck",
+        "Archivable": true,
+        "Active": true
+      },
+      "class": "Motor6D"
+    },
+    {
+      "path": "Workspace/Tetsu/Torso/LeftCollarAttachment",
+      "properties": {
+        "Visible": false,
+        "Name": "LeftCollarAttachment",
+        "Position": "-1, 1, 0",
+        "CFrame": "-1, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Rotation": "-0, 0, -0"
+      },
+      "class": "Attachment"
+    },
+    {
+      "path": "Workspace/Tetsu/Torso/BodyFrontAttachment",
+      "properties": {
+        "Visible": false,
+        "Name": "BodyFrontAttachment",
+        "Position": "0, 0, -0.5",
+        "CFrame": "0, 0, -0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Rotation": "-0, 0, -0"
+      },
+      "class": "Attachment"
+    },
+    {
+      "path": "Workspace/Tetsu/Torso/BodyBackAttachment",
+      "properties": {
+        "Visible": false,
+        "Name": "BodyBackAttachment",
+        "Position": "0, 0, 0.5",
+        "CFrame": "0, 0, 0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Rotation": "-0, 0, -0"
+      },
+      "class": "Attachment"
+    },
+    {
+      "path": "Workspace/Tetsu/Torso/WaistFrontAttachment",
+      "properties": {
+        "Visible": false,
+        "Name": "WaistFrontAttachment",
+        "Position": "0, -1, -0.5",
+        "CFrame": "0, -1, -0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Rotation": "-0, 0, -0"
+      },
+      "class": "Attachment"
+    },
+    {
+      "path": "Workspace/Tetsu/Torso/RightCollarAttachment",
+      "properties": {
+        "Visible": false,
+        "Name": "RightCollarAttachment",
+        "Position": "1, 1, 0",
+        "CFrame": "1, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Rotation": "-0, 0, -0"
+      },
+      "class": "Attachment"
+    },
+    {
+      "path": "Workspace/Tetsu/Torso/Right Shoulder",
+      "properties": {
+        "Enabled": true,
+        "Name": "Right Shoulder",
+        "Archivable": true,
+        "Active": true
+      },
+      "class": "Motor6D"
+    },
+    {
+      "path": "Workspace/Tetsu/Torso/Left Shoulder",
+      "properties": {
+        "Enabled": true,
+        "Name": "Left Shoulder",
+        "Archivable": true,
+        "Active": true
+      },
+      "class": "Motor6D"
+    },
+    {
+      "path": "Workspace/Tetsu/Torso/WaistBackAttachment",
+      "properties": {
+        "Visible": false,
+        "Name": "WaistBackAttachment",
+        "Position": "0, -1, 0.5",
+        "CFrame": "0, -1, 0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Rotation": "-0, 0, -0"
+      },
+      "class": "Attachment"
+    },
+    {
+      "path": "Workspace/Tetsu/Torso/Right Hip",
+      "properties": {
+        "Enabled": true,
+        "Name": "Right Hip",
+        "Archivable": true,
+        "Active": true
+      },
+      "class": "Motor6D"
+    },
+    {
+      "path": "Workspace/Tetsu/Torso/WaistCenterAttachment",
+      "properties": {
+        "Visible": false,
+        "Name": "WaistCenterAttachment",
+        "Position": "0, -1, 0",
+        "CFrame": "0, -1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Rotation": "-0, 0, -0"
+      },
+      "class": "Attachment"
+    },
+    {
+      "path": "Workspace/Tetsu/Left Leg",
+      "properties": {
+        "CanCollide": false,
+        "Color": "0.913725, 0.843137, 0.772549",
+        "Anchored": false,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, 41.63399887084961, 0",
         "Transparency": 0,
         "Name": "Left Leg",
-        "Position": "-68.25, 2.5, 25.5",
-        "CFrame": "-68.25, 2.5, 25.5, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Position": "-65.62989044189453, 2.5, 39.65513229370117",
+        "CFrame": "-65.6298904, 2.5, 39.6551323, 0.747401714, 0, 0.664372444, 0, 1, 0, -0.664372444, 0, 0.747401714",
         "Material": "Enum.Material.Plastic",
         "Archivable": true,
         "Size": "1, 2, 1"
@@ -1928,7 +861,7 @@
       "class": "Part"
     },
     {
-      "path": "Workspace/WolfScout/Left Leg/LeftFootAttachment",
+      "path": "Workspace/Tetsu/Left Leg/LeftFootAttachment",
       "properties": {
         "Visible": false,
         "Name": "LeftFootAttachment",
@@ -1940,67 +873,33 @@
       "class": "Attachment"
     },
     {
-      "path": "Workspace/WolfScout/Left Leg/Snap",
+      "path": "Workspace/Tetsu/Clothing",
       "properties": {
-        "Enabled": true,
-        "Name": "Snap",
-        "Archivable": true,
-        "Active": false
+        "Name": "Clothing",
+        "Archivable": true
       },
-      "class": "Snap"
+      "class": "Pants"
     },
     {
-      "path": "Workspace/WolfScout/Left Leg/Snap",
+      "path": "Workspace/Tetsu/Body Colors",
       "properties": {
-        "Enabled": true,
-        "Name": "Snap",
-        "Archivable": true,
-        "Active": false
+        "Name": "Body Colors",
+        "Archivable": true
       },
-      "class": "Snap"
+      "class": "BodyColors"
     },
     {
-      "path": "Workspace/WolfScout/Left Leg/Snap",
-      "properties": {
-        "Enabled": true,
-        "Name": "Snap",
-        "Archivable": true,
-        "Active": false
-      },
-      "class": "Snap"
-    },
-    {
-      "path": "Workspace/WolfScout/Left Leg/Snap",
-      "properties": {
-        "Enabled": true,
-        "Name": "Snap",
-        "Archivable": true,
-        "Active": false
-      },
-      "class": "Snap"
-    },
-    {
-      "path": "Workspace/WolfScout/Left Leg/Snap",
-      "properties": {
-        "Enabled": true,
-        "Name": "Snap",
-        "Archivable": true,
-        "Active": false
-      },
-      "class": "Snap"
-    },
-    {
-      "path": "Workspace/WolfScout/Right Arm",
+      "path": "Workspace/Tetsu/Right Arm",
       "properties": {
         "CanCollide": false,
-        "Color": "0.917647, 0.721569, 0.572549",
+        "Color": "0.913725, 0.843137, 0.772549",
         "Anchored": false,
         "Shape": "Enum.PartType.Block",
-        "Rotation": "0, 0, 0",
+        "Rotation": "0, 41.63399887084961, 0",
         "Transparency": 0,
         "Name": "Right Arm",
-        "Position": "-66.25, 4.5, 25.5",
-        "CFrame": "-66.25, 4.5, 25.5, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Position": "-64.13508605957031, 4.5, 38.326385498046875",
+        "CFrame": "-64.1350861, 4.5, 38.3263855, 0.747401714, 0, 0.664372444, 0, 1, 0, -0.664372444, 0, 0.747401714",
         "Material": "Enum.Material.Plastic",
         "Archivable": true,
         "Size": "1, 2, 1"
@@ -2008,19 +907,7 @@
       "class": "Part"
     },
     {
-      "path": "Workspace/WolfScout/Right Arm/RightGripAttachment",
-      "properties": {
-        "Visible": false,
-        "Name": "RightGripAttachment",
-        "Position": "0, -1, 0",
-        "CFrame": "0, -1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Rotation": "-0, 0, -0"
-      },
-      "class": "Attachment"
-    },
-    {
-      "path": "Workspace/WolfScout/Right Arm/RightShoulderAttachment",
+      "path": "Workspace/Tetsu/Right Arm/RightShoulderAttachment",
       "properties": {
         "Visible": false,
         "Name": "RightShoulderAttachment",
@@ -2032,53 +919,352 @@
       "class": "Attachment"
     },
     {
-      "path": "Workspace/WolfScout/Body Colors",
+      "path": "Workspace/Tetsu/Right Arm/RightGripAttachment",
       "properties": {
-        "Name": "Body Colors",
-        "Archivable": true
-      },
-      "class": "BodyColors"
-    },
-    {
-      "path": "Workspace/WolfScout/Accessory (Meshes/139190864365936Accessory)",
-      "properties": {
-        "Name": "Accessory (Meshes/139190864365936Accessory)",
-        "Archivable": true
-      },
-      "class": "Accessory"
-    },
-    {
-      "path": "Workspace/WolfScout/Accessory (Meshes/139190864365936Accessory)/ThumbnailConfiguration",
-      "properties": {
-        "Name": "ThumbnailConfiguration",
-        "Archivable": true
-      },
-      "class": "Configuration"
-    },
-    {
-      "path": "Workspace/WolfScout/Accessory (Meshes/139190864365936Accessory)/ThumbnailConfiguration/ThumbnailCameraTarget",
-      "properties": {
-        "Name": "ThumbnailCameraTarget",
-        "Archivable": true
-      },
-      "class": "ObjectValue"
-    },
-    {
-      "path": "Workspace/WolfScout/Accessory (Meshes/139190864365936Accessory)/ThumbnailConfiguration/ThumbnailCameraValue",
-      "properties": {
-        "Value": "3.70375972e-07, 0.0576789081, -4.23660707, -1, -1.19009913e-09, 8.74146764e-08, 0, 0.999907315, 0.0136131477, -8.74227766e-08, 0.0136131477, -0.999907315",
+        "Visible": false,
+        "Name": "RightGripAttachment",
+        "Position": "0, -1, 0",
+        "CFrame": "0, -1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
         "Archivable": true,
-        "Name": "ThumbnailCameraValue"
+        "Rotation": "-0, 0, -0"
       },
-      "class": "CFrameValue"
+      "class": "Attachment"
     },
     {
-      "path": "Workspace/WolfScout/Accessory (Meshes/139190864365936Accessory)/Handle",
+      "path": "Workspace/Conical2",
+      "properties": {
+        "Name": "Conical2",
+        "Archivable": true
+      },
+      "class": "Model"
+    },
+    {
+      "properties": {
+        "Enabled": true,
+        "Archivable": true,
+        "Name": "Math1"
+      },
+      "path": "Workspace/Conical2/Math1",
+      "source": "-- WindLeaves.lua  (Server Script)\nlocal RunService = game:GetService(\"RunService\")\nlocal CollectionService = game:GetService(\"CollectionService\")\n\n-- CONFIG\nlocal treePath = script.Parent               -- set this to workspace.YourTreeModel if script not parented to the tree\nlocal leavesFolderName = \"Leaves\"            -- folder name under treePath\nlocal windStrength = 4                  -- base angle multiplier (tweak)\nlocal windSpeed = 1.0                        -- speed multiplier (tweak)\nlocal enforceAnchored = true                 -- set true to auto Anchor leaves (recommended)\nlocal debugEnabled = true\n\n-- Helper debug\nlocal function debug(...)\n\tif debugEnabled then\n\t\tprint(\"[WindLeaves]\", ...)\n\tend\nend\n\n-- Find Leaves folder\nlocal function findLeavesFolder()\n\tif not treePath then return nil end\n\tlocal folder = treePath:FindFirstChild(leavesFolderName)\n\tif folder and folder:IsA(\"Folder\") then\n\t\treturn folder\n\tend\n\t-- fallback: try to find any descendant folder named Leaves\n\tfor _, v in pairs(treePath:GetDescendants()) do\n\t\tif v.Name == leavesFolderName and v:IsA(\"Folder\") then\n\t\t\treturn v\n\t\tend\n\tend\n\treturn nil\nend\n\nlocal LeavesFolder = findLeavesFolder()\nif not LeavesFolder then\n\tdebug(\"ERROR: Leaves folder not found under\", treePath:GetFullName())\n\treturn\nend\ndebug(\"Found Leaves folder at\", LeavesFolder:GetFullName())\n\n-- Table to hold parts and their originals + random offset\nlocal leafData = {}\n\nlocal function addLeaf(part)\n\tif not part or not part:IsA(\"BasePart\") then return end\n\tif leafData[part] then return end\n\tleafData[part] = {\n\t\torig = part.CFrame,\n\t\toffset = math.random() * 1000,    -- unique time offset so leaves don't move perfectly in sync\n\t}\n\tif enforceAnchored then\n\t\tpart.Anchored = true\n\tend\n\tdebug(\"Added leaf:\", part:GetFullName())\nend\n\nlocal function removeLeaf(part)\n\tif leafData[part] then\n\t\tleafData[part] = nil\n\t\tdebug(\"Removed leaf:\", part:GetFullName())\n\tend\nend\n\n-- Initialize existing children\nfor _, child in ipairs(LeavesFolder:GetChildren()) do\n\taddLeaf(child)\nend\n\n-- React to runtime changes\nLeavesFolder.ChildAdded:Connect(function(child)\n\t-- wait a short tick in case child is a Model with parts inside\n\ttask.wait(0.01)\n\t-- if child is a folder/model, add parts inside\n\tif child:IsA(\"BasePart\") then\n\t\taddLeaf(child)\n\telse\n\t\tfor _, desc in ipairs(child:GetDescendants()) do\n\t\t\tif desc:IsA(\"BasePart\") then\n\t\t\t\taddLeaf(desc)\n\t\t\tend\n\t\tend\n\tend\nend)\n\nLeavesFolder.ChildRemoved:Connect(function(child)\n\t-- remove whichever parts belonged to that child (or the child itself)\n\tif child:IsA(\"BasePart\") then\n\t\tremoveLeaf(child)\n\telse\n\t\tfor _, desc in ipairs(child:GetDescendants()) do\n\t\t\tif desc:IsA(\"BasePart\") then\n\t\t\t\tremoveLeaf(desc)\n\t\t\tend\n\t\tend\n\tend\nend)\n\n-- Also remove when parts are destroyed\ngame:GetService(\"Workspace\").DescendantRemoving:Connect(function(desc)\n\tif desc and desc:IsA(\"BasePart\") and leafData[desc] then\n\t\tleafData[desc] = nil\n\t\tdebug(\"Leaf destroyed:\", desc:GetFullName())\n\tend\nend)\n\n-- Main update loop (Heartbeat for smooth motion)\nRunService.Heartbeat:Connect(function(dt)\n\tlocal t = tick() * windSpeed\n\tfor part, info in pairs(leafData) do\n\t\tif not part or not part.Parent then\n\t\t\tleafData[part] = nil\n\t\telse\n\t\t\t-- compute small rotations based on noise / trig\n\t\t\tlocal clock = t + info.offset\n\t\t\t-- small independent axes\n\t\t\tlocal rx = math.rad(math.cos(clock) * windStrength)\n\t\t\tlocal ry = math.rad(math.sin(clock * 0.9) * windStrength * 0.6)\n\t\t\tlocal rz = math.rad(math.cos(clock * 1.1) * windStrength * 0.5)\n\t\t\tpart.CFrame = info.orig * CFrame.Angles(rx, ry, rz)\n\t\tend\n\tend\nend)\n\ndebug(\"WindLeaves script started. Leaf count:\", (function() local c=0; for _ in pairs(leafData) do c=c+1 end; return c end)())",
+      "class": "Script"
+    },
+    {
+      "path": "Workspace/Conical2/Log",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "0, 24.177000045776367, 0",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-61.75834274291992, 24.020183563232422, 56.327816009521484",
+        "CFrame": "-61.7583427, 24.0201836, 56.327816, 0.912286818, -7.14200021e-13, 0.409557253, 3.37395585e-14, 1, -1.81899005e-12, -0.409557223, -1.67325745e-12, 0.91228658",
+        "Material": "Enum.Material.Wood",
+        "Archivable": true,
+        "Size": "6.032555103302002, 6.724648475646973, 4.688921928405762"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Conical2/Leaves",
+      "properties": {
+        "Name": "Leaves",
+        "Archivable": true
+      },
+      "class": "Folder"
+    },
+    {
+      "path": "Workspace/Conical2/Leaves/Leafs",
       "properties": {
         "CanCollide": false,
-        "Color": "0.639216, 0.635294, 0.647059",
-        "Anchored": false,
+        "Color": "0.792157, 0.796078, 0.819608",
+        "Anchored": true,
         "Shape": "Enum.PartType.Block",
-        "Rotation": "0, 0, 0",
+        "Rotation": "-169.5229949951172, -41.715999603271484, 177.1739959716797",
         "Transparency": 0,
-        "Name": "Handle",
+        "Name": "Leafs",
+        "Position": "-61.147308349609375, 62.395450592041016, 60.34090805053711",
+        "CFrame": "-61.1473083, 62.3954506, 60.3409081, -0.745549917, -0.0368029997, -0.665436149, -0.169336572, 0.976166606, 0.13573508, 0.644580841, 0.213879928, -0.734012902",
+        "Material": "Enum.Material.Grass",
+        "Archivable": true,
+        "Size": "25.842073440551758, 26.277690887451172, 25.394380569458008"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Conical2/Leaves/Leafs",
+      "properties": {
+        "CanCollide": false,
+        "Color": "0.972549, 0.972549, 0.972549",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "176.10400390625, 15.135000228881836, 157.6750030517578",
+        "Transparency": 0,
+        "Name": "Leafs",
+        "Position": "-60.78739929199219, 62.04104995727539, 56.19126892089844",
+        "CFrame": "-60.7873993, 62.04105, 56.1912689, -0.892957389, -0.366688579, 0.261096209, -0.395396084, 0.916166246, -0.0655856505, -0.215157896, -0.161801562, -0.96308428",
+        "Material": "Enum.Material.Grass",
+        "Archivable": true,
+        "Size": "22.413101196289062, 22.367046356201172, 25.53643798828125"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Conical2/Leaves/Leafs",
+      "properties": {
+        "CanCollide": false,
+        "Color": "0.972549, 0.972549, 0.972549",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "-179.9969940185547, 25.50200080871582, -176.2550048828125",
+        "Transparency": 0,
+        "Name": "Leafs",
+        "Position": "-66.79824829101562, 60.55820083618164, 63.314353942871094",
+        "CFrame": "-66.7982483, 60.5582008, 63.3143539, -0.900642753, 0.0589503497, 0.43054831, 0.0653357059, 0.997863352, 4.58356517e-05, -0.429625601, 0.0281714592, -0.902569771",
+        "Material": "Enum.Material.Grass",
+        "Archivable": true,
+        "Size": "23.039817810058594, 17.90026092529297, 21.19326400756836"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Conical2/Leaves/Leafs",
+      "properties": {
+        "CanCollide": false,
+        "Color": "0.972549, 0.972549, 0.972549",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "-18.655000686645508, 74.67500305175781, 21.91200065612793",
+        "Transparency": 0,
+        "Name": "Leafs",
+        "Position": "-55.48146057128906, 62.03090286254883, 64.82825469970703",
+        "CFrame": "-55.4814606, 62.0309029, 64.8282547, 0.245208204, -0.0986332744, 0.964442134, 0.0673619136, 0.994140208, 0.0845438018, -0.967129469, 0.0442358367, 0.250415325",
+        "Material": "Enum.Material.Grass",
+        "Archivable": true,
+        "Size": "28.413101196289062, 25.114004135131836, 21.53643798828125"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Conical2/Leaves/Leafs",
+      "properties": {
+        "CanCollide": false,
+        "Color": "0.792157, 0.796078, 0.819608",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "-0.0010000000474974513, -25.500999450683594, 3.744999885559082",
+        "Transparency": 0,
+        "Name": "Leafs",
+        "Position": "-59.991493225097656, 48.01152420043945, 63.63774871826172",
+        "CFrame": "-59.9914932, 48.0115242, 63.6377487, 0.900655568, -0.0589492992, -0.430521756, 0.0653156564, 0.997864723, 8.07492324e-06, 0.429601967, -0.0281270724, 0.902582288",
+        "Material": "Enum.Material.Grass",
+        "Archivable": true,
+        "Size": "26.896360397338867, 17.653961181640625, 28.90635108947754"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Conical2/Leaves/Leafs",
+      "properties": {
+        "CanCollide": false,
+        "Color": "0.792157, 0.796078, 0.819608",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "-0.0020000000949949026, 64.50199890136719, 3.744999885559082",
+        "Transparency": 0,
+        "Name": "Leafs",
+        "Position": "-56.432193756103516, 58.68600845336914, 71.10579681396484",
+        "CFrame": "-56.4321938, 58.6860085, 71.1057968, 0.429563582, -0.028119497, 0.902601123, 0.0652909279, 0.997866333, 1.4280713e-05, -0.900675416, 0.0589255169, 0.430482745",
+        "Material": "Enum.Material.Grass",
+        "Archivable": true,
+        "Size": "23.039817810058594, 17.733640670776367, 21.19326400756836"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Conical2/Leaves/Leafs",
+      "properties": {
+        "CanCollide": false,
+        "Color": "0.972549, 0.972549, 0.972549",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "170.8179931640625, 25.917999267578125, 177.9510040283203",
+        "Transparency": 0,
+        "Name": "Leafs",
+        "Position": "-53.07365036010742, 47.985206604003906, 67.09172058105469",
+        "CFrame": "-53.0736504, 47.9852066, 67.0917206, -0.898844481, -0.032155063, 0.437091231, -0.104997866, 0.984060824, -0.143526554, -0.425509065, -0.174901694, -0.887893796",
+        "Material": "Enum.Material.Grass",
+        "Archivable": true,
+        "Size": "23.039817810058594, 17.67159080505371, 21.19326400756836"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Conical2/Log",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "-179.8679962158203, -89.0459976196289, -179.86900329589844",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-52.736572265625, 20.011995315551758, 63.579429626464844",
+        "CFrame": "-52.7365723, 20.0119953, 63.5794296, -0.0167857707, 3.84012128e-05, -0.9998613, -2.27131059e-05, 1, 3.87878536e-05, 0.999861121, 2.33610263e-05, -0.0167856812",
+        "Material": "Enum.Material.Wood",
+        "Archivable": true,
+        "Size": "3.8348002433776855, 10.112920761108398, 9.26737117767334"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Conical2/Particles",
+      "properties": {
+        "CanCollide": false,
+        "Color": "1, 0, 0",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "-179.99899291992188, -3.2720000743865967, 177.6820068359375",
+        "Transparency": 1,
+        "Name": "Particles",
+        "Position": "-59.69329833984375, 65.24969482421875, 61.497684478759766",
+        "CFrame": "-59.6932983, 65.2496948, 61.4976845, -0.997555017, -0.0403729267, -0.0570819378, -0.0404402502, 0.999181986, 2.58712389e-05, 0.0570342541, 0.00233421754, -0.998371363",
+        "Material": "Enum.Material.ForceField",
+        "Archivable": true,
+        "Size": "23.850597381591797, 24.834226608276367, 30.7623291015625"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Conical2/Particles/leafParticles",
+      "properties": {
+        "Enabled": true,
+        "Name": "leafParticles",
+        "Shape": "Enum.ParticleEmitterShape.Box",
+        "LightEmission": 0,
+        "Brightness": 1,
+        "Archivable": true,
+        "Texture": "rbxassetid://13151745054"
+      },
+      "class": "ParticleEmitter"
+    },
+    {
+      "path": "Workspace/Conical2/Log",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "0, 24.177000045776367, 0",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-60.52062225341797, 31.818775177001953, 59.241676330566406",
+        "CFrame": "-60.5206223, 31.8187752, 59.2416763, 0.912286818, -7.14200021e-13, 0.409557253, 3.37395585e-14, 1, -1.81899005e-12, -0.409557223, -1.67325745e-12, 0.91228658",
+        "Material": "Enum.Material.Wood",
+        "Archivable": true,
+        "Size": "4.467394828796387, 5.41662073135376, 1.2531274557113647"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Conical2/Log",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "0.003000000026077032, -65.822998046875, 0.004000000189989805",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-56.871803283691406, 32.63239288330078, 60.67478561401367",
+        "CFrame": "-56.8718033, 32.6323929, 60.6747856, 0.409564555, -3.09758834e-05, -0.91228354, 3.47902751e-05, 1, -1.83353313e-05, 0.912283301, -2.42290862e-05, 0.409564525",
+        "Material": "Enum.Material.Wood",
+        "Archivable": true,
+        "Size": "4.166373252868652, 7.043745517730713, 1.3723844289779663"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Conical2/Log",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, 24.177000045776367, 0",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-59.37443923950195, 57.3270149230957, 61.796775817871094",
+        "CFrame": "-59.3744392, 57.3270149, 61.7967758, 0.912286818, -7.14200021e-13, 0.409557253, 3.37395585e-14, 1, -1.81899005e-12, -0.409557223, -1.67325745e-12, 0.91228658",
+        "Material": "Enum.Material.Wood",
+        "Archivable": true,
+        "Size": "3.7460806369781494, 34.229373931884766, 3.7460806369781494"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Conical2/Log",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "180, -24.177000045776367, 180",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-58.2322998046875, 35.378753662109375, 64.33901977539062",
+        "CFrame": "-58.2322998, 35.3787537, 64.3390198, -0.912286699, 1.11413778e-09, -0.409557164, 1.22202604e-09, 1, 1.81898984e-12, 0.409557134, -5.02169029e-10, -0.91228646",
+        "Material": "Enum.Material.Wood",
+        "Archivable": true,
+        "Size": "3.74406099319458, 12.533682823181152, 1.2848130464553833"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Conical2/Log",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, 24.177000045776367, 0",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-59.37351989746094, 22.197486877441406, 61.797515869140625",
+        "CFrame": "-59.3735199, 22.1974869, 61.7975159, 0.912286818, -7.14200021e-13, 0.409557253, 3.37395585e-14, 1, -1.81899005e-12, -0.409557223, -1.67325745e-12, 0.91228658",
+        "Material": "Enum.Material.Wood",
+        "Archivable": true,
+        "Size": "7.244903564453125, 13.826271057128906, 7.244903564453125"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Conical2/Log",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "180, -24.177000045776367, 180",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-56.852569580078125, 19.60112190246582, 67.02880096435547",
+        "CFrame": "-56.8525696, 19.6011219, 67.028801, -0.912286699, 1.11413778e-09, -0.409557164, 1.22202604e-09, 1, 1.81898984e-12, 0.409557134, -5.02169029e-10, -0.91228646",
+        "Material": "Enum.Material.Wood",
+        "Archivable": true,
+        "Size": "6.537817001342773, 12.676044464111328, 4.322792053222656"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Conical2/Log",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, 24.177000045776367, 0",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-59.37450408935547, 38.97746658325195, 61.796852111816406",
