@@ -1,6 +1,21 @@
--- Temporary session-only currency values for the existing MainUI scripts.
--- Replace with your persistent currency system when it is ready.
+-- Session-only player progression and currency.
+-- Saving is intentionally disabled for now.
 local Players = game:GetService("Players")
+
+local function xpNeededForLevel(level)
+	return 100 + math.max(0, level - 1) * 50
+end
+
+local function ensureInt(folder, name, defaultValue)
+	local value = folder:FindFirstChild(name)
+	if not value then
+		value = Instance.new("IntValue")
+		value.Name = name
+		value.Value = defaultValue
+		value.Parent = folder
+	end
+	return value
+end
 
 local function setup(player)
 	local stats = player:FindFirstChild("leaderstats")
@@ -10,14 +25,11 @@ local function setup(player)
 		stats.Parent = player
 	end
 
-	for _, name in {"Coins", "Gems"} do
-		if not stats:FindFirstChild(name) then
-			local value = Instance.new("IntValue")
-			value.Name = name
-			value.Value = 0
-			value.Parent = stats
-		end
-	end
+	ensureInt(stats, "Level", 1)
+	ensureInt(stats, "XP", 0)
+	ensureInt(stats, "XPToNextLevel", xpNeededForLevel(1))
+	ensureInt(stats, "Coins", 0)
+	ensureInt(stats, "Gems", 0)
 end
 
 Players.PlayerAdded:Connect(setup)
