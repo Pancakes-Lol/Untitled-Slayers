@@ -1,119 +1,164 @@
--- Move the character's right arm along with the sword.
--- R6: animate the shoulder Motor6D. R15: use IKControl to move the hand.
+-- Player sword animation controller.
+-- Uses the developer animation pack in Workspace.TemplateR6.AnimSaves.
 local Players = game:GetService("Players")
-local TweenService = game:GetService("TweenService")
-local player = Players.LocalPlayer
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local KeyframeSequenceProvider = game:GetService("KeyframeSequenceProvider")
 
-local WINDUP = TweenInfo.new(0.12, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
-local SLASH = TweenInfo.new(0.17, Enum.EasingStyle.Quad, Enum.EasingDirection.In)
-local RECOVER = TweenInfo.new(0.19, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+local player = Players.LocalPlayer
+local combatRemote = ReplicatedStorage:WaitForChild("SwordCombat")
+local animSaves = workspace:WaitForChild("TemplateR6"):WaitForChild("AnimSaves")
+
+local animationCache = {}
+local function resolveAnimation(name)
+	if animationCache[name] then return animationCache[name] end
+	-- Prefer uploaded Animation objects if they exist.
+	for _, obj in ipairs(ReplicatedStorage:GetDescendants()) do
+		if obj:IsA("Animation") and obj.Name == name and obj.AnimationId ~= "" then
+			animationCache[name] = obj
+			return obj
+		end
+	end
+	-- Studio preview fallback for the KeyframeSequences the dev added.
+	local sequence = animSaves:FindFirstChild(name)
+	if sequence and sequence:IsA("KeyframeSequence") then
+		local ok, id = pcall(function()
+			return KeyframeSequenceProvider:RegisterKeyframeSequence(sequence)
+		end)
+		if ok and id then
+			local anim = Instance.new("Animation")
+			anim.Name = name
+			anim.AnimationId = id
+			animationCache[name] = anim
+			return anim
+		end
+	end
+	warn("[SwordCombat] Missing animation: " .. name)
+	return nil
+end
+
+local function loadTrack(animator, name, priority, looped)
+	local anim = resolveAnimation(name)
+	if not anim then return nil end
+	local ok, track = pcall(function() return animator:LoadAnimation(anim) end)
+	if not ok then return nil end
+	track.Priority = priority
+	track.Looped = looped
+	return track
+end
 
 local function bindSword(tool)
-	if not tool:IsA("Tool") or tool.Name ~= "Novice Slayer Sword" then return end
-	if tool:GetAttribute("SwingClientBound") then return end
-	tool:SetAttribute("SwingClientBound", true)
+	if not tool:IsA("Tool") then return end
+	if not tool:GetAttribute("SlayerSword") and tool.Name ~= "Novice Slayer Sword" then return end
+	if tool:GetAttribute("CombatClientBound") then return end
+	tool:SetAttribute("CombatClientBound", true)
 
-	local swinging = false
-	local ik, target, shoulder, defaultC0
-	local function cleanup()
-		if ik then ik:Destroy() ik = nil end
-		if target then target:Destroy() target = nil end
-		if shoulder and shoulder.Parent and defaultC0 then shoulder.C0 = defaultC0 end
-		shoulder = nil
-		defaultC0 = nil
+	local equipped = false
+	local attacking = false
+	local humanoid, animator
+	local idleTrack, walkTrack
+	local attackTracks = {}
+	local runningConnection
+	local lastAttackIndex = 0
+	local lastAttackTime = 0
+
+	local function stopTrack(track, fade)
+		if track and track.IsPlaying then track:Stop(fade or 0.1) end
 	end
 
-	local function setup(character)
-		cleanup()
-		local humanoid = character:FindFirstChildOfClass("Humanoid")
-		if not humanoid then return end
-		if humanoid.RigType == Enum.HumanoidRigType.R6 then
-			local torso = character:FindFirstChild("Torso")
-			shoulder = torso and torso:FindFirstChild("Right Shoulder")
-			if shoulder and shoulder:IsA("Motor6D") then defaultC0 = shoulder.C0 end
+	local function setLocomotion(speed)
+		if not equipped or attacking then return end
+		if speed > 0.5 then
+			stopTrack(idleTrack, 0.15)
+			if walkTrack and not walkTrack.IsPlaying then walkTrack:Play(0.15) end
 		else
-			local upper = character:FindFirstChild("RightUpperArm")
-			local hand = character:FindFirstChild("RightHand")
-			local root = character:FindFirstChild("UpperTorso")
-			if not upper or not hand or not root then return end
-			target = Instance.new("Part")
-			target.Name = "LocalSwordSwingTarget"
-			target.Size = Vector3.new(0.2,0.2,0.2)
-			target.Transparency = 1
-			target.Anchored = true
-			target.CanCollide = false
-			target.CanTouch = false
-			target.CanQuery = false
-			target.CFrame = hand.CFrame
-			target.Parent = workspace
-			ik = Instance.new("IKControl")
-			ik.Name = "SwordSwingArmIK"
-			ik.Type = Enum.IKControlType.Position
-			ik.ChainRoot = upper
-			ik.EndEffector = hand
-			ik.Target = target
-			ik.SmoothTime = 0.08
-			ik.Weight = 0
-			ik.Priority = 10
-			ik.Parent = humanoid
+			stopTrack(walkTrack, 0.15)
+			if idleTrack and not idleTrack.IsPlaying then idleTrack:Play(0.15) end
 		end
 	end
 
-	local function animate(targetObject, info, properties)
-		local tween = TweenService:Create(targetObject, info, properties)
-		tween:Play()
-		tween.Completed:Wait()
+	local function clearTracks()
+		if runningConnection then runningConnection:Disconnect() runningConnection = nil end
+		stopTrack(idleTrack, 0.1)
+		stopTrack(walkTrack, 0.1)
+		for _, track in pairs(attackTracks) do stopTrack(track, 0.05) end
+		idleTrack, walkTrack = nil, nil
+		table.clear(attackTracks)
+		humanoid, animator = nil, nil
+	end
+
+	local function setupTracks()
+		clearTracks()
+		local character = player.Character
+		humanoid = character and character:FindFirstChildOfClass("Humanoid")
+		if not humanoid then return end
+		animator = humanoid:FindFirstChildOfClass("Animator") or Instance.new("Animator")
+		animator.Parent = humanoid
+		idleTrack = loadTrack(animator, "Sword Idle", Enum.AnimationPriority.Idle, true)
+		walkTrack = loadTrack(animator, "Sword Walk", Enum.AnimationPriority.Movement, true)
+		for i = 1, 5 do
+			attackTracks[i] = loadTrack(animator, "Attack" .. i, Enum.AnimationPriority.Action, false)
+		end
+		runningConnection = humanoid.Running:Connect(setLocomotion)
+		setLocomotion(humanoid.MoveDirection.Magnitude * humanoid.WalkSpeed)
+	end
+
+	local function chooseAttack()
+		local choices = {}
+		for i = 1, 5 do
+			if i ~= lastAttackIndex and attackTracks[i] then table.insert(choices, i) end
+		end
+		if #choices == 0 then return nil end
+		local index = choices[math.random(1, #choices)]
+		lastAttackIndex = index
+		return index
 	end
 
 	tool.Equipped:Connect(function()
-		local character = player.Character
-		if character then setup(character) end
+		equipped = true
+		setupTracks()
 	end)
-	tool.Unequipped:Connect(function()
-		swinging = false
-		cleanup()
-	end)
-	tool.Activated:Connect(function()
-		local character = player.Character
-		if swinging or not character or tool.Parent ~= character then return end
-		swinging = true
-		if shoulder and defaultC0 then
-			-- Shoulder movement carries the sword because it is welded to the hand.
-			local back = defaultC0 * CFrame.Angles(math.rad(-35), math.rad(-10), math.rad(35))
-			local forward = defaultC0 * CFrame.Angles(math.rad(40), math.rad(5), math.rad(-35))
-			animate(shoulder, WINDUP, {C0=back})
-			if tool.Parent == character then animate(shoulder, SLASH, {C0=forward}) end
-			if shoulder.Parent then animate(shoulder, RECOVER, {C0=defaultC0}) end
-		elseif ik and target and target.Parent then
-			local torso = character:FindFirstChild("UpperTorso")
-			if torso then
-				-- Keep the hand near the shoulder instead of pulling it across the body.
-				-- A torso-relative attachment avoids world-space snapping while moving.
-				local rest = target.CFrame
-				
-				local function aim(localOffset, info)
-					if not torso.Parent or not target.Parent then return end
-					animate(target, info, {CFrame=torso.CFrame * CFrame.new(localOffset)})
-				end
-				ik.Weight = 0.75
-				aim(Vector3.new(1.35, 0.65, -0.7), WINDUP)
-				if tool.Parent == character then
-					aim(Vector3.new(0.35, -0.6, -1.4), SLASH)
-				end
-				animate(target, RECOVER, {CFrame=rest})
-				ik.Weight = 0
 
-			end
-		end
-		swinging = false
+	tool.Unequipped:Connect(function()
+		equipped = false
+		attacking = false
+		clearTracks()
 	end)
-	tool.Destroying:Connect(cleanup)
+
+	tool.Activated:Connect(function()
+		if not equipped or attacking then return end
+		if os.clock() - lastAttackTime < 0.42 then return end
+		local character = player.Character
+		if not character or tool.Parent ~= character then return end
+		local index = chooseAttack()
+		if not index then return end
+		lastAttackTime = os.clock()
+		attacking = true
+		stopTrack(idleTrack, 0.08)
+		stopTrack(walkTrack, 0.08)
+		local track = attackTracks[index]
+		if track then track:Play(0.06, 1, 1) end
+		combatRemote:FireServer(index)
+		local duration = 0.48
+		if track and track.Length > 0 then duration = math.clamp(track.Length * 0.75, 0.32, 0.8) end
+		task.delay(duration, function()
+			if not equipped then return end
+			attacking = false
+			if humanoid then
+				setLocomotion(humanoid.MoveDirection.Magnitude * humanoid.WalkSpeed)
+			end
+		end)
+	end)
+
+	tool.Destroying:Connect(clearTracks)
 end
 
 local function watch(container)
 	for _, child in ipairs(container:GetChildren()) do bindSword(child) end
 	container.ChildAdded:Connect(bindSword)
 end
+
 watch(player:WaitForChild("Backpack"))
-player.CharacterAdded:Connect(watch)
+player.CharacterAdded:Connect(function(character)
+	watch(character)
+end)
 if player.Character then watch(player.Character) end
