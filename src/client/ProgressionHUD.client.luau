@@ -18,8 +18,8 @@ gui.Parent = player:WaitForChild("PlayerGui")
 
 local card = Instance.new("Frame")
 card.Name = "LevelCard"
-card.AnchorPoint = Vector2.new(0.5, 0)
-card.Position = UDim2.new(0.5, 0, 0, 14)
+card.AnchorPoint = Vector2.new(1, 1)
+card.Position = UDim2.new(1, -18, 1, -18)
 card.Size = UDim2.fromOffset(330, 74)
 card.BackgroundColor3 = Color3.fromRGB(18, 20, 27)
 card.BackgroundTransparency = 0.08
