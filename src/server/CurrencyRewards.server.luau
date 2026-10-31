@@ -28,6 +28,15 @@ local function randomReward(range)
 	return math.random(math.floor(minimum), math.floor(maximum))
 end
 
+local function boostedAmount(player, baseAmount, multiplierAttribute, carryAttribute)
+	local multiplier = tonumber(player:GetAttribute(multiplierAttribute)) or 1
+	local carry = tonumber(player:GetAttribute(carryAttribute)) or 0
+	local exact = (baseAmount * multiplier) + carry
+	local whole = math.floor(exact)
+	player:SetAttribute(carryAttribute, exact - whole)
+	return whole
+end
+
 local function award(player, config)
 	local stats = player:FindFirstChild("leaderstats")
 	local currency = player:FindFirstChild("Currency")
@@ -38,9 +47,12 @@ local function award(player, config)
 	local coins = currency:FindFirstChild("Coins")
 	if not level or not xp or not coins then return end
 
-	xp.Value += randomReward(config.XPReward)
+	local baseXP = randomReward(config.XPReward)
 	local coinConfig = config.PossibleRewards and config.PossibleRewards.Coins
-	coins.Value += randomReward(coinConfig)
+	local baseCoins = randomReward(coinConfig)
+
+	xp.Value += boostedAmount(player, baseXP, "XPMultiplier", "XPBoostCarry")
+	coins.Value += boostedAmount(player, baseCoins, "MoneyMultiplier", "MoneyBoostCarry")
 
 	while xp.Value >= xpNeededForLevel(level.Value) do
 		local needed = xpNeededForLevel(level.Value)
