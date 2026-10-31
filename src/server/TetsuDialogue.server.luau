@@ -1,5 +1,5 @@
--- Tetsu slayer onboarding.
--- Session-only for now: no DataStore saving and no custom name selection.
+-- Tetsu slayer onboarding + early hunt quests.
+-- Quest progress is session-only for now.
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
@@ -29,6 +29,23 @@ local state = {}
 local dummy
 local DUMMY_DISTANCE = 19
 
+local QUESTS = {
+	AshenPup = {
+		title = "AshenPup Hunt",
+		enemyType = "AshenPup",
+		required = 6,
+		coins = 100,
+		xp = 75,
+	},
+	WolfScout = {
+		title = "Wolf Hunt",
+		enemyType = "WolfScout",
+		required = 6,
+		coins = 150,
+		xp = 100,
+	},
+}
+
 local function send(player, kind, data)
 	remote:FireClient(player, kind, data or {})
 end
@@ -38,6 +55,37 @@ local function nearby(player)
 	local root = character and character:FindFirstChild("HumanoidRootPart")
 	local humanoid = character and character:FindFirstChildOfClass("Humanoid")
 	return root and humanoid and humanoid.Health > 0 and (root.Position - torso.Position).Magnitude <= 18
+end
+
+local function xpNeededForLevel(level)
+	return 100 + math.max(0, level - 1) * 50
+end
+
+local function applyRewardMultiplier(player, amount, attributeName)
+	local multiplier = tonumber(player:GetAttribute(attributeName)) or 1
+	return math.floor(amount * multiplier + 0.5)
+end
+
+local function awardQuest(player, quest)
+	local stats = player:FindFirstChild("leaderstats")
+	local currency = player:FindFirstChild("Currency")
+	if not stats or not currency then return end
+
+	local level = stats:FindFirstChild("Level")
+	local xp = stats:FindFirstChild("XP")
+	local coins = currency:FindFirstChild("Coins")
+	if not level or not xp or not coins then return end
+
+	local xpReward = applyRewardMultiplier(player, quest.xp, "XPMultiplier")
+	local coinReward = applyRewardMultiplier(player, quest.coins, "MoneyMultiplier")
+	coins.Value += coinReward
+	xp.Value += xpReward
+
+	while xp.Value >= xpNeededForLevel(level.Value) do
+		local needed = xpNeededForLevel(level.Value)
+		xp.Value -= needed
+		level.Value += 1
+	end
 end
 
 local function applyRegularName(player)
@@ -114,6 +162,25 @@ local function spawnDummy()
 end
 spawnDummy()
 
+local function activeQuestInfo(s)
+	if s.ashenAccepted and not s.ashenCompleted then
+		return QUESTS.AshenPup, "ashenKills", "ashenCompleted"
+	end
+	if s.wolfAccepted and not s.wolfCompleted then
+		return QUESTS.WolfScout, "wolfKills", "wolfCompleted"
+	end
+	return nil
+end
+
+local function offerQuest(player, s, questKey)
+	local quest = QUESTS[questKey]
+	s.pendingQuest = questKey
+	send(player, "Story", {
+		text = string.format("I have another job for you. Defeat %d %s%s. Reward: %d coins and %d XP.", quest.required, questKey == "AshenPup" and "AshenPup" or "WolfScout", quest.required == 1 and "" or "s", quest.coins, quest.xp),
+		button = "Accept quest",
+	})
+end
+
 local function talk(player)
 	local s = state[player]
 	if not s or not nearby(player) then return end
@@ -137,14 +204,37 @@ local function talk(player)
 	elseif s.stage == "return" then
 		s.stage = "done"
 		send(player, "Story", {
-			text = "Well done, " .. player.DisplayName .. "! You defeated your first enemy. Your slayer journey has officially begun!",
+			text = "Well done, " .. player.DisplayName .. "! You defeated your first enemy. Your slayer journey has officially begun! Come talk to me again when you're ready for real work.",
 			button = "Thank you!",
 		})
 	else
-		send(player, "Story", {
-			text = "Welcome back, " .. player.DisplayName .. ". Keep training. Your greatest battles are still ahead!",
-			button = "Goodbye",
-		})
+		local quest, killsField, completedField = activeQuestInfo(s)
+		if quest then
+			local kills = s[killsField] or 0
+			if kills >= quest.required then
+				s[completedField] = true
+				awardQuest(player, quest)
+				s.pendingQuest = nil
+				send(player, "Story", {
+					text = string.format("Good work. %s complete! You earned %d coins and %d XP.", quest.title, quest.coins, quest.xp),
+					button = "Collect reward",
+				})
+			else
+				send(player, "Story", {
+					text = string.format("%s progress: %d/%d. Keep hunting and come back when the job is finished.", quest.title, kills, quest.required),
+					button = "Back to hunting",
+				})
+			end
+		elseif not s.ashenCompleted then
+			offerQuest(player, s, "AshenPup")
+		elseif not s.wolfCompleted then
+			offerQuest(player, s, "WolfScout")
+		else
+			send(player, "Story", {
+				text = "You've handled both hunts well, " .. player.DisplayName .. ". Keep training. I'll have tougher work for you soon.",
+				button = "Goodbye",
+			})
+		end
 	end
 end
 prompt.Triggered:Connect(talk)
@@ -166,14 +256,78 @@ remote.OnServerEvent:Connect(function(player, action, value)
 		s.stage = "hunt"
 		grantSword(player)
 		talk(player)
+	elseif action == "Continue" and s.stage == "done" and s.pendingQuest then
+		if s.pendingQuest == "AshenPup" and not s.ashenCompleted then
+			s.ashenAccepted = true
+			s.ashenKills = 0
+		elseif s.pendingQuest == "WolfScout" and s.ashenCompleted and not s.wolfCompleted then
+			s.wolfAccepted = true
+			s.wolfKills = 0
+		end
+		local accepted = s.pendingQuest
+		s.pendingQuest = nil
+		local quest = QUESTS[accepted]
+		if quest then
+			send(player, "Quest", {text = string.format("Quest accepted: %s — defeat %d targets.", quest.title, quest.required)})
+		else
+			send(player, "Close")
+		end
 	elseif action == "Continue" then
 		send(player, "Close")
 	end
 end)
 
+local function bindEnemy(model)
+	if not model:IsA("Model") or model:GetAttribute("TetsuQuestBound") then return end
+	local enemyType = model:GetAttribute("SpawnEnemyType")
+	if enemyType ~= "AshenPup" and enemyType ~= "WolfScout" then return end
+	local humanoid = model:FindFirstChildOfClass("Humanoid")
+	if not humanoid then return end
+
+	model:SetAttribute("TetsuQuestBound", true)
+	humanoid.Died:Connect(function()
+		local userId = humanoid:GetAttribute("LastHitUserId")
+		local player = userId and Players:GetPlayerByUserId(userId)
+		local s = player and state[player]
+		if not s or s.stage ~= "done" then return end
+
+		if enemyType == "AshenPup" and s.ashenAccepted and not s.ashenCompleted then
+			s.ashenKills = math.min((s.ashenKills or 0) + 1, QUESTS.AshenPup.required)
+			if s.ashenKills >= QUESTS.AshenPup.required then
+				send(player, "Quest", {text = "AshenPup Hunt complete! Return to Tetsu for your reward."})
+			end
+		elseif enemyType == "WolfScout" and s.wolfAccepted and not s.wolfCompleted then
+			s.wolfKills = math.min((s.wolfKills or 0) + 1, QUESTS.WolfScout.required)
+			if s.wolfKills >= QUESTS.WolfScout.required then
+				send(player, "Quest", {text = "Wolf Hunt complete! Return to Tetsu for your reward."})
+			end
+		end
+	end)
+end
+
+local function watchLiveEnemies()
+	local liveEnemies = workspace:WaitForChild("LiveEnemies")
+	for _, model in ipairs(liveEnemies:GetChildren()) do
+		task.defer(bindEnemy, model)
+	end
+	liveEnemies.ChildAdded:Connect(function(model)
+		task.defer(bindEnemy, model)
+	end)
+end
+task.spawn(watchLiveEnemies)
+
 local function setupPlayer(player)
-	-- Every server session starts fresh until persistence is intentionally re-added.
-	state[player] = {stage = "math", name = player.DisplayName}
+	state[player] = {
+		stage = "math",
+		name = player.DisplayName,
+		ashenAccepted = false,
+		ashenKills = 0,
+		ashenCompleted = false,
+		wolfAccepted = false,
+		wolfKills = 0,
+		wolfCompleted = false,
+		pendingQuest = nil,
+	}
 	player:SetAttribute("SlayerName", player.DisplayName)
 
 	player.CharacterAdded:Connect(function()
