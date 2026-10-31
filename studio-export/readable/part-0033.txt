@@ -1,0 +1,677 @@
+        "Position": "-67.75006103515625, 6.000087738037109, 25.500511169433594",
+        "CFrame": "-67.750061, 6.00008774, 25.5005112, 1, -7.87137555e-09, -3.02998127e-15, 7.87137555e-09, 1, 4.14442554e-16, 3.02998127e-15, -4.1444258e-16, 1",
+        "Material": "Enum.Material.Plastic",
+        "Archivable": true,
+        "Size": "1, 1, 1"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/WolfScout/Accessory (Meshes/139190864365936Accessory)/Handle/SpecialMesh",
+      "properties": {
+        "Scale": "1, 1, 1",
+        "MeshId": "rbxassetid://122819670425968",
+        "Archivable": true,
+        "Name": "SpecialMesh"
+      },
+      "class": "SpecialMesh"
+    },
+    {
+      "path": "Workspace/WolfScout/Accessory (Meshes/139190864365936Accessory)/Handle/AvatarPartScaleType",
+      "properties": {
+        "Value": "Classic",
+        "Archivable": true,
+        "Name": "AvatarPartScaleType"
+      },
+      "class": "StringValue"
+    },
+    {
+      "path": "Workspace/WolfScout/Accessory (Meshes/139190864365936Accessory)/Handle/FaceCenterAttachment",
+      "properties": {
+        "Visible": false,
+        "Name": "FaceCenterAttachment",
+        "Position": "0.000064849853515625, -0.000087738037109375, -0.00051116943359375",
+        "CFrame": "6.48498535e-05, -8.77380371e-05, -0.000511169434, 1, 7.87137555e-09, 3.02998127e-15, -7.87137555e-09, 1, -4.1444258e-16, -3.02998127e-15, 4.14442554e-16, 1",
+        "Archivable": true,
+        "Rotation": "2.374580973475357e-14, 1.7360513525875587e-13, -4.5099656631464313e-07"
+      },
+      "class": "Attachment"
+    },
+    {
+      "path": "Workspace/WolfScout/Accessory (Meshes/139190864365936Accessory)/Handle/OriginalSize",
+      "properties": {
+        "Value": "1, 1, 1",
+        "Archivable": true,
+        "Name": "OriginalSize"
+      },
+      "class": "Vector3Value"
+    },
+    {
+      "path": "Workspace/WolfScout/Accessory (Meshes/139190864365936Accessory)/Handle/AccessoryWeld",
+      "properties": {
+        "Enabled": true,
+        "Name": "AccessoryWeld",
+        "Archivable": true,
+        "Active": true
+      },
+      "class": "Weld"
+    },
+    {
+      "path": "ReplicatedStorage",
+      "properties": {
+        "Name": "ReplicatedStorage",
+        "Archivable": true
+      },
+      "class": "ReplicatedStorage"
+    },
+    {
+      "path": "ReplicatedStorage/GameShared",
+      "properties": {
+        "Name": "GameShared",
+        "Archivable": true
+      },
+      "class": "Folder"
+    },
+    {
+      "path": "ReplicatedStorage/Assets",
+      "properties": {
+        "Name": "Assets",
+        "Archivable": true
+      },
+      "class": "Folder"
+    },
+    {
+      "path": "ReplicatedStorage/Assets/Swords",
+      "properties": {
+        "Name": "Swords",
+        "Archivable": true
+      },
+      "class": "Folder"
+    },
+    {
+      "path": "ReplicatedStorage/Assets/Swords/Sword",
+      "properties": {
+        "Enabled": true,
+        "Archivable": true,
+        "Name": "Sword"
+      },
+      "class": "Tool"
+    },
+    {
+      "path": "ReplicatedStorage/Assets/Swords/Sword/Handle",
+      "properties": {
+        "CanCollide": false,
+        "Color": "0.639216, 0.635294, 0.647059",
+        "Anchored": false,
+        "TextureID": "rbxassetid://13662522227",
+        "MeshId": "rbxassetid://13662643071",
+        "Rotation": "-79.45099639892578, 90, 0",
+        "Transparency": 0,
+        "Name": "Handle",
+        "Position": "-114.75009155273438, 0.6348333358764648, 35.97504806518555",
+        "CFrame": "-114.750092, 0.634833336, 35.9750481, 0, 0, 1.00000036, -0.983098745, 0.183076113, 0, -0.183076113, -0.983098745, 0",
+        "Material": "Enum.Material.Plastic",
+        "Archivable": true,
+        "Size": "0.4206775724887848, 4.6761860847473145, 0.39863264560699463"
+      },
+      "class": "MeshPart"
+    },
+    {
+      "path": "ReplicatedStorage/Assets/Swords/Sword/Handle/SwordLines",
+      "properties": {
+        "Enabled": true,
+        "Name": "SwordLines",
+        "Archivable": true,
+        "Active": false
+      },
+      "class": "Motor6D"
+    },
+    {
+      "path": "ReplicatedStorage/Assets/Swords/Sword/Handle/ManualWeld",
+      "properties": {
+        "Enabled": true,
+        "Name": "ManualWeld",
+        "Archivable": true,
+        "Active": false
+      },
+      "class": "ManualWeld"
+    },
+    {
+      "path": "ReplicatedStorage/Assets/Swords/Sword/Handle/Weld",
+      "properties": {
+        "Enabled": true,
+        "Name": "Weld",
+        "Archivable": true,
+        "Active": false
+      },
+      "class": "Weld"
+    },
+    {
+      "path": "ReplicatedStorage/Assets/Swords/Sword/Handle/Trail3",
+      "properties": {
+        "Enabled": true,
+        "Name": "Trail3",
+        "LightEmission": 0.3499999940395355,
+        "Brightness": 2,
+        "Archivable": true,
+        "Texture": "rbxassetid://9035819980"
+      },
+      "class": "Trail"
+    },
+    {
+      "path": "ReplicatedStorage/Assets/Swords/Sword/Handle/Attachment",
+      "properties": {
+        "Visible": false,
+        "Name": "Attachment",
+        "Position": "-0.010235786437988281, -0.9125518798828125, -0.0000457763671875",
+        "CFrame": "-0.0102357864, -0.91255188, -4.57763672e-05, 0.999358892, -0.035803061, -1.94044401e-06, 0.035803061, 0.999358892, 5.72221595e-08, 1.93715118e-06, -1.26659302e-07, 1.00000012",
+        "Archivable": true,
+        "Rotation": "-0.000003278587655586307, -0.00011117925168946385, 2.051802635192871"
+      },
+      "class": "Attachment"
+    },
+    {
+      "path": "ReplicatedStorage/Assets/Swords/Sword/Handle/Trail",
+      "properties": {
+        "Enabled": true,
+        "Name": "Trail",
+        "LightEmission": 0.3499999940395355,
+        "Brightness": 2,
+        "Archivable": true,
+        "Texture": "rbxassetid://9035801067"
+      },
+      "class": "Trail"
+    },
+    {
+      "path": "ReplicatedStorage/Assets/Swords/Sword/Handle/Trail2",
+      "properties": {
+        "Enabled": true,
+        "Name": "Trail2",
+        "LightEmission": 0.44999998807907104,
+        "Brightness": 10,
+        "Archivable": true,
+        "Texture": "rbxassetid://9035800962"
+      },
+      "class": "Trail"
+    },
+    {
+      "path": "ReplicatedStorage/Assets/Swords/Sword/Handle/Attachment",
+      "properties": {
+        "Visible": false,
+        "Name": "Attachment",
+        "Position": "-0.12395477294921875, 2.261444091796875, -0.000030517578125",
+        "CFrame": "-0.123954773, 2.26144409, -3.05175781e-05, 0.999358952, -0.0358029418, -2.44915987e-06, 0.0358029455, 0.999358892, 1.06095357e-07, 2.44379112e-06, -1.93714442e-07, 1.00000012",
+        "Archivable": true,
+        "Rotation": "-0.00000607881520409137, -0.00014032651961315423, 2.051795721054077"
+      },
+      "class": "Attachment"
+    },
+    {
+      "path": "ReplicatedStorage/Assets/Enemies",
+      "properties": {
+        "Name": "Enemies",
+        "Archivable": true
+      },
+      "class": "Folder"
+    },
+    {
+      "path": "ReplicatedStorage/Assets/Configs",
+      "properties": {
+        "Name": "Configs",
+        "Archivable": true
+      },
+      "class": "Folder"
+    },
+    {
+      "properties": {
+        "Name": "SwordsConfig",
+        "Archivable": true
+      },
+      "path": "ReplicatedStorage/Assets/Configs/SwordsConfig",
+      "source": "local SwordsConfig = {\n\t\n\t[\"Sword1\"] = {\n\t\t[\"Damage\"] = 10,\n\t\t[\"Cooldown\"] = 1,\n\t\t[\"Type\"] = \"Sword\",\n\t\t[\"Rarity\"] = \"Common\",\n\t\t[\"ModelName\"] = \"Sword1\",\n\t\t[\"DisplayName\"] = \"Basic Katana\",\n\t\n}\n\nreturn SwordsConfig",
+      "class": "ModuleScript"
+    },
+    {
+      "path": "ServerScriptService",
+      "properties": {
+        "Name": "ServerScriptService",
+        "Archivable": true
+      },
+      "class": "ServerScriptService"
+    },
+    {
+      "properties": {
+        "Enabled": true,
+        "Archivable": true,
+        "Name": "GameServer"
+      },
+      "path": "ServerScriptService/GameServer",
+      "source": "-- Server entry point. Gameplay systems live in separate scripts.\n",
+      "class": "Script"
+    },
+    {
+      "properties": {
+        "Enabled": true,
+        "Archivable": true,
+        "Name": "Init"
+      },
+      "path": "ServerScriptService/GameServer/Init",
+      "source": "-- Server entry point. Gameplay systems live in separate scripts.\n",
+      "class": "Script"
+    },
+    {
+      "properties": {
+        "Enabled": true,
+        "Archivable": true,
+        "Name": "FloatBrick"
+      },
+      "path": "ServerScriptService/GameServer/FloatBrick",
+      "source": "-- A smooth, floating pet that follows about five studs behind each player.\nlocal Players = game:GetService(\"Players\")\nlocal RunService = game:GetService(\"RunService\")\nlocal ServerStorage = game:GetService(\"ServerStorage\")\n\nlocal template = workspace:WaitForChild(\"Float Brick\", 20)\nif not template or not template:IsA(\"BasePart\") then\n\twarn(\"[Untitled Slayers] Workspace.Float Brick was not found.\")\n\treturn\nend\ntemplate.Anchored = true\ntemplate.CanCollide = false\ntemplate.Parent = ServerStorage\n\nlocal active = {}\nlocal connections = {}\n\nlocal function clearBrick(player)\n\tlocal state = active[player]\n\tif state then\n\t\tstate.brick:Destroy()\n\t\tactive[player] = nil\n\tend\nend\n\nlocal function setupCharacter(player, character)\n\tclearBrick(player)\n\tlocal root = character:WaitForChild(\"HumanoidRootPart\", 10)\n\tif not root or not character.Parent then return end\n\n\tlocal brick = template:Clone()\n\tbrick.Name = \"Float Brick\"\n\tbrick.Anchored = true\n\tbrick.CanCollide = false\n\tbrick.CanTouch = false\n\tbrick.CanQuery = false\n\tbrick.CFrame = root.CFrame * CFrame.new(0, 1.5, 5)\n\tbrick.Parent = workspace\n\tactive[player] = {brick = brick, root = root, elapsed = 0}\nend\n\nlocal function addPlayer(player)\n\tlocal added = player.CharacterAdded:Connect(function(character)\n\t\tsetupCharacter(player, character)\n\tend)\n\tlocal removing = player.CharacterRemoving:Connect(function()\n\t\tclearBrick(player)\n\tend)\n\tconnections[player] = {added, removing}\n\tif player.Character then\n\t\ttask.spawn(setupCharacter, player, player.Character)\n\tend\nend\n\nPlayers.PlayerAdded:Connect(addPlayer)\nPlayers.PlayerRemoving:Connect(function(player)\n\tclearBrick(player)\n\tfor _, connection in connections[player] or {} do\n\t\tconnection:Disconnect()\n\tend\n\tconnections[player] = nil\nend)\nfor _, player in Players:GetPlayers() do\n\taddPlayer(player)\nend\n\nRunService.Heartbeat:Connect(function(dt)\n\tfor player, state in pairs(active) do\n\t\tlocal root, brick = state.root, state.brick\n\t\tif root.Parent and brick.Parent and player.Character == root.Parent then\n\t\t\tstate.elapsed += dt\n\t\t\tlocal bob = math.sin(state.elapsed * 2.6) * 0.35\n\t\t\tlocal target = root.CFrame * CFrame.new(0, 1.5 + bob, 5)\n\t\t\tlocal alpha = 1 - math.exp(-7 * dt)\n\t\t\tbrick.CFrame = brick.CFrame:Lerp(target, alpha)\n\t\tend\n\tend\nend)\n",
+      "class": "Script"
+    },
+    {
+      "properties": {
+        "Enabled": true,
+        "Archivable": true,
+        "Name": "Leaderstats"
+      },
+      "path": "ServerScriptService/GameServer/Leaderstats",
+      "source": "-- Temporary session-only currency values for the existing MainUI scripts.\n-- Replace with your persistent currency system when it is ready.\nlocal Players = game:GetService(\"Players\")\n\nlocal function setup(player)\n\tlocal stats = player:FindFirstChild(\"leaderstats\")\n\tif not stats then\n\t\tstats = Instance.new(\"Folder\")\n\t\tstats.Name = \"leaderstats\"\n\t\tstats.Parent = player\n\tend\n\n\tfor _, name in {\"Coins\", \"Gems\"} do\n\t\tif not stats:FindFirstChild(name) then\n\t\t\tlocal value = Instance.new(\"IntValue\")\n\t\t\tvalue.Name = name\n\t\t\tvalue.Value = 0\n\t\t\tvalue.Parent = stats\n\t\tend\n\tend\nend\n\nPlayers.PlayerAdded:Connect(setup)\nfor _, player in Players:GetPlayers() do\n\tsetup(player)\nend\n",
+      "class": "Script"
+    },
+    {
+      "properties": {
+        "Enabled": true,
+        "Archivable": true,
+        "Name": "TetsuDialogue"
+      },
+      "path": "ServerScriptService/GameServer/TetsuDialogue",
+      "source": "-- Tetsu slayer onboarding. Server validates names, quest state and combat.\nlocal Players = game:GetService(\"Players\")\nlocal ReplicatedStorage = game:GetService(\"ReplicatedStorage\")\nlocal TextService = game:GetService(\"TextService\")\nlocal DataStoreService = game:GetService(\"DataStoreService\")\n\nlocal npc = workspace:WaitForChild(\"Tetsu\", 30)\nif not npc then warn(\"[Tetsu] Workspace/Tetsu missing\") return end\nlocal torso = npc:FindFirstChild(\"Torso\") or npc:FindFirstChild(\"UpperTorso\") or npc:FindFirstChild(\"HumanoidRootPart\")\nif not torso or not torso:IsA(\"BasePart\") then warn(\"[Tetsu] Missing torso\") return end\nlocal remote = ReplicatedStorage:FindFirstChild(\"TetsuDialogue\") or Instance.new(\"RemoteEvent\")\nremote.Name = \"TetsuDialogue\"\nremote.Parent = ReplicatedStorage\nlocal prompt = torso:FindFirstChild(\"TetsuTalkPrompt\") or Instance.new(\"ProximityPrompt\")\nprompt.Name = \"TetsuTalkPrompt\"\nprompt.ActionText = \"Talk\"\nprompt.ObjectText = \"Tetsu\"\nprompt.KeyboardKeyCode = Enum.KeyCode.E\nprompt.HoldDuration = 0\nprompt.MaxActivationDistance = 12\nprompt.RequiresLineOfSight = false\nprompt.Parent = torso\n\nlocal store = DataStoreService:GetDataStore(\"TetsuSlayerJourneyV1\")\nlocal state = {}\nlocal dummy\nlocal DUMMY_DISTANCE = 19\n\nlocal function send(player, kind, data)\n\tremote:FireClient(player, kind, data or {})\nend\nlocal function nearby(player)\n\tlocal character = player.Character\n\tlocal root = character and character:FindFirstChild(\"HumanoidRootPart\")\n\tlocal humanoid = character and character:FindFirstChildOfClass(\"Humanoid\")\n\treturn root and humanoid and humanoid.Health > 0 and (root.Position - torso.Position).Magnitude <= 18\nend\nlocal function persist(player)\n\tlocal s = state[player]\n\tif not s or not s.loaded then return end\n\tlocal saved = {name=s.name, stage=s.stage}\n\tlocal ok, err = pcall(function() store:SetAsync(tostring(player.UserId), saved) end)\n\tif not ok then warn(\"[Tetsu] Could not save \"..player.Name..\": \"..tostring(err)) end\nend\nlocal function setName(player, name)\n\tlocal s = state[player]\n\tif not s then return end\n\ts.name = name\n\tplayer:SetAttribute(\"SlayerName\", name)\n\tlocal hum = player.Character and player.Character:FindFirstChildOfClass(\"Humanoid\")\n\tif hum then hum.DisplayName = name end\nend\nlocal function grantSword(player)\n\tlocal s = state[player]\n\tif not s or (s.stage ~= \"hunt\" and s.stage ~= \"return\" and s.stage ~= \"done\") then return end\n\tlocal backpack = player:FindFirstChildOfClass(\"Backpack\")\n\tif not backpack then return end\n\tif backpack:FindFirstChild(\"Novice Slayer Sword\") or (player.Character and player.Character:FindFirstChild(\"Novice Slayer Sword\")) then return end\n\tlocal tool = Instance.new(\"Tool\")\n\ttool.Name = \"Novice Slayer Sword\"\n\ttool.ToolTip = \"Your first weapon. Click to strike the training enemy.\"\n\ttool.RequiresHandle = true\n\ttool.CanBeDropped = false\n\t-- Roblox attaches the character's hand to the Tool's Handle.\n\t-- Make the HANDLE the hilt itself, rather than the blade, so grip offsets cannot misplace the hand.\n\tlocal handle = Instance.new(\"Part\")\n\thandle.Name = \"Handle\"\n\thandle.Size = Vector3.new(0.4, 1.2, 0.5)\n\thandle.Color = Color3.fromRGB(36, 34, 49)\n\thandle.Material = Enum.Material.SmoothPlastic\n\thandle.CanCollide = false\n\thandle.Massless = true\n\thandle.Parent = tool\n\n\tlocal blade = Instance.new(\"Part\")\n\tblade.Name = \"Blade\"\n\tblade.Size = Vector3.new(0.28, 3.1, 0.6)\n\tblade.Color = Color3.fromRGB(205, 215, 233)\n\tblade.Material = Enum.Material.Metal\n\tblade.CanCollide = false\n\tblade.Massless = true\n\tblade.CFrame = handle.CFrame * CFrame.new(0, 2.15, 0)\n\tblade.Parent = tool\n\tlocal bladeWeld = Instance.new(\"WeldConstraint\")\n\tbladeWeld.Part0 = handle\n\tbladeWeld.Part1 = blade\n\tbladeWeld.Parent = blade\n\n\tlocal guard = Instance.new(\"Part\")\n\tguard.Name = \"Crossguard\"\n\tguard.Size = Vector3.new(1.35, 0.2, 0.7)\n\tguard.Color = Color3.fromRGB(85, 79, 110)\n\tguard.Material = Enum.Material.Metal\n\tguard.CanCollide = false\n\tguard.Massless = true\n\tguard.CFrame = handle.CFrame * CFrame.new(0, 0.68, 0)\n\tguard.Parent = tool\n\tlocal guardWeld = Instance.new(\"WeldConstraint\")\n\tguardWeld.Part0 = handle\n\tguardWeld.Part1 = guard\n\tguardWeld.Parent = guard\n\n\t-- The hand now naturally holds the middle of the dark Handle.\n\ttool.Grip = CFrame.new(0, 0, 0)\n\tlocal lastAttack = 0\n\ttool.Activated:Connect(function()\n\t\tif os.clock() - lastAttack < 0.55 then return end\n\t\tlastAttack = os.clock()\n\t\tif tool.Parent ~= player.Character then return end\n\t\tlocal character = player.Character\n\t\tlocal root = character and character:FindFirstChild(\"HumanoidRootPart\")\n\t\tlocal playerHum = character and character:FindFirstChildOfClass(\"Humanoid\")\n\t\tlocal enemyHum = dummy and dummy:FindFirstChildOfClass(\"Humanoid\")\n\t\tlocal enemyPart = dummy and dummy.PrimaryPart\n\t\tif not root or not playerHum or playerHum.Health <= 0 or not enemyHum or enemyHum.Health <= 0 or not enemyPart then return end\n\t\tlocal offset = enemyPart.Position - root.Position\n\t\tif offset.Magnitude > 9 or offset.Magnitude < 0.01 or root.CFrame.LookVector:Dot(offset.Unit) < 0.1 then return end\n\t\tenemyHum:SetAttribute(\"LastHitUserId\", player.UserId)\n\t\tenemyHum:TakeDamage(25)\n\tend)\n\ttool.Parent = backpack\nend\nlocal function spawnDummy()\n\tif dummy and dummy.Parent then dummy:Destroy() end\n\tlocal model = Instance.new(\"Model\")\n\tmodel.Name = \"Slayer Training Enemy\"\n\tlocal body = Instance.new(\"Part\")\n\tbody.Name = \"HumanoidRootPart\"\n\tbody.Size = Vector3.new(3, 4, 2)\n\tbody.Anchored = true\n\tbody.Color = Color3.fromRGB(127, 78, 58)\n\tbody.Material = Enum.Material.Wood\n\tbody.CFrame = torso.CFrame * CFrame.new(0, 0, -DUMMY_DISTANCE)\n\tbody.Parent = model\n\tlocal head = Instance.new(\"Part\")\n\thead.Name = \"Head\"\n\thead.Shape = Enum.PartType.Ball\n\thead.Size = Vector3.new(2.2, 2.2, 2.2)\n\thead.Anchored = true\n\thead.CanCollide = false\n\thead.Color = Color3.fromRGB(154, 108, 79)\n\thead.CFrame = body.CFrame * CFrame.new(0, 3, 0)\n\thead.Parent = model\n\tlocal humanoid = Instance.new(\"Humanoid\")\n\thumanoid.MaxHealth = 100\n\thumanoid.Health = 100\n\thumanoid.Parent = model\n\tmodel.PrimaryPart = body\n\tmodel.Parent = workspace\n\tdummy = model\n\thumanoid.Died:Connect(function()\n\t\tlocal userId = humanoid:GetAttribute(\"LastHitUserId\")\n\t\tlocal player = userId and Players:GetPlayerByUserId(userId)\n\t\tlocal s = player and state[player]\n\t\tif s and s.stage == \"hunt\" then\n\t\t\ts.stage = \"return\"\n\t\t\tsend(player, \"Quest\", {text=\"Training enemy defeated! Return to Tetsu to finish your first quest.\"})\n\t\t\ttask.spawn(persist, player)\n\t\tend\n\t\ttask.delay(5, function()\n\t\t\tif dummy == model then spawnDummy() end\n\t\tend)\n\tend)\nend\nspawnDummy()\n\nlocal function talk(player)\n\tlocal s = state[player]\n\tif not s or not s.loaded or not nearby(player) then return end\n\tif s.stage == \"name\" then\n\t\tsend(player, \"Question\", {question=\"Welcome, traveler. What should I call you?\", answers={\"Captain Noodles\", player.DisplayName, \"Choose my own name...\"}})\n\telseif s.stage == \"math\" then\n\t\tsend(player, \"Question\", {question=\"One last test. What's 9 + 10?\", answers={\"19\", \"21\", \"910\"}})\n\telseif s.stage == \"offer\" then\n\t\tsend(player, \"Story\", {text=\"You have potential, \"..(s.name or \"traveler\")..\". Take this sword and defeat the training enemy to begin your slayer journey.\", button=\"Accept sword & quest\"})\n\telseif s.stage == \"hunt\" then\n\t\tgrantSword(player)\n\t\tsend(player, \"Story\", {text=\"Equip your Novice Slayer Sword and defeat the training enemy near me. Click or tap to attack!\", button=\"Let's go\"})\n\telseif s.stage == \"return\" then\n\t\ts.stage = \"done\"\n\t\ttask.spawn(persist, player)\n\t\tsend(player, \"Story\", {text=\"Well done, \"..(s.name or \"slayer\")..\"! You defeated your first enemy. Your slayer journey has officially begun!\", button=\"Thank you!\"})\n\telse\n\t\tsend(player, \"Story\", {text=\"Welcome back, \"..(s.name or \"slayer\")..\". Keep training. Your greatest battles are still ahead!\", button=\"Goodbye\"})\n\tend\nend\nprompt.Triggered:Connect(talk)\n\nremote.OnServerEvent:Connect(function(player, action, value)\n\tlocal s = state[player]\n\tif not s or not s.loaded or not nearby(player) then return end\n\tif action == \"Close\" then return end\n\tif action == \"Choose\" and s.stage == \"name\" and type(value) == \"number\" and value % 1 == 0 then\n\t\tif value == 3 then send(player, \"NameEntry\") return end\n\t\tif value ~= 1 and value ~= 2 then return end\n\t\tsetName(player, value == 1 and \"Captain Noodles\" or player.DisplayName)\n\t\ts.stage = \"math\"\n\t\ttalk(player)\n\telseif action == \"CustomName\" and s.stage == \"name\" and type(value) == \"string\" then\n\t\tlocal name = value:match(\"^%s*(.-)%s*$\")\n\t\tif #name < 3 or #name > 20 or not name:match(\"^[%w_ ]+$\") then\n\t\t\tsend(player, \"NameError\", {text=\"Use 3–20 letters, numbers, spaces or underscores.\"}) return\n\t\tend\n\t\tlocal ok, filtered = pcall(function()\n\t\t\treturn TextService:FilterStringAsync(name, player.UserId):GetNonChatStringForBroadcastAsync()\n\t\tend)\n\t\tif not ok or not filtered or filtered == \"\" or filtered:find(\"#\", 1, true) then\n\t\t\tsend(player, \"NameError\", {text=\"That name can't be used. Try another.\"}) return\n\t\tend\n\t\tsetName(player, filtered)\n\t\ts.stage = \"math\"\n\t\ttalk(player)\n\telseif action == \"Choose\" and s.stage == \"math\" and type(value) == \"number\" and value % 1 == 0 and value >= 1 and value <= 3 then\n\t\ts.stage = \"offer\"\n\t\tsend(player, \"Story\", {text=(value == 2 and \"21?! Ha! I like your confidence. \" or value == 1 and \"Correct! \" or \"That's... creative. \")..\"Now let's begin your slayer journey.\", button=\"Continue\"})\n\telseif action == \"Continue\" and s.stage == \"offer\" then\n\t\ttalk(player)\n\telseif action == \"Accept\" and s.stage == \"offer\" then\n\t\ts.stage = \"hunt\"\n\t\tgrantSword(player)\n\t\ttask.spawn(persist, player)\n\t\ttalk(player)\n\telseif action == \"Continue\" then\n\t\tsend(player, \"Close\")\n\tend\nend)\n\nPlayers.PlayerAdded:Connect(function(player)\n\tlocal s = {stage=\"name\", loaded=false}\n\tstate[player] = s\n\tlocal ok, data = pcall(function() return store:GetAsync(tostring(player.UserId)) end)\n\tif ok and type(data) == \"table\" then\n\t\tif type(data.name) == \"string\" and #data.name <= 20 then s.name = data.name end\n\t\tif data.stage == \"hunt\" or data.stage == \"return\" or data.stage == \"done\" then s.stage = data.stage\n\t\telseif s.name then s.stage = \"math\" end\n\tend\n\ts.loaded = true\n\tplayer.CharacterAdded:Connect(function()\n\t\ttask.wait(0.5)\n\t\tif state[player] ~= s then return end\n\t\tif s.name then setName(player, s.name) end\n\t\tgrantSword(player)\n\tend)\n\tif player.Character then\n\t\ttask.defer(function()\n\t\t\tif s.name then setName(player, s.name) end\n\t\t\tgrantSword(player)\n\t\tend)\n\tend\nend)\nPlayers.PlayerRemoving:Connect(function(player)\n\tpersist(player)\n\tstate[player] = nil\nend)\ngame:BindToClose(function()\n\tfor player in pairs(state) do persist(player) end\nend)\n",
+      "class": "Script"
+    },
+    {
+      "properties": {
+        "Enabled": true,
+        "Archivable": true,
+        "Name": "SlayerOverhead"
+      },
+      "path": "ServerScriptService/GameServer/SlayerOverhead",
+      "source": "-- Visible overhead Slayer Name tag for all players, including the local player.\nlocal Players = game:GetService(\"Players\")\n\nlocal function attachTag(player, character)\n\tlocal head = character:WaitForChild(\"Head\", 10)\n\tlocal humanoid = character:WaitForChild(\"Humanoid\", 10)\n\tif not head or not humanoid then return end\n\tif player.Character ~= character then return end\n\n\t-- Hide Roblox's default name to prevent duplicate labels.\n\thumanoid.DisplayDistanceType = Enum.HumanoidDisplayDistanceType.None\n\tlocal old = head:FindFirstChild(\"SlayerOverheadTag\")\n\tif old then old:Destroy() end\n\n\tlocal gui = Instance.new(\"BillboardGui\")\n\tgui.Name = \"SlayerOverheadTag\"\n\tgui.Adornee = head\n\tgui.AlwaysOnTop = true\n\tgui.Size = UDim2.fromOffset(220, 66)\n\tgui.StudsOffsetWorldSpace = Vector3.new(0, 2.7, 0)\n\tgui.MaxDistance = 110\n\tgui.ResetOnSpawn = false\n\tgui.Parent = head\n\n\tlocal name = Instance.new(\"TextLabel\")\n\tname.Name = \"SlayerName\"\n\tname.BackgroundTransparency = 1\n\tname.Size = UDim2.new(1, 0, 0, 34)\n\tname.Position = UDim2.fromOffset(0, 0)\n\tname.Font = Enum.Font.GothamBold\n\tname.TextSize = 19\n\tname.TextColor3 = Color3.fromRGB(247, 240, 255)\n\tname.TextStrokeColor3 = Color3.fromRGB(18, 14, 34)\n\tname.TextStrokeTransparency = 0.25\n\tname.TextScaled = false\n\tname.Text = player:GetAttribute(\"SlayerName\") or player.DisplayName\n\tname.Parent = gui\n\n\tlocal title = Instance.new(\"TextLabel\")\n\ttitle.Name = \"SlayerTitle\"\n\ttitle.BackgroundTransparency = 1\n\ttitle.Size = UDim2.new(1, 0, 0, 25)\n\ttitle.Position = UDim2.fromOffset(0, 32)\n\ttitle.Font = Enum.Font.GothamSemibold\n\ttitle.TextSize = 13\n\ttitle.TextColor3 = Color3.fromRGB(186, 165, 255)\n\ttitle.TextStrokeColor3 = Color3.fromRGB(18, 14, 34)\n\ttitle.TextStrokeTransparency = 0.3\n\ttitle.Text = \"NOVICE SLAYER\"\n\ttitle.Parent = gui\n\n\tlocal connection\n\tconnection = player:GetAttributeChangedSignal(\"SlayerName\"):Connect(function()\n\t\tif not gui.Parent then\n\t\t\tconnection:Disconnect()\n\t\t\treturn\n\t\tend\n\t\tname.Text = player:GetAttribute(\"SlayerName\") or player.DisplayName\n\tend)\n\tgui.Destroying:Connect(function()\n\t\tif connection then connection:Disconnect() end\n\tend)\nend\n\nlocal function onPlayer(player)\n\tplayer.CharacterAdded:Connect(function(character)\n\t\ttask.spawn(attachTag, player, character)\n\tend)\n\tif player.Character then\n\t\ttask.spawn(attachTag, player, player.Character)\n\tend\nend\n\nPlayers.PlayerAdded:Connect(onPlayer)\nfor _, player in ipairs(Players:GetPlayers()) do\n\tonPlayer(player)\nend\n",
+      "class": "Script"
+    },
+    {
+      "path": "ServerStorage",
+      "properties": {
+        "Name": "ServerStorage",
+        "Archivable": true
+      },
+      "class": "ServerStorage"
+    },
+    {
+      "path": "ServerStorage/__Rojo_SessionLock",
+      "properties": {
+        "Name": "__Rojo_SessionLock",
+        "Archivable": false
+      },
+      "class": "ObjectValue"
+    },
+    {
+      "path": "StarterGui",
+      "properties": {
+        "Name": "StarterGui",
+        "Archivable": true
+      },
+      "class": "StarterGui"
+    },
+    {
+      "path": "StarterGui/MainUI",
+      "properties": {
+        "Enabled": true,
+        "ResetOnSpawn": true,
+        "Archivable": true,
+        "Name": "MainUI"
+      },
+      "class": "ScreenGui"
+    },
+    {
+      "path": "StarterGui/MainUI/MainFrame",
+      "properties": {
+        "Visible": true,
+        "ClipsDescendants": false,
+        "Active": false,
+        "LayoutOrder": 0,
+        "AutomaticSize": "Enum.AutomaticSize.None",
+        "Rotation": 0,
+        "Size": "{1, 0}, {1, 0}",
+        "AnchorPoint": "0.5, 0.5",
+        "Transparency": 1,
+        "BackgroundTransparency": 1,
+        "Position": "{0.5, 0}, {0.5, 0}",
+        "Name": "MainFrame",
+        "ZIndex": 1,
+        "Archivable": true,
+        "BackgroundColor3": "1, 1, 1"
+      },
+      "class": "Frame"
+    },
+    {
+      "path": "StarterGui/MainUI/MainFrame/CashLabel",
+      "properties": {
+        "Visible": true,
+        "Active": false,
+        "AnchorPoint": "0, 0",
+        "ZIndex": 1,
+        "Archivable": true,
+        "Size": "{0.0841472596, 0}, {0.0471544713, 0}",
+        "TextColor3": "1, 1, 1",
+        "ClipsDescendants": false,
+        "Text": "100,000,000$",
+        "LayoutOrder": 0,
+        "AutomaticSize": "Enum.AutomaticSize.None",
+        "Rotation": 0,
+        "Transparency": 1,
+        "Name": "CashLabel",
+        "Position": "{0.0458302014, 0}, {0.934782624, 0}",
+        "Font": "Enum.Font.FredokaOne",
+        "BackgroundTransparency": 1,
+        "TextSize": 14,
+        "BackgroundColor3": "1, 1, 1"
+      },
+      "class": "TextLabel"
+    },
+    {
+      "properties": {
+        "Enabled": true,
+        "Archivable": true,
+        "Name": "CoinsLabel"
+      },
+      "path": "StarterGui/MainUI/MainFrame/CashLabel/CoinsLabel",
+      "source": "-- CoinsLabel (LocalScript) > TextLabel\nlocal Players = game:GetService(\"Players\")\n\nlocal player      = Players.LocalPlayer\nlocal coinsLabel  = script.Parent\n\n-- ─── Format number with commas ────────────────────────────────────────────────\n\nlocal function formatCoins(n)\n\tlocal str     = tostring(math.floor(n))\n\tlocal result  = \"\"\n\tlocal count   = 0\n\n\tfor i = #str, 1, -1 do\n\t\tif count > 0 and count % 3 == 0 then\n\t\t\tresult = \",\" .. result\n\t\tend\n\t\tresult = str:sub(i, i) .. result\n\t\tcount += 1\n\tend\n\n\treturn result .. \"$\"\nend\n\n-- ─── Update label ─────────────────────────────────────────────────────────────\n\nlocal function updateLabel(coins)\n\tcoinsLabel.Text = formatCoins(coins)\nend\n\n-- ─── Hook into leaderstats ────────────────────────────────────────────────────\n\nlocal function setupCoins()\n\tlocal leaderstats = player:WaitForChild(\"leaderstats\")\n\tlocal coins       = leaderstats:WaitForChild(\"Coins\")\n\n\tupdateLabel(coins.Value)\n\n\tcoins:GetPropertyChangedSignal(\"Value\"):Connect(function()\n\t\tupdateLabel(coins.Value)\n\tend)\nend\n\nsetupCoins()",
+      "class": "LocalScript"
+    },
+    {
+      "path": "StarterGui/MainUI/MainFrame/CashLabel/UIStroke",
+      "properties": {
+        "Enabled": true,
+        "Transparency": 0,
+        "Name": "UIStroke",
+        "Color": "0.352941, 0.235294, 0",
+        "ZIndex": 1,
+        "Archivable": true
+      },
+      "class": "UIStroke"
+    },
+    {
+      "path": "StarterGui/MainUI/MainFrame/CashLabel/ImageLabel",
+      "properties": {
+        "ImageColor3": "1, 1, 1",
+        "ImageTransparency": 0,
+        "AnchorPoint": "0, 0",
+        "Image": "rbxassetid://96578222489735",
+        "ZIndex": 1,
+        "Archivable": true,
+        "Size": "{0.400000006, 0}, {1.60000002, 0}",
+        "ClipsDescendants": false,
+        "LayoutOrder": 0,
+        "Visible": true,
+        "Rotation": 0,
+        "Transparency": 1,
+        "Name": "ImageLabel",
+        "Position": "{-0.400000006, 0}, {-0.300000429, 0}",
+        "AutomaticSize": "Enum.AutomaticSize.None",
+        "Active": false,
+        "BackgroundTransparency": 1,
+        "BackgroundColor3": "1, 1, 1"
+      },
+      "class": "ImageLabel"
+    },
+    {
+      "path": "StarterGui/MainUI/MainFrame/CashLabel/UIGradient",
+      "properties": {
+        "Rotation": 80,
+        "Name": "UIGradient",
+        "Scale": 1,
+        "Archivable": true,
+        "Enabled": true
+      },
+      "class": "UIGradient"
+    },
+    {
+      "path": "StarterGui/MainUI/MainFrame/GemLabel",
+      "properties": {
+        "Visible": true,
+        "Active": false,
+        "AnchorPoint": "0, 0",
+        "ZIndex": 1,
+        "Archivable": true,
+        "Size": "{0.0841472596, 0}, {0.0471544713, 0}",
+        "TextColor3": "1, 1, 1",
+        "ClipsDescendants": false,
+        "Text": "100,000,000",
+        "LayoutOrder": 0,
+        "AutomaticSize": "Enum.AutomaticSize.None",
+        "Rotation": 0,
+        "Transparency": 1,
+        "Name": "GemLabel",
+        "Position": "{0.0458302014, 0}, {0.87577641, 0}",
+        "Font": "Enum.Font.FredokaOne",
+        "BackgroundTransparency": 1,
+        "TextSize": 14,
+        "BackgroundColor3": "1, 1, 1"
+      },
+      "class": "TextLabel"
+    },
+    {
+      "properties": {
+        "Enabled": true,
+        "Archivable": true,
+        "Name": "GemsLabel"
+      },
+      "path": "StarterGui/MainUI/MainFrame/GemLabel/GemsLabel",
+      "source": "-- CoinsLabel (LocalScript) > TextLabel\nlocal Players = game:GetService(\"Players\")\n\nlocal player      = Players.LocalPlayer\nlocal coinsLabel  = script.Parent\n\n-- ─── Format number with commas ────────────────────────────────────────────────\n\nlocal function formatCoins(n)\n\tlocal str     = tostring(math.floor(n))\n\tlocal result  = \"\"\n\tlocal count   = 0\n\n\tfor i = #str, 1, -1 do\n\t\tif count > 0 and count % 3 == 0 then\n\t\t\tresult = \",\" .. result\n\t\tend\n\t\tresult = str:sub(i, i) .. result\n\t\tcount += 1\n\tend\n\n\treturn result .. \"\"\nend\n\n-- ─── Update label ─────────────────────────────────────────────────────────────\n\nlocal function updateLabel(coins)\n\tcoinsLabel.Text = formatCoins(coins)\nend\n\n-- ─── Hook into leaderstats ────────────────────────────────────────────────────\n\nlocal function setupCoins()\n\tlocal leaderstats = player:WaitForChild(\"leaderstats\")\n\tlocal coins       = leaderstats:WaitForChild(\"Gems\")\n\n\tupdateLabel(coins.Value)\n\n\tcoins:GetPropertyChangedSignal(\"Value\"):Connect(function()\n\t\tupdateLabel(coins.Value)\n\tend)\nend\n\nsetupCoins()",
+      "class": "LocalScript"
+    },
+    {
+      "path": "StarterGui/MainUI/MainFrame/GemLabel/ImageLabel",
+      "properties": {
+        "ImageColor3": "1, 1, 1",
+        "ImageTransparency": 0,
+        "AnchorPoint": "0, 0",
+        "Image": "rbxassetid://135227335050960",
+        "ZIndex": 1,
+        "Archivable": true,
+        "Size": "{0.400000006, 0}, {1.60000002, 0}",
+        "ClipsDescendants": false,
+        "LayoutOrder": 0,
+        "Visible": true,
+        "Rotation": 0,
+        "Transparency": 1,
+        "Name": "ImageLabel",
+        "Position": "{-0.400000006, 0}, {-0.300000012, 0}",
+        "AutomaticSize": "Enum.AutomaticSize.None",
+        "Active": false,
+        "BackgroundTransparency": 1,
+        "BackgroundColor3": "1, 1, 1"
+      },
+      "class": "ImageLabel"
+    },
+    {
+      "path": "StarterGui/MainUI/MainFrame/GemLabel/UIGradient",
+      "properties": {
+        "Rotation": 80,
+        "Name": "UIGradient",
+        "Scale": 1,
+        "Archivable": true,
+        "Enabled": true
+      },
+      "class": "UIGradient"
+    },
+    {
+      "path": "StarterGui/MainUI/MainFrame/GemLabel/UIStroke",
+      "properties": {
+        "Enabled": true,
+        "Transparency": 0,
+        "Name": "UIStroke",
+        "Color": "0, 0.00392157, 0.345098",
+        "ZIndex": 1,
+        "Archivable": true
+      },
+      "class": "UIStroke"
+    },
+    {
+      "path": "StarterPack",
+      "properties": {
+        "Name": "StarterPack",
+        "Archivable": true
+      },
+      "class": "StarterPack"
+    },
+    {
+      "path": "StarterPlayer",
+      "properties": {
+        "Name": "StarterPlayer",
+        "Archivable": true
+      },
+      "class": "StarterPlayer"
+    },
+    {
+      "path": "StarterPlayer/StarterPlayerScripts",
+      "properties": {
+        "Name": "StarterPlayerScripts",
+        "Archivable": true
+      },
+      "class": "StarterPlayerScripts"
+    },
+    {
+      "properties": {
+        "Enabled": true,
+        "Archivable": true,
+        "Name": "GameClient"
+      },
+      "path": "StarterPlayer/StarterPlayerScripts/GameClient",
+      "source": "-- Client entry point. Client systems can be added here.\n",
+      "class": "LocalScript"
+    },
+    {
+      "properties": {
+        "Enabled": true,
+        "Archivable": true,
+        "Name": "Init"
+      },
+      "path": "StarterPlayer/StarterPlayerScripts/GameClient/Init",
+      "source": "-- Client entry point. Client systems can be added here.\n",
+      "class": "LocalScript"
+    },
+    {
+      "properties": {
+        "Enabled": true,
+        "Archivable": true,
+        "Name": "TetsuDialogue"
+      },
+      "path": "StarterPlayer/StarterPlayerScripts/GameClient/TetsuDialogue",
+      "source": "-- Tetsu dialogue UI: choices, custom name entry, quest notifications.\nlocal Players = game:GetService(\"Players\")\nlocal ReplicatedStorage = game:GetService(\"ReplicatedStorage\")\nlocal UserInputService = game:GetService(\"UserInputService\")\nlocal player = Players.LocalPlayer\nlocal remote = ReplicatedStorage:WaitForChild(\"TetsuDialogue\")\n\nlocal gui = Instance.new(\"ScreenGui\")\ngui.Name = \"TetsuDialogueUI\"\ngui.ResetOnSpawn = false\ngui.DisplayOrder = 40\ngui.Parent = player:WaitForChild(\"PlayerGui\")\nlocal panel = Instance.new(\"Frame\")\npanel.Name = \"DialoguePanel\"\npanel.AnchorPoint = Vector2.new(0.5, 1)\npanel.Position = UDim2.new(0.5, 0, 1, -28)\npanel.Size = UDim2.new(0.9, 0, 0, 280)\npanel.BackgroundColor3 = Color3.fromRGB(18, 22, 34)\npanel.BorderSizePixel = 0\npanel.Visible = false\npanel.Parent = gui\nlocal limit = Instance.new(\"UISizeConstraint\")\nlimit.MaxSize = Vector2.new(570, 280)\nlimit.Parent = panel\nInstance.new(\"UICorner\", panel).CornerRadius = UDim.new(0, 14)\nlocal stroke = Instance.new(\"UIStroke\")\nstroke.Color = Color3.fromRGB(130, 112, 235)\nstroke.Thickness = 2\nstroke.Parent = panel\n\nlocal function textLabel(name, value, y, height, size)\n\tlocal label = Instance.new(\"TextLabel\")\n\tlabel.Name = name\n\tlabel.BackgroundTransparency = 1\n\tlabel.Position = UDim2.new(0, 18, 0, y)\n\tlabel.Size = UDim2.new(1, -36, 0, height)\n\tlabel.Font = Enum.Font.GothamSemibold\n\tlabel.TextColor3 = Color3.new(1, 1, 1)\n\tlabel.TextSize = size\n\tlabel.TextWrapped = true\n\tlabel.TextXAlignment = Enum.TextXAlignment.Left\n\tlabel.Text = value\n\tlabel.Parent = panel\n\treturn label\nend\ntextLabel(\"Heading\", \"TETSU  •  YOUR SLAYER JOURNEY\", 7, 29, 14)\nlocal message = textLabel(\"Message\", \"\", 40, 62, 17)\nlocal function button(name, y, height)\n\tlocal b = Instance.new(\"TextButton\")\n\tb.Name = name\n\tb.Position = UDim2.new(0, 18, 0, y)\n\tb.Size = UDim2.new(1, -36, 0, height)\n\tb.BackgroundColor3 = Color3.fromRGB(52, 58, 83)\n\tb.TextColor3 = Color3.new(1, 1, 1)\n\tb.TextSize = 15\n\tb.Font = Enum.Font.GothamMedium\n\tb.TextWrapped = true\n\tb.Parent = panel\n\tInstance.new(\"UICorner\", b).CornerRadius = UDim.new(0, 8)\n\treturn b\nend\nlocal choices = {button(\"Choice1\", 103, 40), button(\"Choice2\", 148, 40), button(\"Choice3\", 193, 40)}\nlocal nextButton = button(\"Continue\", 137, 46)\nnextButton.Visible = false\nlocal nameInput = Instance.new(\"TextBox\")\nnameInput.Name = \"CustomName\"\nnameInput.Position = UDim2.new(0, 18, 0, 113)\nnameInput.Size = UDim2.new(1, -36, 0, 43)\nnameInput.BackgroundColor3 = Color3.fromRGB(43, 48, 68)\nnameInput.TextColor3 = Color3.new(1, 1, 1)\nnameInput.PlaceholderText = \"Your slayer name (3–20 characters)\"\nnameInput.Text = \"\"\nnameInput.ClearTextOnFocus = false\nnameInput.Font = Enum.Font.GothamMedium\nnameInput.TextSize = 15\nnameInput.Visible = false\nnameInput.Parent = panel\nInstance.new(\"UICorner\", nameInput).CornerRadius = UDim.new(0, 8)\nlocal confirm = button(\"ConfirmName\", 166, 43)\nconfirm.Text = \"Confirm my name\"\nconfirm.Visible = false\nlocal close = Instance.new(\"TextButton\")\nclose.Name = \"Close\"\nclose.Position = UDim2.new(1, -50, 0, 6)\nclose.Size = UDim2.fromOffset(34, 30)\nclose.BackgroundTransparency = 1\nclose.TextColor3 = Color3.new(1, 1, 1)\nclose.Text = \"X\"\nclose.Font = Enum.Font.GothamBold\nclose.TextSize = 17\nclose.Parent = panel\nlocal phase = \"Closed\"\nlocal storyAction = \"Continue\"\nlocal function hideControls()\n\tfor _, b in ipairs(choices) do b.Visible = false end\n\tnextButton.Visible = false\n\tnameInput.Visible = false\n\tconfirm.Visible = false\nend\nlocal function dismiss()\n\tpanel.Visible = false\n\tphase = \"Closed\"\n\tremote:FireServer(\"Close\")\nend\nclose.Activated:Connect(dismiss)\nlocal function choose(i)\n\tif phase ~= \"Question\" then return end\n\tphase = \"Waiting\"\n\tremote:FireServer(\"Choose\", i)\nend\nfor i, b in ipairs(choices) do\n\tb.Activated:Connect(function() choose(i) end)\nend\nconfirm.Activated:Connect(function()\n\tif phase ~= \"NameEntry\" then return end\n\tphase = \"Waiting\"\n\tremote:FireServer(\"CustomName\", nameInput.Text)\nend)\nnextButton.Activated:Connect(function()\n\tif phase ~= \"Story\" then return end\n\tphase = \"Waiting\"\n\tremote:FireServer(storyAction)\nend)\nremote.OnClientEvent:Connect(function(action, data)\n\tdata = data or {}\n\tif action == \"Close\" then\n\t\tpanel.Visible = false\n\t\tphase = \"Closed\"\n\t\treturn\n\tend\n\tif action == \"Quest\" then\n\t\tpanel.Visible = true\n\t\thideControls()\n\t\tphase = \"Story\"\n\t\tstoryAction = \"Continue\"\n\t\tmessage.Text = data.text\n\t\tnextButton.Text = \"Got it\"\n\t\tnextButton.Visible = true\n\t\treturn\n\tend\n\tpanel.Visible = true\n\thideControls()\n\tif action == \"Question\" then\n\t\tphase = \"Question\"\n\t\tmessage.Text = data.question\n\t\tfor i, b in ipairs(choices) do\n\t\t\tb.Text = tostring(i)..\".  \"..tostring(data.answers[i])\n\t\t\tb.Visible = true\n\t\tend\n\telseif action == \"NameEntry\" or action == \"NameError\" then\n\t\tphase = \"NameEntry\"\n\t\tmessage.Text = action == \"NameError\" and data.text or \"Choose your custom in-game slayer name.\"\n\t\tnameInput.Visible = true\n\t\tconfirm.Visible = true\n\telseif action == \"Story\" then\n\t\tphase = \"Story\"\n\t\tmessage.Text = data.text\n\t\tnextButton.Text = data.button or \"Continue\"\n\t\tstoryAction = data.button == \"Accept sword & quest\" and \"Accept\" or \"Continue\"\n\t\tnextButton.Visible = true\n\tend\nend)\nUserInputService.InputBegan:Connect(function(input, processed)\n\tif processed or phase ~= \"Question\" or UserInputService:GetFocusedTextBox() then return end\n\tlocal keys = {[Enum.KeyCode.One]=1, [Enum.KeyCode.Two]=2, [Enum.KeyCode.Three]=3}\n\tif keys[input.KeyCode] then choose(keys[input.KeyCode]) end\nend)\n",
+      "class": "LocalScript"
+    },
+    {
+      "properties": {
+        "Enabled": true,
+        "Archivable": true,
+        "Name": "SwordSwing"
+      },
+      "path": "StarterPlayer/StarterPlayerScripts/GameClient/SwordSwing",
+      "source": "-- Move the character's right arm along with the sword.\n-- R6: animate the shoulder Motor6D. R15: use IKControl to move the hand.\nlocal Players = game:GetService(\"Players\")\nlocal TweenService = game:GetService(\"TweenService\")\nlocal player = Players.LocalPlayer\n\nlocal WINDUP = TweenInfo.new(0.12, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)\nlocal SLASH = TweenInfo.new(0.17, Enum.EasingStyle.Quad, Enum.EasingDirection.In)\nlocal RECOVER = TweenInfo.new(0.19, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)\n\nlocal function bindSword(tool)\n\tif not tool:IsA(\"Tool\") or tool.Name ~= \"Novice Slayer Sword\" then return end\n\tif tool:GetAttribute(\"SwingClientBound\") then return end\n\ttool:SetAttribute(\"SwingClientBound\", true)\n\n\tlocal swinging = false\n\tlocal ik, target, shoulder, defaultC0\n\tlocal function cleanup()\n\t\tif ik then ik:Destroy() ik = nil end\n\t\tif target then target:Destroy() target = nil end\n\t\tif shoulder and shoulder.Parent and defaultC0 then shoulder.C0 = defaultC0 end\n\t\tshoulder = nil\n\t\tdefaultC0 = nil\n\tend\n\n\tlocal function setup(character)\n\t\tcleanup()\n\t\tlocal humanoid = character:FindFirstChildOfClass(\"Humanoid\")\n\t\tif not humanoid then return end\n\t\tif humanoid.RigType == Enum.HumanoidRigType.R6 then\n\t\t\tlocal torso = character:FindFirstChild(\"Torso\")\n\t\t\tshoulder = torso and torso:FindFirstChild(\"Right Shoulder\")\n\t\t\tif shoulder and shoulder:IsA(\"Motor6D\") then defaultC0 = shoulder.C0 end\n\t\telse\n\t\t\tlocal upper = character:FindFirstChild(\"RightUpperArm\")\n\t\t\tlocal hand = character:FindFirstChild(\"RightHand\")\n\t\t\tlocal root = character:FindFirstChild(\"UpperTorso\")\n\t\t\tif not upper or not hand or not root then return end\n\t\t\ttarget = Instance.new(\"Part\")\n\t\t\ttarget.Name = \"LocalSwordSwingTarget\"\n\t\t\ttarget.Size = Vector3.new(0.2,0.2,0.2)\n\t\t\ttarget.Transparency = 1\n\t\t\ttarget.Anchored = true\n\t\t\ttarget.CanCollide = false\n\t\t\ttarget.CanTouch = false\n\t\t\ttarget.CanQuery = false\n\t\t\ttarget.CFrame = hand.CFrame\n\t\t\ttarget.Parent = workspace\n\t\t\tik = Instance.new(\"IKControl\")\n\t\t\tik.Name = \"SwordSwingArmIK\"\n\t\t\tik.Type = Enum.IKControlType.Position\n\t\t\tik.ChainRoot = upper\n\t\t\tik.EndEffector = hand\n\t\t\tik.Target = target\n\t\t\tik.SmoothTime = 0.08\n\t\t\tik.Weight = 0\n\t\t\tik.Priority = 10\n\t\t\tik.Parent = humanoid\n\t\tend\n\tend\n\n\tlocal function animate(targetObject, info, properties)\n\t\tlocal tween = TweenService:Create(targetObject, info, properties)\n\t\ttween:Play()\n\t\ttween.Completed:Wait()\n\tend\n\n\ttool.Equipped:Connect(function()\n\t\tlocal character = player.Character\n\t\tif character then setup(character) end\n\tend)\n\ttool.Unequipped:Connect(function()\n\t\tswinging = false\n\t\tcleanup()\n\tend)\n\ttool.Activated:Connect(function()\n\t\tlocal character = player.Character\n\t\tif swinging or not character or tool.Parent ~= character then return end\n\t\tswinging = true\n\t\tif shoulder and defaultC0 then\n\t\t\t-- Shoulder movement carries the sword because it is welded to the hand.\n\t\t\tlocal back = defaultC0 * CFrame.Angles(math.rad(-35), math.rad(-10), math.rad(35))\n\t\t\tlocal forward = defaultC0 * CFrame.Angles(math.rad(40), math.rad(5), math.rad(-35))\n\t\t\tanimate(shoulder, WINDUP, {C0=back})\n\t\t\tif tool.Parent == character then animate(shoulder, SLASH, {C0=forward}) end\n\t\t\tif shoulder.Parent then animate(shoulder, RECOVER, {C0=defaultC0}) end\n\t\telseif ik and target and target.Parent then\n\t\t\tlocal torso = character:FindFirstChild(\"UpperTorso\")\n\t\t\tif torso then\n\t\t\t\t-- Keep the hand near the shoulder instead of pulling it across the body.\n\t\t\t\t-- A torso-relative attachment avoids world-space snapping while moving.\n\t\t\t\tlocal rest = target.CFrame\n\t\t\t\t\n\t\t\t\tlocal function aim(localOffset, info)\n\t\t\t\t\tif not torso.Parent or not target.Parent then return end\n\t\t\t\t\tanimate(target, info, {CFrame=torso.CFrame * CFrame.new(localOffset)})\n\t\t\t\tend\n\t\t\t\tik.Weight = 0.75\n\t\t\t\taim(Vector3.new(1.35, 0.65, -0.7), WINDUP)\n\t\t\t\tif tool.Parent == character then\n\t\t\t\t\taim(Vector3.new(0.35, -0.6, -1.4), SLASH)\n\t\t\t\tend\n\t\t\t\tanimate(target, RECOVER, {CFrame=rest})\n\t\t\t\tik.Weight = 0\n\n\t\t\tend\n\t\tend\n\t\tswinging = false\n\tend)\n\ttool.Destroying:Connect(cleanup)\nend\n\nlocal function watch(container)\n\tfor _, child in ipairs(container:GetChildren()) do bindSword(child) end\n\tcontainer.ChildAdded:Connect(bindSword)\nend\nwatch(player:WaitForChild(\"Backpack\"))\nplayer.CharacterAdded:Connect(watch)\nif player.Character then watch(player.Character) end\n",
+      "class": "LocalScript"
+    },
+    {
+      "path": "StarterPlayer/StarterCharacterScripts",
+      "properties": {
+        "Name": "StarterCharacterScripts",
+        "Archivable": true
+      },
+      "class": "StarterCharacterScripts"
+    },
+    {
+      "path": "ReplicatedFirst",
+      "properties": {
+        "Name": "ReplicatedFirst",
+        "Archivable": true
+      },
+      "class": "ReplicatedFirst"
+    },
+    {
+      "path": "Lighting",
+      "properties": {
+        "Brightness": 2,
+        "Archivable": true,
+        "Name": "Lighting"
+      },
+      "class": "Lighting"
+    },
+    {
+      "path": "Lighting/Atmosphere",
+      "properties": {
+        "Color": "0.780392, 0.780392, 0.780392",
+        "Archivable": true,
+        "Name": "Atmosphere"
+      },
+      "class": "Atmosphere"
+    },
+    {
+      "path": "Lighting/Sky",
+      "properties": {
+        "Name": "Sky",
+        "Archivable": true
+      },
+      "class": "Sky"
+    },
+    {
+      "path": "Lighting/Bloom",
+      "properties": {
+        "Enabled": true,
+        "Name": "Bloom",
+        "Archivable": true,
+        "Size": 24
+      },
+      "class": "BloomEffect"
+    },
+    {
+      "path": "Lighting/DepthOfField",
+      "properties": {
+        "Enabled": false,
+        "Archivable": true,
+        "Name": "DepthOfField"
+      },
+      "class": "DepthOfFieldEffect"
+    },
+    {
+      "path": "Lighting/SunRays",
+      "properties": {
+        "Enabled": true,
+        "Archivable": true,
+        "Name": "SunRays"
+      },
+      "class": "SunRaysEffect"
+    },
+    {
+      "path": "SoundService",
+      "properties": {
+        "Name": "SoundService",
+        "Archivable": true
+      },
+      "class": "SoundService"
+    },
+    {
+      "path": "Teams",
+      "properties": {
+        "Name": "Teams",
+        "Archivable": true
+      },
+      "class": "Teams"
+    }
+  ],
+  "placeName": "Untitled Slayers",
+  "warnings": [],
+  "format": "untitled-slayers-studio-v1",
+  "createdAt": 1793416841,
+  "placeId": 97326330714117
+}
