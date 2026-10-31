@@ -16,6 +16,30 @@ collectible.CanCollide = false
 collectible.CanTouch = false
 collectible.CanQuery = true
 
+-- Keep the secret brick hidden, but always place it above valid ground so it is findable.
+local function placeCollectibleAboveGround()
+	local spawn = workspace:FindFirstChildOfClass("SpawnLocation")
+	if not spawn then return end
+
+	-- Hidden off to the side/back of the starting area rather than directly beside spawn.
+	local targetXZ = spawn.Position + Vector3.new(-48, 0, -38)
+	local rayOrigin = Vector3.new(targetXZ.X, 150, targetXZ.Z)
+	local rayDirection = Vector3.new(0, -300, 0)
+	local params = RaycastParams.new()
+	params.FilterType = Enum.RaycastFilterType.Exclude
+	params.FilterDescendantsInstances = {collectible}
+
+	local result = workspace:Raycast(rayOrigin, rayDirection, params)
+	if result then
+		local halfHeight = collectible.Size.Y * 0.5
+		collectible.Position = result.Position + Vector3.new(0, halfHeight + 0.35, 0)
+	else
+		collectible.Position = Vector3.new(targetXZ.X, spawn.Position.Y + 2, targetXZ.Z)
+	end
+end
+
+placeCollectibleAboveGround()
+
 local clickDetector = collectible:FindFirstChildOfClass("ClickDetector") or Instance.new("ClickDetector")
 clickDetector.MaxActivationDistance = 12
 clickDetector.Parent = collectible
