@@ -11,14 +11,12 @@ local animSaves = workspace:WaitForChild("TemplateR6"):WaitForChild("AnimSaves")
 local animationCache = {}
 local function resolveAnimation(name)
 	if animationCache[name] then return animationCache[name] end
-	-- Prefer uploaded Animation objects if they exist.
 	for _, obj in ipairs(ReplicatedStorage:GetDescendants()) do
 		if obj:IsA("Animation") and obj.Name == name and obj.AnimationId ~= "" then
 			animationCache[name] = obj
 			return obj
 		end
 	end
-	-- Studio preview fallback for the KeyframeSequences the dev added.
 	local sequence = animSaves:FindFirstChild(name)
 	if sequence and sequence:IsA("KeyframeSequence") then
 		local ok, id = pcall(function()
@@ -54,19 +52,21 @@ local function bindSword(tool)
 
 	local equipped = false
 	local attacking = false
+	local unsheathing = false
 	local humanoid, animator
-	local idleTrack, walkTrack
+	local idleTrack, walkTrack, unsheathTrack
 	local attackTracks = {}
 	local runningConnection
 	local lastAttackIndex = 0
 	local lastAttackTime = 0
+	local equipToken = 0
 
 	local function stopTrack(track, fade)
 		if track and track.IsPlaying then track:Stop(fade or 0.1) end
 	end
 
 	local function setLocomotion(speed)
-		if not equipped or attacking then return end
+		if not equipped or attacking or unsheathing then return end
 		if speed > 0.5 then
 			stopTrack(idleTrack, 0.15)
 			if walkTrack and not walkTrack.IsPlaying then walkTrack:Play(0.15) end
@@ -78,10 +78,11 @@ local function bindSword(tool)
 
 	local function clearTracks()
 		if runningConnection then runningConnection:Disconnect() runningConnection = nil end
+		stopTrack(unsheathTrack, 0.05)
 		stopTrack(idleTrack, 0.1)
 		stopTrack(walkTrack, 0.1)
 		for _, track in pairs(attackTracks) do stopTrack(track, 0.05) end
-		idleTrack, walkTrack = nil, nil
+		unsheathTrack, idleTrack, walkTrack = nil, nil, nil
 		table.clear(attackTracks)
 		humanoid, animator = nil, nil
 	end
@@ -93,13 +94,13 @@ local function bindSword(tool)
 		if not humanoid then return end
 		animator = humanoid:FindFirstChildOfClass("Animator") or Instance.new("Animator")
 		animator.Parent = humanoid
+		unsheathTrack = loadTrack(animator, "UnsheathingSword", Enum.AnimationPriority.Action, false)
 		idleTrack = loadTrack(animator, "Sword Idle", Enum.AnimationPriority.Idle, true)
 		walkTrack = loadTrack(animator, "Sword Walk", Enum.AnimationPriority.Movement, true)
 		for i = 1, 5 do
 			attackTracks[i] = loadTrack(animator, "Attack" .. i, Enum.AnimationPriority.Action, false)
 		end
 		runningConnection = humanoid.Running:Connect(setLocomotion)
-		setLocomotion(humanoid.MoveDirection.Magnitude * humanoid.WalkSpeed)
 	end
 
 	local function chooseAttack()
@@ -115,17 +116,41 @@ local function bindSword(tool)
 
 	tool.Equipped:Connect(function()
 		equipped = true
+		attacking = false
+		unsheathing = true
+		equipToken += 1
+		local thisEquip = equipToken
 		setupTracks()
+		stopTrack(idleTrack, 0)
+		stopTrack(walkTrack, 0)
+
+		if unsheathTrack then
+			unsheathTrack:Play(0.06, 1, 1)
+			local duration = 0.65
+			if unsheathTrack.Length > 0 then duration = math.clamp(unsheathTrack.Length, 0.25, 2) end
+			task.delay(duration, function()
+				if not equipped or thisEquip ~= equipToken then return end
+				unsheathing = false
+				if humanoid then
+					setLocomotion(humanoid.MoveDirection.Magnitude * humanoid.WalkSpeed)
+				end
+			end)
+		else
+			unsheathing = false
+			if humanoid then setLocomotion(humanoid.MoveDirection.Magnitude * humanoid.WalkSpeed) end
+		end
 	end)
 
 	tool.Unequipped:Connect(function()
 		equipped = false
 		attacking = false
+		unsheathing = false
+		equipToken += 1
 		clearTracks()
 	end)
 
 	tool.Activated:Connect(function()
-		if not equipped or attacking then return end
+		if not equipped or attacking or unsheathing then return end
 		if os.clock() - lastAttackTime < 0.42 then return end
 		local character = player.Character
 		if not character or tool.Parent ~= character then return end
