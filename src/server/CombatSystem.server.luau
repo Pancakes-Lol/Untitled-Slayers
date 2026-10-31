@@ -1,22 +1,42 @@
 -- Shared sword combat + Dawnreach enemy spawner.
--- Uses the developer sword at ReplicatedStorage.Assets.Swords.Sword.
--- Enemy tuning lives at ReplicatedStorage.Assets.Configs.EnemyConfig.
+-- Primary enemy tuning: ReplicatedStorage.Assets.Configs.EnemyConfig
+-- Fallback tuning: ReplicatedStorage.GameShared.EnemyConfig
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local ServerStorage = game:GetService("ServerStorage")
 local KeyframeSequenceProvider = game:GetService("KeyframeSequenceProvider")
 
-local assets = ReplicatedStorage:WaitForChild("Assets")
-local swordsFolder = assets:WaitForChild("Swords")
-local configsFolder = assets:WaitForChild("Configs")
-local swordTemplate = swordsFolder:WaitForChild("Sword")
-local EnemyConfig = require(configsFolder:WaitForChild("EnemyConfig"))
-local spawnRoot = workspace:WaitForChild("EnemieSpawnPoints"):WaitForChild("Dawnreach")
-local animSaves = workspace:WaitForChild("TemplateR6"):WaitForChild("AnimSaves")
-
+-- Create the remote immediately so the client never hangs, even if config loading has a problem.
 local combatRemote = ReplicatedStorage:FindFirstChild("SwordCombat") or Instance.new("RemoteEvent")
 combatRemote.Name = "SwordCombat"
 combatRemote.Parent = ReplicatedStorage
+
+local assets = ReplicatedStorage:WaitForChild("Assets")
+local swordsFolder = assets:WaitForChild("Swords")
+local swordTemplate = swordsFolder:WaitForChild("Sword")
+
+local function resolveEnemyConfig()
+	local configsFolder = assets:FindFirstChild("Configs")
+	local primary = configsFolder and configsFolder:FindFirstChild("EnemyConfig")
+	if primary and primary:IsA("ModuleScript") then
+		local ok, result = pcall(require, primary)
+		if ok then return result end
+		warn("[CombatSystem] Could not require Assets.Configs.EnemyConfig: " .. tostring(result))
+	end
+
+	local gameShared = ReplicatedStorage:FindFirstChild("GameShared")
+	local fallback = gameShared and gameShared:FindFirstChild("EnemyConfig")
+	if fallback and fallback:IsA("ModuleScript") then
+		warn("[CombatSystem] Using GameShared.EnemyConfig fallback. Restart Rojo to load Assets.Configs.EnemyConfig.")
+		return require(fallback)
+	end
+
+	error("[CombatSystem] EnemyConfig missing from both Assets.Configs and GameShared")
+end
+
+local EnemyConfig = resolveEnemyConfig()
+local spawnRoot = workspace:WaitForChild("EnemieSpawnPoints"):WaitForChild("Dawnreach")
+local animSaves = workspace:WaitForChild("TemplateR6"):WaitForChild("AnimSaves")
 
 local enemyFolder = workspace:FindFirstChild("LiveEnemies") or Instance.new("Folder")
 enemyFolder.Name = "LiveEnemies"
@@ -44,7 +64,6 @@ local function awardPlayer(player, xpAmount, coinAmount)
 
 	coins.Value += coinAmount
 	xp.Value += xpAmount
-
 	while xp.Value >= xpNeededForLevel(level.Value) do
 		local needed = xpNeededForLevel(level.Value)
 		xp.Value -= needed
@@ -105,6 +124,7 @@ local function watchPlayer(player)
 		end
 	end)
 	replaceOldSword(backpack)
+
 	player.CharacterAdded:Connect(function(character)
 		character.ChildAdded:Connect(function(child)
 			if child:IsA("Tool") and child.Name == "Novice Slayer Sword" and not child:GetAttribute("DeveloperSword") then
@@ -120,12 +140,14 @@ Players.PlayerAdded:Connect(watchPlayer)
 local animationCache = {}
 local function resolveAnimation(name)
 	if animationCache[name] then return animationCache[name] end
+
 	for _, obj in ipairs(ReplicatedStorage:GetDescendants()) do
 		if obj:IsA("Animation") and obj.Name == name and obj.AnimationId ~= "" then
 			animationCache[name] = obj
 			return obj
 		end
 	end
+
 	local sequence = animSaves:FindFirstChild(name)
 	if sequence and sequence:IsA("KeyframeSequence") then
 		local ok, id = pcall(function()
@@ -139,6 +161,7 @@ local function resolveAnimation(name)
 			return anim
 		end
 	end
+
 	warn("[CombatSystem] Animation not available: " .. name)
 	return nil
 end
@@ -151,28 +174,6 @@ local function loadTrack(animator, name, priority, looped)
 	track.Priority = priority
 	track.Looped = looped
 	return track
-end
-
-local function equipNpcSword(model, humanoid)
-	local tool = cloneDevSword("Sword")
-	tool.Parent = model
-	pcall(function() humanoid:EquipTool(tool) end)
-end
-
-local function nearestPlayer(position, aggroDistance)
-	local bestPlayer, bestRoot, bestHum, bestDistance
-	for _, player in ipairs(Players:GetPlayers()) do
-		local character = player.Character
-		local root = character and character:FindFirstChild("HumanoidRootPart")
-		local hum = character and character:FindFirstChildOfClass("Humanoid")
-		if root and hum and hum.Health > 0 then
-			local distance = (root.Position - position).Magnitude
-			if distance <= aggroDistance and (not bestDistance or distance < bestDistance) then
-				bestPlayer, bestRoot, bestHum, bestDistance = player, root, hum, distance
-			end
-		end
-	end
-	return bestPlayer, bestRoot, bestHum, bestDistance
 end
 
 local function setupNpcAnimations(humanoid)
@@ -208,6 +209,28 @@ local function playDifferentAttack(tracks, lastIndex)
 	local index = choices[math.random(1, #choices)]
 	tracks.attacks[index]:Play(0.08, 1, 1)
 	return index
+end
+
+local function nearestPlayer(position, aggroDistance)
+	local bestPlayer, bestRoot, bestHum, bestDistance
+	for _, player in ipairs(Players:GetPlayers()) do
+		local character = player.Character
+		local root = character and character:FindFirstChild("HumanoidRootPart")
+		local hum = character and character:FindFirstChildOfClass("Humanoid")
+		if root and hum and hum.Health > 0 then
+			local distance = (root.Position - position).Magnitude
+			if distance <= aggroDistance and (not bestDistance or distance < bestDistance) then
+				bestPlayer, bestRoot, bestHum, bestDistance = player, root, hum, distance
+			end
+		end
+	end
+	return bestPlayer, bestRoot, bestHum, bestDistance
+end
+
+local function equipNpcSword(model, humanoid)
+	local tool = cloneDevSword("Sword")
+	tool.Parent = model
+	pcall(function() humanoid:EquipTool(tool) end)
 end
 
 local function spawnEnemy(enemyName, point)
@@ -252,6 +275,7 @@ local function spawnEnemy(enemyName, point)
 	local alive = true
 	local lastAttackTime = 0
 	local lastAttackIndex = 0
+
 	humanoid.Died:Connect(function()
 		alive = false
 		local userId = humanoid:GetAttribute("LastHitUserId")
