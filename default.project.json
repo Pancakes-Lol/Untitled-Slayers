@@ -12,6 +12,17 @@
       "$className": "ReplicatedStorage",
       "GameShared": {
         "$path": "src/shared"
+      },
+      "Assets": {
+        "$className": "Folder",
+        "$ignoreUnknownInstances": true,
+        "Configs": {
+          "$className": "Folder",
+          "$ignoreUnknownInstances": true,
+          "EnemyConfig": {
+            "$path": "src/configs/EnemyConfig.luau"
+          }
+        }
       }
     },
     "StarterPlayer": {
