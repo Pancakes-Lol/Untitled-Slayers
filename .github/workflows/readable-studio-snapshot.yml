@@ -1,0 +1,37 @@
+name: Make Studio snapshot readable
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'studio-export/snapshot.json'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: readable-studio-snapshot
+  cancel-in-progress: false
+
+jobs:
+  split:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Split and validate snapshot
+        run: python scripts/split_studio_snapshot.py
+      - name: Commit readable snapshot parts
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A studio-export/readable/
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: refresh readable Studio snapshot parts"
+            git push
+          fi
