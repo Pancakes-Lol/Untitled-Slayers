@@ -23,11 +23,22 @@ local function setup(player)
 
 	ensureInt(stats, "Level", 1)
 	ensureInt(stats, "XP", 0)
-	ensureInt(stats, "Coins", 0)
-	ensureInt(stats, "Gems", 0)
 
-	local oldXpToNext = stats:FindFirstChild("XPToNextLevel")
-	if oldXpToNext then oldXpToNext:Destroy() end
+	-- Coins and Gems should not appear on Roblox's player leaderboard.
+	local currency = player:FindFirstChild("Currency")
+	if not currency then
+		currency = Instance.new("Folder")
+		currency.Name = "Currency"
+		currency.Parent = player
+	end
+	ensureInt(currency, "Coins", 0)
+	ensureInt(currency, "Gems", 0)
+
+	-- Remove old leaderboard currency values if they exist from a previous version.
+	for _, name in {"Coins", "Gems", "XPToNextLevel"} do
+		local old = stats:FindFirstChild(name)
+		if old then old:Destroy() end
+	end
 end
 
 Players.PlayerAdded:Connect(setup)
