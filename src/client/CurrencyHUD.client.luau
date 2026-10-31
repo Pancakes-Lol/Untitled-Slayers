@@ -4,24 +4,36 @@ local Players = game:GetService("Players")
 
 local player = Players.LocalPlayer
 local playerGui = player:WaitForChild("PlayerGui")
-local currency = player:WaitForChild("Currency")
-local coins = currency:WaitForChild("Coins")
-local gems = currency:WaitForChild("Gems")
+
+-- Shut down the old currency LocalScripts as early as possible so they never wait
+-- for leaderstats.Coins/Gems and produce infinite-yield warnings.
+local function disableLegacyCurrencyScript(obj)
+	if obj:IsA("LocalScript") and (obj.Name == "CoinsLabel" or obj.Name == "GemsLabel") then
+		obj.Disabled = true
+	end
+end
+
+for _, obj in ipairs(playerGui:GetDescendants()) do
+	disableLegacyCurrencyScript(obj)
+end
+playerGui.DescendantAdded:Connect(disableLegacyCurrencyScript)
 
 local mainUI = playerGui:WaitForChild("MainUI")
 local mainFrame = mainUI:WaitForChild("MainFrame")
 local cashContainer = mainFrame:WaitForChild("CashLabel")
 local gemContainer = mainFrame:WaitForChild("GemLabel")
 
-local function disableOldScript(container, scriptName)
-	local old = container:FindFirstChild(scriptName)
-	if old and old:IsA("LocalScript") then
-		old.Disabled = true
-	end
+-- Run one more targeted pass now that the existing MainUI is guaranteed to exist.
+for _, obj in ipairs(cashContainer:GetDescendants()) do
+	disableLegacyCurrencyScript(obj)
+end
+for _, obj in ipairs(gemContainer:GetDescendants()) do
+	disableLegacyCurrencyScript(obj)
 end
 
-disableOldScript(cashContainer, "CoinsLabel")
-disableOldScript(gemContainer, "GemsLabel")
+local currency = player:WaitForChild("Currency")
+local coins = currency:WaitForChild("Coins")
+local gems = currency:WaitForChild("Gems")
 
 local function findDisplayLabel(container)
 	if container:IsA("TextLabel") or container:IsA("TextButton") then
