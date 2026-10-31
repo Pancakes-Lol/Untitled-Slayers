@@ -1,69 +1,83 @@
--- Compact currency readout for the existing bottom-left currency area.
+-- Bridges the existing MainUI currency display to the hidden Currency folder.
+-- Coins/Gems stay out of leaderstats while the original bottom-left GUI keeps working.
 local Players = game:GetService("Players")
 
 local player = Players.LocalPlayer
+local playerGui = player:WaitForChild("PlayerGui")
 local currency = player:WaitForChild("Currency")
 local coins = currency:WaitForChild("Coins")
 local gems = currency:WaitForChild("Gems")
 
-local gui = Instance.new("ScreenGui")
-gui.Name = "CurrencyLabels"
-gui.ResetOnSpawn = false
-gui.IgnoreGuiInset = false
-gui.DisplayOrder = 20
-gui.Parent = player:WaitForChild("PlayerGui")
+local mainUI = playerGui:WaitForChild("MainUI")
+local mainFrame = mainUI:WaitForChild("MainFrame")
+local cashContainer = mainFrame:WaitForChild("CashLabel")
+local gemContainer = mainFrame:WaitForChild("GemLabel")
 
-local holder = Instance.new("Frame")
-holder.Name = "CurrencyHolder"
-holder.AnchorPoint = Vector2.new(0, 1)
-holder.Position = UDim2.new(0, 18, 1, -18)
-holder.Size = UDim2.fromOffset(210, 48)
-holder.BackgroundTransparency = 1
-holder.Parent = gui
-
-local layout = Instance.new("UIListLayout")
-layout.FillDirection = Enum.FillDirection.Horizontal
-layout.HorizontalAlignment = Enum.HorizontalAlignment.Left
-layout.VerticalAlignment = Enum.VerticalAlignment.Bottom
-layout.Padding = UDim.new(0, 14)
-layout.Parent = holder
-
-local function makeCurrency(name, valueObject)
-	local item = Instance.new("Frame")
-	item.Name = name
-	item.Size = UDim2.fromOffset(92, 44)
-	item.BackgroundTransparency = 1
-	item.Parent = holder
-
-	local value = Instance.new("TextLabel")
-	value.Name = "Value"
-	value.BackgroundTransparency = 1
-	value.Size = UDim2.new(1, 0, 0, 28)
-	value.Font = Enum.Font.GothamBold
-	value.TextSize = 18
-	value.TextColor3 = Color3.fromRGB(245, 247, 255)
-	value.TextStrokeTransparency = 0.55
-	value.TextXAlignment = Enum.TextXAlignment.Center
-	value.Parent = item
-
-	local label = Instance.new("TextLabel")
-	label.Name = "Label"
-	label.BackgroundTransparency = 1
-	label.Position = UDim2.fromOffset(0, 27)
-	label.Size = UDim2.new(1, 0, 0, 13)
-	label.Font = Enum.Font.GothamMedium
-	label.Text = string.upper(name)
-	label.TextSize = 9
-	label.TextColor3 = Color3.fromRGB(175, 181, 198)
-	label.TextXAlignment = Enum.TextXAlignment.Center
-	label.Parent = item
-
-	local function refresh()
-		value.Text = tostring(valueObject.Value)
+local function disableOldScript(container, scriptName)
+	local old = container:FindFirstChild(scriptName)
+	if old and old:IsA("LocalScript") then
+		old.Disabled = true
 	end
-	valueObject:GetPropertyChangedSignal("Value"):Connect(refresh)
-	refresh()
 end
 
-makeCurrency("Coins", coins)
-makeCurrency("Gems", gems)
+disableOldScript(cashContainer, "CoinsLabel")
+disableOldScript(gemContainer, "GemsLabel")
+
+local function findDisplayLabel(container)
+	if container:IsA("TextLabel") or container:IsA("TextButton") then
+		return container
+	end
+	for _, obj in ipairs(container:GetDescendants()) do
+		if obj:IsA("TextLabel") or obj:IsA("TextButton") then
+			if obj.Name ~= "CurrencyCaption" then
+				return obj
+			end
+		end
+	end
+	return nil
+end
+
+local function addCaption(container, text)
+	local existing = container:FindFirstChild("CurrencyCaption")
+	if existing and existing:IsA("TextLabel") then
+		existing.Text = text
+		return existing
+	end
+
+	local caption = Instance.new("TextLabel")
+	caption.Name = "CurrencyCaption"
+	caption.BackgroundTransparency = 1
+	caption.AnchorPoint = Vector2.new(0.5, 0)
+	caption.Position = UDim2.new(0.5, 0, 1, 1)
+	caption.Size = UDim2.new(1, 0, 0, 12)
+	caption.Font = Enum.Font.GothamMedium
+	caption.Text = text
+	caption.TextSize = 8
+	caption.TextColor3 = Color3.fromRGB(190, 194, 207)
+	caption.TextTransparency = 0.1
+	caption.TextStrokeTransparency = 0.8
+	caption.TextXAlignment = Enum.TextXAlignment.Center
+	caption.ZIndex = math.max(container.ZIndex + 1, 2)
+	caption.Parent = container
+	return caption
+end
+
+local cashText = findDisplayLabel(cashContainer)
+local gemText = findDisplayLabel(gemContainer)
+
+addCaption(cashContainer, "COINS")
+addCaption(gemContainer, "GEMS")
+
+local function refreshCoins()
+	if cashText then cashText.Text = tostring(coins.Value) end
+end
+
+local function refreshGems()
+	if gemText then gemText.Text = tostring(gems.Value) end
+end
+
+coins:GetPropertyChangedSignal("Value"):Connect(refreshCoins)
+gems:GetPropertyChangedSignal("Value"):Connect(refreshGems)
+
+refreshCoins()
+refreshGems()
