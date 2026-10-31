@@ -1,3 +1,1040 @@
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Leaves/Leafs",
+      "properties": {
+        "CanCollide": false,
+        "Color": "0.972549, 0.972549, 0.972549",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "-18.655000686645508, 74.67500305175781, 21.91200065612793",
+        "Transparency": 0,
+        "Name": "Leafs",
+        "Position": "-55.48146057128906, 62.03090286254883, 64.82825469970703",
+        "CFrame": "-55.4814606, 62.0309029, 64.8282547, 0.245208204, -0.0986332744, 0.964442134, 0.0673619136, 0.994140208, 0.0845438018, -0.967129469, 0.0442358367, 0.250415325",
+        "Material": "Enum.Material.Grass",
+        "Archivable": true,
+        "Size": "28.413101196289062, 25.114004135131836, 21.53643798828125"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Leaves/Leafs",
+      "properties": {
+        "CanCollide": false,
+        "Color": "0.792157, 0.796078, 0.819608",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "-0.0010000000474974513, -25.500999450683594, 3.744999885559082",
+        "Transparency": 0,
+        "Name": "Leafs",
+        "Position": "-59.991493225097656, 48.01152420043945, 63.63774871826172",
+        "CFrame": "-59.9914932, 48.0115242, 63.6377487, 0.900655568, -0.0589492992, -0.430521756, 0.0653156564, 0.997864723, 8.07492324e-06, 0.429601967, -0.0281270724, 0.902582288",
+        "Material": "Enum.Material.Grass",
+        "Archivable": true,
+        "Size": "26.896360397338867, 17.653961181640625, 28.90635108947754"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Leaves/Leafs",
+      "properties": {
+        "CanCollide": false,
+        "Color": "0.792157, 0.796078, 0.819608",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "-0.0020000000949949026, 64.50199890136719, 3.744999885559082",
+        "Transparency": 0,
+        "Name": "Leafs",
+        "Position": "-56.432193756103516, 58.68600845336914, 71.10579681396484",
+        "CFrame": "-56.4321938, 58.6860085, 71.1057968, 0.429563582, -0.028119497, 0.902601123, 0.0652909279, 0.997866333, 1.4280713e-05, -0.900675416, 0.0589255169, 0.430482745",
+        "Material": "Enum.Material.Grass",
+        "Archivable": true,
+        "Size": "23.039817810058594, 17.733640670776367, 21.19326400756836"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Leaves/Leafs",
+      "properties": {
+        "CanCollide": false,
+        "Color": "0.972549, 0.972549, 0.972549",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "170.8179931640625, 25.917999267578125, 177.9510040283203",
+        "Transparency": 0,
+        "Name": "Leafs",
+        "Position": "-53.07365036010742, 47.985206604003906, 67.09172058105469",
+        "CFrame": "-53.0736504, 47.9852066, 67.0917206, -0.898844481, -0.032155063, 0.437091231, -0.104997866, 0.984060824, -0.143526554, -0.425509065, -0.174901694, -0.887893796",
+        "Material": "Enum.Material.Grass",
+        "Archivable": true,
+        "Size": "23.039817810058594, 17.67159080505371, 21.19326400756836"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Log",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "-179.8679962158203, -89.0459976196289, -179.86900329589844",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-52.736572265625, 20.011995315551758, 63.579429626464844",
+        "CFrame": "-52.7365723, 20.0119953, 63.5794296, -0.0167857707, 3.84012128e-05, -0.9998613, -2.27131059e-05, 1, 3.87878536e-05, 0.999861121, 2.33610263e-05, -0.0167856812",
+        "Material": "Enum.Material.Wood",
+        "Archivable": true,
+        "Size": "3.8348002433776855, 10.112920761108398, 9.26737117767334"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Particles",
+      "properties": {
+        "CanCollide": false,
+        "Color": "1, 0, 0",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "-179.99899291992188, -3.2720000743865967, 177.6820068359375",
+        "Transparency": 1,
+        "Name": "Particles",
+        "Position": "-59.69329833984375, 65.24969482421875, 61.497684478759766",
+        "CFrame": "-59.6932983, 65.2496948, 61.4976845, -0.997555017, -0.0403729267, -0.0570819378, -0.0404402502, 0.999181986, 2.58712389e-05, 0.0570342541, 0.00233421754, -0.998371363",
+        "Material": "Enum.Material.ForceField",
+        "Archivable": true,
+        "Size": "23.850597381591797, 24.834226608276367, 30.7623291015625"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Particles/leafParticles",
+      "properties": {
+        "Enabled": true,
+        "Name": "leafParticles",
+        "Shape": "Enum.ParticleEmitterShape.Box",
+        "LightEmission": 0,
+        "Brightness": 1,
+        "Archivable": true,
+        "Texture": "rbxassetid://13151745054"
+      },
+      "class": "ParticleEmitter"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Log",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "0, 24.177000045776367, 0",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-60.52062225341797, 31.818775177001953, 59.241676330566406",
+        "CFrame": "-60.5206223, 31.8187752, 59.2416763, 0.912286818, -7.14200021e-13, 0.409557253, 3.37395585e-14, 1, -1.81899005e-12, -0.409557223, -1.67325745e-12, 0.91228658",
+        "Material": "Enum.Material.Wood",
+        "Archivable": true,
+        "Size": "4.467394828796387, 5.41662073135376, 1.2531274557113647"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Log",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "0.003000000026077032, -65.822998046875, 0.004000000189989805",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-56.871803283691406, 32.63239288330078, 60.67478561401367",
+        "CFrame": "-56.8718033, 32.6323929, 60.6747856, 0.409564555, -3.09758834e-05, -0.91228354, 3.47902751e-05, 1, -1.83353313e-05, 0.912283301, -2.42290862e-05, 0.409564525",
+        "Material": "Enum.Material.Wood",
+        "Archivable": true,
+        "Size": "4.166373252868652, 7.043745517730713, 1.3723844289779663"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Log",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, 24.177000045776367, 0",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-59.37443923950195, 57.3270149230957, 61.796775817871094",
+        "CFrame": "-59.3744392, 57.3270149, 61.7967758, 0.912286818, -7.14200021e-13, 0.409557253, 3.37395585e-14, 1, -1.81899005e-12, -0.409557223, -1.67325745e-12, 0.91228658",
+        "Material": "Enum.Material.Wood",
+        "Archivable": true,
+        "Size": "3.7460806369781494, 34.229373931884766, 3.7460806369781494"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Log",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "180, -24.177000045776367, 180",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-58.2322998046875, 35.378753662109375, 64.33901977539062",
+        "CFrame": "-58.2322998, 35.3787537, 64.3390198, -0.912286699, 1.11413778e-09, -0.409557164, 1.22202604e-09, 1, 1.81898984e-12, 0.409557134, -5.02169029e-10, -0.91228646",
+        "Material": "Enum.Material.Wood",
+        "Archivable": true,
+        "Size": "3.74406099319458, 12.533682823181152, 1.2848130464553833"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Log",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, 24.177000045776367, 0",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-59.37351989746094, 22.197486877441406, 61.797515869140625",
+        "CFrame": "-59.3735199, 22.1974869, 61.7975159, 0.912286818, -7.14200021e-13, 0.409557253, 3.37395585e-14, 1, -1.81899005e-12, -0.409557223, -1.67325745e-12, 0.91228658",
+        "Material": "Enum.Material.Wood",
+        "Archivable": true,
+        "Size": "7.244903564453125, 13.826271057128906, 7.244903564453125"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Log",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "180, -24.177000045776367, 180",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-56.852569580078125, 19.60112190246582, 67.02880096435547",
+        "CFrame": "-56.8525696, 19.6011219, 67.028801, -0.912286699, 1.11413778e-09, -0.409557164, 1.22202604e-09, 1, 1.81898984e-12, 0.409557134, -5.02169029e-10, -0.91228646",
+        "Material": "Enum.Material.Wood",
+        "Archivable": true,
+        "Size": "6.537817001342773, 12.676044464111328, 4.322792053222656"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Log",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, 24.177000045776367, 0",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-59.37450408935547, 38.97746658325195, 61.796852111816406",
+        "CFrame": "-59.3745041, 38.9774666, 61.7968521, 0.912286818, -7.14200021e-13, 0.409557253, 3.37395585e-14, 1, -1.81899005e-12, -0.409557223, -1.67325745e-12, 0.91228658",
+        "Material": "Enum.Material.Wood",
+        "Archivable": true,
+        "Size": "4.705928802490234, 19.249948501586914, 4.705928802490234"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Log",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "-179.9969940185547, 65.822998046875, 179.99600219726562",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-61.934574127197266, 33.854679107666016, 62.94675064086914",
+        "CFrame": "-61.9345741, 33.8546791, 62.9467506, -0.409564584, -3.09758871e-05, 0.91228354, -3.47902824e-05, 1, 1.83353295e-05, -0.912283301, -2.42290898e-05, -0.409564555",
+        "Material": "Enum.Material.Wood",
+        "Archivable": true,
+        "Size": "4.372521877288818, 9.488590240478516, 1.2422503232955933"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Log",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "-179.9969940185547, 65.822998046875, 179.99600219726562",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-65.06444549560547, 18.69505500793457, 64.49131774902344",
+        "CFrame": "-65.0644455, 18.695055, 64.4913177, -0.409564584, -3.09758871e-05, 0.91228354, -3.47902824e-05, 1, 1.83353295e-05, -0.912283301, -2.42290898e-05, -0.409564555",
+        "Material": "Enum.Material.Wood",
+        "Archivable": true,
+        "Size": "6.463629722595215, 16.389738082885742, 8.184709548950195"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Log",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "-0.003000000026077032, 45.20399856567383, 0.003000000026077032",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-60.130313873291016, 21.881999969482422, 56.26118087768555",
+        "CFrame": "-60.1303139, 21.882, 56.2611809, 0.704588532, -3.80228594e-05, 0.709619045, 1.77436268e-05, 1, 3.59642218e-05, -0.709618926, -1.27487638e-05, 0.704588294",
+        "Material": "Enum.Material.Wood",
+        "Archivable": true,
+        "Size": "6.307355880737305, 2.4481546878814697, 9.663440704345703"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Log",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "0.003000000026077032, -65.822998046875, 0.004000000189989805",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-53.930152893066406, 21.576393127441406, 59.24433135986328",
+        "CFrame": "-53.9301529, 21.5763931, 59.2443314, 0.409564555, -3.09758834e-05, -0.91228354, 3.47902751e-05, 1, -1.83353313e-05, 0.912283301, -2.42290862e-05, 0.409564525",
+        "Material": "Enum.Material.Wood",
+        "Archivable": true,
+        "Size": "6.07098913192749, 11.398065567016602, 4.778005599975586"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2",
+      "properties": {
+        "Name": "Conical2",
+        "Archivable": true
+      },
+      "class": "Model"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Log",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "-6.671000003814697, 29.90399932861328, 7.408999919891357",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-109.28548431396484, 14.197486877441406, -33.619384765625",
+        "CFrame": "-109.285484, 14.1974869, -33.6193848, 0.859630942, -0.11178387, 0.49854514, 0.0706488565, 0.992405057, 0.1007009, -0.506015539, -0.0513436496, 0.860999227",
+        "Material": "Enum.Material.Wood",
+        "Archivable": true,
+        "Size": "7.244903564453125, 13.826271057128906, 7.244903564453125"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Leaves",
+      "properties": {
+        "Name": "Leaves",
+        "Archivable": true
+      },
+      "class": "Folder"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Leaves/Leafs",
+      "properties": {
+        "CanCollide": false,
+        "Color": "0.972549, 0.972549, 0.972549",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "-55.38999938964844, 75.822998046875, 56.42399978637695",
+        "Transparency": 0,
+        "Name": "Leafs",
+        "Position": "-109.57987976074219, 54.33047103881836, -33.08015823364258",
+        "CFrame": "-109.57988, 54.330471, -33.0801582, 0.135465622, -0.204073682, 0.969541728, 0.0319029763, 0.978948712, 0.201597184, -0.990272284, 0.00362212001, 0.139124155",
+        "Material": "Enum.Material.Grass",
+        "Archivable": true,
+        "Size": "28.413101196289062, 25.114004135131836, 21.53643798828125"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Leaves/Leafs",
+      "properties": {
+        "CanCollide": false,
+        "Color": "0.792157, 0.796078, 0.819608",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "-0.6869999766349792, -19.437999725341797, 10.553000450134277",
+        "Transparency": 0,
+        "Name": "Leafs",
+        "Position": "-112.59281158447266, 39.86595916748047, -33.05058288574219",
+        "CFrame": "-112.592812, 39.8659592, -33.0505829, 0.927055001, -0.17270115, -0.332794011, 0.187049985, 0.982285261, 0.0113066025, 0.324945837, -0.0727306157, 0.942935824",
+        "Material": "Enum.Material.Grass",
+        "Archivable": true,
+        "Size": "26.896360397338867, 17.653961181640625, 28.90635108947754"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Leaves/Leafs",
+      "properties": {
+        "CanCollide": false,
+        "Color": "0.972549, 0.972549, 0.972549",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "179.3159942626953, 19.440000534057617, 176.93699645996094",
+        "Transparency": 0,
+        "Name": "Leafs",
+        "Position": "-120.75640869140625, 51.57756042480469, -33.273860931396484",
+        "CFrame": "-120.756409, 51.5775604, -33.2738609, -0.941649437, -0.0503834412, 0.332815588, -0.0573910363, 0.998288274, -0.0112495013, -0.331678838, -0.0296934023, -0.942929029",
+        "Material": "Enum.Material.Grass",
+        "Archivable": true,
+        "Size": "23.039817810058594, 17.90026092529297, 21.19326400756836"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Leaves/Leafs",
+      "properties": {
+        "CanCollide": false,
+        "Color": "0.792157, 0.796078, 0.819608",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "-20.424999237060547, 69.44999694824219, 22.315000534057617",
+        "Transparency": 0,
+        "Name": "Leafs",
+        "Position": "-109.50067901611328, 51.30556106567383, -26.572961807250977",
+        "CFrame": "-109.500679, 51.3055611, -26.5729618, 0.324743509, -0.133284464, 0.936368108, 0.0535151958, 0.991023898, 0.12250562, -0.944291115, 0.0103273243, 0.328960955",
+        "Material": "Enum.Material.Grass",
+        "Archivable": true,
+        "Size": "23.039817810058594, 17.733640670776367, 21.19326400756836"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Leaves/Leafs",
+      "properties": {
+        "CanCollide": false,
+        "Color": "0.792157, 0.796078, 0.819608",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "-178.42999267578125, -48.44499969482422, 169.2689971923828",
+        "Transparency": 0,
+        "Name": "Leafs",
+        "Position": "-115.68185424804688, 53.81100082397461, -36.93594741821289",
+        "CFrame": "-115.681854, 53.8110008, -36.9359474, -0.651749551, -0.123520419, -0.748313785, -0.206285417, 0.978322923, 0.018177636, 0.729847014, 0.166213781, -0.663101792",
+        "Material": "Enum.Material.Grass",
+        "Archivable": true,
+        "Size": "25.842073440551758, 26.277690887451172, 25.394380569458008"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Leaves/Leafs",
+      "properties": {
+        "CanCollide": false,
+        "Color": "0.972549, 0.972549, 0.972549",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "174.2899932861328, 9.581000328063965, 150.77200317382812",
+        "Transparency": 0,
+        "Name": "Leafs",
+        "Position": "-115.71287536621094, 53.236183166503906, -41.076393127441406",
+        "CFrame": "-115.712875, 53.2361832, -41.0763931, -0.86051476, -0.481475443, 0.166446477, -0.500314176, 0.860268414, -0.0981010199, -0.0959552526, -0.167692497, -0.981162369",
+        "Material": "Enum.Material.Grass",
+        "Archivable": true,
+        "Size": "22.413101196289062, 22.367046356201172, 25.53643798828125"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Leaves/Leafs",
+      "properties": {
+        "CanCollide": false,
+        "Color": "0.972549, 0.972549, 0.972549",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "170.6280059814453, 20.9060001373291, 170.1529998779297",
+        "Transparency": 0,
+        "Name": "Leafs",
+        "Position": "-105.39733123779297, 40.78839111328125, -30.374473571777344",
+        "CFrame": "-105.397331, 40.7883911, -30.3744736, -0.920408487, -0.1597552, 0.356839627, -0.225981802, 0.962181211, -0.152116299, -0.319042742, -0.22064808, -0.92170155",
+        "Material": "Enum.Material.Grass",
+        "Archivable": true,
+        "Size": "23.039817810058594, 17.67159080505371, 21.19326400756836"
+      },
+      "class": "Part"
+    },
+    {
+      "properties": {
+        "Enabled": true,
+        "Archivable": true,
+        "Name": "Math1"
+      },
+      "path": "Workspace/Trees/Conical2/Math1",
+      "source": "-- WindLeaves.lua  (Server Script)\nlocal RunService = game:GetService(\"RunService\")\nlocal CollectionService = game:GetService(\"CollectionService\")\n\n-- CONFIG\nlocal treePath = script.Parent               -- set this to workspace.YourTreeModel if script not parented to the tree\nlocal leavesFolderName = \"Leaves\"            -- folder name under treePath\nlocal windStrength = 4                  -- base angle multiplier (tweak)\nlocal windSpeed = 1.0                        -- speed multiplier (tweak)\nlocal enforceAnchored = true                 -- set true to auto Anchor leaves (recommended)\nlocal debugEnabled = true\n\n-- Helper debug\nlocal function debug(...)\n\tif debugEnabled then\n\t\tprint(\"[WindLeaves]\", ...)\n\tend\nend\n\n-- Find Leaves folder\nlocal function findLeavesFolder()\n\tif not treePath then return nil end\n\tlocal folder = treePath:FindFirstChild(leavesFolderName)\n\tif folder and folder:IsA(\"Folder\") then\n\t\treturn folder\n\tend\n\t-- fallback: try to find any descendant folder named Leaves\n\tfor _, v in pairs(treePath:GetDescendants()) do\n\t\tif v.Name == leavesFolderName and v:IsA(\"Folder\") then\n\t\t\treturn v\n\t\tend\n\tend\n\treturn nil\nend\n\nlocal LeavesFolder = findLeavesFolder()\nif not LeavesFolder then\n\tdebug(\"ERROR: Leaves folder not found under\", treePath:GetFullName())\n\treturn\nend\ndebug(\"Found Leaves folder at\", LeavesFolder:GetFullName())\n\n-- Table to hold parts and their originals + random offset\nlocal leafData = {}\n\nlocal function addLeaf(part)\n\tif not part or not part:IsA(\"BasePart\") then return end\n\tif leafData[part] then return end\n\tleafData[part] = {\n\t\torig = part.CFrame,\n\t\toffset = math.random() * 1000,    -- unique time offset so leaves don't move perfectly in sync\n\t}\n\tif enforceAnchored then\n\t\tpart.Anchored = true\n\tend\n\tdebug(\"Added leaf:\", part:GetFullName())\nend\n\nlocal function removeLeaf(part)\n\tif leafData[part] then\n\t\tleafData[part] = nil\n\t\tdebug(\"Removed leaf:\", part:GetFullName())\n\tend\nend\n\n-- Initialize existing children\nfor _, child in ipairs(LeavesFolder:GetChildren()) do\n\taddLeaf(child)\nend\n\n-- React to runtime changes\nLeavesFolder.ChildAdded:Connect(function(child)\n\t-- wait a short tick in case child is a Model with parts inside\n\ttask.wait(0.01)\n\t-- if child is a folder/model, add parts inside\n\tif child:IsA(\"BasePart\") then\n\t\taddLeaf(child)\n\telse\n\t\tfor _, desc in ipairs(child:GetDescendants()) do\n\t\t\tif desc:IsA(\"BasePart\") then\n\t\t\t\taddLeaf(desc)\n\t\t\tend\n\t\tend\n\tend\nend)\n\nLeavesFolder.ChildRemoved:Connect(function(child)\n\t-- remove whichever parts belonged to that child (or the child itself)\n\tif child:IsA(\"BasePart\") then\n\t\tremoveLeaf(child)\n\telse\n\t\tfor _, desc in ipairs(child:GetDescendants()) do\n\t\t\tif desc:IsA(\"BasePart\") then\n\t\t\t\tremoveLeaf(desc)\n\t\t\tend\n\t\tend\n\tend\nend)\n\n-- Also remove when parts are destroyed\ngame:GetService(\"Workspace\").DescendantRemoving:Connect(function(desc)\n\tif desc and desc:IsA(\"BasePart\") and leafData[desc] then\n\t\tleafData[desc] = nil\n\t\tdebug(\"Leaf destroyed:\", desc:GetFullName())\n\tend\nend)\n\n-- Main update loop (Heartbeat for smooth motion)\nRunService.Heartbeat:Connect(function(dt)\n\tlocal t = tick() * windSpeed\n\tfor part, info in pairs(leafData) do\n\t\tif not part or not part.Parent then\n\t\t\tleafData[part] = nil\n\t\telse\n\t\t\t-- compute small rotations based on noise / trig\n\t\t\tlocal clock = t + info.offset\n\t\t\t-- small independent axes\n\t\t\tlocal rx = math.rad(math.cos(clock) * windStrength)\n\t\t\tlocal ry = math.rad(math.sin(clock * 0.9) * windStrength * 0.6)\n\t\t\tlocal rz = math.rad(math.cos(clock * 1.1) * windStrength * 0.5)\n\t\t\tpart.CFrame = info.orig * CFrame.Angles(rx, ry, rz)\n\t\tend\n\tend\nend)\n\ndebug(\"WindLeaves script started. Leaf count:\", (function() local c=0; for _ in pairs(leafData) do c=c+1 end; return c end)())",
+      "class": "Script"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Log",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "-6.671000003814697, 29.90399932861328, 7.408999919891357",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-112.40841674804688, 15.410052299499512, -38.88287353515625",
+        "CFrame": "-112.408417, 15.4100523, -38.8828735, 0.859630942, -0.11178387, 0.49854514, 0.0706488565, 0.992405057, 0.1007009, -0.506015539, -0.0513436496, 0.860999227",
+        "Material": "Enum.Material.Wood",
+        "Archivable": true,
+        "Size": "6.032555103302002, 6.724648475646973, 4.688921928405762"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Log",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "-10.86299991607666, 50.69499969482422, 10.168000221252441",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-110.56709289550781, 13.455987930297852, -39.016700744628906",
+        "CFrame": "-110.567093, 13.4559879, -39.0167007, 0.623507619, -0.111822762, 0.77378428, 0.0298301131, 0.992400229, 0.119380333, -0.781253099, -0.0513521619, 0.622104406",
+        "Material": "Enum.Material.Wood",
+        "Archivable": true,
+        "Size": "6.307355880737305, 2.4481546878814697, 9.663440704345703"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Log",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "-6.671000003814697, 29.90399932861328, 7.408999919891357",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-111.75740051269531, 23.463611602783203, -36.52556228637695",
+        "CFrame": "-111.757401, 23.4636116, -36.5255623, 0.859630942, -0.11178387, 0.49854514, 0.0706488565, 0.992405057, 0.1007009, -0.506015539, -0.0513436496, 0.860999227",
+        "Material": "Enum.Material.Wood",
+        "Archivable": true,
+        "Size": "4.467394828796387, 5.41662073135376, 1.2531274557113647"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Log",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "-172.0500030517578, 59.275001525878906, 167.35899353027344",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-113.00186157226562, 25.567779541015625, -32.79787826538086",
+        "CFrame": "-113.001862, 25.5677795, -32.7978783, -0.49854815, -0.11181698, 0.859625041, -0.100735992, 0.992400229, 0.0706662461, -0.860993385, -0.051364325, -0.506023467",
+        "Material": "Enum.Material.Wood",
+        "Archivable": true,
+        "Size": "4.372521877288818, 9.488590240478516, 1.2422503232955933"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Log",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "173.32899475097656, -29.90399932861328, 172.59100341796875",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-105.96601867675781, 12.216512680053711, -28.567684173583984",
+        "CFrame": "-105.966019, 12.2165127, -28.5676842, -0.859630823, -0.11178387, -0.49854508, -0.070648849, 0.992405057, -0.100700893, 0.50601548, -0.0513436496, -0.860999107",
+        "Material": "Enum.Material.Wood",
+        "Archivable": true,
+        "Size": "6.537817001342773, 12.676044464111328, 4.322792053222656"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Particles",
+      "properties": {
+        "CanCollide": false,
+        "Color": "1, 0, 0",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "176.0019989013672, -9.14900016784668, 171.18099975585938",
+        "Transparency": 1,
+        "Name": "Particles",
+        "Position": "-114.44490051269531, 56.87004089355469, -36.09263229370117",
+        "CFrame": "-114.444901, 56.8700409, -36.0926323, -0.975611091, -0.151357546, -0.159003466, -0.141979694, 0.987472951, -0.0688381642, 0.167430997, -0.0445836894, -0.984879017",
+        "Material": "Enum.Material.ForceField",
+        "Archivable": true,
+        "Size": "23.850597381591797, 24.834226608276367, 30.7623291015625"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Particles/leafParticles",
+      "properties": {
+        "Enabled": true,
+        "Name": "leafParticles",
+        "Shape": "Enum.ParticleEmitterShape.Box",
+        "LightEmission": 0,
+        "Brightness": 1,
+        "Archivable": true,
+        "Texture": "rbxassetid://13151745054"
+      },
+      "class": "ParticleEmitter"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Log",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "173.32899475097656, -29.90399932861328, 172.59100341796875",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-109.36981201171875, 27.559207916259766, -31.897560119628906",
+        "CFrame": "-109.369812, 27.5592079, -31.8975601, -0.859630823, -0.11178387, -0.49854508, -0.070648849, 0.992405057, -0.100700893, 0.50601548, -0.0513436496, -0.860999107",
+        "Material": "Enum.Material.Wood",
+        "Archivable": true,
+        "Size": "3.74406099319458, 12.533682823181152, 1.2848130464553833"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Log",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "-6.671000003814697, 29.90399932861328, 7.408999919891357",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-113.21338653564453, 49.060062408447266, -35.4236946105957",
+        "CFrame": "-113.213387, 49.0600624, -35.4236946, 0.859630942, -0.11178387, 0.49854514, 0.0706488565, 0.992405057, 0.1007009, -0.506015539, -0.0513436496, 0.860999227",
+        "Material": "Enum.Material.Wood",
+        "Archivable": true,
+        "Size": "3.7460806369781494, 34.229373931884766, 3.7460806369781494"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Log",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "-172.0500030517578, 59.275001525878906, 167.35899353027344",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-114.24214935302734, 10.28968620300293, -30.14504623413086",
+        "CFrame": "-114.242149, 10.2896862, -30.1450462, -0.49854815, -0.11181698, 0.859625041, -0.100735992, 0.992400229, 0.0706662461, -0.860993385, -0.051364325, -0.506023467",
+        "Material": "Enum.Material.Wood",
+        "Archivable": true,
+        "Size": "6.463629722595215, 16.389738082885742, 8.184709548950195"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Log",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "7.949999809265137, -59.27399826049805, 12.640999794006348",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-108.0945816040039, 24.74690055847168, -35.542396545410156",
+        "CFrame": "-108.094582, 24.7469006, -35.5423965, 0.49854815, -0.11181698, -0.859624922, 0.100735992, 0.992400229, -0.0706662461, 0.860993385, -0.051364325, 0.506023407",
+        "Material": "Enum.Material.Wood",
+        "Archivable": true,
+        "Size": "4.166373252868652, 7.043745517730713, 1.3723844289779663"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Log",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "7.949999809265137, -59.27399826049805, 12.640999794006348",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-104.0981216430664, 13.995763778686523, -36.71541976928711",
+        "CFrame": "-104.098122, 13.9957638, -36.7154198, 0.49854815, -0.11181698, -0.859624922, 0.100735992, 0.992400229, -0.0706662461, 0.860993385, -0.051364325, 0.506023407",
+        "Material": "Enum.Material.Wood",
+        "Archivable": true,
+        "Size": "6.07098913192749, 11.398065567016602, 4.778005599975586"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Log",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "49.13100051879883, -81.89099884033203, 52.37099838256836",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-102.29808044433594, 12.842223167419434, -32.4616813659668",
+        "CFrame": "-102.29808, 12.8422232, -32.4616814, 0.0861446857, -0.111743517, -0.990000486, 0.0611276478, 0.9924106, -0.106697574, 0.994409442, -0.0513246432, 0.0923218131",
+        "Material": "Enum.Material.Wood",
+        "Archivable": true,
+        "Size": "3.8348002433776855, 10.112920761108398, 9.26737117767334"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Log",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "-6.671000003814697, 29.90399932861328, 7.408999919891357",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-111.1622543334961, 30.849878311157227, -34.48147964477539",
+        "CFrame": "-111.162254, 30.8498783, -34.4814796, 0.859630942, -0.11178387, 0.49854514, 0.0706488565, 0.992405057, 0.1007009, -0.506015539, -0.0513436496, 0.860999227",
+        "Material": "Enum.Material.Wood",
+        "Archivable": true,
+        "Size": "4.705928802490234, 19.249948501586914, 4.705928802490234"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2",
+      "properties": {
+        "Name": "Conical2",
+        "Archivable": true
+      },
+      "class": "Model"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Leaves",
+      "properties": {
+        "Name": "Leaves",
+        "Archivable": true
+      },
+      "class": "Folder"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Leaves/Leafs",
+      "properties": {
+        "CanCollide": false,
+        "Color": "0.972549, 0.972549, 0.972549",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "-138.9929962158203, 87.97000122070312, 142.0780029296875",
+        "Transparency": 0,
+        "Name": "Leafs",
+        "Position": "-84.36434936523438, 37.042442321777344, -60.41122055053711",
+        "CFrame": "-84.3643494, 37.0424423, -60.4112206, -0.0280271173, -0.0218356829, 0.999372244, 0.0534191579, 0.998300076, 0.0233100858, -0.998182893, 0.0540386513, -0.0268085897",
+        "Material": "Enum.Material.Grass",
+        "Archivable": true,
+        "Size": "18.891368865966797, 16.697856903076172, 14.319195747375488"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Leaves/Leafs",
+      "properties": {
+        "CanCollide": false,
+        "Color": "0.792157, 0.796078, 0.819608",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "-161.18299865722656, -56.39099884033203, -171.34800720214844",
+        "Transparency": 0,
+        "Name": "Leafs",
+        "Position": "-88.78736877441406, 37.52621841430664, -62.24287796020508",
+        "CFrame": "-88.7873688, 37.5262184, -62.242878, -0.547218144, 0.0832640231, -0.832838118, -0.12318895, 0.976191044, 0.178537384, 0.827874839, 0.200295299, -0.523932219",
+        "Material": "Enum.Material.Grass",
+        "Archivable": true,
+        "Size": "17.18193817138672, 17.471572875976562, 16.884273529052734"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Leaves/Leafs",
+      "properties": {
+        "CanCollide": false,
+        "Color": "0.792157, 0.796078, 0.819608",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "-1.4859999418258667, -9.406999588012695, 0.20600000023841858",
+        "Transparency": 0,
+        "Name": "Leafs",
+        "Position": "-88.02681732177734, 27.9295597076416, -60.197357177734375",
+        "CFrame": "-88.0268173, 27.9295597, -60.1973572, 0.986549497, -0.00354703888, -0.163447112, 0.007831458, 0.999642253, 0.025577968, 0.163302362, -0.0265141837, 0.986223936",
+        "Material": "Enum.Material.Grass",
+        "Archivable": true,
+        "Size": "17.88291358947754, 11.73780632019043, 19.219322204589844"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Leaves/Leafs",
+      "properties": {
+        "CanCollide": false,
+        "Color": "0.972549, 0.972549, 0.972549",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "175.39500427246094, -1.1330000162124634, 160.08099365234375",
+        "Transparency": 0,
+        "Name": "Leafs",
+        "Position": "-89.33480072021484, 37.28059768676758, -64.95675659179688",
+        "CFrame": "-89.3348007, 37.2805977, -64.9567566, -0.939995587, -0.340623856, -0.0197673738, -0.338097066, 0.937681735, -0.0802709162, 0.045873493, -0.0687727779, -0.996581078",
+        "Material": "Enum.Material.Grass",
+        "Archivable": true,
+        "Size": "14.90207576751709, 14.871454238891602, 16.97872543334961"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Leaves/Leafs",
+      "properties": {
+        "CanCollide": false,
+        "Color": "0.972549, 0.972549, 0.972549",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "178.51699829101562, 9.409000396728516, -172.71499633789062",
+        "Transparency": 0,
+        "Name": "Leafs",
+        "Position": "-91.91893768310547, 36.54006576538086, -59.28679275512695",
+        "CFrame": "-91.9189377, 36.5400658, -59.2867928, -0.978587687, 0.125091732, 0.163479328, 0.122559249, 0.992132962, -0.0255258474, -0.16539076, -0.00494301319, -0.986219883",
+        "Material": "Enum.Material.Grass",
+        "Archivable": true,
+        "Size": "15.318767547607422, 11.901567459106445, 14.09102725982666"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Leaves/Leafs",
+      "properties": {
+        "CanCollide": false,
+        "Color": "0.972549, 0.972549, 0.972549",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "170.11900329589844, 9.50100040435791, 178.88099670410156",
+        "Transparency": 0,
+        "Name": "Leafs",
+        "Position": "-82.98161315917969, 27.6190242767334, -59.259273529052734",
+        "CFrame": "-82.9816132, 27.6190243, -59.2592735, -0.986097813, -0.019256629, 0.16506803, -0.0475554504, 0.984425068, -0.16925092, -0.159242392, -0.174748242, -0.971654713",
+        "Material": "Enum.Material.Grass",
+        "Archivable": true,
+        "Size": "15.318767547607422, 11.749527931213379, 14.09102725982666"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Leaves/Leafs",
+      "properties": {
+        "CanCollide": false,
+        "Color": "0.792157, 0.796078, 0.819608",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "19.239999771118164, 79.95899963378906, -16.69099998474121",
+        "Transparency": 0,
+        "Name": "Leafs",
+        "Position": "-83.95243072509766, 34.85568618774414, -56.19041442871094",
+        "CFrame": "-83.9524307, 34.8556862, -56.1904144, 0.167032272, 0.0500829704, 0.984682322, 0.039648205, 0.997560084, -0.0574638098, -0.985157251, 0.0486392342, 0.164643586",
+        "Material": "Enum.Material.Grass",
+        "Archivable": true,
+        "Size": "15.318767547607422, 11.790783882141113, 14.09102725982666"
+      },
+      "class": "Part"
+    },
+    {
+      "properties": {
+        "Enabled": true,
+        "Archivable": true,
+        "Name": "Math1"
+      },
+      "path": "Workspace/Trees/Conical2/Math1",
+      "source": "-- WindLeaves.lua  (Server Script)\nlocal RunService = game:GetService(\"RunService\")\nlocal CollectionService = game:GetService(\"CollectionService\")\n\n-- CONFIG\nlocal treePath = script.Parent               -- set this to workspace.YourTreeModel if script not parented to the tree\nlocal leavesFolderName = \"Leaves\"            -- folder name under treePath\nlocal windStrength = 4                  -- base angle multiplier (tweak)\nlocal windSpeed = 1.0                        -- speed multiplier (tweak)\nlocal enforceAnchored = true                 -- set true to auto Anchor leaves (recommended)\nlocal debugEnabled = true\n\n-- Helper debug\nlocal function debug(...)\n\tif debugEnabled then\n\t\tprint(\"[WindLeaves]\", ...)\n\tend\nend\n\n-- Find Leaves folder\nlocal function findLeavesFolder()\n\tif not treePath then return nil end\n\tlocal folder = treePath:FindFirstChild(leavesFolderName)\n\tif folder and folder:IsA(\"Folder\") then\n\t\treturn folder\n\tend\n\t-- fallback: try to find any descendant folder named Leaves\n\tfor _, v in pairs(treePath:GetDescendants()) do\n\t\tif v.Name == leavesFolderName and v:IsA(\"Folder\") then\n\t\t\treturn v\n\t\tend\n\tend\n\treturn nil\nend\n\nlocal LeavesFolder = findLeavesFolder()\nif not LeavesFolder then\n\tdebug(\"ERROR: Leaves folder not found under\", treePath:GetFullName())\n\treturn\nend\ndebug(\"Found Leaves folder at\", LeavesFolder:GetFullName())\n\n-- Table to hold parts and their originals + random offset\nlocal leafData = {}\n\nlocal function addLeaf(part)\n\tif not part or not part:IsA(\"BasePart\") then return end\n\tif leafData[part] then return end\n\tleafData[part] = {\n\t\torig = part.CFrame,\n\t\toffset = math.random() * 1000,    -- unique time offset so leaves don't move perfectly in sync\n\t}\n\tif enforceAnchored then\n\t\tpart.Anchored = true\n\tend\n\tdebug(\"Added leaf:\", part:GetFullName())\nend\n\nlocal function removeLeaf(part)\n\tif leafData[part] then\n\t\tleafData[part] = nil\n\t\tdebug(\"Removed leaf:\", part:GetFullName())\n\tend\nend\n\n-- Initialize existing children\nfor _, child in ipairs(LeavesFolder:GetChildren()) do\n\taddLeaf(child)\nend\n\n-- React to runtime changes\nLeavesFolder.ChildAdded:Connect(function(child)\n\t-- wait a short tick in case child is a Model with parts inside\n\ttask.wait(0.01)\n\t-- if child is a folder/model, add parts inside\n\tif child:IsA(\"BasePart\") then\n\t\taddLeaf(child)\n\telse\n\t\tfor _, desc in ipairs(child:GetDescendants()) do\n\t\t\tif desc:IsA(\"BasePart\") then\n\t\t\t\taddLeaf(desc)\n\t\t\tend\n\t\tend\n\tend\nend)\n\nLeavesFolder.ChildRemoved:Connect(function(child)\n\t-- remove whichever parts belonged to that child (or the child itself)\n\tif child:IsA(\"BasePart\") then\n\t\tremoveLeaf(child)\n\telse\n\t\tfor _, desc in ipairs(child:GetDescendants()) do\n\t\t\tif desc:IsA(\"BasePart\") then\n\t\t\t\tremoveLeaf(desc)\n\t\t\tend\n\t\tend\n\tend\nend)\n\n-- Also remove when parts are destroyed\ngame:GetService(\"Workspace\").DescendantRemoving:Connect(function(desc)\n\tif desc and desc:IsA(\"BasePart\") and leafData[desc] then\n\t\tleafData[desc] = nil\n\t\tdebug(\"Leaf destroyed:\", desc:GetFullName())\n\tend\nend)\n\n-- Main update loop (Heartbeat for smooth motion)\nRunService.Heartbeat:Connect(function(dt)\n\tlocal t = tick() * windSpeed\n\tfor part, info in pairs(leafData) do\n\t\tif not part or not part.Parent then\n\t\t\tleafData[part] = nil\n\t\telse\n\t\t\t-- compute small rotations based on noise / trig\n\t\t\tlocal clock = t + info.offset\n\t\t\t-- small independent axes\n\t\t\tlocal rx = math.rad(math.cos(clock) * windStrength)\n\t\t\tlocal ry = math.rad(math.sin(clock * 0.9) * windStrength * 0.6)\n\t\t\tlocal rz = math.rad(math.cos(clock * 1.1) * windStrength * 0.5)\n\t\t\tpart.CFrame = info.orig * CFrame.Angles(rx, ry, rz)\n\t\tend\n\tend\nend)\n\ndebug(\"WindLeaves script started. Leaf count:\", (function() local c=0; for _ in pairs(leafData) do c=c+1 end; return c end)())",
+      "class": "Script"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Log",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "2.0450000762939453, 40.16299819946289, -4.570000171661377",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-91.46829223632812, 12.091712951660156, -64.2923583984375",
+        "CFrame": "-91.4682922, 12.091713, -64.2923584, 0.761785269, 0.0608957782, 0.644961119, -0.0566874929, 0.998019338, -0.0272751227, -0.645344734, -0.0157834962, 0.76372844",
+        "Material": "Enum.Material.Wood",
+        "Archivable": true,
+        "Size": "4.010939598083496, 4.471099853515625, 3.1175811290740967"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Log",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "-13.619999885559082, -74.49700164794922, -13.178000450134277",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-84.54470825195312, 9.046765327453613, -61.27187728881836",
+        "CFrame": "-84.5447083, 9.04676533, -61.2718773, 0.260256708, 0.0609390661, -0.963614464, -0.000632951036, 0.998016894, 0.0629436523, 0.965539336, -0.0157716423, 0.259779304",
+        "Material": "Enum.Material.Wood",
+        "Archivable": true,
+        "Size": "2.5496909618377686, 6.723902225494385, 6.1617112159729"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Log",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "-5.01800012588501, -49.62099838256836, -5.389999866485596",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-86.0391845703125, 10.139554023742676, -63.8393669128418",
+        "CFrame": "-86.0391846, 10.139554, -63.8393669, 0.644970119, 0.0608593747, -0.761780739, -0.0272409134, 0.998021305, 0.0566689558, 0.763722062, -0.0157982334, 0.645351946",
+        "Material": "Enum.Material.Wood",
+        "Archivable": true,
+        "Size": "4.036493301391602, 7.578372478485107, 3.1768112182617188"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Log",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "2.0450000762939453, 40.16299819946289, -4.570000171661377",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-87.59447479248047, 34.087242126464844, -61.58467483520508",
+        "CFrame": "-87.5944748, 34.0872421, -61.5846748, 0.761785269, 0.0608957782, 0.644961119, -0.0566874929, 0.998019338, -0.0272751227, -0.645344734, -0.0157834962, 0.76372844",
+        "Material": "Enum.Material.Wood",
+        "Archivable": true,
+        "Size": "2.4907026290893555, 22.75850486755371, 2.4907026290893555"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Particles",
+      "properties": {
+        "CanCollide": false,
+        "Color": "1, 0, 0",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "-179.67999267578125, -19.31100082397461, -178.6179962158203",
+        "Transparency": 1,
+        "Name": "Particles",
+        "Position": "-87.53199768066406, 39.358116149902344, -61.80043029785156",
+        "CFrame": "-87.5319977, 39.3581161, -61.8004303, -0.943465114, 0.0227694139, -0.330688834, 0.0222772267, 0.999737918, 0.00527862459, 0.330722541, -0.00238667894, -0.943725049",
+        "Material": "Enum.Material.ForceField",
+        "Archivable": true,
+        "Size": "15.857841491699219, 16.511837005615234, 20.45332908630371"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Particles/leafParticles",
+      "properties": {
+        "Enabled": true,
+        "Name": "leafParticles",
+        "Shape": "Enum.ParticleEmitterShape.Box",
+        "LightEmission": 0,
+        "Brightness": 1,
+        "Archivable": true,
+        "Texture": "rbxassetid://13151745054"
+      },
+      "class": "ParticleEmitter"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Log",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "2.0450000762939453, 40.16299819946289, -4.570000171661377",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-88.33744049072266, 21.911113739013672, -61.392059326171875",
+        "CFrame": "-88.3374405, 21.9111137, -61.3920593, 0.761785269, 0.0608957782, 0.644961119, -0.0566874929, 0.998019338, -0.0272751227, -0.645344734, -0.0157834962, 0.76372844",
+        "Material": "Enum.Material.Wood",
+        "Archivable": true,
+        "Size": "3.1288888454437256, 12.7989501953125, 3.1288888454437256"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Log",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "174.98199462890625, 49.62099838256836, -174.61000061035156",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-89.96610260009766, 18.61758041381836, -60.13381576538086",
+        "CFrame": "-89.9661026, 18.6175804, -60.1338158, -0.644970119, 0.0608593747, 0.761780739, 0.0272409134, 0.998021305, -0.0566689558, -0.763722062, -0.0157982334, -0.645351946",
+        "Material": "Enum.Material.Wood",
+        "Archivable": true,
+        "Size": "2.907212495803833, 6.308795928955078, 0.8259503245353699"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Log",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
         "Rotation": "174.98199462890625, 49.62099838256836, -174.61000061035156",
         "Transparency": 0,
         "Name": "Log",
@@ -10,7 +1047,7 @@
       "class": "Part"
     },
     {
-      "path": "Workspace/Conical2/Log",
+      "path": "Workspace/Trees/Conical2/Log",
       "properties": {
         "CanCollide": true,
         "Color": "0.278431, 0.25098, 0.239216",
@@ -28,7 +1065,7 @@
       "class": "Part"
     },
     {
-      "path": "Workspace/Conical2/Log",
+      "path": "Workspace/Trees/Conical2/Log",
       "properties": {
         "CanCollide": true,
         "Color": "0.278431, 0.25098, 0.239216",
@@ -46,7 +1083,7 @@
       "class": "Part"
     },
     {
-      "path": "Workspace/Conical2/Log",
+      "path": "Workspace/Trees/Conical2/Log",
       "properties": {
         "CanCollide": true,
         "Color": "0.278431, 0.25098, 0.239216",
@@ -64,7 +1101,7 @@
       "class": "Part"
     },
     {
-      "path": "Workspace/Conical2/Log",
+      "path": "Workspace/Trees/Conical2/Log",
       "properties": {
         "CanCollide": true,
         "Color": "0.278431, 0.25098, 0.239216",
@@ -82,7 +1119,7 @@
       "class": "Part"
     },
     {
-      "path": "Workspace/Conical2/Log",
+      "path": "Workspace/Trees/Conical2/Log",
       "properties": {
         "CanCollide": true,
         "Color": "0.278431, 0.25098, 0.239216",
@@ -100,7 +1137,7 @@
       "class": "Part"
     },
     {
-      "path": "Workspace/Conical2/Log",
+      "path": "Workspace/Trees/Conical2/Log",
       "properties": {
         "CanCollide": true,
         "Color": "0.278431, 0.25098, 0.239216",
@@ -118,861 +1155,7 @@
       "class": "Part"
     },
     {
-      "path": "Workspace/Pine",
-      "properties": {
-        "Name": "Pine",
-        "Archivable": true
-      },
-      "class": "Model"
-    },
-    {
-      "properties": {
-        "Enabled": true,
-        "Archivable": true,
-        "Name": "Math1"
-      },
-      "path": "Workspace/Pine/Math1",
-      "source": "-- WindLeaves.lua  (Server Script)\nlocal RunService = game:GetService(\"RunService\")\nlocal CollectionService = game:GetService(\"CollectionService\")\n\n-- CONFIG\nlocal treePath = script.Parent               -- set this to workspace.YourTreeModel if script not parented to the tree\nlocal leavesFolderName = \"Leaves\"            -- folder name under treePath\nlocal windStrength = 4                  -- base angle multiplier (tweak)\nlocal windSpeed = 1.0                        -- speed multiplier (tweak)\nlocal enforceAnchored = true                 -- set true to auto Anchor leaves (recommended)\nlocal debugEnabled = true\n\n-- Helper debug\nlocal function debug(...)\n\tif debugEnabled then\n\t\tprint(\"[WindLeaves]\", ...)\n\tend\nend\n\n-- Find Leaves folder\nlocal function findLeavesFolder()\n\tif not treePath then return nil end\n\tlocal folder = treePath:FindFirstChild(leavesFolderName)\n\tif folder and folder:IsA(\"Folder\") then\n\t\treturn folder\n\tend\n\t-- fallback: try to find any descendant folder named Leaves\n\tfor _, v in pairs(treePath:GetDescendants()) do\n\t\tif v.Name == leavesFolderName and v:IsA(\"Folder\") then\n\t\t\treturn v\n\t\tend\n\tend\n\treturn nil\nend\n\nlocal LeavesFolder = findLeavesFolder()\nif not LeavesFolder then\n\tdebug(\"ERROR: Leaves folder not found under\", treePath:GetFullName())\n\treturn\nend\ndebug(\"Found Leaves folder at\", LeavesFolder:GetFullName())\n\n-- Table to hold parts and their originals + random offset\nlocal leafData = {}\n\nlocal function addLeaf(part)\n\tif not part or not part:IsA(\"BasePart\") then return end\n\tif leafData[part] then return end\n\tleafData[part] = {\n\t\torig = part.CFrame,\n\t\toffset = math.random() * 1000,    -- unique time offset so leaves don't move perfectly in sync\n\t}\n\tif enforceAnchored then\n\t\tpart.Anchored = true\n\tend\n\tdebug(\"Added leaf:\", part:GetFullName())\nend\n\nlocal function removeLeaf(part)\n\tif leafData[part] then\n\t\tleafData[part] = nil\n\t\tdebug(\"Removed leaf:\", part:GetFullName())\n\tend\nend\n\n-- Initialize existing children\nfor _, child in ipairs(LeavesFolder:GetChildren()) do\n\taddLeaf(child)\nend\n\n-- React to runtime changes\nLeavesFolder.ChildAdded:Connect(function(child)\n\t-- wait a short tick in case child is a Model with parts inside\n\ttask.wait(0.01)\n\t-- if child is a folder/model, add parts inside\n\tif child:IsA(\"BasePart\") then\n\t\taddLeaf(child)\n\telse\n\t\tfor _, desc in ipairs(child:GetDescendants()) do\n\t\t\tif desc:IsA(\"BasePart\") then\n\t\t\t\taddLeaf(desc)\n\t\t\tend\n\t\tend\n\tend\nend)\n\nLeavesFolder.ChildRemoved:Connect(function(child)\n\t-- remove whichever parts belonged to that child (or the child itself)\n\tif child:IsA(\"BasePart\") then\n\t\tremoveLeaf(child)\n\telse\n\t\tfor _, desc in ipairs(child:GetDescendants()) do\n\t\t\tif desc:IsA(\"BasePart\") then\n\t\t\t\tremoveLeaf(desc)\n\t\t\tend\n\t\tend\n\tend\nend)\n\n-- Also remove when parts are destroyed\ngame:GetService(\"Workspace\").DescendantRemoving:Connect(function(desc)\n\tif desc and desc:IsA(\"BasePart\") and leafData[desc] then\n\t\tleafData[desc] = nil\n\t\tdebug(\"Leaf destroyed:\", desc:GetFullName())\n\tend\nend)\n\n-- Main update loop (Heartbeat for smooth motion)\nRunService.Heartbeat:Connect(function(dt)\n\tlocal t = tick() * windSpeed\n\tfor part, info in pairs(leafData) do\n\t\tif not part or not part.Parent then\n\t\t\tleafData[part] = nil\n\t\telse\n\t\t\t-- compute small rotations based on noise / trig\n\t\t\tlocal clock = t + info.offset\n\t\t\t-- small independent axes\n\t\t\tlocal rx = math.rad(math.cos(clock) * windStrength)\n\t\t\tlocal ry = math.rad(math.sin(clock * 0.9) * windStrength * 0.6)\n\t\t\tlocal rz = math.rad(math.cos(clock * 1.1) * windStrength * 0.5)\n\t\t\tpart.CFrame = info.orig * CFrame.Angles(rx, ry, rz)\n\t\tend\n\tend\nend)\n\ndebug(\"WindLeaves script started. Leaf count:\", (function() local c=0; for _ in pairs(leafData) do c=c+1 end; return c end)())",
-      "class": "Script"
-    },
-    {
-      "path": "Workspace/Pine/Leaves",
-      "properties": {
-        "Name": "Leaves",
-        "Archivable": true
-      },
-      "class": "Folder"
-    },
-    {
-      "path": "Workspace/Pine/Leaves/Leafs",
-      "properties": {
-        "CanCollide": false,
-        "Color": "0.792157, 0.796078, 0.819608",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Wedge",
-        "Rotation": "-3.2799999713897705, -60.64799880981445, -2.9200000762939453",
-        "Transparency": 0,
-        "Name": "Leafs",
-        "Position": "-99.43299102783203, 37.580535888671875, -84.8377456665039",
-        "CFrame": "-99.432991, 37.5805359, -84.8377457, 0.489545465, 0.0249715559, -0.871620834, -0.0010543149, 0.999605954, 0.0280459914, 0.871977329, -0.0128108198, 0.489378691",
-        "Material": "Enum.Material.Grass",
-        "Archivable": true,
-        "Size": "5.836916446685791, 7.078495025634766, 7.494874477386475"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Pine/Leaves/Leafs",
-      "properties": {
-        "CanCollide": false,
-        "Color": "0.792157, 0.796078, 0.819608",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "-0.9330000281333923, 0.7730000019073486, -0.968999981880188",
-        "Transparency": 0,
-        "Name": "Leafs",
-        "Position": "-103.53978729248047, 55.86029052734375, -82.4460678100586",
-        "CFrame": "-103.539787, 55.8602905, -82.4460678, 0.999766648, 0.0169083066, 0.0134960208, -0.0171271507, 0.999720812, 0.0162778255, -0.013217112, -0.0165051743, 0.999776423",
-        "Material": "Enum.Material.Grass",
-        "Archivable": true,
-        "Size": "4.002527713775635, 6.924671173095703, 4.002527713775635"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Pine/Leaves/Leafs",
-      "properties": {
-        "CanCollide": false,
-        "Color": "0.792157, 0.796078, 0.819608",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Wedge",
-        "Rotation": "6.21999979019165, 73.51300048828125, -7.313000202178955",
-        "Transparency": 0,
-        "Name": "Leafs",
-        "Position": "-108.08868408203125, 50.01190948486328, -83.58720397949219",
-        "CFrame": "-108.088684, 50.0119095, -83.587204, 0.281492889, 0.0361236632, 0.958883762, -0.0234957896, 0.999250889, -0.0307467803, -0.959275723, -0.0138747338, 0.282130539",
-        "Material": "Enum.Material.Grass",
-        "Archivable": true,
-        "Size": "4.90532112121582, 7.5126166343688965, 6.2986626625061035"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Pine/Leaves/Leafs",
-      "properties": {
-        "CanCollide": false,
-        "Color": "0.972549, 0.972549, 0.972549",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Wedge",
-        "Rotation": "0.5770000219345093, 42.49100112915039, -1.940999984741211",
-        "Transparency": 0,
-        "Name": "Leafs",
-        "Position": "-108.8911361694336, 28.667314529418945, -87.01171112060547",
-        "CFrame": "-108.891136, 28.6673145, -87.0117111, 0.736955941, 0.0249716248, 0.675480247, -0.0270658061, 0.999605954, -0.00742488354, -0.675399125, -0.0128106037, 0.737341106",
-        "Material": "Enum.Material.Grass",
-        "Archivable": true,
-        "Size": "7.228381633758545, 9.861681938171387, 9.28158187866211"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Pine/Leaves/Leafs",
-      "properties": {
-        "CanCollide": false,
-        "Color": "0.972549, 0.972549, 0.972549",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Wedge",
-        "Rotation": "0.0689999982714653, 29.312000274658203, -1.6410000324249268",
-        "Transparency": 0,
-        "Name": "Leafs",
-        "Position": "-106.78858947753906, 37.73777770996094, -86.90576934814453",
-        "CFrame": "-106.788589, 37.7377777, -86.9057693, 0.871608138, 0.0249715634, 0.489568025, -0.0280458461, 0.999605954, -0.00105525088, -0.489401191, -0.0128105851, 0.871964574",
-        "Material": "Enum.Material.Grass",
-        "Archivable": true,
-        "Size": "5.836916446685791, 7.078495025634766, 7.494874477386475"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Pine/Leaves/Leafs",
-      "properties": {
-        "CanCollide": false,
-        "Color": "0.792157, 0.796078, 0.819608",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Wedge",
-        "Rotation": "-0.7419999837875366, -16.246000289916992, -1.656999945640564",
-        "Transparency": 0,
-        "Name": "Leafs",
-        "Position": "-102.44400787353516, 49.831626892089844, -86.65271759033203",
-        "CFrame": "-102.444008, 49.8316269, -86.6527176, 0.959669948, 0.0277676154, -0.279756695, -0.0252976175, 0.999602497, 0.0124361617, 0.279990613, -0.00485743675, 0.959990501",
-        "Material": "Enum.Material.Grass",
-        "Archivable": true,
-        "Size": "4.90532112121582, 7.5126166343688965, 6.2986626625061035"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Pine/Leaves/Leafs",
-      "properties": {
-        "CanCollide": false,
-        "Color": "0.792157, 0.796078, 0.819608",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Wedge",
-        "Rotation": "-3.755000114440918, -60.48899841308594, -4.243000030517578",
-        "Transparency": 0,
-        "Name": "Leafs",
-        "Position": "-99.90471649169922, 45.821441650390625, -84.49925231933594",
-        "CFrame": "-99.9047165, 45.8214417, -84.4992523, 0.491244495, 0.0364468992, -0.870259643, -0.0169904437, 0.999334931, 0.032261733, 0.870856106, -0.00106231496, 0.491536885",
-        "Material": "Enum.Material.Grass",
-        "Archivable": true,
-        "Size": "4.90532112121582, 5.205145835876465, 6.2986626625061035"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Pine/Leaves/Leafs",
-      "properties": {
-        "CanCollide": false,
-        "Color": "0.972549, 0.972549, 0.972549",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Wedge",
-        "Rotation": "18.375999450683594, 85.63700103759766, -19.160999298095703",
-        "Transparency": 0,
-        "Name": "Leafs",
-        "Position": "-110.39359283447266, 32.129886627197266, -82.56220245361328",
-        "CFrame": "-110.393593, 32.1298866, -82.5622025, 0.0718644336, 0.0249716621, 0.99710232, -0.0145765757, 0.999605954, -0.0239836667, -0.997307837, -0.0128107686, 0.0721999854",
-        "Material": "Enum.Material.Grass",
-        "Archivable": true,
-        "Size": "6.615171909332275, 9.025080680847168, 8.494192123413086"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Pine/Leaves/Leafs",
-      "properties": {
-        "CanCollide": false,
-        "Color": "0.972549, 0.972549, 0.972549",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Wedge",
-        "Rotation": "-179.42300415039062, -42.49100112915039, -178.0590057373047",
-        "Transparency": 0,
-        "Name": "Leafs",
-        "Position": "-99.85073852539062, 28.567962646484375, -77.14200592041016",
-        "CFrame": "-99.8507385, 28.5679626, -77.1420059, -0.736955941, 0.0249716323, -0.675480127, 0.0270658135, 0.999605954, 0.00742488634, 0.675399125, -0.0128106112, -0.737341046",
-        "Material": "Enum.Material.Grass",
-        "Archivable": true,
-        "Size": "7.228381633758545, 9.861681938171387, 9.28158187866211"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Pine/Leaves/Leafs",
-      "properties": {
-        "CanCollide": false,
-        "Color": "0.792157, 0.796078, 0.819608",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Wedge",
-        "Rotation": "179.80099487304688, -30.141000747680664, -178.85299682617188",
-        "Transparency": 0,
-        "Name": "Leafs",
-        "Position": "-101.57691192626953, 45.94259262084961, -78.30477905273438",
-        "CFrame": "-101.576912, 45.9425926, -78.3047791, -0.864623308, 0.017314842, -0.502123296, 0.0217637755, 0.999758542, -0.0030011069, 0.501949966, -0.0135229286, -0.864790976",
-        "Material": "Enum.Material.Grass",
-        "Archivable": true,
-        "Size": "4.90532112121582, 5.205145835876465, 6.2986626625061035"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Pine/Leaves/Leafs",
-      "properties": {
-        "CanCollide": false,
-        "Color": "0.792157, 0.796078, 0.819608",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Wedge",
-        "Rotation": "176.7740020751953, 60.1150016784668, -177.1269989013672",
-        "Transparency": 0,
-        "Name": "Leafs",
-        "Position": "-107.76094818115234, 46.075408935546875, -79.99563598632812",
-        "CFrame": "-107.760948, 46.0754089, -79.995636, -0.497633785, 0.0249715447, 0.867028475, 0.0013152007, 0.999605954, -0.0280349571, -0.86738646, -0.0128108272, -0.497470379",
-        "Material": "Enum.Material.Grass",
-        "Archivable": true,
-        "Size": "4.90532112121582, 5.205145835876465, 6.2986626625061035"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Pine/Leaves/Leafs",
-      "properties": {
-        "CanCollide": false,
-        "Color": "0.792157, 0.796078, 0.819608",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Wedge",
-        "Rotation": "177.7050018310547, 47.474998474121094, -177.88299560546875",
-        "Transparency": 0,
-        "Name": "Leafs",
-        "Position": "-109.30297088623047, 28.798784255981445, -77.5568618774414",
-        "CFrame": "-109.302971, 28.7987843, -77.5568619, -0.675447702, 0.0249714963, 0.736985862, 0.00742345117, 0.999605954, -0.0270661823, -0.737370968, -0.0128108151, -0.67536664",
-        "Material": "Enum.Material.Grass",
-        "Archivable": true,
-        "Size": "7.228381633758545, 9.861681938171387, 9.28158187866211"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Pine/Leaves/Leafs",
-      "properties": {
-        "CanCollide": false,
-        "Color": "0.972549, 0.972549, 0.972549",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Wedge",
-        "Rotation": "178.9929962158203, 16.930999755859375, -176.97300720214844",
-        "Transparency": 0,
-        "Name": "Leafs",
-        "Position": "-105.02093505859375, 50.0075798034668, -77.945068359375",
-        "CFrame": "-105.020935, 50.0075798, -77.9450684, -0.955319881, 0.0505149551, 0.291227341, 0.0476842672, 0.998720884, -0.0168132912, -0.291703939, -0.00217511877, -0.956506133",
-        "Material": "Enum.Material.Grass",
-        "Archivable": true,
-        "Size": "4.90532112121582, 7.5126166343688965, 6.2986626625061035"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Pine/Leaves/Leafs",
-      "properties": {
-        "CanCollide": false,
-        "Color": "0.905882, 0.905882, 0.92549",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Wedge",
-        "Rotation": "-0.722000002861023, 0.49000000953674316, -1.430999994277954",
-        "Transparency": 0,
-        "Name": "Leafs",
-        "Position": "-104.56745910644531, 23.092731475830078, -89.1317138671875",
-        "CFrame": "-104.567459, 23.0927315, -89.1317139, 0.999652207, 0.0249714684, 0.00855669379, -0.0250780582, 0.999605954, 0.0126004331, -0.00823876355, -0.0128106326, 0.999884009",
-        "Material": "Enum.Material.Grass",
-        "Archivable": true,
-        "Size": "9.343825340270996, 10.733377456665039, 9.882894515991211"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Pine/Leaves/Leafs",
-      "properties": {
-        "CanCollide": false,
-        "Color": "0.972549, 0.972549, 0.972549",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Wedge",
-        "Rotation": "2.9590001106262207, 68.80400085449219, -3.9600000381469727",
-        "Transparency": 0,
-        "Name": "Leafs",
-        "Position": "-108.57703399658203, 42.34547805786133, -84.01216125488281",
-        "CFrame": "-108.577034, 42.3454781, -84.0121613, 0.360702515, 0.02497169, 0.932347178, -0.0209608227, 0.999605954, -0.0186637715, -0.932445586, -0.0128106978, 0.361083478",
-        "Material": "Enum.Material.Grass",
-        "Archivable": true,
-        "Size": "5.3999714851379395, 5.730030536651611, 6.933816909790039"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Pine/Leaves/Leafs",
-      "properties": {
-        "CanCollide": false,
-        "Color": "0.972549, 0.972549, 0.972549",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Wedge",
-        "Rotation": "-1.2879999876022339, -21.13800048828125, -1.534000039100647",
-        "Transparency": 0,
-        "Name": "Leafs",
-        "Position": "-102.11273956298828, 42.14752960205078, -86.86896514892578",
-        "CFrame": "-102.11274, 42.1475296, -86.8689651, 0.932378769, 0.0249714479, -0.360620886, -0.0186653696, 0.999605954, 0.0209591277, 0.361001879, -0.012810722, 0.932477176",
-        "Material": "Enum.Material.Grass",
-        "Archivable": true,
-        "Size": "5.3999714851379395, 5.730030536651611, 6.933816909790039"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Pine/Leaves/Leafs",
-      "properties": {
-        "CanCollide": false,
-        "Color": "0.972549, 0.972549, 0.972549",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Wedge",
-        "Rotation": "-161.62399291992188, -85.63700103759766, -160.83900451660156",
-        "Transparency": 0,
-        "Name": "Leafs",
-        "Position": "-98.17997741699219, 31.83612060546875, -81.6773910522461",
-        "CFrame": "-98.1799774, 31.8361206, -81.6773911, -0.0718644336, 0.0249716621, -0.99710232, 0.0145765757, 0.999605954, 0.0239836667, 0.997307837, -0.0128107686, -0.0721999854",
-        "Material": "Enum.Material.Grass",
-        "Archivable": true,
-        "Size": "6.615171909332275, 9.025080680847168, 8.494192123413086"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Pine/Leaves/Leafs",
-      "properties": {
-        "CanCollide": false,
-        "Color": "0.972549, 0.972549, 0.972549",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Wedge",
-        "Rotation": "178.71200561523438, 21.13800048828125, -178.46600341796875",
-        "Transparency": 0,
-        "Name": "Leafs",
-        "Position": "-105.71880340576172, 42.35709762573242, -77.54536437988281",
-        "CFrame": "-105.718803, 42.3570976, -77.5453644, -0.932378769, 0.0249714386, 0.360620946, 0.0186653621, 0.999605954, -0.0209591333, -0.361001909, -0.012810722, -0.932477117",
-        "Material": "Enum.Material.Grass",
-        "Archivable": true,
-        "Size": "5.3999714851379395, 5.730030536651611, 6.933816909790039"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Pine/Leaves/Leafs",
-      "properties": {
-        "CanCollide": false,
-        "Color": "0.792157, 0.796078, 0.819608",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Wedge",
-        "Rotation": "-179.93099975585938, -29.312000274658203, -178.35899353027344",
-        "Transparency": 0,
-        "Name": "Leafs",
-        "Position": "-101.4979248046875, 37.72639465332031, -77.48136138916016",
-        "CFrame": "-101.497925, 37.7263947, -77.4813614, -0.871608138, 0.0249715634, -0.489568025, 0.0280458461, 0.999605954, 0.00105525088, 0.489401191, -0.0128105851, -0.871964574",
-        "Material": "Enum.Material.Grass",
-        "Archivable": true,
-        "Size": "5.836916446685791, 7.078495025634766, 7.494874477386475"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Pine/Leaves/Leafs",
-      "properties": {
-        "CanCollide": false,
-        "Color": "0.792157, 0.796078, 0.819608",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Wedge",
-        "Rotation": "-177.04100036621094, -68.80400085449219, -176.0399932861328",
-        "Transparency": 0,
-        "Name": "Leafs",
-        "Position": "-99.2541732788086, 42.15898895263672, -80.40203094482422",
-        "CFrame": "-99.2541733, 42.158989, -80.4020309, -0.360702485, 0.0249716882, -0.932347298, 0.0209608134, 0.999605954, 0.0186637715, 0.932445586, -0.0128106903, -0.361083478",
-        "Material": "Enum.Material.Grass",
-        "Archivable": true,
-        "Size": "5.3999714851379395, 5.730030536651611, 6.933816909790039"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Pine/Leaves/Leafs",
-      "properties": {
-        "CanCollide": false,
-        "Color": "0.972549, 0.972549, 0.972549",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Wedge",
-        "Rotation": "179.2779998779297, -0.49000000953674316, -178.56900024414062",
-        "Transparency": 0,
-        "Name": "Leafs",
-        "Position": "-104.44912719726562, 23.14102554321289, -74.88017272949219",
-        "CFrame": "-104.449127, 23.1410255, -74.8801727, -0.999652207, 0.0249714684, -0.00855636504, 0.0250780545, 0.999605954, -0.0126004405, 0.00823843572, -0.0128106326, -0.99988395",
-        "Material": "Enum.Material.Grass",
-        "Archivable": true,
-        "Size": "9.343825340270996, 10.996428489685059, 9.882894515991211"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Pine/Leaves/Leafs",
-      "properties": {
-        "CanCollide": false,
-        "Color": "0.972549, 0.972549, 0.972549",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Wedge",
-        "Rotation": "179.16299438476562, 4.123000144958496, -178.56500244140625",
-        "Transparency": 0,
-        "Name": "Leafs",
-        "Position": "-104.7269515991211, 32.07229232788086, -76.01172637939453",
-        "CFrame": "-104.726952, 32.0722923, -76.0117264, -0.997099698, 0.0249714497, 0.0719003305, 0.0239829347, 0.999605954, -0.0145773105, -0.0722358823, -0.0128106512, -0.997305334",
-        "Material": "Enum.Material.Grass",
-        "Archivable": true,
-        "Size": "6.615171909332275, 9.025080680847168, 8.494192123413086"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Pine/Leaves/Leafs",
-      "properties": {
-        "CanCollide": false,
-        "Color": "0.792157, 0.796078, 0.819608",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Wedge",
-        "Rotation": "-175.23899841308594, -73.06800079345703, -172.98300170898438",
-        "Transparency": 0,
-        "Name": "Leafs",
-        "Position": "-99.37602233886719, 49.82727813720703, -81.01111602783203",
-        "CFrame": "-99.3760223, 49.8272781, -81.011116, -0.289059341, 0.0355777629, -0.956650555, 0.0429242551, 0.998785794, 0.024174748, 0.956348419, -0.0340755694, -0.290235341",
-        "Material": "Enum.Material.Grass",
-        "Archivable": true,
-        "Size": "4.90532112121582, 7.5126166343688965, 6.2986626625061035"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Pine/Leaves/Leafs",
-      "properties": {
-        "CanCollide": false,
-        "Color": "0.972549, 0.972549, 0.972549",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Wedge",
-        "Rotation": "-2.2950000762939453, -47.474998474121094, -2.117000102996826",
-        "Transparency": 0,
-        "Name": "Leafs",
-        "Position": "-99.43897247314453, 28.436508178710938, -86.5962142944336",
-        "CFrame": "-99.4389725, 28.4365082, -86.5962143, 0.675447702, 0.0249714963, -0.736985862, -0.00742345117, 0.999605954, 0.0270661823, 0.737370968, -0.0128108151, 0.67536664",
-        "Material": "Enum.Material.Grass",
-        "Archivable": true,
-        "Size": "7.228381633758545, 9.861681938171387, 9.28158187866211"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Pine/Leaves/Leafs",
-      "properties": {
-        "CanCollide": false,
-        "Color": "0.792157, 0.796078, 0.819608",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Wedge",
-        "Rotation": "-0.722000002861023, 0.49000000953674316, -1.430999994277954",
-        "Transparency": 0,
-        "Name": "Leafs",
-        "Position": "-104.56745910644531, 23.092731475830078, -89.1317138671875",
-        "CFrame": "-104.567459, 23.0927315, -89.1317139, 0.999652207, 0.0249714684, 0.00855669379, -0.0250780582, 0.999605954, 0.0126004331, -0.00823876355, -0.0128106326, 0.999884009",
-        "Material": "Enum.Material.Grass",
-        "Archivable": true,
-        "Size": "9.343825340270996, 10.733377456665039, 9.882894515991211"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Pine/Leaves/Leafs",
-      "properties": {
-        "CanCollide": false,
-        "Color": "0.792157, 0.796078, 0.819608",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "-1.0010000467300415, 0.013000000268220901, -1.0190000534057617",
-        "Transparency": 0,
-        "Name": "Leafs",
-        "Position": "-103.408447265625, 61.14411926269531, -82.51335144042969",
-        "CFrame": "-103.408447, 61.1441193, -82.5133514, 0.999842465, 0.0177868865, 0.000222290866, -0.0177879296, 0.999689162, 0.017464513, 8.83173198e-05, -0.0174657218, 0.999847472",
-        "Material": "Enum.Material.Grass",
-        "Archivable": true,
-        "Size": "2.369732618331909, 11.847046852111816, 2.369732618331909"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Pine/Leaves/Leafs",
-      "properties": {
-        "CanCollide": false,
-        "Color": "0.792157, 0.796078, 0.819608",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Wedge",
-        "Rotation": "108.15499877929688, 88.48899841308594, -108.88300323486328",
-        "Transparency": 0,
-        "Name": "Leafs",
-        "Position": "-111.62724304199219, 23.477630615234375, -81.95021057128906",
-        "CFrame": "-111.627243, 23.4776306, -81.9502106, -0.00854124222, 0.0249716491, 0.999652207, -0.0126009546, 0.999605954, -0.0250780415, -0.999884129, -0.012810776, -0.00822328683",
-        "Material": "Enum.Material.Grass",
-        "Archivable": true,
-        "Size": "9.343825340270996, 10.500575065612793, 9.882894515991211"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Pine/Leaves/Leafs",
-      "properties": {
-        "CanCollide": false,
-        "Color": "0.792157, 0.796078, 0.819608",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Wedge",
-        "Rotation": "176.72000122070312, 60.64799880981445, -177.0800018310547",
-        "Transparency": 0,
-        "Name": "Leafs",
-        "Position": "-108.85371398925781, 37.88364791870117, -79.54896545410156",
-        "CFrame": "-108.853714, 37.8836479, -79.5489655, -0.489545554, 0.024971541, 0.871620774, 0.00105429906, 0.999605954, -0.0280459784, -0.87197727, -0.0128108347, -0.48937881",
-        "Material": "Enum.Material.Grass",
-        "Archivable": true,
-        "Size": "5.836916446685791, 7.078495025634766, 7.494874477386475"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Pine/Leaves/Leafs",
-      "properties": {
-        "CanCollide": false,
-        "Color": "0.972549, 0.972549, 0.972549",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Wedge",
-        "Rotation": "-0.8370000123977661, -4.123000144958496, -1.434999942779541",
-        "Transparency": 0,
-        "Name": "Leafs",
-        "Position": "-103.84626770019531, 31.893712997436523, -88.22793579101562",
-        "CFrame": "-103.846268, 31.893713, -88.2279358, 0.997099698, 0.0249714497, -0.0719003305, -0.0239829347, 0.999605954, 0.0145773105, 0.0722358823, -0.0128106512, 0.997305334",
-        "Material": "Enum.Material.Grass",
-        "Archivable": true,
-        "Size": "6.615171909332275, 9.025080680847168, 8.494192123413086"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Pine/Leaves/Leafs",
-      "properties": {
-        "CanCollide": false,
-        "Color": "0.972549, 0.972549, 0.972549",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Wedge",
-        "Rotation": "0.08699999749660492, 29.840999603271484, -1.649999976158142",
-        "Transparency": 0,
-        "Name": "Leafs",
-        "Position": "-106.08338165283203, 45.954071044921875, -86.19401550292969",
-        "CFrame": "-106.083382, 45.954071, -86.1940155, 0.867051721, 0.0249715727, 0.497593284, -0.0280349255, 0.999605954, -0.00131411012, -0.497429878, -0.0128105888, 0.867409647",
-        "Material": "Enum.Material.Grass",
-        "Archivable": true,
-        "Size": "4.90532112121582, 5.205145835876465, 6.2986626625061035"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Pine/Leaves/Leafs",
-      "properties": {
-        "CanCollide": false,
-        "Color": "0.972549, 0.972549, 0.972549",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Wedge",
-        "Rotation": "-71.84500122070312, -88.48899841308594, -71.11699676513672",
-        "Transparency": 0,
-        "Name": "Leafs",
-        "Position": "-97.37598419189453, 23.301450729370117, -82.0693588256836",
-        "CFrame": "-97.3759842, 23.3014507, -82.0693588, 0.00854124222, 0.0249716491, -0.999652207, 0.0126009546, 0.999605954, 0.0250780415, 0.999884129, -0.012810776, 0.00822328683",
-        "Material": "Enum.Material.Grass",
-        "Archivable": true,
-        "Size": "9.343825340270996, 10.138030052185059, 9.882894515991211"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Pine/Log",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.4, 0.337255, 0.309804",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Wedge",
-        "Rotation": "179.2779998779297, -0.49000000953674316, -178.56900024414062",
-        "Transparency": 0,
-        "Name": "Log",
-        "Position": "-104.53577423095703, 21.007766723632812, -79.79179382324219",
-        "CFrame": "-104.535774, 21.0077667, -79.7917938, -0.999652207, 0.0249714684, -0.00855636504, 0.0250780545, 0.999605954, -0.0126004405, 0.00823843572, -0.0128106326, -0.99988395",
-        "Material": "Enum.Material.Wood",
-        "Archivable": true,
-        "Size": "2.841146945953369, 10.035711288452148, 1.1318600177764893"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Pine/Log",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.4, 0.337255, 0.309804",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "-0.722000002861023, 0.49000000953674316, -1.430999994277954",
-        "Transparency": 0,
-        "Name": "Log",
-        "Position": "-104.48287963867188, 23.861026763916016, -82.0078353881836",
-        "CFrame": "-104.48288, 23.8610268, -82.0078354, 0.999652207, 0.0249714684, 0.00855669379, -0.0250780582, 0.999605954, 0.0126004331, -0.00823876355, -0.0128106326, 0.999884009",
-        "Material": "Enum.Material.Wood",
-        "Archivable": true,
-        "Size": "3.7680344581604004, 15.413421630859375, 3.7680344581604004"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Pine/Log",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.4, 0.337255, 0.309804",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Wedge",
-        "Rotation": "-0.17000000178813934, 21.51099967956543, -1.5379999876022339",
-        "Transparency": 0,
-        "Name": "Log",
-        "Position": "-103.59842681884766, 10.092418670654297, -86.13422393798828",
-        "CFrame": "-103.598427, 10.0924187, -86.1342239, 0.930014312, 0.024971541, 0.366675556, -0.0279293451, 0.999605954, 0.00276294257, -0.366462022, -0.0128105925, 0.930344939",
-        "Material": "Enum.Material.Wood",
-        "Archivable": true,
-        "Size": "4.155694484710693, 1.9602360725402832, 7.737511157989502"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Pine/Log",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.4, 0.337255, 0.309804",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Wedge",
-        "Rotation": "-71.84500122070312, -88.48899841308594, -71.11699676513672",
-        "Transparency": 0,
-        "Name": "Log",
-        "Position": "-99.9712905883789, 11.724864959716797, -81.9728775024414",
-        "CFrame": "-99.9712906, 11.724865, -81.9728775, 0.00854124222, 0.0249716491, -0.999652207, 0.0126009546, 0.999605954, 0.0250780415, 0.999884129, -0.012810776, 0.00822328683",
-        "Material": "Enum.Material.Wood",
-        "Archivable": true,
-        "Size": "4.055236339569092, 5.298237323760986, 3.8257458209991455"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Pine/Log",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.4, 0.337255, 0.309804",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "-0.722000002861023, 0.49000000953674316, -1.430999994277954",
-        "Transparency": 0,
-        "Name": "Log",
-        "Position": "-104.76416778564453, 12.581043243408203, -81.86265563964844",
-        "CFrame": "-104.764168, 12.5810432, -81.8626556, 0.999652207, 0.0249714684, 0.00855669379, -0.0250780582, 0.999605954, 0.0126004331, -0.00823876355, -0.0128106326, 0.999884009",
-        "Material": "Enum.Material.Wood",
-        "Archivable": true,
-        "Size": "5.800989627838135, 6.767820358276367, 5.800989627838135"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Pine/Log",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.4, 0.337255, 0.309804",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "-0.722000002861023, 0.49000000953674316, -1.430999994277954",
-        "Transparency": 0,
-        "Name": "Log",
-        "Position": "-104.11589813232422, 38.547847747802734, -82.19609069824219",
-        "CFrame": "-104.115898, 38.5478477, -82.1960907, 0.999652207, 0.0249714684, 0.00855669379, -0.0250780582, 0.999605954, 0.0126004331, -0.00823876355, -0.0128106326, 0.999884009",
-        "Material": "Enum.Material.Wood",
-        "Archivable": true,
-        "Size": "2.9994845390319824, 27.407438278198242, 2.9994845390319824"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Pine/Log",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.4, 0.337255, 0.309804",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Wedge",
-        "Rotation": "-71.84500122070312, -88.48899841308594, -71.11699676513672",
-        "Transparency": 0,
-        "Name": "Log",
-        "Position": "-102.43450927734375, 18.727901458740234, -81.95968627929688",
-        "CFrame": "-102.434509, 18.7279015, -81.9596863, 0.00854124222, 0.0249716491, -0.999652207, 0.0126009546, 0.999605954, 0.0250780415, 0.999884129, -0.012810776, 0.00822328683",
-        "Material": "Enum.Material.Wood",
-        "Archivable": true,
-        "Size": "3.369750738143921, 5.639922142028809, 1.138839840888977"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Pine/Log",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.4, 0.337255, 0.309804",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Wedge",
-        "Rotation": "108.15499877929688, 88.48899841308594, -108.88300323486328",
-        "Transparency": 0,
-        "Name": "Log",
-        "Position": "-106.6051254272461, 19.811504364013672, -81.93783569335938",
-        "CFrame": "-106.605125, 19.8115044, -81.9378357, -0.00854124222, 0.0249716491, 0.999652207, -0.0126009546, 0.999605954, -0.0250780415, -0.999884129, -0.012810776, -0.00822328683",
-        "Material": "Enum.Material.Wood",
-        "Archivable": true,
-        "Size": "2.73315691947937, 7.597508430480957, 1.4479202032089233"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Pine/Log",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.4, 0.337255, 0.309804",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Wedge",
-        "Rotation": "-0.722000002861023, 0.49000000953674316, -1.430999994277954",
-        "Transparency": 0,
-        "Name": "Log",
-        "Position": "-104.643798828125, 18.10413360595703, -84.09181213378906",
-        "CFrame": "-104.643799, 18.1041336, -84.0918121, 0.999652207, 0.0249714684, 0.00855669379, -0.0250780582, 0.999605954, 0.0126004331, -0.00823876355, -0.0128106326, 0.999884009",
-        "Material": "Enum.Material.Wood",
-        "Archivable": true,
-        "Size": "3.8640265464782715, 4.337085247039795, 1.173387885093689"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Pine/Log",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.4, 0.337255, 0.309804",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Wedge",
-        "Rotation": "175.9600067138672, 66.5780029296875, -176.3979949951172",
-        "Transparency": 0,
-        "Name": "Log",
-        "Position": "-111.03142547607422, 11.321640014648438, -81.80545043945312",
-        "CFrame": "-111.031425, 11.32164, -81.8054504, -0.396710753, 0.0249715913, 0.917604625, -0.00185385905, 0.999605954, -0.0280045271, -0.917941868, -0.0128108049, -0.396508098",
-        "Material": "Enum.Material.Wood",
-        "Archivable": true,
-        "Size": "1.7625404596328735, 3.9336204528808594, 7.3030171394348145"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Pine/Log",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.4, 0.337255, 0.309804",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Wedge",
-        "Rotation": "179.2779998779297, -0.49000000953674316, -178.56900024414062",
-        "Transparency": 0,
-        "Name": "Log",
-        "Position": "-104.6298828125, 11.367173194885254, -77.19998168945312",
-        "CFrame": "-104.629883, 11.3671732, -77.1999817, -0.999652207, 0.0249714684, -0.00855636504, 0.0250780545, 0.999605954, -0.0126004405, 0.00823843572, -0.0128106326, -0.99988395",
-        "Material": "Enum.Material.Wood",
-        "Archivable": true,
-        "Size": "5.23482608795166, 4.228445529937744, 3.461256742477417"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Pine/Log",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.4, 0.337255, 0.309804",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Wedge",
-        "Rotation": "-177.6199951171875, -65.30999755859375, -176.572998046875",
-        "Transparency": 0,
-        "Name": "Log",
-        "Position": "-100.51249694824219, 10.900413513183594, -78.39973449707031",
-        "CFrame": "-100.512497, 10.9004135, -78.3997345, -0.41696775, 0.0249716882, -0.908578932, 0.0220614783, 0.999605954, 0.0173488632, 0.908653617, -0.0128106792, -0.417354047",
-        "Material": "Enum.Material.Wood",
-        "Archivable": true,
-        "Size": "1.5237503051757812, 3.531327724456787, 7.4203782081604"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Pine/Log",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.4, 0.337255, 0.309804",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Wedge",
-        "Rotation": "169.69900512695312, 81.4530029296875, -170.32699584960938",
-        "Transparency": 0,
-        "Name": "Log",
-        "Position": "-109.75559997558594, 11.819465637207031, -81.65669250488281",
-        "CFrame": "-109.7556, 11.8194656, -81.6566925, -0.146513402, 0.0249716267, 0.988894105, -0.0090169115, 0.999605954, -0.0265779421, -0.98916769, -0.0128107937, -0.146230519",
-        "Material": "Enum.Material.Wood",
-        "Archivable": true,
-        "Size": "4.700122833251953, 4.9888505935668945, 6.663751125335693"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Pine/Log",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.4, 0.337255, 0.309804",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Wedge",
-        "Rotation": "-0.722000002861023, 0.49000000953674316, -1.430999994277954",
-        "Transparency": 0,
-        "Name": "Log",
-        "Position": "-104.77111053466797, 11.8280611038208, -86.63130187988281",
-        "CFrame": "-104.771111, 11.8280611, -86.6313019, 0.999652207, 0.0249714684, 0.00855669379, -0.0250780582, 0.999605954, 0.0126004331, -0.00823876355, -0.0128106326, 0.999884009",
-        "Material": "Enum.Material.Wood",
-        "Archivable": true,
-        "Size": "3.6027913093566895, 5.3844218254089355, 3.7544169425964355"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Pine/Log",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.4, 0.337255, 0.309804",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Wedge",
-        "Rotation": "-0.722000002861023, 0.49000000953674316, -1.430999994277954",
-        "Transparency": 0,
-        "Name": "Log",
-        "Position": "-105.47674560546875, 11.174057006835938, -86.2954330444336",
-        "CFrame": "-105.476746, 11.174057, -86.295433, 0.999652207, 0.0249714684, 0.00855669379, -0.0250780582, 0.999605954, 0.0126004331, -0.00823876355, -0.0128106326, 0.999884009",
-        "Material": "Enum.Material.Wood",
-        "Archivable": true,
-        "Size": "3.4295949935913086, 4.032984733581543, 3.11104154586792"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Part",
+      "path": "Workspace/Particle Emitter",
       "properties": {
         "CanCollide": false,
         "Color": "0.639216, 0.635294, 0.647059",
@@ -980,7 +1163,7 @@
         "Shape": "Enum.PartType.Block",
         "Rotation": "0, 0, 0",
         "Transparency": 1,
-        "Name": "Part",
+        "Name": "Particle Emitter",
         "Position": "-96.17112731933594, 62.30633544921875, 21.74169158935547",
         "CFrame": "-96.1711273, 62.3063354, 21.7416916, 1, 0, 0, 0, 1, 0, 0, 0, 1",
         "Material": "Enum.Material.Plastic",
@@ -990,7 +1173,7 @@
       "class": "Part"
     },
     {
-      "path": "Workspace/Part/ParticleEmitter",
+      "path": "Workspace/Particle Emitter/ParticleEmitter",
       "properties": {
         "Enabled": true,
         "Name": "ParticleEmitter",
@@ -1003,7 +1186,7 @@
       "class": "ParticleEmitter"
     },
     {
-      "path": "Workspace/Part/ParticleEmitter",
+      "path": "Workspace/Particle Emitter/ParticleEmitter",
       "properties": {
         "Enabled": true,
         "Name": "ParticleEmitter",
@@ -1016,7 +1199,7 @@
       "class": "ParticleEmitter"
     },
     {
-      "path": "Workspace/Part/ParticleEmitter",
+      "path": "Workspace/Particle Emitter/ParticleEmitter",
       "properties": {
         "Enabled": true,
         "Name": "ParticleEmitter",
@@ -1029,7 +1212,7 @@
       "class": "ParticleEmitter"
     },
     {
-      "path": "Workspace/Part/ParticleEmitter",
+      "path": "Workspace/Particle Emitter/ParticleEmitter",
       "properties": {
         "Enabled": true,
         "Name": "ParticleEmitter",
@@ -1042,7 +1225,7 @@
       "class": "ParticleEmitter"
     },
     {
-      "path": "Workspace/Part/ParticleEmitter",
+      "path": "Workspace/Particle Emitter/ParticleEmitter",
       "properties": {
         "Enabled": true,
         "Name": "ParticleEmitter",
@@ -1055,7 +1238,7 @@
       "class": "ParticleEmitter"
     },
     {
-      "path": "Workspace/Part/ParticleEmitter",
+      "path": "Workspace/Particle Emitter/ParticleEmitter",
       "properties": {
         "Enabled": true,
         "Name": "ParticleEmitter",
@@ -1068,7 +1251,7 @@
       "class": "ParticleEmitter"
     },
     {
-      "path": "Workspace/Part/ParticleEmitter",
+      "path": "Workspace/Particle Emitter/ParticleEmitter",
       "properties": {
         "Enabled": true,
         "Name": "ParticleEmitter",
@@ -1081,7 +1264,7 @@
       "class": "ParticleEmitter"
     },
     {
-      "path": "Workspace/Part/ParticleEmitter",
+      "path": "Workspace/Particle Emitter/ParticleEmitter",
       "properties": {
         "Enabled": true,
         "Name": "ParticleEmitter",
@@ -1094,7 +1277,7 @@
       "class": "ParticleEmitter"
     },
     {
-      "path": "Workspace/Part/ParticleEmitter",
+      "path": "Workspace/Particle Emitter/ParticleEmitter",
       "properties": {
         "Enabled": true,
         "Name": "ParticleEmitter",
@@ -1107,7 +1290,7 @@
       "class": "ParticleEmitter"
     },
     {
-      "path": "Workspace/Part/ParticleEmitter",
+      "path": "Workspace/Particle Emitter/ParticleEmitter",
       "properties": {
         "Enabled": true,
         "Name": "ParticleEmitter",
@@ -1115,331 +1298,3 @@
         "LightEmission": 1,
         "Brightness": 1,
         "Archivable": true,
-        "Texture": "rbxassetid://6430908053"
-      },
-      "class": "ParticleEmitter"
-    },
-    {
-      "path": "Workspace/Part/ParticleEmitter",
-      "properties": {
-        "Enabled": true,
-        "Name": "ParticleEmitter",
-        "Shape": "Enum.ParticleEmitterShape.Cylinder",
-        "LightEmission": 1,
-        "Brightness": 1,
-        "Archivable": true,
-        "Texture": "rbxassetid://6430908053"
-      },
-      "class": "ParticleEmitter"
-    },
-    {
-      "path": "Workspace/Part/ParticleEmitter",
-      "properties": {
-        "Enabled": true,
-        "Name": "ParticleEmitter",
-        "Shape": "Enum.ParticleEmitterShape.Cylinder",
-        "LightEmission": 1,
-        "Brightness": 1,
-        "Archivable": true,
-        "Texture": "rbxassetid://6430908053"
-      },
-      "class": "ParticleEmitter"
-    },
-    {
-      "path": "Workspace/Part/ParticleEmitter",
-      "properties": {
-        "Enabled": true,
-        "Name": "ParticleEmitter",
-        "Shape": "Enum.ParticleEmitterShape.Cylinder",
-        "LightEmission": 1,
-        "Brightness": 1,
-        "Archivable": true,
-        "Texture": "rbxassetid://6430908053"
-      },
-      "class": "ParticleEmitter"
-    },
-    {
-      "path": "Workspace/Part/ParticleEmitter",
-      "properties": {
-        "Enabled": true,
-        "Name": "ParticleEmitter",
-        "Shape": "Enum.ParticleEmitterShape.Cylinder",
-        "LightEmission": 1,
-        "Brightness": 1,
-        "Archivable": true,
-        "Texture": "rbxassetid://6430908053"
-      },
-      "class": "ParticleEmitter"
-    },
-    {
-      "path": "Workspace/Part/ParticleEmitter",
-      "properties": {
-        "Enabled": true,
-        "Name": "ParticleEmitter",
-        "Shape": "Enum.ParticleEmitterShape.Cylinder",
-        "LightEmission": 1,
-        "Brightness": 1,
-        "Archivable": true,
-        "Texture": "rbxassetid://6430908053"
-      },
-      "class": "ParticleEmitter"
-    },
-    {
-      "path": "Workspace/Part",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.384314, 0.419608, 0.443137",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "0, 66.04499816894531, 0",
-        "Transparency": 0,
-        "Name": "Part",
-        "Position": "-124.62626647949219, 4.25, -8.342491149902344",
-        "CFrame": "-124.626266, 4.25, -8.34249115, 0.406013846, 0, 0.913866878, 0, 1, 0, -0.913866878, 0, 0.406013846",
-        "Material": "Enum.Material.Slate",
-        "Archivable": true,
-        "Size": "33.75, 13, 30"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Part",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.352941, 0.282353, 0.231373",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "0, 0, 0",
-        "Transparency": 0,
-        "Name": "Part",
-        "Position": "-71.5, 1.2500001192092896, 16.999988555908203",
-        "CFrame": "-71.5, 1.25000012, 16.9999886, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Material": "Enum.Material.Brick",
-        "Archivable": true,
-        "Size": "8, 0.5, 13.999977111816406"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Part",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.92549, 0.917647, 0.937255",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "0, -26.4060001373291, 0",
-        "Transparency": 0,
-        "Name": "Part",
-        "Position": "-91.99227142333984, 1.125, 13.144132614135742",
-        "CFrame": "-91.9922714, 1.125, 13.1441326, 0.895669103, 0, -0.444724858, 0, 1, 0, 0.444724858, 0, 0.895669103",
-        "Material": "Enum.Material.Sand",
-        "Archivable": true,
-        "Size": "12, 0.25, 11.75"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Part",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.384314, 0.419608, 0.443137",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "0, 7.979000091552734, 0",
-        "Transparency": 0,
-        "Name": "Part",
-        "Position": "-58.33763122558594, 11, 62.255859375",
-        "CFrame": "-58.3376312, 11, 62.2558594, 0.990318298, 0, 0.138815001, 0, 1, 0, -0.138815001, 0, 0.990318298",
-        "Material": "Enum.Material.Slate",
-        "Archivable": true,
-        "Size": "33.75, 22, 30"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Part",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.92549, 0.917647, 0.937255",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "0, 44.27199935913086, 0",
-        "Transparency": 0,
-        "Name": "Part",
-        "Position": "-144.34913635253906, -2.375, 75.177001953125",
-        "CFrame": "-144.349136, -2.375, 75.177002, 0.716034651, 0, 0.698064744, 0, 1, 0, -0.698064744, 0, 0.716034651",
-        "Material": "Enum.Material.Sand",
-        "Archivable": true,
-        "Size": "32.75, 0.25, 17.5"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Part",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.92549, 0.917647, 0.937255",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "0, 13.519000053405762, 0",
-        "Transparency": 0,
-        "Name": "Part",
-        "Position": "-68.3913803100586, 1.125, 40.28675842285156",
-        "CFrame": "-68.3913803, 1.125, 40.2867584, 0.972290218, 0, 0.2337735, 0, 1, 0, -0.233772472, 0, 0.972290218",
-        "Material": "Enum.Material.Sand",
-        "Archivable": true,
-        "Size": "22.25, 0.25, 12.75"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Part",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.92549, 0.917647, 0.937255",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "180, 77.98699951171875, 180",
-        "Transparency": 0,
-        "Name": "Part",
-        "Position": "-157.29837036132812, -2.375, 67.65823364257812",
-        "CFrame": "-157.29837, -2.375, 67.6582336, -0.208129197, 0, 0.978101611, 0, 1, 0, -0.978101611, 0, -0.208129197",
-        "Material": "Enum.Material.Sand",
-        "Archivable": true,
-        "Size": "24.25, 0.25, 17.5"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Part",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.352941, 0.282353, 0.231373",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "0, 0, 0",
-        "Transparency": 0,
-        "Name": "Part",
-        "Position": "-71.5, 3.75, 2.999988555908203",
-        "CFrame": "-71.5, 3.75, 2.99998856, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Material": "Enum.Material.Brick",
-        "Archivable": true,
-        "Size": "8, 0.5, 13.999977111816406"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Part",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.92549, 0.917647, 0.937255",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "0, 81.14099884033203, 0",
-        "Transparency": 0,
-        "Name": "Part",
-        "Position": "-117.09388732910156, -2.375, 35.9504508972168",
-        "CFrame": "-117.093887, -2.375, 35.9504509, 0.154002115, 0, 0.988070428, 0, 1, 0, -0.988070428, 0, 0.154002115",
-        "Material": "Enum.Material.Sand",
-        "Archivable": true,
-        "Size": "24.25, 0.25, 17.5"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Part",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.92549, 0.917647, 0.937255",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "0, -9.27299976348877, 0",
-        "Transparency": 0,
-        "Name": "Part",
-        "Position": "-89.38580322265625, 1.125, 37.21635818481445",
-        "CFrame": "-89.3858032, 1.125, 37.2163582, 0.986932635, 0, -0.161132663, 0, 1, 0, 0.161132783, 0, 0.986932635",
-        "Material": "Enum.Material.Sand",
-        "Archivable": true,
-        "Size": "12, 0.25, 11.75"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Part",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.92549, 0.917647, 0.937255",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "0, -0.27300000190734863, 0",
-        "Transparency": 0,
-        "Name": "Part",
-        "Position": "-93.07177734375, 1.25, 27.131521224975586",
-        "CFrame": "-93.0717773, 1.25, 27.1315212, 0.999988675, 0, -0.00476483116, 0, 1, 0, 0.00476483116, 0, 0.999988675",
-        "Material": "Enum.Material.Sand",
-        "Archivable": true,
-        "Size": "13.5, 0.5, 24.5"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Part",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.92549, 0.917647, 0.937255",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "0, 47.944000244140625, 0",
-        "Transparency": 0,
-        "Name": "Part",
-        "Position": "-128.2928466796875, -2.375, 15.688417434692383",
-        "CFrame": "-128.292847, -2.375, 15.6884174, 0.669858217, 0, 0.742491186, 0, 1, 0, -0.742491186, 0, 0.669858217",
-        "Material": "Enum.Material.Sand",
-        "Archivable": true,
-        "Size": "33.75, 0.25, 37.75"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Part",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.45098, 0.423529, 0.380392",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "0, 66.04499816894531, 0",
-        "Transparency": 0,
-        "Name": "Part",
-        "Position": "-124.62626647949219, 4.5, -8.342491149902344",
-        "CFrame": "-124.626266, 4.5, -8.34249115, 0.406013846, 0, 0.913866878, 0, 1, 0, -0.913866878, 0, 0.406013846",
-        "Material": "Enum.Material.Grass",
-        "Archivable": true,
-        "Size": "33.25, 13, 29.5"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Part",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.45098, 0.423529, 0.380392",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "0, 10.043000221252441, 0",
-        "Transparency": 0,
-        "Name": "Part",
-        "Position": "-26.088851928710938, 5, -19.13930320739746",
-        "CFrame": "-26.0888519, 5, -19.1393032, 0.984676778, 0, 0.174393311, 0, 1, 0, -0.174393311, 0, 0.984676778",
-        "Material": "Enum.Material.Grass",
-        "Archivable": true,
-        "Size": "43.75, 10, 51.5"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Part",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.45098, 0.423529, 0.380392",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",

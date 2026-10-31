@@ -1,19 +1,24 @@
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Null",
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Head",
+      "properties": {
+        "CFrame": "6.51925802e-09, -1.94460154e-06, 1.81794167e-06, 0.894035637, -0.447687209, -0.0166282821, 0.447079778, 0.889220059, 0.0969915316, -0.0286356676, -0.0941480473, 0.995146275",
+        "Archivable": true,
+        "Name": "Head"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Head/Null",
       "properties": {
         "Value": 0,
         "Archivable": true,
         "Name": "Null"
       },
       "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso",
-      "properties": {
-        "CFrame": "0.0150723401, 0.0406847075, -0.317734003, 0.904583037, 0.421298206, -0.0650957599, -0.424198329, 0.874436736, -0.235406622, -0.0422542617, 0.240558341, 0.969714582",
-        "Archivable": true,
-        "Name": "Torso"
-      },
-      "class": "Pose"
     },
     {
       "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Null",
@@ -25,9 +30,89 @@
       "class": "IntValue"
     },
     {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe",
+      "properties": {
+        "Name": "Keyframe",
+        "Archivable": true
+      },
+      "class": "Keyframe"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart",
+      "properties": {
+        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Name": "HumanoidRootPart"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso",
+      "properties": {
+        "CFrame": "0.0150723429, 0.0406847149, -0.317733884, 0.904582977, 0.423202038, -0.0512800664, -0.42419827, 0.881669044, -0.206677422, -0.0422542542, 0.208709791, 0.977064371",
+        "Archivable": true,
+        "Name": "Torso"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm",
+      "properties": {
+        "CFrame": "-0.479731739, 0.209668636, -0.409506857, 0.421502531, 0.753986478, -0.503825128, -0.437091112, -0.317870498, -0.841373622, -0.794535697, 0.574858487, 0.195577621",
+        "Archivable": true,
+        "Name": "Left Arm"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Leg",
+      "properties": {
+        "CFrame": "0.516460896, 0.280703366, -0.0537626445, 0.997077465, 0.0253961422, -0.0720522702, -0.00528993737, 0.96381706, 0.266511649, 0.0762135834, -0.265351564, 0.961134732",
+        "Archivable": true,
+        "Name": "Right Leg"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Leg/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
       "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Arm",
       "properties": {
-        "CFrame": "0.341671795, -0.182078898, 0.488919973, 0.488116622, 0.21406734, -0.846118987, -0.22386831, 0.967728853, 0.115687452, 0.843578756, 0.132950246, 0.520287514",
+        "CFrame": "0.341671407, -0.182080954, 0.488920033, 0.493101567, 0.202320546, -0.846118927, -0.200636834, 0.972810864, 0.11568746, 0.846519709, 0.112716943, 0.520287573",
         "Archivable": true,
         "Name": "Right Arm"
       },
@@ -45,7 +130,257 @@
     {
       "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg",
       "properties": {
-        "CFrame": "-0.0706047416, 0.22857523, 0.128105611, 0.728316367, -0.105648056, 0.677047908, -0.0681603849, 0.971973836, 0.224990755, -0.681842744, -0.210012257, 0.700703502",
+        "CFrame": "-0.0572851151, 0.232997477, 0.141890705, 0.722147942, -0.141805142, 0.677047849, -0.019647181, 0.974162638, 0.224990785, -0.691459656, -0.175778687, 0.700703502",
+        "Archivable": true,
+        "Name": "Left Leg"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Head",
+      "properties": {
+        "CFrame": "1.11758709e-08, -1.94832683e-06, 1.81794167e-06, 0.894035578, -0.447687894, -0.0166109875, 0.447079808, 0.889223814, 0.0969571769, -0.0286356658, -0.0941096097, 0.99514991",
+        "Archivable": true,
+        "Name": "Head"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Head/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe",
+      "properties": {
+        "Name": "Keyframe",
+        "Archivable": true
+      },
+      "class": "Keyframe"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart",
+      "properties": {
+        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Name": "HumanoidRootPart"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso",
+      "properties": {
+        "CFrame": "0.0150723411, 0.0406847149, -0.317733914, 0.904582977, 0.423205465, -0.0512523986, -0.424198359, 0.881682515, -0.206619784, -0.0422542654, 0.208645925, 0.97707808",
+        "Archivable": true,
+        "Name": "Torso"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Leg",
+      "properties": {
+        "CFrame": "0.516439319, 0.28070271, -0.0537640154, 0.997075796, 0.0254621282, -0.0720522478, -0.00535372831, 0.963816702, 0.266511589, 0.0762311295, -0.265346438, 0.961134732",
+        "Archivable": true,
+        "Name": "Right Leg"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Leg/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Arm",
+      "properties": {
+        "CFrame": "0.341671437, -0.182080984, 0.488920182, 0.493112713, 0.202293232, -0.846118987, -0.200582936, 0.972822011, 0.115687467, 0.846526086, 0.112670042, 0.520287514",
+        "Archivable": true,
+        "Name": "Right Arm"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Arm/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg",
+      "properties": {
+        "CFrame": "-0.0572582334, 0.233006418, 0.141918451, 0.722133636, -0.141877651, 0.677047849, -0.0195493847, 0.974164605, 0.224990785, -0.691477299, -0.175709277, 0.700703502",
+        "Archivable": true,
+        "Name": "Left Leg"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Head",
+      "properties": {
+        "CFrame": "1.02445483e-08, -1.94087625e-06, 1.81794167e-06, 0.894035637, -0.447686821, -0.0166406389, 0.447079867, 0.889217377, 0.0970160812, -0.0286356676, -0.0941755176, 0.995143712",
+        "Archivable": true,
+        "Name": "Head"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Head/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm",
+      "properties": {
+        "CFrame": "-0.479732037, 0.209668696, -0.409506857, 0.421502531, 0.753812015, -0.504086196, -0.437091053, -0.318161905, -0.841263533, -0.794535697, 0.574926138, 0.195378482",
+        "Archivable": true,
+        "Name": "Left Arm"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe",
+      "properties": {
+        "Name": "Keyframe",
+        "Archivable": true
+      },
+      "class": "Keyframe"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart",
+      "properties": {
+        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Name": "HumanoidRootPart"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso",
+      "properties": {
+        "CFrame": "0.0150723457, 0.0406847112, -0.317733884, 0.904583037, 0.423178583, -0.0514729582, -0.42419824, 0.88157475, -0.207079262, -0.0422542505, 0.209155113, 0.976969182",
+        "Archivable": true,
+        "Name": "Torso"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm",
+      "properties": {
+        "CFrame": "-0.479731619, 0.209668621, -0.409506559, 0.42150265, 0.755197287, -0.502008259, -0.437090993, -0.315843761, -0.842136502, -0.794535577, 0.574385881, 0.196961105",
+        "Archivable": true,
+        "Name": "Left Arm"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg",
+      "properties": {
+        "CFrame": "-0.0574720055, 0.232935369, 0.141697168, 0.722246945, -0.141299903, 0.677047789, -0.0203286968, 0.974148691, 0.224990755, -0.691336453, -0.176262349, 0.700703502",
         "Archivable": true,
         "Name": "Left Leg"
       },
@@ -63,7 +398,1008 @@
     {
       "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Leg",
       "properties": {
-        "CFrame": "0.527075708, 0.281042576, -0.0530604422, 0.997375429, -0.00712274108, -0.0720522478, 0.0261339452, 0.963477194, 0.26651153, 0.067522414, -0.26769498, 0.961134791",
+        "CFrame": "0.51661104, 0.280708075, -0.0537527204, 0.997089088, 0.0249363147, -0.0720522627, -0.00484545436, 0.963819444, 0.266511619, 0.0760911927, -0.265386641, 0.961134791",
+        "Archivable": true,
+        "Name": "Right Leg"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Leg/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Arm",
+      "properties": {
+        "CFrame": "0.341671348, -0.182080984, 0.488920271, 0.493023396, 0.202510715, -0.846119106, -0.201011986, 0.972733438, 0.115687475, 0.846476376, 0.113043398, 0.520287454",
+        "Archivable": true,
+        "Name": "Right Arm"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Arm/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Head",
+      "properties": {
+        "CFrame": "1.3038516e-08, -1.94460154e-06, 1.81794167e-06, 0.894035578, -0.447695553, -0.0164041594, 0.447079837, 0.889268458, 0.0965463594, -0.0286356695, -0.0936498567, 0.995193303",
+        "Archivable": true,
+        "Name": "Head"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Head/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe",
+      "properties": {
+        "Name": "Keyframe",
+        "Archivable": true
+      },
+      "class": "Keyframe"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart",
+      "properties": {
+        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Name": "HumanoidRootPart"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso",
+      "properties": {
+        "CFrame": "0.0150723467, 0.0406847, -0.317733854, 0.904582977, 0.423183948, -0.0514294729, -0.4241983, 0.881596029, -0.206988662, -0.0422542617, 0.209054708, 0.97699064",
+        "Archivable": true,
+        "Name": "Torso"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg",
+      "properties": {
+        "CFrame": "-0.057429865, 0.232949436, 0.141740769, 0.722224593, -0.141413838, 0.677047849, -0.0201750211, 0.97415185, 0.22499077, -0.691364288, -0.176153287, 0.700703502",
+        "Archivable": true,
+        "Name": "Left Leg"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Head",
+      "properties": {
+        "CFrame": "1.21071935e-08, -1.94087625e-06, 1.81794167e-06, 0.894035578, -0.447693795, -0.0164508317, 0.447079808, 0.889258444, 0.0966390744, -0.0286356676, -0.0937536135, 0.995183527",
+        "Archivable": true,
+        "Name": "Head"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Head/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Arm",
+      "properties": {
+        "CFrame": "0.341671437, -0.182080954, 0.488920212, 0.493041039, 0.202467844, -0.846118987, -0.200927451, 0.972750902, 0.11568746, 0.846486151, 0.112969831, 0.520287514",
+        "Archivable": true,
+        "Name": "Right Arm"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Arm/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Leg",
+      "properties": {
+        "CFrame": "0.516577184, 0.280707061, -0.0537549853, 0.997086525, 0.025039997, -0.0720522627, -0.00494567677, 0.963818908, 0.266511619, 0.0761187896, -0.265378714, 0.961134791",
+        "Archivable": true,
+        "Name": "Right Leg"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Leg/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm",
+      "properties": {
+        "CFrame": "-0.479731798, 0.209668636, -0.409506679, 0.421502471, 0.754925013, -0.502417743, -0.437091082, -0.316300452, -0.841965079, -0.794535697, 0.574492574, 0.196649671",
+        "Archivable": true,
+        "Name": "Left Arm"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe",
+      "properties": {
+        "Name": "Keyframe",
+        "Archivable": true
+      },
+      "class": "Keyframe"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart",
+      "properties": {
+        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Name": "HumanoidRootPart"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso",
+      "properties": {
+        "CFrame": "0.0150723411, 0.0406847075, -0.317733884, 0.904582977, 0.423188657, -0.0513904803, -0.4241983, 0.881615043, -0.206907451, -0.0422542579, 0.208964705, 0.977009892",
+        "Archivable": true,
+        "Name": "Torso"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm",
+      "properties": {
+        "CFrame": "-0.479731679, 0.209668726, -0.409506708, 0.42150259, 0.754680574, -0.502784729, -0.437091053, -0.316709757, -0.84181118, -0.794535637, 0.57458818, 0.196370274",
+        "Archivable": true,
+        "Name": "Left Arm"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Leg",
+      "properties": {
+        "CFrame": "0.516546786, 0.280706108, -0.0537570119, 0.997084141, 0.025132928, -0.0720522553, -0.00503550656, 0.963818431, 0.266511589, 0.0761435181, -0.265371591, 0.961134791",
+        "Archivable": true,
+        "Name": "Right Leg"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Leg/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg",
+      "properties": {
+        "CFrame": "-0.0573920757, 0.232962072, 0.1417799, 0.722204626, -0.14151594, 0.677047789, -0.0200372785, 0.974154711, 0.22499074, -0.691389143, -0.176055536, 0.700703621",
+        "Archivable": true,
+        "Name": "Left Leg"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Arm",
+      "properties": {
+        "CFrame": "0.341671437, -0.182080805, 0.488920152, 0.493056804, 0.202429429, -0.846118987, -0.200851664, 0.972766578, 0.11568746, 0.846494973, 0.112903878, 0.520287514",
+        "Archivable": true,
+        "Name": "Right Arm"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Arm/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Head",
+      "properties": {
+        "CFrame": "1.11758709e-08, -1.94832683e-06, 1.81794167e-06, 0.894035637, -0.447692245, -0.0164926462, 0.447079808, 0.889249384, 0.0967221186, -0.0286356658, -0.0938465521, 0.995174766",
+        "Archivable": true,
+        "Name": "Head"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Head/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe",
+      "properties": {
+        "Name": "Keyframe",
+        "Archivable": true
+      },
+      "class": "Keyframe"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart",
+      "properties": {
+        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Name": "HumanoidRootPart"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso",
+      "properties": {
+        "CFrame": "0.0150723392, 0.0406846963, -0.317733854, 0.904582977, 0.423192888, -0.0513560399, -0.424198359, 0.881631851, -0.206835687, -0.0422542691, 0.208885193, 0.97702688",
+        "Archivable": true,
+        "Name": "Torso"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Head",
+      "properties": {
+        "CFrame": "9.31322575e-09, -1.94460154e-06, 1.81794167e-06, 0.894035637, -0.447690874, -0.016529588, 0.447079808, 0.889241397, 0.0967954993, -0.0286356676, -0.0939286649, 0.995167017",
+        "Archivable": true,
+        "Name": "Head"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Head/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg",
+      "properties": {
+        "CFrame": "-0.0573586971, 0.232973099, 0.14181447, 0.722186923, -0.141606182, 0.677047849, -0.019915577, 0.974157214, 0.22499077, -0.691411257, -0.175969169, 0.700703502",
+        "Archivable": true,
+        "Name": "Left Leg"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm",
+      "properties": {
+        "CFrame": "-0.479731858, 0.209668592, -0.409506798, 0.42150259, 0.754464388, -0.503109276, -0.437091023, -0.317071795, -0.841675043, -0.794535697, 0.57467258, 0.196123064",
+        "Archivable": true,
+        "Name": "Left Arm"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Arm",
+      "properties": {
+        "CFrame": "0.341671407, -0.182080984, 0.488920212, 0.493070751, 0.202395469, -0.846118987, -0.200784653, 0.972780406, 0.11568746, 0.846502721, 0.11284557, 0.520287514",
+        "Archivable": true,
+        "Name": "Right Arm"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Arm/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Leg",
+      "properties": {
+        "CFrame": "0.516519904, 0.280705214, -0.0537587702, 0.997082055, 0.0252150521, -0.0720522553, -0.0051148897, 0.963818014, 0.266511619, 0.0761653781, -0.265365362, 0.961134791",
+        "Archivable": true,
+        "Name": "Right Leg"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Leg/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe",
+      "properties": {
+        "Name": "Keyframe",
+        "Archivable": true
+      },
+      "class": "Keyframe"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart",
+      "properties": {
+        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Name": "HumanoidRootPart"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso",
+      "properties": {
+        "CFrame": "0.0150723457, 0.0406847075, -0.317733884, 0.904582977, 0.423143983, -0.0517572127, -0.424198329, 0.881435394, -0.207671404, -0.0422542654, 0.20981133, 0.976828456",
+        "Archivable": true,
+        "Name": "Torso"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm",
+      "properties": {
+        "CFrame": "-0.47973156, 0.209668666, -0.409506738, 0.42150259, 0.756965637, -0.499337822, -0.437091082, -0.312867403, -0.843246818, -0.794535637, 0.573686719, 0.198988631",
+        "Archivable": true,
+        "Name": "Left Arm"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Head",
+      "properties": {
+        "CFrame": "7.4505806e-09, -1.94460154e-06, 1.81794167e-06, 0.894035578, -0.44770661, -0.0160986856, 0.447079808, 0.889334142, 0.0959395766, -0.0286356695, -0.0929707885, 0.99525696",
+        "Archivable": true,
+        "Name": "Head"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Head/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg",
+      "properties": {
+        "CFrame": "-0.0577474982, 0.232843876, 0.141412109, 0.722392201, -0.140555352, 0.677047849, -0.0213328302, 0.974127233, 0.224990785, -0.69115448, -0.176974922, 0.700703502",
+        "Archivable": true,
+        "Name": "Left Leg"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Arm",
+      "properties": {
+        "CFrame": "0.341671437, -0.182080954, 0.488920271, 0.492908597, 0.202790022, -0.846119046, -0.20156315, 0.972619414, 0.11568746, 0.846412182, 0.113523036, 0.520287514",
+        "Archivable": true,
+        "Name": "Right Arm"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Arm/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Leg",
+      "properties": {
+        "CFrame": "0.516832232, 0.280715108, -0.0537381172, 0.997105837, 0.0242588855, -0.0720522627, -0.00419063028, 0.963822484, 0.266511619, 0.0759108737, -0.265438259, 0.961134791",
+        "Archivable": true,
+        "Name": "Right Leg"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Leg/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe",
+      "properties": {
+        "Name": "Keyframe",
+        "Archivable": true
+      },
+      "class": "Keyframe"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart",
+      "properties": {
+        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Name": "HumanoidRootPart"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso",
+      "properties": {
+        "CFrame": "0.0150723383, 0.0406847, -0.317733854, 0.904582918, 0.423152089, -0.0516915768, -0.424198389, 0.881467581, -0.207534686, -0.0422542691, 0.20965983, 0.97686094",
+        "Archivable": true,
+        "Name": "Torso"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Leg",
+      "properties": {
+        "CFrame": "0.516781032, 0.280713558, -0.0537414849, 0.997101963, 0.0244153198, -0.0720522553, -0.00434184633, 0.963821828, 0.266511619, 0.075952515, -0.265426338, 0.961134791",
+        "Archivable": true,
+        "Name": "Right Leg"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Leg/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm",
+      "properties": {
+        "CFrame": "-0.47973156, 0.209668621, -0.409506679, 0.421502531, 0.756558955, -0.499953926, -0.437091053, -0.31355387, -0.842991829, -0.794535697, 0.573848486, 0.19852145",
+        "Archivable": true,
+        "Name": "Left Arm"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Head",
+      "properties": {
+        "CFrame": "9.31322575e-09, -1.94460154e-06, 1.81794167e-06, 0.894035578, -0.447704077, -0.0161693096, 0.447079837, 0.889319003, 0.0960798562, -0.0286356695, -0.0931277871, 0.995242298",
+        "Archivable": true,
+        "Name": "Head"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Head/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg",
+      "properties": {
+        "CFrame": "-0.0576838702, 0.232865214, 0.141477868, 0.722358644, -0.140727311, 0.677047849, -0.0211009346, 0.97413224, 0.22499077, -0.691196561, -0.176810339, 0.700703502",
+        "Archivable": true,
+        "Name": "Left Leg"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Arm",
+      "properties": {
+        "CFrame": "0.341671437, -0.182080805, 0.488920152, 0.492935061, 0.202725619, -0.846119046, -0.201436043, 0.9726457, 0.115687475, 0.846426964, 0.11341241, 0.520287454",
+        "Archivable": true,
+        "Name": "Right Arm"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Arm/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe",
+      "properties": {
+        "Name": "Keyframe",
+        "Archivable": true
+      },
+      "class": "Keyframe"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart",
+      "properties": {
+        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Name": "HumanoidRootPart"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso",
+      "properties": {
+        "CFrame": "0.0150723429, 0.0406847075, -0.317733914, 0.904582977, 0.42315954, -0.0516302958, -0.424198389, 0.881497681, -0.207407027, -0.0422542691, 0.209518343, 0.976891339",
+        "Archivable": true,
+        "Name": "Torso"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Arm",
+      "properties": {
+        "CFrame": "0.341671407, -0.182080805, 0.488920093, 0.492959917, 0.202665389, -0.846118927, -0.201317221, 0.972670317, 0.115687445, 0.846440673, 0.113309041, 0.520287573",
+        "Archivable": true,
+        "Name": "Right Arm"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Arm/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Leg",
+      "properties": {
+        "CFrame": "0.516733408, 0.280712008, -0.0537445247, 0.997098386, 0.0245613679, -0.0720522627, -0.00448301621, 0.963821173, 0.266511679, 0.0759913996, -0.265415311, 0.961134732",
+        "Archivable": true,
+        "Name": "Right Leg"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Leg/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm",
+      "properties": {
+        "CFrame": "-0.479731858, 0.209668607, -0.409506738, 0.42150265, 0.756178379, -0.500529349, -0.437091023, -0.314195096, -0.842753053, -0.794535697, 0.573999405, 0.198084772",
+        "Archivable": true,
+        "Name": "Left Arm"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Head",
+      "properties": {
+        "CFrame": "1.21071935e-08, -1.93715096e-06, 1.87754631e-06, 0.894035578, -0.447701722, -0.016235197, 0.447079867, 0.889304876, 0.0962107554, -0.0286356714, -0.093274273, 0.995228589",
+        "Archivable": true,
+        "Name": "Head"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Head/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg",
+      "properties": {
+        "CFrame": "-0.0576244444, 0.232884765, 0.141539335, 0.722327471, -0.140887827, 0.677047729, -0.0208844468, 0.974136949, 0.22499074, -0.691235781, -0.176656708, 0.700703621",
+        "Archivable": true,
+        "Name": "Left Leg"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe",
+      "properties": {
+        "Name": "Keyframe",
+        "Archivable": true
+      },
+      "class": "Keyframe"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart",
+      "properties": {
+        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Name": "HumanoidRootPart"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso",
+      "properties": {
+        "CFrame": "0.0150723429, 0.0406847075, -0.317733914, 0.904582977, 0.423172861, -0.0515209623, -0.424198359, 0.881551206, -0.207179263, -0.0422542654, 0.209265932, 0.97694546",
+        "Archivable": true,
+        "Name": "Torso"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Arm",
+      "properties": {
+        "CFrame": "0.341671318, -0.182080925, 0.488920152, 0.493004054, 0.202557936, -0.846119046, -0.201105163, 0.972714245, 0.11568746, 0.846465468, 0.113124475, 0.520287573",
+        "Archivable": true,
+        "Name": "Right Arm"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Arm/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg",
+      "properties": {
+        "CFrame": "-0.0575185716, 0.232919931, 0.141649038, 0.722271502, -0.141174212, 0.677047849, -0.0204982199, 0.974145174, 0.22499077, -0.691305876, -0.176382676, 0.700703561",
+        "Archivable": true,
+        "Name": "Left Leg"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Leg",
+      "properties": {
+        "CFrame": "0.516648471, 0.280709267, -0.0537502468, 0.997091949, 0.0248219371, -0.0720522702, -0.0047348896, 0.963819981, 0.266511679, 0.076060757, -0.265395403, 0.961134732",
         "Archivable": true,
         "Name": "Right Leg"
       },
@@ -81,7 +1417,7 @@
     {
       "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Head",
       "properties": {
-        "CFrame": "1.58870535e-08, -1.97440386e-06, 1.69873238e-06, 0.894035637, -0.447995871, -6.1663799e-05, 0.447079748, 0.892198563, 0.0640422925, -0.0286356658, -0.0572836585, 0.997947156",
+        "CFrame": "1.02445483e-08, -1.93715096e-06, 1.87754631e-06, 0.894035578, -0.447697431, -0.0163526461, 0.447079867, 0.889279604, 0.0964440331, -0.0286356695, -0.0935353413, 0.995204091",
         "Archivable": true,
         "Name": "Head"
       },
@@ -99,7 +1435,7 @@
     {
       "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm",
       "properties": {
-        "CFrame": "-0.479728222, 0.209667251, -0.409503341, 0.42150265, 0.815766513, -0.396055937, -0.437091172, -0.199903399, -0.87692076, -0.794535637, 0.542736828, 0.272304565",
+        "CFrame": "-0.479731739, 0.209668636, -0.409506857, 0.421502531, 0.755497217, -0.501556933, -0.437091082, -0.315340579, -0.842325151, -0.794535697, 0.574268162, 0.197304294",
         "Archivable": true,
         "Name": "Left Arm"
       },
@@ -107,6 +1443,176 @@
     },
     {
       "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe",
+      "properties": {
+        "Name": "Keyframe",
+        "Archivable": true
+      },
+      "class": "Keyframe"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart",
+      "properties": {
+        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Name": "HumanoidRootPart"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso",
+      "properties": {
+        "CFrame": "0.0150723383, 0.0406847, -0.317733884, 0.904582977, 0.423166484, -0.0515734106, -0.424198359, 0.881525517, -0.207288533, -0.0422542691, 0.209387034, 0.976919472",
+        "Archivable": true,
+        "Name": "Torso"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Arm",
+      "properties": {
+        "CFrame": "0.341671407, -0.182080805, 0.488920063, 0.492982924, 0.202609479, -0.846118867, -0.201206923, 0.972693145, 0.115687452, 0.846453488, 0.11321304, 0.520287633",
+        "Archivable": true,
+        "Name": "Right Arm"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Arm/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm",
+      "properties": {
+        "CFrame": "-0.4797315, 0.209668621, -0.4095065, 0.42150259, 0.755824268, -0.501063704, -0.437091053, -0.314790726, -0.842530668, -0.794535637, 0.574139178, 0.197679073",
+        "Archivable": true,
+        "Name": "Left Arm"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Leg",
+      "properties": {
+        "CFrame": "0.516689181, 0.280710638, -0.0537475944, 0.997095048, 0.0246969257, -0.0720522478, -0.00461405702, 0.963820517, 0.266511589, 0.0760274604, -0.26540485, 0.961134791",
+        "Archivable": true,
+        "Name": "Right Leg"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Leg/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg",
+      "properties": {
+        "CFrame": "-0.0575693995, 0.232903063, 0.141596392, 0.722298384, -0.141036808, 0.677047789, -0.0206835046, 0.97414124, 0.224990755, -0.691272199, -0.176514149, 0.700703621",
+        "Archivable": true,
+        "Name": "Left Leg"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Head",
+      "properties": {
+        "CFrame": "5.58793545e-09, -1.94087625e-06, 1.81794167e-06, 0.894035578, -0.447699428, -0.0162963159, 0.447079778, 0.889291763, 0.0963321477, -0.0286356658, -0.0934101194, 0.995215833",
+        "Archivable": true,
+        "Name": "Head"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Head/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/Null",
       "properties": {
         "Value": 0,
         "Archivable": true,
@@ -152,7 +1658,7 @@
     {
       "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso",
       "properties": {
-        "CFrame": "0.0150723364, 0.0406846963, -0.317733943, 0.904582977, 0.421213329, -0.065642707, -0.424198329, 0.874130309, -0.236541763, -0.0422542579, 0.241817191, 0.969401419",
+        "CFrame": "0.0150723383, 0.0406847, -0.317733824, 0.904582977, 0.423106551, -0.0520626903, -0.424198389, 0.881285191, -0.208307713, -0.0422542691, 0.210516512, 0.976676702",
         "Archivable": true,
         "Name": "Torso"
       },
@@ -170,293 +1676,7 @@
     {
       "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm",
       "properties": {
-        "CFrame": "-0.47972858, 0.209667265, -0.40950352, 0.42150259, 0.816666961, -0.394196153, -0.437091112, -0.197904915, -0.877374053, -0.794535756, 0.542114973, 0.273540378",
-        "Archivable": true,
-        "Name": "Left Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Head",
-      "properties": {
-        "CFrame": "1.80152711e-08, -1.97812915e-06, 1.66893005e-06, 0.894035578, -0.447995275, 0.00076866243, 0.447079808, 0.892315686, 0.0623885542, -0.0286356658, -0.0554339364, 0.998051584",
-        "Archivable": true,
-        "Name": "Head"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Head/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg",
-      "properties": {
-        "CFrame": "-0.0711236447, 0.228402972, 0.127568528, 0.728520155, -0.104233511, 0.677047849, -0.0700477436, 0.971839666, 0.224990726, -0.681433558, -0.211335927, 0.700703502",
-        "Archivable": true,
-        "Name": "Left Leg"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Arm",
-      "properties": {
-        "CFrame": "0.341671765, -0.182078987, 0.488920093, 0.487986475, 0.214363515, -0.846119165, -0.224455535, 0.967592835, 0.115687467, 0.843498111, 0.133462161, 0.520287335",
-        "Archivable": true,
-        "Name": "Right Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Arm/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Leg",
-      "properties": {
-        "CFrame": "0.527481377, 0.28105551, -0.0530336201, 0.997365773, -0.00836550351, -0.0720522553, 0.0273344591, 0.963443935, 0.266511559, 0.0671888143, -0.267778933, 0.961134791",
-        "Archivable": true,
-        "Name": "Right Leg"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Leg/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe",
-      "properties": {
-        "Name": "Keyframe",
-        "Archivable": true
-      },
-      "class": "Keyframe"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "HumanoidRootPart"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso",
-      "properties": {
-        "CFrame": "0.0150723355, 0.0406847075, -0.317733943, 0.904582977, 0.421233892, -0.0655109361, -0.424198389, 0.874204218, -0.236268312, -0.0422542654, 0.241513908, 0.969476998",
-        "Archivable": true,
-        "Name": "Torso"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Leg",
-      "properties": {
-        "CFrame": "0.527383924, 0.28105247, -0.0530399978, 0.997368217, -0.00806706119, -0.0720522478, 0.0270461626, 0.963452101, 0.2665115, 0.0672689304, -0.267758787, 0.961134791",
-        "Archivable": true,
-        "Name": "Right Leg"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Leg/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm",
-      "properties": {
-        "CFrame": "-0.479728222, 0.209667206, -0.409503281, 0.421502709, 0.816475034, -0.394593149, -0.437091112, -0.198331326, -0.877277672, -0.794535637, 0.542247951, 0.273276836",
-        "Archivable": true,
-        "Name": "Left Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Head",
-      "properties": {
-        "CFrame": "1.93540473e-08, -1.98185444e-06, 1.69873238e-06, 0.894035578, -0.447995603, 0.000564746559, 0.447079837, 0.892287195, 0.0627947152, -0.0286356695, -0.0558882281, 0.998026311",
-        "Archivable": true,
-        "Name": "Head"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Head/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg",
-      "properties": {
-        "CFrame": "-0.070998773, 0.228444517, 0.127697736, 0.728471339, -0.104573853, 0.677047849, -0.0695937499, 0.971872211, 0.22499074, -0.681532264, -0.211017564, 0.700703442",
-        "Archivable": true,
-        "Name": "Left Leg"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Arm",
-      "properties": {
-        "CFrame": "0.341671795, -0.182078958, 0.488919854, 0.488016367, 0.214295551, -0.846118987, -0.224320814, 0.967624068, 0.115687452, 0.843516529, 0.13334471, 0.520287395",
-        "Archivable": true,
-        "Name": "Right Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Arm/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe",
-      "properties": {
-        "Name": "Keyframe",
-        "Archivable": true
-      },
-      "class": "Keyframe"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "HumanoidRootPart"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso",
-      "properties": {
-        "CFrame": "0.0150723364, 0.0406847, -0.317733914, 0.904582977, 0.421366483, -0.06465251, -0.424198359, 0.874683797, -0.23448658, -0.0422542617, 0.239538044, 0.969967067",
-        "Archivable": true,
-        "Name": "Torso"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm",
-      "properties": {
-        "CFrame": "-0.479728639, 0.209667251, -0.409503698, 0.42150265, 0.814860821, -0.397916377, -0.437091261, -0.201903969, -0.87646246, -0.794535697, 0.543356895, 0.271065354",
+        "CFrame": "-0.479731917, 0.209668577, -0.409507006, 0.421502531, 0.758845091, -0.496477306, -0.437091112, -0.309682727, -0.844421923, -0.794535816, 0.572931707, 0.201152295",
         "Archivable": true,
         "Name": "Left Arm"
       },
@@ -474,7 +1694,7 @@
     {
       "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Leg",
       "properties": {
-        "CFrame": "0.526744843, 0.281031907, -0.0530823171, 0.997382164, -0.00610877201, -0.0720522553, 0.0251544304, 0.963503361, 0.266511559, 0.0677945316, -0.267626226, 0.961134791",
+        "CFrame": "0.517069817, 0.280722797, -0.0537222922, 0.997123241, 0.0235310681, -0.0720522702, -0.00348711107, 0.963825285, 0.266511649, 0.0757171065, -0.265493661, 0.961134732",
         "Archivable": true,
         "Name": "Right Leg"
       },
@@ -490,27 +1710,9 @@
       "class": "IntValue"
     },
     {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg",
-      "properties": {
-        "CFrame": "-0.0701828003, 0.22871542, 0.128542215, 0.72814858, -0.106797785, 0.677047968, -0.0666257888, 0.972080171, 0.22499077, -0.682173491, -0.208935544, 0.700703442",
-        "Archivable": true,
-        "Name": "Left Leg"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
       "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Arm",
       "properties": {
-        "CFrame": "0.341671765, -0.182079107, 0.488920033, 0.488232195, 0.213803619, -0.846118987, -0.223345518, 0.967849672, 0.115687445, 0.84365052, 0.132494509, 0.520287514",
+        "CFrame": "0.341671467, -0.182080805, 0.488920152, 0.492785454, 0.203089103, -0.846118927, -0.20215334, 0.972496867, 0.115687452, 0.84634304, 0.114036642, 0.520287514",
         "Archivable": true,
         "Name": "Right Arm"
       },
@@ -526,9 +1728,27 @@
       "class": "IntValue"
     },
     {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg",
+      "properties": {
+        "CFrame": "-0.0580434948, 0.232745647, 0.141105711, 0.722547412, -0.1397551, 0.677047849, -0.0224118419, 0.974102974, 0.2249908, -0.690958023, -0.17774038, 0.700703502",
+        "Archivable": true,
+        "Name": "Left Leg"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
       "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Head",
       "properties": {
-        "CFrame": "1.65309757e-08, -1.97812915e-06, 1.69873238e-06, 0.894035578, -0.447995394, -0.000708174892, 0.447079808, 0.892105162, 0.0653297752, -0.0286356695, -0.0587237552, 0.997863472",
+        "CFrame": "1.3038516e-08, -1.94460154e-06, 1.81794167e-06, 0.894035578, -0.447718352, -0.01576945, 0.447079867, 0.889404416, 0.0952855647, -0.0286356714, -0.0922388881, 0.995325089",
         "Archivable": true,
         "Name": "Head"
       },
@@ -581,150 +1801,7 @@
     {
       "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso",
       "properties": {
-        "CFrame": "0.0150723467, 0.0406847, -0.317733943, 0.904583037, 0.421389908, -0.0644988865, -0.42419824, 0.87476933, -0.234167665, -0.0422542542, 0.239184409, 0.970054328",
-        "Archivable": true,
-        "Name": "Torso"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Head",
-      "properties": {
-        "CFrame": "2.03435775e-08, -1.97812915e-06, 1.75833702e-06, 0.894035578, -0.447995037, -0.000927708112, 0.447079867, 0.892073035, 0.0657669306, -0.0286356695, -0.0592127405, 0.997834563",
-        "Archivable": true,
-        "Name": "Head"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Head/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg",
-      "properties": {
-        "CFrame": "-0.0700363815, 0.228763998, 0.128693759, 0.728090048, -0.107196748, 0.677047849, -0.0660930723, 0.97211659, 0.224990711, -0.682287812, -0.208561644, 0.700703502",
-        "Archivable": true,
-        "Name": "Left Leg"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm",
-      "properties": {
-        "CFrame": "-0.47972858, 0.209667325, -0.409503788, 0.42150259, 0.81451565, -0.398622394, -0.437091172, -0.202663511, -0.876287162, -0.794535756, 0.543591559, 0.270594329",
-        "Archivable": true,
-        "Name": "Left Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Arm",
-      "properties": {
-        "CFrame": "0.341671765, -0.182079047, 0.488919854, 0.488273978, 0.213708073, -0.846118927, -0.223156154, 0.967893302, 0.11568743, 0.843676329, 0.132329464, 0.520287454",
-        "Archivable": true,
-        "Name": "Right Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Arm/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Leg",
-      "properties": {
-        "CFrame": "0.526629567, 0.281028271, -0.0530899763, 0.99738425, -0.0057561975, -0.0720522627, 0.0248138309, 0.963512123, 0.26651153, 0.0678891465, -0.267602235, 0.961134791",
-        "Archivable": true,
-        "Name": "Right Leg"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Leg/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe",
-      "properties": {
-        "Name": "Keyframe",
-        "Archivable": true
-      },
-      "class": "Keyframe"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "HumanoidRootPart"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso",
-      "properties": {
-        "CFrame": "0.0150723327, 0.0406846888, -0.317733914, 0.904582977, 0.421320587, -0.0649510249, -0.424198359, 0.8745175, -0.235106215, -0.0422542654, 0.240225211, 0.969797075",
+        "CFrame": "0.0150723448, 0.0406847075, -0.317733884, 0.904582977, 0.423095793, -0.0521495566, -0.4241983, 0.881242454, -0.208488643, -0.0422542617, 0.210717022, 0.976633489",
         "Archivable": true,
         "Name": "Torso"
       },
@@ -742,633 +1819,7 @@
     {
       "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm",
       "properties": {
-        "CFrame": "-0.479728103, 0.20966728, -0.409503281, 0.421502531, 0.815486312, -0.396632552, -0.437091202, -0.200523347, -0.876779139, -0.794535637, 0.542929113, 0.27192086",
-        "Archivable": true,
-        "Name": "Left Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg",
-      "properties": {
-        "CFrame": "-0.0704670548, 0.228621006, 0.128248096, 0.728261709, -0.106023207, 0.677047968, -0.0676597506, 0.972008824, 0.22499074, -0.681950927, -0.209661022, 0.700703382",
-        "Archivable": true,
-        "Name": "Left Leg"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Leg",
-      "properties": {
-        "CFrame": "0.526967824, 0.281039178, -0.0530675352, 0.997377753, -0.00679223705, -0.0720522404, 0.0258146692, 0.963485837, 0.2665115, 0.0676111132, -0.267672598, 0.961134791",
-        "Archivable": true,
-        "Name": "Right Leg"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Leg/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Arm",
-      "properties": {
-        "CFrame": "0.341671795, -0.182078987, 0.488919854, 0.488153428, 0.213983297, -0.846118987, -0.223701715, 0.967767358, 0.11568746, 0.843601644, 0.132805005, 0.520287454",
-        "Archivable": true,
-        "Name": "Right Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Arm/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Head",
-      "properties": {
-        "CFrame": "1.72294676e-08, -1.97812915e-06, 1.69873238e-06, 0.894035578, -0.447995871, -0.000275056809, 0.447079808, 0.892167926, 0.0644672662, -0.0286356695, -0.0577590056, 0.997919798",
-        "Archivable": true,
-        "Name": "Head"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Head/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe",
-      "properties": {
-        "Name": "Keyframe",
-        "Archivable": true
-      },
-      "class": "Keyframe"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "HumanoidRootPart"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso",
-      "properties": {
-        "CFrame": "0.015072342, 0.0406847, -0.317733914, 0.904582977, 0.421343237, -0.0648032352, -0.42419824, 0.874599934, -0.23479943, -0.0422542505, 0.239884987, 0.969881296",
-        "Archivable": true,
-        "Name": "Torso"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg",
-      "properties": {
-        "CFrame": "-0.0703263879, 0.228667736, 0.128393635, 0.728205919, -0.106406502, 0.677047908, -0.0671481118, 0.972044289, 0.224990755, -0.682061136, -0.209302038, 0.700703442",
-        "Archivable": true,
-        "Name": "Left Leg"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Head",
-      "properties": {
-        "CFrame": "1.18743628e-08, -1.97440386e-06, 1.69873238e-06, 0.894035637, -0.447995603, -0.000490591861, 0.447079718, 0.892136872, 0.0648964792, -0.0286356658, -0.0582390949, 0.997891903",
-        "Archivable": true,
-        "Name": "Head"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Head/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Arm",
-      "properties": {
-        "CFrame": "0.341671824, -0.182079047, 0.488920093, 0.488191932, 0.213895395, -0.846119106, -0.223527417, 0.967807651, 0.115687475, 0.843625724, 0.132653072, 0.520287395",
-        "Archivable": true,
-        "Name": "Right Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Arm/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Leg",
-      "properties": {
-        "CFrame": "0.526857555, 0.281035602, -0.0530748665, 0.997380018, -0.00645418279, -0.0720522627, 0.0254881084, 0.963494539, 0.266511589, 0.0677018538, -0.26764974, 0.961134791",
-        "Archivable": true,
-        "Name": "Right Leg"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Leg/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm",
-      "properties": {
-        "CFrame": "-0.479728699, 0.209667295, -0.40950352, 0.42150265, 0.815184414, -0.397252977, -0.437091172, -0.201190501, -0.876626492, -0.794535697, 0.543136001, 0.271507502",
-        "Archivable": true,
-        "Name": "Left Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe",
-      "properties": {
-        "Name": "Keyframe",
-        "Archivable": true
-      },
-      "class": "Keyframe"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "HumanoidRootPart"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso",
-      "properties": {
-        "CFrame": "0.0150723355, 0.0406846963, -0.317733943, 0.904582977, 0.421084285, -0.066465497, -0.424198329, 0.873666465, -0.238249093, -0.0422542617, 0.243710637, 0.968927085",
-        "Archivable": true,
-        "Name": "Torso"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Head",
-      "properties": {
-        "CFrame": "1.68802217e-08, -1.97999179e-06, 1.7285347e-06, 0.894035637, -0.447990924, 0.00211865269, 0.447079808, 0.892499685, 0.0596993603, -0.0286356676, -0.0524261482, 0.998214185",
-        "Archivable": true,
-        "Name": "Head"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Head/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Leg",
-      "properties": {
-        "CFrame": "0.528083026, 0.281074762, -0.0529938042, 0.997348607, -0.0102088442, -0.0720522627, 0.0291150734, 0.963391721, 0.266511559, 0.0666937903, -0.267902672, 0.961134791",
-        "Archivable": true,
-        "Name": "Right Leg"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Leg/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm",
-      "properties": {
-        "CFrame": "-0.479728162, 0.209667206, -0.409503311, 0.42150265, 0.817379832, -0.392715633, -0.437091082, -0.196314722, -0.877731204, -0.794535697, 0.541618466, 0.274522215",
-        "Archivable": true,
-        "Name": "Left Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg",
-      "properties": {
-        "CFrame": "-0.0718990862, 0.22814548, 0.126765966, 0.728819489, -0.102119118, 0.677047908, -0.072867468, 0.971632302, 0.224990755, -0.680817544, -0.213312387, 0.700703502",
-        "Archivable": true,
-        "Name": "Left Leg"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Arm",
-      "properties": {
-        "CFrame": "0.341671824, -0.182078868, 0.488919884, 0.487829626, 0.214720368, -0.846119046, -0.225163221, 0.967428386, 0.115687445, 0.843400121, 0.134079084, 0.520287395",
-        "Archivable": true,
-        "Name": "Right Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Arm/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe",
-      "properties": {
-        "Name": "Keyframe",
-        "Archivable": true
-      },
-      "class": "Keyframe"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "HumanoidRootPart"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso",
-      "properties": {
-        "CFrame": "0.0150723364, 0.0406847075, -0.317733914, 0.904582977, 0.421101063, -0.0663590953, -0.4241983, 0.873726666, -0.238028333, -0.0422542579, 0.243465796, 0.968988597",
-        "Archivable": true,
-        "Name": "Torso"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm",
-      "properties": {
-        "CFrame": "-0.479728103, 0.209667221, -0.409503222, 0.421502709, 0.817345738, -0.392786413, -0.437091112, -0.196390599, -0.877714157, -0.794535637, 0.541642189, 0.274475455",
-        "Archivable": true,
-        "Name": "Left Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Head",
-      "properties": {
-        "CFrame": "1.74040906e-08, -1.98185444e-06, 1.7285347e-06, 0.894035578, -0.447991788, 0.0019346755, 0.447079837, 0.892475009, 0.060065873, -0.0286356676, -0.0528360754, 0.998192549",
-        "Archivable": true,
-        "Name": "Head"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Head/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Arm",
-      "properties": {
-        "CFrame": "0.341671765, -0.182078958, 0.488919884, 0.487846285, 0.214682356, -0.846119046, -0.225087836, 0.96744591, 0.115687452, 0.843410611, 0.134013385, 0.520287395",
-        "Archivable": true,
-        "Name": "Right Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Arm/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Leg",
-      "properties": {
-        "CFrame": "0.528005958, 0.281072259, -0.0529989004, 0.997350991, -0.00997291971, -0.0720522627, 0.0288871787, 0.963398635, 0.266511559, 0.0667571649, -0.267886877, 0.961134791",
-        "Archivable": true,
-        "Name": "Right Leg"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Leg/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg",
-      "properties": {
-        "CFrame": "-0.0717992634, 0.22817868, 0.126869261, 0.728781283, -0.10239125, 0.677047849, -0.072504662, 0.971659422, 0.224990711, -0.680897117, -0.213058129, 0.700703442",
-        "Archivable": true,
-        "Name": "Left Leg"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe",
-      "properties": {
-        "Name": "Keyframe",
-        "Archivable": true
-      },
-      "class": "Keyframe"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "HumanoidRootPart"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso",
-      "properties": {
-        "CFrame": "0.0150723299, 0.0406846963, -0.317733914, 0.904582977, 0.421118468, -0.0662488937, -0.424198359, 0.873788953, -0.237799674, -0.0422542617, 0.243212223, 0.969052315",
-        "Archivable": true,
-        "Name": "Torso"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Arm",
-      "properties": {
-        "CFrame": "0.341671854, -0.182078958, 0.488919884, 0.48786509, 0.214639962, -0.846118927, -0.225003779, 0.96746552, 0.11568743, 0.843422174, 0.133940071, 0.520287514",
-        "Archivable": true,
-        "Name": "Right Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Arm/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Head",
-      "properties": {
-        "CFrame": "1.6996637e-08, -1.98371708e-06, 1.66893005e-06, 0.894035578, -0.447992533, 0.00174760632, 0.447079808, 0.892449856, 0.0604385436, -0.0286356676, -0.0532528907, 0.998170376",
-        "Archivable": true,
-        "Name": "Head"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Head/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg",
-      "properties": {
-        "CFrame": "-0.0716957003, 0.228213131, 0.126976371, 0.728741586, -0.102673627, 0.677047849, -0.0721281543, 0.971687436, 0.224990726, -0.680979609, -0.212794274, 0.700703502",
-        "Archivable": true,
-        "Name": "Left Leg"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm",
-      "properties": {
-        "CFrame": "-0.479728401, 0.209667221, -0.40950352, 0.421502531, 0.817289174, -0.39290452, -0.437091172, -0.196517557, -0.877685845, -0.794535756, 0.541681826, 0.274397165",
+        "CFrame": "-0.479731619, 0.209668607, -0.409506619, 0.421502531, 0.759375453, -0.495665491, -0.437091082, -0.308779418, -0.844752312, -0.794535697, 0.572716117, 0.201765001",
         "Archivable": true,
         "Name": "Left Arm"
       },
@@ -1386,446 +1837,10 @@
     {
       "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Leg",
       "properties": {
-        "CFrame": "0.527925968, 0.281069636, -0.0530041158, 0.997353435, -0.00972761214, -0.0720522553, 0.0286502186, 0.963405728, 0.2665115, 0.0668230355, -0.267870426, 0.961134791",
+        "CFrame": "0.517137349, 0.280724943, -0.0537178516, 0.997128069, 0.0233241189, -0.0720522776, -0.00328707509, 0.963825941, 0.266511649, 0.0756620094, -0.265509337, 0.961134732",
         "Archivable": true,
         "Name": "Right Leg"
       },
       "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Leg/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe",
-      "properties": {
-        "Name": "Keyframe",
-        "Archivable": true
-      },
-      "class": "Keyframe"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "HumanoidRootPart"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso",
-      "properties": {
-        "CFrame": "0.0150723355, 0.0406846963, -0.317733943, 0.904582977, 0.421052516, -0.0666665882, -0.424198329, 0.87355262, -0.238666311, -0.0422542617, 0.244173333, 0.968810618",
-        "Archivable": true,
-        "Name": "Torso"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Head",
-      "properties": {
-        "CFrame": "1.990702e-08, -1.97999179e-06, 1.7285347e-06, 0.894035637, -0.447989076, 0.00247698836, 0.447079808, 0.892547131, 0.0589854605, -0.0286356676, -0.0516276918, 0.998255789",
-        "Archivable": true,
-        "Name": "Head"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Head/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Arm",
-      "properties": {
-        "CFrame": "0.341671765, -0.182078898, 0.488920033, 0.487801909, 0.214783192, -0.846119165, -0.225287735, 0.967399418, 0.115687475, 0.843382955, 0.134187639, 0.520287395",
-        "Archivable": true,
-        "Name": "Right Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Arm/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg",
-      "properties": {
-        "CFrame": "-0.0720871389, 0.228083193, 0.126571327, 0.728891194, -0.10160625, 0.677047968, -0.073551178, 0.971580744, 0.224990755, -0.680667281, -0.2137914, 0.700703382",
-        "Archivable": true,
-        "Name": "Left Leg"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Leg",
-      "properties": {
-        "CFrame": "0.528227687, 0.281079352, -0.0529841781, 0.997343957, -0.010652015, -0.0720522553, 0.0295431539, 0.963378727, 0.266511559, 0.0665747374, -0.267932296, 0.961134791",
-        "Archivable": true,
-        "Name": "Right Leg"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Leg/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm",
-      "properties": {
-        "CFrame": "-0.479728401, 0.209667221, -0.409503698, 0.421502471, 0.81738323, -0.392708898, -0.437091291, -0.19630757, -0.877732873, -0.794535756, 0.541616201, 0.274526775",
-        "Archivable": true,
-        "Name": "Left Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe",
-      "properties": {
-        "Name": "Keyframe",
-        "Archivable": true
-      },
-      "class": "Keyframe"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "HumanoidRootPart"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso",
-      "properties": {
-        "CFrame": "0.0150723383, 0.0406847075, -0.317733973, 0.904583037, 0.421068043, -0.0665679947, -0.4241983, 0.87360853, -0.238461748, -0.0422542542, 0.243946478, 0.968867779",
-        "Archivable": true,
-        "Name": "Torso"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Head",
-      "properties": {
-        "CFrame": "1.79279596e-08, -1.98557973e-06, 1.66893005e-06, 0.894035578, -0.44799, 0.00229944661, 0.447079778, 0.892523646, 0.0593391731, -0.0286356676, -0.052023299, 0.998235226",
-        "Archivable": true,
-        "Name": "Head"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Head/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg",
-      "properties": {
-        "CFrame": "-0.0719951391, 0.228113711, 0.12666665, 0.728856146, -0.101857409, 0.677047968, -0.0732163787, 0.971606076, 0.22499077, -0.680740952, -0.213556871, 0.700703502",
-        "Archivable": true,
-        "Name": "Left Leg"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm",
-      "properties": {
-        "CFrame": "-0.479728281, 0.20966728, -0.409503341, 0.421502441, 0.817390501, -0.392692566, -0.437090576, -0.196289659, -0.877736092, -0.794535756, 0.541609704, 0.274537206",
-        "Archivable": true,
-        "Name": "Left Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm/Ease",
-      "properties": {
-        "Name": "Ease",
-        "Archivable": true
-      },
-      "class": "Folder"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm/Ease/Type",
-      "properties": {
-        "Value": "Sine",
-        "Archivable": true,
-        "Name": "Type"
-      },
-      "class": "StringValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm/Ease/Params",
-      "properties": {
-        "Name": "Params",
-        "Archivable": true
-      },
-      "class": "Folder"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm/Ease/Params/Direction",
-      "properties": {
-        "Value": "InOut",
-        "Archivable": true,
-        "Name": "Direction"
-      },
-      "class": "StringValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Arm",
-      "properties": {
-        "CFrame": "0.341671824, -0.182078898, 0.488920093, 0.487814814, 0.214754, -0.846119106, -0.225229874, 0.967412889, 0.11568746, 0.843391001, 0.134137198, 0.520287395",
-        "Archivable": true,
-        "Name": "Right Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Arm/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Leg",
-      "properties": {
-        "CFrame": "0.528156936, 0.281077087, -0.0529888868, 0.997346282, -0.0104352525, -0.0720522627, 0.029333774, 0.963385105, 0.266511559, 0.0666329786, -0.267917812, 0.961134791",
-        "Archivable": true,
-        "Name": "Right Leg"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Leg/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe",
-      "properties": {
-        "Name": "Keyframe",
-        "Archivable": true
-      },
-      "class": "Keyframe"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "HumanoidRootPart"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso",
-      "properties": {
-        "CFrame": "0.0150723355, 0.0406846851, -0.317733884, 0.904582977, 0.421173751, -0.0658959299, -0.42419827, 0.873987913, -0.237067237, -0.0422542505, 0.242399946, 0.969255805",
-        "Archivable": true,
-        "Name": "Torso"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm",
-      "properties": {
-        "CFrame": "-0.479728281, 0.209667221, -0.40950346, 0.42150265, 0.816983342, -0.393539846, -0.437091112, -0.197199851, -0.87753278, -0.794535697, 0.541895092, 0.273975879",
-        "Archivable": true,
-        "Name": "Left Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Leg",
-      "properties": {
-        "CFrame": "0.52766782, 0.281061411, -0.0530212224, 0.997360826, -0.00893685222, -0.0720522553, 0.0278863702, 0.96342814, 0.26651153, 0.0670354068, -0.267817348, 0.961134791",
-        "Archivable": true,
-        "Name": "Right Leg"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Leg/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Arm",
-      "properties": {
-        "CFrame": "0.341671854, -0.182078898, 0.488920033, 0.487932414, 0.214486837, -0.846118987, -0.224700123, 0.967536092, 0.115687437, 0.843464196, 0.133675367, 0.520287514",
-        "Archivable": true,
-        "Name": "Right Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Arm/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg",
-      "properties": {
-        "CFrame": "-0.0713631213, 0.22832346, 0.127320677, 0.728613257, -0.103580676, 0.677047908, -0.0709185675, 0.971776485, 0.22499074, -0.681243956, -0.211946473, 0.700703502",
-        "Archivable": true,
-        "Name": "Left Leg"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
     },
     {

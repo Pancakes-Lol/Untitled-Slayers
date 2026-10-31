@@ -1,3 +1,175 @@
+        "Texture": "rbxassetid://6430908053"
+      },
+      "class": "ParticleEmitter"
+    },
+    {
+      "path": "Workspace/Particle Emitter/ParticleEmitter",
+      "properties": {
+        "Enabled": true,
+        "Name": "ParticleEmitter",
+        "Shape": "Enum.ParticleEmitterShape.Cylinder",
+        "LightEmission": 1,
+        "Brightness": 1,
+        "Archivable": true,
+        "Texture": "rbxassetid://6430908053"
+      },
+      "class": "ParticleEmitter"
+    },
+    {
+      "path": "Workspace/Particle Emitter/ParticleEmitter",
+      "properties": {
+        "Enabled": true,
+        "Name": "ParticleEmitter",
+        "Shape": "Enum.ParticleEmitterShape.Cylinder",
+        "LightEmission": 1,
+        "Brightness": 1,
+        "Archivable": true,
+        "Texture": "rbxassetid://6430908053"
+      },
+      "class": "ParticleEmitter"
+    },
+    {
+      "path": "Workspace/Particle Emitter/ParticleEmitter",
+      "properties": {
+        "Enabled": true,
+        "Name": "ParticleEmitter",
+        "Shape": "Enum.ParticleEmitterShape.Cylinder",
+        "LightEmission": 1,
+        "Brightness": 1,
+        "Archivable": true,
+        "Texture": "rbxassetid://6430908053"
+      },
+      "class": "ParticleEmitter"
+    },
+    {
+      "path": "Workspace/Particle Emitter/ParticleEmitter",
+      "properties": {
+        "Enabled": true,
+        "Name": "ParticleEmitter",
+        "Shape": "Enum.ParticleEmitterShape.Cylinder",
+        "LightEmission": 1,
+        "Brightness": 1,
+        "Archivable": true,
+        "Texture": "rbxassetid://6430908053"
+      },
+      "class": "ParticleEmitter"
+    },
+    {
+      "path": "Workspace/Particle Emitter/ParticleEmitter",
+      "properties": {
+        "Enabled": true,
+        "Name": "ParticleEmitter",
+        "Shape": "Enum.ParticleEmitterShape.Cylinder",
+        "LightEmission": 1,
+        "Brightness": 1,
+        "Archivable": true,
+        "Texture": "rbxassetid://6430908053"
+      },
+      "class": "ParticleEmitter"
+    },
+    {
+      "path": "Workspace/Hills",
+      "properties": {
+        "Name": "Hills",
+        "Archivable": true
+      },
+      "class": "Folder"
+    },
+    {
+      "path": "Workspace/Hills/StoneHill1",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.384314, 0.419608, 0.443137",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, 7.979000091552734, 0",
+        "Transparency": 0,
+        "Name": "StoneHill1",
+        "Position": "-58.33763122558594, 11, 62.255859375",
+        "CFrame": "-58.3376312, 11, 62.2558594, 0.990318298, 0, 0.138815001, 0, 1, 0, -0.138815001, 0, 0.990318298",
+        "Material": "Enum.Material.Slate",
+        "Archivable": true,
+        "Size": "33.75, 22, 30"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Hills/Stonehill2",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.384314, 0.419608, 0.443137",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, -11.982999801635742, 0",
+        "Transparency": 0,
+        "Name": "Stonehill2",
+        "Position": "-31.75, 15.875, 37.75",
+        "CFrame": "-31.75, 15.875, 37.75, 0.978210211, 0, -0.207616881, 0, 1, 0, 0.207616881, 0, 0.978210211",
+        "Material": "Enum.Material.Slate",
+        "Archivable": true,
+        "Size": "30.528846740722656, 31.75, 30.528846740722656"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Hills/Hill3",
+      "properties": {
+        "Name": "Hill3",
+        "Archivable": true
+      },
+      "class": "Model"
+    },
+    {
+      "path": "Workspace/Hills/Hill3/Part",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.45098, 0.423529, 0.380392",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, 66.04499816894531, 0",
+        "Transparency": 0,
+        "Name": "Part",
+        "Position": "-124.62626647949219, 4.5, -8.342491149902344",
+        "CFrame": "-124.626266, 4.5, -8.34249115, 0.406013846, 0, 0.913866878, 0, 1, 0, -0.913866878, 0, 0.406013846",
+        "Material": "Enum.Material.Grass",
+        "Archivable": true,
+        "Size": "33.25, 13, 29.5"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Hills/Hill3/Part",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.384314, 0.419608, 0.443137",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, 66.04499816894531, 0",
+        "Transparency": 0,
+        "Name": "Part",
+        "Position": "-124.62626647949219, 4.25, -8.342491149902344",
+        "CFrame": "-124.626266, 4.25, -8.34249115, 0.406013846, 0, 0.913866878, 0, 1, 0, -0.913866878, 0, 0.406013846",
+        "Material": "Enum.Material.Slate",
+        "Archivable": true,
+        "Size": "33.75, 13, 30"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Hills/Hill4",
+      "properties": {
+        "Name": "Hill4",
+        "Archivable": true
+      },
+      "class": "Model"
+    },
+    {
+      "path": "Workspace/Hills/Hill4/Part",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.45098, 0.423529, 0.380392",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
         "Rotation": "-171.00399780273438, 53.95600128173828, 169.6219940185547",
         "Transparency": 0,
         "Name": "Part",
@@ -10,38 +182,7 @@
       "class": "Part"
     },
     {
-      "path": "Workspace/Part",
-      "properties": {
-        "CanCollide": false,
-        "Color": "0.639216, 0.294118, 0.294118",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "-90, 0, 180",
-        "Transparency": 1,
-        "Name": "Part",
-        "Position": "-66.3676528930664, 47.803165435791016, -259.3775634765625",
-        "CFrame": "-66.3676529, 47.8031654, -259.377563, -1, 0, 0, 0, 0, 1, 0, 1, -0",
-        "Material": "Enum.Material.Plastic",
-        "Archivable": true,
-        "Size": "502.5599365234375, 3.7055556774139404, 93.10633087158203"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Part/ParticleEmitter",
-      "properties": {
-        "Enabled": true,
-        "Name": "ParticleEmitter",
-        "Shape": "Enum.ParticleEmitterShape.Box",
-        "LightEmission": 1,
-        "Brightness": 1,
-        "Archivable": true,
-        "Texture": "rbxassetid://13948905289"
-      },
-      "class": "ParticleEmitter"
-    },
-    {
-      "path": "Workspace/Part",
+      "path": "Workspace/Hills/Hill4/Part",
       "properties": {
         "CanCollide": true,
         "Color": "0.384314, 0.419608, 0.443137",
@@ -59,439 +200,15 @@
       "class": "Part"
     },
     {
-      "path": "Workspace/Part",
+      "path": "Workspace/Hills/Hill1",
       "properties": {
-        "CanCollide": true,
-        "Color": "0.384314, 0.419608, 0.443137",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "-5.894999980926514, 12.63700008392334, 6.422999858856201",
-        "Transparency": 0,
-        "Name": "Part",
-        "Position": "-30.910484313964844, 8.250000953674316, 12.236714363098145",
-        "CFrame": "-30.9104843, 8.25000095, 12.2367144, 0.969649136, -0.109165847, 0.218777671, 0.0889564827, 0.990981221, 0.100214824, -0.227744669, -0.0777114332, 0.97061497",
-        "Material": "Enum.Material.Slate",
-        "Archivable": true,
-        "Size": "30.528846740722656, 16.5, 30.528846740722656"
+        "Name": "Hill1",
+        "Archivable": true
       },
-      "class": "Part"
+      "class": "Model"
     },
     {
-      "path": "Workspace/Part",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.92549, 0.917647, 0.937255",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "0, 20.996000289916992, 0",
-        "Transparency": 0,
-        "Name": "Part",
-        "Position": "-41.587684631347656, 5.749999046325684, -31.936784744262695",
-        "CFrame": "-41.5876846, 5.74999905, -31.9367847, 0.933605909, 0, 0.35830158, 0, 1, 0, -0.35830161, 0, 0.933605909",
-        "Material": "Enum.Material.Sand",
-        "Archivable": true,
-        "Size": "18.5, 9, 25.25"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Part",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.384314, 0.419608, 0.443137",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "180, 62.71900177001953, 180",
-        "Transparency": 0,
-        "Name": "Part",
-        "Position": "-136.64932250976562, -0.47169816493988037, 9.597129821777344",
-        "CFrame": "-136.649323, -0.471698165, 9.59712982, -0.458361298, 0, 0.888766706, 0, 1, 0, -0.888766706, 0, -0.458361298",
-        "Material": "Enum.Material.Slate",
-        "Archivable": true,
-        "Size": "26.108488082885742, 10.056602478027344, 23.20754623413086"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Part",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.384314, 0.419608, 0.443137",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "0, -11.982999801635742, 0",
-        "Transparency": 0,
-        "Name": "Part",
-        "Position": "-31.75, 15.875, 37.75",
-        "CFrame": "-31.75, 15.875, 37.75, 0.978210211, 0, -0.207616881, 0, 1, 0, 0.207616881, 0, 0.978210211",
-        "Material": "Enum.Material.Slate",
-        "Archivable": true,
-        "Size": "30.528846740722656, 31.75, 30.528846740722656"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Part",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.45098, 0.423529, 0.380392",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "180, 62.71900177001953, 180",
-        "Transparency": 0,
-        "Name": "Part",
-        "Position": "-136.64932250976562, -0.27830183506011963, 9.597129821777344",
-        "CFrame": "-136.649323, -0.278301835, 9.59712982, -0.458361298, 0, 0.888766706, 0, 1, 0, -0.888766706, 0, -0.458361298",
-        "Material": "Enum.Material.Grass",
-        "Archivable": true,
-        "Size": "25.721696853637695, 10.056602478027344, 22.82075309753418"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Part",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.45098, 0.423529, 0.380392",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "0, 0, 0",
-        "Transparency": 0,
-        "Name": "Part",
-        "Position": "-50.875, 2.25, -41.625",
-        "CFrame": "-50.875, 2.25, -41.625, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Material": "Enum.Material.Grass",
-        "Archivable": true,
-        "Size": "75.25, 2.5, 103.25"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Part",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.45098, 0.423529, 0.380392",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "0, -6.671000003814697, 0",
-        "Transparency": 0,
-        "Name": "Part",
-        "Position": "-96.02473449707031, 2, -11.535046577453613",
-        "CFrame": "-96.0247345, 2, -11.5350466, 0.993230581, 0, -0.116161495, 0, 1, 0, 0.116161495, 0, 0.993230581",
-        "Material": "Enum.Material.Grass",
-        "Archivable": true,
-        "Size": "23.5, 6.5, 25"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Part",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.384314, 0.419608, 0.443137",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "0, 7.120999813079834, 0",
-        "Transparency": 0,
-        "Name": "Part",
-        "Position": "-78.19600677490234, -4.75, 34.61774444580078",
-        "CFrame": "-78.1960068, -4.75, 34.6177444, 0.992286801, 0, 0.123963304, 0, 1, 0, -0.123963304, 0, 0.992286801",
-        "Material": "Enum.Material.Slate",
-        "Archivable": true,
-        "Size": "67, 11, 79"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Part",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.92549, 0.917647, 0.937255",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "0, 10.038999557495117, 0",
-        "Transparency": 0,
-        "Name": "Part",
-        "Position": "-51.23064422607422, 1.1250050067901611, 18.10304069519043",
-        "CFrame": "-51.2306442, 1.12500501, 18.1030407, 0.984689593, 0, 0.174317926, 0, 1, 0, -0.174317926, 0, 0.984689593",
-        "Material": "Enum.Material.Sand",
-        "Archivable": true,
-        "Size": "18.5, 0.25, 19"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Part",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.45098, 0.423529, 0.380392",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "0, 0, 0",
-        "Transparency": 0,
-        "Name": "Part",
-        "Position": "-112.375, -7, 52.75",
-        "CFrame": "-112.375, -7, 52.75, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Material": "Enum.Material.Grass",
-        "Archivable": true,
-        "Size": "133.25, 9, 85"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Part",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.92549, 0.917647, 0.937255",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "0, 15.532999992370605, 0",
-        "Transparency": 0,
-        "Name": "Part",
-        "Position": "-50.69977951049805, 0.5000028610229492, 2.113825559616089",
-        "CFrame": "-50.6997795, 0.500002861, 2.11382556, 0.963478148, 0, 0.26778692, 0, 1, 0, -0.26778695, 0, 0.963478148",
-        "Material": "Enum.Material.Sand",
-        "Archivable": true,
-        "Size": "9.5, 6.5, 19"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Part",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.92549, 0.917647, 0.937255",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "0, 27.097999572753906, 0",
-        "Transparency": 0,
-        "Name": "Part",
-        "Position": "-80.70316314697266, 0.125, -23.05601692199707",
-        "CFrame": "-80.7031631, 0.125, -23.0560169, 0.890231609, 0, 0.455508202, 0, 1, 0, -0.455508202, 0, 0.890231609",
-        "Material": "Enum.Material.Sand",
-        "Archivable": true,
-        "Size": "21, 7.25, 19"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Part",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.384314, 0.419608, 0.443137",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "0, 29.67799949645996, 0",
-        "Transparency": 0,
-        "Name": "Part",
-        "Position": "-101.12626647949219, 6.5, -35.09248733520508",
-        "CFrame": "-101.126266, 6.5, -35.0924873, 0.868817389, 0, 0.495132387, 0, 1, 0, -0.495132387, 0, 0.868817389",
-        "Material": "Enum.Material.Slate",
-        "Archivable": true,
-        "Size": "33.75, 13, 30"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Part",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.92549, 0.917647, 0.937255",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "0, -58.15700149536133, 0",
-        "Transparency": 0,
-        "Name": "Part",
-        "Position": "-102.29609680175781, 10.25, -75.8591079711914",
-        "CFrame": "-102.296097, 10.25, -75.859108, 0.527600527, 0, -0.849493146, 0, 1, 0, 0.849493146, 0, 0.52760011",
-        "Material": "Enum.Material.Sand",
-        "Archivable": true,
-        "Size": "13.5, 0.5, 24.5"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Part",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.45098, 0.423529, 0.380392",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "0, -38.79499816894531, 0",
-        "Transparency": 0,
-        "Name": "Part",
-        "Position": "-41.54952621459961, 5, -3.1142702102661133",
-        "CFrame": "-41.5495262, 5, -3.11427021, 0.779387891, 0, -0.626542032, 0, 1, 0, 0.626542032, 0, 0.779387891",
-        "Material": "Enum.Material.Grass",
-        "Archivable": true,
-        "Size": "23.5, 10, 14.25"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Part",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.352941, 0.282353, 0.231373",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "0, 0, 0",
-        "Transparency": 0,
-        "Name": "Part",
-        "Position": "-71.5, 1.2500001192092896, 34",
-        "CFrame": "-71.5, 1.25000012, 34, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Material": "Enum.Material.Brick",
-        "Archivable": true,
-        "Size": "20, 0.5, 20"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Part",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.92549, 0.917647, 0.937255",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "0, -84.29000091552734, 0",
-        "Transparency": 0,
-        "Name": "Part",
-        "Position": "-92.02705383300781, 10.125, -77.5177993774414",
-        "CFrame": "-92.0270538, 10.125, -77.5177994, 0.099507153, 0, -0.995038986, 0, 1, 0, 0.995038867, 0, 0.0995066762",
-        "Material": "Enum.Material.Sand",
-        "Archivable": true,
-        "Size": "26.25, 0.25, 17"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Part",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.92549, 0.917647, 0.937255",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "0, 76.98600006103516, 0",
-        "Transparency": 0,
-        "Name": "Part",
-        "Position": "-96.6829833984375, 13.375, -44.29523468017578",
-        "CFrame": "-96.6829834, 13.375, -44.2952347, 0.225181893, 0, 0.974316776, 0, 1, 0, -0.974316835, 0, 0.225181878",
-        "Material": "Enum.Material.Sand",
-        "Archivable": true,
-        "Size": "13.499999046325684, 0.25, 9"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Part",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.92549, 0.917647, 0.937255",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "0, -67.15599822998047, 0",
-        "Transparency": 0,
-        "Name": "Part",
-        "Position": "-108.8780288696289, 10.125, -67.37567901611328",
-        "CFrame": "-108.878029, 10.125, -67.375679, 0.388220519, 0, -0.921566784, 0, 1, 0, 0.921566904, 0, 0.388220191",
-        "Material": "Enum.Material.Sand",
-        "Archivable": true,
-        "Size": "12, 0.25, 11.75"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Part",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.92549, 0.917647, 0.937255",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "0, 38.12900161743164, 0",
-        "Transparency": 0,
-        "Name": "Part",
-        "Position": "-96.02050018310547, 13.375, -36.059532165527344",
-        "CFrame": "-96.0205002, 13.375, -36.0595322, 0.786622286, 0, 0.617437363, 0, 1, 0, -0.617436767, 0, 0.786622643",
-        "Material": "Enum.Material.Sand",
-        "Archivable": true,
-        "Size": "20.25, 0.25, 19"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Part",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.92549, 0.917647, 0.937255",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "0, -9.920000076293945, 0",
-        "Transparency": 0,
-        "Name": "Part",
-        "Position": "-59.26136779785156, 0.5000028610229492, -1.0300114154815674",
-        "CFrame": "-59.2613678, 0.500002861, -1.03001142, 0.985050023, 0, -0.172277704, 0, 1, 0, 0.172277704, 0, 0.985050023",
-        "Material": "Enum.Material.Sand",
-        "Archivable": true,
-        "Size": "18.5, 6.5, 25.25"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Part",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.92549, 0.917647, 0.937255",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "0, 76.98600006103516, 0",
-        "Transparency": 0,
-        "Name": "Part",
-        "Position": "-29.00037384033203, 3.5, -82.35552978515625",
-        "CFrame": "-29.0003738, 3.5, -82.3555298, 0.225181952, 0, 0.974316895, 0, 1, 0, -0.974317074, 0, 0.225181907",
-        "Material": "Enum.Material.Sand",
-        "Archivable": true,
-        "Size": "13.499999046325684, 0.25, 9"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Part",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.92549, 0.917647, 0.937255",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "0, 38.12900161743164, 0",
-        "Transparency": 0,
-        "Name": "Part",
-        "Position": "-28.337890625, 3.5, -74.11982727050781",
-        "CFrame": "-28.3378906, 3.5, -74.1198273, 0.786622405, 0, 0.617437422, 0, 1, 0, -0.617436886, 0, 0.786622822",
-        "Material": "Enum.Material.Sand",
-        "Archivable": true,
-        "Size": "20.25, 0.25, 19"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Part",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.384314, 0.419608, 0.443137",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "0, 10.043000221252441, 0",
-        "Transparency": 0,
-        "Name": "Part",
-        "Position": "-100.58724212646484, 4.875, -69.92560577392578",
-        "CFrame": "-100.587242, 4.875, -69.9256058, 0.984676182, 0, 0.174393207, 0, 1, 0, -0.174393207, 0, 0.984676182",
-        "Material": "Enum.Material.Slate",
-        "Archivable": true,
-        "Size": "44.25, 9.75, 52"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Part",
+      "path": "Workspace/Hills/Hill1/Part",
       "properties": {
         "CanCollide": true,
         "Color": "0.45098, 0.423529, 0.380392",
@@ -509,7 +226,51 @@
       "class": "Part"
     },
     {
-      "path": "Workspace/Part",
+      "path": "Workspace/Hills/Hill1/Part",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.384314, 0.419608, 0.443137",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, 10.043000221252441, 0",
+        "Transparency": 0,
+        "Name": "Part",
+        "Position": "-100.58724212646484, 4.875, -69.92560577392578",
+        "CFrame": "-100.587242, 4.875, -69.9256058, 0.984676182, 0, 0.174393207, 0, 1, 0, -0.174393207, 0, 0.984676182",
+        "Material": "Enum.Material.Slate",
+        "Archivable": true,
+        "Size": "44.25, 9.75, 52"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Hills/Hill2",
+      "properties": {
+        "Name": "Hill2",
+        "Archivable": true
+      },
+      "class": "Model"
+    },
+    {
+      "path": "Workspace/Hills/Hill2/Part",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.384314, 0.419608, 0.443137",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, 29.67799949645996, 0",
+        "Transparency": 0,
+        "Name": "Part",
+        "Position": "-101.12626647949219, 6.5, -35.09248733520508",
+        "CFrame": "-101.126266, 6.5, -35.0924873, 0.868817389, 0, 0.495132387, 0, 1, 0, -0.495132387, 0, 0.868817389",
+        "Material": "Enum.Material.Slate",
+        "Archivable": true,
+        "Size": "33.75, 13, 30"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Hills/Hill2/Part",
       "properties": {
         "CanCollide": true,
         "Color": "0.45098, 0.423529, 0.380392",
@@ -527,25 +288,15 @@
       "class": "Part"
     },
     {
-      "path": "Workspace/Part",
+      "path": "Workspace/Hills/Hill5",
       "properties": {
-        "CanCollide": true,
-        "Color": "0.92549, 0.917647, 0.937255",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "-1.5980000495910645, -25.139999389648438, 8.524999618530273",
-        "Transparency": 0,
-        "Name": "Part",
-        "Position": "-32.43510437011719, 16.647815704345703, 18.002931594848633",
-        "CFrame": "-32.4351044, 16.6478157, 18.0029316, 0.895267248, -0.134199917, -0.424838215, 0.159900516, 0.986810327, 0.0252418779, 0.415847242, -0.0905300081, 0.904917479",
-        "Material": "Enum.Material.Sand",
-        "Archivable": true,
-        "Size": "22, 2.5, 20.75"
+        "Name": "Hill5",
+        "Archivable": true
       },
-      "class": "Part"
+      "class": "Model"
     },
     {
-      "path": "Workspace/Part",
+      "path": "Workspace/Hills/Hill5/Part",
       "properties": {
         "CanCollide": true,
         "Color": "0.45098, 0.423529, 0.380392",
@@ -563,7 +314,139 @@
       "class": "Part"
     },
     {
-      "path": "Workspace/Part",
+      "path": "Workspace/Hills/Hill5/Part",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.384314, 0.419608, 0.443137",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, 7.120999813079834, 0",
+        "Transparency": 0,
+        "Name": "Part",
+        "Position": "-78.19600677490234, -4.75, 34.61774444580078",
+        "CFrame": "-78.1960068, -4.75, 34.6177444, 0.992286801, 0, 0.123963304, 0, 1, 0, -0.123963304, 0, 0.992286801",
+        "Material": "Enum.Material.Slate",
+        "Archivable": true,
+        "Size": "67, 11, 79"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Hills/Hill6",
+      "properties": {
+        "Name": "Hill6",
+        "Archivable": true
+      },
+      "class": "Model"
+    },
+    {
+      "path": "Workspace/Hills/Hill6/Part",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.384314, 0.419608, 0.443137",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "-5.894999980926514, 12.63700008392334, 6.422999858856201",
+        "Transparency": 0,
+        "Name": "Part",
+        "Position": "-30.910484313964844, 8.250000953674316, 12.236714363098145",
+        "CFrame": "-30.9104843, 8.25000095, 12.2367144, 0.969649136, -0.109165847, 0.218777671, 0.0889564827, 0.990981221, 0.100214824, -0.227744669, -0.0777114332, 0.97061497",
+        "Material": "Enum.Material.Slate",
+        "Archivable": true,
+        "Size": "30.528846740722656, 16.5, 30.528846740722656"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Hills/Hill6/Part",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.45098, 0.423529, 0.380392",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "-5.894999980926514, 12.63700008392334, 6.422999858856201",
+        "Transparency": 0,
+        "Name": "Part",
+        "Position": "-30.924129486083984, 8.373873710632324, 12.22700023651123",
+        "CFrame": "-30.9241295, 8.37387371, 12.2270002, 0.969649136, -0.109165847, 0.218777671, 0.0889564827, 0.990981221, 0.100214824, -0.227744669, -0.0777114332, 0.97061497",
+        "Material": "Enum.Material.Grass",
+        "Archivable": true,
+        "Size": "30.028846740722656, 16.75, 30.028846740722656"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Hills/Hill7",
+      "properties": {
+        "Name": "Hill7",
+        "Archivable": true
+      },
+      "class": "Model"
+    },
+    {
+      "path": "Workspace/Hills/Hill7/Part",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.45098, 0.423529, 0.380392",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "180, 62.71900177001953, 180",
+        "Transparency": 0,
+        "Name": "Part",
+        "Position": "-136.64932250976562, -0.27830183506011963, 9.597129821777344",
+        "CFrame": "-136.649323, -0.278301835, 9.59712982, -0.458361298, 0, 0.888766706, 0, 1, 0, -0.888766706, 0, -0.458361298",
+        "Material": "Enum.Material.Grass",
+        "Archivable": true,
+        "Size": "25.721696853637695, 10.056602478027344, 22.82075309753418"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Hills/Hill7/Part",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.384314, 0.419608, 0.443137",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "180, 62.71900177001953, 180",
+        "Transparency": 0,
+        "Name": "Part",
+        "Position": "-136.64932250976562, -0.47169816493988037, 9.597129821777344",
+        "CFrame": "-136.649323, -0.471698165, 9.59712982, -0.458361298, 0, 0.888766706, 0, 1, 0, -0.888766706, 0, -0.458361298",
+        "Material": "Enum.Material.Slate",
+        "Archivable": true,
+        "Size": "26.108488082885742, 10.056602478027344, 23.20754623413086"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Brickpath",
+      "properties": {
+        "Name": "Brickpath",
+        "Archivable": true
+      },
+      "class": "Folder"
+    },
+    {
+      "path": "Workspace/Brickpath/Part",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.352941, 0.282353, 0.231373",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, 0, 0",
+        "Transparency": 0,
+        "Name": "Part",
+        "Position": "-71.5, 1.2500001192092896, 16.999988555908203",
+        "CFrame": "-71.5, 1.25000012, 16.9999886, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Material": "Enum.Material.Brick",
+        "Archivable": true,
+        "Size": "8, 0.5, 13.999977111816406"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Brickpath/Part",
       "properties": {
         "CanCollide": true,
         "Color": "0.352941, 0.282353, 0.231373",
@@ -581,70 +464,94 @@
       "class": "Part"
     },
     {
-      "path": "Workspace/Float Brick",
+      "path": "Workspace/Brickpath/Part",
       "properties": {
         "CanCollide": true,
-        "Color": "0.980392, 1, 0.643137",
-        "Anchored": false,
-        "Shape": "Enum.PartType.Ball",
+        "Color": "0.352941, 0.282353, 0.231373",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
         "Rotation": "0, 0, 0",
         "Transparency": 0,
-        "Name": "Float Brick",
-        "Position": "-21, 1.25, -20",
-        "CFrame": "-21, 1.25, -20, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Material": "Enum.Material.ForceField",
+        "Name": "Part",
+        "Position": "-71.5, 3.75, 2.999988555908203",
+        "CFrame": "-71.5, 3.75, 2.99998856, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Material": "Enum.Material.Brick",
         "Archivable": true,
-        "Size": "2, 2, 2"
+        "Size": "8, 0.5, 13.999977111816406"
       },
       "class": "Part"
     },
     {
-      "path": "Workspace/Float Brick/Attachment",
+      "path": "Workspace/Brickpath/Part",
       "properties": {
-        "Visible": false,
-        "Name": "Attachment",
-        "Position": "0, 0, 0",
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "CanCollide": true,
+        "Color": "0.352941, 0.282353, 0.231373",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, 0, 0",
+        "Transparency": 0,
+        "Name": "Part",
+        "Position": "-71.5, 1.2500001192092896, 34",
+        "CFrame": "-71.5, 1.25000012, 34, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Material": "Enum.Material.Brick",
         "Archivable": true,
-        "Rotation": "-0, 0, -0"
+        "Size": "20, 0.5, 20"
       },
-      "class": "Attachment"
+      "class": "Part"
     },
     {
-      "path": "Workspace/Float Brick/Attachment/Images/16511961942_starified",
+      "path": "Workspace/Brickpath/Part",
       "properties": {
-        "Enabled": true,
-        "Name": "Images/16511961942_starified",
-        "Shape": "Enum.ParticleEmitterShape.Box",
-        "LightEmission": 0,
-        "Brightness": 1,
+        "CanCollide": true,
+        "Color": "0.352941, 0.282353, 0.231373",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, 0, 0",
+        "Transparency": 0,
+        "Name": "Part",
+        "Position": "-71.5, 1.2500001192092896, 16.999988555908203",
+        "CFrame": "-71.5, 1.25000012, 16.9999886, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Material": "Enum.Material.Brick",
         "Archivable": true,
-        "Texture": "rbxassetid://81476801210365"
+        "Size": "8, 0.5, 13.999977111816406"
       },
-      "class": "ParticleEmitter"
+      "class": "Part"
     },
     {
-      "path": "Workspace/Float Brick/Attachment/Images/10365549270_2",
+      "path": "Workspace/Brickpath/Part",
       "properties": {
-        "Enabled": true,
-        "Name": "Images/10365549270_2",
-        "Shape": "Enum.ParticleEmitterShape.Box",
-        "LightEmission": 0,
-        "Brightness": 1,
+        "CanCollide": true,
+        "Color": "0.352941, 0.282353, 0.231373",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, 0, 0",
+        "Transparency": 0,
+        "Name": "Part",
+        "Position": "-71.5, 3.75, 2.999988555908203",
+        "CFrame": "-71.5, 3.75, 2.99998856, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Material": "Enum.Material.Brick",
         "Archivable": true,
-        "Texture": "rbxassetid://72827670246026"
+        "Size": "8, 0.5, 13.999977111816406"
       },
-      "class": "ParticleEmitter"
+      "class": "Part"
     },
     {
-      "path": "Workspace/Camera",
+      "path": "Workspace/Brickpath/Part",
       "properties": {
-        "FieldOfView": 70,
-        "CFrame": "-69.431427, 23.7198181, 3.47763014, -0.800809026, -0.167109102, 0.575134337, -0, 0.96028614, 0.279017478, -0.598919809, 0.223439708, -0.769005775",
+        "CanCollide": true,
+        "Color": "0.352941, 0.282353, 0.231373",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, 0, 0",
+        "Transparency": 0,
+        "Name": "Part",
+        "Position": "-71.5, 1.2500001192092896, 34",
+        "CFrame": "-71.5, 1.25000012, 34, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Material": "Enum.Material.Brick",
         "Archivable": true,
-        "Name": "Camera"
+        "Size": "20, 0.5, 20"
       },
-      "class": "Camera"
+      "class": "Part"
     },
     {
       "path": "ReplicatedStorage",
@@ -1159,3 +1066,13 @@
         "Name": "TetsuDialogue"
       },
       "path": "StarterPlayer/StarterPlayerScripts/GameClient/TetsuDialogue",
+      "source": "-- Tetsu dialogue UI: choices, custom name entry, quest notifications.\nlocal Players = game:GetService(\"Players\")\nlocal ReplicatedStorage = game:GetService(\"ReplicatedStorage\")\nlocal UserInputService = game:GetService(\"UserInputService\")\nlocal player = Players.LocalPlayer\nlocal remote = ReplicatedStorage:WaitForChild(\"TetsuDialogue\")\n\nlocal gui = Instance.new(\"ScreenGui\")\ngui.Name = \"TetsuDialogueUI\"\ngui.ResetOnSpawn = false\ngui.DisplayOrder = 40\ngui.Parent = player:WaitForChild(\"PlayerGui\")\nlocal panel = Instance.new(\"Frame\")\npanel.Name = \"DialoguePanel\"\npanel.AnchorPoint = Vector2.new(0.5, 1)\npanel.Position = UDim2.new(0.5, 0, 1, -28)\npanel.Size = UDim2.new(0.9, 0, 0, 280)\npanel.BackgroundColor3 = Color3.fromRGB(18, 22, 34)\npanel.BorderSizePixel = 0\npanel.Visible = false\npanel.Parent = gui\nlocal limit = Instance.new(\"UISizeConstraint\")\nlimit.MaxSize = Vector2.new(570, 280)\nlimit.Parent = panel\nInstance.new(\"UICorner\", panel).CornerRadius = UDim.new(0, 14)\nlocal stroke = Instance.new(\"UIStroke\")\nstroke.Color = Color3.fromRGB(130, 112, 235)\nstroke.Thickness = 2\nstroke.Parent = panel\n\nlocal function textLabel(name, value, y, height, size)\n\tlocal label = Instance.new(\"TextLabel\")\n\tlabel.Name = name\n\tlabel.BackgroundTransparency = 1\n\tlabel.Position = UDim2.new(0, 18, 0, y)\n\tlabel.Size = UDim2.new(1, -36, 0, height)\n\tlabel.Font = Enum.Font.GothamSemibold\n\tlabel.TextColor3 = Color3.new(1, 1, 1)\n\tlabel.TextSize = size\n\tlabel.TextWrapped = true\n\tlabel.TextXAlignment = Enum.TextXAlignment.Left\n\tlabel.Text = value\n\tlabel.Parent = panel\n\treturn label\nend\ntextLabel(\"Heading\", \"TETSU  •  YOUR SLAYER JOURNEY\", 7, 29, 14)\nlocal message = textLabel(\"Message\", \"\", 40, 62, 17)\nlocal function button(name, y, height)\n\tlocal b = Instance.new(\"TextButton\")\n\tb.Name = name\n\tb.Position = UDim2.new(0, 18, 0, y)\n\tb.Size = UDim2.new(1, -36, 0, height)\n\tb.BackgroundColor3 = Color3.fromRGB(52, 58, 83)\n\tb.TextColor3 = Color3.new(1, 1, 1)\n\tb.TextSize = 15\n\tb.Font = Enum.Font.GothamMedium\n\tb.TextWrapped = true\n\tb.Parent = panel\n\tInstance.new(\"UICorner\", b).CornerRadius = UDim.new(0, 8)\n\treturn b\nend\nlocal choices = {button(\"Choice1\", 103, 40), button(\"Choice2\", 148, 40), button(\"Choice3\", 193, 40)}\nlocal nextButton = button(\"Continue\", 137, 46)\nnextButton.Visible = false\nlocal nameInput = Instance.new(\"TextBox\")\nnameInput.Name = \"CustomName\"\nnameInput.Position = UDim2.new(0, 18, 0, 113)\nnameInput.Size = UDim2.new(1, -36, 0, 43)\nnameInput.BackgroundColor3 = Color3.fromRGB(43, 48, 68)\nnameInput.TextColor3 = Color3.new(1, 1, 1)\nnameInput.PlaceholderText = \"Your slayer name (3–20 characters)\"\nnameInput.Text = \"\"\nnameInput.ClearTextOnFocus = false\nnameInput.Font = Enum.Font.GothamMedium\nnameInput.TextSize = 15\nnameInput.Visible = false\nnameInput.Parent = panel\nInstance.new(\"UICorner\", nameInput).CornerRadius = UDim.new(0, 8)\nlocal confirm = button(\"ConfirmName\", 166, 43)\nconfirm.Text = \"Confirm my name\"\nconfirm.Visible = false\nlocal close = Instance.new(\"TextButton\")\nclose.Name = \"Close\"\nclose.Position = UDim2.new(1, -50, 0, 6)\nclose.Size = UDim2.fromOffset(34, 30)\nclose.BackgroundTransparency = 1\nclose.TextColor3 = Color3.new(1, 1, 1)\nclose.Text = \"X\"\nclose.Font = Enum.Font.GothamBold\nclose.TextSize = 17\nclose.Parent = panel\nlocal phase = \"Closed\"\nlocal storyAction = \"Continue\"\nlocal function hideControls()\n\tfor _, b in ipairs(choices) do b.Visible = false end\n\tnextButton.Visible = false\n\tnameInput.Visible = false\n\tconfirm.Visible = false\nend\nlocal function dismiss()\n\tpanel.Visible = false\n\tphase = \"Closed\"\n\tremote:FireServer(\"Close\")\nend\nclose.Activated:Connect(dismiss)\nlocal function choose(i)\n\tif phase ~= \"Question\" then return end\n\tphase = \"Waiting\"\n\tremote:FireServer(\"Choose\", i)\nend\nfor i, b in ipairs(choices) do\n\tb.Activated:Connect(function() choose(i) end)\nend\nconfirm.Activated:Connect(function()\n\tif phase ~= \"NameEntry\" then return end\n\tphase = \"Waiting\"\n\tremote:FireServer(\"CustomName\", nameInput.Text)\nend)\nnextButton.Activated:Connect(function()\n\tif phase ~= \"Story\" then return end\n\tphase = \"Waiting\"\n\tremote:FireServer(storyAction)\nend)\nremote.OnClientEvent:Connect(function(action, data)\n\tdata = data or {}\n\tif action == \"Close\" then\n\t\tpanel.Visible = false\n\t\tphase = \"Closed\"\n\t\treturn\n\tend\n\tif action == \"Quest\" then\n\t\tpanel.Visible = true\n\t\thideControls()\n\t\tphase = \"Story\"\n\t\tstoryAction = \"Continue\"\n\t\tmessage.Text = data.text\n\t\tnextButton.Text = \"Got it\"\n\t\tnextButton.Visible = true\n\t\treturn\n\tend\n\tpanel.Visible = true\n\thideControls()\n\tif action == \"Question\" then\n\t\tphase = \"Question\"\n\t\tmessage.Text = data.question\n\t\tfor i, b in ipairs(choices) do\n\t\t\tb.Text = tostring(i)..\".  \"..tostring(data.answers[i])\n\t\t\tb.Visible = true\n\t\tend\n\telseif action == \"NameEntry\" or action == \"NameError\" then\n\t\tphase = \"NameEntry\"\n\t\tmessage.Text = action == \"NameError\" and data.text or \"Choose your custom in-game slayer name.\"\n\t\tnameInput.Visible = true\n\t\tconfirm.Visible = true\n\telseif action == \"Story\" then\n\t\tphase = \"Story\"\n\t\tmessage.Text = data.text\n\t\tnextButton.Text = data.button or \"Continue\"\n\t\tstoryAction = data.button == \"Accept sword & quest\" and \"Accept\" or \"Continue\"\n\t\tnextButton.Visible = true\n\tend\nend)\nUserInputService.InputBegan:Connect(function(input, processed)\n\tif processed or phase ~= \"Question\" or UserInputService:GetFocusedTextBox() then return end\n\tlocal keys = {[Enum.KeyCode.One]=1, [Enum.KeyCode.Two]=2, [Enum.KeyCode.Three]=3}\n\tif keys[input.KeyCode] then choose(keys[input.KeyCode]) end\nend)\n",
+      "class": "LocalScript"
+    },
+    {
+      "properties": {
+        "Enabled": true,
+        "Archivable": true,
+        "Name": "SwordSwing"
+      },
+      "path": "StarterPlayer/StarterPlayerScripts/GameClient/SwordSwing",
