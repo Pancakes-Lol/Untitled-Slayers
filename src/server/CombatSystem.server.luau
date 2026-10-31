@@ -1,6 +1,6 @@
 -- Shared sword combat + Dawnreach enemy spawner.
 -- Uses the developer sword at ReplicatedStorage.Assets.Swords.Sword.
--- Enemy templates are Workspace.AshenPup and Workspace.WolfScout.
+-- Enemy tuning lives at ReplicatedStorage.Assets.Configs.EnemyConfig.
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local ServerStorage = game:GetService("ServerStorage")
@@ -8,7 +8,9 @@ local KeyframeSequenceProvider = game:GetService("KeyframeSequenceProvider")
 
 local assets = ReplicatedStorage:WaitForChild("Assets")
 local swordsFolder = assets:WaitForChild("Swords")
+local configsFolder = assets:WaitForChild("Configs")
 local swordTemplate = swordsFolder:WaitForChild("Sword")
+local EnemyConfig = require(configsFolder:WaitForChild("EnemyConfig"))
 local spawnRoot = workspace:WaitForChild("EnemieSpawnPoints"):WaitForChild("Dawnreach")
 local animSaves = workspace:WaitForChild("TemplateR6"):WaitForChild("AnimSaves")
 
@@ -20,22 +22,44 @@ local enemyFolder = workspace:FindFirstChild("LiveEnemies") or Instance.new("Fol
 enemyFolder.Name = "LiveEnemies"
 enemyFolder.Parent = workspace
 
-local LEASH_DISTANCE = 10
-local AGGRO_DISTANCE = 16
-local ATTACK_DISTANCE = 4.5
-local NPC_ATTACK_COOLDOWN = 1.15
 local PLAYER_ATTACK_COOLDOWN = 0.42
 local PLAYER_DAMAGE = 20
-local RESPAWN_DELAY = 5
-
-local enemyConfigs = {
-	AshenPup = {damage = 8, walkSpeed = 10},
-	WolfScout = {damage = 11, walkSpeed = 11},
-}
 
 local templateFolder = ServerStorage:FindFirstChild("EnemyTemplates") or Instance.new("Folder")
 templateFolder.Name = "EnemyTemplates"
 templateFolder.Parent = ServerStorage
+
+local function xpNeededForLevel(level)
+	return 100 + math.max(0, level - 1) * 50
+end
+
+local function awardPlayer(player, xpAmount, coinAmount)
+	local stats = player and player:FindFirstChild("leaderstats")
+	if not stats then return end
+	local level = stats:FindFirstChild("Level")
+	local xp = stats:FindFirstChild("XP")
+	local xpToNext = stats:FindFirstChild("XPToNextLevel")
+	local coins = stats:FindFirstChild("Coins")
+	if not level or not xp or not xpToNext or not coins then return end
+
+	coins.Value += coinAmount
+	xp.Value += xpAmount
+
+	while xp.Value >= xpNeededForLevel(level.Value) do
+		local needed = xpNeededForLevel(level.Value)
+		xp.Value -= needed
+		level.Value += 1
+	end
+	xpToNext.Value = xpNeededForLevel(level.Value)
+end
+
+local function randomReward(range, fallback)
+	if type(range) ~= "table" then return fallback or 0 end
+	local minValue = tonumber(range.Min) or fallback or 0
+	local maxValue = tonumber(range.Max) or minValue
+	if maxValue < minValue then minValue, maxValue = maxValue, minValue end
+	return math.random(math.floor(minValue), math.floor(maxValue))
+end
 
 local function takeTemplate(name)
 	local stored = templateFolder:FindFirstChild(name)
@@ -50,10 +74,10 @@ local function takeTemplate(name)
 	return model
 end
 
-local templates = {
-	AshenPup = takeTemplate("AshenPup"),
-	WolfScout = takeTemplate("WolfScout"),
-}
+local templates = {}
+for enemyName, config in pairs(EnemyConfig) do
+	templates[enemyName] = takeTemplate(config.ModelName or enemyName)
+end
 
 local function cloneDevSword(displayName)
 	local tool = swordTemplate:Clone()
@@ -64,8 +88,6 @@ local function cloneDevSword(displayName)
 	return tool
 end
 
--- Tetsu's older script may create the temporary block-built sword. Replace it
--- immediately with the developer's real sword while keeping the quest name.
 local function replaceOldSword(container)
 	if not container then return end
 	local old = container:FindFirstChild("Novice Slayer Sword")
@@ -98,14 +120,12 @@ Players.PlayerAdded:Connect(watchPlayer)
 local animationCache = {}
 local function resolveAnimation(name)
 	if animationCache[name] then return animationCache[name] end
-	-- Prefer an uploaded Animation object if the dev adds one anywhere in ReplicatedStorage.
 	for _, obj in ipairs(ReplicatedStorage:GetDescendants()) do
 		if obj:IsA("Animation") and obj.Name == name and obj.AnimationId ~= "" then
 			animationCache[name] = obj
 			return obj
 		end
 	end
-	-- Studio preview fallback for the KeyframeSequences currently in TemplateR6/AnimSaves.
 	local sequence = animSaves:FindFirstChild(name)
 	if sequence and sequence:IsA("KeyframeSequence") then
 		local ok, id = pcall(function()
@@ -139,7 +159,7 @@ local function equipNpcSword(model, humanoid)
 	pcall(function() humanoid:EquipTool(tool) end)
 end
 
-local function nearestPlayer(position)
+local function nearestPlayer(position, aggroDistance)
 	local bestPlayer, bestRoot, bestHum, bestDistance
 	for _, player in ipairs(Players:GetPlayers()) do
 		local character = player.Character
@@ -147,7 +167,7 @@ local function nearestPlayer(position)
 		local hum = character and character:FindFirstChildOfClass("Humanoid")
 		if root and hum and hum.Health > 0 then
 			local distance = (root.Position - position).Magnitude
-			if distance <= AGGRO_DISTANCE and (not bestDistance or distance < bestDistance) then
+			if distance <= aggroDistance and (not bestDistance or distance < bestDistance) then
 				bestPlayer, bestRoot, bestHum, bestDistance = player, root, hum, distance
 			end
 		end
@@ -186,21 +206,21 @@ local function playDifferentAttack(tracks, lastIndex)
 	end
 	if #choices == 0 then return lastIndex end
 	local index = choices[math.random(1, #choices)]
-	local track = tracks.attacks[index]
-	if track then track:Play(0.08, 1, 1) end
+	tracks.attacks[index]:Play(0.08, 1, 1)
 	return index
 end
 
 local function spawnEnemy(enemyName, point)
+	local config = EnemyConfig[enemyName]
 	local template = templates[enemyName]
-	local config = enemyConfigs[enemyName]
-	if not template or not config or not point:IsA("BasePart") then return end
+	if not config or not template or not point:IsA("BasePart") then return end
 
 	local model = template:Clone()
-	model.Name = enemyName
+	model.Name = config.ModelName or enemyName
 	model:SetAttribute("EnemyNPC", true)
 	model:SetAttribute("SpawnEnemyType", enemyName)
 	model.Parent = enemyFolder
+
 	local humanoid = model:FindFirstChildOfClass("Humanoid")
 	local root = model:FindFirstChild("HumanoidRootPart") or model.PrimaryPart
 	if not humanoid or not root or not root:IsA("BasePart") then
@@ -208,6 +228,7 @@ local function spawnEnemy(enemyName, point)
 		model:Destroy()
 		return
 	end
+
 	model.PrimaryPart = root
 	model:PivotTo(point.CFrame + Vector3.new(0, 3, 0))
 	for _, part in ipairs(model:GetDescendants()) do
@@ -216,8 +237,13 @@ local function spawnEnemy(enemyName, point)
 			pcall(function() part:SetNetworkOwner(nil) end)
 		end
 	end
-	humanoid.WalkSpeed = config.walkSpeed
-	if humanoid.Health <= 0 then humanoid.Health = humanoid.MaxHealth end
+
+	humanoid.MaxHealth = config.Health
+	humanoid.Health = config.Health
+	humanoid.WalkSpeed = config.WalkSpeed
+	humanoid.HealthDisplayType = Enum.HumanoidHealthDisplayType.AlwaysOn
+	humanoid.DisplayDistanceType = Enum.HumanoidDisplayDistanceType.Viewer
+
 	local home = root.Position
 	local tracks = setupNpcAnimations(humanoid)
 	equipNpcSword(model, humanoid)
@@ -228,7 +254,16 @@ local function spawnEnemy(enemyName, point)
 	local lastAttackIndex = 0
 	humanoid.Died:Connect(function()
 		alive = false
-		task.delay(RESPAWN_DELAY, function()
+		local userId = humanoid:GetAttribute("LastHitUserId")
+		local killer = userId and Players:GetPlayerByUserId(userId)
+		if killer then
+			local xpReward = randomReward(config.XPReward, 0)
+			local coinsConfig = config.PossibleRewards and config.PossibleRewards.Coins
+			local coinReward = randomReward(coinsConfig, 0)
+			awardPlayer(killer, xpReward, coinReward)
+		end
+
+		task.delay(config.RespawnTime, function()
 			if point.Parent then spawnEnemy(enemyName, point) end
 		end)
 		task.delay(2, function()
@@ -238,34 +273,36 @@ local function spawnEnemy(enemyName, point)
 
 	task.spawn(function()
 		while alive and model.Parent and humanoid.Health > 0 do
+			local leashDistance = config.LeashDistance
+			local attackRange = config.AttackRange
 			local homeDistance = (root.Position - home).Magnitude
-			local _, targetRoot, targetHum, targetDistance = nearestPlayer(root.Position)
+			local _, targetRoot, targetHum, targetDistance = nearestPlayer(root.Position, config.AggroRange)
 
-			if homeDistance > LEASH_DISTANCE + 0.75 then
+			if homeDistance > leashDistance + 0.75 then
 				humanoid:MoveTo(home)
 				setMoving(tracks, true)
 			elseif targetRoot and targetHum and targetDistance then
 				local targetFromHome = targetRoot.Position - home
-				if targetFromHome.Magnitude > LEASH_DISTANCE + ATTACK_DISTANCE then
+				if targetFromHome.Magnitude > leashDistance + attackRange then
 					humanoid:MoveTo(home)
 					setMoving(tracks, homeDistance > 1.5)
-				elseif targetDistance <= ATTACK_DISTANCE then
+				elseif targetDistance <= attackRange then
 					humanoid:MoveTo(root.Position)
 					setMoving(tracks, false)
-					if os.clock() - lastAttackTime >= NPC_ATTACK_COOLDOWN then
+					if os.clock() - lastAttackTime >= config.AttackCooldown then
 						lastAttackTime = os.clock()
 						lastAttackIndex = playDifferentAttack(tracks, lastAttackIndex)
 						task.delay(0.22, function()
-							if alive and targetHum.Parent and targetHum.Health > 0 and (targetRoot.Position - root.Position).Magnitude <= ATTACK_DISTANCE + 1 then
-								targetHum:TakeDamage(config.damage)
+							if alive and targetHum.Parent and targetHum.Health > 0 and (targetRoot.Position - root.Position).Magnitude <= attackRange + 1 then
+								targetHum:TakeDamage(config.AttackDamage)
 							end
 						end)
 					end
 				else
 					local desired = targetRoot.Position
 					local fromHome = desired - home
-					if fromHome.Magnitude > LEASH_DISTANCE then
-						desired = home + fromHome.Unit * LEASH_DISTANCE
+					if fromHome.Magnitude > leashDistance then
+						desired = home + fromHome.Unit * leashDistance
 					end
 					humanoid:MoveTo(desired)
 					setMoving(tracks, true)
@@ -283,8 +320,8 @@ local function spawnEnemy(enemyName, point)
 	end)
 end
 
-for enemyName in pairs(enemyConfigs) do
-	local folder = spawnRoot:FindFirstChild(enemyName)
+for enemyName, config in pairs(EnemyConfig) do
+	local folder = spawnRoot:FindFirstChild(config.SpawnFolder or enemyName)
 	if folder then
 		for _, point in ipairs(folder:GetChildren()) do
 			if point:IsA("BasePart") then spawnEnemy(enemyName, point) end
@@ -299,6 +336,7 @@ combatRemote.OnServerEvent:Connect(function(player)
 	local now = os.clock()
 	if now - (lastPlayerAttack[player] or 0) < PLAYER_ATTACK_COOLDOWN then return end
 	lastPlayerAttack[player] = now
+
 	local character = player.Character
 	local root = character and character:FindFirstChild("HumanoidRootPart")
 	local hum = character and character:FindFirstChildOfClass("Humanoid")
@@ -306,20 +344,6 @@ combatRemote.OnServerEvent:Connect(function(player)
 	if not root or not hum or hum.Health <= 0 or not tool or not tool:GetAttribute("SlayerSword") then return end
 
 	local bestHum, bestDistance
-	for _, model in ipairs(workspace:GetChildren()) do
-		if model:IsA("Model") and model ~= character then
-			local enemyHum = model:FindFirstChildOfClass("Humanoid")
-			local enemyRoot = model:FindFirstChild("HumanoidRootPart") or model.PrimaryPart
-			if enemyHum and enemyRoot and enemyHum.Health > 0 and (model:GetAttribute("EnemyNPC") or model.Name == "Slayer Training Enemy") then
-				local offset = enemyRoot.Position - root.Position
-				local distance = offset.Magnitude
-				if distance <= 7.5 and distance > 0.01 and root.CFrame.LookVector:Dot(offset.Unit) > -0.15 and (not bestDistance or distance < bestDistance) then
-					bestHum, bestDistance = enemyHum, distance
-				end
-			end
-		end
-	end
-	-- Live enemies live in a folder, so scan them too.
 	for _, model in ipairs(enemyFolder:GetChildren()) do
 		local enemyHum = model:FindFirstChildOfClass("Humanoid")
 		local enemyRoot = model:FindFirstChild("HumanoidRootPart") or model.PrimaryPart
@@ -331,6 +355,20 @@ combatRemote.OnServerEvent:Connect(function(player)
 			end
 		end
 	end
+
+	local dummy = workspace:FindFirstChild("Slayer Training Enemy")
+	if dummy and dummy:IsA("Model") then
+		local enemyHum = dummy:FindFirstChildOfClass("Humanoid")
+		local enemyRoot = dummy:FindFirstChild("HumanoidRootPart") or dummy.PrimaryPart
+		if enemyHum and enemyRoot and enemyHum.Health > 0 then
+			local offset = enemyRoot.Position - root.Position
+			local distance = offset.Magnitude
+			if distance <= 7.5 and distance > 0.01 and root.CFrame.LookVector:Dot(offset.Unit) > -0.15 and (not bestDistance or distance < bestDistance) then
+				bestHum, bestDistance = enemyHum, distance
+			end
+		end
+	end
+
 	if bestHum then
 		bestHum:SetAttribute("LastHitUserId", player.UserId)
 		bestHum:TakeDamage(PLAYER_DAMAGE)
