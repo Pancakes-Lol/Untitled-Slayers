@@ -6,7 +6,6 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local ServerStorage = game:GetService("ServerStorage")
 local KeyframeSequenceProvider = game:GetService("KeyframeSequenceProvider")
 
--- Create the remote immediately so the client never hangs, even if config loading has a problem.
 local combatRemote = ReplicatedStorage:FindFirstChild("SwordCombat") or Instance.new("RemoteEvent")
 combatRemote.Name = "SwordCombat"
 combatRemote.Parent = ReplicatedStorage
@@ -58,9 +57,8 @@ local function awardPlayer(player, xpAmount, coinAmount)
 	if not stats then return end
 	local level = stats:FindFirstChild("Level")
 	local xp = stats:FindFirstChild("XP")
-	local xpToNext = stats:FindFirstChild("XPToNextLevel")
 	local coins = stats:FindFirstChild("Coins")
-	if not level or not xp or not xpToNext or not coins then return end
+	if not level or not xp or not coins then return end
 
 	coins.Value += coinAmount
 	xp.Value += xpAmount
@@ -69,7 +67,6 @@ local function awardPlayer(player, xpAmount, coinAmount)
 		xp.Value -= needed
 		level.Value += 1
 	end
-	xpToNext.Value = xpNeededForLevel(level.Value)
 end
 
 local function randomReward(range, fallback)
@@ -140,14 +137,12 @@ Players.PlayerAdded:Connect(watchPlayer)
 local animationCache = {}
 local function resolveAnimation(name)
 	if animationCache[name] then return animationCache[name] end
-
 	for _, obj in ipairs(ReplicatedStorage:GetDescendants()) do
 		if obj:IsA("Animation") and obj.Name == name and obj.AnimationId ~= "" then
 			animationCache[name] = obj
 			return obj
 		end
 	end
-
 	local sequence = animSaves:FindFirstChild(name)
 	if sequence and sequence:IsA("KeyframeSequence") then
 		local ok, id = pcall(function()
@@ -161,7 +156,6 @@ local function resolveAnimation(name)
 			return anim
 		end
 	end
-
 	warn("[CombatSystem] Animation not available: " .. name)
 	return nil
 end
