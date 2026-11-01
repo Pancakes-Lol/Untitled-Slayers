@@ -51,14 +51,13 @@ local function loadTrack(animator, name, priority, looped)
 end
 
 -- Placement only. The VFX itself comes directly from Workspace > Slash Particle.
--- Change these values here only if you want to move the whole effect in relation
--- to the player. All visual tuning should be done on the Studio asset itself.
 local SLASH_DISTANCE = 3.1
 local SLASH_HEIGHT = 0.65
 local SLASH_SIDE_OFFSET = 0
 local SLASH_DIAGONAL_ANGLE = -42
 local SLASH_LIFETIME = 1.5
 local SLASH_DELAY = 0.09
+local SLASH_EMIT_WINDOW = 0.12
 
 local function emitSlash(tool)
 	if not slashTemplate or not slashTemplate:IsA("BasePart") then return end
@@ -67,7 +66,8 @@ local function emitSlash(tool)
 	local root = character and character:FindFirstChild("HumanoidRootPart")
 	if not root or tool.Parent ~= character then return end
 
-	-- Clone the real Studio asset. We do not rebuild or replace its VFX.
+	-- Clone the exact Studio asset. Texture, color, size, transparency, lifetime,
+	-- orientation, speed, drag, light emission, etc. all remain untouched.
 	local slash = slashTemplate:Clone()
 	slash.Name = "Player Slash Particle"
 	slash.Anchored = true
@@ -76,20 +76,32 @@ local function emitSlash(tool)
 	slash.CanQuery = false
 	slash.CastShadow = false
 	slash.Transparency = 1
+	slash.LocalTransparencyModifier = 0
 
-	-- Lock the asset in front of the direction the player is facing at attack time.
-	-- The diagonal is a world-space roll, so the camera does not control it.
 	slash.CFrame = root.CFrame
 		* CFrame.new(SLASH_SIDE_OFFSET, SLASH_HEIGHT, -SLASH_DISTANCE)
 		* CFrame.Angles(0, 0, math.rad(SLASH_DIAGONAL_ANGLE))
 	slash.Parent = workspace
 
-	-- Preserve every emitter property from Studio. We only convert it into a burst.
+	-- Play each emitter as authored. If it is Enabled in Studio, let it run briefly
+	-- so the complete VFX appears. If it is disabled, use its Rate to create an
+	-- equivalent burst instead of forcing a single tiny particle.
 	for _, obj in ipairs(slash:GetDescendants()) do
 		if obj:IsA("ParticleEmitter") then
-			obj.Enabled = false
-			obj:Emit(obj:GetAttribute("EmitCount") or 1)
-	end
+			if obj.Enabled then
+				task.delay(SLASH_EMIT_WINDOW, function()
+					if obj.Parent then
+						obj.Enabled = false
+					end
+				end)
+			else
+				local emitCount = obj:GetAttribute("EmitCount")
+				if typeof(emitCount) ~= "number" then
+					emitCount = math.max(1, math.round(math.max(obj.Rate, 1) * SLASH_EMIT_WINDOW))
+				end
+				obj:Emit(emitCount)
+			end
+		end
 	end
 
 	Debris:AddItem(slash, SLASH_LIFETIME)
