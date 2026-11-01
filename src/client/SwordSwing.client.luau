@@ -3,10 +3,16 @@
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local KeyframeSequenceProvider = game:GetService("KeyframeSequenceProvider")
+local Debris = game:GetService("Debris")
 
 local player = Players.LocalPlayer
 local combatRemote = ReplicatedStorage:WaitForChild("SwordCombat")
 local animSaves = workspace:WaitForChild("TemplateR6"):WaitForChild("AnimSaves")
+local slashTemplate = workspace:WaitForChild("Slash Particle", 30)
+
+if slashTemplate and slashTemplate:IsA("BasePart") then
+	slashTemplate.LocalTransparencyModifier = 1
+end
 
 local animationCache = {}
 local function resolveAnimation(name)
@@ -42,6 +48,37 @@ local function loadTrack(animator, name, priority, looped)
 	track.Priority = priority
 	track.Looped = looped
 	return track
+end
+
+local function emitSlash(tool)
+	if not slashTemplate or not slashTemplate:IsA("BasePart") then return end
+	local handle = tool:FindFirstChild("Handle")
+	if not handle or not handle:IsA("BasePart") then return end
+
+	local slash = slashTemplate:Clone()
+	slash.Name = "Player Slash Particle"
+	slash.Anchored = false
+	slash.CanCollide = false
+	slash.CanTouch = false
+	slash.CanQuery = false
+	slash.Massless = true
+	slash.Transparency = 1
+	slash.CFrame = handle.CFrame
+	slash.Parent = workspace
+
+	local weld = Instance.new("WeldConstraint")
+	weld.Part0 = handle
+	weld.Part1 = slash
+	weld.Parent = slash
+
+	for _, obj in ipairs(slash:GetDescendants()) do
+		if obj:IsA("ParticleEmitter") then
+			obj.Enabled = false
+			obj:Emit(obj:GetAttribute("EmitCount") or 1)
+		end
+	end
+
+	Debris:AddItem(slash, 1.5)
 end
 
 local function bindSword(tool)
@@ -162,6 +199,7 @@ local function bindSword(tool)
 		stopTrack(walkTrack, 0.08)
 		local track = attackTracks[index]
 		if track then track:Play(0.06, 1, 1) end
+		emitSlash(tool)
 		combatRemote:FireServer(index)
 		local duration = 0.48
 		if track and track.Length > 0 then duration = math.clamp(track.Length * 0.75, 0.32, 0.8) end
