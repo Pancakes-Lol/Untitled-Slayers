@@ -1,217 +1,4 @@
-        "CFrame": "-0.311419606, 0.0594792962, 0.0138636827, 0.986396194, -0.148796305, 0.0698734149, 0.144778743, 0.987676919, 0.0594428182, -0.0778572634, -0.0485179536, 0.995783329",
-        "Archivable": true,
-        "Name": "Left Leg"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Head",
-      "properties": {
-        "CFrame": "8.04138836e-08, 1.3038516e-08, 0.0166620612, 0.9999547, -0.00949387625, -0.000759615854, 0.00945304893, 0.999052584, -0.0424812585, 0.00116218685, 0.0424721837, 0.99909699",
-        "Archivable": true,
-        "Name": "Head"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe",
-      "properties": {
-        "Name": "Keyframe",
-        "Archivable": true
-      },
-      "class": "Keyframe"
-    },
-    {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "HumanoidRootPart"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso",
-      "properties": {
-        "CFrame": "-0.0344753265, -0.00808867905, -0.0587923564, 1, 2.38418579e-07, -8.74227766e-08, -2.40111063e-07, 0.999801993, -0.019899847, 8.2660975e-08, 0.019899847, 0.999801993",
-        "Archivable": true,
-        "Name": "Torso"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Left Arm",
-      "properties": {
-        "CFrame": "0.0824471042, -0.0947244763, -0.0387533307, 0.999617934, -0.00410870789, 0.0273351148, 0.00294073764, 0.99908644, 0.0426337123, -0.0274853315, -0.0425370969, 0.998716772",
-        "Archivable": true,
-        "Name": "Left Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Right Leg",
-      "properties": {
-        "CFrame": "0.319002271, 0.0626587868, 0.0110104382, 0.986677527, 0.151008487, -0.0605303869, -0.14703007, 0.98695761, 0.0655502975, 0.0696396306, -0.0557772443, 0.996011674",
-        "Archivable": true,
-        "Name": "Right Leg"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Head",
-      "properties": {
-        "CFrame": "8.08795448e-08, 1.3038516e-08, 0.0166625082, 0.9999547, -0.00949387718, -0.000759615388, 0.0094506368, 0.998963833, -0.044521369, 0.00118148688, 0.0445121787, 0.999008119",
-        "Archivable": true,
-        "Name": "Head"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Right Arm",
-      "properties": {
-        "CFrame": "-0.0815165117, -0.078689009, -0.0412102342, 0.996754885, 0.030988384, -0.0742931068, -0.027739672, 0.998630106, 0.0443684906, 0.0755662248, -0.0421636887, 0.99624902",
-        "Archivable": true,
-        "Name": "Right Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Left Leg",
-      "properties": {
-        "CFrame": "-0.316318512, 0.0600892305, 0.0141593516, 0.985903621, -0.152038679, 0.0698458627, 0.148018911, 0.987190545, 0.0595419444, -0.0780038908, -0.0483641177, 0.995779216",
-        "Archivable": true,
-        "Name": "Left Leg"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe",
-      "properties": {
-        "Name": "Keyframe",
-        "Archivable": true
-      },
-      "class": "Keyframe"
-    },
-    {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "HumanoidRootPart"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso",
-      "properties": {
-        "CFrame": "-0.0344753265, -0.00812047441, -0.0580115318, 1, 2.38418579e-07, -8.74227766e-08, -2.40130703e-07, 0.999797225, -0.0201375447, 8.26038828e-08, 0.0201375447, 0.999797225",
-        "Archivable": true,
-        "Name": "Torso"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Head",
-      "properties": {
-        "CFrame": "7.18573574e-08, 1.67638063e-08, 0.0166621804, 0.9999547, -0.00949387718, -0.000759615737, 0.00945187081, 0.999008179, -0.0435137898, 0.00117194757, 0.043504674, 0.999052644",
-        "Archivable": true,
-        "Name": "Head"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Left Leg",
-      "properties": {
-        "CFrame": "-0.313924849, 0.0597954392, 0.0140150487, 0.986148298, -0.150436848, 0.0698599592, 0.146418244, 0.987432241, 0.0594921373, -0.0779318288, -0.0484392941, 0.995781243",
-        "Archivable": true,
-        "Name": "Left Leg"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Right Leg",
-      "properties": {
-        "CFrame": "0.316592693, 0.0623652935, 0.0108897388, 0.986921668, 0.149398714, -0.0605456457, -0.145422414, 0.987199128, 0.0655013993, 0.0695564896, -0.0558400825, 0.996013939",
-        "Archivable": true,
-        "Name": "Right Leg"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Right Arm",
-      "properties": {
-        "CFrame": "-0.0815319866, -0.0781544745, -0.040941298, 0.996690214, 0.0306692775, -0.0752869546, -0.0273809899, 0.998641789, 0.044327233, 0.0765441731, -0.0421190746, 0.996176183",
-        "Archivable": true,
-        "Name": "Right Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Left Arm",
-      "properties": {
-        "CFrame": "0.0824591219, -0.0935284495, -0.0382836461, 0.99962157, -0.0044805794, 0.0271418393, 0.0033198772, 0.999084055, 0.0426614843, -0.0273081474, -0.0425553657, 0.998720944",
-        "Archivable": true,
-        "Name": "Left Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe",
-      "properties": {
-        "Name": "Keyframe",
-        "Archivable": true
-      },
-      "class": "Keyframe"
-    },
-    {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "HumanoidRootPart"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso",
-      "properties": {
-        "CFrame": "-0.0344753265, -0.00805428997, -0.0595388375, 1, 2.38418579e-07, -8.74227766e-08, -2.40090287e-07, 0.999806941, -0.0196484886, 8.27213356e-08, 0.0196484886, 0.999806941",
-        "Archivable": true,
-        "Name": "Torso"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Head",
-      "properties": {
-        "CFrame": "6.42612576e-08, -9.31322575e-09, 0.0166618526, 0.9999547, -0.00949387532, -0.000759615272, 0.00944950897, 0.998919666, -0.0454999246, 0.00119072001, 0.0454906859, 0.998964131",
-        "Archivable": true,
-        "Name": "Head"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Left Leg",
-      "properties": {
-        "CFrame": "-0.318592906, 0.0603571534, 0.0142962039, 0.985663295, -0.153595895, 0.069830671, 0.149574995, 0.98695296, 0.0595920533, -0.0780727342, -0.0482927598, 0.995777309",
+        "CFrame": "-0.253911793, 0.0463294387, 0.0103875697, 0.988079607, -0.137587711, 0.069053188, 0.133533299, 0.989210248, 0.0602665991, -0.0766000897, -0.0503272973, 0.995791018",
         "Archivable": true,
         "Name": "Left Leg"
       },
@@ -220,7 +7,7 @@
     {
       "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Right Arm",
       "properties": {
-        "CFrame": "-0.0815020353, -0.0792126656, -0.0414732993, 0.996814847, 0.0312706679, -0.0733641535, -0.0280590858, 0.998619437, 0.0444055609, 0.0746514574, -0.0422056802, 0.996316195",
+        "CFrame": "-0.0821467564, -0.0753200948, -0.0394800603, 0.993417263, 0.00559764868, -0.11441578, -0.000878247316, 0.99914819, 0.0412567593, 0.114549272, -0.0408846848, 0.992575884",
         "Archivable": true,
         "Name": "Right Arm"
       },
@@ -229,176 +16,7 @@
     {
       "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Right Leg",
       "properties": {
-        "CFrame": "0.321291596, 0.0629261732, 0.0111250579, 0.986437798, 0.152573317, -0.0605141781, -0.14859283, 0.986720264, 0.0655992553, 0.0697193444, -0.055717662, 0.996009529",
-        "Archivable": true,
-        "Name": "Right Leg"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Left Arm",
-      "properties": {
-        "CFrame": "0.0824349001, -0.0958844721, -0.0392180383, 0.99961096, -0.00373931555, 0.0276404731, 0.00255935709, 0.999088764, 0.0426042639, -0.0277746245, -0.0425170101, 0.998709619",
-        "Archivable": true,
-        "Name": "Left Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe",
-      "properties": {
-        "Name": "Keyframe",
-        "Archivable": true
-      },
-      "class": "Keyframe"
-    },
-    {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "HumanoidRootPart"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso",
-      "properties": {
-        "CFrame": "-0.0344753265, -0.00801739842, -0.0602483787, 1, 2.38418579e-07, -8.74227766e-08, -2.40068402e-07, 0.999812126, -0.019384183, 8.27848012e-08, 0.019384183, 0.999812126",
-        "Archivable": true,
-        "Name": "Torso"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Left Arm",
-      "properties": {
-        "CFrame": "0.0824225992, -0.097001791, -0.0396763384, 0.999600589, -0.00337379193, 0.0280584749, 0.00217710878, 0.99909097, 0.0425731465, -0.0281766187, -0.0424952842, 0.998699307",
-        "Archivable": true,
-        "Name": "Left Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Left Leg",
-      "properties": {
-        "CFrame": "-0.320738256, 0.0605992079, 0.0144255161, 0.985428393, -0.155102998, 0.0698149279, 0.151080891, 0.986720502, 0.0596421994, -0.0781385452, -0.0482253842, 0.995775402",
-        "Archivable": true,
-        "Name": "Left Leg"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Right Arm",
-      "properties": {
-        "CFrame": "-0.0814886764, -0.0797223151, -0.0417295396, 0.99687016, 0.0315145515, -0.0725046024, -0.0283374581, 0.998610139, 0.0444384106, 0.0738042817, -0.0422448665, 0.996377587",
-        "Archivable": true,
-        "Name": "Right Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Right Leg",
-      "properties": {
-        "CFrame": "0.323451757, 0.0631676912, 0.0112334788, 0.986203432, 0.154087573, -0.0604968704, -0.150105059, 0.986488223, 0.0656479523, 0.0697950423, -0.0556613728, 0.996007323",
-        "Archivable": true,
-        "Name": "Right Leg"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Head",
-      "properties": {
-        "CFrame": "7.72997737e-08, 1.3038516e-08, 0.0166619718, 0.9999547, -0.00949387532, -0.000759614923, 0.00944838487, 0.998876154, -0.0464452431, 0.00119968713, 0.0464360006, 0.998920619",
-        "Archivable": true,
-        "Name": "Head"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe",
-      "properties": {
-        "Name": "Keyframe",
-        "Archivable": true
-      },
-      "class": "Keyframe"
-    },
-    {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "HumanoidRootPart"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso",
-      "properties": {
-        "CFrame": "-0.0344753265, -0.00746793533, -0.0646810532, 1, 2.38418608e-07, -8.74227837e-08, -2.39772476e-07, 0.99987483, -0.0158284139, 8.36380352e-08, 0.0158284139, 0.99987483",
-        "Archivable": true,
-        "Name": "Torso"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Left Arm",
-      "properties": {
-        "CFrame": "0.082291767, -0.105142504, -0.0437869132, 0.999190092, -3.22311439e-06, 0.0402386263, -0.00169304595, 0.999111056, 0.0421225168, -0.0402029976, -0.0421565622, 0.998301864",
-        "Archivable": true,
-        "Name": "Left Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Head",
-      "properties": {
-        "CFrame": "6.66477717e-08, 0, 0.0166621804, 0.999954641, -0.00949384272, -0.000759635761, 0.00943970867, 0.998522341, -0.0535166934, 0.0012665455, 0.0535070822, 0.998566747",
-        "Archivable": true,
-        "Name": "Head"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Right Arm",
-      "properties": {
-        "CFrame": "-0.0814325586, -0.0838196874, -0.0437857509, 0.997136652, 0.0312167071, -0.0688777119, -0.0281903408, 0.998612404, 0.0444812663, 0.0701706856, -0.0424122699, 0.996633053",
-        "Archivable": true,
-        "Name": "Right Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Left Leg",
-      "properties": {
-        "CFrame": "-0.333999872, 0.061236918, 0.0152282119, 0.983483136, -0.167083129, 0.0696003735, 0.163047433, 0.984783173, 0.0601467304, -0.0785908103, -0.0478051417, 0.995760143",
-        "Archivable": true,
-        "Name": "Left Leg"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Right Leg",
-      "properties": {
-        "CFrame": "0.336794019, 0.0637931228, 0.0119092762, 0.98426491, 0.166105255, -0.0602636859, -0.162106246, 0.98455584, 0.0661175102, 0.0703154579, -0.0553080253, 0.995990336",
+        "CFrame": "0.256108224, 0.0488404632, 0.00786688924, 0.988872409, 0.136280835, -0.0596575402, -0.132315174, 0.989005327, 0.0660388321, 0.0680015162, -0.057410419, 0.996032059",
         "Archivable": true,
         "Name": "Right Leg"
       },
@@ -433,7 +51,7 @@
     {
       "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso",
       "properties": {
-        "CFrame": "-0.0344753265, -0.00752734439, -0.0645925924, 1, 2.38418579e-07, -8.74227766e-08, -2.39802517e-07, 0.999868989, -0.0161875729, 8.35519032e-08, 0.0161875729, 0.999868989",
+        "CFrame": "-0.0344753265, -0.00572083844, -0.0398807563, 1, 2.38418579e-07, -8.74227766e-08, -2.38995398e-07, 0.999977827, -0.0066585606, 8.58333138e-08, 0.0066585606, 0.999977827",
         "Archivable": true,
         "Name": "Torso"
       },
@@ -442,45 +60,45 @@
     {
       "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Head",
       "properties": {
-        "CFrame": "9.22009349e-08, -1.67638063e-08, 0.0166619122, 0.9999547, -0.00949387532, -0.000759613351, 0.00943999365, 0.998539329, -0.0531993918, 0.00126356725, 0.0531897731, 0.998583615",
+        "CFrame": "8.14325176e-08, -2.42143869e-08, 0.0166619122, 0.9999547, -0.00949387811, -0.000759618531, 0.00946503971, 0.99945128, -0.031743262, 0.00106055115, 0.0317345932, 0.999495804",
         "Archivable": true,
         "Name": "Head"
       },
       "class": "Pose"
     },
     {
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Left Arm",
+      "properties": {
+        "CFrame": "0.0822028294, -0.0773060024, -0.0397940278, 0.993018806, -0.0022213643, 0.117935985, -0.00260798377, 0.99916476, 0.0407791063, -0.117928088, -0.0408021547, 0.992183566",
+        "Archivable": true,
+        "Name": "Left Arm"
+      },
+      "class": "Pose"
+    },
+    {
       "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Left Leg",
       "properties": {
-        "CFrame": "-0.333748698, 0.0613561273, 0.0152118504, 0.983588874, -0.166450575, 0.0696220547, 0.162416071, 0.984889925, 0.0601077974, -0.0785750747, -0.047813613, 0.995761037",
+        "CFrame": "-0.25080058, 0.0459727645, 0.01019454, 0.988310754, -0.135916293, 0.069054991, 0.131862104, 0.98943615, 0.0602376685, -0.0765128136, -0.0504278019, 0.995792568",
         "Archivable": true,
         "Name": "Left Leg"
       },
       "class": "Pose"
     },
     {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Right Leg",
-      "properties": {
-        "CFrame": "0.336541235, 0.0639140606, 0.0118949711, 0.984369993, 0.165472537, -0.0602874979, -0.161474407, 0.984661937, 0.0660832152, 0.0702978224, -0.0553154759, 0.99599117",
-        "Archivable": true,
-        "Name": "Right Leg"
-      },
-      "class": "Pose"
-    },
-    {
       "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Right Arm",
       "properties": {
-        "CFrame": "-0.0814295039, -0.0836000144, -0.0436757207, 0.997140944, 0.0314983279, -0.068685919, -0.0284789167, 0.998603165, 0.0445043854, 0.0699917823, -0.042421151, 0.996645212",
+        "CFrame": "-0.0821662843, -0.0748697817, -0.0392531455, 0.993276596, 0.00504618837, -0.115655452, -0.00028283766, 0.999152303, 0.0411650799, 0.115765117, -0.0408556871, 0.992436051",
         "Archivable": true,
         "Name": "Right Arm"
       },
       "class": "Pose"
     },
     {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Left Arm",
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Right Leg",
       "properties": {
-        "CFrame": "0.082302548, -0.104804993, -0.0435161293, 0.99925679, -0.000235059168, 0.038547419, -0.00139171572, 0.999109507, 0.0421709716, -0.0385230146, -0.0421934575, 0.998366535",
+        "CFrame": "0.252967089, 0.0484830141, 0.0077033639, 0.989103377, 0.134593591, -0.0596592091, -0.130629718, 0.989231527, 0.0660077333, 0.06790106, -0.0574952625, 0.996034026",
         "Archivable": true,
-        "Name": "Left Arm"
+        "Name": "Right Leg"
       },
       "class": "Pose"
     },
@@ -513,34 +131,43 @@
     {
       "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso",
       "properties": {
-        "CFrame": "-0.0344753265, -0.00734458212, -0.0646347925, 1, 2.38418579e-07, -8.74227766e-08, -2.39711312e-07, 0.999886036, -0.0150980828, 8.38131484e-08, 0.0150980828, 0.999886036",
+        "CFrame": "-0.0344753265, -0.00572675141, -0.0390915871, 1, 2.38418579e-07, -8.74227766e-08, -2.38999661e-07, 0.999977529, -0.00670801476, 8.58214975e-08, 0.00670801476, 0.999977529",
         "Archivable": true,
         "Name": "Torso"
       },
       "class": "Pose"
     },
     {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Head",
-      "properties": {
-        "CFrame": "7.71251507e-08, 0, 0.016662091, 0.9999547, -0.00949387532, -0.00075961306, 0.00943910889, 0.998501062, -0.0539129786, 0.0012702978, 0.0539033711, 0.998545349",
-        "Archivable": true,
-        "Name": "Head"
-      },
-      "class": "Pose"
-    },
-    {
       "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Left Leg",
       "properties": {
-        "CFrame": "-0.33384937, 0.0608836412, 0.0152218342, 0.983326852, -0.16801852, 0.0695561767, 0.163980559, 0.984623909, 0.0602181293, -0.0786044747, -0.047808256, 0.995758832",
+        "CFrame": "-0.247767463, 0.0456377268, 0.0100058317, 0.988538325, -0.134249493, 0.0690583661, 0.130195588, 0.989658654, 0.0602071024, -0.0764270201, -0.0505259074, 0.995794177",
         "Archivable": true,
         "Name": "Left Leg"
       },
       "class": "Pose"
     },
     {
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Head",
+      "properties": {
+        "CFrame": "8.69331416e-08, 0, 0.0166621804, 0.9999547, -0.00949387718, -0.00075961859, 0.00946598034, 0.999479473, -0.030842362, 0.00105203036, 0.0308337789, 0.999523997",
+        "Archivable": true,
+        "Name": "Head"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Left Arm",
+      "properties": {
+        "CFrame": "0.0822096318, -0.0762135386, -0.0394439101, 0.99292779, -0.00248722523, 0.118694082, -0.00237347581, 0.999164879, 0.0407930277, -0.118696406, -0.0407864191, 0.992092609",
+        "Archivable": true,
+        "Name": "Left Arm"
+      },
+      "class": "Pose"
+    },
+    {
       "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Right Leg",
       "properties": {
-        "CFrame": "0.336643994, 0.063436985, 0.0119055808, 0.98410964, 0.167039722, -0.0602155663, -0.163039327, 0.98439759, 0.0661788583, 0.0703306049, -0.0553097613, 0.995989263",
+        "CFrame": "0.249904186, 0.048148036, 0.00754338503, 0.98933053, 0.13291122, -0.0596626438, -0.128949136, 0.989454091, 0.0659755617, 0.0678023845, -0.0575781576, 0.996035993",
         "Archivable": true,
         "Name": "Right Leg"
       },
@@ -549,18 +176,9 @@
     {
       "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Right Arm",
       "properties": {
-        "CFrame": "-0.0814441741, -0.0841457546, -0.0439480543, 0.997107863, 0.0304861963, -0.0696179345, -0.0274317544, 0.998636365, 0.0444167331, 0.070877105, -0.0423786491, 0.996584415",
+        "CFrame": "-0.0821847767, -0.074421525, -0.0390276611, 0.993142009, 0.0045399419, -0.116826922, 0.000264875096, 0.999155819, 0.041079212, 0.116914794, -0.040828567, 0.992302418",
         "Archivable": true,
         "Name": "Right Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Left Arm",
-      "properties": {
-        "CFrame": "0.082271412, -0.105525136, -0.0442463458, 0.999032974, 0.00040011594, 0.0439666063, -0.00224943738, 0.999114156, 0.0420218445, -0.0439108573, -0.0420801975, 0.998148859",
-        "Archivable": true,
-        "Name": "Left Arm"
       },
       "class": "Pose"
     },
@@ -593,54 +211,54 @@
     {
       "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso",
       "properties": {
-        "CFrame": "-0.0344753265, -0.00728100492, -0.0645053312, 1, 2.38418579e-07, -8.74227766e-08, -2.39680332e-07, 0.99989152, -0.0147286002, 8.39017176e-08, 0.0147286002, 0.99989152",
+        "CFrame": "-0.0344753265, -0.00573795987, -0.038333416, 1, 2.38418579e-07, -8.74227766e-08, -2.39006226e-07, 0.999976993, -0.00678470591, 8.58031655e-08, 0.00678470591, 0.999976993",
         "Archivable": true,
         "Name": "Torso"
       },
       "class": "Pose"
     },
     {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Head",
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Left Arm",
       "properties": {
-        "CFrame": "6.79283403e-08, -7.4505806e-09, 0.0166621208, 0.9999547, -0.00949387625, -0.000759613293, 0.00943904929, 0.998496592, -0.05399606, 0.0012710673, 0.0539864302, 0.998540878",
+        "CFrame": "0.0822169483, -0.0751468837, -0.039088726, 0.992857277, -0.00275940006, 0.119276367, -0.00212586811, 0.999164581, 0.0408112295, -0.119289346, -0.0407735221, 0.992022038",
         "Archivable": true,
-        "Name": "Head"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Left Leg",
-      "properties": {
-        "CFrame": "-0.333461851, 0.0606539845, 0.0152000487, 0.983275831, -0.168326572, 0.0695339963, 0.164287508, 0.984570682, 0.0602507703, -0.0786029845, -0.0478195511, 0.995758414",
-        "Archivable": true,
-        "Name": "Left Leg"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Right Arm",
-      "properties": {
-        "CFrame": "-0.0814525783, -0.0842535198, -0.0440013111, 0.997083426, 0.0300422143, -0.0701574236, -0.0269670598, 0.998650849, 0.0443755239, 0.0713959038, -0.0423542149, 0.996548414",
-        "Archivable": true,
-        "Name": "Right Arm"
+        "Name": "Left Arm"
       },
       "class": "Pose"
     },
     {
       "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Right Leg",
       "properties": {
-        "CFrame": "0.336254597, 0.0632059574, 0.011888355, 0.984059036, 0.167346403, -0.0601911433, -0.163345516, 0.984345019, 0.0662059858, 0.0703282431, -0.0553186424, 0.995988905",
+        "CFrame": "0.246933609, 0.0478346944, 0.00738820434, 0.989553392, 0.131239399, -0.0596678518, -0.127279088, 0.989672542, 0.0659420937, 0.0677058995, -0.0576587878, 0.996037841",
         "Archivable": true,
         "Name": "Right Leg"
       },
       "class": "Pose"
     },
     {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Left Arm",
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Right Arm",
       "properties": {
-        "CFrame": "0.0822618455, -0.105575651, -0.0444360673, 0.998941839, 0.000572120189, 0.0459886789, -0.00250435062, 0.999115765, 0.0419698916, -0.0459240153, -0.04204081, 0.998059928",
+        "CFrame": "-0.0822020769, -0.073977232, -0.0388041437, 0.993014157, 0.00408179127, -0.117925048, 0.000761872216, 0.999158919, 0.0409997031, 0.117993198, -0.0408032723, 0.992175817",
         "Archivable": true,
-        "Name": "Left Arm"
+        "Name": "Right Arm"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Left Leg",
+      "properties": {
+        "CFrame": "-0.244826093, 0.0453240275, 0.00982251763, 0.988761604, -0.132592961, 0.0690634027, 0.128539413, 0.989877045, 0.0601749457, -0.0763430819, -0.0506213158, 0.995795846",
+        "Archivable": true,
+        "Name": "Left Leg"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Head",
+      "properties": {
+        "CFrame": "8.48376658e-08, -1.86264515e-08, 0.0166623592, 0.9999547, -0.00949387718, -0.000759618939, 0.00946688466, 0.999506295, -0.0299592782, 0.00104366918, 0.0299506951, 0.999550939",
+        "Archivable": true,
+        "Name": "Head"
       },
       "class": "Pose"
     },
@@ -673,16 +291,25 @@
     {
       "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso",
       "properties": {
-        "CFrame": "-0.0344753265, -0.00740695372, -0.0646944046, 1, 2.38418579e-07, -8.74227766e-08, -2.39742064e-07, 0.999880433, -0.015464969, 8.37251903e-08, 0.015464969, 0.999880433",
+        "CFrame": "-0.0344753265, -0.0057546543, -0.0376088694, 1, 2.38418579e-07, -8.74227766e-08, -2.39015208e-07, 0.999976277, -0.00688948948, 8.57781188e-08, 0.00688948948, 0.999976277",
         "Archivable": true,
         "Name": "Torso"
       },
       "class": "Pose"
     },
     {
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Right Arm",
+      "properties": {
+        "CFrame": "-0.0822181255, -0.0735380054, -0.0385832787, 0.992894173, 0.0036745728, -0.118944786, 0.00120514515, 0.999161422, 0.0409270898, 0.118995428, -0.0407797806, 0.992057025",
+        "Archivable": true,
+        "Name": "Right Arm"
+      },
+      "class": "Pose"
+    },
+    {
       "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Left Leg",
       "properties": {
-        "CFrame": "-0.334031641, 0.0610787272, 0.0152314901, 0.983395875, -0.167605042, 0.0695784092, 0.163568199, 0.9846946, 0.0601834804, -0.0786005631, -0.0478034019, 0.995759368",
+        "CFrame": "-0.241992921, 0.045034349, 0.00964576006, 0.988979399, -0.130954593, 0.0690701082, 0.126901433, 0.99009043, 0.0601411238, -0.0762614384, -0.050713215, 0.995797396",
         "Archivable": true,
         "Name": "Left Leg"
       },
@@ -691,25 +318,16 @@
     {
       "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Head",
       "properties": {
-        "CFrame": "8.11123755e-08, -4.65661287e-08, 0.01666224, 0.9999547, -0.00949387532, -0.000759613351, 0.00943934079, 0.998509645, -0.0537540987, 0.00126879779, 0.0537444018, 0.998553991",
+        "CFrame": "7.11879693e-08, -4.65661287e-09, 0.016662091, 0.9999547, -0.00949387718, -0.000759619172, 0.00946777128, 0.999531746, -0.029096853, 0.00103548192, 0.0290883351, 0.99957639",
         "Archivable": true,
         "Name": "Head"
       },
       "class": "Pose"
     },
     {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Right Arm",
-      "properties": {
-        "CFrame": "-0.0814374238, -0.0840014815, -0.0438764393, 0.997125506, 0.0308786388, -0.0691896528, -0.0278405417, 0.99862349, 0.0444520414, 0.0704670176, -0.0423980504, 0.996612728",
-        "Archivable": true,
-        "Name": "Right Arm"
-      },
-      "class": "Pose"
-    },
-    {
       "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Left Arm",
       "properties": {
-        "CFrame": "0.0822813883, -0.105381936, -0.0440301895, 0.999115646, 0.000208463753, 0.0420472138, -0.001979016, 0.999112666, 0.042072773, -0.0420011431, -0.0421188846, 0.998229384",
+        "CFrame": "0.0822248608, -0.0741099119, -0.0387289524, 0.99280864, -0.003037496, 0.119674496, -0.00186522352, 0.999164164, 0.0408341363, -0.119698524, -0.0407638885, 0.991973102",
         "Archivable": true,
         "Name": "Left Arm"
       },
@@ -718,7 +336,87 @@
     {
       "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Right Leg",
       "properties": {
-        "CFrame": "0.336826921, 0.0636335015, 0.0119127333, 0.984178126, 0.166627407, -0.0602397509, -0.162627593, 0.984467745, 0.0661493689, 0.0703264326, -0.0553061031, 0.99598968",
+        "CFrame": "0.244071037, 0.0475448966, 0.00723811984, 0.989771008, 0.129585564, -0.0596749112, -0.125627011, 0.989885867, 0.065907523, 0.0676120892, -0.0577366166, 0.996039689",
+        "Archivable": true,
+        "Name": "Right Leg"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe",
+      "properties": {
+        "Name": "Keyframe",
+        "Archivable": true
+      },
+      "class": "Keyframe"
+    },
+    {
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart",
+      "properties": {
+        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Name": "HumanoidRootPart"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso",
+      "properties": {
+        "CFrame": "-0.0344753265, -0.00577701628, -0.036921978, 1, 2.38418579e-07, -8.74227766e-08, -2.3902669e-07, 0.999975324, -0.00702321809, 8.57461515e-08, 0.00702321809, 0.999975324",
+        "Archivable": true,
+        "Name": "Torso"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Right Arm",
+      "properties": {
+        "CFrame": "-0.0822328478, -0.07310462, -0.0383653045, 0.992782772, 0.00332115684, -0.119880594, 0.0015916808, 0.999163568, 0.0408620313, 0.119916014, -0.040758092, 0.991947055",
+        "Archivable": true,
+        "Name": "Right Arm"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Head",
+      "properties": {
+        "CFrame": "7.81728886e-08, -4.65661287e-09, 0.0166620016, 0.9999547, -0.00949387811, -0.000759619346, 0.00946870446, 0.999555886, -0.0282577146, 0.0010275417, 0.0282492358, 0.99960041",
+        "Archivable": true,
+        "Name": "Head"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Left Leg",
+      "properties": {
+        "CFrame": "-0.239281118, 0.0447694659, 0.00947621465, 0.989191353, -0.129339606, 0.0690787956, 0.125286922, 0.990298212, 0.0601057447, -0.0761826858, -0.050801374, 0.995798945",
+        "Archivable": true,
+        "Name": "Left Leg"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Left Arm",
+      "properties": {
+        "CFrame": "0.0822332725, -0.0731048882, -0.0383652449, 0.992782772, -0.0033211608, 0.119881056, -0.00159160746, 0.999163628, 0.0408617817, -0.119916506, -0.0407579392, 0.991947055",
+        "Archivable": true,
+        "Name": "Left Arm"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Right Leg",
+      "properties": {
+        "CFrame": "0.241323382, 0.0472795963, 0.00709363818, 0.989982903, 0.127952114, -0.0596838892, -0.123995222, 0.990094006, 0.0658719838, 0.0675211698, -0.0578116328, 0.996041596",
         "Archivable": true,
         "Name": "Right Leg"
       },
@@ -762,34 +460,34 @@
     {
       "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso",
       "properties": {
-        "CFrame": "-0.0344753303, -0.00769531447, -0.0639052317, 1, 2.38418579e-07, -8.74227766e-08, -2.39889658e-07, 0.999851525, -0.0172320567, 8.33013516e-08, 0.0172320567, 0.999851525",
+        "CFrame": "-0.0344753265, -0.00826297514, -0.0462453477, 1, 2.38418608e-07, -8.74227837e-08, -2.40255901e-07, 0.999765575, -0.0216561332, 8.22390476e-08, 0.0216561332, 0.999765575",
         "Archivable": true,
         "Name": "Torso"
       },
       "class": "Pose"
     },
     {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Left Arm",
-      "properties": {
-        "CFrame": "0.0823368058, -0.103241354, -0.0425558388, 0.9994151, -0.00103938114, 0.0341818333, -0.000407893938, 0.999104559, 0.0423079953, -0.0341952182, -0.0422974266, 0.998519719",
-        "Archivable": true,
-        "Name": "Left Arm"
-      },
-      "class": "Pose"
-    },
-    {
       "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Right Arm",
       "properties": {
-        "CFrame": "-0.0814311802, -0.0827271342, -0.0432387292, 0.997116864, 0.0320157483, -0.0687974691, -0.0289899372, 0.998586953, 0.044538673, 0.0701261833, -0.0424159653, 0.996636033",
+        "CFrame": "-0.0817949995, -0.0710892081, -0.0373830497, 0.995460331, 0.0238825511, -0.0921325386, -0.0199416261, 0.998856187, 0.0434606187, 0.093065083, -0.0414259955, 0.994797945",
         "Archivable": true,
         "Name": "Right Arm"
       },
       "class": "Pose"
     },
     {
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Left Leg",
+      "properties": {
+        "CFrame": "-0.275240809, 0.054330647, 0.0116669238, 0.989329576, -0.127804399, 0.0699511915, 0.123794504, 0.990555286, 0.0589517653, -0.0768248513, -0.0496631376, 0.995807052",
+        "Archivable": true,
+        "Name": "Left Leg"
+      },
+      "class": "Pose"
+    },
+    {
       "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Right Leg",
       "properties": {
-        "CFrame": "0.334529817, 0.0640520453, 0.011790663, 0.984785676, 0.162954926, -0.0603562817, -0.158960372, 0.985078692, 0.0659677833, 0.0702055097, -0.0553698801, 0.995994747",
+        "CFrame": "0.27761063, 0.0568948984, 0.00892010331, 0.990097225, 0.126611128, -0.0606411248, -0.122662067, 0.990321219, 0.0649457648, 0.0682771131, -0.0568642691, 0.996044636",
         "Archivable": true,
         "Name": "Right Leg"
       },
@@ -798,7 +496,87 @@
     {
       "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Head",
       "properties": {
-        "CFrame": "7.85803422e-08, 5.58793545e-09, 0.0166620612, 0.9999547, -0.00949387625, -0.0007596137, 0.00944178645, 0.998612881, -0.0518007204, 0.00125032908, 0.0517912358, 0.998657227",
+        "CFrame": "5.22704795e-08, -2.14204192e-08, 0.0166618824, 0.999954641, -0.00949384458, -0.000759641407, 0.00946734659, 0.999517143, -0.0295949988, 0.0010401723, 0.0295864288, 0.999561787",
+        "Archivable": true,
+        "Name": "Head"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Left Arm",
+      "properties": {
+        "CFrame": "0.0825817138, -0.0767582059, -0.0325606465, 0.999361753, -0.00890929252, 0.0345936045, 0.00742337992, 0.999054074, 0.0428483374, -0.0349426456, -0.0425644368, 0.998482525",
+        "Archivable": true,
+        "Name": "Left Arm"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe",
+      "properties": {
+        "Name": "Keyframe",
+        "Archivable": true
+      },
+      "class": "Keyframe"
+    },
+    {
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart",
+      "properties": {
+        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Name": "HumanoidRootPart"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso",
+      "properties": {
+        "CFrame": "-0.0344753265, -0.00827719271, -0.0481092967, 1, 2.38418579e-07, -8.74227766e-08, -2.40254934e-07, 0.999765754, -0.0216441546, 8.22419324e-08, 0.0216441546, 0.999765754",
+        "Archivable": true,
+        "Name": "Torso"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Right Arm",
+      "properties": {
+        "CFrame": "-0.0817500055, -0.0720974803, -0.0378912687, 0.995690227, 0.0251765568, -0.0892587528, -0.0213446245, 0.998819828, 0.0436283201, 0.0902517959, -0.0415351577, 0.995052576",
+        "Archivable": true,
+        "Name": "Right Arm"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Right Leg",
+      "properties": {
+        "CFrame": "0.284095645, 0.0578622818, 0.00925028324, 0.989649415, 0.130064622, -0.0606410615, -0.126111701, 0.989883423, 0.0650135353, 0.0684835985, -0.0566930957, 0.996040106",
+        "Archivable": true,
+        "Name": "Right Leg"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Left Arm",
+      "properties": {
+        "CFrame": "0.0825688243, -0.0792734325, -0.0333174467, 0.999444604, -0.00833816174, 0.0322657675, 0.00695188064, 0.99905771, 0.0428422615, -0.0325926058, -0.0425942354, 0.998560727",
+        "Archivable": true,
+        "Name": "Left Arm"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Head",
+      "properties": {
+        "CFrame": "7.11297616e-08, 2.60770321e-08, 0.0166624486, 0.9999547, -0.00949387718, -0.000759618531, 0.00946510956, 0.999453902, -0.0316589773, 0.0010597324, 0.0316503979, 0.999498546",
         "Archivable": true,
         "Name": "Head"
       },
@@ -807,7 +585,7 @@
     {
       "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Left Leg",
       "properties": {
-        "CFrame": "-0.331752181, 0.0614907146, 0.0150894225, 0.984006047, -0.163939252, 0.0696850345, 0.159908459, 0.985307932, 0.0599801801, -0.0784943551, -0.047877606, 0.995764256",
+        "CFrame": "-0.281673431, 0.0552963614, 0.0120597184, 0.988881052, -0.131230071, 0.0699503645, 0.127219677, 0.990117431, 0.0590139516, -0.0770035386, -0.0494587198, 0.995803416",
         "Archivable": true,
         "Name": "Left Leg"
       },
@@ -842,52 +620,52 @@
     {
       "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso",
       "properties": {
-        "CFrame": "-0.0344753265, -0.00779796066, -0.0631268099, 1, 2.38418579e-07, -8.74227766e-08, -2.39944711e-07, 0.999839902, -0.0178936664, 8.3142595e-08, 0.0178936664, 0.999839902",
+        "CFrame": "-0.0344753265, -0.00827188231, -0.0471732728, 1, 2.38418608e-07, -8.74227837e-08, -2.40256355e-07, 0.999765456, -0.0216616616, 8.22377189e-08, 0.0216616616, 0.999765456",
         "Archivable": true,
         "Name": "Torso"
       },
       "class": "Pose"
     },
     {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Right Leg",
-      "properties": {
-        "CFrame": "0.332228601, 0.0639657974, 0.0116740465, 0.98513478, 0.160814732, -0.0603997521, -0.156823158, 0.985426843, 0.0658820421, 0.070114404, -0.0554306209, 0.995997727",
-        "Archivable": true,
-        "Name": "Right Leg"
-      },
-      "class": "Pose"
-    },
-    {
       "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Right Arm",
       "properties": {
-        "CFrame": "-0.0814404637, -0.081989646, -0.042868793, 0.99707216, 0.0321035609, -0.0694005787, -0.0290524811, 0.998585343, 0.0445344374, 0.0707321018, -0.042387832, 0.99659431",
+        "CFrame": "-0.0817724243, -0.0715858638, -0.0376333594, 0.995576799, 0.0245377645, -0.0906915888, -0.0206513815, 0.998837948, 0.043545682, 0.091654703, -0.0414802283, 0.994926572",
         "Archivable": true,
         "Name": "Right Arm"
       },
       "class": "Pose"
     },
     {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Left Leg",
-      "properties": {
-        "CFrame": "-0.329465747, 0.0614020228, 0.0149511993, 0.984356284, -0.161805987, 0.0697250217, 0.157777697, 0.985657036, 0.0598877817, -0.0784151927, -0.0479498431, 0.995766997",
-        "Archivable": true,
-        "Name": "Left Leg"
-      },
-      "class": "Pose"
-    },
-    {
       "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Left Arm",
       "properties": {
-        "CFrame": "0.0823608264, -0.101788938, -0.0418095887, 0.999491096, -0.00165248208, 0.0318561271, 0.000300765969, 0.999100983, 0.0423919596, -0.0318975598, -0.0423609354, 0.998593092",
+        "CFrame": "0.0825756192, -0.0780033469, -0.0329298675, 0.999405622, -0.0086315209, 0.0333769657, 0.00719762221, 0.999055803, 0.042846404, -0.0337152965, -0.0425808541, 0.99852401",
         "Archivable": true,
         "Name": "Left Arm"
       },
       "class": "Pose"
     },
     {
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Right Leg",
+      "properties": {
+        "CFrame": "0.280856222, 0.0573808551, 0.00908559561, 0.989876628, 0.128323331, -0.060641855, -0.124372363, 0.990105748, 0.0649785101, 0.0683801398, -0.0567785203, 0.99604243",
+        "Archivable": true,
+        "Name": "Right Leg"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Left Leg",
+      "properties": {
+        "CFrame": "-0.278459758, 0.0548157692, 0.0118637979, 0.989108682, -0.129502624, 0.0699513406, 0.125492513, 0.990339756, 0.0589815788, -0.0769139007, -0.049560789, 0.995805204",
+        "Archivable": true,
+        "Name": "Left Leg"
+      },
+      "class": "Pose"
+    },
+    {
       "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Head",
       "properties": {
-        "CFrame": "8.6176442e-08, -3.16649675e-08, 0.016662091, 0.9999547, -0.00949387625, -0.000759614108, 0.00944340508, 0.998677671, -0.0505360737, 0.00123838882, 0.0505265556, 0.998722017",
+        "CFrame": "6.14381861e-08, -2.79396772e-09, 0.0166617334, 0.99995476, -0.00949384458, -0.000759641116, 0.00946626719, 0.999486506, -0.0306153744, 0.00104985398, 0.0306067988, 0.999530971",
         "Archivable": true,
         "Name": "Head"
       },
@@ -922,54 +700,54 @@
     {
       "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso",
       "properties": {
-        "CFrame": "-0.0344753303, -0.00774762593, -0.0635459498, 1, 2.38418608e-07, -8.74227837e-08, -2.3991754e-07, 0.999845803, -0.0175668187, 8.32210247e-08, 0.0175668187, 0.999845803",
+        "CFrame": "-0.0344753265, -0.00823407061, -0.0444266871, 1, 2.38418579e-07, -8.74227766e-08, -2.40249079e-07, 0.999767303, -0.0215730965, 8.22590067e-08, 0.0215730965, 0.999767303",
         "Archivable": true,
         "Name": "Torso"
       },
       "class": "Pose"
     },
     {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Head",
-      "properties": {
-        "CFrame": "5.12227416e-08, -3.7252903e-09, 0.016662389, 0.999954641, -0.00949384365, -0.000759636343, 0.00944260042, 0.998643935, -0.0511990003, 0.00124460505, 0.0511894934, 0.998688281",
-        "Archivable": true,
-        "Name": "Head"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Left Arm",
-      "properties": {
-        "CFrame": "0.0823487416, -0.102552772, -0.0421921015, 0.99945581, -0.00133916456, 0.0329608209, -5.79309744e-05, 0.999102771, 0.0423508026, -0.0329879709, -0.0423297621, 0.998559058",
-        "Archivable": true,
-        "Name": "Left Arm"
-      },
-      "class": "Pose"
-    },
-    {
       "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Right Leg",
       "properties": {
-        "CFrame": "0.333470345, 0.0640265346, 0.0117370486, 0.984953761, 0.161927566, -0.0603783056, -0.157934457, 0.98524642, 0.0659256577, 0.0701627433, -0.0553979203, 0.995996118",
+        "CFrame": "0.271132886, 0.0559141636, 0.00858980417, 0.990515888, 0.12329559, -0.0606353357, -0.119350091, 0.99072957, 0.064888075, 0.0680737197, -0.0570358559, 0.996048629",
         "Archivable": true,
         "Name": "Right Leg"
       },
       "class": "Pose"
     },
     {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Right Arm",
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Left Arm",
       "properties": {
-        "CFrame": "-0.0814350769, -0.082372725, -0.0430608392, 0.997097313, 0.0320843197, -0.0690489858, -0.0290478617, 0.998585284, 0.0445391722, 0.0703803077, -0.0424043424, 0.996618629",
+        "CFrame": "0.0825916529, -0.0743615031, -0.0318841934, 0.99925828, -0.00941246655, 0.0373405702, 0.00780952955, 0.999051213, 0.0428446494, -0.0377084352, -0.0425216071, 0.99838376",
         "Archivable": true,
-        "Name": "Right Arm"
+        "Name": "Left Arm"
       },
       "class": "Pose"
     },
     {
       "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Left Leg",
       "properties": {
-        "CFrame": "-0.330699384, 0.061463654, 0.0150258541, 0.984174788, -0.162914887, 0.0697053, 0.158885315, 0.985476255, 0.0599345937, -0.0784571767, -0.0479109474, 0.995765507",
+        "CFrame": "-0.268827945, 0.0533534884, 0.0112744868, 0.98974824, -0.124523319, 0.0699462593, 0.120513581, 0.990962744, 0.0589006208, -0.0766486898, -0.0498673245, 0.99581033",
         "Archivable": true,
         "Name": "Left Leg"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Head",
+      "properties": {
+        "CFrame": "7.33125489e-08, 1.39698386e-08, 0.016662091, 0.9999547, -0.00949387811, -0.000759619463, 0.00946931634, 0.999573112, -0.0276392568, 0.00102166482, 0.027630832, 0.999617755",
+        "Archivable": true,
+        "Name": "Head"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Right Arm",
+      "properties": {
+        "CFrame": "-0.0818402022, -0.0701504648, -0.0369097888, 0.995220304, 0.0225291625, -0.0950215608, -0.0184796397, 0.99889195, 0.0432836302, 0.0958914161, -0.0413208231, 0.994533777",
+        "Archivable": true,
+        "Name": "Right Arm"
       },
       "class": "Pose"
     },
@@ -1002,34 +780,34 @@
     {
       "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso",
       "properties": {
-        "CFrame": "-0.0344753265, -0.0075850985, -0.0644319132, 1, 2.38418608e-07, -8.74227837e-08, -2.39832076e-07, 0.999863267, -0.0165417194, 8.34669578e-08, 0.0165417194, 0.999863267",
+        "CFrame": "-0.0344753265, -0.00825039577, -0.0453286171, 1, 2.38418579e-07, -8.74227766e-08, -2.40253485e-07, 0.999766111, -0.0216268525, 8.22460819e-08, 0.0216268525, 0.999766111",
         "Archivable": true,
         "Name": "Torso"
       },
       "class": "Pose"
     },
     {
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Left Leg",
+      "properties": {
+        "CFrame": "-0.272025704, 0.0538429618, 0.0114703476, 0.989542961, -0.126141891, 0.0699494332, 0.12213213, 0.990763247, 0.0589247085, -0.0767362341, -0.0497654304, 0.995808661",
+        "Archivable": true,
+        "Name": "Left Leg"
+      },
+      "class": "Pose"
+    },
+    {
       "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Right Leg",
       "properties": {
-        "CFrame": "0.336073279, 0.063996911, 0.011870116, 0.984492719, 0.164732412, -0.0603107177, -0.160735369, 0.984785318, 0.0660467595, 0.0702731907, -0.0553284995, 0.995992303",
+        "CFrame": "0.274368703, 0.0564063191, 0.00875496864, 0.990310311, 0.124934383, -0.0606388971, -0.120987169, 0.990529239, 0.0649155527, 0.0681748539, -0.0569500476, 0.996046722",
         "Archivable": true,
         "Name": "Right Leg"
       },
       "class": "Pose"
     },
     {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Left Arm",
-      "properties": {
-        "CFrame": "0.0823136717, -0.104372203, -0.0432195961, 0.999316096, -0.000485948229, 0.0369746201, -0.00107616792, 0.999107838, 0.042218104, -0.036962159, -0.0422291905, 0.998424053",
-        "Archivable": true,
-        "Name": "Left Arm"
-      },
-      "class": "Pose"
-    },
-    {
       "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Right Arm",
       "properties": {
-        "CFrame": "-0.081428349, -0.0833426714, -0.0435472131, 0.997138977, 0.0317243189, -0.068611525, -0.0287072137, 0.998595893, 0.0445215181, 0.0699275881, -0.042424608, 0.996649623",
+        "CFrame": "-0.0818175972, -0.0706095695, -0.0371413827, 0.99534142, 0.0232124943, -0.0935773551, -0.0192171317, 0.998874128, 0.0433731601, 0.094478786, -0.0413728803, 0.994666874",
         "Archivable": true,
         "Name": "Right Arm"
       },
@@ -1038,18 +816,18 @@
     {
       "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Head",
       "properties": {
-        "CFrame": "6.32717274e-08, 0, 0.0166620016, 0.999954641, -0.00949384272, -0.000759635819, 0.00944059808, 0.99856025, -0.0528050065, 0.00125981122, 0.0527954437, 0.998604536",
+        "CFrame": "8.46630428e-08, -3.7252903e-09, 0.0166621804, 0.9999547, -0.00949387811, -0.000759619288, 0.00946826115, 0.99954617, -0.0286016148, 0.00103080075, 0.0285931285, 0.999590635",
         "Archivable": true,
         "Name": "Head"
       },
       "class": "Pose"
     },
     {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Left Leg",
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Left Arm",
       "properties": {
-        "CFrame": "-0.333284199, 0.0614378452, 0.0151831806, 0.983712137, -0.165711746, 0.0696433857, 0.161678493, 0.985013783, 0.0600669347, -0.0785535127, -0.0478287227, 0.995761931",
+        "CFrame": "0.0825870559, -0.0755425394, -0.0322116315, 0.999312818, -0.00917008426, 0.035915032, 0.00762780802, 0.999052525, 0.0428478383, -0.0362739377, -0.0425445251, 0.998435915",
         "Archivable": true,
-        "Name": "Left Leg"
+        "Name": "Left Arm"
       },
       "class": "Pose"
     },
@@ -1082,52 +860,52 @@
     {
       "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso",
       "properties": {
-        "CFrame": "-0.0344753265, -0.00764111476, -0.0642016008, 1, 2.38418579e-07, -8.74227766e-08, -2.39861151e-07, 0.999857366, -0.0168901179, 8.33833909e-08, 0.0168901179, 0.999857366",
+        "CFrame": "-0.0344753265, -0.00818984583, -0.0426788367, 1, 2.38418579e-07, -8.74227766e-08, -2.40233959e-07, 0.999771237, -0.0213892795, 8.23031741e-08, 0.0213892795, 0.999771237",
         "Archivable": true,
         "Name": "Torso"
       },
       "class": "Pose"
     },
     {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Left Leg",
-      "properties": {
-        "CFrame": "-0.332616061, 0.0614824891, 0.015142113, 0.983851552, -0.164872825, 0.0696645454, 0.160840809, 0.985153437, 0.0600243062, -0.0785266832, -0.0478500798, 0.995763063",
-        "Archivable": true,
-        "Name": "Left Leg"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Right Arm",
-      "properties": {
-        "CFrame": "-0.0814288855, -0.0830513537, -0.0434011817, 0.997130811, 0.0318962708, -0.0686501414, -0.0288769715, 0.998590529, 0.0445328914, 0.069973819, -0.0424228497, 0.996646345",
-        "Archivable": true,
-        "Name": "Right Arm"
-      },
-      "class": "Pose"
-    },
-    {
       "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Head",
       "properties": {
-        "CFrame": "8.14325176e-08, -2.42143869e-08, 0.0166620314, 0.9999547, -0.00949387625, -0.000759613584, 0.00944115594, 0.998584867, -0.0523374118, 0.00125540944, 0.0523278229, 0.998629153",
+        "CFrame": "8.66421033e-08, -2.79396772e-09, 0.0166620016, 0.9999547, -0.00949387811, -0.000759619812, 0.00947110541, 0.999621749, -0.0258243009, 0.00100450183, 0.0258159265, 0.999666214",
         "Archivable": true,
         "Name": "Head"
       },
       "class": "Pose"
     },
     {
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Left Leg",
+      "properties": {
+        "CFrame": "-0.26248917, 0.052370131, 0.0108854771, 0.990133941, -0.12142431, 0.0699354857, 0.117414288, 0.991337061, 0.0588620417, -0.0764769688, -0.050069917, 0.99581337",
+        "Archivable": true,
+        "Name": "Left Leg"
+      },
+      "class": "Pose"
+    },
+    {
       "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Left Arm",
       "properties": {
-        "CFrame": "0.0823251233, -0.103849411, -0.0428989828, 0.999368727, -0.000754517503, 0.0355194807, -0.000747766986, 0.999106288, 0.0422638431, -0.0355196372, -0.0422638506, 0.998474896",
+        "CFrame": "0.0825982243, -0.0721231103, -0.0313025117, 0.999131083, -0.00983645208, 0.0405023918, 0.00809943862, 0.999049544, 0.042830836, -0.0408852212, -0.0424656682, 0.998261094",
         "Archivable": true,
         "Name": "Left Arm"
       },
       "class": "Pose"
     },
     {
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Right Arm",
+      "properties": {
+        "CFrame": "-0.0818852186, -0.0692991018, -0.0364801884, 0.994972825, 0.0211290102, -0.0978910923, -0.0169726554, 0.99892664, 0.0430989042, 0.0986966193, -0.0412208252, 0.99426353",
+        "Archivable": true,
+        "Name": "Right Arm"
+      },
+      "class": "Pose"
+    },
+    {
       "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Right Leg",
       "properties": {
-        "CFrame": "0.335399956, 0.0640426874, 0.0118351877, 0.984631658, 0.163891405, -0.0603337288, -0.159895524, 0.984924614, 0.0660081804, 0.0702424049, -0.0553466417, 0.995993435",
+        "CFrame": "0.264596462, 0.0549083352, 0.00825506449, 0.990909934, 0.120094001, -0.0606228895, -0.116151735, 0.991112649, 0.0648416653, 0.0678712726, -0.0572108068, 0.996052504",
         "Archivable": true,
         "Name": "Right Leg"
       },
@@ -1162,16 +940,43 @@
     {
       "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso",
       "properties": {
-        "CFrame": "-0.0344753265, -0.00688450411, -0.0624189414, 1, 2.38418579e-07, -8.74227766e-08, -2.39493147e-07, 0.999921799, -0.012504925, 8.44345323e-08, 0.012504925, 0.999921799",
+        "CFrame": "-0.0344753265, -0.00821390748, -0.0435423888, 1, 2.38418579e-07, -8.74227766e-08, -2.40242571e-07, 0.999768972, -0.0214941464, 8.22779782e-08, 0.0214941464, 0.999768972",
         "Archivable": true,
         "Name": "Torso"
       },
       "class": "Pose"
     },
     {
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Left Leg",
+      "properties": {
+        "CFrame": "-0.265641451, 0.0528610945, 0.0110788941, 0.98994571, -0.122946389, 0.0699416324, 0.118936539, 0.991154552, 0.0588796884, -0.0765620321, -0.0499690771, 0.995811999",
+        "Archivable": true,
+        "Name": "Left Leg"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Right Arm",
+      "properties": {
+        "CFrame": "-0.08186277, -0.0697129369, -0.036689043, 0.995097339, 0.0218341276, -0.096460931, -0.0177308973, 0.998909473, 0.0431921259, 0.097298786, -0.0412700921, 0.99439919",
+        "Archivable": true,
+        "Name": "Right Arm"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Head",
+      "properties": {
+        "CFrame": "8.5827196e-08, 0, 0.0166620016, 0.9999547, -0.00949387718, -0.000759619579, 0.00947020296, 0.999598324, -0.0267122295, 0.00101291249, 0.0267038289, 0.999642968",
+        "Archivable": true,
+        "Name": "Head"
+      },
+      "class": "Pose"
+    },
+    {
       "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Left Arm",
       "properties": {
-        "CFrame": "0.082213141, -0.104117453, -0.0450515747, 0.998207867, 0.00121387979, 0.0598306544, -0.00371104386, 0.9991256, 0.0416445658, -0.059727814, -0.0417920202, 0.997339487",
+        "CFrame": "0.0825953558, -0.0732202232, -0.0315806866, 0.999197841, -0.00963505823, 0.0388699099, 0.00796719082, 0.99905026, 0.0428392142, -0.0392457694, -0.0424953252, 0.998325646",
         "Archivable": true,
         "Name": "Left Arm"
       },
@@ -1180,36 +985,9 @@
     {
       "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Right Leg",
       "properties": {
-        "CFrame": "0.329980791, 0.0612038374, 0.0115906, 0.98410809, 0.16711086, -0.0600435995, -0.163109988, 0.984376371, 0.0663210824, 0.0701885372, -0.055473458, 0.995990098",
+        "CFrame": "0.26791212, 0.0554199219, 0.00842502713, 0.990713358, 0.121700741, -0.0606299341, -0.117756896, 0.990921795, 0.0648633614, 0.0679735094, -0.0571214184, 0.996050596",
         "Archivable": true,
         "Name": "Right Leg"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Right Arm",
-      "properties": {
-        "CFrame": "-0.0815350488, -0.0841972828, -0.0439665616, 0.996800005, 0.0264547132, -0.075431779, -0.0231759734, 0.998762012, 0.0440152586, 0.0765028, -0.042126257, 0.996179104",
-        "Archivable": true,
-        "Name": "Right Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Left Leg",
-      "properties": {
-        "CFrame": "-0.327223152, 0.0586619377, 0.0148359239, 0.983321846, -0.168112919, 0.0693998113, 0.164068043, 0.984598041, 0.0604026988, -0.0784854218, -0.048008997, 0.995758653",
-        "Archivable": true,
-        "Name": "Left Leg"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Head",
-      "properties": {
-        "CFrame": "6.83940016e-08, -1.67638063e-08, 0.0166621506, 0.9999547, -0.00949387625, -0.000759613526, 0.00944022927, 0.998547077, -0.0530536398, 0.00126216258, 0.0530440323, 0.998591483",
-        "Archivable": true,
-        "Name": "Head"
       },
       "class": "Pose"
     },
@@ -1242,7 +1020,7 @@
     {
       "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso",
       "properties": {
-        "CFrame": "-0.0344753265, -0.00695144385, -0.0629079342, 1, 2.38418579e-07, -8.74227766e-08, -2.39524127e-07, 0.99991715, -0.0128720822, 8.43465955e-08, 0.0128720822, 0.99991715",
+        "CFrame": "-0.0344753265, -0.00812967867, -0.0410282612, 1, 2.38418579e-07, -8.74227766e-08, -2.40210028e-07, 0.999777377, -0.0210989192, 8.23729422e-08, 0.0210989192, 0.999777377",
         "Archivable": true,
         "Name": "Torso"
       },
@@ -1251,7 +1029,7 @@
     {
       "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Left Arm",
       "properties": {
-        "CFrame": "0.0822201744, -0.104553103, -0.0450080335, 0.998352885, 0.00115140853, 0.0573603176, -0.00354810338, 0.999123871, 0.041699715, -0.0572620817, -0.0418347567, 0.997482359",
+        "CFrame": "0.0826011002, -0.0700794756, -0.0308295786, 0.998976529, -0.0101700369, 0.044074811, 0.00828226004, 0.999049127, 0.042805329, -0.0444682613, -0.0423965566, 0.998110771",
         "Archivable": true,
         "Name": "Left Arm"
       },
@@ -1260,7 +1038,7 @@
     {
       "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Right Leg",
       "properties": {
-        "CFrame": "0.331460446, 0.0616005659, 0.0116618276, 0.984060109, 0.167384326, -0.0600680336, -0.163383141, 0.984331906, 0.0663074031, 0.0702257603, -0.0554364212, 0.995989561",
+        "CFrame": "0.258432955, 0.0539415479, 0.00793874264, 0.991252899, 0.117238425, -0.0606036372, -0.11329893, 0.991445065, 0.0648082271, 0.0676832572, -0.0573750585, 0.996055782",
         "Archivable": true,
         "Name": "Right Leg"
       },
@@ -1269,7 +1047,7 @@
     {
       "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Right Arm",
       "properties": {
-        "CFrame": "-0.0815179273, -0.0842846334, -0.0440116227, 0.996863604, 0.0271484312, -0.074336715, -0.0239119083, 0.998741508, 0.044087939, 0.0754400641, -0.042172242, 0.99625814",
+        "CFrame": "-0.0819293633, -0.0685511231, -0.036102742, 0.994721234, 0.0196947455, -0.100706145, -0.0154346097, 0.99895978, 0.0429082997, 0.101446442, -0.0411274284, 0.993990541",
         "Archivable": true,
         "Name": "Right Arm"
       },
@@ -1278,7 +1056,7 @@
     {
       "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Left Leg",
       "properties": {
-        "CFrame": "-0.328694403, 0.0590568781, 0.0149225593, 0.983274341, -0.168381557, 0.0694217905, 0.164337575, 0.98455435, 0.0603824593, -0.0785168707, -0.0479639135, 0.995758295",
+        "CFrame": "-0.256237686, 0.0513852835, 0.0105006695, 0.990486443, -0.118524686, 0.0699185878, 0.114513889, 0.991677761, 0.0588375106, -0.0763104409, -0.0502710864, 0.995816052",
         "Archivable": true,
         "Name": "Left Leg"
       },
@@ -1287,7 +1065,7 @@
     {
       "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Head",
       "properties": {
-        "CFrame": "6.67350832e-08, -2.60770321e-08, 0.0166622698, 0.9999547, -0.00949387625, -0.000759613467, 0.009439799, 0.998530328, -0.0533688664, 0.00126513815, 0.053359244, 0.998574674",
+        "CFrame": "7.7765435e-08, 5.58793545e-09, 0.01666224, 0.9999547, -0.00949387904, -0.000759620278, 0.00947275199, 0.999662757, -0.0241819248, 0.000988923712, 0.0241736528, 0.999707341",
         "Archivable": true,
         "Name": "Head"
       },
@@ -1313,134 +1091,54 @@
     {
       "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso",
       "properties": {
-        "CFrame": "-0.0344753265, -0.0066849743, -0.0606648959, 1, 2.38418579e-07, -8.74227766e-08, -2.39401999e-07, 0.999934733, -0.0114270933, 8.46926369e-08, 0.0114270933, 0.999934733",
+        "CFrame": "-0.0344753265, -0.00809347723, -0.0402469672, 1, 2.38418579e-07, -8.74227766e-08, -2.40194652e-07, 0.999781311, -0.0209123399, 8.24177633e-08, 0.0209123399, 0.999781311",
         "Archivable": true,
         "Name": "Torso"
       },
       "class": "Pose"
     },
     {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Head",
-      "properties": {
-        "CFrame": "8.39936547e-08, -9.31322575e-09, 0.0166620612, 0.9999547, -0.00949387625, -0.0007596137, 0.0094418088, 0.998614132, -0.0517763011, 0.00125010696, 0.0517667718, 0.998658419",
-        "Archivable": true,
-        "Name": "Head"
-      },
-      "class": "Pose"
-    },
-    {
       "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Left Arm",
       "properties": {
-        "CFrame": "0.0821946561, -0.102409154, -0.0450503826, 0.997719228, 0.00130159385, 0.067488797, -0.0041092434, 0.999130964, 0.0414804742, -0.0673761666, -0.041663304, 0.996857405",
+        "CFrame": "0.0826010853, -0.0691433847, -0.0306375921, 0.998887837, -0.0102997646, 0.0460123196, 0.0083305249, 0.999049485, 0.0427878872, -0.0464093089, -0.0423572175, 0.998024106",
         "Archivable": true,
         "Name": "Left Arm"
       },
       "class": "Pose"
     },
     {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Right Arm",
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Right Leg",
       "properties": {
-        "CFrame": "-0.0815930367, -0.0837700665, -0.0437482297, 0.996569932, 0.0241945367, -0.0791402236, -0.0207734462, 0.998825729, 0.0437696129, 0.0801062733, -0.041975487, 0.995902121",
+        "CFrame": "0.255465567, 0.0534684658, 0.00778630376, 0.991407633, 0.115929797, -0.0605913885, -0.111991525, 0.991594434, 0.0647966117, 0.0675940067, -0.057454139, 0.996057272",
         "Archivable": true,
-        "Name": "Right Arm"
+        "Name": "Right Leg"
       },
       "class": "Pose"
     },
     {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Right Leg",
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Right Arm",
       "properties": {
-        "CFrame": "0.324505687, 0.0598811507, 0.0113246143, 0.984348834, 0.165712699, -0.0599722899, -0.161713436, 0.984604776, 0.0663496181, 0.0700440332, -0.0556128658, 0.995992541",
+        "CFrame": "-0.0819510147, -0.0682210922, -0.035935849, 0.99459511, 0.0189687945, -0.102082834, -0.0146582872, 0.998975694, 0.0428113304, 0.102790326, -0.0410836786, 0.993854284",
         "Archivable": true,
-        "Name": "Right Leg"
+        "Name": "Right Arm"
       },
       "class": "Pose"
     },
     {
       "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Left Leg",
       "properties": {
-        "CFrame": "-0.321771324, 0.0573427677, 0.0145135224, 0.983561993, -0.166729033, 0.0693349466, 0.162681699, 0.984825075, 0.060451325, -0.0783618242, -0.0481780656, 0.995760202",
+        "CFrame": "-0.253298074, 0.0509138107, 0.0103194416, 0.990641117, -0.117230944, 0.0699077472, 0.113219649, 0.991826773, 0.0588308237, -0.0762332007, -0.0503653176, 0.995817184",
         "Archivable": true,
         "Name": "Left Leg"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe",
-      "properties": {
-        "Name": "Keyframe",
-        "Archivable": true
-      },
-      "class": "Keyframe"
-    },
-    {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "HumanoidRootPart"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso",
-      "properties": {
-        "CFrame": "-0.0344753265, -0.00675108191, -0.0612945557, 1, 2.38418579e-07, -8.74227766e-08, -2.39432012e-07, 0.99993062, -0.011781577, 8.46077626e-08, 0.011781577, 0.99993062",
-        "Archivable": true,
-        "Name": "Torso"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Right Leg",
-      "properties": {
-        "CFrame": "0.326429307, 0.060331583, 0.0114182532, 0.984258831, 0.166238174, -0.0599956885, -0.16223827, 0.984518886, 0.0663421825, 0.0700955391, -0.055564303, 0.995991588",
-        "Archivable": true,
-        "Name": "Right Leg"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Left Arm",
-      "properties": {
-        "CFrame": "0.0822003558, -0.103042275, -0.0450719893, 0.99789077, 0.00128858606, 0.0649028197, -0.00399155729, 0.999129117, 0.0415347591, -0.064792797, -0.0417064875, 0.997026861",
-        "Archivable": true,
-        "Name": "Left Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Right Arm",
-      "properties": {
-        "CFrame": "-0.0815726966, -0.0839395523, -0.0438342392, 0.99665314, 0.0249749403, -0.0778388157, -0.0216036756, 0.998804271, 0.0438559614, 0.078841038, -0.0420277305, 0.996000886",
-        "Archivable": true,
-        "Name": "Right Arm"
       },
       "class": "Pose"
     },
     {
       "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Head",
       "properties": {
-        "CFrame": "8.16362444e-08, -2.04890966e-08, 0.0166620314, 0.9999547, -0.00949387625, -0.0007596137, 0.00944121275, 0.998589277, -0.0522546805, 0.0012546255, 0.0522450991, 0.998633564",
+        "CFrame": "9.11240932e-08, -1.49011612e-08, 0.0166623592, 0.9999547, -0.00949387904, -0.000759620394, 0.00947351195, 0.999680579, -0.0234348513, 0.000981863239, 0.0234265774, 0.999725103",
         "Archivable": true,
         "Name": "Head"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Left Leg",
-      "properties": {
-        "CFrame": "-0.323820263, 0.0578126907, 0.0146348178, 0.983460546, -0.167317271, 0.069356218, 0.163270786, 0.984728456, 0.060437113, -0.0784092322, -0.0481136106, 0.995759606",
-        "Archivable": true,
-        "Name": "Left Leg"
       },
       "class": "Pose"
     },
@@ -1482,34 +1180,43 @@
     {
       "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso",
       "properties": {
-        "CFrame": "-0.0344753265, -0.00681765517, -0.0618803613, 1, 2.38418608e-07, -8.74227837e-08, -2.39462423e-07, 0.999926388, -0.0121411411, 8.4521659e-08, 0.0121411411, 0.999926388",
+        "CFrame": "-0.0344753265, -0.00816179439, -0.0418395996, 1, 2.38418579e-07, -8.74227766e-08, -2.4022313e-07, 0.999774039, -0.0212577749, 8.23347719e-08, 0.0212577749, 0.999774039",
         "Archivable": true,
         "Name": "Torso"
       },
       "class": "Pose"
     },
     {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Left Arm",
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Head",
       "properties": {
-        "CFrame": "0.0822065398, -0.103612602, -0.0450726151, 0.99805373, 0.00125947385, 0.0623474121, -0.00385884359, 0.999127388, 0.0415896326, -0.0622406378, -0.0417494662, 0.997187614",
+        "CFrame": "8.39063432e-08, 9.31322575e-09, 0.0166619718, 0.9999547, -0.00949387904, -0.000759619987, 0.0094719585, 0.999643147, -0.0249795485, 0.000996493269, 0.0249712337, 0.999687731",
         "Archivable": true,
-        "Name": "Left Arm"
+        "Name": "Head"
       },
       "class": "Pose"
     },
     {
       "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Right Leg",
       "properties": {
-        "CFrame": "0.328209043, 0.0607659221, 0.0115046501, 0.984182477, 0.166680947, -0.0600196347, -0.162680507, 0.984446585, 0.0663327202, 0.0701425672, -0.0555194803, 0.995990813",
+        "CFrame": "0.261479795, 0.0544219017, 0.00809532404, 0.99108696, 0.118628465, -0.0606141239, -0.114687629, 0.99128443, 0.0648232102, 0.0677757785, -0.0572937652, 0.996054173",
         "Archivable": true,
         "Name": "Right Leg"
       },
       "class": "Pose"
     },
     {
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Left Arm",
+      "properties": {
+        "CFrame": "0.0826001465, -0.0710744858, -0.0310515165, 0.999057412, -0.0100152362, 0.0422375873, 0.0082049109, 0.999049187, 0.0428195968, -0.0426262915, -0.042432826, 0.998189628",
+        "Archivable": true,
+        "Name": "Left Arm"
+      },
+      "class": "Pose"
+    },
+    {
       "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Left Leg",
       "properties": {
-        "CFrame": "-0.325596631, 0.0582467914, 0.0147399008, 0.983384073, -0.16775766, 0.0693777725, 0.163712025, 0.984656155, 0.0604209155, -0.0784493685, -0.0480589531, 0.99575907",
+        "CFrame": "-0.259256899, 0.0518644452, 0.010686487, 0.990320206, -0.119899802, 0.069927834, 0.115889393, 0.991517365, 0.0588479601, -0.0763905346, -0.0501743853, 0.9958148",
         "Archivable": true,
         "Name": "Left Leg"
       },
@@ -1518,18 +1225,9 @@
     {
       "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Right Arm",
       "properties": {
-        "CFrame": "-0.0815533474, -0.0840817392, -0.0439073145, 0.996729851, 0.0257292688, -0.0766009539, -0.0224055406, 0.998782992, 0.0439378545, 0.0776382089, -0.0420779772, 0.996093273",
+        "CFrame": "-0.0819074437, -0.0689114332, -0.0362844467, 0.994847417, 0.0204153396, -0.0993075818, -0.0162066352, 0.998943448, 0.0430042483, 0.10008058, -0.0411732011, 0.994127154",
         "Archivable": true,
         "Name": "Right Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Head",
-      "properties": {
-        "CFrame": "6.13217708e-08, -1.86264515e-09, 0.0166623592, 0.999954641, -0.00949384365, -0.000759635936, 0.00944077969, 0.998566866, -0.0526812486, 0.0012586402, 0.0526716858, 0.998611093",
-        "Archivable": true,
-        "Name": "Head"
       },
       "class": "Pose"
     },
@@ -1553,25 +1251,185 @@
     {
       "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso",
       "properties": {
-        "CFrame": "-0.0344753265, -0.00715095364, -0.0640475899, 1, 2.38418608e-07, -8.74227837e-08, -2.3961789e-07, 0.999902308, -0.0139852576, 8.40798862e-08, 0.0139852576, 0.999902308",
+        "CFrame": "-0.0344753265, -0.00800953899, -0.0387771167, 1, 2.38418579e-07, -8.74227766e-08, -2.40157391e-07, 0.999790668, -0.020460695, 8.25262632e-08, 0.020460695, 0.999790668",
         "Archivable": true,
         "Name": "Torso"
       },
       "class": "Pose"
     },
     {
-      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Left Leg",
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Right Leg",
       "properties": {
-        "CFrame": "-0.33209753, 0.0600984693, 0.0151215196, 0.983225822, -0.168636665, 0.0694890022, 0.164595544, 0.984515607, 0.0603096336, -0.0785834864, -0.0478604548, 0.995757997",
+        "CFrame": "0.249790996, 0.052547276, 0.00749379396, 0.991683364, 0.113561943, -0.060561683, -0.109625846, 0.991859555, 0.0647836551, 0.0674257055, -0.0576057434, 0.996059954",
         "Archivable": true,
-        "Name": "Left Leg"
+        "Name": "Right Leg"
       },
       "class": "Pose"
     },
     {
       "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Right Arm",
       "properties": {
-        "CFrame": "-0.0814743489, -0.0843638778, -0.0440547466, 0.997015178, 0.0290110074, -0.0715487599, -0.0258821603, 0.998683989, 0.0442764312, 0.0727390945, -0.0422924645, 0.996454",
+        "CFrame": "-0.0819931626, -0.0676486492, -0.0356464684, 0.994343221, 0.0175071247, -0.10476245, -0.0130993407, 0.999005735, 0.0426152162, 0.10540434, -0.0410019904, 0.993583798",
+        "Archivable": true,
+        "Name": "Right Arm"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Left Leg",
+      "properties": {
+        "CFrame": "-0.247677878, 0.0499956012, 0.00997251272, 0.990916967, -0.114892289, 0.069881089, 0.110879742, 0.992091179, 0.0588284507, -0.0760873705, -0.0505456701, 0.995819211",
+        "Archivable": true,
+        "Name": "Left Leg"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Head",
+      "properties": {
+        "CFrame": "8.50704964e-08, 1.86264515e-09, 0.0166622996, 0.9999547, -0.00949387904, -0.000759620802, 0.00947479811, 0.999711156, -0.0220918357, 0.000969123677, 0.0220836587, 0.99975574",
+        "Archivable": true,
+        "Name": "Head"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Left Arm",
+      "properties": {
+        "CFrame": "0.0825982392, -0.0674427152, -0.0303428471, 0.998686135, -0.0104858689, 0.0501617491, 0.00834282301, 0.999051213, 0.042743925, -0.0505623855, -0.0422693826, 0.99782604",
+        "Archivable": true,
+        "Name": "Left Arm"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe",
+      "properties": {
+        "Name": "Keyframe",
+        "Archivable": true
+      },
+      "class": "Keyframe"
+    },
+    {
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart",
+      "properties": {
+        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Name": "HumanoidRootPart"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso",
+      "properties": {
+        "CFrame": "-0.0344753265, -0.00805336423, -0.0394961946, 1, 2.38418608e-07, -8.74227837e-08, -2.40177059e-07, 0.999785841, -0.0206991285, 8.24689934e-08, 0.0206991285, 0.999785841",
+        "Archivable": true,
+        "Name": "Torso"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Left Arm",
+      "properties": {
+        "CFrame": "0.0826001167, -0.068264246, -0.0304755569, 0.998791099, -0.0104048001, 0.0480438545, 0.00835035555, 0.99905026, 0.0427672863, -0.0484432355, -0.0423147529, 0.997929275",
+        "Archivable": true,
+        "Name": "Left Arm"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Right Leg",
+      "properties": {
+        "CFrame": "0.252583265, 0.0530027747, 0.00763782859, 0.991550982, 0.114704058, -0.0605774745, -0.110766947, 0.991732419, 0.0647884756, 0.0675081834, -0.0575311184, 0.996058702",
+        "Archivable": true,
+        "Name": "Right Leg"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Right Arm",
+      "properties": {
+        "CFrame": "-0.0819722563, -0.0679202974, -0.0357839167, 0.994468927, 0.0182390586, -0.103435509, -0.0138793141, 0.998991013, 0.0427136011, 0.104110166, -0.0410417765, 0.993718624",
+        "Archivable": true,
+        "Name": "Right Arm"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Left Leg",
+      "properties": {
+        "CFrame": "-0.250442624, 0.0504494905, 0.0101433098, 0.990784705, -0.116019532, 0.0698951483, 0.112007663, 0.991964519, 0.0588279106, -0.0761587173, -0.0504569486, 0.995818257",
+        "Archivable": true,
+        "Name": "Left Leg"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Head",
+      "properties": {
+        "CFrame": "6.21657819e-08, -5.58793545e-09, 0.0166622102, 0.999954641, -0.00949384551, -0.000759642979, 0.00947419275, 0.999696612, -0.0227382444, 0.000975235365, 0.0227300171, 0.999741256",
+        "Archivable": true,
+        "Name": "Head"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe",
+      "properties": {
+        "Name": "Keyframe",
+        "Archivable": true
+      },
+      "class": "Keyframe"
+    },
+    {
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart",
+      "properties": {
+        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Name": "HumanoidRootPart"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso",
+      "properties": {
+        "CFrame": "-0.0344753265, -0.00791164488, -0.0374341011, 1, 2.38418579e-07, -8.74227766e-08, -2.40112229e-07, 0.999801695, -0.0199139398, 8.26575857e-08, 0.0199139398, 0.999801695",
+        "Archivable": true,
+        "Name": "Torso"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Right Arm",
+      "properties": {
+        "CFrame": "-0.0820335895, -0.0671903789, -0.0354141891, 0.994093835, 0.0160429962, -0.107331917, -0.0115428884, 0.999033332, 0.0424177237, 0.107908651, -0.040928375, 0.993318081",
         "Archivable": true,
         "Name": "Right Arm"
       },
@@ -1580,7 +1438,7 @@
     {
       "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Right Leg",
       "properties": {
-        "CFrame": "0.334882975, 0.0626470447, 0.0118248165, 0.98401016, 0.167651683, -0.0601416864, -0.163650274, 0.984291196, 0.0662532449, 0.0703044757, -0.0553516783, 0.995988667",
+        "CFrame": "0.244491845, 0.0516670346, 0.00722032785, 0.991916537, 0.111527346, -0.0605261959, -0.107592992, 0.992082059, 0.0647834912, 0.0672721565, -0.0577476509, 0.9960621",
         "Archivable": true,
         "Name": "Right Leg"
       },
@@ -1589,7 +1447,154 @@
     {
       "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Left Arm",
       "properties": {
-        "CFrame": "0.0822439045, -0.105411321, -0.0447383523, 0.998733342, 0.000858800951, 0.0503093265, -0.00296787149, 0.999118984, 0.0418635346, -0.0502290688, -0.0419598967, 0.997855961",
+        "CFrame": "0.0825918093, -0.0659716427, -0.0301610231, 0.998450935, -0.0105789099, 0.054625921, 0.00824986398, 0.999054372, 0.042687986, -0.0550258905, -0.0421713628, 0.997594059",
         "Archivable": true,
         "Name": "Left Arm"
       },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Head",
+      "properties": {
+        "CFrame": "8.10541678e-08, -1.95577741e-08, 0.0166620314, 0.9999547, -0.00949387904, -0.000759620976, 0.00947590359, 0.999735773, -0.0209471043, 0.000958280056, 0.0209389366, 0.999780357",
+        "Archivable": true,
+        "Name": "Head"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Left Leg",
+      "properties": {
+        "CFrame": "-0.242430151, 0.0491179824, 0.00964808464, 0.991149902, -0.112885579, 0.0698489547, 0.10887146, 0.992312908, 0.0588397272, -0.0759542137, -0.0507144332, 0.995820761",
+        "Archivable": true,
+        "Name": "Left Leg"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe",
+      "properties": {
+        "Name": "Keyframe",
+        "Archivable": true
+      },
+      "class": "Keyframe"
+    },
+    {
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart",
+      "properties": {
+        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Name": "HumanoidRootPart"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso",
+      "properties": {
+        "CFrame": "-0.0344753265, -0.00796222035, -0.0380897522, 1, 2.38418579e-07, -8.74227766e-08, -2.40135734e-07, 0.999795973, -0.0201984849, 8.25892457e-08, 0.0201984849, 0.999795973",
+        "Archivable": true,
+        "Name": "Torso"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Right Leg",
+      "properties": {
+        "CFrame": "0.247093379, 0.0521014929, 0.00735473633, 0.991805196, 0.112503201, -0.0605446398, -0.108568013, 0.991975963, 0.0647820681, 0.0673470944, -0.0576779805, 0.996061087",
+        "Archivable": true,
+        "Name": "Right Leg"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Left Arm",
+      "properties": {
+        "CFrame": "0.0825954229, -0.0666789412, -0.0302382708, 0.998572707, -0.0105436612, 0.0523582809, 0.0083089713, 0.999052703, 0.0427173935, -0.0527591072, -0.0422215872, 0.997714341",
+        "Archivable": true,
+        "Name": "Left Arm"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Head",
+      "properties": {
+        "CFrame": "8.35862011e-08, -1.86264515e-09, 0.0166622996, 0.9999547, -0.00949387811, -0.000759620802, 0.00947532151, 0.99972409, -0.02149502, 0.00096347736, 0.0214868616, 0.999768734",
+        "Archivable": true,
+        "Name": "Head"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Left Leg",
+      "properties": {
+        "CFrame": "-0.245005518, 0.0495511889, 0.00980734825, 0.99103868, -0.113847181, 0.0698656663, 0.109833896, 0.992207289, 0.0588324629, -0.0760191754, -0.05063162, 0.995820045",
+        "Archivable": true,
+        "Name": "Left Leg"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Right Arm",
+      "properties": {
+        "CFrame": "-0.0820135847, -0.0674056411, -0.0355232954, 0.994218051, 0.0167745724, -0.106061794, -0.0123199839, 0.999019802, 0.0425166264, 0.106671013, -0.0409642309, 0.993450165",
+        "Archivable": true,
+        "Name": "Right Arm"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe",
+      "properties": {
+        "Name": "Keyframe",
+        "Archivable": true
+      },
+      "class": "Keyframe"
+    },
+    {
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart",
+      "properties": {
+        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Name": "HumanoidRootPart"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso",
+      "properties": {
+        "CFrame": "-0.0344753265, -0.00780155044, -0.0362203121, 1, 2.38418579e-07, -8.74227766e-08, -2.40060075e-07, 0.999814034, -0.0192835443, 8.28089668e-08, 0.0192835443, 0.999814034",
+        "Archivable": true,
+        "Name": "Torso"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Right Arm",
+      "properties": {
+        "CFrame": "-0.0820720643, -0.0668413937, -0.0352371335, 0.993849218, 0.0145890657, -0.109777436, -0.0100019956, 0.999058306, 0.0422204584, 0.110290028, -0.0408628769, 0.993059099",
+        "Archivable": true,
+        "Name": "Right Arm"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/AnimDummy/AnimSaves/Idle/Keyframe/HumanoidRootPart/Torso/Left Leg",
+      "properties": {

@@ -1,3 +1,439 @@
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Humanoid/HumanoidDescription/BodyPartDescription",
+      "properties": {
+        "Color": "0.5, 0.5, 0.5",
+        "Archivable": true,
+        "Name": "BodyPartDescription"
+      },
+      "class": "BodyPartDescription"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Humanoid/HumanoidDescription/BodyPartDescription",
+      "properties": {
+        "Color": "0.5, 0.5, 0.5",
+        "Archivable": true,
+        "Name": "BodyPartDescription"
+      },
+      "class": "BodyPartDescription"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Humanoid/HumanoidDescription/BodyPartDescription",
+      "properties": {
+        "Color": "0.5, 0.5, 0.5",
+        "Archivable": true,
+        "Name": "BodyPartDescription"
+      },
+      "class": "BodyPartDescription"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Accessory (Meguna Haori V1)",
+      "properties": {
+        "Name": "Accessory (Meguna Haori V1)",
+        "Archivable": true
+      },
+      "class": "Accessory"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Accessory (Meguna Haori V1)/ThumbnailConfiguration",
+      "properties": {
+        "Name": "ThumbnailConfiguration",
+        "Archivable": true
+      },
+      "class": "Configuration"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Accessory (Meguna Haori V1)/ThumbnailConfiguration/ThumbnailCameraTarget",
+      "properties": {
+        "Name": "ThumbnailCameraTarget",
+        "Archivable": true
+      },
+      "class": "ObjectValue"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Accessory (Meguna Haori V1)/ThumbnailConfiguration/ThumbnailCameraValue",
+      "properties": {
+        "Value": "-1.45419253e-05, 0, -96.3068161, -1, 0, -1.50995803e-07, 0, 1, 0, 1.50995803e-07, 0, -1",
+        "Archivable": true,
+        "Name": "ThumbnailCameraValue"
+      },
+      "class": "CFrameValue"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Accessory (Meguna Haori V1)/Handle",
+      "properties": {
+        "CanCollide": false,
+        "Color": "0.639216, 0.635294, 0.647059",
+        "Anchored": false,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "180, 0, 180",
+        "Transparency": 0,
+        "Name": "Handle",
+        "Position": "1.9160748543356476e-09, -1.7607696056365967, -1.9873104095458984",
+        "CFrame": "1.91607485e-09, -1.76076961, -1.98731041, -1, 0, -1.50995803e-07, 0, 1, 0, 1.50995803e-07, 0, -1",
+        "Material": "Enum.Material.Plastic",
+        "Archivable": true,
+        "Size": "1, 1, 1"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Accessory (Meguna Haori V1)/Handle/OriginalSize",
+      "properties": {
+        "Value": "1, 1, 1",
+        "Archivable": true,
+        "Name": "OriginalSize"
+      },
+      "class": "Vector3Value"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Accessory (Meguna Haori V1)/Handle/SpecialMesh",
+      "properties": {
+        "Scale": "1, 1, 1",
+        "MeshId": "rbxassetid://73965505624012",
+        "Archivable": true,
+        "Name": "SpecialMesh"
+      },
+      "class": "SpecialMesh"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Accessory (Meguna Haori V1)/Handle/AvatarPartScaleType",
+      "properties": {
+        "Value": "ProportionsNormal",
+        "Archivable": true,
+        "Name": "AvatarPartScaleType"
+      },
+      "class": "StringValue"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Accessory (Meguna Haori V1)/Handle/AccessoryWeld",
+      "properties": {
+        "Enabled": true,
+        "Name": "AccessoryWeld",
+        "Archivable": true,
+        "Active": false
+      },
+      "class": "Weld"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Accessory (Meguna Haori V1)/Handle/BodyBackAttachment",
+      "properties": {
+        "Visible": false,
+        "Name": "BodyBackAttachment",
+        "Position": "0, 0.4607696533203125, 0.5126838684082031",
+        "CFrame": "0, 0.460769653, 0.512683868, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Rotation": "-0, 0, -0"
+      },
+      "class": "Attachment"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Accessory (Meguna Haori V1)/Handle/TouchInterest",
+      "properties": {
+        "Name": "TouchInterest",
+        "Archivable": true
+      },
+      "class": "TouchTransmitter"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Clothing",
+      "properties": {
+        "Name": "Clothing",
+        "Archivable": true
+      },
+      "class": "Shirt"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Accessory (LongAccessory)",
+      "properties": {
+        "Name": "Accessory (LongAccessory)",
+        "Archivable": true
+      },
+      "class": "Accessory"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Accessory (LongAccessory)/ThumbnailConfiguration",
+      "properties": {
+        "Name": "ThumbnailConfiguration",
+        "Archivable": true
+      },
+      "class": "Configuration"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Accessory (LongAccessory)/ThumbnailConfiguration/ThumbnailCameraTarget",
+      "properties": {
+        "Name": "ThumbnailCameraTarget",
+        "Archivable": true
+      },
+      "class": "ObjectValue"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Accessory (LongAccessory)/ThumbnailConfiguration/ThumbnailCameraValue",
+      "properties": {
+        "Value": "0.682114601, 0.488521576, 3.1539619, 0.972663939, -0.0462950133, 0.22755006, -1.0477379e-09, 0.979927778, 0.199365288, -0.232211173, -0.193916321, 0.953141391",
+        "Archivable": true,
+        "Name": "ThumbnailCameraValue"
+      },
+      "class": "CFrameValue"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Accessory (LongAccessory)/Handle",
+      "properties": {
+        "CanCollide": false,
+        "Color": "0.639216, 0.635294, 0.647059",
+        "Anchored": false,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, 0, 0",
+        "Transparency": 0,
+        "Name": "Handle",
+        "Position": "-0.006187427788972855, -0.5323617458343506, -1.9270553588867188",
+        "CFrame": "-0.00618742779, -0.532361746, -1.92705536, 1, 2.38418536e-07, 1.1046701e-06, -2.38418778e-07, 1, 2.38417385e-07, -1.1046701e-06, -2.38417684e-07, 1",
+        "Material": "Enum.Material.Plastic",
+        "Archivable": true,
+        "Size": "1, 1, 1"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Accessory (LongAccessory)/Handle/HairAttachment",
+      "properties": {
+        "Visible": false,
+        "Name": "HairAttachment",
+        "Position": "0.006184533704072237, 1.3323616981506348, -0.07294578850269318",
+        "CFrame": "0.0061845337, 1.3323617, -0.0729457885, -1, -2.38418778e-07, 9.53670394e-07, -2.38418551e-07, 1, 2.38417613e-07, -9.53670451e-07, 2.38417385e-07, -1",
+        "Archivable": true,
+        "Rotation": "-179.99998474121094, 0.00005464128480525687, 179.99998474121094"
+      },
+      "class": "Attachment"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Accessory (LongAccessory)/Handle/AvatarPartScaleType",
+      "properties": {
+        "Value": "Classic",
+        "Archivable": true,
+        "Name": "AvatarPartScaleType"
+      },
+      "class": "StringValue"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Accessory (LongAccessory)/Handle/SpecialMesh",
+      "properties": {
+        "Scale": "1, 1, 1",
+        "MeshId": "rbxassetid://75887919688804",
+        "Archivable": true,
+        "Name": "SpecialMesh"
+      },
+      "class": "SpecialMesh"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Accessory (LongAccessory)/Handle/OriginalSize",
+      "properties": {
+        "Value": "1, 1, 1",
+        "Archivable": true,
+        "Name": "OriginalSize"
+      },
+      "class": "Vector3Value"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Accessory (LongAccessory)/Handle/AccessoryWeld",
+      "properties": {
+        "Enabled": true,
+        "Name": "AccessoryWeld",
+        "Archivable": true,
+        "Active": false
+      },
+      "class": "Weld"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Accessory (LongAccessory)/Handle/TouchInterest",
+      "properties": {
+        "Name": "TouchInterest",
+        "Archivable": true
+      },
+      "class": "TouchTransmitter"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Clothing",
+      "properties": {
+        "Name": "Clothing",
+        "Archivable": true
+      },
+      "class": "Pants"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Accessory (Old Joseph)",
+      "properties": {
+        "Name": "Accessory (Old Joseph)",
+        "Archivable": true
+      },
+      "class": "Accessory"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Accessory (Old Joseph)/ThumbnailConfiguration",
+      "properties": {
+        "Name": "ThumbnailConfiguration",
+        "Archivable": true
+      },
+      "class": "Configuration"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Accessory (Old Joseph)/ThumbnailConfiguration/ThumbnailCameraTarget",
+      "properties": {
+        "Name": "ThumbnailCameraTarget",
+        "Archivable": true
+      },
+      "class": "ObjectValue"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Accessory (Old Joseph)/ThumbnailConfiguration/ThumbnailCameraValue",
+      "properties": {
+        "Value": "-3.70375972e-07, -0.0576789081, -4.23660707, -1, -1.19009913e-09, -8.74146764e-08, 0, 0.999907315, -0.0136131477, 8.74227766e-08, -0.0136131477, -0.999907315",
+        "Archivable": true,
+        "Name": "ThumbnailCameraValue"
+      },
+      "class": "CFrameValue"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Accessory (Old Joseph)/Handle",
+      "properties": {
+        "CanCollide": false,
+        "Color": "0.639216, 0.635294, 0.647059",
+        "Anchored": false,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "180, 0, 180",
+        "Transparency": 0,
+        "Name": "Handle",
+        "Position": "-0.00022888176317792386, 0.20000004768371582, -1.999502182006836",
+        "CFrame": "-0.000228881763, 0.200000048, -1.99950218, -1, 0, -1.50995803e-07, 0, 1, 0, 1.50995803e-07, 0, -1",
+        "Material": "Enum.Material.Plastic",
+        "Archivable": true,
+        "Size": "1, 1, 1"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Accessory (Old Joseph)/Handle/AccessoryWeld",
+      "properties": {
+        "Enabled": true,
+        "Name": "AccessoryWeld",
+        "Archivable": true,
+        "Active": false
+      },
+      "class": "Weld"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Accessory (Old Joseph)/Handle/FaceCenterAttachment",
+      "properties": {
+        "Visible": false,
+        "Name": "FaceCenterAttachment",
+        "Position": "-0.0002288818359375, 0, 0.00049591064453125",
+        "CFrame": "-0.000228881836, 0, 0.000495910645, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Rotation": "-0, 0, -0"
+      },
+      "class": "Attachment"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Accessory (Old Joseph)/Handle/OriginalSize",
+      "properties": {
+        "Value": "1, 1, 1",
+        "Archivable": true,
+        "Name": "OriginalSize"
+      },
+      "class": "Vector3Value"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Accessory (Old Joseph)/Handle/AvatarPartScaleType",
+      "properties": {
+        "Value": "Classic",
+        "Archivable": true,
+        "Name": "AvatarPartScaleType"
+      },
+      "class": "StringValue"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Accessory (Old Joseph)/Handle/SpecialMesh",
+      "properties": {
+        "Scale": "1, 1, 1",
+        "MeshId": "rbxassetid://17489906130",
+        "Archivable": true,
+        "Name": "SpecialMesh"
+      },
+      "class": "SpecialMesh"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Accessory (Old Joseph)/Handle/TouchInterest",
+      "properties": {
+        "Name": "TouchInterest",
+        "Archivable": true
+      },
+      "class": "TouchTransmitter"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Head",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.913725, 0.843137, 0.772549",
+        "Anchored": false,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "180, 0, 180",
+        "Transparency": 0,
+        "Name": "Head",
+        "Position": "0, 0.20000004768371582, -2",
+        "CFrame": "0, 0.200000048, -2, -1, 0, -1.50995803e-07, 0, 1, 0, 1.50995803e-07, 0, -1",
+        "Material": "Enum.Material.Plastic",
+        "Archivable": true,
+        "Size": "2, 1, 1"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Head/FaceFrontAttachment",
+      "properties": {
+        "Visible": false,
+        "Name": "FaceFrontAttachment",
+        "Position": "0, 0, -0.6000000238418579",
+        "CFrame": "0, 0, -0.600000024, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Rotation": "-0, 0, -0"
+      },
+      "class": "Attachment"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Head/face",
+      "properties": {
+        "Rotation": 0,
+        "Transparency": 0,
+        "Name": "face",
+        "ZIndex": 1,
+        "Archivable": true,
+        "Texture": "rbxasset://textures/face.png"
+      },
+      "class": "Decal"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Head/FaceCenterAttachment",
+      "properties": {
+        "Visible": false,
+        "Name": "FaceCenterAttachment",
+        "Position": "0, 0, 0",
+        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Rotation": "-0, 0, -0"
+      },
+      "class": "Attachment"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Head/DisplayAttachement",
+      "properties": {
+        "Visible": false,
+        "Name": "DisplayAttachement",
+        "Position": "0, 1.25, 0",
+        "CFrame": "0, 1.25, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Rotation": "-0, 0, -0"
+      },
+      "class": "Attachment"
+    },
+    {
       "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Head/DisplayAttachement/NameDisplayer",
       "properties": {
         "Enabled": true,

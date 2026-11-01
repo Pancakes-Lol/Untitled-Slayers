@@ -1,174 +1,151 @@
-      "path": "Workspace/Tetsu/Head/FaceCenterAttachment",
       "properties": {
-        "Visible": false,
-        "Name": "FaceCenterAttachment",
-        "Position": "0, 0, 0",
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Rotation": "-0, 0, -0"
-      },
-      "class": "Attachment"
-    },
-    {
-      "path": "Workspace/Tetsu/Head/FaceFrontAttachment",
-      "properties": {
-        "Visible": false,
-        "Name": "FaceFrontAttachment",
-        "Position": "0, 0, -0.6000000238418579",
-        "CFrame": "0, 0, -0.600000024, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Rotation": "-0, 0, -0"
-      },
-      "class": "Attachment"
-    },
-    {
-      "path": "Workspace/Tetsu/Head/DisplayAttachement",
-      "properties": {
-        "Visible": false,
-        "Name": "DisplayAttachement",
-        "Position": "0, 1.25, 0",
-        "CFrame": "0, 1.25, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Rotation": "-0, 0, -0"
-      },
-      "class": "Attachment"
-    },
-    {
-      "path": "Workspace/Tetsu/Head/DisplayAttachement/NameDisplayer",
-      "properties": {
-        "Enabled": true,
-        "Active": true,
-        "ResetOnSpawn": true,
-        "Name": "NameDisplayer",
-        "ClipsDescendants": true,
-        "StudsOffset": "0, 0, 0",
-        "Brightness": 1,
-        "Archivable": true,
-        "Size": "{4, 0}, {1, 0}"
-      },
-      "class": "BillboardGui"
-    },
-    {
-      "path": "Workspace/Tetsu/Head/DisplayAttachement/NameDisplayer/TextLabel",
-      "properties": {
-        "Visible": true,
-        "Active": false,
-        "AnchorPoint": "0, 0",
-        "ZIndex": 1,
-        "Archivable": true,
-        "Size": "{1, 0}, {1, 0}",
-        "TextColor3": "0.976471, 0.976471, 0.976471",
-        "ClipsDescendants": false,
-        "Text": "Tetsu",
-        "LayoutOrder": 0,
-        "AutomaticSize": "Enum.AutomaticSize.None",
-        "Rotation": 0,
-        "Transparency": 1,
-        "Name": "TextLabel",
-        "Position": "{0, 0}, {0, 0}",
-        "Font": "Enum.Font.TitilliumWeb",
-        "BackgroundTransparency": 1,
-        "TextSize": 14,
-        "BackgroundColor3": "1, 1, 1"
-      },
-      "class": "TextLabel"
-    },
-    {
-      "path": "Workspace/Tetsu/Head/DisplayAttachement/NameDisplayer/TextLabel/UIStroke",
-      "properties": {
-        "Enabled": true,
-        "Transparency": 0,
-        "Name": "UIStroke",
-        "Color": "0.152941, 0.152941, 0.152941",
-        "ZIndex": 1,
-        "Archivable": true
-      },
-      "class": "UIStroke"
-    },
-    {
-      "path": "Workspace/Tetsu/Head/Mesh",
-      "properties": {
-        "Scale": "1.25, 1.25, 1.25",
-        "MeshId": "",
-        "Archivable": true,
-        "Name": "Mesh"
-      },
-      "class": "SpecialMesh"
-    },
-    {
-      "path": "Workspace/SpawnLocation",
-      "properties": {
-        "Enabled": true,
         "CanCollide": false,
-        "Color": "0.639216, 0.635294, 0.647059",
-        "Anchored": true,
+        "Color": "0.454902, 0.305882, 0.180392",
+        "Anchored": false,
+        "TextureID": "",
+        "MeshId": "rbxassetid://13662643071",
+        "Rotation": "-84.81900024414062, 84.8290023803711, 0",
+        "Transparency": 0,
+        "Name": "Handle",
+        "Position": "-62, -18.636899948120117, 23.5081729888916",
+        "CFrame": "-62, -18.6368999, 23.508173, 0.0901361629, 3.16649675e-08, 0.99592948, -0.991860032, 0.0903079733, 0.0897678584, -0.0899403691, -0.995913923, 0.00814004615",
+        "Material": "Enum.Material.Wood",
+        "Archivable": true,
+        "Size": "0.4206775724887848, 4.6761860847473145, 0.39863264560699463"
+      },
+      "class": "MeshPart"
+    },
+    {
+      "path": "Workspace/AshenPup/Sword/Handle/SwordLines",
+      "properties": {
+        "Enabled": true,
+        "Name": "SwordLines",
+        "Archivable": true,
+        "Active": false
+      },
+      "class": "Motor6D"
+    },
+    {
+      "path": "Workspace/AshenPup/Sword/Handle/Attachment",
+      "properties": {
+        "Visible": false,
+        "Name": "Attachment",
+        "Position": "-0.010235786437988281, -0.9125518798828125, -0.0000457763671875",
+        "CFrame": "-0.0102357864, -0.91255188, -4.57763672e-05, 0.999358892, -0.035803061, -1.94044401e-06, 0.035803061, 0.999358892, 5.72221595e-08, 1.93715118e-06, -1.26659302e-07, 1.00000012",
+        "Archivable": true,
+        "Rotation": "-0.000003278587655586307, -0.00011117925168946385, 2.051802635192871"
+      },
+      "class": "Attachment"
+    },
+    {
+      "path": "Workspace/AshenPup/Sword/Handle/Trail2",
+      "properties": {
+        "Enabled": true,
+        "Name": "Trail2",
+        "LightEmission": 0.44999998807907104,
+        "Brightness": 10,
+        "Archivable": true,
+        "Texture": "rbxassetid://9035800962"
+      },
+      "class": "Trail"
+    },
+    {
+      "path": "Workspace/AshenPup/Sword/Handle/Weld",
+      "properties": {
+        "Enabled": true,
+        "Name": "Weld",
+        "Archivable": true,
+        "Active": false
+      },
+      "class": "Weld"
+    },
+    {
+      "path": "Workspace/AshenPup/Sword/Handle/Attachment",
+      "properties": {
+        "Visible": false,
+        "Name": "Attachment",
+        "Position": "-0.12395477294921875, 2.261444091796875, -0.000030517578125",
+        "CFrame": "-0.123954773, 2.26144409, -3.05175781e-05, 0.999358952, -0.0358029418, -2.44915987e-06, 0.0358029455, 0.999358892, 1.06095357e-07, 2.44379112e-06, -1.93714442e-07, 1.00000012",
+        "Archivable": true,
+        "Rotation": "-0.00000607881520409137, -0.00014032651961315423, 2.051795721054077"
+      },
+      "class": "Attachment"
+    },
+    {
+      "path": "Workspace/AshenPup/Sword/Handle/Trail3",
+      "properties": {
+        "Enabled": true,
+        "Name": "Trail3",
+        "LightEmission": 0.3499999940395355,
+        "Brightness": 2,
+        "Archivable": true,
+        "Texture": "rbxassetid://9035819980"
+      },
+      "class": "Trail"
+    },
+    {
+      "path": "Workspace/AshenPup/Sword/Handle/Trail",
+      "properties": {
+        "Enabled": true,
+        "Name": "Trail",
+        "LightEmission": 0.3499999940395355,
+        "Brightness": 2,
+        "Archivable": true,
+        "Texture": "rbxassetid://9035801067"
+      },
+      "class": "Trail"
+    },
+    {
+      "path": "Workspace/AshenPup/Sword/Handle/ManualWeld",
+      "properties": {
+        "Enabled": true,
+        "Name": "ManualWeld",
+        "Archivable": true,
+        "Active": false
+      },
+      "class": "ManualWeld"
+    },
+    {
+      "path": "Workspace/AshenPup/Left Arm",
+      "properties": {
+        "CanCollide": false,
+        "Color": "0.917647, 0.721569, 0.572549",
+        "Anchored": false,
         "Shape": "Enum.PartType.Block",
         "Rotation": "0, 0, 0",
-        "Transparency": 1,
-        "Name": "SpawnLocation",
-        "Position": "-72, 2, 33.25",
-        "CFrame": "-72, 2, 33.25, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Transparency": 0,
+        "Name": "Left Arm",
+        "Position": "-65, -17.75, 25.5",
+        "CFrame": "-65, -17.75, 25.5, 1, 0, 0, 0, 1, 0, 0, 0, 1",
         "Material": "Enum.Material.Plastic",
         "Archivable": true,
-        "Size": "12, 1, 12"
-      },
-      "class": "SpawnLocation"
-    },
-    {
-      "path": "Workspace/Float Brick",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.980392, 1, 0.643137",
-        "Anchored": false,
-        "Shape": "Enum.PartType.Ball",
-        "Rotation": "0, 0, 0",
-        "Transparency": 0,
-        "Name": "Float Brick",
-        "Position": "-21, 1.25, -20",
-        "CFrame": "-21, 1.25, -20, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Material": "Enum.Material.ForceField",
-        "Archivable": true,
-        "Size": "2, 2, 2"
+        "Size": "1, 2, 1"
       },
       "class": "Part"
     },
     {
-      "path": "Workspace/Float Brick/Attachment",
+      "path": "Workspace/AshenPup/Left Arm/LeftGripAttachment",
       "properties": {
         "Visible": false,
-        "Name": "Attachment",
-        "Position": "0, 0, 0",
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Name": "LeftGripAttachment",
+        "Position": "0, -1, 0",
+        "CFrame": "0, -1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
         "Archivable": true,
         "Rotation": "-0, 0, -0"
       },
       "class": "Attachment"
     },
     {
-      "path": "Workspace/Float Brick/Attachment/Images/10365549270_2",
+      "path": "Workspace/AshenPup/Left Arm/LeftShoulderAttachment",
       "properties": {
-        "Enabled": true,
-        "Name": "Images/10365549270_2",
-        "Shape": "Enum.ParticleEmitterShape.Box",
-        "LightEmission": 0,
-        "Brightness": 1,
+        "Visible": false,
+        "Name": "LeftShoulderAttachment",
+        "Position": "0, 1, 0",
+        "CFrame": "0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
         "Archivable": true,
-        "Texture": "rbxassetid://72827670246026"
+        "Rotation": "-0, 0, -0"
       },
-      "class": "ParticleEmitter"
-    },
-    {
-      "path": "Workspace/Float Brick/Attachment/Images/16511961942_starified",
-      "properties": {
-        "Enabled": true,
-        "Name": "Images/16511961942_starified",
-        "Shape": "Enum.ParticleEmitterShape.Box",
-        "LightEmission": 0,
-        "Brightness": 1,
-        "Archivable": true,
-        "Texture": "rbxassetid://81476801210365"
-      },
-      "class": "ParticleEmitter"
+      "class": "Attachment"
     },
     {
       "path": "Workspace/Particle Wall",
@@ -415,14 +392,132 @@
       "class": "ParticleEmitter"
     },
     {
+      "path": "Workspace/Float Brick",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.980392, 1, 0.643137",
+        "Anchored": false,
+        "Shape": "Enum.PartType.Ball",
+        "Rotation": "0, 0, 0",
+        "Transparency": 0,
+        "Name": "Float Brick",
+        "Position": "-21, 1.25, -20",
+        "CFrame": "-21, 1.25, -20, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Material": "Enum.Material.ForceField",
+        "Archivable": true,
+        "Size": "2, 2, 2"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Float Brick/Attachment",
+      "properties": {
+        "Visible": false,
+        "Name": "Attachment",
+        "Position": "0, 0, 0",
+        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Rotation": "-0, 0, -0"
+      },
+      "class": "Attachment"
+    },
+    {
+      "path": "Workspace/Float Brick/Attachment/Images/16511961942_starified",
+      "properties": {
+        "Enabled": true,
+        "Name": "Images/16511961942_starified",
+        "Shape": "Enum.ParticleEmitterShape.Box",
+        "LightEmission": 0,
+        "Brightness": 1,
+        "Archivable": true,
+        "Texture": "rbxassetid://81476801210365"
+      },
+      "class": "ParticleEmitter"
+    },
+    {
+      "path": "Workspace/Float Brick/Attachment/Images/10365549270_2",
+      "properties": {
+        "Enabled": true,
+        "Name": "Images/10365549270_2",
+        "Shape": "Enum.ParticleEmitterShape.Box",
+        "LightEmission": 0,
+        "Brightness": 1,
+        "Archivable": true,
+        "Texture": "rbxassetid://72827670246026"
+      },
+      "class": "ParticleEmitter"
+    },
+    {
+      "path": "Workspace/SpawnLocation",
+      "properties": {
+        "Enabled": true,
+        "CanCollide": false,
+        "Color": "0.639216, 0.635294, 0.647059",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, 0, 0",
+        "Transparency": 1,
+        "Name": "SpawnLocation",
+        "Position": "-72, 2, 33.25",
+        "CFrame": "-72, 2, 33.25, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Material": "Enum.Material.Plastic",
+        "Archivable": true,
+        "Size": "12, 1, 12"
+      },
+      "class": "SpawnLocation"
+    },
+    {
       "path": "Workspace/Camera",
       "properties": {
         "FieldOfView": 70,
-        "CFrame": "-93.8148193, 43.2200508, 0.919169068, -0.792438507, 0.4424676, -0.419837743, -1.49011612e-08, 0.688312948, 0.725413918, 0.609951913, 0.57484591, -0.545445621",
+        "CFrame": "-135.056839, 16.5048847, 66.5205994, -0.394667059, 0.373719811, -0.839387536, -0, 0.91354531, 0.40673703, 0.918824196, 0.160525709, -0.360546261",
         "Archivable": true,
         "Name": "Camera"
       },
       "class": "Camera"
+    },
+    {
+      "path": "Workspace/Slash Particle",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.639216, 0.635294, 0.647059",
+        "Anchored": false,
+        "Shape": "Enum.PartType.Ball",
+        "Rotation": "0, 0, 0",
+        "Transparency": 0,
+        "Name": "Slash Particle",
+        "Position": "-130.5, 13.5, 78.25",
+        "CFrame": "-130.5, 13.5, 78.25, 1, 0, 0, 0, 1, 0, 0, 0, 0.99999994",
+        "Material": "Enum.Material.Plastic",
+        "Archivable": true,
+        "Size": "4, 4, 4"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Slash Particle/Attachment",
+      "properties": {
+        "Visible": false,
+        "Name": "Attachment",
+        "Position": "0, 0, 0",
+        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Rotation": "-0, 0, -0"
+      },
+      "class": "Attachment"
+    },
+    {
+      "path": "Workspace/Slash Particle/Attachment/A",
+      "properties": {
+        "Enabled": true,
+        "Name": "A",
+        "Shape": "Enum.ParticleEmitterShape.Box",
+        "LightEmission": 0,
+        "Brightness": 1,
+        "Archivable": true,
+        "Texture": "rbxassetid://128480930120243"
+      },
+      "class": "ParticleEmitter"
     },
     {
       "path": "ReplicatedStorage",
@@ -692,13 +787,3 @@
         "Name": "CombatSystem"
       },
       "path": "ServerScriptService/GameServer/CombatSystem",
-      "source": "-- Shared sword combat + Dawnreach enemy spawner.\n-- Primary enemy tuning: ReplicatedStorage.Assets.Configs.EnemyConfig\n-- Fallback tuning: ReplicatedStorage.GameShared.EnemyConfig\nlocal Players = game:GetService(\"Players\")\nlocal ReplicatedStorage = game:GetService(\"ReplicatedStorage\")\nlocal ServerStorage = game:GetService(\"ServerStorage\")\nlocal KeyframeSequenceProvider = game:GetService(\"KeyframeSequenceProvider\")\n\nlocal combatRemote = ReplicatedStorage:FindFirstChild(\"SwordCombat\") or Instance.new(\"RemoteEvent\")\ncombatRemote.Name = \"SwordCombat\"\ncombatRemote.Parent = ReplicatedStorage\n\nlocal assets = ReplicatedStorage:WaitForChild(\"Assets\")\nlocal swordsFolder = assets:WaitForChild(\"Swords\")\nlocal swordTemplate = swordsFolder:WaitForChild(\"Sword\")\n\nlocal function resolveEnemyConfig()\n\tlocal configsFolder = assets:FindFirstChild(\"Configs\")\n\tlocal primary = configsFolder and configsFolder:FindFirstChild(\"EnemyConfig\")\n\tif primary and primary:IsA(\"ModuleScript\") then\n\t\tlocal ok, result = pcall(require, primary)\n\t\tif ok then return result end\n\t\twarn(\"[CombatSystem] Could not require Assets.Configs.EnemyConfig: \" .. tostring(result))\n\tend\n\n\tlocal gameShared = ReplicatedStorage:FindFirstChild(\"GameShared\")\n\tlocal fallback = gameShared and gameShared:FindFirstChild(\"EnemyConfig\")\n\tif fallback and fallback:IsA(\"ModuleScript\") then\n\t\twarn(\"[CombatSystem] Using GameShared.EnemyConfig fallback. Restart Rojo to load Assets.Configs.EnemyConfig.\")\n\t\treturn require(fallback)\n\tend\n\n\terror(\"[CombatSystem] EnemyConfig missing from both Assets.Configs and GameShared\")\nend\n\nlocal EnemyConfig = resolveEnemyConfig()\nlocal spawnRoot = workspace:WaitForChild(\"EnemieSpawnPoints\"):WaitForChild(\"Dawnreach\")\nlocal animSaves = workspace:WaitForChild(\"TemplateR6\"):WaitForChild(\"AnimSaves\")\n\nlocal enemyFolder = workspace:FindFirstChild(\"LiveEnemies\") or Instance.new(\"Folder\")\nenemyFolder.Name = \"LiveEnemies\"\nenemyFolder.Parent = workspace\n\nlocal PLAYER_ATTACK_COOLDOWN = 0.42\nlocal PLAYER_DAMAGE = 20\n\nlocal templateFolder = ServerStorage:FindFirstChild(\"EnemyTemplates\") or Instance.new(\"Folder\")\ntemplateFolder.Name = \"EnemyTemplates\"\ntemplateFolder.Parent = ServerStorage\n\nlocal function xpNeededForLevel(level)\n\treturn 100 + math.max(0, level - 1) * 50\nend\n\nlocal function awardPlayer(player, xpAmount, coinAmount)\n\tlocal stats = player and player:FindFirstChild(\"leaderstats\")\n\tif not stats then return end\n\tlocal level = stats:FindFirstChild(\"Level\")\n\tlocal xp = stats:FindFirstChild(\"XP\")\n\tlocal coins = stats:FindFirstChild(\"Coins\")\n\tif not level or not xp or not coins then return end\n\n\tcoins.Value += coinAmount\n\txp.Value += xpAmount\n\twhile xp.Value >= xpNeededForLevel(level.Value) do\n\t\tlocal needed = xpNeededForLevel(level.Value)\n\t\txp.Value -= needed\n\t\tlevel.Value += 1\n\tend\nend\n\nlocal function randomReward(range, fallback)\n\tif type(range) ~= \"table\" then return fallback or 0 end\n\tlocal minValue = tonumber(range.Min) or fallback or 0\n\tlocal maxValue = tonumber(range.Max) or minValue\n\tif maxValue < minValue then minValue, maxValue = maxValue, minValue end\n\treturn math.random(math.floor(minValue), math.floor(maxValue))\nend\n\nlocal function takeTemplate(name)\n\tlocal stored = templateFolder:FindFirstChild(name)\n\tif stored then return stored end\n\tlocal model = workspace:FindFirstChild(name)\n\tif not model or not model:IsA(\"Model\") then\n\t\twarn(\"[CombatSystem] Missing Workspace.\" .. name .. \" enemy model\")\n\t\treturn nil\n\tend\n\tmodel.Archivable = true\n\tmodel.Parent = templateFolder\n\treturn model\nend\n\nlocal templates = {}\nfor enemyName, config in pairs(EnemyConfig) do\n\ttemplates[enemyName] = takeTemplate(config.ModelName or enemyName)\nend\n\nlocal function cloneDevSword(displayName)\n\tlocal tool = swordTemplate:Clone()\n\ttool.Name = displayName or \"Novice Slayer Sword\"\n\ttool.CanBeDropped = false\n\ttool:SetAttribute(\"SlayerSword\", true)\n\ttool:SetAttribute(\"DeveloperSword\", true)\n\treturn tool\nend\n\nlocal function replaceOldSword(container)\n\tif not container then return end\n\tlocal old = container:FindFirstChild(\"Novice Slayer Sword\")\n\tif not old or not old:IsA(\"Tool\") or old:GetAttribute(\"DeveloperSword\") then return end\n\tlocal replacement = cloneDevSword(\"Novice Slayer Sword\")\n\told:Destroy()\n\treplacement.Parent = container\nend\n\nlocal function watchPlayer(player)\n\tlocal backpack = player:WaitForChild(\"Backpack\")\n\tbackpack.ChildAdded:Connect(function(child)\n\t\tif child:IsA(\"Tool\") and child.Name == \"Novice Slayer Sword\" and not child:GetAttribute(\"DeveloperSword\") then\n\t\t\ttask.defer(replaceOldSword, backpack)\n\t\tend\n\tend)\n\treplaceOldSword(backpack)\n\n\tplayer.CharacterAdded:Connect(function(character)\n\t\tcharacter.ChildAdded:Connect(function(child)\n\t\t\tif child:IsA(\"Tool\") and child.Name == \"Novice Slayer Sword\" and not child:GetAttribute(\"DeveloperSword\") then\n\t\t\t\ttask.defer(replaceOldSword, character)\n\t\t\tend\n\t\tend)\n\t\ttask.defer(replaceOldSword, character)\n\tend)\nend\nfor _, player in ipairs(Players:GetPlayers()) do task.spawn(watchPlayer, player) end\nPlayers.PlayerAdded:Connect(watchPlayer)\n\nlocal animationCache = {}\nlocal function resolveAnimation(name)\n\tif animationCache[name] then return animationCache[name] end\n\tfor _, obj in ipairs(ReplicatedStorage:GetDescendants()) do\n\t\tif obj:IsA(\"Animation\") and obj.Name == name and obj.AnimationId ~= \"\" then\n\t\t\tanimationCache[name] = obj\n\t\t\treturn obj\n\t\tend\n\tend\n\tlocal sequence = animSaves:FindFirstChild(name)\n\tif sequence and sequence:IsA(\"KeyframeSequence\") then\n\t\tlocal ok, id = pcall(function()\n\t\t\treturn KeyframeSequenceProvider:RegisterKeyframeSequence(sequence)\n\t\tend)\n\t\tif ok and id then\n\t\t\tlocal anim = Instance.new(\"Animation\")\n\t\t\tanim.Name = name\n\t\t\tanim.AnimationId = id\n\t\t\tanimationCache[name] = anim\n\t\t\treturn anim\n\t\tend\n\tend\n\twarn(\"[CombatSystem] Animation not available: \" .. name)\n\treturn nil\nend\n\nlocal function loadTrack(animator, name, priority, looped)\n\tlocal anim = resolveAnimation(name)\n\tif not anim then return nil end\n\tlocal ok, track = pcall(function() return animator:LoadAnimation(anim) end)\n\tif not ok then return nil end\n\ttrack.Priority = priority\n\ttrack.Looped = looped\n\treturn track\nend\n\nlocal function setupNpcAnimations(humanoid)\n\tlocal animator = humanoid:FindFirstChildOfClass(\"Animator\") or Instance.new(\"Animator\")\n\tanimator.Parent = humanoid\n\tlocal tracks = {\n\t\tidle = loadTrack(animator, \"Sword Idle\", Enum.AnimationPriority.Idle, true),\n\t\twalk = loadTrack(animator, \"Sword Walk\", Enum.AnimationPriority.Movement, true),\n\t\tattacks = {},\n\t}\n\tfor i = 1, 5 do\n\t\ttracks.attacks[i] = loadTrack(animator, \"Attack\" .. i, Enum.AnimationPriority.Action, false)\n\tend\n\treturn tracks\nend\n\nlocal function setMoving(tracks, moving)\n\tif moving then\n\t\tif tracks.idle and tracks.idle.IsPlaying then tracks.idle:Stop(0.15) end\n\t\tif tracks.walk and not tracks.walk.IsPlaying then tracks.walk:Play(0.15) end\n\telse\n\t\tif tracks.walk and tracks.walk.IsPlaying then tracks.walk:Stop(0.15) end\n\t\tif tracks.idle and not tracks.idle.IsPlaying then tracks.idle:Play(0.15) end\n\tend\nend\n\nlocal function playDifferentAttack(tracks, lastIndex)\n\tlocal choices = {}\n\tfor i = 1, 5 do\n\t\tif i ~= lastIndex and tracks.attacks[i] then table.insert(choices, i) end\n\tend\n\tif #choices == 0 then return lastIndex end\n\tlocal index = choices[math.random(1, #choices)]\n\ttracks.attacks[index]:Play(0.08, 1, 1)\n\treturn index\nend\n\nlocal function nearestPlayer(position, aggroDistance)\n\tlocal bestPlayer, bestRoot, bestHum, bestDistance\n\tfor _, player in ipairs(Players:GetPlayers()) do\n\t\tlocal character = player.Character\n\t\tlocal root = character and character:FindFirstChild(\"HumanoidRootPart\")\n\t\tlocal hum = character and character:FindFirstChildOfClass(\"Humanoid\")\n\t\tif root and hum and hum.Health > 0 then\n\t\t\tlocal distance = (root.Position - position).Magnitude\n\t\t\tif distance <= aggroDistance and (not bestDistance or distance < bestDistance) then\n\t\t\t\tbestPlayer, bestRoot, bestHum, bestDistance = player, root, hum, distance\n\t\t\tend\n\t\tend\n\tend\n\treturn bestPlayer, bestRoot, bestHum, bestDistance\nend\n\nlocal function equipNpcSword(model, humanoid)\n\tlocal tool = cloneDevSword(\"Sword\")\n\ttool.Parent = model\n\tpcall(function() humanoid:EquipTool(tool) end)\nend\n\nlocal function spawnEnemy(enemyName, point)\n\tlocal config = EnemyConfig[enemyName]\n\tlocal template = templates[enemyName]\n\tif not config or not template or not point:IsA(\"BasePart\") then return end\n\n\tlocal model = template:Clone()\n\tmodel.Name = config.ModelName or enemyName\n\tmodel:SetAttribute(\"EnemyNPC\", true)\n\tmodel:SetAttribute(\"SpawnEnemyType\", enemyName)\n\tmodel.Parent = enemyFolder\n\n\tlocal humanoid = model:FindFirstChildOfClass(\"Humanoid\")\n\tlocal root = model:FindFirstChild(\"HumanoidRootPart\") or model.PrimaryPart\n\tif not humanoid or not root or not root:IsA(\"BasePart\") then\n\t\twarn(\"[CombatSystem] \" .. enemyName .. \" needs a Humanoid and HumanoidRootPart\")\n\t\tmodel:Destroy()\n\t\treturn\n\tend\n\n\tmodel.PrimaryPart = root\n\tmodel:PivotTo(point.CFrame + Vector3.new(0, 3, 0))\n\tfor _, part in ipairs(model:GetDescendants()) do\n\t\tif part:IsA(\"BasePart\") then\n\t\t\tpart.Anchored = false\n\t\t\tpcall(function() part:SetNetworkOwner(nil) end)\n\t\tend\n\tend\n\n\thumanoid.MaxHealth = config.Health\n\thumanoid.Health = config.Health\n\thumanoid.WalkSpeed = config.WalkSpeed\n\thumanoid.HealthDisplayType = Enum.HumanoidHealthDisplayType.AlwaysOn\n\thumanoid.DisplayDistanceType = Enum.HumanoidDisplayDistanceType.Viewer\n\n\tlocal home = root.Position\n\tlocal tracks = setupNpcAnimations(humanoid)\n\tequipNpcSword(model, humanoid)\n\tsetMoving(tracks, false)\n\n\tlocal alive = true\n\tlocal lastAttackTime = 0\n\tlocal lastAttackIndex = 0\n\n\thumanoid.Died:Connect(function()\n\t\talive = false\n\t\tlocal userId = humanoid:GetAttribute(\"LastHitUserId\")\n\t\tlocal killer = userId and Players:GetPlayerByUserId(userId)\n\t\tif killer then\n\t\t\tlocal xpReward = randomReward(config.XPReward, 0)\n\t\t\tlocal coinsConfig = config.PossibleRewards and config.PossibleRewards.Coins\n\t\t\tlocal coinReward = randomReward(coinsConfig, 0)\n\t\t\tawardPlayer(killer, xpReward, coinReward)\n\t\tend\n\n\t\ttask.delay(config.RespawnTime, function()\n\t\t\tif point.Parent then spawnEnemy(enemyName, point) end\n\t\tend)\n\t\ttask.delay(2, function()\n\t\t\tif model.Parent then model:Destroy() end\n\t\tend)\n\tend)\n\n\ttask.spawn(function()\n\t\twhile alive and model.Parent and humanoid.Health > 0 do\n\t\t\tlocal leashDistance = config.LeashDistance\n\t\t\tlocal attackRange = config.AttackRange\n\t\t\tlocal homeDistance = (root.Position - home).Magnitude\n\t\t\tlocal _, targetRoot, targetHum, targetDistance = nearestPlayer(root.Position, config.AggroRange)\n\n\t\t\tif homeDistance > leashDistance + 0.75 then\n\t\t\t\thumanoid:MoveTo(home)\n\t\t\t\tsetMoving(tracks, true)\n\t\t\telseif targetRoot and targetHum and targetDistance then\n\t\t\t\tlocal targetFromHome = targetRoot.Position - home\n\t\t\t\tif targetFromHome.Magnitude > leashDistance + attackRange then\n\t\t\t\t\thumanoid:MoveTo(home)\n\t\t\t\t\tsetMoving(tracks, homeDistance > 1.5)\n\t\t\t\telseif targetDistance <= attackRange then\n\t\t\t\t\thumanoid:MoveTo(root.Position)\n\t\t\t\t\tsetMoving(tracks, false)\n\t\t\t\t\tif os.clock() - lastAttackTime >= config.AttackCooldown then\n\t\t\t\t\t\tlastAttackTime = os.clock()\n\t\t\t\t\t\tlastAttackIndex = playDifferentAttack(tracks, lastAttackIndex)\n\t\t\t\t\t\ttask.delay(0.22, function()\n\t\t\t\t\t\t\tif alive and targetHum.Parent and targetHum.Health > 0 and (targetRoot.Position - root.Position).Magnitude <= attackRange + 1 then\n\t\t\t\t\t\t\t\ttargetHum:TakeDamage(config.AttackDamage)\n\t\t\t\t\t\t\tend\n\t\t\t\t\t\tend)\n\t\t\t\t\tend\n\t\t\t\telse\n\t\t\t\t\tlocal desired = targetRoot.Position\n\t\t\t\t\tlocal fromHome = desired - home\n\t\t\t\t\tif fromHome.Magnitude > leashDistance then\n\t\t\t\t\t\tdesired = home + fromHome.Unit * leashDistance\n\t\t\t\t\tend\n\t\t\t\t\thumanoid:MoveTo(desired)\n\t\t\t\t\tsetMoving(tracks, true)\n\t\t\t\tend\n\t\t\telse\n\t\t\t\tif homeDistance > 1.5 then\n\t\t\t\t\thumanoid:MoveTo(home)\n\t\t\t\t\tsetMoving(tracks, true)\n\t\t\t\telse\n\t\t\t\t\tsetMoving(tracks, false)\n\t\t\t\tend\n\t\t\tend\n\t\t\ttask.wait(0.15)\n\t\tend\n\tend)\nend\n\nfor enemyName, config in pairs(EnemyConfig) do\n\tlocal folder = spawnRoot:FindFirstChild(config.SpawnFolder or enemyName)\n\tif folder then\n\t\tfor _, point in ipairs(folder:GetChildren()) do\n\t\t\tif point:IsA(\"BasePart\") then spawnEnemy(enemyName, point) end\n\t\tend\n\telse\n\t\twarn(\"[CombatSystem] Missing spawn folder for \" .. enemyName)\n\tend\nend\n\nlocal lastPlayerAttack = {}\ncombatRemote.OnServerEvent:Connect(function(player)\n\tlocal now = os.clock()\n\tif now - (lastPlayerAttack[player] or 0) < PLAYER_ATTACK_COOLDOWN then return end\n\tlastPlayerAttack[player] = now\n\n\tlocal character = player.Character\n\tlocal root = character and character:FindFirstChild(\"HumanoidRootPart\")\n\tlocal hum = character and character:FindFirstChildOfClass(\"Humanoid\")\n\tlocal tool = character and character:FindFirstChildOfClass(\"Tool\")\n\tif not root or not hum or hum.Health <= 0 or not tool or not tool:GetAttribute(\"SlayerSword\") then return end\n\n\tlocal bestHum, bestDistance\n\tfor _, model in ipairs(enemyFolder:GetChildren()) do\n\t\tlocal enemyHum = model:FindFirstChildOfClass(\"Humanoid\")\n\t\tlocal enemyRoot = model:FindFirstChild(\"HumanoidRootPart\") or model.PrimaryPart\n\t\tif enemyHum and enemyRoot and enemyHum.Health > 0 then\n\t\t\tlocal offset = enemyRoot.Position - root.Position\n\t\t\tlocal distance = offset.Magnitude\n\t\t\tif distance <= 7.5 and distance > 0.01 and root.CFrame.LookVector:Dot(offset.Unit) > -0.15 and (not bestDistance or distance < bestDistance) then\n\t\t\t\tbestHum, bestDistance = enemyHum, distance\n\t\t\tend\n\t\tend\n\tend\n\n\tlocal dummy = workspace:FindFirstChild(\"Slayer Training Enemy\")\n\tif dummy and dummy:IsA(\"Model\") then\n\t\tlocal enemyHum = dummy:FindFirstChildOfClass(\"Humanoid\")\n\t\tlocal enemyRoot = dummy:FindFirstChild(\"HumanoidRootPart\") or dummy.PrimaryPart\n\t\tif enemyHum and enemyRoot and enemyHum.Health > 0 then\n\t\t\tlocal offset = enemyRoot.Position - root.Position\n\t\t\tlocal distance = offset.Magnitude\n\t\t\tif distance <= 7.5 and distance > 0.01 and root.CFrame.LookVector:Dot(offset.Unit) > -0.15 and (not bestDistance or distance < bestDistance) then\n\t\t\t\tbestHum, bestDistance = enemyHum, distance\n\t\t\tend\n\t\tend\n\tend\n\n\tif bestHum then\n\t\tbestHum:SetAttribute(\"LastHitUserId\", player.UserId)\n\t\tbestHum:TakeDamage(PLAYER_DAMAGE)\n\tend\nend)\n\nPlayers.PlayerRemoving:Connect(function(player)\n\tlastPlayerAttack[player] = nil\nend)\n",
-      "class": "Script"
-    },
-    {
-      "properties": {
-        "Enabled": true,
-        "Archivable": true,
-        "Name": "SilentWindLeaves"
-      },
-      "path": "ServerScriptService/GameServer/SilentWindLeaves",
