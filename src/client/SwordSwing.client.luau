@@ -50,21 +50,34 @@ local function loadTrack(animator, name, priority, looped)
 	return track
 end
 
--- Slash Particle is a visual-only player effect. These offsets keep it in front of
--- the character and rotate it to roughly match each of the five attack animations.
-local slashArcByAttack = {
-	[1] = CFrame.new(0.65, 0.65, -3.15) * CFrame.Angles(0, math.rad(-8), math.rad(-38)),
-	[2] = CFrame.new(-0.55, 0.55, -3.1) * CFrame.Angles(0, math.rad(8), math.rad(38)),
-	[3] = CFrame.new(0.15, 0.9, -3.2) * CFrame.Angles(math.rad(-8), 0, math.rad(-12)),
-	[4] = CFrame.new(0.45, 0.35, -3.0) * CFrame.Angles(math.rad(8), math.rad(-10), math.rad(-58)),
-	[5] = CFrame.new(-0.35, 0.35, -3.0) * CFrame.Angles(math.rad(8), math.rad(10), math.rad(58)),
+-- ParticleEmitter textures are camera-facing billboards. Rotating the invisible
+-- Part does not rotate the visible slash, so each attack rotates the emitter itself.
+local slashRotationByAttack = {
+	[1] = -48,
+	[2] = 48,
+	[3] = 88,
+	[4] = -72,
+	[5] = 72,
 }
+
+local function scaleSequence(sequence, scale)
+	local points = {}
+	for _, point in ipairs(sequence.Keypoints) do
+		table.insert(points, NumberSequenceKeypoint.new(
+			point.Time,
+			point.Value * scale,
+			point.Envelope * scale
+		))
+	end
+	return NumberSequence.new(points)
+end
 
 local function emitSlash(tool, attackIndex)
 	if not slashTemplate or not slashTemplate:IsA("BasePart") then return end
 	local character = player.Character
 	local root = character and character:FindFirstChild("HumanoidRootPart")
-	if not root or tool.Parent ~= character then return end
+	local handle = tool:FindFirstChild("Handle")
+	if not root or not handle or not handle:IsA("BasePart") or tool.Parent ~= character then return end
 
 	local slash = slashTemplate:Clone()
 	slash.Name = "Player Slash Particle"
@@ -74,12 +87,19 @@ local function emitSlash(tool, attackIndex)
 	slash.CanQuery = false
 	slash.Massless = true
 	slash.Transparency = 1
-	slash.CFrame = root.CFrame * (slashArcByAttack[attackIndex] or slashArcByAttack[1])
+
+	-- Sample the sword during the actual swing, then keep the burst just ahead of it.
+	local slashPosition = handle.Position + root.CFrame.LookVector * 0.8 + Vector3.new(0, 0.2, 0)
+	slash.CFrame = CFrame.new(slashPosition)
 	slash.Parent = workspace
 
+	local rotation = slashRotationByAttack[attackIndex] or 0
 	for _, obj in ipairs(slash:GetDescendants()) do
 		if obj:IsA("ParticleEmitter") then
 			obj.Enabled = false
+			obj.Rotation = NumberRange.new(rotation)
+			obj.RotSpeed = NumberRange.new(0)
+			obj.Size = scaleSequence(obj.Size, 0.58)
 			obj:Emit(obj:GetAttribute("EmitCount") or 1)
 		end
 	end
@@ -205,12 +225,14 @@ local function bindSword(tool)
 		stopTrack(walkTrack, 0.08)
 		local track = attackTracks[index]
 		if track then track:Play(0.06, 1, 1) end
-		-- Slightly delay the burst so it lands during the visible part of the swing.
-		task.delay(0.06, function()
+
+		-- Wait until the sword has visibly entered the swing before sampling its position.
+		task.delay(0.09, function()
 			if equipped and tool.Parent == player.Character then
 				emitSlash(tool, index)
 			end
 		end)
+
 		combatRemote:FireServer(index)
 		local duration = 0.48
 		if track and track.Length > 0 then duration = math.clamp(track.Length * 0.75, 0.32, 0.8) end
