@@ -4,7 +4,6 @@ local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local KeyframeSequenceProvider = game:GetService("KeyframeSequenceProvider")
 local Debris = game:GetService("Debris")
-local TweenService = game:GetService("TweenService")
 
 local player = Players.LocalPlayer
 local combatRemote = ReplicatedStorage:WaitForChild("SwordCombat")
@@ -51,83 +50,49 @@ local function loadTrack(animator, name, priority, looped)
 	return track
 end
 
--- Keep the slash as a fixed world-space cut in front of the player.
--- The texture comes directly from Workspace/Slash Particle/Attachment/A.
-local slashAngleByAttack = {
-	[1] = -42,
-	[2] = 42,
-	[3] = -28,
-	[4] = -55,
-	[5] = 55,
-}
+-- Placement only. The VFX itself comes directly from Workspace > Slash Particle.
+-- Change these values here only if you want to move the whole effect in relation
+-- to the player. All visual tuning should be done on the Studio asset itself.
+local SLASH_DISTANCE = 3.1
+local SLASH_HEIGHT = 0.65
+local SLASH_SIDE_OFFSET = 0
+local SLASH_DIAGONAL_ANGLE = -42
+local SLASH_LIFETIME = 1.5
+local SLASH_DELAY = 0.09
 
-local function findSlashEmitter()
-	if not slashTemplate then return nil end
-	for _, obj in ipairs(slashTemplate:GetDescendants()) do
-		if obj:IsA("ParticleEmitter") then
-			return obj
-		end
-	end
-	return nil
-end
-
-local function emitSlash(tool, attackIndex)
+local function emitSlash(tool)
 	if not slashTemplate or not slashTemplate:IsA("BasePart") then return end
-	local sourceEmitter = findSlashEmitter()
-	if not sourceEmitter or sourceEmitter.Texture == "" then return end
 
 	local character = player.Character
 	local root = character and character:FindFirstChild("HumanoidRootPart")
 	if not root or tool.Parent ~= character then return end
 
-	-- Capture facing at the moment of the attack. This plane never follows the camera.
-	local facing = root.CFrame
-	local plane = Instance.new("Part")
-	plane.Name = "Player Slash Plane"
-	plane.Anchored = true
-	plane.CanCollide = false
-	plane.CanTouch = false
-	plane.CanQuery = false
-	plane.CastShadow = false
-	plane.Transparency = 1
-	plane.Size = Vector3.new(5.4, 5.4, 0.05)
-	plane.CFrame = facing * CFrame.new(0, 0.65, -3.1)
-	plane.Parent = workspace
+	-- Clone the real Studio asset. We do not rebuild or replace its VFX.
+	local slash = slashTemplate:Clone()
+	slash.Name = "Player Slash Particle"
+	slash.Anchored = true
+	slash.CanCollide = false
+	slash.CanTouch = false
+	slash.CanQuery = false
+	slash.CastShadow = false
+	slash.Transparency = 1
 
-	local function addFace(face)
-		local surface = Instance.new("SurfaceGui")
-		surface.Name = "SlashSurface"
-		surface.Face = face
-		surface.AlwaysOnTop = true
-		surface.LightInfluence = 0
-		surface.SizingMode = Enum.SurfaceGuiSizingMode.PixelsPerStud
-		surface.PixelsPerStud = 120
-		surface.Parent = plane
+	-- Lock the asset in front of the direction the player is facing at attack time.
+	-- The diagonal is a world-space roll, so the camera does not control it.
+	slash.CFrame = root.CFrame
+		* CFrame.new(SLASH_SIDE_OFFSET, SLASH_HEIGHT, -SLASH_DISTANCE)
+		* CFrame.Angles(0, 0, math.rad(SLASH_DIAGONAL_ANGLE))
+	slash.Parent = workspace
 
-		local image = Instance.new("ImageLabel")
-		image.Name = "SlashImage"
-		image.BackgroundTransparency = 1
-		image.Size = UDim2.fromScale(1, 1)
-		image.Position = UDim2.fromScale(0, 0)
-		image.Image = sourceEmitter.Texture
-		image.ImageColor3 = Color3.new(1, 1, 1)
-		image.ImageTransparency = 0
-		image.ScaleType = Enum.ScaleType.Fit
-		image.Rotation = slashAngleByAttack[attackIndex] or -42
-		image.Parent = surface
-
-		TweenService:Create(
-			image,
-			TweenInfo.new(0.24, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-			{ImageTransparency = 1}
-		):Play()
+	-- Preserve every emitter property from Studio. We only convert it into a burst.
+	for _, obj in ipairs(slash:GetDescendants()) do
+		if obj:IsA("ParticleEmitter") then
+			obj.Enabled = false
+			obj:Emit(obj:GetAttribute("EmitCount") or 1)
+	end
 	end
 
-	-- Draw on both sides so the slash still looks correct from side/front camera angles.
-	addFace(Enum.NormalId.Front)
-	addFace(Enum.NormalId.Back)
-
-	Debris:AddItem(plane, 0.3)
+	Debris:AddItem(slash, SLASH_LIFETIME)
 end
 
 local function bindSword(tool)
@@ -249,10 +214,9 @@ local function bindSword(tool)
 		local track = attackTracks[index]
 		if track then track:Play(0.06, 1, 1) end
 
-		-- Spawn during the visible cutting portion of the animation.
-		task.delay(0.09, function()
+		task.delay(SLASH_DELAY, function()
 			if equipped and tool.Parent == player.Character then
-				emitSlash(tool, index)
+				emitSlash(tool)
 			end
 		end)
 
