@@ -50,8 +50,7 @@ local function loadTrack(animator, name, priority, looped)
 	return track
 end
 
--- ParticleEmitter textures are camera-facing billboards. Rotating the invisible
--- Part does not rotate the visible slash, so each attack rotates the emitter itself.
+-- Rotation inside the slash plane for each attack animation.
 local slashRotationByAttack = {
 	[1] = -48,
 	[2] = 48,
@@ -88,15 +87,23 @@ local function emitSlash(tool, attackIndex)
 	slash.Massless = true
 	slash.Transparency = 1
 
-	-- Sample the sword during the actual swing, then keep the burst just ahead of it.
-	local slashPosition = handle.Position + root.CFrame.LookVector * 0.8 + Vector3.new(0, 0.2, 0)
-	slash.CFrame = CFrame.new(slashPosition)
+	-- Put the emitter near the sword, but orient its forward axis from the player's
+	-- current attack direction. Particle velocity then locks the billboard plane to
+	-- world/attack space instead of letting it rotate with the camera.
+	local attackDirection = root.CFrame.LookVector
+	local slashPosition = handle.Position + attackDirection * 0.9 + Vector3.new(0, 0.2, 0)
+	slash.CFrame = CFrame.lookAt(slashPosition, slashPosition + attackDirection, root.CFrame.UpVector)
 	slash.Parent = workspace
 
 	local rotation = slashRotationByAttack[attackIndex] or 0
 	for _, obj in ipairs(slash:GetDescendants()) do
 		if obj:IsA("ParticleEmitter") then
 			obj.Enabled = false
+			obj.Orientation = Enum.ParticleOrientation.VelocityPerpendicular
+			obj.EmissionDirection = Enum.NormalId.Front
+			obj.Speed = NumberRange.new(0.05)
+			obj.Drag = 100
+			obj.LockedToPart = true
 			obj.Rotation = NumberRange.new(rotation)
 			obj.RotSpeed = NumberRange.new(0)
 			obj.Size = scaleSequence(obj.Size, 0.58)
