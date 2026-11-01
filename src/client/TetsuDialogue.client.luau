@@ -1,167 +1,184 @@
--- Tetsu dialogue UI: choices, custom name entry, quest notifications.
+-- Tetsu dialogue controller using the Studio-authored DialogUI.
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local UserInputService = game:GetService("UserInputService")
+
 local player = Players.LocalPlayer
 local remote = ReplicatedStorage:WaitForChild("TetsuDialogue")
+local playerGui = player:WaitForChild("PlayerGui")
 
-local gui = Instance.new("ScreenGui")
-gui.Name = "TetsuDialogueUI"
-gui.ResetOnSpawn = false
-gui.DisplayOrder = 40
-gui.Parent = player:WaitForChild("PlayerGui")
-local panel = Instance.new("Frame")
-panel.Name = "DialoguePanel"
-panel.AnchorPoint = Vector2.new(0.5, 1)
-panel.Position = UDim2.new(0.5, 0, 1, -28)
-panel.Size = UDim2.new(0.9, 0, 0, 280)
-panel.BackgroundColor3 = Color3.fromRGB(18, 22, 34)
-panel.BorderSizePixel = 0
-panel.Visible = false
-panel.Parent = gui
-local limit = Instance.new("UISizeConstraint")
-limit.MaxSize = Vector2.new(570, 280)
-limit.Parent = panel
-Instance.new("UICorner", panel).CornerRadius = UDim.new(0, 14)
-local stroke = Instance.new("UIStroke")
-stroke.Color = Color3.fromRGB(130, 112, 235)
-stroke.Thickness = 2
-stroke.Parent = panel
+local gui = playerGui:WaitForChild("DialogUI")
+local mainFrame = gui:WaitForChild("MainFrame")
+local dialogFrame = mainFrame:WaitForChild("DialogFrame")
+local npcName = dialogFrame:WaitForChild("NPCNameTextHolder")
+local message = dialogFrame:WaitForChild("NPCDialogSpeach")
+local optionsFrame = dialogFrame:WaitForChild("OptionsFrame")
 
-local function textLabel(name, value, y, height, size)
-	local label = Instance.new("TextLabel")
-	label.Name = name
-	label.BackgroundTransparency = 1
-	label.Position = UDim2.new(0, 18, 0, y)
-	label.Size = UDim2.new(1, -36, 0, height)
-	label.Font = Enum.Font.GothamSemibold
-	label.TextColor3 = Color3.new(1, 1, 1)
-	label.TextSize = size
-	label.TextWrapped = true
-	label.TextXAlignment = Enum.TextXAlignment.Left
-	label.Text = value
-	label.Parent = panel
-	return label
+local optionButtons = {}
+for _, child in ipairs(optionsFrame:GetChildren()) do
+	if child:IsA("TextButton") and child.Name == "OptionButtonTemplate" then
+		table.insert(optionButtons, child)
+	end
 end
-textLabel("Heading", "TETSU  •  YOUR SLAYER JOURNEY", 7, 29, 14)
-local message = textLabel("Message", "", 40, 62, 17)
-local function button(name, y, height)
-	local b = Instance.new("TextButton")
-	b.Name = name
-	b.Position = UDim2.new(0, 18, 0, y)
-	b.Size = UDim2.new(1, -36, 0, height)
-	b.BackgroundColor3 = Color3.fromRGB(52, 58, 83)
-	b.TextColor3 = Color3.new(1, 1, 1)
-	b.TextSize = 15
-	b.Font = Enum.Font.GothamMedium
-	b.TextWrapped = true
-	b.Parent = panel
-	Instance.new("UICorner", b).CornerRadius = UDim.new(0, 8)
-	return b
+
+if #optionButtons < 3 then
+	warn("[TetsuDialogue] DialogUI needs three OptionButtonTemplate buttons.")
 end
-local choices = {button("Choice1", 103, 40), button("Choice2", 148, 40), button("Choice3", 193, 40)}
-local nextButton = button("Continue", 137, 46)
-nextButton.Visible = false
-local nameInput = Instance.new("TextBox")
-nameInput.Name = "CustomName"
-nameInput.Position = UDim2.new(0, 18, 0, 113)
-nameInput.Size = UDim2.new(1, -36, 0, 43)
-nameInput.BackgroundColor3 = Color3.fromRGB(43, 48, 68)
-nameInput.TextColor3 = Color3.new(1, 1, 1)
-nameInput.PlaceholderText = "Your slayer name (3–20 characters)"
-nameInput.Text = ""
-nameInput.ClearTextOnFocus = false
-nameInput.Font = Enum.Font.GothamMedium
-nameInput.TextSize = 15
-nameInput.Visible = false
-nameInput.Parent = panel
-Instance.new("UICorner", nameInput).CornerRadius = UDim.new(0, 8)
-local confirm = button("ConfirmName", 166, 43)
-confirm.Text = "Confirm my name"
-confirm.Visible = false
-local close = Instance.new("TextButton")
-close.Name = "Close"
-close.Position = UDim2.new(1, -50, 0, 6)
-close.Size = UDim2.fromOffset(34, 30)
-close.BackgroundTransparency = 1
-close.TextColor3 = Color3.new(1, 1, 1)
-close.Text = "X"
-close.Font = Enum.Font.GothamBold
-close.TextSize = 17
-close.Parent = panel
+
+for i, button in ipairs(optionButtons) do
+	button.LayoutOrder = i
+	button.Visible = false
+	button.TextSize = math.min(button.TextSize, 18)
+end
+
+npcName.Text = "Tetsu"
+gui.Enabled = false
+
 local phase = "Closed"
 local storyAction = "Continue"
-local function hideControls()
-	for _, b in ipairs(choices) do b.Visible = false end
-	nextButton.Visible = false
-	nameInput.Visible = false
-	confirm.Visible = false
+
+local function hideButtons()
+	for _, button in ipairs(optionButtons) do
+		button.Visible = false
+		button.Active = false
+	end
 end
-local function dismiss()
-	panel.Visible = false
+
+local function closeDialogue(notifyServer)
+	hideButtons()
+	gui.Enabled = false
 	phase = "Closed"
-	remote:FireServer("Close")
+	if notifyServer then
+		remote:FireServer("Close")
+	end
 end
-close.Activated:Connect(dismiss)
-local function choose(i)
-	if phase ~= "Question" then return end
-	phase = "Waiting"
-	remote:FireServer("Choose", i)
+
+local function showButton(index, text, callback)
+	local button = optionButtons[index]
+	if not button then return end
+	button.Text = text
+	button.Visible = true
+	button.Active = true
+
+	local connection
+	connection = button.Activated:Connect(function()
+		if not button.Active then return end
+		button.Active = false
+		if connection then connection:Disconnect() end
+		callback()
+	end)
 end
-for i, b in ipairs(choices) do
-	b.Activated:Connect(function() choose(i) end)
+
+local buttonConnections = {}
+local function disconnectButtons()
+	for _, connection in ipairs(buttonConnections) do
+		connection:Disconnect()
+	end
+	table.clear(buttonConnections)
 end
-confirm.Activated:Connect(function()
-	if phase ~= "NameEntry" then return end
-	phase = "Waiting"
-	remote:FireServer("CustomName", nameInput.Text)
-end)
-nextButton.Activated:Connect(function()
-	if phase ~= "Story" then return end
-	phase = "Waiting"
-	remote:FireServer(storyAction)
-end)
+
+local function bindButton(index, text, callback)
+	local button = optionButtons[index]
+	if not button then return end
+	button.Text = text
+	button.Visible = true
+	button.Active = true
+	local connection = button.Activated:Connect(function()
+		if phase == "Waiting" or phase == "Closed" then return end
+		disconnectButtons()
+		hideButtons()
+		callback()
+	end)
+	table.insert(buttonConnections, connection)
+end
+
+local function beginDisplay(text)
+	disconnectButtons()
+	hideButtons()
+	npcName.Text = "Tetsu"
+	message.Text = text or ""
+	gui.Enabled = true
+end
+
 remote.OnClientEvent:Connect(function(action, data)
 	data = data or {}
+
 	if action == "Close" then
-		panel.Visible = false
-		phase = "Closed"
+		disconnectButtons()
+		closeDialogue(false)
 		return
 	end
+
+	if action == "Question" then
+		beginDisplay(data.question)
+		phase = "Question"
+		for i = 1, math.min(3, #optionButtons) do
+			local answer = data.answers and data.answers[i]
+			if answer ~= nil then
+				bindButton(i, tostring(i) .. ".  " .. tostring(answer), function()
+					phase = "Waiting"
+					remote:FireServer("Choose", i)
+				end)
+			end
+		end
+		return
+	end
+
 	if action == "Quest" then
-		panel.Visible = true
-		hideControls()
+		beginDisplay(data.text)
 		phase = "Story"
 		storyAction = "Continue"
-		message.Text = data.text
-		nextButton.Text = "Got it"
-		nextButton.Visible = true
+		bindButton(1, "Got it", function()
+			phase = "Waiting"
+			remote:FireServer("Continue")
+		end)
 		return
 	end
-	panel.Visible = true
-	hideControls()
-	if action == "Question" then
-		phase = "Question"
-		message.Text = data.question
-		for i, b in ipairs(choices) do
-			b.Text = tostring(i)..".  "..tostring(data.answers[i])
-			b.Visible = true
-		end
-	elseif action == "NameEntry" or action == "NameError" then
-		phase = "NameEntry"
-		message.Text = action == "NameError" and data.text or "Choose your custom in-game slayer name."
-		nameInput.Visible = true
-		confirm.Visible = true
-	elseif action == "Story" then
+
+	if action == "Story" then
+		beginDisplay(data.text)
 		phase = "Story"
-		message.Text = data.text
-		nextButton.Text = data.button or "Continue"
-		storyAction = data.button == "Accept sword & quest" and "Accept" or "Continue"
-		nextButton.Visible = true
+		local buttonText = data.button or "Continue"
+		storyAction = buttonText == "Accept sword & quest" and "Accept" or "Continue"
+		bindButton(1, buttonText, function()
+			phase = "Waiting"
+			remote:FireServer(storyAction)
+		end)
+		return
+	end
+
+	-- The current Tetsu server no longer asks players to choose a custom name.
+	-- Keep a safe fallback in case an older server sends one of these actions.
+	if action == "NameEntry" or action == "NameError" then
+		beginDisplay(action == "NameError" and data.text or "Tetsu already knows your slayer name.")
+		phase = "Story"
+		bindButton(1, "Continue", function()
+			phase = "Waiting"
+			remote:FireServer("Continue")
+		end)
 	end
 end)
+
 UserInputService.InputBegan:Connect(function(input, processed)
-	if processed or phase ~= "Question" or UserInputService:GetFocusedTextBox() then return end
-	local keys = {[Enum.KeyCode.One]=1, [Enum.KeyCode.Two]=2, [Enum.KeyCode.Three]=3}
-	if keys[input.KeyCode] then choose(keys[input.KeyCode]) end
+	if processed then return end
+
+	if input.KeyCode == Enum.KeyCode.Escape and gui.Enabled then
+		disconnectButtons()
+		closeDialogue(true)
+		return
+	end
+
+	if phase ~= "Question" or UserInputService:GetFocusedTextBox() then return end
+	local keys = {
+		[Enum.KeyCode.One] = 1,
+		[Enum.KeyCode.Two] = 2,
+		[Enum.KeyCode.Three] = 3,
+	}
+	local index = keys[input.KeyCode]
+	if not index or not optionButtons[index] or not optionButtons[index].Visible then return end
+
+	disconnectButtons()
+	hideButtons()
+	phase = "Waiting"
+	remote:FireServer("Choose", index)
 end)
