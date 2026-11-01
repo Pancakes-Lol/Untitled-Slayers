@@ -1,0 +1,1086 @@
+      "source": "-- Replaces the noisy per-tree Math1 wind scripts with one silent controller.\n-- Keeps leaf movement, but removes [WindLeaves] debug spam during play.\nlocal RunService = game:GetService(\"RunService\")\n\nlocal trees = workspace:FindFirstChild(\"Trees\")\nif not trees then return end\n\n-- Disable the old wind scripts. They are named Math1 in the current map.\nfor _, obj in ipairs(trees:GetDescendants()) do\n\tif obj:IsA(\"Script\") and obj.Name == \"Math1\" then\n\t\tobj.Disabled = true\n\tend\nend\n\nlocal leafData = {}\nlocal function addLeaf(part)\n\tif not part:IsA(\"BasePart\") or leafData[part] then return end\n\tpart.Anchored = true\n\tleafData[part] = {\n\t\tbase = part.CFrame,\n\t\toffset = math.random() * 20,\n\t\tstrength = math.rad(1.2 + math.random() * 1.8),\n\t}\nend\n\nfor _, tree in ipairs(trees:GetChildren()) do\n\tlocal leaves = tree:FindFirstChild(\"Leaves\")\n\tif leaves then\n\t\tfor _, obj in ipairs(leaves:GetDescendants()) do\n\t\t\taddLeaf(obj)\n\t\tend\n\t\tleaves.DescendantAdded:Connect(addLeaf)\n\tend\nend\n\nRunService.Heartbeat:Connect(function()\n\tlocal t = os.clock()\n\tfor part, data in pairs(leafData) do\n\t\tif not part.Parent then\n\t\t\tleafData[part] = nil\n\t\telse\n\t\t\tlocal sway = math.sin(t * 1.15 + data.offset) * data.strength\n\t\t\tlocal twist = math.sin(t * 0.72 + data.offset * 0.7) * data.strength * 0.45\n\t\t\tpart.CFrame = data.base * CFrame.Angles(sway, 0, twist)\n\t\tend\n\tend\nend)\n",
+      "class": "Script"
+    },
+    {
+      "properties": {
+        "Enabled": true,
+        "Archivable": true,
+        "Name": "CurrencyRewards"
+      },
+      "path": "ServerScriptService/GameServer/CurrencyRewards",
+      "source": "-- Currency/XP rewards for enemies. Currency lives outside leaderstats so it does not clutter the Roblox leaderboard.\nlocal Players = game:GetService(\"Players\")\nlocal ReplicatedStorage = game:GetService(\"ReplicatedStorage\")\n\nlocal function xpNeededForLevel(level)\n\treturn 100 + math.max(0, level - 1) * 50\nend\n\nlocal function getConfig()\n\tlocal assets = ReplicatedStorage:WaitForChild(\"Assets\")\n\tlocal configs = assets:FindFirstChild(\"Configs\")\n\tlocal module = configs and configs:FindFirstChild(\"EnemyConfig\")\n\tif not module then\n\t\tlocal shared = ReplicatedStorage:WaitForChild(\"GameShared\")\n\t\tmodule = shared:WaitForChild(\"EnemyConfig\")\n\tend\n\treturn require(module)\nend\n\nlocal EnemyConfig = getConfig()\nlocal liveEnemies = workspace:WaitForChild(\"LiveEnemies\")\n\nlocal function randomReward(range)\n\tif type(range) ~= \"table\" then return 0 end\n\tlocal minimum = tonumber(range.Min) or 0\n\tlocal maximum = tonumber(range.Max) or minimum\n\tif maximum < minimum then minimum, maximum = maximum, minimum end\n\treturn math.random(math.floor(minimum), math.floor(maximum))\nend\n\nlocal function boostedAmount(player, baseAmount, multiplierAttribute, carryAttribute)\n\tlocal multiplier = tonumber(player:GetAttribute(multiplierAttribute)) or 1\n\tlocal carry = tonumber(player:GetAttribute(carryAttribute)) or 0\n\tlocal exact = (baseAmount * multiplier) + carry\n\tlocal whole = math.floor(exact)\n\tplayer:SetAttribute(carryAttribute, exact - whole)\n\treturn whole\nend\n\nlocal function award(player, config)\n\tlocal stats = player:FindFirstChild(\"leaderstats\")\n\tlocal currency = player:FindFirstChild(\"Currency\")\n\tif not stats or not currency then return end\n\n\tlocal level = stats:FindFirstChild(\"Level\")\n\tlocal xp = stats:FindFirstChild(\"XP\")\n\tlocal coins = currency:FindFirstChild(\"Coins\")\n\tif not level or not xp or not coins then return end\n\n\tlocal baseXP = randomReward(config.XPReward)\n\tlocal coinConfig = config.PossibleRewards and config.PossibleRewards.Coins\n\tlocal baseCoins = randomReward(coinConfig)\n\n\txp.Value += boostedAmount(player, baseXP, \"XPMultiplier\", \"XPBoostCarry\")\n\tcoins.Value += boostedAmount(player, baseCoins, \"MoneyMultiplier\", \"MoneyBoostCarry\")\n\n\twhile xp.Value >= xpNeededForLevel(level.Value) do\n\t\tlocal needed = xpNeededForLevel(level.Value)\n\t\txp.Value -= needed\n\t\tlevel.Value += 1\n\tend\nend\n\nlocal function bindEnemy(model)\n\tif not model:IsA(\"Model\") or model:GetAttribute(\"CurrencyRewardBound\") then return end\n\tlocal enemyType = model:GetAttribute(\"SpawnEnemyType\")\n\tlocal config = enemyType and EnemyConfig[enemyType]\n\tlocal humanoid = model:FindFirstChildOfClass(\"Humanoid\")\n\tif not config or not humanoid then return end\n\n\tmodel:SetAttribute(\"CurrencyRewardBound\", true)\n\thumanoid.Died:Connect(function()\n\t\tlocal userId = humanoid:GetAttribute(\"LastHitUserId\")\n\t\tlocal player = userId and Players:GetPlayerByUserId(userId)\n\t\tif player then award(player, config) end\n\tend)\nend\n\nfor _, model in ipairs(liveEnemies:GetChildren()) do bindEnemy(model) end\nliveEnemies.ChildAdded:Connect(function(model)\n\ttask.defer(bindEnemy, model)\nend)\n",
+      "class": "Script"
+    },
+    {
+      "properties": {
+        "Enabled": true,
+        "Archivable": true,
+        "Name": "FollowBrickStrengthBoost"
+      },
+      "path": "ServerScriptService/GameServer/FollowBrickStrengthBoost",
+      "source": "-- Adds the Follow Brick's +5% strength bonus to player sword hits.\n-- Base sword damage is currently 20 in CombatSystem, so the permanent bonus adds 1 damage.\nlocal Players = game:GetService(\"Players\")\nlocal ReplicatedStorage = game:GetService(\"ReplicatedStorage\")\n\nlocal combatRemote = ReplicatedStorage:WaitForChild(\"SwordCombat\")\nlocal BONUS_DAMAGE = 1\nlocal ATTACK_COOLDOWN = 0.42\nlocal lastAttack = {}\n\nlocal function findTarget(player)\n\tlocal character = player.Character\n\tlocal root = character and character:FindFirstChild(\"HumanoidRootPart\")\n\tlocal humanoid = character and character:FindFirstChildOfClass(\"Humanoid\")\n\tlocal tool = character and character:FindFirstChildOfClass(\"Tool\")\n\tif not root or not humanoid or humanoid.Health <= 0 or not tool or not tool:GetAttribute(\"SlayerSword\") then\n\t\treturn nil\n\tend\n\n\tlocal bestHumanoid\n\tlocal bestDistance\n\tlocal liveEnemies = workspace:FindFirstChild(\"LiveEnemies\")\n\tif liveEnemies then\n\t\tfor _, model in ipairs(liveEnemies:GetChildren()) do\n\t\t\tlocal enemyHumanoid = model:FindFirstChildOfClass(\"Humanoid\")\n\t\t\tlocal enemyRoot = model:FindFirstChild(\"HumanoidRootPart\") or model.PrimaryPart\n\t\t\tif enemyHumanoid and enemyRoot and enemyHumanoid.Health > 0 then\n\t\t\t\tlocal offset = enemyRoot.Position - root.Position\n\t\t\t\tlocal distance = offset.Magnitude\n\t\t\t\tif distance <= 7.5 and distance > 0.01 and root.CFrame.LookVector:Dot(offset.Unit) > -0.15 then\n\t\t\t\t\tif not bestDistance or distance < bestDistance then\n\t\t\t\t\t\tbestHumanoid = enemyHumanoid\n\t\t\t\t\t\tbestDistance = distance\n\t\t\t\t\tend\n\t\t\t\tend\n\t\t\tend\n\t\tend\n\tend\n\n\tlocal dummy = workspace:FindFirstChild(\"Slayer Training Enemy\")\n\tif dummy and dummy:IsA(\"Model\") then\n\t\tlocal enemyHumanoid = dummy:FindFirstChildOfClass(\"Humanoid\")\n\t\tlocal enemyRoot = dummy:FindFirstChild(\"HumanoidRootPart\") or dummy.PrimaryPart\n\t\tif enemyHumanoid and enemyRoot and enemyHumanoid.Health > 0 then\n\t\t\tlocal offset = enemyRoot.Position - root.Position\n\t\t\tlocal distance = offset.Magnitude\n\t\t\tif distance <= 7.5 and distance > 0.01 and root.CFrame.LookVector:Dot(offset.Unit) > -0.15 then\n\t\t\t\tif not bestDistance or distance < bestDistance then\n\t\t\t\t\tbestHumanoid = enemyHumanoid\n\t\t\t\tend\n\t\t\tend\n\t\tend\n\tend\n\n\treturn bestHumanoid\nend\n\ncombatRemote.OnServerEvent:Connect(function(player)\n\tif player:GetAttribute(\"FollowBrickUnlocked\") ~= true then return end\n\tlocal now = os.clock()\n\tif now - (lastAttack[player] or 0) < ATTACK_COOLDOWN then return end\n\tlastAttack[player] = now\n\n\tlocal target = findTarget(player)\n\tif target and target.Health > 0 then\n\t\ttarget:SetAttribute(\"LastHitUserId\", player.UserId)\n\t\ttarget:TakeDamage(BONUS_DAMAGE)\n\tend\nend)\n\nPlayers.PlayerRemoving:Connect(function(player)\n\tlastAttack[player] = nil\nend)\n",
+      "class": "Script"
+    },
+    {
+      "path": "ServerStorage",
+      "properties": {
+        "Name": "ServerStorage",
+        "Archivable": true
+      },
+      "class": "ServerStorage"
+    },
+    {
+      "path": "ServerStorage/RBX_ANIMSAVES",
+      "properties": {
+        "Name": "RBX_ANIMSAVES",
+        "Archivable": true
+      },
+      "class": "Model"
+    },
+    {
+      "path": "ServerStorage/RBX_ANIMSAVES/Movement",
+      "properties": {
+        "Name": "Movement",
+        "Archivable": true
+      },
+      "class": "ObjectValue"
+    },
+    {
+      "path": "ServerStorage/RBX_ANIMSAVES/Dances",
+      "properties": {
+        "Name": "Dances",
+        "Archivable": true
+      },
+      "class": "ObjectValue"
+    },
+    {
+      "path": "ServerStorage/RBX_ANIMSAVES/Tools",
+      "properties": {
+        "Name": "Tools",
+        "Archivable": true
+      },
+      "class": "ObjectValue"
+    },
+    {
+      "path": "ServerStorage/RBX_ANIMSAVES/DashAnimations",
+      "properties": {
+        "Name": "DashAnimations",
+        "Archivable": true
+      },
+      "class": "ObjectValue"
+    },
+    {
+      "path": "ServerStorage/__Rojo_SessionLock",
+      "properties": {
+        "Name": "__Rojo_SessionLock",
+        "Archivable": false
+      },
+      "class": "ObjectValue"
+    },
+    {
+      "path": "StarterGui",
+      "properties": {
+        "Name": "StarterGui",
+        "Archivable": true
+      },
+      "class": "StarterGui"
+    },
+    {
+      "path": "StarterGui/MainUI",
+      "properties": {
+        "Enabled": true,
+        "ResetOnSpawn": true,
+        "Archivable": true,
+        "Name": "MainUI"
+      },
+      "class": "ScreenGui"
+    },
+    {
+      "path": "StarterGui/MainUI/MainFrame",
+      "properties": {
+        "Visible": true,
+        "ClipsDescendants": false,
+        "Active": false,
+        "LayoutOrder": 0,
+        "AutomaticSize": "Enum.AutomaticSize.None",
+        "Rotation": 0,
+        "Size": "{1, 0}, {1, 0}",
+        "AnchorPoint": "0.5, 0.5",
+        "Transparency": 1,
+        "BackgroundTransparency": 1,
+        "Position": "{0.5, 0}, {0.5, 0}",
+        "Name": "MainFrame",
+        "ZIndex": 1,
+        "Archivable": true,
+        "BackgroundColor3": "1, 1, 1"
+      },
+      "class": "Frame"
+    },
+    {
+      "path": "StarterGui/MainUI/MainFrame/CashLabel",
+      "properties": {
+        "Visible": true,
+        "Active": false,
+        "AnchorPoint": "0, 0",
+        "ZIndex": 1,
+        "Archivable": true,
+        "Size": "{0.0841472596, 0}, {0.0471544713, 0}",
+        "TextColor3": "1, 1, 1",
+        "ClipsDescendants": false,
+        "Text": "100,000,000$",
+        "LayoutOrder": 0,
+        "AutomaticSize": "Enum.AutomaticSize.None",
+        "Rotation": 0,
+        "Transparency": 1,
+        "Name": "CashLabel",
+        "Position": "{0.0458302014, 0}, {0.934782624, 0}",
+        "Font": "Enum.Font.FredokaOne",
+        "BackgroundTransparency": 1,
+        "TextSize": 14,
+        "BackgroundColor3": "1, 1, 1"
+      },
+      "class": "TextLabel"
+    },
+    {
+      "properties": {
+        "Enabled": true,
+        "Archivable": true,
+        "Name": "CoinsLabel"
+      },
+      "path": "StarterGui/MainUI/MainFrame/CashLabel/CoinsLabel",
+      "source": "-- CoinsLabel (LocalScript) > TextLabel\nlocal Players = game:GetService(\"Players\")\n\nlocal player      = Players.LocalPlayer\nlocal coinsLabel  = script.Parent\n\n-- ─── Format number with commas ────────────────────────────────────────────────\n\nlocal function formatCoins(n)\n\tlocal str     = tostring(math.floor(n))\n\tlocal result  = \"\"\n\tlocal count   = 0\n\n\tfor i = #str, 1, -1 do\n\t\tif count > 0 and count % 3 == 0 then\n\t\t\tresult = \",\" .. result\n\t\tend\n\t\tresult = str:sub(i, i) .. result\n\t\tcount += 1\n\tend\n\n\treturn result .. \"$\"\nend\n\n-- ─── Update label ─────────────────────────────────────────────────────────────\n\nlocal function updateLabel(coins)\n\tcoinsLabel.Text = formatCoins(coins)\nend\n\n-- ─── Hook into leaderstats ────────────────────────────────────────────────────\n\nlocal function setupCoins()\n\tlocal leaderstats = player:WaitForChild(\"leaderstats\")\n\tlocal coins       = leaderstats:WaitForChild(\"Coins\")\n\n\tupdateLabel(coins.Value)\n\n\tcoins:GetPropertyChangedSignal(\"Value\"):Connect(function()\n\t\tupdateLabel(coins.Value)\n\tend)\nend\n\nsetupCoins()",
+      "class": "LocalScript"
+    },
+    {
+      "path": "StarterGui/MainUI/MainFrame/CashLabel/UIStroke",
+      "properties": {
+        "Enabled": true,
+        "Transparency": 0,
+        "Name": "UIStroke",
+        "Color": "0.352941, 0.235294, 0",
+        "ZIndex": 1,
+        "Archivable": true
+      },
+      "class": "UIStroke"
+    },
+    {
+      "path": "StarterGui/MainUI/MainFrame/CashLabel/ImageLabel",
+      "properties": {
+        "ImageColor3": "1, 1, 1",
+        "ImageTransparency": 0,
+        "AnchorPoint": "0, 0",
+        "Image": "rbxassetid://96578222489735",
+        "ZIndex": 1,
+        "Archivable": true,
+        "Size": "{0.400000006, 0}, {1.60000002, 0}",
+        "ClipsDescendants": false,
+        "LayoutOrder": 0,
+        "Visible": true,
+        "Rotation": 0,
+        "Transparency": 1,
+        "Name": "ImageLabel",
+        "Position": "{-0.400000006, 0}, {-0.300000429, 0}",
+        "AutomaticSize": "Enum.AutomaticSize.None",
+        "Active": false,
+        "BackgroundTransparency": 1,
+        "BackgroundColor3": "1, 1, 1"
+      },
+      "class": "ImageLabel"
+    },
+    {
+      "path": "StarterGui/MainUI/MainFrame/CashLabel/UIGradient",
+      "properties": {
+        "Rotation": 80,
+        "Name": "UIGradient",
+        "Scale": 1,
+        "Archivable": true,
+        "Enabled": true
+      },
+      "class": "UIGradient"
+    },
+    {
+      "path": "StarterGui/MainUI/MainFrame/GemLabel",
+      "properties": {
+        "Visible": true,
+        "Active": false,
+        "AnchorPoint": "0, 0",
+        "ZIndex": 1,
+        "Archivable": true,
+        "Size": "{0.0841472596, 0}, {0.0471544713, 0}",
+        "TextColor3": "1, 1, 1",
+        "ClipsDescendants": false,
+        "Text": "100,000,000",
+        "LayoutOrder": 0,
+        "AutomaticSize": "Enum.AutomaticSize.None",
+        "Rotation": 0,
+        "Transparency": 1,
+        "Name": "GemLabel",
+        "Position": "{0.0458302014, 0}, {0.87577641, 0}",
+        "Font": "Enum.Font.FredokaOne",
+        "BackgroundTransparency": 1,
+        "TextSize": 14,
+        "BackgroundColor3": "1, 1, 1"
+      },
+      "class": "TextLabel"
+    },
+    {
+      "properties": {
+        "Enabled": true,
+        "Archivable": true,
+        "Name": "GemsLabel"
+      },
+      "path": "StarterGui/MainUI/MainFrame/GemLabel/GemsLabel",
+      "source": "-- CoinsLabel (LocalScript) > TextLabel\nlocal Players = game:GetService(\"Players\")\n\nlocal player      = Players.LocalPlayer\nlocal coinsLabel  = script.Parent\n\n-- ─── Format number with commas ────────────────────────────────────────────────\n\nlocal function formatCoins(n)\n\tlocal str     = tostring(math.floor(n))\n\tlocal result  = \"\"\n\tlocal count   = 0\n\n\tfor i = #str, 1, -1 do\n\t\tif count > 0 and count % 3 == 0 then\n\t\t\tresult = \",\" .. result\n\t\tend\n\t\tresult = str:sub(i, i) .. result\n\t\tcount += 1\n\tend\n\n\treturn result .. \"\"\nend\n\n-- ─── Update label ─────────────────────────────────────────────────────────────\n\nlocal function updateLabel(coins)\n\tcoinsLabel.Text = formatCoins(coins)\nend\n\n-- ─── Hook into leaderstats ────────────────────────────────────────────────────\n\nlocal function setupCoins()\n\tlocal leaderstats = player:WaitForChild(\"leaderstats\")\n\tlocal coins       = leaderstats:WaitForChild(\"Gems\")\n\n\tupdateLabel(coins.Value)\n\n\tcoins:GetPropertyChangedSignal(\"Value\"):Connect(function()\n\t\tupdateLabel(coins.Value)\n\tend)\nend\n\nsetupCoins()",
+      "class": "LocalScript"
+    },
+    {
+      "path": "StarterGui/MainUI/MainFrame/GemLabel/UIStroke",
+      "properties": {
+        "Enabled": true,
+        "Transparency": 0,
+        "Name": "UIStroke",
+        "Color": "0, 0.00392157, 0.345098",
+        "ZIndex": 1,
+        "Archivable": true
+      },
+      "class": "UIStroke"
+    },
+    {
+      "path": "StarterGui/MainUI/MainFrame/GemLabel/ImageLabel",
+      "properties": {
+        "ImageColor3": "1, 1, 1",
+        "ImageTransparency": 0,
+        "AnchorPoint": "0, 0",
+        "Image": "rbxassetid://135227335050960",
+        "ZIndex": 1,
+        "Archivable": true,
+        "Size": "{0.400000006, 0}, {1.60000002, 0}",
+        "ClipsDescendants": false,
+        "LayoutOrder": 0,
+        "Visible": true,
+        "Rotation": 0,
+        "Transparency": 1,
+        "Name": "ImageLabel",
+        "Position": "{-0.400000006, 0}, {-0.300000012, 0}",
+        "AutomaticSize": "Enum.AutomaticSize.None",
+        "Active": false,
+        "BackgroundTransparency": 1,
+        "BackgroundColor3": "1, 1, 1"
+      },
+      "class": "ImageLabel"
+    },
+    {
+      "path": "StarterGui/MainUI/MainFrame/GemLabel/UIGradient",
+      "properties": {
+        "Rotation": 80,
+        "Name": "UIGradient",
+        "Scale": 1,
+        "Archivable": true,
+        "Enabled": true
+      },
+      "class": "UIGradient"
+    },
+    {
+      "path": "StarterGui/DialogUI",
+      "properties": {
+        "Enabled": false,
+        "ResetOnSpawn": true,
+        "Archivable": true,
+        "Name": "DialogUI"
+      },
+      "class": "ScreenGui"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame",
+      "properties": {
+        "Visible": true,
+        "ClipsDescendants": false,
+        "Active": false,
+        "LayoutOrder": 0,
+        "AutomaticSize": "Enum.AutomaticSize.None",
+        "Rotation": 0,
+        "Size": "{1, 0}, {1, 0}",
+        "AnchorPoint": "0, 0",
+        "Transparency": 0.800000011920929,
+        "BackgroundTransparency": 0.800000011920929,
+        "Position": "{0, 0}, {0, 0}",
+        "Name": "MainFrame",
+        "ZIndex": 1,
+        "Archivable": true,
+        "BackgroundColor3": "0, 0, 0"
+      },
+      "class": "Frame"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame",
+      "properties": {
+        "Visible": true,
+        "ClipsDescendants": false,
+        "Active": false,
+        "LayoutOrder": 0,
+        "AutomaticSize": "Enum.AutomaticSize.None",
+        "Rotation": 0,
+        "Size": "{0, 641}, {0, 157}",
+        "AnchorPoint": "0, 0",
+        "Transparency": 0.6499999761581421,
+        "BackgroundTransparency": 0.6499999761581421,
+        "Position": "{0.262573957, 0}, {0.725203276, 0}",
+        "Name": "DialogFrame",
+        "ZIndex": 1,
+        "Archivable": true,
+        "BackgroundColor3": "0.933333, 0.933333, 0.933333"
+      },
+      "class": "Frame"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/UIStroke",
+      "properties": {
+        "Enabled": true,
+        "Transparency": 0.5099999904632568,
+        "Name": "UIStroke",
+        "Color": "0.462745, 0.462745, 0.462745",
+        "ZIndex": 1,
+        "Archivable": true
+      },
+      "class": "UIStroke"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame",
+      "properties": {
+        "ImageColor3": "1, 1, 1",
+        "ImageTransparency": 0,
+        "AnchorPoint": "0, 0",
+        "ZIndex": 1,
+        "Archivable": true,
+        "Size": "{0, 88}, {0, 88}",
+        "ClipsDescendants": false,
+        "Visible": true,
+        "LayoutOrder": 0,
+        "Rotation": 0,
+        "Transparency": 1,
+        "Name": "NPCViewPortFrame",
+        "Position": "{0.0109204371, 0}, {0.0509554148, 0}",
+        "AutomaticSize": "Enum.AutomaticSize.None",
+        "Active": false,
+        "BackgroundTransparency": 1,
+        "BackgroundColor3": "1, 1, 1"
+      },
+      "class": "ViewportFrame"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/UICorner",
+      "properties": {
+        "Name": "UICorner",
+        "Archivable": true
+      },
+      "class": "UICorner"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/UIStroke",
+      "properties": {
+        "Enabled": true,
+        "Transparency": 0.5099999904632568,
+        "Name": "UIStroke",
+        "Color": "0.462745, 0.462745, 0.462745",
+        "ZIndex": 1,
+        "Archivable": true
+      },
+      "class": "UIStroke"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu",
+      "properties": {
+        "Name": "Tetsu",
+        "Archivable": true
+      },
+      "class": "Model"
+    },
+    {
+      "properties": {
+        "Enabled": true,
+        "Archivable": true,
+        "Name": "Animate"
+      },
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Animate",
+      "source": "-- humanoidAnimatePlayEmote.lua\n\nlocal Figure = script.Parent\nlocal Torso = Figure:WaitForChild(\"Torso\")\nlocal RightShoulder = Torso:WaitForChild(\"Right Shoulder\")\nlocal LeftShoulder = Torso:WaitForChild(\"Left Shoulder\")\nlocal RightHip = Torso:WaitForChild(\"Right Hip\")\nlocal LeftHip = Torso:WaitForChild(\"Left Hip\")\nlocal Neck = Torso:WaitForChild(\"Neck\")\nlocal Humanoid = Figure:WaitForChild(\"Humanoid\")\nlocal pose = \"Standing\"\n\nlocal FFlagUserAnimateRemoveEmoteChatHook\ndo\n\tlocal success, result = pcall(function()\n\t\treturn UserSettings():IsUserFeatureEnabled(\"UserAnimateRemoveEmoteChatHook\")\n\tend)\n\tFFlagUserAnimateRemoveEmoteChatHook = success and result\nend\n\nlocal EMOTE_TRANSITION_TIME = 0.1\n\nlocal function getRigScale()\n\treturn Figure:GetScale()\nend\n\nlocal currentAnim = \"\"\nlocal currentAnimInstance = nil\nlocal currentAnimTrack = nil\nlocal currentAnimKeyframeHandler = nil\nlocal currentAnimSpeed = 1.0\nlocal animTable = {}\nlocal animNames = { \n\tidle = \t{\t\n\t\t\t\t{ id = \"http://www.roblox.com/asset/?id=180435571\", weight = 9 },\n\t\t\t\t{ id = \"http://www.roblox.com/asset/?id=180435792\", weight = 1 }\n\t\t\t},\n\twalk = \t{ \t\n\t\t\t\t{ id = \"http://www.roblox.com/asset/?id=180426354\", weight = 10 } \n\t\t\t}, \n\trun = \t{\n\t\t\t\t{ id = \"run.xml\", weight = 10 } \n\t\t\t}, \n\tjump = \t{\n\t\t\t\t{ id = \"http://www.roblox.com/asset/?id=125750702\", weight = 10 } \n\t\t\t}, \n\tfall = \t{\n\t\t\t\t{ id = \"http://www.roblox.com/asset/?id=180436148\", weight = 10 } \n\t\t\t}, \n\tclimb = {\n\t\t\t\t{ id = \"http://www.roblox.com/asset/?id=180436334\", weight = 10 } \n\t\t\t}, \n\tsit = \t{\n\t\t\t\t{ id = \"http://www.roblox.com/asset/?id=178130996\", weight = 10 } \n\t\t\t},\t\n\ttoolnone = {\n\t\t\t\t{ id = \"http://www.roblox.com/asset/?id=182393478\", weight = 10 } \n\t\t\t},\n\ttoolslash = {\n\t\t\t\t{ id = \"http://www.roblox.com/asset/?id=129967390\", weight = 10 } \n--\t\t\t\t{ id = \"slash.xml\", weight = 10 } \n\t\t\t},\n\ttoollunge = {\n\t\t\t\t{ id = \"http://www.roblox.com/asset/?id=129967478\", weight = 10 } \n\t\t\t},\n\twave = {\n\t\t\t\t{ id = \"http://www.roblox.com/asset/?id=128777973\", weight = 10 } \n\t\t\t},\n\tpoint = {\n\t\t\t\t{ id = \"http://www.roblox.com/asset/?id=128853357\", weight = 10 } \n\t\t\t},\n\tdance1 = {\n\t\t\t\t{ id = \"http://www.roblox.com/asset/?id=182435998\", weight = 10 }, \n\t\t\t\t{ id = \"http://www.roblox.com/asset/?id=182491037\", weight = 10 }, \n\t\t\t\t{ id = \"http://www.roblox.com/asset/?id=182491065\", weight = 10 } \n\t\t\t},\n\tdance2 = {\n\t\t\t\t{ id = \"http://www.roblox.com/asset/?id=182436842\", weight = 10 }, \n\t\t\t\t{ id = \"http://www.roblox.com/asset/?id=182491248\", weight = 10 }, \n\t\t\t\t{ id = \"http://www.roblox.com/asset/?id=182491277\", weight = 10 } \n\t\t\t},\n\tdance3 = {\n\t\t\t\t{ id = \"http://www.roblox.com/asset/?id=182436935\", weight = 10 }, \n\t\t\t\t{ id = \"http://www.roblox.com/asset/?id=182491368\", weight = 10 }, \n\t\t\t\t{ id = \"http://www.roblox.com/asset/?id=182491423\", weight = 10 } \n\t\t\t},\n\tlaugh = {\n\t\t\t\t{ id = \"http://www.roblox.com/asset/?id=129423131\", weight = 10 } \n\t\t\t},\n\tcheer = {\n\t\t\t\t{ id = \"http://www.roblox.com/asset/?id=129423030\", weight = 10 } \n\t\t\t},\n}\nlocal dances = {\"dance1\", \"dance2\", \"dance3\"}\n\n-- Existance in this list signifies that it is an emote, the value indicates if it is a looping emote\nlocal emoteNames = { wave = false, point = false, dance1 = true, dance2 = true, dance3 = true, laugh = false, cheer = false}\n\nfunction configureAnimationSet(name, fileList)\n\tif (animTable[name] ~= nil) then\n\t\tfor _, connection in pairs(animTable[name].connections) do\n\t\t\tconnection:disconnect()\n\t\tend\n\tend\n\tanimTable[name] = {}\n\tanimTable[name].count = 0\n\tanimTable[name].totalWeight = 0\t\n\tanimTable[name].connections = {}\n\n\t-- check for config values\n\tlocal config = script:FindFirstChild(name)\n\tif (config ~= nil) then\n--\t\tprint(\"Loading anims \" .. name)\n\t\ttable.insert(animTable[name].connections, config.ChildAdded:connect(function(child) configureAnimationSet(name, fileList) end))\n\t\ttable.insert(animTable[name].connections, config.ChildRemoved:connect(function(child) configureAnimationSet(name, fileList) end))\n\t\tlocal idx = 1\n\t\tfor _, childPart in pairs(config:GetChildren()) do\n\t\t\tif (childPart:IsA(\"Animation\")) then\n\t\t\t\ttable.insert(animTable[name].connections, childPart.Changed:connect(function(property) configureAnimationSet(name, fileList) end))\n\t\t\t\tanimTable[name][idx] = {}\n\t\t\t\tanimTable[name][idx].anim = childPart\n\t\t\t\tlocal weightObject = childPart:FindFirstChild(\"Weight\")\n\t\t\t\tif (weightObject == nil) then\n\t\t\t\t\tanimTable[name][idx].weight = 1\n\t\t\t\telse\n\t\t\t\t\tanimTable[name][idx].weight = weightObject.Value\n\t\t\t\tend\n\t\t\t\tanimTable[name].count = animTable[name].count + 1\n\t\t\t\tanimTable[name].totalWeight = animTable[name].totalWeight + animTable[name][idx].weight\n\t--\t\t\tprint(name .. \" [\" .. idx .. \"] \" .. animTable[name][idx].anim.AnimationId .. \" (\" .. animTable[name][idx].weight .. \")\")\n\t\t\t\tidx = idx + 1\n\t\t\tend\n\t\tend\n\tend\n\n\t-- fallback to defaults\n\tif (animTable[name].count <= 0) then\n\t\tfor idx, anim in pairs(fileList) do\n\t\t\tanimTable[name][idx] = {}\n\t\t\tanimTable[name][idx].anim = Instance.new(\"Animation\")\n\t\t\tanimTable[name][idx].anim.Name = name\n\t\t\tanimTable[name][idx].anim.AnimationId = anim.id\n\t\t\tanimTable[name][idx].weight = anim.weight\n\t\t\tanimTable[name].count = animTable[name].count + 1\n\t\t\tanimTable[name].totalWeight = animTable[name].totalWeight + anim.weight\n--\t\t\tprint(name .. \" [\" .. idx .. \"] \" .. anim.id .. \" (\" .. anim.weight .. \")\")\n\t\tend\n\tend\nend\n\n-- Setup animation objects\nfunction scriptChildModified(child)\n\tlocal fileList = animNames[child.Name]\n\tif (fileList ~= nil) then\n\t\tconfigureAnimationSet(child.Name, fileList)\n\tend\t\nend\n\nscript.ChildAdded:connect(scriptChildModified)\nscript.ChildRemoved:connect(scriptChildModified)\n\n-- Clear any existing animation tracks\n-- Fixes issue with characters that are moved in and out of the Workspace accumulating tracks\nlocal animator = if Humanoid then Humanoid:FindFirstChildOfClass(\"Animator\") else nil\nif animator then\n\tlocal animTracks = animator:GetPlayingAnimationTracks()\n\tfor i,track in ipairs(animTracks) do\n\t\ttrack:Stop(0)\n\t\ttrack:Destroy()\n\tend\nend\n\n\nfor name, fileList in pairs(animNames) do \n\tconfigureAnimationSet(name, fileList)\nend\t\n\n-- ANIMATION\n\n-- declarations\nlocal toolAnim = \"None\"\nlocal toolAnimTime = 0\n\nlocal jumpAnimTime = 0\nlocal jumpAnimDuration = 0.3\n\nlocal toolTransitionTime = 0.1\nlocal fallTransitionTime = 0.3\nlocal jumpMaxLimbVelocity = 0.75\n\n-- functions\n\nfunction stopAllAnimations()\n\tlocal oldAnim = currentAnim\n\n\t-- return to idle if finishing an emote\n\tif (emoteNames[oldAnim] ~= nil and emoteNames[oldAnim] == false) then\n\t\toldAnim = \"idle\"\n\tend\n\n\tcurrentAnim = \"\"\n\tcurrentAnimInstance = nil\n\tif (currentAnimKeyframeHandler ~= nil) then\n\t\tcurrentAnimKeyframeHandler:disconnect()\n\tend\n\n\tif (currentAnimTrack ~= nil) then\n\t\tcurrentAnimTrack:Stop()\n\t\tcurrentAnimTrack:Destroy()\n\t\tcurrentAnimTrack = nil\n\tend\n\treturn oldAnim\nend\n\nfunction setAnimationSpeed(speed)\n\tif speed ~= currentAnimSpeed then\n\t\tcurrentAnimSpeed = speed\n\t\tcurrentAnimTrack:AdjustSpeed(currentAnimSpeed)\n\tend\nend\n\nfunction keyFrameReachedFunc(frameName)\n\tif (frameName == \"End\") then\n\n\t\tlocal repeatAnim = currentAnim\n\t\t-- return to idle if finishing an emote\n\t\tif (emoteNames[repeatAnim] ~= nil and emoteNames[repeatAnim] == false) then\n\t\t\trepeatAnim = \"idle\"\n\t\tend\n\t\t\n\t\tlocal animSpeed = currentAnimSpeed\n\t\tplayAnimation(repeatAnim, 0.0, Humanoid)\n\t\tsetAnimationSpeed(animSpeed)\n\tend\nend\n\n-- Preload animations\nfunction playAnimation(animName, transitionTime, humanoid) \n\t\t\n\tlocal roll = math.random(1, animTable[animName].totalWeight) \n\tlocal origRoll = roll\n\tlocal idx = 1\n\twhile (roll > animTable[animName][idx].weight) do\n\t\troll = roll - animTable[animName][idx].weight\n\t\tidx = idx + 1\n\tend\n--\t\tprint(animName .. \" \" .. idx .. \" [\" .. origRoll .. \"]\")\n\tlocal anim = animTable[animName][idx].anim\n\n\t-- switch animation\t\t\n\tif (anim ~= currentAnimInstance) then\n\t\t\n\t\tif (currentAnimTrack ~= nil) then\n\t\t\tcurrentAnimTrack:Stop(transitionTime)\n\t\t\tcurrentAnimTrack:Destroy()\n\t\tend\n\n\t\tcurrentAnimSpeed = 1.0\n\t\n\t\t-- load it to the humanoid; get AnimationTrack\n\t\tcurrentAnimTrack = humanoid:LoadAnimation(anim)\n\t\tcurrentAnimTrack.Priority = Enum.AnimationPriority.Core\n\t\t \n\t\t-- play the animation\n\t\tcurrentAnimTrack:Play(transitionTime)\n\t\tcurrentAnim = animName\n\t\tcurrentAnimInstance = anim\n\n\t\t-- set up keyframe name triggers\n\t\tif (currentAnimKeyframeHandler ~= nil) then\n\t\t\tcurrentAnimKeyframeHandler:disconnect()\n\t\tend\n\t\tcurrentAnimKeyframeHandler = currentAnimTrack.KeyframeReached:connect(keyFrameReachedFunc)\n\t\t\n\tend\n\nend\n\n-------------------------------------------------------------------------------------------\n-------------------------------------------------------------------------------------------\n\nlocal toolAnimName = \"\"\nlocal toolAnimTrack = nil\nlocal toolAnimInstance = nil\nlocal currentToolAnimKeyframeHandler = nil\n\nfunction toolKeyFrameReachedFunc(frameName)\n\tif (frameName == \"End\") then\n--\t\tprint(\"Keyframe : \".. frameName)\t\n\t\tplayToolAnimation(toolAnimName, 0.0, Humanoid)\n\tend\nend\n\n\nfunction playToolAnimation(animName, transitionTime, humanoid, priority)\t \n\t\t\n\t\tlocal roll = math.random(1, animTable[animName].totalWeight) \n\t\tlocal origRoll = roll\n\t\tlocal idx = 1\n\t\twhile (roll > animTable[animName][idx].weight) do\n\t\t\troll = roll - animTable[animName][idx].weight\n\t\t\tidx = idx + 1\n\t\tend\n--\t\tprint(animName .. \" * \" .. idx .. \" [\" .. origRoll .. \"]\")\n\t\tlocal anim = animTable[animName][idx].anim\n\n\t\tif (toolAnimInstance ~= anim) then\n\t\t\t\n\t\t\tif (toolAnimTrack ~= nil) then\n\t\t\t\ttoolAnimTrack:Stop()\n\t\t\t\ttoolAnimTrack:Destroy()\n\t\t\t\ttransitionTime = 0\n\t\t\tend\n\t\t\t\t\t\n\t\t\t-- load it to the humanoid; get AnimationTrack\n\t\t\ttoolAnimTrack = humanoid:LoadAnimation(anim)\n\t\t\tif priority then\n\t\t\t\ttoolAnimTrack.Priority = priority\n\t\t\tend\n\t\t\t \n\t\t\t-- play the animation\n\t\t\ttoolAnimTrack:Play(transitionTime)\n\t\t\ttoolAnimName = animName\n\t\t\ttoolAnimInstance = anim\n\n\t\t\tcurrentToolAnimKeyframeHandler = toolAnimTrack.KeyframeReached:connect(toolKeyFrameReachedFunc)\n\t\tend\nend\n\nfunction stopToolAnimations()\n\tlocal oldAnim = toolAnimName\n\n\tif (currentToolAnimKeyframeHandler ~= nil) then\n\t\tcurrentToolAnimKeyframeHandler:disconnect()\n\tend\n\n\ttoolAnimName = \"\"\n\ttoolAnimInstance = nil\n\tif (toolAnimTrack ~= nil) then\n\t\ttoolAnimTrack:Stop()\n\t\ttoolAnimTrack:Destroy()\n\t\ttoolAnimTrack = nil\n\tend\n\n\n\treturn oldAnim\nend\n\n-------------------------------------------------------------------------------------------\n-------------------------------------------------------------------------------------------\n\n\nfunction onRunning(speed)\n\tspeed /= getRigScale()\n\t\n\tif speed > 0.01 then\n\t\tplayAnimation(\"walk\", 0.1, Humanoid)\n\t\tif currentAnimInstance and currentAnimInstance.AnimationId == \"http://www.roblox.com/asset/?id=180426354\" then\n\t\t\tsetAnimationSpeed(speed / 14.5)\n\t\tend\n\t\tpose = \"Running\"\n\telse\n\t\tif emoteNames[currentAnim] == nil then\n\t\t\tplayAnimation(\"idle\", 0.1, Humanoid)\n\t\t\tpose = \"Standing\"\n\t\tend\n\tend\nend\n\nfunction onDied()\n\tpose = \"Dead\"\nend\n\nfunction onJumping()\n\tplayAnimation(\"jump\", 0.1, Humanoid)\n\tjumpAnimTime = jumpAnimDuration\n\tpose = \"Jumping\"\nend\n\nfunction onClimbing(speed)\n\tspeed /= getRigScale()\n\t\n\tplayAnimation(\"climb\", 0.1, Humanoid)\n\tsetAnimationSpeed(speed / 12.0)\n\tpose = \"Climbing\"\nend\n\nfunction onGettingUp()\n\tpose = \"GettingUp\"\nend\n\nfunction onFreeFall()\n\tif (jumpAnimTime <= 0) then\n\t\tplayAnimation(\"fall\", fallTransitionTime, Humanoid)\n\tend\n\tpose = \"FreeFall\"\nend\n\nfunction onFallingDown()\n\tpose = \"FallingDown\"\nend\n\nfunction onSeated()\n\tpose = \"Seated\"\nend\n\nfunction onPlatformStanding()\n\tpose = \"PlatformStanding\"\nend\n\nfunction onSwimming(speed)\n\tif speed > 0 then\n\t\tpose = \"Running\"\n\telse\n\t\tpose = \"Standing\"\n\tend\nend\n\nfunction getTool()\t\n\tfor _, kid in ipairs(Figure:GetChildren()) do\n\t\tif kid.className == \"Tool\" then return kid end\n\tend\n\treturn nil\nend\n\nfunction getToolAnim(tool)\n\tfor _, c in ipairs(tool:GetChildren()) do\n\t\tif c.Name == \"toolanim\" and c.className == \"StringValue\" then\n\t\t\treturn c\n\t\tend\n\tend\n\treturn nil\nend\n\nfunction animateTool()\n\t\n\tif (toolAnim == \"None\") then\n\t\tplayToolAnimation(\"toolnone\", toolTransitionTime, Humanoid, Enum.AnimationPriority.Idle)\n\t\treturn\n\tend\n\n\tif (toolAnim == \"Slash\") then\n\t\tplayToolAnimation(\"toolslash\", 0, Humanoid, Enum.AnimationPriority.Action)\n\t\treturn\n\tend\n\n\tif (toolAnim == \"Lunge\") then\n\t\tplayToolAnimation(\"toollunge\", 0, Humanoid, Enum.AnimationPriority.Action)\n\t\treturn\n\tend\nend\n\nfunction moveSit()\n\tRightShoulder.MaxVelocity = 0.15\n\tLeftShoulder.MaxVelocity = 0.15\n\tRightShoulder:SetDesiredAngle(3.14 /2)\n\tLeftShoulder:SetDesiredAngle(-3.14 /2)\n\tRightHip:SetDesiredAngle(3.14 /2)\n\tLeftHip:SetDesiredAngle(-3.14 /2)\nend\n\nlocal lastTick = 0\n\nfunction move(time)\n\tlocal amplitude = 1\n\tlocal frequency = 1\n  \tlocal deltaTime = time - lastTick\n  \tlastTick = time\n\n\tlocal climbFudge = 0\n\tlocal setAngles = false\n\n  \tif (jumpAnimTime > 0) then\n  \t\tjumpAnimTime = jumpAnimTime - deltaTime\n  \tend\n\n\tif (pose == \"FreeFall\" and jumpAnimTime <= 0) then\n\t\tplayAnimation(\"fall\", fallTransitionTime, Humanoid)\n\telseif (pose == \"Seated\") then\n\t\tplayAnimation(\"sit\", 0.5, Humanoid)\n\t\treturn\n\telseif (pose == \"Running\") then\n\t\tplayAnimation(\"walk\", 0.1, Humanoid)\n\telseif (pose == \"Dead\" or pose == \"GettingUp\" or pose == \"FallingDown\" or pose == \"Seated\" or pose == \"PlatformStanding\") then\n--\t\tprint(\"Wha \" .. pose)\n\t\tstopAllAnimations()\n\t\tamplitude = 0.1\n\t\tfrequency = 1\n\t\tsetAngles = true\n\tend\n\n\tif (setAngles) then\n\t\tlocal desiredAngle = amplitude * math.sin(time * frequency)\n\n\t\tRightShoulder:SetDesiredAngle(desiredAngle + climbFudge)\n\t\tLeftShoulder:SetDesiredAngle(desiredAngle - climbFudge)\n\t\tRightHip:SetDesiredAngle(-desiredAngle)\n\t\tLeftHip:SetDesiredAngle(-desiredAngle)\n\tend\n\n\t-- Tool Animation handling\n\tlocal tool = getTool()\n\tif tool and tool:FindFirstChild(\"Handle\") then\n\t\n\t\tlocal animStringValueObject = getToolAnim(tool)\n\n\t\tif animStringValueObject then\n\t\t\ttoolAnim = animStringValueObject.Value\n\t\t\t-- message recieved, delete StringValue\n\t\t\tanimStringValueObject.Parent = nil\n\t\t\ttoolAnimTime = time + .3\n\t\tend\n\n\t\tif time > toolAnimTime then\n\t\t\ttoolAnimTime = 0\n\t\t\ttoolAnim = \"None\"\n\t\tend\n\n\t\tanimateTool()\t\t\n\telse\n\t\tstopToolAnimations()\n\t\ttoolAnim = \"None\"\n\t\ttoolAnimInstance = nil\n\t\ttoolAnimTime = 0\n\tend\nend\n\n-- connect events\nHumanoid.Died:connect(onDied)\nHumanoid.Running:connect(onRunning)\nHumanoid.Jumping:connect(onJumping)\nHumanoid.Climbing:connect(onClimbing)\nHumanoid.GettingUp:connect(onGettingUp)\nHumanoid.FreeFalling:connect(onFreeFall)\nHumanoid.FallingDown:connect(onFallingDown)\nHumanoid.Seated:connect(onSeated)\nHumanoid.PlatformStanding:connect(onPlatformStanding)\nHumanoid.Swimming:connect(onSwimming)\n\nif not FFlagUserAnimateRemoveEmoteChatHook then\n\t---- setup emote chat hook\n\tgame:GetService(\"Players\").LocalPlayer.Chatted:connect(function(msg)\n\t\tlocal emote = \"\"\n\t\tif msg == \"/e dance\" then\n\t\t\temote = dances[math.random(1, #dances)]\n\t\telseif (string.sub(msg, 1, 3) == \"/e \") then\n\t\t\temote = string.sub(msg, 4)\n\t\telseif (string.sub(msg, 1, 7) == \"/emote \") then\n\t\t\temote = string.sub(msg, 8)\n\t\tend\n\t\t\n\t\tif (pose == \"Standing\" and emoteNames[emote] ~= nil) then\n\t\t\tplayAnimation(emote, 0.1, Humanoid)\n\t\tend\n\tend)\nend\n\n-- emote bindable hook\nscript:WaitForChild(\"PlayEmote\").OnInvoke = function(emote)\n\t-- Only play emotes when idling\n\tif pose ~= \"Standing\" then\n\t\treturn\n\tend\n\tif emoteNames[emote] ~= nil then\n\t\t-- Default emotes\n\t\tplayAnimation(emote, EMOTE_TRANSITION_TIME, Humanoid)\n\n\t\treturn true, currentAnimTrack\n\tend\n\n\t-- Return false to indicate that the emote could not be played\n\treturn false\nend\n-- main program\n\n-- initialize to idle\nplayAnimation(\"idle\", 0.1, Humanoid)\npose = \"Standing\"\n\nwhile Figure.Parent ~= nil do\n\tlocal _, time = wait(0.1)\n\tmove(time)\nend\n\n\n",
+      "class": "LocalScript"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Animate/sit",
+      "properties": {
+        "Value": "",
+        "Archivable": true,
+        "Name": "sit"
+      },
+      "class": "StringValue"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Animate/sit/SitAnim",
+      "properties": {
+        "Name": "SitAnim",
+        "Archivable": true
+      },
+      "class": "Animation"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Animate/idle",
+      "properties": {
+        "Value": "",
+        "Archivable": true,
+        "Name": "idle"
+      },
+      "class": "StringValue"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Animate/idle/Animation1",
+      "properties": {
+        "Name": "Animation1",
+        "Archivable": true
+      },
+      "class": "Animation"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Animate/idle/Animation1/Weight",
+      "properties": {
+        "Value": 9,
+        "Archivable": true,
+        "Name": "Weight"
+      },
+      "class": "NumberValue"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Animate/idle/Animation2",
+      "properties": {
+        "Name": "Animation2",
+        "Archivable": true
+      },
+      "class": "Animation"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Animate/idle/Animation2/Weight",
+      "properties": {
+        "Value": 1,
+        "Archivable": true,
+        "Name": "Weight"
+      },
+      "class": "NumberValue"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Animate/walk",
+      "properties": {
+        "Value": "",
+        "Archivable": true,
+        "Name": "walk"
+      },
+      "class": "StringValue"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Animate/walk/WalkAnim",
+      "properties": {
+        "Name": "WalkAnim",
+        "Archivable": true
+      },
+      "class": "Animation"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Animate/ScaleDampeningPercent",
+      "properties": {
+        "Value": 1,
+        "Archivable": true,
+        "Name": "ScaleDampeningPercent"
+      },
+      "class": "NumberValue"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Animate/run",
+      "properties": {
+        "Value": "",
+        "Archivable": true,
+        "Name": "run"
+      },
+      "class": "StringValue"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Animate/run/RunAnim",
+      "properties": {
+        "Name": "RunAnim",
+        "Archivable": true
+      },
+      "class": "Animation"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Animate/jump",
+      "properties": {
+        "Value": "",
+        "Archivable": true,
+        "Name": "jump"
+      },
+      "class": "StringValue"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Animate/jump/JumpAnim",
+      "properties": {
+        "Name": "JumpAnim",
+        "Archivable": true
+      },
+      "class": "Animation"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Animate/PlayEmote",
+      "properties": {
+        "Name": "PlayEmote",
+        "Archivable": true
+      },
+      "class": "BindableFunction"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Animate/climb",
+      "properties": {
+        "Value": "",
+        "Archivable": true,
+        "Name": "climb"
+      },
+      "class": "StringValue"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Animate/climb/ClimbAnim",
+      "properties": {
+        "Name": "ClimbAnim",
+        "Archivable": true
+      },
+      "class": "Animation"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Animate/toolnone",
+      "properties": {
+        "Value": "",
+        "Archivable": true,
+        "Name": "toolnone"
+      },
+      "class": "StringValue"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Animate/toolnone/ToolNoneAnim",
+      "properties": {
+        "Name": "ToolNoneAnim",
+        "Archivable": true
+      },
+      "class": "Animation"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Animate/fall",
+      "properties": {
+        "Value": "",
+        "Archivable": true,
+        "Name": "fall"
+      },
+      "class": "StringValue"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Animate/fall/FallAnim",
+      "properties": {
+        "Name": "FallAnim",
+        "Archivable": true
+      },
+      "class": "Animation"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Body Colors",
+      "properties": {
+        "Name": "Body Colors",
+        "Archivable": true
+      },
+      "class": "BodyColors"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Humanoid",
+      "properties": {
+        "Name": "Humanoid",
+        "JumpPower": 50,
+        "WalkSpeed": 16,
+        "Health": 100,
+        "Archivable": true,
+        "MaxHealth": 100
+      },
+      "class": "Humanoid"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Humanoid/Animator",
+      "properties": {
+        "Name": "Animator",
+        "Archivable": true
+      },
+      "class": "Animator"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Humanoid/HumanoidDescription",
+      "properties": {
+        "Name": "HumanoidDescription",
+        "Archivable": true
+      },
+      "class": "HumanoidDescription"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Humanoid/HumanoidDescription/BodyPartDescription",
+      "properties": {
+        "Color": "0.5, 0.5, 0.5",
+        "Archivable": true,
+        "Name": "BodyPartDescription"
+      },
+      "class": "BodyPartDescription"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Humanoid/HumanoidDescription/BodyPartDescription",
+      "properties": {
+        "Color": "0.5, 0.5, 0.5",
+        "Archivable": true,
+        "Name": "BodyPartDescription"
+      },
+      "class": "BodyPartDescription"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Humanoid/HumanoidDescription/BodyPartDescription",
+      "properties": {
+        "Color": "0.5, 0.5, 0.5",
+        "Archivable": true,
+        "Name": "BodyPartDescription"
+      },
+      "class": "BodyPartDescription"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Humanoid/HumanoidDescription/BodyPartDescription",
+      "properties": {
+        "Color": "0.5, 0.5, 0.5",
+        "Archivable": true,
+        "Name": "BodyPartDescription"
+      },
+      "class": "BodyPartDescription"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Humanoid/HumanoidDescription/BodyPartDescription",
+      "properties": {
+        "Color": "0.5, 0.5, 0.5",
+        "Archivable": true,
+        "Name": "BodyPartDescription"
+      },
+      "class": "BodyPartDescription"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Humanoid/HumanoidDescription/BodyPartDescription",
+      "properties": {
+        "Color": "0.5, 0.5, 0.5",
+        "Archivable": true,
+        "Name": "BodyPartDescription"
+      },
+      "class": "BodyPartDescription"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Accessory (Meguna Haori V1)",
+      "properties": {
+        "Name": "Accessory (Meguna Haori V1)",
+        "Archivable": true
+      },
+      "class": "Accessory"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Accessory (Meguna Haori V1)/ThumbnailConfiguration",
+      "properties": {
+        "Name": "ThumbnailConfiguration",
+        "Archivable": true
+      },
+      "class": "Configuration"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Accessory (Meguna Haori V1)/ThumbnailConfiguration/ThumbnailCameraTarget",
+      "properties": {
+        "Name": "ThumbnailCameraTarget",
+        "Archivable": true
+      },
+      "class": "ObjectValue"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Accessory (Meguna Haori V1)/ThumbnailConfiguration/ThumbnailCameraValue",
+      "properties": {
+        "Value": "-1.45419253e-05, 0, -96.3068161, -1, 0, -1.50995803e-07, 0, 1, 0, 1.50995803e-07, 0, -1",
+        "Archivable": true,
+        "Name": "ThumbnailCameraValue"
+      },
+      "class": "CFrameValue"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Accessory (Meguna Haori V1)/Handle",
+      "properties": {
+        "CanCollide": false,
+        "Color": "0.639216, 0.635294, 0.647059",
+        "Anchored": false,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "180, 0, 180",
+        "Transparency": 0,
+        "Name": "Handle",
+        "Position": "1.9160748543356476e-09, -1.7607696056365967, -1.9873104095458984",
+        "CFrame": "1.91607485e-09, -1.76076961, -1.98731041, -1, 0, -1.50995803e-07, 0, 1, 0, 1.50995803e-07, 0, -1",
+        "Material": "Enum.Material.Plastic",
+        "Archivable": true,
+        "Size": "1, 1, 1"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Accessory (Meguna Haori V1)/Handle/OriginalSize",
+      "properties": {
+        "Value": "1, 1, 1",
+        "Archivable": true,
+        "Name": "OriginalSize"
+      },
+      "class": "Vector3Value"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Accessory (Meguna Haori V1)/Handle/SpecialMesh",
+      "properties": {
+        "Scale": "1, 1, 1",
+        "MeshId": "rbxassetid://73965505624012",
+        "Archivable": true,
+        "Name": "SpecialMesh"
+      },
+      "class": "SpecialMesh"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Accessory (Meguna Haori V1)/Handle/AvatarPartScaleType",
+      "properties": {
+        "Value": "ProportionsNormal",
+        "Archivable": true,
+        "Name": "AvatarPartScaleType"
+      },
+      "class": "StringValue"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Accessory (Meguna Haori V1)/Handle/AccessoryWeld",
+      "properties": {
+        "Enabled": true,
+        "Name": "AccessoryWeld",
+        "Archivable": true,
+        "Active": false
+      },
+      "class": "Weld"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Accessory (Meguna Haori V1)/Handle/BodyBackAttachment",
+      "properties": {
+        "Visible": false,
+        "Name": "BodyBackAttachment",
+        "Position": "0, 0.4607696533203125, 0.5126838684082031",
+        "CFrame": "0, 0.460769653, 0.512683868, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Rotation": "-0, 0, -0"
+      },
+      "class": "Attachment"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Accessory (Meguna Haori V1)/Handle/TouchInterest",
+      "properties": {
+        "Name": "TouchInterest",
+        "Archivable": true
+      },
+      "class": "TouchTransmitter"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Clothing",
+      "properties": {
+        "Name": "Clothing",
+        "Archivable": true
+      },
+      "class": "Shirt"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Accessory (LongAccessory)",
+      "properties": {
+        "Name": "Accessory (LongAccessory)",
+        "Archivable": true
+      },
+      "class": "Accessory"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Accessory (LongAccessory)/ThumbnailConfiguration",
+      "properties": {
+        "Name": "ThumbnailConfiguration",
+        "Archivable": true
+      },
+      "class": "Configuration"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Accessory (LongAccessory)/ThumbnailConfiguration/ThumbnailCameraTarget",
+      "properties": {
+        "Name": "ThumbnailCameraTarget",
+        "Archivable": true
+      },
+      "class": "ObjectValue"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Accessory (LongAccessory)/ThumbnailConfiguration/ThumbnailCameraValue",
+      "properties": {
+        "Value": "0.682114601, 0.488521576, 3.1539619, 0.972663939, -0.0462950133, 0.22755006, -1.0477379e-09, 0.979927778, 0.199365288, -0.232211173, -0.193916321, 0.953141391",
+        "Archivable": true,
+        "Name": "ThumbnailCameraValue"
+      },
+      "class": "CFrameValue"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Accessory (LongAccessory)/Handle",
+      "properties": {
+        "CanCollide": false,
+        "Color": "0.639216, 0.635294, 0.647059",
+        "Anchored": false,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, 0, 0",
+        "Transparency": 0,
+        "Name": "Handle",
+        "Position": "-0.006187427788972855, -0.5323617458343506, -1.9270553588867188",
+        "CFrame": "-0.00618742779, -0.532361746, -1.92705536, 1, 2.38418536e-07, 1.1046701e-06, -2.38418778e-07, 1, 2.38417385e-07, -1.1046701e-06, -2.38417684e-07, 1",
+        "Material": "Enum.Material.Plastic",
+        "Archivable": true,
+        "Size": "1, 1, 1"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Accessory (LongAccessory)/Handle/HairAttachment",
+      "properties": {
+        "Visible": false,
+        "Name": "HairAttachment",
+        "Position": "0.006184533704072237, 1.3323616981506348, -0.07294578850269318",
+        "CFrame": "0.0061845337, 1.3323617, -0.0729457885, -1, -2.38418778e-07, 9.53670394e-07, -2.38418551e-07, 1, 2.38417613e-07, -9.53670451e-07, 2.38417385e-07, -1",
+        "Archivable": true,
+        "Rotation": "-179.99998474121094, 0.00005464128480525687, 179.99998474121094"
+      },
+      "class": "Attachment"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Accessory (LongAccessory)/Handle/AvatarPartScaleType",
+      "properties": {
+        "Value": "Classic",
+        "Archivable": true,
+        "Name": "AvatarPartScaleType"
+      },
+      "class": "StringValue"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Accessory (LongAccessory)/Handle/SpecialMesh",
+      "properties": {
+        "Scale": "1, 1, 1",
+        "MeshId": "rbxassetid://75887919688804",
+        "Archivable": true,
+        "Name": "SpecialMesh"
+      },
+      "class": "SpecialMesh"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Accessory (LongAccessory)/Handle/OriginalSize",
+      "properties": {
+        "Value": "1, 1, 1",
+        "Archivable": true,
+        "Name": "OriginalSize"
+      },
+      "class": "Vector3Value"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Accessory (LongAccessory)/Handle/AccessoryWeld",
+      "properties": {
+        "Enabled": true,
+        "Name": "AccessoryWeld",
+        "Archivable": true,
+        "Active": false
+      },
+      "class": "Weld"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Accessory (LongAccessory)/Handle/TouchInterest",
+      "properties": {
+        "Name": "TouchInterest",
+        "Archivable": true
+      },
+      "class": "TouchTransmitter"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Clothing",
+      "properties": {
+        "Name": "Clothing",
+        "Archivable": true
+      },
+      "class": "Pants"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Accessory (Old Joseph)",
+      "properties": {
+        "Name": "Accessory (Old Joseph)",
+        "Archivable": true
+      },
+      "class": "Accessory"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Accessory (Old Joseph)/ThumbnailConfiguration",
+      "properties": {
+        "Name": "ThumbnailConfiguration",
+        "Archivable": true
+      },
+      "class": "Configuration"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Accessory (Old Joseph)/ThumbnailConfiguration/ThumbnailCameraTarget",
+      "properties": {
+        "Name": "ThumbnailCameraTarget",
+        "Archivable": true
+      },
+      "class": "ObjectValue"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Accessory (Old Joseph)/ThumbnailConfiguration/ThumbnailCameraValue",
+      "properties": {
+        "Value": "-3.70375972e-07, -0.0576789081, -4.23660707, -1, -1.19009913e-09, -8.74146764e-08, 0, 0.999907315, -0.0136131477, 8.74227766e-08, -0.0136131477, -0.999907315",
+        "Archivable": true,
+        "Name": "ThumbnailCameraValue"
+      },
+      "class": "CFrameValue"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Accessory (Old Joseph)/Handle",
+      "properties": {
+        "CanCollide": false,
+        "Color": "0.639216, 0.635294, 0.647059",
+        "Anchored": false,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "180, 0, 180",
+        "Transparency": 0,
+        "Name": "Handle",
+        "Position": "-0.00022888176317792386, 0.20000004768371582, -1.999502182006836",
+        "CFrame": "-0.000228881763, 0.200000048, -1.99950218, -1, 0, -1.50995803e-07, 0, 1, 0, 1.50995803e-07, 0, -1",
+        "Material": "Enum.Material.Plastic",
+        "Archivable": true,
+        "Size": "1, 1, 1"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Accessory (Old Joseph)/Handle/AccessoryWeld",
+      "properties": {
+        "Enabled": true,
+        "Name": "AccessoryWeld",
+        "Archivable": true,
+        "Active": false
+      },
+      "class": "Weld"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Accessory (Old Joseph)/Handle/FaceCenterAttachment",
+      "properties": {
+        "Visible": false,
+        "Name": "FaceCenterAttachment",
+        "Position": "-0.0002288818359375, 0, 0.00049591064453125",
+        "CFrame": "-0.000228881836, 0, 0.000495910645, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Rotation": "-0, 0, -0"
+      },
+      "class": "Attachment"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Accessory (Old Joseph)/Handle/OriginalSize",
+      "properties": {
+        "Value": "1, 1, 1",
+        "Archivable": true,
+        "Name": "OriginalSize"
+      },
+      "class": "Vector3Value"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Accessory (Old Joseph)/Handle/AvatarPartScaleType",
+      "properties": {
+        "Value": "Classic",
+        "Archivable": true,
+        "Name": "AvatarPartScaleType"
+      },
+      "class": "StringValue"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Accessory (Old Joseph)/Handle/SpecialMesh",
+      "properties": {
+        "Scale": "1, 1, 1",
+        "MeshId": "rbxassetid://17489906130",
+        "Archivable": true,
+        "Name": "SpecialMesh"
+      },
+      "class": "SpecialMesh"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Accessory (Old Joseph)/Handle/TouchInterest",
+      "properties": {
+        "Name": "TouchInterest",
+        "Archivable": true
+      },
+      "class": "TouchTransmitter"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Head",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.913725, 0.843137, 0.772549",
+        "Anchored": false,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "180, 0, 180",
+        "Transparency": 0,
+        "Name": "Head",
+        "Position": "0, 0.20000004768371582, -2",
+        "CFrame": "0, 0.200000048, -2, -1, 0, -1.50995803e-07, 0, 1, 0, 1.50995803e-07, 0, -1",
+        "Material": "Enum.Material.Plastic",
+        "Archivable": true,
+        "Size": "2, 1, 1"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Head/FaceFrontAttachment",
+      "properties": {
+        "Visible": false,
+        "Name": "FaceFrontAttachment",
+        "Position": "0, 0, -0.6000000238418579",
+        "CFrame": "0, 0, -0.600000024, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Rotation": "-0, 0, -0"
+      },
+      "class": "Attachment"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Head/face",
+      "properties": {
+        "Rotation": 0,
+        "Transparency": 0,
+        "Name": "face",
+        "ZIndex": 1,
+        "Archivable": true,
+        "Texture": "rbxasset://textures/face.png"
+      },
+      "class": "Decal"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Head/FaceCenterAttachment",
+      "properties": {
+        "Visible": false,
+        "Name": "FaceCenterAttachment",
+        "Position": "0, 0, 0",
+        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Rotation": "-0, 0, -0"
+      },
+      "class": "Attachment"
+    },
+    {
+      "path": "StarterGui/DialogUI/MainFrame/DialogFrame/NPCViewPortFrame/Tetsu/Head/DisplayAttachement",
+      "properties": {
+        "Visible": false,
+        "Name": "DisplayAttachement",
+        "Position": "0, 1.25, 0",
+        "CFrame": "0, 1.25, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Rotation": "-0, 0, -0"
+      },
+      "class": "Attachment"
+    },
+    {

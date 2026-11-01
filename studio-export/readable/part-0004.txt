@@ -1,1920 +1,1237 @@
-        "CFrame": "-2.51457095e-08, 5.21540642e-08, -1.1920929e-07, 0.768403888, -0.63923806, 0.0304983184, 0.627239883, 0.742812693, -0.234092683, 0.126986414, 0.199007481, 0.971735775",
+        "Rotation": "-171.7259979248047, 51.54600143432617, 171.5659942626953",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-138.63661193847656, 12.07191276550293, -27.641489028930664",
+        "CFrame": "-138.636612, 12.0719128, -27.641489, -0.615160346, -0.09120965, 0.783106565, -0.033662308, 0.995416939, 0.0894957855, -0.787682831, 0.0286926553, -0.615412176",
+        "Material": "Enum.Material.Wood",
         "Archivable": true,
-        "Name": "Head"
+        "Size": "4.297553062438965, 10.897247314453125, 5.441868782043457"
       },
-      "class": "Pose"
+      "class": "Part"
     },
     {
-      "path": "Workspace/TemplateR6/AnimSaves/HeavySlice1/Keyframe/HumanoidRootPart/Torso/Left Arm",
+      "path": "Workspace/Trees/Conical2/Log",
       "properties": {
-        "CFrame": "-0.603391051, 0.100808322, -1.42692947, 0.545644581, -0.0597960427, -0.835880637, -0.485625803, 0.790336907, -0.373543888, 0.682963848, 0.609747291, 0.402204633",
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "8.27400016784668, -51.54600143432617, 8.434000015258789",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-132.49615478515625, 14.705973625183105, -32.740745544433594",
+        "CFrame": "-132.496155, 14.7059736, -32.7407455, 0.615160346, -0.09120965, -0.783106565, 0.033662308, 0.995416939, -0.0894957855, 0.787682831, 0.0286926553, 0.615412176",
+        "Material": "Enum.Material.Wood",
         "Archivable": true,
-        "Name": "Left Arm"
+        "Size": "4.036493301391602, 7.578372478485107, 3.1768112182617188"
       },
-      "class": "Pose"
+      "class": "Part"
     },
     {
-      "path": "Workspace/TemplateR6/AnimSaves/HeavySlice1/Keyframe/HumanoidRootPart/Null",
+      "path": "Workspace/Trees/Conical2/Log",
       "properties": {
-        "Value": 0,
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "23.174999237060547, -75.99299621582031, 22.118999481201172",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-130.94129943847656, 13.72910213470459, -30.162403106689453",
+        "CFrame": "-130.941299, 13.7291021, -30.1624031, 0.224218071, -0.0911311656, -0.970267177, -0.00759186782, 0.995423257, -0.0952491313, 0.974509597, 0.0287222806, 0.222499669",
+        "Material": "Enum.Material.Wood",
         "Archivable": true,
-        "Name": "Null"
+        "Size": "2.5496909618377686, 6.723902225494385, 6.1617112159729"
       },
-      "class": "IntValue"
+      "class": "Part"
     },
     {
-      "path": "Workspace/TemplateR6/AnimSaves/HeavySlice1/Keyframe",
+      "path": "Workspace/Trees/Conical2/Log",
       "properties": {
-        "Name": "Keyframe",
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "-2.444999933242798, 37.9630012512207, 6.640999794006348",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-136.64102172851562, 25.867172241210938, -29.89677619934082",
+        "CFrame": "-136.641022, 25.8671722, -29.8967762, 0.783113539, -0.0911738947, 0.615156472, 0.0894778147, 0.995419741, 0.0336268656, -0.61540556, 0.0287087746, 0.78768748",
+        "Material": "Enum.Material.Wood",
+        "Archivable": true,
+        "Size": "3.1288888454437256, 12.7989501953125, 3.1288888454437256"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Log",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "-2.444999933242798, 37.9630012512207, 6.640999794006348",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-137.3520050048828, 21.066726684570312, -31.500438690185547",
+        "CFrame": "-137.352005, 21.0667267, -31.5004387, 0.783113539, -0.0911738947, 0.615156472, 0.0894778147, 0.995419741, 0.0336268656, -0.61540556, 0.0287087746, 0.78768748",
+        "Material": "Enum.Material.Wood",
+        "Archivable": true,
+        "Size": "2.97029185295105, 3.6014153957366943, 0.8331822752952576"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Log",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "-2.444999933242798, 37.9630012512207, 6.640999794006348",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-135.6230926513672, 14.76162338256836, -30.21678924560547",
+        "CFrame": "-135.623093, 14.7616234, -30.2167892, 0.783113539, -0.0911738947, 0.615156472, 0.0894778147, 0.995419741, 0.0336268656, -0.61540556, 0.0287087746, 0.78768748",
+        "Material": "Enum.Material.Wood",
+        "Archivable": true,
+        "Size": "4.817008018493652, 9.192842483520508, 4.817008018493652"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Log",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "8.27400016784668, -51.54600143432617, 8.434000015258789",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-134.82772827148438, 21.830970764160156, -31.13943099975586",
+        "CFrame": "-134.827728, 21.8309708, -31.139431, 0.615160346, -0.09120965, -0.783106565, 0.033662308, 0.995416939, -0.0894957855, 0.787682831, 0.0286926553, 0.615412176",
+        "Material": "Enum.Material.Wood",
+        "Archivable": true,
+        "Size": "2.7701478004455566, 4.683261871337891, 0.9124741554260254"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Log",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "177.55499267578125, -37.9630012512207, 173.35899353027344",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-133.00950622558594, 13.18239974975586, -27.290544509887695",
+        "CFrame": "-133.009506, 13.1823997, -27.2905445, -0.783113539, -0.0911738947, -0.615156353, -0.0894778073, 0.995419741, -0.0336268581, 0.615405619, 0.0287087746, -0.787687421",
+        "Material": "Enum.Material.Wood",
+        "Archivable": true,
+        "Size": "4.346879005432129, 8.428077697753906, 2.874147891998291"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Log",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "-2.444999933242798, 37.9630012512207, 6.640999794006348",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-137.7533416748047, 38.01158905029297, -29.54656982421875",
+        "CFrame": "-137.753342, 38.0115891, -29.5465698, 0.783113539, -0.0911738947, 0.615156472, 0.0894778147, 0.995419741, 0.0336268656, -0.61540556, 0.0287087746, 0.78768748",
+        "Material": "Enum.Material.Wood",
+        "Archivable": true,
+        "Size": "2.4907026290893555, 22.75850486755371, 2.4907026290893555"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Log",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "177.55499267578125, -37.9630012512207, 173.35899353027344",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-135.2825164794922, 23.547775268554688, -28.506202697753906",
+        "CFrame": "-135.282516, 23.5477753, -28.5062027, -0.783113539, -0.0911738947, -0.615156353, -0.0894778073, 0.995419741, -0.0336268581, 0.615405619, 0.0287087746, -0.787687421",
+        "Material": "Enum.Material.Wood",
+        "Archivable": true,
+        "Size": "2.4893598556518555, 8.33342456817627, 0.8542495369911194"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Particles",
+      "properties": {
+        "CanCollide": false,
+        "Color": "1, 0, 0",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "-179.96800231933594, -17.172000885009766, 172.20700073242188",
+        "Transparency": 1,
+        "Name": "Particles",
+        "Position": "-138.48631286621094, 43.23606872558594, -29.537736892700195",
+        "CFrame": "-138.486313, 43.2360687, -29.5377369, -0.946597457, -0.129552454, -0.295239717, -0.135762915, 0.990740061, 0.000539373606, 0.292435795, 0.0405927524, -0.955423057",
+        "Material": "Enum.Material.ForceField",
+        "Archivable": true,
+        "Size": "15.857841491699219, 16.511837005615234, 20.45332908630371"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Particles/leafParticles",
+      "properties": {
+        "Enabled": true,
+        "Name": "leafParticles",
+        "Shape": "Enum.ParticleEmitterShape.Box",
+        "LightEmission": 0,
+        "Brightness": 1,
+        "Archivable": true,
+        "Texture": "rbxassetid://13151745054"
+      },
+      "class": "ParticleEmitter"
+    },
+    {
+      "path": "Workspace/Trees/Conical2",
+      "properties": {
+        "Name": "Conical2",
         "Archivable": true
       },
-      "class": "Keyframe"
+      "class": "Model"
     },
     {
-      "path": "Workspace/TemplateR6/AnimSaves/HeavySlice1/Keyframe/HumanoidRootPart",
+      "path": "Workspace/Trees/Conical2/Leaves",
       "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "HumanoidRootPart"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/HeavySlice1/Keyframe/HumanoidRootPart/Torso",
-      "properties": {
-        "CFrame": "-0.121090174, 0.00695745647, -0.888518929, -0.993786037, 0.111205652, -0.00483389059, -0.111010671, -0.986986578, 0.116339318, 0.00816660374, 0.116152965, 0.993197799",
-        "Archivable": true,
-        "Name": "Torso"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/HeavySlice1/Keyframe/HumanoidRootPart/Torso/Head",
-      "properties": {
-        "CFrame": "1.86264515e-08, -7.4505806e-08, 2.98023224e-07, 0.870798349, 0.485908031, -0.0748579204, -0.489032745, 0.840418577, -0.233545899, -0.0505698323, 0.239979357, 0.969460011",
-        "Archivable": true,
-        "Name": "Head"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/HeavySlice1/Keyframe/HumanoidRootPart/Torso/Left Leg",
-      "properties": {
-        "CFrame": "-0.637469888, 0.573101521, 0.327451646, 0.77554065, -0.475791156, 0.414920986, 0.345773697, 0.870040476, 0.351382911, -0.528182983, -0.129042938, 0.839267969",
-        "Archivable": true,
-        "Name": "Left Leg"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/HeavySlice1/Keyframe/HumanoidRootPart/Torso/Right Arm",
-      "properties": {
-        "CFrame": "1.12031579, -0.306683064, -0.516866803, -0.515980959, -0.753251314, -0.407892197, 0.333719254, -0.615319014, 0.714152634, -0.788920283, 0.23236762, 0.568867326",
-        "Archivable": true,
-        "Name": "Right Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/HeavySlice1/Keyframe/HumanoidRootPart/Torso/Right Leg",
-      "properties": {
-        "CFrame": "0.632803142, 0.564822912, 0.19437927, 0.993720472, -0.109542452, -0.0228048041, 0.103468694, 0.97720921, -0.185353979, 0.0425891951, 0.181830421, 0.982407153",
-        "Archivable": true,
-        "Name": "Right Leg"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/HeavySlice1/Keyframe/HumanoidRootPart/Torso/Left Arm",
-      "properties": {
-        "CFrame": "-0.365775764, 0.0826660395, -0.368163824, 0.599170744, 0.725989342, -0.337540984, -0.774304509, 0.418252289, -0.474886984, -0.203585565, 0.545897722, 0.812741339",
-        "Archivable": true,
-        "Name": "Left Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/HeavySlice1/Keyframe/HumanoidRootPart/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/HeavySlice1/Keyframe",
-      "properties": {
-        "Name": "Keyframe",
-        "Archivable": true
-      },
-      "class": "Keyframe"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/HeavySlice1/Keyframe/HumanoidRootPart",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "HumanoidRootPart"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/HeavySlice1/Keyframe/HumanoidRootPart/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/HeavySlice1/Keyframe/HumanoidRootPart/Torso",
-      "properties": {
-        "CFrame": "-0.0752057359, -0.00928114727, -0.713894725, -0.470003903, 0.879643857, -0.0729586631, -0.882658303, -0.468697429, 0.0351710171, -0.00325756893, 0.0809280947, 0.996714652",
-        "Archivable": true,
-        "Name": "Torso"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/HeavySlice1/Keyframe/HumanoidRootPart/Torso/Right Arm",
-      "properties": {
-        "CFrame": "1.05917704, -0.146393776, -0.432159901, -0.545681417, -0.706421614, -0.450777352, 0.464748979, -0.702735364, 0.538675487, -0.697309315, 0.0844468772, 0.711778402",
-        "Archivable": true,
-        "Name": "Right Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/HeavySlice1/Keyframe/HumanoidRootPart/Torso/Right Leg",
-      "properties": {
-        "CFrame": "0.576845109, 0.47014308, 0.177432686, 0.993334651, -0.115235738, 0.00263314508, 0.114310719, 0.981911778, -0.150937438, 0.0148078725, 0.150232345, 0.988539815",
-        "Archivable": true,
-        "Name": "Right Leg"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/HeavySlice1/Keyframe/HumanoidRootPart/Torso/Left Arm",
-      "properties": {
-        "CFrame": "-0.236661971, 0.0118914843, -0.114128888, 0.765801311, 0.619935632, -0.170961827, -0.63742137, 0.696569264, -0.329370826, -0.0851019621, 0.361207277, 0.928594053",
-        "Archivable": true,
-        "Name": "Left Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/HeavySlice1/Keyframe/HumanoidRootPart/Torso/Left Leg",
-      "properties": {
-        "CFrame": "-0.469354421, 0.467972517, 0.31429857, 0.820698261, -0.393923551, 0.413858145, 0.289877921, 0.911261678, 0.292528272, -0.49236688, -0.120109081, 0.862060726",
-        "Archivable": true,
-        "Name": "Left Leg"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/HeavySlice1/Keyframe/HumanoidRootPart/Torso/Head",
-      "properties": {
-        "CFrame": "1.3038516e-08, -6.70552254e-08, 2.98023224e-07, 0.953003645, 0.300718367, -0.0367769152, -0.301474273, 0.929317415, -0.213266015, -0.0299555678, 0.214330584, 0.97630173",
-        "Archivable": true,
-        "Name": "Head"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/HeavySlice1/Keyframe",
-      "properties": {
-        "Name": "Keyframe",
-        "Archivable": true
-      },
-      "class": "Keyframe"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/HeavySlice1/Keyframe/HumanoidRootPart",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "HumanoidRootPart"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/HeavySlice1/Keyframe/HumanoidRootPart/Torso",
-      "properties": {
-        "CFrame": "-0.191844955, 0.0891244933, -0.993510127, -0.383029163, -0.913246036, 0.138819516, 0.923653603, -0.376631439, 0.0708048195, -0.0123784542, 0.155341417, 0.987783313",
-        "Archivable": true,
-        "Name": "Torso"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/HeavySlice1/Keyframe/HumanoidRootPart/Torso/Right Leg",
-      "properties": {
-        "CFrame": "0.569142997, 0.573761106, 0.18208915, 0.992862284, 0.069896102, -0.0966383591, -0.0840565562, 0.984918118, -0.151230022, 0.0846104994, 0.158273652, 0.983763397",
-        "Archivable": true,
-        "Name": "Right Leg"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/HeavySlice1/Keyframe/HumanoidRootPart/Torso/Left Arm",
-      "properties": {
-        "CFrame": "-0.486492693, 0.20530647, -0.891821861, 0.602361679, 0.555370092, -0.573345006, -0.780382514, 0.258718163, -0.569270015, -0.167820618, 0.790334702, 0.589242935",
-        "Archivable": true,
-        "Name": "Left Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/HeavySlice1/Keyframe/HumanoidRootPart/Torso/Head",
-      "properties": {
-        "CFrame": "1.11758709e-08, -2.98023224e-08, 5.96046448e-08, 0.894348145, 0.437943012, -0.0913635641, -0.446921378, 0.865458131, -0.226370379, -0.0200659707, 0.243286267, 0.969746947",
-        "Archivable": true,
-        "Name": "Head"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/HeavySlice1/Keyframe/HumanoidRootPart/Torso/Left Leg",
-      "properties": {
-        "CFrame": "-0.783097625, 0.715086699, 0.265921921, 0.815319717, -0.426626772, 0.391462982, 0.304223925, 0.890888333, 0.337291569, -0.492647469, -0.155908078, 0.856149018",
-        "Archivable": true,
-        "Name": "Left Leg"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/HeavySlice1/Keyframe/HumanoidRootPart/Torso/Right Arm",
-      "properties": {
-        "CFrame": "0.716926754, -0.577476323, -0.288409621, 0.108455122, -0.967194915, -0.229719907, 0.303211778, -0.187886924, 0.934216857, -0.946731329, -0.170974344, 0.272887647",
-        "Archivable": true,
-        "Name": "Right Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/HeavySlice1/Keyframe/HumanoidRootPart/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/HeavySlice1/Keyframe",
-      "properties": {
-        "Name": "Keyframe",
-        "Archivable": true
-      },
-      "class": "Keyframe"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/HeavySlice1/Keyframe/HumanoidRootPart",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "HumanoidRootPart"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/HeavySlice1/Keyframe/HumanoidRootPart/Torso",
-      "properties": {
-        "CFrame": "-0.146722242, 0.0278396532, -0.949372172, -0.922341585, -0.381948501, 0.0583259687, 0.386336654, -0.91383791, 0.125079304, 0.00552661903, 0.13789925, 0.990430832",
-        "Archivable": true,
-        "Name": "Torso"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/HeavySlice1/Keyframe/HumanoidRootPart/Torso/Head",
-      "properties": {
-        "CFrame": "2.60770321e-08, -4.47034836e-08, 1.1920929e-07, 0.833347857, 0.545222998, -0.0909026414, -0.550219655, 0.802525401, -0.230675757, -0.0528180301, 0.242249578, 0.968775213",
-        "Archivable": true,
-        "Name": "Head"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/HeavySlice1/Keyframe/HumanoidRootPart/Torso/Left Arm",
-      "properties": {
-        "CFrame": "-0.428116202, 0.129824042, -0.544778943, 0.545813084, 0.715673149, -0.435775012, -0.799875438, 0.290123343, -0.525383294, -0.249574274, 0.635326684, 0.730802596",
-        "Archivable": true,
-        "Name": "Left Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/HeavySlice1/Keyframe/HumanoidRootPart/Torso/Left Leg",
-      "properties": {
-        "CFrame": "-0.7111094, 0.621289432, 0.312245369, 0.775191069, -0.488374531, 0.400710732, 0.356574655, 0.861866832, 0.360610396, -0.521472275, -0.136658639, 0.842253566",
-        "Archivable": true,
-        "Name": "Left Leg"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/HeavySlice1/Keyframe/HumanoidRootPart/Torso/Right Arm",
-      "properties": {
-        "CFrame": "1.06763101, -0.411614448, -0.513370752, -0.406877756, -0.848109841, -0.33935222, 0.328364402, -0.482452929, 0.812044203, -0.852424264, 0.218971521, 0.474788576",
-        "Archivable": true,
-        "Name": "Right Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/HeavySlice1/Keyframe/HumanoidRootPart/Torso/Right Leg",
-      "properties": {
-        "CFrame": "0.624675393, 0.588480234, 0.193157524, 0.995846331, -0.0788130835, -0.0455923863, 0.0687465295, 0.979169786, -0.191050306, 0.0596999563, 0.18712239, 0.980520844",
-        "Archivable": true,
-        "Name": "Right Leg"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/HeavySlice1/Keyframe/HumanoidRootPart/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/HeavySlice1/Keyframe",
-      "properties": {
-        "Name": "Keyframe",
-        "Archivable": true
-      },
-      "class": "Keyframe"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/HeavySlice1/Keyframe/HumanoidRootPart",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "HumanoidRootPart"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/HeavySlice1/Keyframe/HumanoidRootPart/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/HeavySlice1/Keyframe/HumanoidRootPart/Torso",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "Torso"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/HeavySlice1/Keyframe/HumanoidRootPart/Torso/Right Arm",
-      "properties": {
-        "CFrame": "0.329261959, -0.0315068364, -0.114381164, 0.719465613, -0.694164574, -0.0224661604, 0.667060673, 0.681643009, 0.300653964, -0.193389416, -0.231296465, 0.953468621",
-        "Archivable": true,
-        "Name": "Right Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/HeavySlice1/Keyframe/HumanoidRootPart/Torso/Left Leg",
-      "properties": {
-        "CFrame": "0, 3.57627869e-07, 0, 1, 0, 0, 0, 0.999999762, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "Left Leg"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/HeavySlice1/Keyframe/HumanoidRootPart/Torso/Head",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "Head"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/HeavySlice1/Keyframe/HumanoidRootPart/Torso/Left Arm",
-      "properties": {
-        "CFrame": "0, 1.78813934e-07, 0, 1, 0, 0, 0, 0.999999762, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "Left Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/HeavySlice1/Keyframe/HumanoidRootPart/Torso/Right Leg",
-      "properties": {
-        "CFrame": "0, 3.57627869e-07, 0, 1, 0, 0, 0, 0.999999762, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "Right Leg"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/HeavySlice1/Keyframe",
-      "properties": {
-        "Name": "Keyframe",
-        "Archivable": true
-      },
-      "class": "Keyframe"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/HeavySlice1/Keyframe/HumanoidRootPart",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "HumanoidRootPart"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/HeavySlice1/Keyframe/HumanoidRootPart/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/HeavySlice1/Keyframe/HumanoidRootPart/Torso",
-      "properties": {
-        "CFrame": "-0.0365448818, -0.000866360962, -0.412882537, 0.470395207, 0.881297946, -0.0451918766, -0.882455349, 0.469720185, -0.0252114926, -0.000991296023, 0.0517391786, 0.998660147",
-        "Archivable": true,
-        "Name": "Torso"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/HeavySlice1/Keyframe/HumanoidRootPart/Torso/Right Arm",
-      "properties": {
-        "CFrame": "0.858850837, -0.104703754, -0.330460995, -0.273455441, -0.899827957, -0.339900106, 0.733362436, -0.423695564, 0.531659782, -0.622416377, -0.103884742, 0.775761485",
-        "Archivable": true,
-        "Name": "Right Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/HeavySlice1/Keyframe/HumanoidRootPart/Torso/Left Leg",
-      "properties": {
-        "CFrame": "-0.254422784, 0.288337708, 0.200339586, 0.931687117, -0.215645835, 0.292328537, 0.175256804, 0.97171998, 0.158256546, -0.318188906, -0.0962130129, 0.94313252",
-        "Archivable": true,
-        "Name": "Left Leg"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/HeavySlice1/Keyframe/HumanoidRootPart/Torso/Head",
-      "properties": {
-        "CFrame": "3.02679837e-09, -3.7252903e-08, 1.1920929e-07, 0.995150089, 0.0980632156, -0.00774021726, -0.0982284993, 0.98646313, -0.131307304, -0.00524097588, 0.131430775, 0.991311491",
-        "Archivable": true,
-        "Name": "Head"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/HeavySlice1/Keyframe/HumanoidRootPart/Torso/Left Arm",
-      "properties": {
-        "CFrame": "-0.11128895, -0.0114279985, -0.0183869898, 0.93767029, 0.340651155, -0.068783395, -0.347407818, 0.923971474, -0.159951136, 0.00906636007, 0.173877284, 0.984725595",
-        "Archivable": true,
-        "Name": "Left Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/HeavySlice1/Keyframe/HumanoidRootPart/Torso/Right Leg",
-      "properties": {
-        "CFrame": "0.35715428, 0.274794579, 0.111455619, 0.99830842, -0.0580509938, 0.00323153287, 0.0581181012, 0.994818985, -0.083409898, 0.00162723789, 0.0834565982, 0.996510088",
-        "Archivable": true,
-        "Name": "Right Leg"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword",
-      "properties": {
-        "Name": "SheathingSword",
-        "Archivable": true
-      },
-      "class": "KeyframeSequence"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe",
-      "properties": {
-        "Name": "Keyframe",
-        "Archivable": true
-      },
-      "class": "Keyframe"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "HumanoidRootPart"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "Torso"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso/Right Arm",
-      "properties": {
-        "CFrame": "0.380567074, -0.466143638, -0.133722275, 0.0442176461, -0.842512786, 0.536858499, 0.916811526, 0.247699291, 0.313212156, -0.396864772, 0.478348374, 0.783378005",
-        "Archivable": true,
-        "Name": "Right Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe",
-      "properties": {
-        "Name": "Keyframe",
-        "Archivable": true
-      },
-      "class": "Keyframe"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "HumanoidRootPart"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "Torso"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso/Right Arm",
-      "properties": {
-        "CFrame": "0.309166014, -0.477156103, -0.0526900738, 0.239494801, -0.817659199, 0.523522317, 0.835468829, 0.448253334, 0.317900747, -0.494605124, 0.361250907, 0.790483117",
-        "Archivable": true,
-        "Name": "Right Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe",
-      "properties": {
-        "Name": "Keyframe",
-        "Archivable": true
-      },
-      "class": "Keyframe"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "HumanoidRootPart"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "Torso"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso/Right Arm",
-      "properties": {
-        "CFrame": "0.462431431, -0.397834599, -0.294226825, -0.182958126, -0.830535769, 0.526057363, 0.968750834, -0.0611499473, 0.24037987, -0.16747573, 0.553597867, 0.815770268",
-        "Archivable": true,
-        "Name": "Right Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe",
-      "properties": {
-        "Name": "Keyframe",
-        "Archivable": true
-      },
-      "class": "Keyframe"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "HumanoidRootPart"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "Torso"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso/Right Arm",
-      "properties": {
-        "CFrame": "0.434770703, -0.418483436, -0.24473311, -0.131894588, -0.834614754, 0.534810185, 0.962842703, 0.0203998648, 0.269291401, -0.235664696, 0.550456047, 0.800912082",
-        "Archivable": true,
-        "Name": "Right Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe",
-      "properties": {
-        "Name": "Keyframe",
-        "Archivable": true
-      },
-      "class": "Keyframe"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "HumanoidRootPart"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "Torso"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso/Right Arm",
-      "properties": {
-        "CFrame": "0.0380990505, -0.226798654, 0.0455688238, 0.898720324, -0.3447465, 0.271019638, 0.323610097, 0.938466907, 0.120649174, -0.295936346, -0.0207251869, 0.954982817",
-        "Archivable": true,
-        "Name": "Right Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe",
-      "properties": {
-        "Name": "Keyframe",
-        "Archivable": true
-      },
-      "class": "Keyframe"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "HumanoidRootPart"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "Torso"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso/Right Arm",
-      "properties": {
-        "CFrame": "0.0413885713, -0.126821131, 0.0202309489, 0.950003862, -0.277867854, 0.142415076, 0.273625165, 0.960589051, 0.048956275, -0.150405839, -0.00754028698, 0.988595545",
-        "Archivable": true,
-        "Name": "Right Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe",
-      "properties": {
-        "Name": "Keyframe",
-        "Archivable": true
-      },
-      "class": "Keyframe"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "HumanoidRootPart"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "Torso"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso/Right Arm",
-      "properties": {
-        "CFrame": "0.224833965, -0.450058043, 0.00152075291, 0.438095838, -0.751521766, 0.49324134, 0.731282413, 0.617052197, 0.290641755, -0.522779346, 0.233369648, 0.819902718",
-        "Archivable": true,
-        "Name": "Right Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe",
-      "properties": {
-        "Name": "Keyframe",
-        "Archivable": true
-      },
-      "class": "Keyframe"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "HumanoidRootPart"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "Torso"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso/Right Arm",
-      "properties": {
-        "CFrame": "0.149028778, -0.391297817, 0.03051126, 0.549344361, -0.645722985, 0.530341625, 0.569110274, 0.753852189, 0.328359008, -0.611828566, 0.121440753, 0.781612396",
-        "Archivable": true,
-        "Name": "Right Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe",
-      "properties": {
-        "Name": "Keyframe",
-        "Archivable": true
-      },
-      "class": "Keyframe"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "HumanoidRootPart"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "Torso"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso/Right Arm",
-      "properties": {
-        "CFrame": "0.0935637951, -0.309048116, 0.0380401313, 0.627061605, -0.510747433, 0.588158667, 0.399484158, 0.85904789, 0.320076048, -0.668734789, 0.0342526734, 0.742711663",
-        "Archivable": true,
-        "Name": "Right Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe",
-      "properties": {
-        "Name": "Keyframe",
-        "Archivable": true
-      },
-      "class": "Keyframe"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "HumanoidRootPart"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "Torso"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso/Right Arm",
-      "properties": {
-        "CFrame": "0, 1.78813934e-07, 0, 1, 0, 0, 0, 0.999999762, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "Right Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe",
-      "properties": {
-        "Name": "Keyframe",
-        "Archivable": true
-      },
-      "class": "Keyframe"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "HumanoidRootPart"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "Torso"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso/Right Arm",
-      "properties": {
-        "CFrame": "0.633333445, -0.0655153692, -1.00309348, 0.536114752, -0.106667444, 0.837378621, 0.757113159, 0.49944973, -0.421105266, -0.373310417, 0.859750986, 0.348521739",
-        "Archivable": true,
-        "Name": "Right Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso/Right Arm/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe",
-      "properties": {
-        "Name": "Keyframe",
-        "Archivable": true
-      },
-      "class": "Keyframe"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "HumanoidRootPart"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "Torso"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso/Right Arm",
-      "properties": {
-        "CFrame": "0.633009791, -0.0640447438, -1.00055361, 0.535616517, -0.109615952, 0.837316811, 0.758591652, 0.498092651, -0.420050502, -0.371017039, 0.860167265, 0.34994036",
-        "Archivable": true,
-        "Name": "Right Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe",
-      "properties": {
-        "Name": "Keyframe",
-        "Archivable": true
-      },
-      "class": "Keyframe"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "HumanoidRootPart"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "Torso"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso/Right Arm",
-      "properties": {
-        "CFrame": "0.635034919, -0.0732452869, -1.01644206, 0.53859973, -0.0911487192, 0.837617099, 0.749277949, 0.506483436, -0.426681548, -0.385347903, 0.857418418, 0.34108761",
-        "Archivable": true,
-        "Name": "Right Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso/Right Arm/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe",
-      "properties": {
-        "Name": "Keyframe",
-        "Archivable": true
-      },
-      "class": "Keyframe"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "HumanoidRootPart"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "Torso"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso/Right Arm",
-      "properties": {
-        "CFrame": "0.634107471, -0.0690310597, -1.00916469, 0.537272811, -0.0996145159, 0.837505281, 0.753563404, 0.502669096, -0.42363447, -0.378788054, 0.858720362, 0.345136285",
-        "Archivable": true,
-        "Name": "Right Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso/Right Arm/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe",
-      "properties": {
-        "Name": "Keyframe",
-        "Archivable": true
-      },
-      "class": "Keyframe"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "HumanoidRootPart"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "Torso"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso/Right Arm",
-      "properties": {
-        "CFrame": "0.635778546, -0.0766250491, -1.02227855, 0.539615631, -0.0843515247, 0.837675273, 0.74581778, 0.509506941, -0.429136813, -0.390603125, 0.856321871, 0.337848812",
-        "Archivable": true,
-        "Name": "Right Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso/Right Arm/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe",
-      "properties": {
-        "Name": "Keyframe",
-        "Archivable": true
-      },
-      "class": "Keyframe"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "HumanoidRootPart"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "Torso"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso/Right Arm",
-      "properties": {
-        "CFrame": "0.636166275, -0.0783876777, -1.02532268, 0.540128291, -0.0808035582, 0.837694585, 0.744004965, 0.511071324, -0.430421472, -0.393342197, 0.855731606, 0.336162388",
-        "Archivable": true,
-        "Name": "Right Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso/Right Arm/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe",
-      "properties": {
-        "Name": "Keyframe",
-        "Archivable": true
-      },
-      "class": "Keyframe"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "HumanoidRootPart"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "Torso"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso/Right Arm",
-      "properties": {
-        "CFrame": "0.635819435, -0.0768125057, -1.02260268, 0.539670706, -0.0839737505, 0.837677598, 0.745625019, 0.509673953, -0.429273367, -0.39089486, 0.856259584, 0.337669134",
-        "Archivable": true,
-        "Name": "Right Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso/Right Arm/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe",
-      "properties": {
-        "Name": "Keyframe",
-        "Archivable": true
-      },
-      "class": "Keyframe"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "HumanoidRootPart"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "Torso"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso/Right Arm",
-      "properties": {
-        "CFrame": "0.631614029, -0.0577025414, -0.989600956, 0.533374727, -0.122311994, 0.836989343, 0.764920592, 0.492173553, -0.415525645, -0.361120284, 0.86186111, 0.356071949",
-        "Archivable": true,
-        "Name": "Right Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso/Right Arm/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe",
-      "properties": {
-        "Name": "Keyframe",
-        "Archivable": true
-      },
-      "class": "Keyframe"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "HumanoidRootPart"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "Torso"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso/Right Arm",
-      "properties": {
-        "CFrame": "0.634359479, -0.0701782703, -1.01114559, 0.537640929, -0.0973102599, 0.837539732, 0.752399325, 0.503712773, -0.424462467, -0.380575001, 0.858372688, 0.344032913",
-        "Archivable": true,
-        "Name": "Right Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso/Right Arm/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe",
-      "properties": {
-        "Name": "Keyframe",
-        "Archivable": true
-      },
-      "class": "Keyframe"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "HumanoidRootPart"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "Torso"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso/Right Arm",
-      "properties": {
-        "CFrame": "0.620957851, -0.0092805028, -0.905980468, 0.511328101, -0.21805957, 0.831260204, 0.810654819, 0.4434762, -0.382318735, -0.285275906, 0.869355321, 0.403532922",
-        "Archivable": true,
-        "Name": "Right Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso/Right Arm/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe",
-      "properties": {
-        "Name": "Keyframe",
-        "Archivable": true
-      },
-      "class": "Keyframe"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "HumanoidRootPart"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "Torso"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso/Right Arm",
-      "properties": {
-        "CFrame": "0.627245665, -0.0378518701, -0.955320656, 0.525385857, -0.161842525, 0.835330307, 0.784235001, 0.47294715, -0.401617169, -0.330068409, 0.866099119, 0.375402361",
-        "Archivable": true,
-        "Name": "Right Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso/Right Arm/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe",
-      "properties": {
-        "Name": "Keyframe",
-        "Archivable": true
-      },
-      "class": "Keyframe"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "HumanoidRootPart"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "Torso"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso/Right Arm",
-      "properties": {
-        "CFrame": "0.60144043, 0.0794065297, -0.752825379, 0.449108541, -0.385152221, 0.806200624, 0.881244242, 0.339748621, -0.328602254, -0.14734365, 0.858037412, 0.491997182",
-        "Archivable": true,
-        "Name": "Right Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso/Right Arm/Ease",
-      "properties": {
-        "Name": "Ease",
+        "Name": "Leaves",
         "Archivable": true
       },
       "class": "Folder"
     },
     {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso/Right Arm/Ease/Type",
+      "path": "Workspace/Trees/Conical2/Leaves/Leafs",
       "properties": {
-        "Value": "Back",
+        "CanCollide": false,
+        "Color": "0.972549, 0.972549, 0.972549",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "145.05099487304688, 89.552001953125, -140.69400024414062",
+        "Transparency": 0,
+        "Name": "Leafs",
+        "Position": "-186.5404815673828, 47.15970993041992, 34.14091110229492",
+        "CFrame": "-186.540482, 47.1597099, 34.1409111, -0.00606411695, 0.00496446295, 0.999969482, 0.0759720355, 0.997099757, -0.00448953733, -0.997091591, 0.075942494, -0.00642377138",
+        "Material": "Enum.Material.Grass",
         "Archivable": true,
-        "Name": "Type"
+        "Size": "28.82707977294922, 25.47991371154785, 21.850221633911133"
       },
-      "class": "StringValue"
+      "class": "Part"
     },
     {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso/Right Arm/Ease/Params",
+      "path": "Workspace/Trees/Conical2/Leaves/Leafs",
       "properties": {
-        "Name": "Params",
+        "CanCollide": false,
+        "Color": "0.792157, 0.796078, 0.819608",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "25.94499969482422, 78.2699966430664, -22.22599983215332",
+        "Transparency": 0,
+        "Name": "Leafs",
+        "Position": "-186.1374969482422, 43.66633224487305, 40.517189025878906",
+        "CFrame": "-186.137497, 43.6663322, 40.517189, 0.188200653, 0.0769046023, 0.979115129, 0.0564029031, 0.994437754, -0.0889496505, -0.980509877, 0.071965307, 0.182816058",
+        "Material": "Enum.Material.Grass",
+        "Archivable": true,
+        "Size": "23.375507354736328, 17.992019653320312, 21.502050399780273"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Leaves/Leafs",
+      "properties": {
+        "CanCollide": false,
+        "Color": "0.792157, 0.796078, 0.819608",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "-158.29400634765625, -54.75299835205078, -169.38299560546875",
+        "Transparency": 0,
+        "Name": "Leafs",
+        "Position": "-193.20751953125, 48.14961242675781, 31.229951858520508",
+        "CFrame": "-193.20752, 48.1496124, 31.2299519, -0.567218661, 0.106329381, -0.81667465, -0.125689536, 0.968837678, 0.213437989, 0.813919842, 0.223713428, -0.536178172",
+        "Material": "Enum.Material.Grass",
+        "Archivable": true,
+        "Size": "26.218591690063477, 26.66055679321289, 25.764373779296875"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Leaves/Leafs",
+      "properties": {
+        "CanCollide": false,
+        "Color": "0.792157, 0.796078, 0.819608",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "-0.5099999904632568, -10.531000137329102, -1.4500000476837158",
+        "Transparency": 0,
+        "Name": "Leafs",
+        "Position": "-192.52084350585938, 33.41312789916992, 34.046329498291016",
+        "CFrame": "-192.520844, 33.4131279, 34.0463295, 0.98284173, 0.0248727761, -0.182768106, -0.023671709, 0.999681413, 0.00875070319, 0.182927519, -0.00427412242, 0.983117223",
+        "Material": "Enum.Material.Grass",
+        "Archivable": true,
+        "Size": "27.288236618041992, 17.911178588867188, 29.3275146484375"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Leaves/Leafs",
+      "properties": {
+        "CanCollide": false,
+        "Color": "0.972549, 0.972549, 0.972549",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "176.67599487304688, -0.09600000083446503, 161.76600646972656",
+        "Transparency": 0,
+        "Name": "Leafs",
+        "Position": "-193.96792602539062, 47.889122009277344, 27.065446853637695",
+        "CFrame": "-193.967926, 47.889122, 27.0654469, -0.949782729, -0.312906146, -0.00167152286, -0.312288046, 0.9482162, -0.0579831786, 0.0197282732, -0.0545494109, -0.998316288",
+        "Material": "Enum.Material.Grass",
+        "Archivable": true,
+        "Size": "22.739660263061523, 22.692934036254883, 25.90850257873535"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Leaves/Leafs",
+      "properties": {
+        "CanCollide": false,
+        "Color": "0.972549, 0.972549, 0.972549",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "171.07000732421875, 10.375, -179.31399536132812",
+        "Transparency": 0,
+        "Name": "Leafs",
+        "Position": "-184.86965942382812, 32.69032669067383, 35.61886215209961",
+        "CFrame": "-184.869659, 32.6903267, 35.6188622, -0.983580828, 0.0117703751, 0.180084556, -0.0161324255, 0.988141358, -0.152697057, -0.179746091, -0.153095126, -0.971727014",
+        "Material": "Enum.Material.Grass",
+        "Archivable": true,
+        "Size": "23.375507354736328, 17.92906379699707, 21.502050399780273"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Leaves/Leafs",
+      "properties": {
+        "CanCollide": false,
+        "Color": "0.972549, 0.972549, 0.972549",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "179.4929962158203, 10.532999992370605, -171.0590057373047",
+        "Transparency": 0,
+        "Name": "Leafs",
+        "Position": "-198.11761474609375, 46.68245315551758, 35.611087799072266",
+        "CFrame": "-198.117615, 46.6824532, 35.6110878, -0.971203566, 0.15279901, 0.182801753, 0.153813839, 0.988061547, -0.00869958103, -0.181948572, 0.0196683574, -0.983111441",
+        "Material": "Enum.Material.Grass",
+        "Archivable": true,
+        "Size": "23.375507354736328, 18.161067962646484, 21.502050399780273"
+      },
+      "class": "Part"
+    },
+    {
+      "properties": {
+        "Enabled": true,
+        "Archivable": true,
+        "Name": "Math1"
+      },
+      "path": "Workspace/Trees/Conical2/Math1",
+      "source": "-- WindLeaves.lua  (Server Script)\nlocal RunService = game:GetService(\"RunService\")\nlocal CollectionService = game:GetService(\"CollectionService\")\n\n-- CONFIG\nlocal treePath = script.Parent               -- set this to workspace.YourTreeModel if script not parented to the tree\nlocal leavesFolderName = \"Leaves\"            -- folder name under treePath\nlocal windStrength = 4                  -- base angle multiplier (tweak)\nlocal windSpeed = 1.0                        -- speed multiplier (tweak)\nlocal enforceAnchored = true                 -- set true to auto Anchor leaves (recommended)\nlocal debugEnabled = true\n\n-- Helper debug\nlocal function debug(...)\n\tif debugEnabled then\n\t\tprint(\"[WindLeaves]\", ...)\n\tend\nend\n\n-- Find Leaves folder\nlocal function findLeavesFolder()\n\tif not treePath then return nil end\n\tlocal folder = treePath:FindFirstChild(leavesFolderName)\n\tif folder and folder:IsA(\"Folder\") then\n\t\treturn folder\n\tend\n\t-- fallback: try to find any descendant folder named Leaves\n\tfor _, v in pairs(treePath:GetDescendants()) do\n\t\tif v.Name == leavesFolderName and v:IsA(\"Folder\") then\n\t\t\treturn v\n\t\tend\n\tend\n\treturn nil\nend\n\nlocal LeavesFolder = findLeavesFolder()\nif not LeavesFolder then\n\tdebug(\"ERROR: Leaves folder not found under\", treePath:GetFullName())\n\treturn\nend\ndebug(\"Found Leaves folder at\", LeavesFolder:GetFullName())\n\n-- Table to hold parts and their originals + random offset\nlocal leafData = {}\n\nlocal function addLeaf(part)\n\tif not part or not part:IsA(\"BasePart\") then return end\n\tif leafData[part] then return end\n\tleafData[part] = {\n\t\torig = part.CFrame,\n\t\toffset = math.random() * 1000,    -- unique time offset so leaves don't move perfectly in sync\n\t}\n\tif enforceAnchored then\n\t\tpart.Anchored = true\n\tend\n\tdebug(\"Added leaf:\", part:GetFullName())\nend\n\nlocal function removeLeaf(part)\n\tif leafData[part] then\n\t\tleafData[part] = nil\n\t\tdebug(\"Removed leaf:\", part:GetFullName())\n\tend\nend\n\n-- Initialize existing children\nfor _, child in ipairs(LeavesFolder:GetChildren()) do\n\taddLeaf(child)\nend\n\n-- React to runtime changes\nLeavesFolder.ChildAdded:Connect(function(child)\n\t-- wait a short tick in case child is a Model with parts inside\n\ttask.wait(0.01)\n\t-- if child is a folder/model, add parts inside\n\tif child:IsA(\"BasePart\") then\n\t\taddLeaf(child)\n\telse\n\t\tfor _, desc in ipairs(child:GetDescendants()) do\n\t\t\tif desc:IsA(\"BasePart\") then\n\t\t\t\taddLeaf(desc)\n\t\t\tend\n\t\tend\n\tend\nend)\n\nLeavesFolder.ChildRemoved:Connect(function(child)\n\t-- remove whichever parts belonged to that child (or the child itself)\n\tif child:IsA(\"BasePart\") then\n\t\tremoveLeaf(child)\n\telse\n\t\tfor _, desc in ipairs(child:GetDescendants()) do\n\t\t\tif desc:IsA(\"BasePart\") then\n\t\t\t\tremoveLeaf(desc)\n\t\t\tend\n\t\tend\n\tend\nend)\n\n-- Also remove when parts are destroyed\ngame:GetService(\"Workspace\").DescendantRemoving:Connect(function(desc)\n\tif desc and desc:IsA(\"BasePart\") and leafData[desc] then\n\t\tleafData[desc] = nil\n\t\tdebug(\"Leaf destroyed:\", desc:GetFullName())\n\tend\nend)\n\n-- Main update loop (Heartbeat for smooth motion)\nRunService.Heartbeat:Connect(function(dt)\n\tlocal t = tick() * windSpeed\n\tfor part, info in pairs(leafData) do\n\t\tif not part or not part.Parent then\n\t\t\tleafData[part] = nil\n\t\telse\n\t\t\t-- compute small rotations based on noise / trig\n\t\t\tlocal clock = t + info.offset\n\t\t\t-- small independent axes\n\t\t\tlocal rx = math.rad(math.cos(clock) * windStrength)\n\t\t\tlocal ry = math.rad(math.sin(clock * 0.9) * windStrength * 0.6)\n\t\t\tlocal rz = math.rad(math.cos(clock * 1.1) * windStrength * 0.5)\n\t\t\tpart.CFrame = info.orig * CFrame.Angles(rx, ry, rz)\n\t\tend\n\tend\nend)\n\ndebug(\"WindLeaves script started. Leaf count:\", (function() local c=0; for _ in pairs(leafData) do c=c+1 end; return c end)())",
+      "class": "Script"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Log",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "-19.275999069213867, -75.1510009765625, -20.350000381469727",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-187.98211669921875, 4.501157283782959, 31.869186401367188",
+        "CFrame": "-187.982117, 4.50115728, 31.8691864, 0.240279943, 0.0891210437, -0.966603875, -0.0290836971, 0.995990276, 0.0846008286, 0.970267892, 0.00778452493, 0.24190852",
+        "Material": "Enum.Material.Wood",
+        "Archivable": true,
+        "Size": "3.8906731605529785, 10.260265350341797, 9.402396202087402"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Log",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "-5.809999942779541, -50.62099838256836, -8.067999839782715",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-190.13442993164062, 6.317846298217773, 27.944894790649414",
+        "CFrame": "-190.13443, 6.3178463, 27.9448948, 0.628162563, 0.0890452638, -0.772970319, -0.0621637926, 0.995997548, 0.064219743, 0.775595129, 0.00771031203, 0.631183922",
+        "Material": "Enum.Material.Wood",
+        "Archivable": true,
+        "Size": "6.159442901611328, 11.564135551452637, 4.847620487213135"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Log",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "4.584000110626221, 38.922000885009766, -6.566999912261963",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-195.6447296142578, 17.230146408081055, 29.749492645263672",
+        "CFrame": "-195.64473, 17.2301464, 29.7494926, 0.772900462, 0.0889802724, 0.628257751, -0.064127259, 0.996003032, -0.0621730238, -0.631279051, 0.00776510406, 0.775517106",
+        "Material": "Enum.Material.Wood",
+        "Archivable": true,
+        "Size": "4.532484531402588, 5.495541095733643, 1.2713855504989624"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Particles",
+      "properties": {
+        "CanCollide": false,
+        "Color": "1, 0, 0",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "-177.8780059814453, -18.12700080871582, -176.94500732421875",
+        "Transparency": 1,
+        "Name": "Particles",
+        "Position": "-191.22886657714844, 50.87433624267578, 32.005165100097656",
+        "CFrame": "-191.228867, 50.8743362, 32.0051651, -0.949017823, 0.0506490581, -0.311127126, 0.0417541601, 0.998508036, 0.0351884365, 0.312445343, 0.0204035938, -0.949716687",
+        "Material": "Enum.Material.ForceField",
+        "Archivable": true,
+        "Size": "24.198101043701172, 25.19605827331543, 31.210535049438477"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Particles/leafParticles",
+      "properties": {
+        "Enabled": true,
+        "Name": "leafParticles",
+        "Shape": "Enum.ParticleEmitterShape.Box",
+        "LightEmission": 0,
+        "Brightness": 1,
+        "Archivable": true,
+        "Texture": "rbxassetid://13151745054"
+      },
+      "class": "ParticleEmitter"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Log",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "4.584000110626221, 38.922000885009766, -6.566999912261963",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-198.31622314453125, 9.54465103149414, 27.15668296813965",
+        "CFrame": "-198.316223, 9.54465103, 27.156683, 0.772900462, 0.0889802724, 0.628257751, -0.064127259, 0.996003032, -0.0621730238, -0.631279051, 0.00776510406, 0.775517106",
+        "Material": "Enum.Material.Wood",
+        "Archivable": true,
+        "Size": "6.120449542999268, 6.822626113891602, 4.757238864898682"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Log",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "4.584000110626221, 38.922000885009766, -6.566999912261963",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-194.72903442382812, 7.330356121063232, 31.878923416137695",
+        "CFrame": "-194.729034, 7.33035612, 31.8789234, 0.772900462, 0.0889802724, 0.628257751, -0.064127259, 0.996003032, -0.0621730238, -0.631279051, 0.00776510406, 0.775517106",
+        "Material": "Enum.Material.Wood",
+        "Archivable": true,
+        "Size": "7.350461006164551, 14.027718544006348, 7.350461006164551"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Log",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "174.19000244140625, 50.62099838256836, -171.9320068359375",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-195.8772430419922, 19.293500900268555, 33.767581939697266",
+        "CFrame": "-195.877243, 19.2935009, 33.7675819, -0.628162563, 0.0890452638, 0.772970319, 0.0621637926, 0.995997548, -0.064219743, -0.775595129, 0.00771031203, -0.631183922",
+        "Material": "Enum.Material.Wood",
+        "Archivable": true,
+        "Size": "4.436229228973389, 9.626838684082031, 1.260349988937378"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Log",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "4.584000110626221, 38.922000885009766, -6.566999912261963",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-191.55557250976562, 42.831504821777344, 32.15287780761719",
+        "CFrame": "-191.555573, 42.8315048, 32.1528778, 0.772900462, 0.0889802724, 0.628257751, -0.064127259, 0.996003032, -0.0621730238, -0.631279051, 0.00776510406, 0.775517106",
+        "Material": "Enum.Material.Wood",
+        "Archivable": true,
+        "Size": "3.8006606101989746, 34.72809600830078, 3.8006606101989746"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Log",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "-5.809999942779541, -50.62099838256836, -8.067999839782715",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-191.63540649414062, 17.697168350219727, 30.204391479492188",
+        "CFrame": "-191.635406, 17.6971684, 30.2043915, 0.628162563, 0.0890452638, -0.772970319, -0.0621637926, 0.995997548, 0.064219743, 0.775595129, 0.00771031203, 0.631183922",
+        "Material": "Enum.Material.Wood",
+        "Archivable": true,
+        "Size": "4.227077007293701, 7.1463727951049805, 1.3923801183700562"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Log",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "4.584000110626221, 38.922000885009766, -6.566999912261963",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-193.21380615234375, 24.287899017333984, 32.0096321105957",
+        "CFrame": "-193.213806, 24.287899, 32.0096321, 0.772900462, 0.0889802724, 0.628257751, -0.064127259, 0.996003032, -0.0621730238, -0.631279051, 0.00776510406, 0.775517106",
+        "Material": "Enum.Material.Wood",
+        "Archivable": true,
+        "Size": "4.774494171142578, 19.530418395996094, 4.774494171142578"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Log",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "-175.41600036621094, -38.922000885009766, -173.43299865722656",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-191.14068603515625, 4.329980850219727, 36.32569122314453",
+        "CFrame": "-191.140686, 4.32998085, 36.3256912, -0.772900462, 0.0889802724, -0.628257751, 0.064127259, 0.996003032, 0.0621730238, 0.631279051, 0.00776510406, -0.775517106",
+        "Material": "Enum.Material.Wood",
+        "Archivable": true,
+        "Size": "6.633072853088379, 12.860733985900879, 4.385774612426758"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Log",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "-175.41600036621094, -38.922000885009766, -173.43299865722656",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-191.76222229003906, 20.475202560424805, 34.17405319213867",
+        "CFrame": "-191.762222, 20.4752026, 34.1740532, -0.772900462, 0.0889802724, -0.628257751, 0.064127259, 0.996003032, 0.0621730238, 0.631279051, 0.00776510406, -0.775517106",
+        "Material": "Enum.Material.Wood",
+        "Archivable": true,
+        "Size": "3.798611640930176, 12.71629810333252, 1.3035328388214111"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Log",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "9.253999710083008, 59.73699951171875, -10.168000221252441",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-196.93716430664062, 7.247203350067139, 26.648038864135742",
+        "CFrame": "-196.937164, 7.24720335, 26.6480389, 0.49604851, 0.088966541, 0.863725185, -0.0375226922, 0.996004045, -0.0810419917, -0.867483854, 0.00779145164, 0.497404575",
+        "Material": "Enum.Material.Wood",
+        "Archivable": true,
+        "Size": "6.399253845214844, 2.4838240146636963, 9.804237365722656"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Conical2/Log",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "174.19000244140625, 50.62099838256836, -171.9320068359375",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-199.90127563476562, 4.192480564117432, 35.983394622802734",
+        "CFrame": "-199.901276, 4.19248056, 35.9833946, -0.628162563, 0.0890452638, 0.772970319, 0.0621637926, 0.995997548, -0.064219743, -0.775595129, 0.00771031203, -0.631183922",
+        "Material": "Enum.Material.Wood",
+        "Archivable": true,
+        "Size": "6.557804107666016, 16.628536224365234, 8.303960800170898"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Pine",
+      "properties": {
+        "Name": "Pine",
+        "Archivable": true
+      },
+      "class": "Model"
+    },
+    {
+      "path": "Workspace/Trees/Pine/Leaves",
+      "properties": {
+        "Name": "Leaves",
         "Archivable": true
       },
       "class": "Folder"
     },
     {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso/Right Arm/Ease/Params/Direction",
+      "path": "Workspace/Trees/Pine/Leaves/Leafs",
       "properties": {
-        "Value": "Out",
+        "CanCollide": false,
+        "Color": "0.792157, 0.796078, 0.819608",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "169.8489990234375, -60.66600036621094, 177.09800720214844",
+        "Transparency": 0,
+        "Name": "Leafs",
+        "Position": "-149.23948669433594, 56.600006103515625, -55.502647399902344",
+        "CFrame": "-149.239487, 56.6000061, -55.5026474, -0.489259124, -0.0247980151, -0.871782899, 0.103618518, 0.990861416, -0.0863398984, 0.865959764, -0.132573888, -0.482227534",
+        "Material": "Enum.Material.Grass",
         "Archivable": true,
-        "Name": "Direction"
+        "Size": "5.907593250274658, 6.268679141998291, 7.585626602172852"
       },
-      "class": "StringValue"
+      "class": "Part"
     },
     {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso/Null",
+      "path": "Workspace/Trees/Pine/Leaves/Leafs",
       "properties": {
-        "Value": 0,
+        "CanCollide": false,
+        "Color": "0.792157, 0.796078, 0.819608",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "172.5030059814453, 16.951000213623047, 178.92999267578125",
+        "Transparency": 0,
+        "Name": "Leafs",
+        "Position": "-156.10836791992188, 36.4678955078125, -47.68217086791992",
+        "CFrame": "-156.108368, 36.4678955, -47.6821709, -0.956389666, -0.0178696476, 0.29154703, -0.0565520599, 0.990569234, -0.124798648, -0.28656742, -0.135843709, -0.948380589",
+        "Material": "Enum.Material.Grass",
         "Archivable": true,
-        "Name": "Null"
+        "Size": "8.705309867858887, 11.876654624938965, 11.17802619934082"
       },
-      "class": "IntValue"
+      "class": "Part"
     },
     {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Null",
+      "path": "Workspace/Trees/Pine/Leaves/Leafs",
       "properties": {
-        "Value": 0,
+        "CanCollide": false,
+        "Color": "0.792157, 0.796078, 0.819608",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "170.42999267578125, -59.85599899291992, 177.96400451660156",
+        "Transparency": 0,
+        "Name": "Leafs",
+        "Position": "-148.3284149169922, 46.88276672363281, -53.59402847290039",
+        "CFrame": "-148.328415, 46.8827667, -53.5940285, -0.501858652, -0.0178430974, -0.864762783, 0.108638674, 0.990567982, -0.0834887922, 0.858098507, -0.135844663, -0.495195687",
+        "Material": "Enum.Material.Grass",
         "Archivable": true,
-        "Name": "Null"
+        "Size": "7.029535293579102, 8.524797439575195, 9.026252746582031"
       },
-      "class": "IntValue"
+      "class": "Part"
     },
     {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe",
+      "path": "Workspace/Trees/Pine/Leaves/Leafs",
       "properties": {
-        "Name": "Keyframe",
-        "Archivable": true
-      },
-      "class": "Keyframe"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "CanCollide": false,
+        "Color": "0.972549, 0.972549, 0.972549",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "172.02200317382812, -9.397000312805176, 178.96299743652344",
+        "Transparency": 0,
+        "Name": "Leafs",
+        "Position": "-152.92376708984375, 52.56017303466797, -51.69932556152344",
+        "CFrame": "-152.923767, 52.560173, -51.6993256, -0.986416996, -0.0178604294, -0.163271159, 0.00472607091, 0.990568995, -0.13692455, 0.164171457, -0.135834754, -0.977037311",
+        "Material": "Enum.Material.Grass",
         "Archivable": true,
-        "Name": "HumanoidRootPart"
+        "Size": "6.503312110900879, 6.9008097648620605, 8.350558280944824"
       },
-      "class": "Pose"
+      "class": "Part"
     },
     {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso",
+      "path": "Workspace/Trees/Pine/Leaves/Leafs",
       "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "CanCollide": false,
+        "Color": "0.792157, 0.796078, 0.819608",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "172.7729949951172, 29.599000930786133, 178.82200622558594",
+        "Transparency": 0,
+        "Name": "Leafs",
+        "Position": "-156.68768310546875, 56.74449157714844, -53.46942138671875",
+        "CFrame": "-156.687683, 56.7444916, -53.4694214, -0.869318366, -0.0178686921, 0.493924499, -0.0825152397, 0.990567029, -0.109389052, -0.487319559, -0.135848626, -0.862594962",
+        "Material": "Enum.Material.Grass",
         "Archivable": true,
-        "Name": "Torso"
+        "Size": "5.907593250274658, 6.268679141998291, 7.585626602172852"
       },
-      "class": "Pose"
+      "class": "Part"
     },
     {
-      "path": "Workspace/TemplateR6/AnimSaves/SheathingSword/Keyframe/HumanoidRootPart/Torso/Right Arm",
+      "path": "Workspace/Trees/Pine/Leaves/Leafs",
+      "properties": {
+        "CanCollide": false,
+        "Color": "0.792157, 0.796078, 0.819608",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "-8.423999786376953, 31.0310001373291, 1.194000005722046",
+        "Transparency": 0,
+        "Name": "Leafs",
+        "Position": "-158.06666564941406, 27.89801025390625, -61.71148681640625",
+        "CFrame": "-158.066666, 27.8980103, -61.7114868, 0.856700659, -0.0178510435, 0.515504956, -0.0548923463, 0.990570664, 0.125525519, -0.512884796, -0.135835066, 0.84764266",
+        "Material": "Enum.Material.Grass",
+        "Archivable": true,
+        "Size": "11.2529878616333, 12.926457405090332, 11.902201652526855"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Pine/Leaves/Leafs",
+      "properties": {
+        "CanCollide": false,
+        "Color": "0.972549, 0.972549, 0.972549",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "-8.315999984741211, 26.41699981689453, 1.1419999599456787",
+        "Transparency": 0,
+        "Name": "Leafs",
+        "Position": "-157.11376953125, 38.5223388671875, -62.41394805908203",
+        "CFrame": "-157.11377, 38.5223389, -62.4139481, 0.895404756, -0.0178532097, 0.444895148, -0.0446111597, 0.990570724, 0.129535958, -0.443012714, -0.135834381, 0.886165261",
+        "Material": "Enum.Material.Grass",
+        "Archivable": true,
+        "Size": "7.966806411743164, 10.869115829467773, 10.229753494262695"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Pine/Leaves/Leafs",
+      "properties": {
+        "CanCollide": false,
+        "Color": "0.972549, 0.972549, 0.972549",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "-7.497000217437744, -16.951000213623047, 1.0700000524520874",
+        "Transparency": 0,
+        "Name": "Leafs",
+        "Position": "-151.41131591796875, 34.45587158203125, -62.969818115234375",
+        "CFrame": "-151.411316, 34.4558716, -62.9698181, 0.956389666, -0.0178696476, -0.29154703, 0.0565520599, 0.990569234, 0.124798648, 0.28656742, -0.135843709, 0.948380589",
+        "Material": "Enum.Material.Grass",
+        "Archivable": true,
+        "Size": "8.705309867858887, 11.876654624938965, 11.17802619934082"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Pine/Leaves/Leafs",
+      "properties": {
+        "CanCollide": false,
+        "Color": "0.972549, 0.972549, 0.972549",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "171.5760040283203, -31.0310001373291, 178.80599975585938",
+        "Transparency": 0,
+        "Name": "Leafs",
+        "Position": "-149.21603393554688, 29.896465301513672, -47.140098571777344",
+        "CFrame": "-149.216034, 29.8964653, -47.1400986, -0.856701195, -0.0178510547, -0.515504062, 0.0548922271, 0.990570664, -0.125525638, 0.512883902, -0.135835126, -0.847643197",
+        "Material": "Enum.Material.Grass",
+        "Archivable": true,
+        "Size": "11.2529878616333, 13.243256568908691, 11.902201652526855"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Pine/Leaves/Leafs",
+      "properties": {
+        "CanCollide": false,
+        "Color": "0.972549, 0.972549, 0.972549",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "174.24899291992188, 63.558998107910156, 177.7010040283203",
+        "Transparency": 0,
+        "Name": "Leafs",
+        "Position": "-160.4361572265625, 39.80714416503906, -52.60954284667969",
+        "CFrame": "-160.436157, 39.8071442, -52.6095428, -0.444925338, -0.0178596452, 0.895389557, -0.129560947, 0.990567088, -0.0446216613, -0.886146426, -0.135860845, -0.443042219",
+        "Material": "Enum.Material.Grass",
+        "Archivable": true,
+        "Size": "7.966806411743164, 10.869115829467773, 10.229753494262695"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Pine/Leaves/Leafs",
+      "properties": {
+        "CanCollide": false,
+        "Color": "0.792157, 0.796078, 0.819608",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "173.89100646972656, 58.95000076293945, 178.01499938964844",
+        "Transparency": 0,
+        "Name": "Leafs",
+        "Position": "-160.99729919433594, 29.5854549407959, -50.05496597290039",
+        "CFrame": "-160.997299, 29.5854549, -50.054966, -0.515469909, -0.0178618114, 0.85672152, -0.125554755, 0.990567029, -0.0548910797, -0.847659647, -0.135860145, -0.512850106",
+        "Material": "Enum.Material.Grass",
+        "Archivable": true,
+        "Size": "11.2529878616333, 12.646088600158691, 11.902201652526855"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Pine/Leaves/Leafs",
+      "properties": {
+        "CanCollide": false,
+        "Color": "0.972549, 0.972549, 0.972549",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "-9.607999801635742, 60.3849983215332, 2.069000005722046",
+        "Transparency": 0,
+        "Name": "Leafs",
+        "Position": "-158.74160766601562, 55.69482421875, -60.85282516479492",
+        "CFrame": "-158.741608, 55.6948242, -60.8528252, 0.493854403, -0.0178428292, 0.86936152, -0.10940519, 0.990569413, 0.0824798197, -0.862634599, -0.135845691, 0.487244874",
+        "Material": "Enum.Material.Grass",
+        "Archivable": true,
+        "Size": "5.907593250274658, 6.268679141998291, 7.585626602172852"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Pine/Leaves/Leafs",
+      "properties": {
+        "CanCollide": false,
+        "Color": "0.905882, 0.905882, 0.92549",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "-8.423999786376953, 31.0310001373291, 1.194000005722046",
+        "Transparency": 0,
+        "Name": "Leafs",
+        "Position": "-158.06666564941406, 27.89801025390625, -61.71148681640625",
+        "CFrame": "-158.066666, 27.8980103, -61.7114868, 0.856700659, -0.0178510435, 0.515504956, -0.0548923463, 0.990570664, 0.125525519, -0.512884796, -0.135835066, 0.84764266",
+        "Material": "Enum.Material.Grass",
+        "Archivable": true,
+        "Size": "11.2529878616333, 12.926457405090332, 11.902201652526855"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Pine/Leaves/Leafs",
+      "properties": {
+        "CanCollide": false,
+        "Color": "0.792157, 0.796078, 0.819608",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "-8.6850004196167, 31.304000854492188, 1.7890000343322754",
+        "Transparency": 0,
+        "Name": "Leafs",
+        "Position": "-154.2020721435547, 67.96536254882812, -59.89763259887695",
+        "CFrame": "-154.202072, 67.9653625, -59.8976326, 0.854005694, -0.0266716145, 0.519579589, -0.0475630537, 0.990500391, 0.129022315, -0.518085063, -0.134898558, 0.844624341",
+        "Material": "Enum.Material.Grass",
+        "Archivable": true,
+        "Size": "4.820337772369385, 8.339543342590332, 4.820337772369385"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Pine/Leaves/Leafs",
+      "properties": {
+        "CanCollide": false,
+        "Color": "0.972549, 0.972549, 0.972549",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "-11.16100025177002, 73.02799987792969, 3.503999948501587",
+        "Transparency": 0,
+        "Name": "Leafs",
+        "Position": "-161.4680938720703, 35.006019592285156, -57.63623809814453",
+        "CFrame": "-161.468094, 35.0060196, -57.6362381, 0.291365057, -0.0178432632, 0.956445515, -0.124824643, 0.990568578, 0.0565055758, -0.948433101, -0.135851711, 0.286389738",
+        "Material": "Enum.Material.Grass",
+        "Archivable": true,
+        "Size": "8.705309867858887, 11.876654624938965, 11.17802619934082"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Pine/Leaves/Leafs",
+      "properties": {
+        "CanCollide": false,
+        "Color": "0.972549, 0.972549, 0.972549",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "172.10400390625, -13.611000061035156, -179.43699645996094",
+        "Transparency": 0,
+        "Name": "Leafs",
+        "Position": "-152.74806213378906, 61.631431579589844, -53.57192611694336",
+        "CFrame": "-152.748062, 61.6314316, -53.5719261, -0.971866906, 0.00955728628, -0.235337093, 0.0420665592, 0.990154326, -0.133510187, 0.231744051, -0.139653966, -0.962700129",
+        "Material": "Enum.Material.Grass",
+        "Archivable": true,
+        "Size": "5.907593250274658, 9.047619819641113, 7.585626602172852"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Pine/Leaves/Leafs",
+      "properties": {
+        "CanCollide": false,
+        "Color": "0.972549, 0.972549, 0.972549",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "-6.109000205993652, -58.95000076293945, 1.9850000143051147",
+        "Transparency": 0,
+        "Name": "Leafs",
+        "Position": "-146.2978057861328, 28.859703063964844, -58.886390686035156",
+        "CFrame": "-146.297806, 28.8597031, -58.8863907, 0.515469909, -0.0178618114, -0.85672152, 0.125554755, 0.990567029, 0.0548910797, 0.847659647, -0.135860145, 0.512850106",
+        "Material": "Enum.Material.Grass",
+        "Archivable": true,
+        "Size": "11.2529878616333, 12.209466934204102, 11.902201652526855"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Pine/Leaves/Leafs",
+      "properties": {
+        "CanCollide": false,
+        "Color": "0.792157, 0.796078, 0.819608",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "-7.497000217437744, -29.990999221801758, 0.13300000131130219",
+        "Transparency": 0,
+        "Name": "Leafs",
+        "Position": "-151.29653930664062, 55.551246643066406, -62.87874984741211",
+        "CFrame": "-151.296539, 55.5512466, -62.8787498, 0.866100669, -0.00201237993, -0.499860585, 0.0675271973, 0.991295516, 0.113008581, 0.495291173, -0.131629318, 0.858700037",
+        "Material": "Enum.Material.Grass",
+        "Archivable": true,
+        "Size": "5.907593250274658, 6.268679141998291, 7.585626602172852"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Pine/Leaves/Leafs",
+      "properties": {
+        "CanCollide": false,
+        "Color": "0.972549, 0.972549, 0.972549",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "-7.978000164031982, 9.397000312805176, 1.0369999408721924",
+        "Transparency": 0,
+        "Name": "Leafs",
+        "Position": "-154.89053344726562, 50.91099548339844, -63.46521759033203",
+        "CFrame": "-154.890533, 50.9109955, -63.4652176, 0.986416996, -0.0178604294, 0.163271159, -0.00472608954, 0.990569055, 0.136924639, -0.164171457, -0.135834858, 0.977037251",
+        "Material": "Enum.Material.Grass",
+        "Archivable": true,
+        "Size": "6.503312110900879, 6.9008097648620605, 8.350558280944824"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Pine/Leaves/Leafs",
+      "properties": {
+        "CanCollide": false,
+        "Color": "0.972549, 0.972549, 0.972549",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "-9.569999694824219, 59.85599899291992, 2.0360000133514404",
+        "Transparency": 0,
+        "Name": "Leafs",
+        "Position": "-159.5833740234375, 45.795440673828125, -60.04176712036133",
+        "CFrame": "-159.583374, 45.7954407, -60.0417671, 0.501858652, -0.0178430974, 0.864762783, -0.108638674, 0.990567982, 0.0834887922, -0.858098507, -0.135844663, 0.495195687",
+        "Material": "Enum.Material.Grass",
+        "Archivable": true,
+        "Size": "7.029535293579102, 8.524797439575195, 9.026252746582031"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Pine/Leaves/Leafs",
+      "properties": {
+        "CanCollide": false,
+        "Color": "0.792157, 0.796078, 0.819608",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "173.80499267578125, 75.81099700927734, 177.94500732421875",
+        "Transparency": 0,
+        "Name": "Leafs",
+        "Position": "-159.38287353515625, 60.97405242919922, -57.492698669433594",
+        "CFrame": "-159.382874, 60.9740524, -57.4926987, -0.244960085, -0.00878905784, 0.969493389, -0.1402013, 0.989769638, -0.0264515225, -0.959342659, -0.142403781, -0.243686274",
+        "Material": "Enum.Material.Grass",
+        "Archivable": true,
+        "Size": "5.907593250274658, 9.047619819641113, 7.585626602172852"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Pine/Leaves/Leafs",
+      "properties": {
+        "CanCollide": false,
+        "Color": "0.792157, 0.796078, 0.819608",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "-4.581999778747559, -76.28299713134766, 4.7210001945495605",
+        "Transparency": 0,
+        "Name": "Leafs",
+        "Position": "-148.7704620361328, 60.799827575683594, -60.158477783203125",
+        "CFrame": "-148.770462, 60.7998276, -60.1584778, 0.236324355, -0.019517282, -0.971478224, 0.159382701, 0.987035215, 0.0189420283, 0.958513439, -0.159313291, 0.23637116",
+        "Material": "Enum.Material.Grass",
+        "Archivable": true,
+        "Size": "5.907593250274658, 9.047619819641113, 7.585626602172852"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Pine/Leaves/Leafs",
+      "properties": {
+        "CanCollide": false,
+        "Color": "0.792157, 0.796078, 0.819608",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "-8.720999717712402, 30.541000366210938, 1.7569999694824219",
+        "Transparency": 0,
+        "Name": "Leafs",
+        "Position": "-154.31602478027344, 74.27120208740234, -60.761474609375",
+        "CFrame": "-154.316025, 74.2712021, -60.7614746, 0.860861003, -0.0264036488, 0.508154809, -0.0467137471, 0.99033469, 0.130594999, -0.506691575, -0.136161938, 0.851307094",
+        "Material": "Enum.Material.Grass",
+        "Archivable": true,
+        "Size": "2.853924512863159, 14.26767635345459, 2.853924512863159"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Pine/Leaves/Leafs",
+      "properties": {
+        "CanCollide": false,
+        "Color": "0.972549, 0.972549, 0.972549",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "178.3470001220703, 80.5459976196289, 173.75999450683594",
+        "Transparency": 0,
+        "Name": "Leafs",
+        "Position": "-159.8460235595703, 51.763824462890625, -56.59408950805664",
+        "CFrame": "-159.846024, 51.7638245, -56.5940895, -0.163259387, -0.0178512856, 0.986418426, -0.136947021, 0.990565419, -0.00473689288, -0.977037132, -0.135858446, -0.164156914",
+        "Material": "Enum.Material.Grass",
+        "Archivable": true,
+        "Size": "6.503312110900879, 6.9008097648620605, 8.350558280944824"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Pine/Leaves/Leafs",
+      "properties": {
+        "CanCollide": false,
+        "Color": "0.972549, 0.972549, 0.972549",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "168.83900451660156, -73.02799987792969, 176.49600219726562",
+        "Transparency": 0,
+        "Name": "Leafs",
+        "Position": "-146.05178833007812, 35.91762924194336, -53.016536712646484",
+        "CFrame": "-146.051788, 35.9176292, -53.0165367, -0.291365057, -0.0178432763, -0.956445515, 0.124824643, 0.990568578, -0.056505587, 0.948433101, -0.135851711, -0.286389738",
+        "Material": "Enum.Material.Grass",
+        "Archivable": true,
+        "Size": "8.705309867858887, 11.876654624938965, 11.17802619934082"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Pine/Leaves/Leafs",
+      "properties": {
+        "CanCollide": false,
+        "Color": "0.792157, 0.796078, 0.819608",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "-7.664000034332275, 14.307000160217285, 0.675000011920929",
+        "Transparency": 0,
+        "Name": "Leafs",
+        "Position": "-155.40513610839844, 60.14252471923828, -64.07855987548828",
+        "CFrame": "-155.405136, 60.1425247, -64.0785599, 0.968916774, -0.011407922, 0.247123852, -0.0212863274, 0.99138695, 0.129224047, -0.246469557, -0.130467698, 0.960328519",
+        "Material": "Enum.Material.Grass",
+        "Archivable": true,
+        "Size": "5.907593250274658, 9.047619819641113, 7.585626602172852"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Pine/Leaves/Leafs",
+      "properties": {
+        "CanCollide": false,
+        "Color": "0.792157, 0.796078, 0.819608",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "-7.215000152587891, -30.131999969482422, 1.184000015258789",
+        "Transparency": 0,
+        "Name": "Leafs",
+        "Position": "-150.6894073486328, 45.63214874267578, -62.40189743041992",
+        "CFrame": "-150.689407, 45.6321487, -62.4018974, 0.864685535, -0.0178687051, -0.501990736, 0.0835295022, 0.990566909, 0.108616844, 0.495323569, -0.135848895, 0.858023882",
+        "Material": "Enum.Material.Grass",
+        "Archivable": true,
+        "Size": "7.029535293579102, 8.524797439575195, 9.026252746582031"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Pine/Leaves/Leafs",
+      "properties": {
+        "CanCollide": false,
+        "Color": "0.972549, 0.972549, 0.972549",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "-5.750999927520752, -63.558998107910156, 2.2990000247955322",
+        "Transparency": 0,
+        "Name": "Leafs",
+        "Position": "-147.22817993164062, 39.149085998535156, -59.144386291503906",
+        "CFrame": "-147.22818, 39.149086, -59.1443863, 0.444925338, -0.0178596452, -0.895389557, 0.129560947, 0.990567088, 0.0446216613, 0.886146426, -0.135860845, 0.443042219",
+        "Material": "Enum.Material.Grass",
+        "Archivable": true,
+        "Size": "7.966806411743164, 10.869115829467773, 10.229753494262695"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Pine/Leaves/Leafs",
+      "properties": {
+        "CanCollide": false,
+        "Color": "0.972549, 0.972549, 0.972549",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "171.6840057373047, -26.41699981689453, 178.85800170898438",
+        "Transparency": 0,
+        "Name": "Leafs",
+        "Position": "-150.55023193359375, 40.433834075927734, -49.34028625488281",
+        "CFrame": "-150.550232, 40.4338341, -49.3402863, -0.895404756, -0.0178532097, -0.444895148, 0.0446111597, 0.990570724, -0.129535958, 0.443012714, -0.135834381, -0.886165261",
+        "Material": "Enum.Material.Grass",
+        "Archivable": true,
+        "Size": "7.966806411743164, 10.869115829467773, 10.229753494262695"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Pine/Leaves/Leafs",
+      "properties": {
+        "CanCollide": false,
+        "Color": "0.792157, 0.796078, 0.819608",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "172.78500366210938, 30.131999969482422, 178.8159942626953",
+        "Transparency": 0,
+        "Name": "Leafs",
+        "Position": "-157.2222900390625, 47.046104431152344, -51.23333740234375",
+        "CFrame": "-157.22229, 47.0461044, -51.2333374, -0.864685535, -0.0178686623, 0.501990795, -0.0835295022, 0.990566909, -0.108616941, -0.495323569, -0.135848969, -0.858023942",
+        "Material": "Enum.Material.Grass",
+        "Archivable": true,
+        "Size": "7.029535293579102, 8.524797439575195, 9.026252746582031"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Pine/Leaves/Leafs",
+      "properties": {
+        "CanCollide": false,
+        "Color": "0.792157, 0.796078, 0.819608",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "-1.652999997138977, -80.5469970703125, 6.239999771118164",
+        "Transparency": 0,
+        "Name": "Leafs",
+        "Position": "-147.96800231933594, 51.707191467285156, -58.5704460144043",
+        "CFrame": "-147.968002, 51.7071915, -58.570446, 0.163258523, -0.0178516246, -0.986421824, 0.136946261, 0.990567148, 0.00473876065, 0.977032423, -0.135860443, 0.164163262",
+        "Material": "Enum.Material.Grass",
+        "Archivable": true,
+        "Size": "6.503312110900879, 6.9008097648620605, 8.350558280944824"
+      },
+      "class": "Part"
+    },
+    {
+      "properties": {
+        "Enabled": true,
+        "Archivable": true,
+        "Name": "Math1"
+      },
+      "path": "Workspace/Trees/Pine/Math1",
+      "source": "-- WindLeaves.lua  (Server Script)\nlocal RunService = game:GetService(\"RunService\")\nlocal CollectionService = game:GetService(\"CollectionService\")\n\n-- CONFIG\nlocal treePath = script.Parent               -- set this to workspace.YourTreeModel if script not parented to the tree\nlocal leavesFolderName = \"Leaves\"            -- folder name under treePath\nlocal windStrength = 4                  -- base angle multiplier (tweak)\nlocal windSpeed = 1.0                        -- speed multiplier (tweak)\nlocal enforceAnchored = true                 -- set true to auto Anchor leaves (recommended)\nlocal debugEnabled = true\n\n-- Helper debug\nlocal function debug(...)\n\tif debugEnabled then\n\t\tprint(\"[WindLeaves]\", ...)\n\tend\nend\n\n-- Find Leaves folder\nlocal function findLeavesFolder()\n\tif not treePath then return nil end\n\tlocal folder = treePath:FindFirstChild(leavesFolderName)\n\tif folder and folder:IsA(\"Folder\") then\n\t\treturn folder\n\tend\n\t-- fallback: try to find any descendant folder named Leaves\n\tfor _, v in pairs(treePath:GetDescendants()) do\n\t\tif v.Name == leavesFolderName and v:IsA(\"Folder\") then\n\t\t\treturn v\n\t\tend\n\tend\n\treturn nil\nend\n\nlocal LeavesFolder = findLeavesFolder()\nif not LeavesFolder then\n\tdebug(\"ERROR: Leaves folder not found under\", treePath:GetFullName())\n\treturn\nend\ndebug(\"Found Leaves folder at\", LeavesFolder:GetFullName())\n\n-- Table to hold parts and their originals + random offset\nlocal leafData = {}\n\nlocal function addLeaf(part)\n\tif not part or not part:IsA(\"BasePart\") then return end\n\tif leafData[part] then return end\n\tleafData[part] = {\n\t\torig = part.CFrame,\n\t\toffset = math.random() * 1000,    -- unique time offset so leaves don't move perfectly in sync\n\t}\n\tif enforceAnchored then\n\t\tpart.Anchored = true\n\tend\n\tdebug(\"Added leaf:\", part:GetFullName())\nend\n\nlocal function removeLeaf(part)\n\tif leafData[part] then\n\t\tleafData[part] = nil\n\t\tdebug(\"Removed leaf:\", part:GetFullName())\n\tend\nend\n\n-- Initialize existing children\nfor _, child in ipairs(LeavesFolder:GetChildren()) do\n\taddLeaf(child)\nend\n\n-- React to runtime changes\nLeavesFolder.ChildAdded:Connect(function(child)\n\t-- wait a short tick in case child is a Model with parts inside\n\ttask.wait(0.01)\n\t-- if child is a folder/model, add parts inside\n\tif child:IsA(\"BasePart\") then\n\t\taddLeaf(child)\n\telse\n\t\tfor _, desc in ipairs(child:GetDescendants()) do\n\t\t\tif desc:IsA(\"BasePart\") then\n\t\t\t\taddLeaf(desc)\n\t\t\tend\n\t\tend\n\tend\nend)\n\nLeavesFolder.ChildRemoved:Connect(function(child)\n\t-- remove whichever parts belonged to that child (or the child itself)\n\tif child:IsA(\"BasePart\") then\n\t\tremoveLeaf(child)\n\telse\n\t\tfor _, desc in ipairs(child:GetDescendants()) do\n\t\t\tif desc:IsA(\"BasePart\") then\n\t\t\t\tremoveLeaf(desc)\n\t\t\tend\n\t\tend\n\tend\nend)\n\n-- Also remove when parts are destroyed\ngame:GetService(\"Workspace\").DescendantRemoving:Connect(function(desc)\n\tif desc and desc:IsA(\"BasePart\") and leafData[desc] then\n\t\tleafData[desc] = nil\n\t\tdebug(\"Leaf destroyed:\", desc:GetFullName())\n\tend\nend)\n\n-- Main update loop (Heartbeat for smooth motion)\nRunService.Heartbeat:Connect(function(dt)\n\tlocal t = tick() * windSpeed\n\tfor part, info in pairs(leafData) do\n\t\tif not part or not part.Parent then\n\t\t\tleafData[part] = nil\n\t\telse\n\t\t\t-- compute small rotations based on noise / trig\n\t\t\tlocal clock = t + info.offset\n\t\t\t-- small independent axes\n\t\t\tlocal rx = math.rad(math.cos(clock) * windStrength)\n\t\t\tlocal ry = math.rad(math.sin(clock * 0.9) * windStrength * 0.6)\n\t\t\tlocal rz = math.rad(math.cos(clock * 1.1) * windStrength * 0.5)\n\t\t\tpart.CFrame = info.orig * CFrame.Angles(rx, ry, rz)\n\t\tend\n\tend\nend)\n\ndebug(\"WindLeaves script started. Leaf count:\", (function() local c=0; for _ in pairs(leafData) do c=c+1 end; return c end)())",
+      "class": "Script"
+    },
+    {
+      "path": "Workspace/Trees/Pine/Log",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.4, 0.337255, 0.309804",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "1.996999979019165, -84.01399993896484, 9.857999801635742",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-146.80935668945312, 14.638257026672363, -51.51587677001953",
+        "CFrame": "-146.809357, 14.638257, -51.5158768, 0.102720499, -0.0178498439, -0.994547009, 0.136979997, 0.990565419, -0.00363302976, 0.985237956, -0.135857865, 0.104189217",
+        "Material": "Enum.Material.Wood",
+        "Archivable": true,
+        "Size": "1.8350881338119507, 4.2528605461120605, 8.936534881591797"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Trees/Pine/Log",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.4, 0.337255, 0.309804",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "-8.423999786376953, 31.0310001373291, 1.194000005722046",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-156.80015563964844, 14.061807632446289, -56.62750244140625",
+        "CFrame": "-156.800156, 14.0618076, -56.6275024, 0.856700659, -0.0178510435, 0.515504956, -0.0548923463, 0.990570664, 0.125525519, -0.512884796, -0.135835066, 0.84764266",
+        "Material": "Enum.Material.Wood",
+        "Archivable": true,

@@ -1,1836 +1,1728 @@
-      "class": "Keyframe"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "HumanoidRootPart"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso",
-      "properties": {
-        "CFrame": "0.0150723392, 0.0406846888, -0.317733914, 0.904582977, 0.420884818, -0.0677166581, -0.42419824, 0.872954547, -0.240844548, -0.0422542505, 0.246589184, 0.968198478",
-        "Archivable": true,
-        "Name": "Torso"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Arm",
-      "properties": {
-        "CFrame": "0.341671824, -0.182078958, 0.488919944, 0.487894595, 0.214572608, -0.846119046, -0.224870175, 0.967496574, 0.11568746, 0.843440771, 0.133823618, 0.520287395",
-        "Archivable": true,
-        "Name": "Right Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Arm/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Leg",
-      "properties": {
-        "CFrame": "0.528925717, 0.281101704, -0.0529380441, 0.997318804, -0.0127905253, -0.0720522478, 0.0316087864, 0.963313162, 0.26651153, 0.0660000667, -0.268074423, 0.961134791",
-        "Archivable": true,
-        "Name": "Right Leg"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Leg/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm",
-      "properties": {
-        "CFrame": "-0.479728818, 0.209667295, -0.409503758, 0.42150259, 0.814488232, -0.398678482, -0.437091291, -0.202723771, -0.876273155, -0.794535697, 0.543610215, 0.270556986",
-        "Archivable": true,
-        "Name": "Left Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Head",
-      "properties": {
-        "CFrame": "2.04890966e-08, -1.98744237e-06, 1.66893005e-06, 0.894035637, -0.447967619, 0.00503584556, 0.447079808, 0.892869473, 0.0538862944, -0.0286356676, -0.0459248424, 0.998534381",
-        "Archivable": true,
-        "Name": "Head"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Head/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg",
-      "properties": {
-        "CFrame": "-0.0730336308, 0.227768958, 0.125591785, 0.729246438, -0.0990242511, 0.677047908, -0.0769915432, 0.971314192, 0.224990726, -0.679905832, -0.21620062, 0.700703442",
-        "Archivable": true,
-        "Name": "Left Leg"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe",
-      "properties": {
-        "Name": "Keyframe",
-        "Archivable": true
-      },
-      "class": "Keyframe"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "HumanoidRootPart"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso",
-      "properties": {
-        "CFrame": "0.0150723364, 0.0406847037, -0.317733943, 0.904583037, 0.420897037, -0.0676411241, -0.4241983, 0.87299782, -0.240687922, -0.0422542617, 0.246415451, 0.968242764",
-        "Archivable": true,
-        "Name": "Torso"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg",
-      "properties": {
-        "CFrame": "-0.0729733557, 0.227788985, 0.125654146, 0.729224145, -0.0991887823, 0.677047849, -0.0767723843, 0.971331537, 0.22499074, -0.679954529, -0.216047212, 0.700703502",
-        "Archivable": true,
-        "Name": "Left Leg"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Leg",
-      "properties": {
-        "CFrame": "0.528888106, 0.281100452, -0.0529405475, 0.997320294, -0.0126750609, -0.0720522553, 0.0314972624, 0.963316798, 0.266511559, 0.0660311133, -0.268066764, 0.961134791",
-        "Archivable": true,
-        "Name": "Right Leg"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Leg/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Arm",
-      "properties": {
-        "CFrame": "0.341671854, -0.182078838, 0.488919854, 0.487838745, 0.214699581, -0.846119046, -0.22512199, 0.967437983, 0.115687452, 0.843405843, 0.134043157, 0.520287395",
-        "Archivable": true,
-        "Name": "Right Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Arm/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Head",
-      "properties": {
-        "CFrame": "1.72294676e-08, -1.98557973e-06, 1.66893005e-06, 0.894035578, -0.447971255, 0.00470076874, 0.447079808, 0.892828941, 0.0545541421, -0.0286356695, -0.0466717258, 0.998499751",
-        "Archivable": true,
-        "Name": "Head"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Head/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm",
-      "properties": {
-        "CFrame": "-0.47972846, 0.209667385, -0.40950349, 0.42150259, 0.815326452, -0.396961212, -0.437091231, -0.200876802, -0.876698315, -0.794535637, 0.543038785, 0.271701902",
-        "Archivable": true,
-        "Name": "Left Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe",
-      "properties": {
-        "Name": "Keyframe",
-        "Archivable": true
-      },
-      "class": "Keyframe"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "HumanoidRootPart"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso",
-      "properties": {
-        "CFrame": "0.0150723374, 0.0406847, -0.317733914, 0.904582977, 0.420892239, -0.0676708668, -0.424198329, 0.872980773, -0.240749583, -0.0422542654, 0.246483847, 0.9682253",
-        "Archivable": true,
-        "Name": "Torso"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Arm",
-      "properties": {
-        "CFrame": "0.341671854, -0.182078809, 0.488920033, 0.487855703, 0.214661181, -0.846119046, -0.22504586, 0.967455685, 0.115687437, 0.843416452, 0.133976772, 0.520287454",
-        "Archivable": true,
-        "Name": "Right Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Arm/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg",
-      "properties": {
-        "CFrame": "-0.0729978681, 0.22778064, 0.12562874, 0.729233146, -0.099121809, 0.677047908, -0.076861605, 0.971324503, 0.224990726, -0.6799348, -0.216109663, 0.700703502",
-        "Archivable": true,
-        "Name": "Left Leg"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Leg",
-      "properties": {
-        "CFrame": "0.5289042, 0.281100988, -0.0529394448, 0.997319698, -0.0127245169, -0.0720522553, 0.0315450281, 0.963315248, 0.2665115, 0.0660178214, -0.268069983, 0.961134791",
-        "Archivable": true,
-        "Name": "Right Leg"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Leg/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Head",
-      "properties": {
-        "CFrame": "2.00234354e-08, -1.98744237e-06, 1.66893005e-06, 0.894035578, -0.447970122, 0.00481682271, 0.447079867, 0.892843008, 0.0543228462, -0.0286356732, -0.0464130566, 0.998511791",
-        "Archivable": true,
-        "Name": "Head"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Head/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm",
-      "properties": {
-        "CFrame": "-0.479728758, 0.209667355, -0.409503639, 0.42150259, 0.815062523, -0.397503018, -0.437091231, -0.201459438, -0.876564682, -0.794535756, 0.543219268, 0.271340907",
-        "Archivable": true,
-        "Name": "Left Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe",
-      "properties": {
-        "Name": "Keyframe",
-        "Archivable": true
-      },
-      "class": "Keyframe"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "HumanoidRootPart"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso",
-      "properties": {
-        "CFrame": "0.0150723401, 0.0406847112, -0.317733973, 0.904582977, 0.420915663, -0.0675248131, -0.42419827, 0.87306428, -0.240446657, -0.0422542542, 0.246147871, 0.968310833",
-        "Archivable": true,
-        "Name": "Torso"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Head",
-      "properties": {
-        "CFrame": "1.93249434e-08, -1.98371708e-06, 1.66893005e-06, 0.894035578, -0.447975069, 0.00432704855, 0.447079867, 0.892783105, 0.0552989617, -0.0286356695, -0.0475047007, 0.998460472",
-        "Archivable": true,
-        "Name": "Head"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Head/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg",
-      "properties": {
-        "CFrame": "-0.0728731453, 0.227822244, 0.125757769, 0.729186833, -0.0994620621, 0.677047908, -0.0764083713, 0.971360207, 0.224990755, -0.680035532, -0.215792388, 0.700703502",
-        "Archivable": true,
-        "Name": "Left Leg"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Arm",
-      "properties": {
-        "CFrame": "0.341671765, -0.182078987, 0.488920003, 0.487798542, 0.214790866, -0.846119106, -0.225302979, 0.967395902, 0.11568746, 0.843380868, 0.134200931, 0.520287395",
-        "Archivable": true,
-        "Name": "Right Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Arm/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm",
-      "properties": {
-        "CFrame": "-0.479728103, 0.209667295, -0.409503222, 0.42150265, 0.81602478, -0.395523489, -0.437091112, -0.199331135, -0.877050936, -0.794535577, 0.542558968, 0.272658646",
-        "Archivable": true,
-        "Name": "Left Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Leg",
-      "properties": {
-        "CFrame": "0.52881825, 0.281098247, -0.0529451668, 0.997322977, -0.0124612423, -0.0720522553, 0.0312907286, 0.963323534, 0.2665115, 0.0660885721, -0.268052578, 0.961134791",
-        "Archivable": true,
-        "Name": "Right Leg"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Leg/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe",
-      "properties": {
-        "Name": "Keyframe",
-        "Archivable": true
-      },
-      "class": "Keyframe"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "HumanoidRootPart"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso",
-      "properties": {
-        "CFrame": "0.0150723392, 0.0406847037, -0.317733943, 0.904582977, 0.420908749, -0.0675680935, -0.424198329, 0.873039544, -0.240536422, -0.0422542654, 0.246247411, 0.968285501",
-        "Archivable": true,
-        "Name": "Torso"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg",
-      "properties": {
-        "CFrame": "-0.0729109645, 0.227809727, 0.125718713, 0.72920084, -0.099358961, 0.677047908, -0.0765457004, 0.971349418, 0.224990711, -0.680005014, -0.215888515, 0.700703502",
-        "Archivable": true,
-        "Name": "Left Leg"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Arm",
-      "properties": {
-        "CFrame": "0.341671884, -0.182078779, 0.488919705, 0.487810224, 0.214764416, -0.846118927, -0.225250572, 0.967408061, 0.115687445, 0.843387961, 0.134155259, 0.520287395",
-        "Archivable": true,
-        "Name": "Right Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Arm/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Head",
-      "properties": {
-        "CFrame": "2.21189111e-08, -1.98371708e-06, 1.66893005e-06, 0.894035578, -0.447973847, 0.00445582625, 0.447079897, 0.89279896, 0.055042319, -0.0286356695, -0.047217682, 0.998474061",
-        "Archivable": true,
-        "Name": "Head"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Head/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm",
-      "properties": {
-        "CFrame": "-0.47972858, 0.20966731, -0.409503728, 0.421502531, 0.815807819, -0.395971239, -0.437091231, -0.199812561, -0.876941621, -0.794535816, 0.542708576, 0.272360772",
-        "Archivable": true,
-        "Name": "Left Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Leg",
-      "properties": {
-        "CFrame": "0.528845191, 0.281099021, -0.0529433787, 0.997321963, -0.0125433849, -0.0720522478, 0.0313700736, 0.963320971, 0.26651153, 0.0660664961, -0.268058032, 0.961134791",
-        "Archivable": true,
-        "Name": "Right Leg"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Leg/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe",
-      "properties": {
-        "Name": "Keyframe",
-        "Archivable": true
-      },
-      "class": "Keyframe"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "HumanoidRootPart"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso",
-      "properties": {
-        "CFrame": "0.0150723411, 0.0406847, -0.317733943, 0.904583037, 0.42090252, -0.0676068589, -0.4241983, 0.87301743, -0.240616813, -0.0422542579, 0.246336594, 0.968262851",
-        "Archivable": true,
-        "Name": "Torso"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg",
-      "properties": {
-        "CFrame": "-0.0729443133, 0.227798581, 0.125684172, 0.729213357, -0.0992678404, 0.677047849, -0.0766670704, 0.971339822, 0.224990696, -0.679978013, -0.215973467, 0.700703502",
-        "Archivable": true,
-        "Name": "Left Leg"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Head",
-      "properties": {
-        "CFrame": "1.6996637e-08, -1.97999179e-06, 1.66893005e-06, 0.894035578, -0.447972476, 0.00458041858, 0.447079778, 0.892814279, 0.0547939986, -0.0286356658, -0.0469399691, 0.998487175",
-        "Archivable": true,
-        "Name": "Head"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Head/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Arm",
-      "properties": {
-        "CFrame": "0.341671735, -0.182078838, 0.488920003, 0.487823576, 0.214734003, -0.846119046, -0.225190267, 0.967422128, 0.115687452, 0.843396425, 0.134102672, 0.520287395",
-        "Archivable": true,
-        "Name": "Right Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Arm/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Leg",
-      "properties": {
-        "CFrame": "0.528868377, 0.281099796, -0.0529417694, 0.997321069, -0.0126146721, -0.0720522553, 0.0314389318, 0.963318765, 0.26651153, 0.0660473406, -0.268062741, 0.961134791",
-        "Archivable": true,
-        "Name": "Right Leg"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Leg/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm",
-      "properties": {
-        "CFrame": "-0.479728401, 0.209667325, -0.40950352, 0.421502531, 0.815574944, -0.39645052, -0.437091172, -0.200327784, -0.876824021, -0.794535756, 0.542868495, 0.272041887",
-        "Archivable": true,
-        "Name": "Left Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe",
-      "properties": {
-        "Name": "Keyframe",
-        "Archivable": true
-      },
-      "class": "Keyframe"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "HumanoidRootPart"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso",
-      "properties": {
-        "CFrame": "0.0150723383, 0.0406847075, -0.317733914, 0.904582977, 0.420931727, -0.0674249157, -0.4241983, 0.873121321, -0.240239441, -0.0422542579, 0.245918036, 0.968369186",
-        "Archivable": true,
-        "Name": "Torso"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Head",
-      "properties": {
-        "CFrame": "1.86264515e-08, -1.98744237e-06, 1.60932541e-06, 0.894035578, -0.447977573, 0.00405714847, 0.447079808, 0.892749608, 0.0558368415, -0.0286356676, -0.0481062531, 0.998431623",
-        "Archivable": true,
-        "Name": "Head"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Head/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm",
-      "properties": {
-        "CFrame": "-0.47972846, 0.209667221, -0.409503698, 0.421502531, 0.816411734, -0.394724578, -0.437091231, -0.198472708, -0.877245843, -0.794535756, 0.542291939, 0.273189485",
-        "Archivable": true,
-        "Name": "Left Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Leg",
-      "properties": {
-        "CFrame": "0.528754115, 0.28109622, -0.0529494286, 0.99732548, -0.0122645814, -0.0720522553, 0.031100776, 0.963329732, 0.26651153, 0.0661414415, -0.268039554, 0.961134791",
-        "Archivable": true,
-        "Name": "Right Leg"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Leg/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Arm",
-      "properties": {
-        "CFrame": "0.341671795, -0.182078928, 0.488920033, 0.48778066, 0.214831546, -0.846119106, -0.225383684, 0.967377067, 0.11568746, 0.843369663, 0.134271279, 0.520287395",
-        "Archivable": true,
-        "Name": "Right Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Arm/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg",
-      "properties": {
-        "CFrame": "-0.0727845132, 0.227851629, 0.12584956, 0.729153752, -0.0997039974, 0.677047968, -0.076086089, 0.971385539, 0.22499074, -0.680107117, -0.215566739, 0.700703442",
-        "Archivable": true,
-        "Name": "Left Leg"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe",
-      "properties": {
-        "Name": "Keyframe",
-        "Archivable": true
-      },
-      "class": "Keyframe"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "HumanoidRootPart"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso",
-      "properties": {
-        "CFrame": "0.0150723364, 0.0406846851, -0.317733884, 0.904582977, 0.420923293, -0.0674770772, -0.42419827, 0.873091519, -0.240347609, -0.0422542505, 0.246038035, 0.968338668",
-        "Archivable": true,
-        "Name": "Torso"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Head",
-      "properties": {
-        "CFrame": "1.79279596e-08, -1.99116766e-06, 1.60932541e-06, 0.894035578, -0.447976351, 0.00419413764, 0.447079837, 0.892766654, 0.0555638447, -0.0286356732, -0.0478009433, 0.998446286",
-        "Archivable": true,
-        "Name": "Head"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Head/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Leg",
-      "properties": {
-        "CFrame": "0.528787971, 0.281097174, -0.0529471338, 0.997324169, -0.0123682879, -0.0720522553, 0.0312009472, 0.963326454, 0.266511559, 0.0661135614, -0.268046439, 0.961134732",
-        "Archivable": true,
-        "Name": "Right Leg"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Leg/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm",
-      "properties": {
-        "CFrame": "-0.47972846, 0.209667221, -0.409503728, 0.421502471, 0.816226244, -0.395107985, -0.437091231, -0.198884696, -0.877152562, -0.794535756, 0.542420149, 0.272934824",
-        "Archivable": true,
-        "Name": "Left Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg",
-      "properties": {
-        "CFrame": "-0.07283099, 0.227836192, 0.125801504, 0.729171216, -0.0995770767, 0.677047789, -0.0762551203, 0.971372306, 0.224990696, -0.680069506, -0.21568507, 0.700703502",
-        "Archivable": true,
-        "Name": "Left Leg"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Arm",
-      "properties": {
-        "CFrame": "0.341671795, -0.182078928, 0.488919973, 0.487788707, 0.214813232, -0.846119106, -0.22534734, 0.96738553, 0.11568746, 0.84337467, 0.134239599, 0.520287395",
-        "Archivable": true,
-        "Name": "Right Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Arm/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe",
-      "properties": {
-        "Name": "Keyframe",
-        "Archivable": true
-      },
-      "class": "Keyframe"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "HumanoidRootPart"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso",
-      "properties": {
-        "CFrame": "0.0150723364, 0.0406846926, -0.317733943, 0.904582977, 0.420888096, -0.0676966831, -0.4241983, 0.872966051, -0.240803137, -0.0422542617, 0.246543244, 0.96821022",
-        "Archivable": true,
-        "Name": "Torso"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Head",
-      "properties": {
-        "CFrame": "1.83936208e-08, -1.98371708e-06, 1.7285347e-06, 0.894035637, -0.447959214, 0.0057310611, 0.447079748, 0.892952085, 0.0525005385, -0.028635662, -0.0443751067, 0.998604476",
-        "Archivable": true,
-        "Name": "Head"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Head/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Arm",
-      "properties": {
-        "CFrame": "0.341671824, -0.182078898, 0.488919854, 0.488117397, 0.214065313, -0.846118987, -0.223864347, 0.967729747, 0.11568746, 0.843579352, 0.132946789, 0.520287395",
-        "Archivable": true,
-        "Name": "Right Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Arm/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Leg",
-      "properties": {
-        "CFrame": "0.528839827, 0.281098962, -0.0529436767, 0.997322202, -0.0125269527, -0.0720522627, 0.0313542038, 0.963321447, 0.26651153, 0.0660709217, -0.268056959, 0.961134791",
-        "Archivable": true,
-        "Name": "Right Leg"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Leg/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg",
-      "properties": {
-        "CFrame": "-0.0729703605, 0.227789938, 0.125657275, 0.729222953, -0.0991969854, 0.677047908, -0.0767614841, 0.971332431, 0.224990755, -0.679957092, -0.216039598, 0.700703442",
-        "Archivable": true,
-        "Name": "Left Leg"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm",
-      "properties": {
-        "CFrame": "-0.479728937, 0.209667355, -0.409503818, 0.42150259, 0.811590672, -0.404544294, -0.437091202, -0.209040493, -0.874787807, -0.794535697, 0.545547962, 0.266627908",
-        "Archivable": true,
-        "Name": "Left Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe",
-      "properties": {
-        "Name": "Keyframe",
-        "Archivable": true
-      },
-      "class": "Keyframe"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "HumanoidRootPart"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso",
-      "properties": {
-        "CFrame": "0.0150723411, 0.0406847075, -0.317733943, 0.904582977, 0.420893282, -0.0676648617, -0.424198359, 0.872984231, -0.24073711, -0.0422542691, 0.246470004, 0.968228877",
-        "Archivable": true,
-        "Name": "Torso"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Head",
-      "properties": {
-        "CFrame": "1.83936208e-08, -1.98744237e-06, 1.66893005e-06, 0.894035637, -0.44795841, 0.00579698477, 0.447079778, 0.892959774, 0.0523691289, -0.0286356658, -0.0442281477, 0.998610973",
-        "Archivable": true,
-        "Name": "Head"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Head/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Leg",
-      "properties": {
-        "CFrame": "0.52880621, 0.281097889, -0.0529459715, 0.997323453, -0.0124241747, -0.0720522553, 0.0312549248, 0.963324726, 0.26651153, 0.066098541, -0.268050104, 0.961134791",
-        "Archivable": true,
-        "Name": "Right Leg"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Leg/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm",
-      "properties": {
-        "CFrame": "-0.479728758, 0.209667414, -0.409503937, 0.42150259, 0.811163127, -0.405400872, -0.437091172, -0.209963948, -0.874566615, -0.794535756, 0.545829117, 0.266051799",
-        "Archivable": true,
-        "Name": "Left Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg",
-      "properties": {
-        "CFrame": "-0.0729336739, 0.227802038, 0.125695229, 0.729209363, -0.0992968902, 0.677047908, -0.0766283944, 0.971342921, 0.224990726, -0.679986656, -0.215946406, 0.700703382",
-        "Archivable": true,
-        "Name": "Left Leg"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Arm",
-      "properties": {
-        "CFrame": "0.341671735, -0.182079017, 0.488919973, 0.488152415, 0.213985398, -0.846119106, -0.223705873, 0.967766464, 0.115687467, 0.843601167, 0.132808641, 0.520287395",
-        "Archivable": true,
-        "Name": "Right Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Arm/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe",
-      "properties": {
-        "Name": "Keyframe",
-        "Archivable": true
-      },
-      "class": "Keyframe"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "HumanoidRootPart"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso",
-      "properties": {
-        "CFrame": "0.0150723401, 0.0406846926, -0.317733914, 0.904582977, 0.420881212, -0.0677391887, -0.42419827, 0.872941732, -0.240891278, -0.0422542542, 0.24664101, 0.968185306",
-        "Archivable": true,
-        "Name": "Torso"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Arm",
-      "properties": {
-        "CFrame": "0.341671735, -0.182079017, 0.488920063, 0.488051891, 0.214214474, -0.846119106, -0.224160045, 0.967661321, 0.115687475, 0.843538821, 0.13320455, 0.520287395",
-        "Archivable": true,
-        "Name": "Right Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Arm/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg",
-      "properties": {
-        "CFrame": "-0.073023662, 0.227772176, 0.125602081, 0.729242742, -0.0990513638, 0.677047908, -0.0769554302, 0.971317053, 0.224990711, -0.679913938, -0.216175333, 0.700703442",
-        "Archivable": true,
-        "Name": "Left Leg"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Head",
-      "properties": {
-        "CFrame": "1.76951289e-08, -1.98557973e-06, 1.66893005e-06, 0.894035637, -0.447961062, 0.00558502506, 0.447079748, 0.892934918, 0.0527916476, -0.0286356658, -0.0447006598, 0.998589933",
-        "Archivable": true,
-        "Name": "Head"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Head/Null",
-      "properties": {
-        "Value": 0,
+        "Color": "0.792157, 0.796078, 0.819608",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "19.239999771118164, 79.95899963378906, -16.69099998474121",
+        "Transparency": 0,
+        "Name": "Leafs",
+        "Position": "-83.95243072509766, 34.85568618774414, -56.19041442871094",
+        "CFrame": "-83.9524307, 34.8556862, -56.1904144, 0.167032272, 0.0500829704, 0.984682322, 0.039648205, 0.997560084, -0.0574638098, -0.985157251, 0.0486392342, 0.164643586",
+        "Material": "Enum.Material.Grass",
         "Archivable": true,
-        "Name": "Null"
+        "Size": "15.318767547607422, 11.790783882141113, 14.09102725982666"
       },
-      "class": "IntValue"
+      "class": "Part"
     },
     {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm",
+      "path": "Workspace/Trees/Conical2/Leaves/Leafs",
       "properties": {
-        "CFrame": "-0.47972852, 0.209667414, -0.409503579, 0.42150265, 0.812403023, -0.402910262, -0.437091172, -0.207279652, -0.87520653, -0.794535637, 0.545010269, 0.267725289",
+        "CanCollide": false,
+        "Color": "0.792157, 0.796078, 0.819608",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "-161.18299865722656, -56.39099884033203, -171.34800720214844",
+        "Transparency": 0,
+        "Name": "Leafs",
+        "Position": "-88.78736877441406, 37.52621841430664, -62.24287796020508",
+        "CFrame": "-88.7873688, 37.5262184, -62.242878, -0.547218144, 0.0832640231, -0.832838118, -0.12318895, 0.976191044, 0.178537384, 0.827874839, 0.200295299, -0.523932219",
+        "Material": "Enum.Material.Grass",
         "Archivable": true,
-        "Name": "Left Arm"
+        "Size": "17.18193817138672, 17.471572875976562, 16.884273529052734"
       },
-      "class": "Pose"
+      "class": "Part"
     },
     {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm/Null",
+      "path": "Workspace/Trees/Conical2/Leaves/Leafs",
       "properties": {
-        "Value": 0,
+        "CanCollide": false,
+        "Color": "0.972549, 0.972549, 0.972549",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "-138.9929962158203, 87.97000122070312, 142.0780029296875",
+        "Transparency": 0,
+        "Name": "Leafs",
+        "Position": "-84.36434936523438, 37.042442321777344, -60.41122055053711",
+        "CFrame": "-84.3643494, 37.0424423, -60.4112206, -0.0280271173, -0.0218356829, 0.999372244, 0.0534191579, 0.998300076, 0.0233100858, -0.998182893, 0.0540386513, -0.0268085897",
+        "Material": "Enum.Material.Grass",
         "Archivable": true,
-        "Name": "Null"
+        "Size": "18.891368865966797, 16.697856903076172, 14.319195747375488"
       },
-      "class": "IntValue"
+      "class": "Part"
     },
     {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Leg",
+      "path": "Workspace/Trees/Conical2/Leaves/Leafs",
       "properties": {
-        "CFrame": "0.528891623, 0.281100631, -0.052940309, 0.997320235, -0.0126854377, -0.0720522553, 0.0315072834, 0.9633165, 0.26651153, 0.0660283118, -0.268067449, 0.961134791",
+        "CanCollide": false,
+        "Color": "0.972549, 0.972549, 0.972549",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "175.39500427246094, -1.1330000162124634, 160.08099365234375",
+        "Transparency": 0,
+        "Name": "Leafs",
+        "Position": "-89.33480072021484, 37.28059768676758, -64.95675659179688",
+        "CFrame": "-89.3348007, 37.2805977, -64.9567566, -0.939995587, -0.340623856, -0.0197673738, -0.338097066, 0.937681735, -0.0802709162, 0.045873493, -0.0687727779, -0.996581078",
+        "Material": "Enum.Material.Grass",
         "Archivable": true,
-        "Name": "Right Leg"
+        "Size": "14.90207576751709, 14.871454238891602, 16.97872543334961"
       },
-      "class": "Pose"
+      "class": "Part"
     },
     {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Leg/Null",
+      "path": "Workspace/Trees/Conical2/Leaves/Leafs",
       "properties": {
-        "Value": 0,
+        "CanCollide": false,
+        "Color": "0.972549, 0.972549, 0.972549",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "170.11900329589844, 9.50100040435791, 178.88099670410156",
+        "Transparency": 0,
+        "Name": "Leafs",
+        "Position": "-82.98161315917969, 27.6190242767334, -59.259273529052734",
+        "CFrame": "-82.9816132, 27.6190243, -59.2592735, -0.986097813, -0.019256629, 0.16506803, -0.0475554504, 0.984425068, -0.16925092, -0.159242392, -0.174748242, -0.971654713",
+        "Material": "Enum.Material.Grass",
         "Archivable": true,
-        "Name": "Null"
+        "Size": "15.318767547607422, 11.749527931213379, 14.09102725982666"
       },
-      "class": "IntValue"
+      "class": "Part"
     },
     {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Null",
+      "path": "Workspace/Trees/Conical2/Leaves/Leafs",
       "properties": {
-        "Value": 0,
+        "CanCollide": false,
+        "Color": "0.972549, 0.972549, 0.972549",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "178.51699829101562, 9.409000396728516, -172.71499633789062",
+        "Transparency": 0,
+        "Name": "Leafs",
+        "Position": "-91.91893768310547, 36.54006576538086, -59.28679275512695",
+        "CFrame": "-91.9189377, 36.5400658, -59.2867928, -0.978587687, 0.125091732, 0.163479328, 0.122559249, 0.992132962, -0.0255258474, -0.16539076, -0.00494301319, -0.986219883",
+        "Material": "Enum.Material.Grass",
         "Archivable": true,
-        "Name": "Null"
+        "Size": "15.318767547607422, 11.901567459106445, 14.09102725982666"
       },
-      "class": "IntValue"
+      "class": "Part"
     },
     {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Null",
+      "path": "Workspace/Trees/Conical2/Log",
       "properties": {
-        "Value": 0,
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "5.431000232696533, 61.08599853515625, -7.230999946594238",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-90.52891540527344, 10.604890823364258, -64.6112060546875",
+        "CFrame": "-90.5289154, 10.6048908, -64.6112061, 0.479644239, 0.0608557835, 0.875350237, -0.0431085788, 0.998021722, -0.0457628779, -0.87640357, -0.0157852564, 0.481318772",
+        "Material": "Enum.Material.Wood",
         "Archivable": true,
-        "Name": "Null"
+        "Size": "4.1936492919921875, 1.6277347803115845, 6.425051212310791"
       },
-      "class": "IntValue"
+      "class": "Part"
     },
     {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/Null",
+      "path": "Workspace/Trees/Conical2/Log",
       "properties": {
-        "Value": 0,
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "2.0450000762939453, 40.16299819946289, -4.570000171661377",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-91.46829223632812, 12.091712951660156, -64.2923583984375",
+        "CFrame": "-91.4682922, 12.091713, -64.2923584, 0.761785269, 0.0608957782, 0.644961119, -0.0566874929, 0.998019338, -0.0272751227, -0.645344734, -0.0157834962, 0.76372844",
+        "Material": "Enum.Material.Wood",
         "Archivable": true,
-        "Name": "Null"
+        "Size": "4.010939598083496, 4.471099853515625, 3.1175811290740967"
       },
-      "class": "IntValue"
+      "class": "Part"
     },
     {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe",
+      "path": "Workspace/Trees/Conical2/Log",
       "properties": {
-        "Name": "Keyframe",
-        "Archivable": true
-      },
-      "class": "Keyframe"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart",
-      "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Archivable": true,
-        "Name": "HumanoidRootPart"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso",
-      "properties": {
-        "CFrame": "0.0150723364, 0.0406847, -0.317733914, 0.904582977, 0.420884103, -0.0677214712, -0.4241983, 0.872951865, -0.240854546, -0.0422542542, 0.246600255, 0.968195677",
-        "Archivable": true,
-        "Name": "Torso"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Arm",
-      "properties": {
-        "CFrame": "0.341671675, -0.182078958, 0.488919944, 0.488083839, 0.214141712, -0.846119106, -0.224015787, 0.9676947, 0.115687467, 0.843558609, 0.133078799, 0.520287395",
-        "Archivable": true,
-        "Name": "Right Arm"
-      },
-      "class": "Pose"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Arm/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Head",
-      "properties": {
-        "CFrame": "2.07219273e-08, -1.98744237e-06, 1.66893005e-06, 0.894035637, -0.447960168, 0.00566039979, 0.447079808, 0.89294374, 0.0526414067, -0.0286356695, -0.0445326418, 0.998597443",
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "2.0450000762939453, 40.16299819946289, -4.570000171661377",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-89.82774353027344, 17.211606979370117, -62.73936080932617",
+        "CFrame": "-89.8277435, 17.211607, -62.7393608, 0.761785269, 0.0608957782, 0.644961119, -0.0566874929, 0.998019338, -0.0272751227, -0.645344734, -0.0157834962, 0.76372844",
+        "Material": "Enum.Material.Wood",
         "Archivable": true,
-        "Name": "Head"
+        "Size": "2.97029185295105, 3.6014153957366943, 0.8331822752952576"
       },
-      "class": "Pose"
+      "class": "Part"
     },
     {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Head/Null",
+      "path": "Workspace/Trees/Conical2/Log",
       "properties": {
-        "Value": 0,
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "-177.9550018310547, -40.16299819946289, -175.42999267578125",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-86.5522232055664, 8.942401885986328, -58.30826950073242",
+        "CFrame": "-86.5522232, 8.94240189, -58.3082695, -0.761785209, 0.0608957782, -0.644961059, 0.0566874892, 0.998019338, 0.027275119, 0.645344675, -0.0157834962, -0.76372838",
+        "Material": "Enum.Material.Wood",
         "Archivable": true,
-        "Name": "Null"
+        "Size": "4.346879005432129, 8.428077697753906, 2.874147891998291"
       },
-      "class": "IntValue"
+      "class": "Part"
     },
     {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg",
+      "path": "Workspace/Trees/Conical2/Log",
       "properties": {
-        "CFrame": "-0.0730003715, 0.227779925, 0.125626266, 0.729234099, -0.0991151184, 0.677047968, -0.0768705308, 0.971323788, 0.224990755, -0.679932833, -0.216115922, 0.700703382",
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "-5.01800012588501, -49.62099838256836, -5.389999866485596",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-87.2045669555664, 17.59734344482422, -62.50163650512695",
+        "CFrame": "-87.204567, 17.5973434, -62.5016365, 0.644970119, 0.0608593747, -0.761780739, -0.0272409134, 0.998021305, 0.0566689558, 0.763722062, -0.0157982334, 0.645351946",
+        "Material": "Enum.Material.Wood",
         "Archivable": true,
-        "Name": "Left Leg"
+        "Size": "2.7701478004455566, 4.683261871337891, 0.9124741554260254"
       },
-      "class": "Pose"
+      "class": "Part"
     },
     {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg/Null",
+      "path": "Workspace/Trees/Conical2/Log",
       "properties": {
-        "Value": 0,
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "2.0450000762939453, 40.16299819946289, -4.570000171661377",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-87.59447479248047, 34.087242126464844, -61.58467483520508",
+        "CFrame": "-87.5944748, 34.0872421, -61.5846748, 0.761785269, 0.0608957782, 0.644961119, -0.0566874929, 0.998019338, -0.0272751227, -0.645344734, -0.0157834962, 0.76372844",
+        "Material": "Enum.Material.Wood",
         "Archivable": true,
-        "Name": "Null"
+        "Size": "2.4907026290893555, 22.75850486755371, 2.4907026290893555"
       },
-      "class": "IntValue"
+      "class": "Part"
     },
     {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm",
+      "path": "Workspace/Trees/Conical2/Log",
       "properties": {
-        "CFrame": "-0.479728878, 0.209667325, -0.409504116, 0.421502531, 0.812004089, -0.403714001, -0.437091231, -0.208145767, -0.875001252, -0.794535816, 0.545275033, 0.267185688",
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "2.0450000762939453, 40.16299819946289, -4.570000171661377",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-89.0160903930664, 10.776460647583008, -61.21571350097656",
+        "CFrame": "-89.0160904, 10.7764606, -61.2157135, 0.761785269, 0.0608957782, 0.644961119, -0.0566874929, 0.998019338, -0.0272751227, -0.645344734, -0.0157834962, 0.76372844",
+        "Material": "Enum.Material.Wood",
         "Archivable": true,
-        "Name": "Left Arm"
+        "Size": "4.817008018493652, 9.192842483520508, 4.817008018493652"
       },
-      "class": "Pose"
+      "class": "Part"
     },
     {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm/Null",
+      "path": "Workspace/Trees/Conical2/Particles",
       "properties": {
-        "Value": 0,
+        "CanCollide": false,
+        "Color": "1, 0, 0",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "-179.67999267578125, -19.31100082397461, -178.6179962158203",
+        "Transparency": 1,
+        "Name": "Particles",
+        "Position": "-87.53199768066406, 39.358116149902344, -61.80043029785156",
+        "CFrame": "-87.5319977, 39.3581161, -61.8004303, -0.943465114, 0.0227694139, -0.330688834, 0.0222772267, 0.999737918, 0.00527862459, 0.330722541, -0.00238667894, -0.943725049",
+        "Material": "Enum.Material.ForceField",
         "Archivable": true,
-        "Name": "Null"
+        "Size": "15.857841491699219, 16.511837005615234, 20.45332908630371"
       },
-      "class": "IntValue"
+      "class": "Part"
     },
     {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Leg",
+      "path": "Workspace/Trees/Conical2/Particles/leafParticles",
       "properties": {
-        "CFrame": "0.528868139, 0.281099916, -0.0529417694, 0.997321069, -0.0126140676, -0.0720522478, 0.0314383432, 0.963318765, 0.2665115, 0.0660474971, -0.268062711, 0.961134791",
+        "Enabled": true,
+        "Name": "leafParticles",
+        "Shape": "Enum.ParticleEmitterShape.Box",
+        "LightEmission": 0,
+        "Brightness": 1,
         "Archivable": true,
-        "Name": "Right Leg"
+        "Texture": "rbxassetid://13151745054"
       },
-      "class": "Pose"
+      "class": "ParticleEmitter"
     },
     {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Leg/Null",
+      "path": "Workspace/Trees/Conical2/Log",
       "properties": {
-        "Value": 0,
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "2.0450000762939453, 40.16299819946289, -4.570000171661377",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-88.33744049072266, 21.911113739013672, -61.392059326171875",
+        "CFrame": "-88.3374405, 21.9111137, -61.3920593, 0.761785269, 0.0608957782, 0.644961119, -0.0566874929, 0.998019338, -0.0272751227, -0.645344734, -0.0157834962, 0.76372844",
+        "Material": "Enum.Material.Wood",
         "Archivable": true,
-        "Name": "Null"
+        "Size": "3.1288888454437256, 12.7989501953125, 3.1288888454437256"
       },
-      "class": "IntValue"
+      "class": "Part"
     },
     {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Null",
+      "path": "Workspace/Trees/Conical2/Log",
       "properties": {
-        "Value": 0,
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "-177.9550018310547, -40.16299819946289, -175.42999267578125",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-87.28758239746094, 19.47256088256836, -59.93943786621094",
+        "CFrame": "-87.2875824, 19.4725609, -59.9394379, -0.761785209, 0.0608957782, -0.644961059, 0.0566874892, 0.998019338, 0.027275119, 0.645344675, -0.0157834962, -0.76372838",
+        "Material": "Enum.Material.Wood",
         "Archivable": true,
-        "Name": "Null"
+        "Size": "2.4893598556518555, 8.33342456817627, 0.8542495369911194"
       },
-      "class": "IntValue"
+      "class": "Part"
     },
     {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Null",
+      "path": "Workspace/Trees/Conical2/Log",
       "properties": {
-        "Value": 0,
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "-13.619999885559082, -74.49700164794922, -13.178000450134277",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-84.54470825195312, 9.046765327453613, -61.27187728881836",
+        "CFrame": "-84.5447083, 9.04676533, -61.2718773, 0.260256708, 0.0609390661, -0.963614464, -0.000632951036, 0.998016894, 0.0629436523, 0.965539336, -0.0157716423, 0.259779304",
+        "Material": "Enum.Material.Wood",
         "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/Null",
-      "properties": {
-        "Value": 0,
-        "Archivable": true,
-        "Name": "Null"
-      },
-      "class": "IntValue"
-    },
-    {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe",
-      "properties": {
-        "Name": "Keyframe",
-        "Archivable": true
+        "Size": "2.5496909618377686, 6.723902225494385, 6.1617112159729"
       },
-      "class": "Keyframe"
+      "class": "Part"
     },
     {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart",
+      "path": "Workspace/Trees/Conical2/Log",
       "properties": {
-        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "174.98199462890625, 49.62099838256836, -174.61000061035156",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-92.29196166992188, 8.687333106994629, -58.41351318359375",
+        "CFrame": "-92.2919617, 8.68733311, -58.4135132, -0.644970119, 0.0608593747, 0.761780739, 0.0272409134, 0.998021305, -0.0566689558, -0.763722062, -0.0157982334, -0.645351946",
+        "Material": "Enum.Material.Wood",
         "Archivable": true,
-        "Name": "HumanoidRootPart"
+        "Size": "4.297553062438965, 10.897247314453125, 5.441868782043457"
       },
-      "class": "Pose"
+      "class": "Part"
     },
     {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Null",
+      "path": "Workspace/Trees/Conical2/Log",
       "properties": {
-        "Value": 0,
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "-5.01800012588501, -49.62099838256836, -5.389999866485596",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-86.0391845703125, 10.139554023742676, -63.8393669128418",
+        "CFrame": "-86.0391846, 10.139554, -63.8393669, 0.644970119, 0.0608593747, -0.761780739, -0.0272409134, 0.998021305, 0.0566689558, 0.763722062, -0.0157982334, 0.645351946",
+        "Material": "Enum.Material.Wood",
         "Archivable": true,
-        "Name": "Null"
+        "Size": "4.036493301391602, 7.578372478485107, 3.1768112182617188"
       },
-      "class": "IntValue"
+      "class": "Part"
     },
     {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso",
+      "path": "Workspace/Trees/Conical2/Log",
       "properties": {
-        "CFrame": "0.0150723392, 0.0406847, -0.317733914, 0.904583037, 0.420878947, -0.0677533746, -0.424198329, 0.872933626, -0.240920722, -0.0422542505, 0.246673673, 0.96817708",
+        "CanCollide": true,
+        "Color": "0.278431, 0.25098, 0.239216",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Wedge",
+        "Rotation": "174.98199462890625, 49.62099838256836, -174.61000061035156",
+        "Transparency": 0,
+        "Name": "Log",
+        "Position": "-89.96610260009766, 18.61758041381836, -60.13381576538086",
+        "CFrame": "-89.9661026, 18.6175804, -60.1338158, -0.644970119, 0.0608593747, 0.761780739, 0.0272409134, 0.998021305, -0.0566689558, -0.763722062, -0.0157982334, -0.645351946",
+        "Material": "Enum.Material.Wood",
         "Archivable": true,
-        "Name": "Torso"
+        "Size": "2.907212495803833, 6.308795928955078, 0.8259503245353699"
       },
-      "class": "Pose"
+      "class": "Part"
     },
     {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Ease",
+      "path": "Workspace/Snow tiles",
       "properties": {
-        "Name": "Ease",
+        "Name": "Snow tiles",
         "Archivable": true
       },
       "class": "Folder"
     },
     {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Ease/Type",
+      "path": "Workspace/Snow tiles/Part",
       "properties": {
-        "Value": "Sine",
+        "CanCollide": true,
+        "Color": "0.92549, 0.917647, 0.937255",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, -9.920000076293945, 0",
+        "Transparency": 0,
+        "Name": "Part",
+        "Position": "-59.26136779785156, 0.5000028610229492, -1.0300114154815674",
+        "CFrame": "-59.2613678, 0.500002861, -1.03001142, 0.985050023, 0, -0.172277704, 0, 1, 0, 0.172277704, 0, 0.985050023",
+        "Material": "Enum.Material.Sand",
         "Archivable": true,
-        "Name": "Type"
+        "Size": "18.5, 6.5, 25.25"
       },
-      "class": "StringValue"
+      "class": "Part"
     },
     {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Ease/Params",
+      "path": "Workspace/Snow tiles/Part",
       "properties": {
-        "Name": "Params",
+        "CanCollide": true,
+        "Color": "0.92549, 0.917647, 0.937255",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, 20.996000289916992, 0",
+        "Transparency": 0,
+        "Name": "Part",
+        "Position": "-41.587684631347656, 5.749999046325684, -31.936784744262695",
+        "CFrame": "-41.5876846, 5.74999905, -31.9367847, 0.933605909, 0, 0.35830158, 0, 1, 0, -0.35830161, 0, 0.933605909",
+        "Material": "Enum.Material.Sand",
+        "Archivable": true,
+        "Size": "18.5, 9, 25.25"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Snow tiles/Part",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.92549, 0.917647, 0.937255",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, 44.27199935913086, 0",
+        "Transparency": 0,
+        "Name": "Part",
+        "Position": "-144.34913635253906, -2.375, 75.177001953125",
+        "CFrame": "-144.349136, -2.375, 75.177002, 0.716034651, 0, 0.698064744, 0, 1, 0, -0.698064744, 0, 0.716034651",
+        "Material": "Enum.Material.Sand",
+        "Archivable": true,
+        "Size": "32.75, 0.25, 17.5"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Snow tiles/Part",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.92549, 0.917647, 0.937255",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, 47.944000244140625, 0",
+        "Transparency": 0,
+        "Name": "Part",
+        "Position": "-128.2928466796875, -2.375, 15.688417434692383",
+        "CFrame": "-128.292847, -2.375, 15.6884174, 0.669858217, 0, 0.742491186, 0, 1, 0, -0.742491186, 0, 0.669858217",
+        "Material": "Enum.Material.Sand",
+        "Archivable": true,
+        "Size": "33.75, 0.25, 37.75"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Snow tiles/Part",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.92549, 0.917647, 0.937255",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, -0.27300000190734863, 0",
+        "Transparency": 0,
+        "Name": "Part",
+        "Position": "-93.07177734375, 1.25, 27.131521224975586",
+        "CFrame": "-93.0717773, 1.25, 27.1315212, 0.999988675, 0, -0.00476483116, 0, 1, 0, 0.00476483116, 0, 0.999988675",
+        "Material": "Enum.Material.Sand",
+        "Archivable": true,
+        "Size": "13.5, 0.5, 24.5"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Snow tiles/Part",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.92549, 0.917647, 0.937255",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, 38.12900161743164, 0",
+        "Transparency": 0,
+        "Name": "Part",
+        "Position": "-96.02050018310547, 13.375, -36.059532165527344",
+        "CFrame": "-96.0205002, 13.375, -36.0595322, 0.786622286, 0, 0.617437363, 0, 1, 0, -0.617436767, 0, 0.786622643",
+        "Material": "Enum.Material.Sand",
+        "Archivable": true,
+        "Size": "20.25, 0.25, 19"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Snow tiles/Part",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.92549, 0.917647, 0.937255",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, -67.15599822998047, 0",
+        "Transparency": 0,
+        "Name": "Part",
+        "Position": "-108.8780288696289, 10.125, -67.37567901611328",
+        "CFrame": "-108.878029, 10.125, -67.375679, 0.388220519, 0, -0.921566784, 0, 1, 0, 0.921566904, 0, 0.388220191",
+        "Material": "Enum.Material.Sand",
+        "Archivable": true,
+        "Size": "12, 0.25, 11.75"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Snow tiles/Part",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.92549, 0.917647, 0.937255",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "180, 86.98799896240234, 180",
+        "Transparency": 0,
+        "Name": "Part",
+        "Position": "-162.96031188964844, 28.75, -12.156131744384766",
+        "CFrame": "-162.960312, 28.75, -12.1561317, -0.0525399595, 0, 0.99861896, 0, 1, 0, -0.99861896, 0, -0.0525399595",
+        "Material": "Enum.Material.Sand",
+        "Archivable": true,
+        "Size": "24.25, 13.5, 17.5"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Snow tiles/Part",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.92549, 0.917647, 0.937255",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, -9.27299976348877, 0",
+        "Transparency": 0,
+        "Name": "Part",
+        "Position": "-89.38580322265625, 1.125, 37.21635818481445",
+        "CFrame": "-89.3858032, 1.125, 37.2163582, 0.986932635, 0, -0.161132663, 0, 1, 0, 0.161132783, 0, 0.986932635",
+        "Material": "Enum.Material.Sand",
+        "Archivable": true,
+        "Size": "12, 0.25, 11.75"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Snow tiles/Part",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.92549, 0.917647, 0.937255",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "-1.5980000495910645, -25.139999389648438, 8.524999618530273",
+        "Transparency": 0,
+        "Name": "Part",
+        "Position": "-32.43510437011719, 16.647815704345703, 18.002931594848633",
+        "CFrame": "-32.4351044, 16.6478157, 18.0029316, 0.895267248, -0.134199917, -0.424838215, 0.159900516, 0.986810327, 0.0252418779, 0.415847242, -0.0905300081, 0.904917479",
+        "Material": "Enum.Material.Sand",
+        "Archivable": true,
+        "Size": "22, 2.5, 20.75"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Snow tiles/Part",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.92549, 0.917647, 0.937255",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "180, 77.98699951171875, 180",
+        "Transparency": 0,
+        "Name": "Part",
+        "Position": "-157.29837036132812, -2.375, 67.65823364257812",
+        "CFrame": "-157.29837, -2.375, 67.6582336, -0.208129197, 0, 0.978101611, 0, 1, 0, -0.978101611, 0, -0.208129197",
+        "Material": "Enum.Material.Sand",
+        "Archivable": true,
+        "Size": "24.25, 0.25, 17.5"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Snow tiles/Part",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.92549, 0.917647, 0.937255",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, 81.14099884033203, 0",
+        "Transparency": 0,
+        "Name": "Part",
+        "Position": "-117.09388732910156, -2.375, 35.9504508972168",
+        "CFrame": "-117.093887, -2.375, 35.9504509, 0.154002115, 0, 0.988070428, 0, 1, 0, -0.988070428, 0, 0.154002115",
+        "Material": "Enum.Material.Sand",
+        "Archivable": true,
+        "Size": "24.25, 0.25, 17.5"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Snow tiles/Part",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.92549, 0.917647, 0.937255",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, 13.519000053405762, 0",
+        "Transparency": 0,
+        "Name": "Part",
+        "Position": "-68.3913803100586, 1.125, 40.28675842285156",
+        "CFrame": "-68.3913803, 1.125, 40.2867584, 0.972290218, 0, 0.2337735, 0, 1, 0, -0.233772472, 0, 0.972290218",
+        "Material": "Enum.Material.Sand",
+        "Archivable": true,
+        "Size": "22.25, 0.25, 12.75"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Snow tiles/Part",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.92549, 0.917647, 0.937255",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, -84.29000091552734, 0",
+        "Transparency": 0,
+        "Name": "Part",
+        "Position": "-92.02705383300781, 10.125, -77.5177993774414",
+        "CFrame": "-92.0270538, 10.125, -77.5177994, 0.099507153, 0, -0.995038986, 0, 1, 0, 0.995038867, 0, 0.0995066762",
+        "Material": "Enum.Material.Sand",
+        "Archivable": true,
+        "Size": "26.25, 0.25, 17"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Snow tiles/Part",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.92549, 0.917647, 0.937255",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, 76.98600006103516, 0",
+        "Transparency": 0,
+        "Name": "Part",
+        "Position": "-29.00037384033203, 3.5, -82.35552978515625",
+        "CFrame": "-29.0003738, 3.5, -82.3555298, 0.225181952, 0, 0.974316895, 0, 1, 0, -0.974317074, 0, 0.225181907",
+        "Material": "Enum.Material.Sand",
+        "Archivable": true,
+        "Size": "13.499999046325684, 0.25, 9"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Snow tiles/Part",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.92549, 0.917647, 0.937255",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, -0.27300000190734863, 0",
+        "Transparency": 0,
+        "Name": "Part",
+        "Position": "-54.154842376708984, 3.875, -35.47445297241211",
+        "CFrame": "-54.1548424, 3.875, -35.474453, 0.999988675, 0, -0.00476483116, 0, 1, 0, 0.00476483116, 0, 0.999988675",
+        "Material": "Enum.Material.Sand",
+        "Archivable": true,
+        "Size": "24.75, 0.75, 16"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Snow tiles/Part",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.92549, 0.917647, 0.937255",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, -26.4060001373291, 0",
+        "Transparency": 0,
+        "Name": "Part",
+        "Position": "-91.99227142333984, 1.125, 13.144132614135742",
+        "CFrame": "-91.9922714, 1.125, 13.1441326, 0.895669103, 0, -0.444724858, 0, 1, 0, 0.444724858, 0, 0.895669103",
+        "Material": "Enum.Material.Sand",
+        "Archivable": true,
+        "Size": "12, 0.25, 11.75"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Snow tiles/Part",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.92549, 0.917647, 0.937255",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, 27.097999572753906, 0",
+        "Transparency": 0,
+        "Name": "Part",
+        "Position": "-80.70316314697266, 0.125, -23.05601692199707",
+        "CFrame": "-80.7031631, 0.125, -23.0560169, 0.890231609, 0, 0.455508202, 0, 1, 0, -0.455508202, 0, 0.890231609",
+        "Material": "Enum.Material.Sand",
+        "Archivable": true,
+        "Size": "21, 7.25, 19"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Snow tiles/Part",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.92549, 0.917647, 0.937255",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, 10.038999557495117, 0",
+        "Transparency": 0,
+        "Name": "Part",
+        "Position": "-51.23064422607422, 1.1250050067901611, 18.10304069519043",
+        "CFrame": "-51.2306442, 1.12500501, 18.1030407, 0.984689593, 0, 0.174317926, 0, 1, 0, -0.174317926, 0, 0.984689593",
+        "Material": "Enum.Material.Sand",
+        "Archivable": true,
+        "Size": "18.5, 0.25, 19"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Snow tiles/Part",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.92549, 0.917647, 0.937255",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, 38.12900161743164, 0",
+        "Transparency": 0,
+        "Name": "Part",
+        "Position": "-28.337890625, 3.5, -74.11982727050781",
+        "CFrame": "-28.3378906, 3.5, -74.1198273, 0.786622405, 0, 0.617437422, 0, 1, 0, -0.617436886, 0, 0.786622822",
+        "Material": "Enum.Material.Sand",
+        "Archivable": true,
+        "Size": "20.25, 0.25, 19"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Snow tiles/Part",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.92549, 0.917647, 0.937255",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, 76.98600006103516, 0",
+        "Transparency": 0,
+        "Name": "Part",
+        "Position": "-96.6829833984375, 13.375, -44.29523468017578",
+        "CFrame": "-96.6829834, 13.375, -44.2952347, 0.225181893, 0, 0.974316776, 0, 1, 0, -0.974316835, 0, 0.225181878",
+        "Material": "Enum.Material.Sand",
+        "Archivable": true,
+        "Size": "13.499999046325684, 0.25, 9"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Snow tiles/Part",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.92549, 0.917647, 0.937255",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, -58.15700149536133, 0",
+        "Transparency": 0,
+        "Name": "Part",
+        "Position": "-102.29609680175781, 10.25, -75.8591079711914",
+        "CFrame": "-102.296097, 10.25, -75.859108, 0.527600527, 0, -0.849493146, 0, 1, 0, 0.849493146, 0, 0.52760011",
+        "Material": "Enum.Material.Sand",
+        "Archivable": true,
+        "Size": "13.5, 0.5, 24.5"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Snow tiles/Part",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.92549, 0.917647, 0.937255",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, 15.532999992370605, 0",
+        "Transparency": 0,
+        "Name": "Part",
+        "Position": "-50.69977951049805, 0.5000028610229492, 2.113825559616089",
+        "CFrame": "-50.6997795, 0.500002861, 2.11382556, 0.963478148, 0, 0.26778692, 0, 1, 0, -0.26778695, 0, 0.963478148",
+        "Material": "Enum.Material.Sand",
+        "Archivable": true,
+        "Size": "9.5, 6.5, 19"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Snow tiles/Part",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.92549, 0.917647, 0.937255",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, 54.00400161743164, 0",
+        "Transparency": 0,
+        "Name": "Part",
+        "Position": "-154.71031188964844, 23, -5.1561279296875",
+        "CFrame": "-154.710312, 23, -5.15612793, 0.587726474, 0, 0.809059799, 0, 1, 0, -0.809059799, 0, 0.587726474",
+        "Material": "Enum.Material.Sand",
+        "Archivable": true,
+        "Size": "24.25, 25, 17.5"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/EnemieSpawnPoints",
+      "properties": {
+        "Name": "EnemieSpawnPoints",
         "Archivable": true
       },
       "class": "Folder"
     },
     {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Ease/Params/Direction",
+      "path": "Workspace/EnemieSpawnPoints/Dawnreach",
       "properties": {
-        "Value": "InOut",
-        "Archivable": true,
-        "Name": "Direction"
+        "Name": "Dawnreach",
+        "Archivable": true
       },
-      "class": "StringValue"
+      "class": "Folder"
     },
     {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg",
+      "path": "Workspace/EnemieSpawnPoints/Dawnreach/AshenPup",
       "properties": {
-        "CFrame": "-0.0730504394, 0.227763474, 0.12557438, 0.729252636, -0.0989784449, 0.677047908, -0.0770525634, 0.971309304, 0.22499074, -0.679892242, -0.216243342, 0.700703442",
-        "Archivable": true,
-        "Name": "Left Leg"
+        "Name": "AshenPup",
+        "Archivable": true
       },
-      "class": "Pose"
+      "class": "Folder"
     },
     {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Leg/Null",
+      "path": "Workspace/EnemieSpawnPoints/Dawnreach/AshenPup/Points",
       "properties": {
-        "Value": 0,
+        "CanCollide": false,
+        "Color": "0.639216, 0.635294, 0.647059",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, 0, 0",
+        "Transparency": 1,
+        "Name": "Points",
+        "Position": "-169.25, 0, 78.25",
+        "CFrame": "-169.25, 0, 78.25, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Material": "Enum.Material.Plastic",
         "Archivable": true,
-        "Name": "Null"
+        "Size": "1, 1, 1"
       },
-      "class": "IntValue"
+      "class": "Part"
     },
     {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Head",
+      "path": "Workspace/EnemieSpawnPoints/Dawnreach/AshenPup/Points",
       "properties": {
-        "CFrame": "2.00234354e-08, -1.99116766e-06, 1.66893005e-06, 0.894035637, -0.447963148, 0.00542027969, 0.447079808, 0.892915428, 0.0531200394, -0.0286356695, -0.0450679138, 0.998573422",
+        "CanCollide": false,
+        "Color": "0.639216, 0.635294, 0.647059",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, 0, 0",
+        "Transparency": 1,
+        "Name": "Points",
+        "Position": "-159, 0, 21",
+        "CFrame": "-159, 0, 21, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Material": "Enum.Material.Plastic",
         "Archivable": true,
-        "Name": "Head"
+        "Size": "1, 1, 1"
       },
-      "class": "Pose"
+      "class": "Part"
     },
     {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Head/Null",
+      "path": "Workspace/EnemieSpawnPoints/Dawnreach/AshenPup/Points",
       "properties": {
-        "Value": 0,
+        "CanCollide": false,
+        "Color": "0.639216, 0.635294, 0.647059",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, 0, 0",
+        "Transparency": 1,
+        "Name": "Points",
+        "Position": "-115.75, 0, 49.5",
+        "CFrame": "-115.75, 0, 49.5, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Material": "Enum.Material.Plastic",
         "Archivable": true,
-        "Name": "Null"
+        "Size": "1, 1, 1"
       },
-      "class": "IntValue"
+      "class": "Part"
     },
     {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm",
+      "path": "Workspace/EnemieSpawnPoints/Dawnreach/AshenPup/Points",
       "properties": {
-        "CFrame": "-0.479728699, 0.209667355, -0.409503877, 0.42150259, 0.813157558, -0.401385546, -0.437091142, -0.205637604, -0.87559402, -0.794535756, 0.544507146, 0.268747032",
+        "CanCollide": false,
+        "Color": "0.639216, 0.635294, 0.647059",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, 0, 0",
+        "Transparency": 1,
+        "Name": "Points",
+        "Position": "-137.83058166503906, 0.25, 81.7795639038086",
+        "CFrame": "-137.830582, 0.25, 81.7795639, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Material": "Enum.Material.Plastic",
         "Archivable": true,
-        "Name": "Left Arm"
+        "Size": "1, 1, 1"
       },
-      "class": "Pose"
+      "class": "Part"
     },
     {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Left Arm/Null",
+      "path": "Workspace/EnemieSpawnPoints/Dawnreach/AshenPup/Points",
       "properties": {
-        "Value": 0,
+        "CanCollide": false,
+        "Color": "0.639216, 0.635294, 0.647059",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, 0, 0",
+        "Transparency": 1,
+        "Name": "Points",
+        "Position": "-125.60070037841797, 0.25, 23.395206451416016",
+        "CFrame": "-125.6007, 0.25, 23.3952065, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Material": "Enum.Material.Plastic",
         "Archivable": true,
-        "Name": "Null"
+        "Size": "1, 1, 1"
       },
-      "class": "IntValue"
+      "class": "Part"
     },
     {
-      "path": "Workspace/TemplateR6/AnimSaves/Sword Idle/Keyframe/HumanoidRootPart/Torso/Right Leg",
+      "path": "Workspace/EnemieSpawnPoints/Dawnreach/WolfScout",
       "properties": {
+        "Name": "WolfScout",
+        "Archivable": true
+      },
+      "class": "Folder"
+    },
+    {
+      "path": "Workspace/EnemieSpawnPoints/Dawnreach/WolfScout/Points",
+      "properties": {
+        "CanCollide": false,
+        "Color": "0.639216, 0.635294, 0.647059",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, 0, 0",
+        "Transparency": 1,
+        "Name": "Points",
+        "Position": "-60.5, 6, -86.75",
+        "CFrame": "-60.5, 6, -86.75, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Material": "Enum.Material.Plastic",
+        "Archivable": true,
+        "Size": "1, 1, 1"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/EnemieSpawnPoints/Dawnreach/WolfScout/Points",
+      "properties": {
+        "CanCollide": false,
+        "Color": "0.639216, 0.635294, 0.647059",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, 0, 0",
+        "Transparency": 1,
+        "Name": "Points",
+        "Position": "-88.60414123535156, 12.75, -85.47564697265625",
+        "CFrame": "-88.6041412, 12.75, -85.475647, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Material": "Enum.Material.Plastic",
+        "Archivable": true,
+        "Size": "1, 1, 1"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/EnemieSpawnPoints/Dawnreach/WolfScout/Points",
+      "properties": {
+        "CanCollide": false,
+        "Color": "0.639216, 0.635294, 0.647059",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, 0, 0",
+        "Transparency": 1,
+        "Name": "Points",
+        "Position": "-17.5, 6, -63.999996185302734",
+        "CFrame": "-17.5, 6, -63.9999962, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Material": "Enum.Material.Plastic",
+        "Archivable": true,
+        "Size": "1, 1, 1"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/EnemieSpawnPoints/Dawnreach/WolfScout/Points",
+      "properties": {
+        "CanCollide": false,
+        "Color": "0.639216, 0.635294, 0.647059",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, 0, 0",
+        "Transparency": 1,
+        "Name": "Points",
+        "Position": "-37.54712677001953, 12.749999046325684, -23.653162002563477",
+        "CFrame": "-37.5471268, 12.749999, -23.653162, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Material": "Enum.Material.Plastic",
+        "Archivable": true,
+        "Size": "1, 1, 1"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Grass Patches",
+      "properties": {
+        "Name": "Grass Patches",
+        "Archivable": true
+      },
+      "class": "Folder"
+    },
+    {
+      "path": "Workspace/Grass Patches/Part",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.45098, 0.423529, 0.380392",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, 10.043000221252441, 0",
+        "Transparency": 0,
+        "Name": "Part",
+        "Position": "-26.088851928710938, 5, -19.13930320739746",
+        "CFrame": "-26.0888519, 5, -19.1393032, 0.984676778, 0, 0.174393311, 0, 1, 0, -0.174393311, 0, 0.984676778",
+        "Material": "Enum.Material.Grass",
+        "Archivable": true,
+        "Size": "43.75, 10, 51.5"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Grass Patches/Part",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.45098, 0.423529, 0.380392",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, 10.043000221252441, 0",
+        "Transparency": 0,
+        "Name": "Part",
+        "Position": "-26.088851928710938, 5, -19.13930320739746",
+        "CFrame": "-26.0888519, 5, -19.1393032, 0.984676778, 0, 0.174393311, 0, 1, 0, -0.174393311, 0, 0.984676778",
+        "Material": "Enum.Material.Grass",
+        "Archivable": true,
+        "Size": "43.75, 10, 51.5"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Grass Patches/Part",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.45098, 0.423529, 0.380392",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "1.1579999923706055, -42.78900146484375, -1.6469999551773071",
+        "Transparency": 0,
+        "Name": "Part",
+        "Position": "-105.91082763671875, 2.250004291534424, 2.606605052947998",
+        "CFrame": "-105.910828, 2.25000429, 2.60660505, 0.733556926, 0.0210970938, -0.679301083, -0.0424705371, 0.998987854, -0.0148367006, 0.678300202, 0.0397338457, 0.73371017",
+        "Material": "Enum.Material.Grass",
+        "Archivable": true,
+        "Size": "23.5, 10, 26.75"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Grass Patches/Part",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.337255, 0.317647, 0.286275",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, -38.79499816894531, 0",
+        "Transparency": 0,
+        "Name": "Part",
+        "Position": "-41.54952621459961, 5.125, -3.1142702102661133",
+        "CFrame": "-41.5495262, 5.125, -3.11427021, 0.779387891, 0, -0.626542032, 0, 1, 0, 0.626542032, 0, 0.779387891",
+        "Material": "Enum.Material.Grass",
+        "Archivable": true,
+        "Size": "23.5, 10.25, 14.25"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Grass Patches/Part",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.45098, 0.423529, 0.380392",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, 0, 0",
+        "Transparency": 0,
+        "Name": "Part",
+        "Position": "-116.625, -7, 52.75",
+        "CFrame": "-116.625, -7, 52.75, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Material": "Enum.Material.Grass",
+        "Archivable": true,
+        "Size": "141.75, 9, 85"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Grass Patches/Part",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.45098, 0.423529, 0.380392",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, 0, 0",
+        "Transparency": 0,
+        "Name": "Part",
+        "Position": "-50.875, 2.25, -41.625",
+        "CFrame": "-50.875, 2.25, -41.625, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Material": "Enum.Material.Grass",
+        "Archivable": true,
+        "Size": "75.25, 2.5, 103.25"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Grass Patches/Part",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.337255, 0.317647, 0.286275",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, -6.671000003814697, 0",
+        "Transparency": 0,
+        "Name": "Part",
+        "Position": "-96.02473449707031, 2, -11.535046577453613",
+        "CFrame": "-96.0247345, 2, -11.5350466, 0.993230581, 0, -0.116161495, 0, 1, 0, 0.116161495, 0, 0.993230581",
+        "Material": "Enum.Material.Grass",
+        "Archivable": true,
+        "Size": "23.5, 6.5, 25"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Brickpath",
+      "properties": {
+        "Name": "Brickpath",
+        "Archivable": true
+      },
+      "class": "Folder"
+    },
+    {
+      "path": "Workspace/Brickpath/Part",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.133333, 0.105882, 0.0862745",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, -15, 0",
+        "Transparency": 0,
+        "Name": "Part",
+        "Position": "-58.54695129394531, 3.625, -64.021484375",
+        "CFrame": "-58.5469513, 3.625, -64.0214844, 0.965928257, 0, -0.25881964, 0, 1, 0, 0.25881964, 0, 0.965928257",
+        "Material": "Enum.Material.Brick",
+        "Archivable": true,
+        "Size": "8.5, 0.25, 13.999977111816406"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Brickpath/Part",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.352941, 0.282353, 0.231373",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, -15, 0",
+        "Transparency": 0,
+        "Name": "Part",
+        "Position": "-66.17332458496094, 3.75, -37.460182189941406",
+        "CFrame": "-66.1733246, 3.75, -37.4601822, 0.965926111, 0, -0.258819073, 0, 1, 0, 0.258819073, 0, 0.965926111",
+        "Material": "Enum.Material.Brick",
+        "Archivable": true,
+        "Size": "8, 0.5, 13.999977111816406"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Brickpath/Part",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.133333, 0.105882, 0.0862745",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, 0, 0",
+        "Transparency": 0,
+        "Name": "Part",
+        "Position": "-71.5, 3.625, 2.999988555908203",
+        "CFrame": "-71.5, 3.625, 2.99998856, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Material": "Enum.Material.Brick",
+        "Archivable": true,
+        "Size": "8.5, 0.25, 13.999977111816406"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Brickpath/Part",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.352941, 0.282353, 0.231373",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, 0, 0",
+        "Transparency": 0,
+        "Name": "Part",
+        "Position": "-71.5, 3.75, 2.999988555908203",
+        "CFrame": "-71.5, 3.75, 2.99998856, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Material": "Enum.Material.Brick",
+        "Archivable": true,
+        "Size": "8, 0.5, 13.999977111816406"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Brickpath/Part",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.133333, 0.105882, 0.0862745",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, -15, 0",
+        "Transparency": 0,
+        "Name": "Part",
+        "Position": "-66.18184661865234, 3.625, -37.39548110961914",
+        "CFrame": "-66.1818466, 3.625, -37.3954811, 0.965926111, 0, -0.258819073, 0, 1, 0, 0.258819073, 0, 0.965926111",
+        "Material": "Enum.Material.Brick",
+        "Archivable": true,
+        "Size": "8.5, 0.25, 13.999977111816406"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Brickpath/Part",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.352941, 0.282353, 0.231373",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, -15, 0",
+        "Transparency": 0,
+        "Name": "Part",
+        "Position": "-58.53362274169922, 3.75, -64.10295104980469",
+        "CFrame": "-58.5336227, 3.75, -64.102951, 0.965928257, 0, -0.25881964, 0, 1, 0, 0.25881964, 0, 0.965928257",
+        "Material": "Enum.Material.Brick",
+        "Archivable": true,
+        "Size": "8, 0.5, 13.999977111816406"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Brickpath/Part",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.133333, 0.105882, 0.0862745",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, -17, 0",
+        "Transparency": 0,
+        "Name": "Part",
+        "Position": "-62.36439895629883, 3.625, -50.70847702026367",
+        "CFrame": "-62.364399, 3.625, -50.708477, 0.956305563, 0, -0.292371899, 0, 1, 0, 0.292371899, 0, 0.956305563",
+        "Material": "Enum.Material.Brick",
+        "Archivable": true,
+        "Size": "8.5, 0.25, 13.999977111816406"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Brickpath/Part",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.133333, 0.105882, 0.0862745",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, -13, 0",
+        "Transparency": 0,
+        "Name": "Part",
+        "Position": "-55.196449279785156, 3.625, -77.45962524414062",
+        "CFrame": "-55.1964493, 3.625, -77.4596252, 0.974370122, 0, -0.224951029, 0, 1, 0, 0.224951029, 0, 0.974370122",
+        "Material": "Enum.Material.Brick",
+        "Archivable": true,
+        "Size": "8.5, 0.25, 13.999977111816406"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Brickpath/Part",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.352941, 0.282353, 0.231373",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, -17, 0",
+        "Transparency": 0,
+        "Name": "Part",
+        "Position": "-62.353477478027344, 3.75, -50.78156280517578",
+        "CFrame": "-62.3534775, 3.75, -50.7815628, 0.956305563, 0, -0.292371899, 0, 1, 0, 0.292371899, 0, 0.956305563",
+        "Material": "Enum.Material.Brick",
+        "Archivable": true,
+        "Size": "8, 0.5, 13.999977111816406"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Brickpath/Part",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.352941, 0.282353, 0.231373",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, -13, 0",
+        "Transparency": 0,
+        "Name": "Part",
+        "Position": "-55.180999755859375, 3.75, -77.549560546875",
+        "CFrame": "-55.1809998, 3.75, -77.5495605, 0.974370122, 0, -0.224951029, 0, 1, 0, 0.224951029, 0, 0.974370122",
+        "Material": "Enum.Material.Brick",
+        "Archivable": true,
+        "Size": "8, 0.5, 13.999977111816406"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Brickpath/Part",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.133333, 0.105882, 0.0862745",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, 0, 0",
+        "Transparency": 0,
+        "Name": "Part",
+        "Position": "-71.5, 1.1250001192092896, 19.749988555908203",
+        "CFrame": "-71.5, 1.12500012, 19.7499886, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Material": "Enum.Material.Brick",
+        "Archivable": true,
+        "Size": "8.5, 0.25, 8.499977111816406"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Brickpath/Part",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.352941, 0.282353, 0.231373",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, -10, 0",
+        "Transparency": 0,
+        "Name": "Part",
+        "Position": "-69.12506103515625, 3.75, -24.145755767822266",
+        "CFrame": "-69.125061, 3.75, -24.1457558, 0.984807849, 0, -0.173648179, 0, 1, 0, 0.173648179, 0, 0.984807849",
+        "Material": "Enum.Material.Brick",
+        "Archivable": true,
+        "Size": "8, 0.5, 13.999977111816406"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Brickpath/Part",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.352941, 0.282353, 0.231373",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, 0, 0",
+        "Transparency": 0,
+        "Name": "Part",
+        "Position": "-71.5, 1.2500001192092896, 19.749988555908203",
+        "CFrame": "-71.5, 1.25000012, 19.7499886, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Material": "Enum.Material.Brick",
+        "Archivable": true,
+        "Size": "8, 0.5, 8.499977111816406"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Brickpath/Part",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.133333, 0.105882, 0.0862745",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, 0, 0",
+        "Transparency": 0,
+        "Name": "Part",
+        "Position": "-71.5, 1.1250001192092896, 34",
+        "CFrame": "-71.5, 1.12500012, 34, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Material": "Enum.Material.Brick",
+        "Archivable": true,
+        "Size": "20.5, 0.25, 20.5"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Brickpath/Part",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.352941, 0.282353, 0.231373",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, 0, 0",
+        "Transparency": 0,
+        "Name": "Part",
+        "Position": "-71.5, 3.75, 2.999988555908203",
+        "CFrame": "-71.5, 3.75, 2.99998856, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Material": "Enum.Material.Brick",
+        "Archivable": true,
+        "Size": "8, 0.5, 13.999977111816406"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Brickpath/Part",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.133333, 0.105882, 0.0862745",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, -10, 0",
+        "Transparency": 0,
+        "Name": "Part",
+        "Position": "-69.12885284423828, 3.625, -24.10234260559082",
+        "CFrame": "-69.1288528, 3.625, -24.1023426, 0.984807849, 0, -0.173648179, 0, 1, 0, 0.173648179, 0, 0.984807849",
+        "Material": "Enum.Material.Brick",
+        "Archivable": true,
+        "Size": "8.5, 0.25, 13.999977111816406"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Brickpath/Part",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.352941, 0.282353, 0.231373",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, 0, 0",
+        "Transparency": 0,
+        "Name": "Part",
+        "Position": "-71.5, 1.2500001192092896, 34",
+        "CFrame": "-71.5, 1.25000012, 34, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Material": "Enum.Material.Brick",
+        "Archivable": true,
+        "Size": "20, 0.5, 20"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Brickpath/Part",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.133333, 0.105882, 0.0862745",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, -5, 0",
+        "Transparency": 0,
+        "Name": "Part",
+        "Position": "-70.90608215332031, 3.625, -10.60293960571289",
+        "CFrame": "-70.9060822, 3.625, -10.6029396, 0.99619472, 0, -0.087155737, 0, 1, 0, 0.087155737, 0, 0.99619472",
+        "Material": "Enum.Material.Brick",
+        "Archivable": true,
+        "Size": "8.5, 0.25, 13.999977111816406"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Brickpath/Part",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.133333, 0.105882, 0.0862745",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "22.333999633789062, 0, 0",
+        "Transparency": 0,
+        "Name": "Part",
+        "Position": "-71.5, -1.0392570495605469, 15.322434425354004",
+        "CFrame": "-71.5, -1.03925705, 15.3224344, 1, 0, 0, 0, 0.924983799, -0.380006492, 0, 0.380006492, 0.924983799",
+        "Material": "Enum.Material.Brick",
+        "Archivable": true,
+        "Size": "8.5, 4.75, 13.513566017150879"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Brickpath/Part",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.352941, 0.282353, 0.231373",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, -5, 0",
+        "Transparency": 0,
+        "Name": "Part",
+        "Position": "-70.9051284790039, 3.75, -10.62472915649414",
+        "CFrame": "-70.9051285, 3.75, -10.6247292, 0.99619472, 0, -0.087155737, 0, 1, 0, 0.087155737, 0, 0.99619472",
+        "Material": "Enum.Material.Brick",
+        "Archivable": true,
+        "Size": "8, 0.5, 13.999977111816406"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Brickpath/Part",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.352941, 0.282353, 0.231373",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, 0, 0",
+        "Transparency": 0,
+        "Name": "Part",
+        "Position": "-71.5, 1.2500001192092896, 34",
+        "CFrame": "-71.5, 1.25000012, 34, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Material": "Enum.Material.Brick",
+        "Archivable": true,
+        "Size": "20, 0.5, 20"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/Brickpath/Part",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.352941, 0.282353, 0.231373",
+        "Anchored": true,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "22.333999633789062, 0, 0",
+        "Transparency": 0,
+        "Name": "Part",
+        "Position": "-71.5, 1.178857684135437, 16.173158645629883",
+        "CFrame": "-71.5, 1.17885768, 16.1731586, 1, 0, 0, 0, 0.924983799, -0.380006492, 0, 0.380006492, 0.924983799",
+        "Material": "Enum.Material.Brick",
+        "Archivable": true,
+        "Size": "8, 0.5, 13.625550270080566"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/LiveEnemies",
+      "properties": {
+        "Name": "LiveEnemies",
+        "Archivable": true
+      },
+      "class": "Folder"
+    },
+    {
+      "path": "Workspace/Terrain",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.639216, 0.635294, 0.647059",
+        "Anchored": true,
+        "Rotation": "0, 0, 0",
+        "Transparency": 0,
+        "Name": "Terrain",
+        "Position": "0, 0, 0",
+        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Material": "Enum.Material.Plastic",
+        "Archivable": true,
+        "Size": "2044, 252, 2044"
+      },
+      "class": "Terrain"
+    },
+    {
+      "path": "Workspace/WolfScout",
+      "properties": {
+        "Name": "WolfScout",
+        "Archivable": true
+      },
+      "class": "Model"
+    },
+    {
+      "path": "Workspace/WolfScout/Torso",
+      "properties": {
+        "CanCollide": true,
+        "Color": "0.917647, 0.721569, 0.572549",
+        "Anchored": false,
+        "Shape": "Enum.PartType.Block",
+        "Rotation": "0, 0, 0",
+        "Transparency": 0,
+        "Name": "Torso",
+        "Position": "-67.75, -17.75, 25.5",
+        "CFrame": "-67.75, -17.75, 25.5, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Material": "Enum.Material.Plastic",
+        "Archivable": true,
+        "Size": "2, 2, 1"
+      },
+      "class": "Part"
+    },
+    {
+      "path": "Workspace/WolfScout/Torso/WaistBackAttachment",
+      "properties": {
+        "Visible": false,
+        "Name": "WaistBackAttachment",
+        "Position": "0, -1, 0.5",
+        "CFrame": "0, -1, 0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Rotation": "-0, 0, -0"
+      },
+      "class": "Attachment"
+    },
+    {
+      "path": "Workspace/WolfScout/Torso/Weld",
+      "properties": {
+        "Enabled": true,
+        "Name": "Weld",
+        "Archivable": true,
+        "Active": false
+      },
+      "class": "Weld"
+    },
+    {
+      "path": "Workspace/WolfScout/Torso/Weld",
+      "properties": {
+        "Enabled": true,
+        "Name": "Weld",
+        "Archivable": true,
+        "Active": false
+      },
+      "class": "Weld"
+    },
+    {
+      "path": "Workspace/WolfScout/Torso/Left Hip",
+      "properties": {
+        "Enabled": true,
+        "Name": "Left Hip",
+        "Archivable": true,
+        "Active": true
+      },
+      "class": "Motor6D"
+    },
+    {
+      "path": "Workspace/WolfScout/Torso/BodyBackAttachment",
+      "properties": {
+        "Visible": false,
+        "Name": "BodyBackAttachment",
+        "Position": "0, 0, 0.5",
+        "CFrame": "0, 0, 0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Rotation": "-0, 0, -0"
+      },
+      "class": "Attachment"
+    },
+    {
+      "path": "Workspace/WolfScout/Torso/Weld",
+      "properties": {
+        "Enabled": true,
+        "Name": "Weld",
+        "Archivable": true,
+        "Active": false
+      },
+      "class": "Weld"
+    },
+    {
+      "path": "Workspace/WolfScout/Torso/LeftCollarAttachment",
+      "properties": {
+        "Visible": false,
+        "Name": "LeftCollarAttachment",
+        "Position": "-1, 1, 0",
+        "CFrame": "-1, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Rotation": "-0, 0, -0"
+      },
+      "class": "Attachment"
+    },
+    {
+      "path": "Workspace/WolfScout/Torso/Weld",
+      "properties": {
+        "Enabled": true,
+        "Name": "Weld",
+        "Archivable": true,
+        "Active": false
+      },
+      "class": "Weld"
+    },
+    {
+      "path": "Workspace/WolfScout/Torso/WaistFrontAttachment",
+      "properties": {
+        "Visible": false,
+        "Name": "WaistFrontAttachment",
+        "Position": "0, -1, -0.5",
+        "CFrame": "0, -1, -0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Rotation": "-0, 0, -0"
+      },
+      "class": "Attachment"
+    },
+    {
+      "path": "Workspace/WolfScout/Torso/RightCollarAttachment",
+      "properties": {
+        "Visible": false,
+        "Name": "RightCollarAttachment",
+        "Position": "1, 1, 0",
+        "CFrame": "1, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Rotation": "-0, 0, -0"
+      },
+      "class": "Attachment"
+    },
+    {
+      "path": "Workspace/WolfScout/Torso/NeckAttachment",
+      "properties": {
+        "Visible": false,
+        "Name": "NeckAttachment",
+        "Position": "0, 1, 0",
+        "CFrame": "0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Rotation": "-0, 0, -0"
+      },
+      "class": "Attachment"
+    },
+    {
+      "path": "Workspace/WolfScout/Torso/BodyFrontAttachment",
+      "properties": {
+        "Visible": false,
+        "Name": "BodyFrontAttachment",
+        "Position": "0, 0, -0.5",
+        "CFrame": "0, 0, -0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Rotation": "-0, 0, -0"
+      },
+      "class": "Attachment"
+    },
+    {
+      "path": "Workspace/WolfScout/Torso/WaistCenterAttachment",
