@@ -10,8 +10,18 @@ local combatRemote = ReplicatedStorage:WaitForChild("SwordCombat")
 local animSaves = workspace:WaitForChild("TemplateR6"):WaitForChild("AnimSaves")
 local slashTemplate = workspace:WaitForChild("Slash Particle", 30)
 
+-- Preserve one untouched copy of the Studio-authored VFX before hiding the
+-- Workspace template locally. Runtime attacks clone this preserved source.
+local slashSourceTemplate = nil
 if slashTemplate and slashTemplate:IsA("BasePart") then
+	slashSourceTemplate = slashTemplate:Clone()
+	slashSourceTemplate.Name = "Slash Particle Source"
 	slashTemplate.LocalTransparencyModifier = 1
+	for _, obj in ipairs(slashTemplate:GetDescendants()) do
+		if obj:IsA("ParticleEmitter") then
+			obj.Enabled = false
+		end
+	end
 end
 
 local animationCache = {}
@@ -60,15 +70,14 @@ local SLASH_DELAY = 0.09
 local SLASH_EMIT_WINDOW = 0.12
 
 local function emitSlash(tool)
-	if not slashTemplate or not slashTemplate:IsA("BasePart") then return end
+	if not slashSourceTemplate or not slashSourceTemplate:IsA("BasePart") then return end
 
 	local character = player.Character
 	local root = character and character:FindFirstChild("HumanoidRootPart")
 	if not root or tool.Parent ~= character then return end
 
-	-- Clone the exact Studio asset. Texture, color, size, transparency, lifetime,
-	-- orientation, speed, drag, light emission, etc. all remain untouched.
-	local slash = slashTemplate:Clone()
+	-- Clone the preserved Studio asset exactly as it was authored at play start.
+	local slash = slashSourceTemplate:Clone()
 	slash.Name = "Player Slash Particle"
 	slash.Anchored = true
 	slash.CanCollide = false
@@ -84,8 +93,7 @@ local function emitSlash(tool)
 	slash.Parent = workspace
 
 	-- Play each emitter as authored. If it is Enabled in Studio, let it run briefly
-	-- so the complete VFX appears. If it is disabled, use its Rate to create an
-	-- equivalent burst instead of forcing a single tiny particle.
+	-- so the complete VFX appears. If disabled, use its Rate to create a burst.
 	for _, obj in ipairs(slash:GetDescendants()) do
 		if obj:IsA("ParticleEmitter") then
 			if obj.Enabled then
