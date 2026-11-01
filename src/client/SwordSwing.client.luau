@@ -50,26 +50,32 @@ local function loadTrack(animator, name, priority, looped)
 	return track
 end
 
-local function emitSlash(tool)
+-- Slash Particle is a visual-only player effect. These offsets keep it in front of
+-- the character and rotate it to roughly match each of the five attack animations.
+local slashArcByAttack = {
+	[1] = CFrame.new(0.65, 0.65, -3.15) * CFrame.Angles(0, math.rad(-8), math.rad(-38)),
+	[2] = CFrame.new(-0.55, 0.55, -3.1) * CFrame.Angles(0, math.rad(8), math.rad(38)),
+	[3] = CFrame.new(0.15, 0.9, -3.2) * CFrame.Angles(math.rad(-8), 0, math.rad(-12)),
+	[4] = CFrame.new(0.45, 0.35, -3.0) * CFrame.Angles(math.rad(8), math.rad(-10), math.rad(-58)),
+	[5] = CFrame.new(-0.35, 0.35, -3.0) * CFrame.Angles(math.rad(8), math.rad(10), math.rad(58)),
+}
+
+local function emitSlash(tool, attackIndex)
 	if not slashTemplate or not slashTemplate:IsA("BasePart") then return end
-	local handle = tool:FindFirstChild("Handle")
-	if not handle or not handle:IsA("BasePart") then return end
+	local character = player.Character
+	local root = character and character:FindFirstChild("HumanoidRootPart")
+	if not root or tool.Parent ~= character then return end
 
 	local slash = slashTemplate:Clone()
 	slash.Name = "Player Slash Particle"
-	slash.Anchored = false
+	slash.Anchored = true
 	slash.CanCollide = false
 	slash.CanTouch = false
 	slash.CanQuery = false
 	slash.Massless = true
 	slash.Transparency = 1
-	slash.CFrame = handle.CFrame
+	slash.CFrame = root.CFrame * (slashArcByAttack[attackIndex] or slashArcByAttack[1])
 	slash.Parent = workspace
-
-	local weld = Instance.new("WeldConstraint")
-	weld.Part0 = handle
-	weld.Part1 = slash
-	weld.Parent = slash
 
 	for _, obj in ipairs(slash:GetDescendants()) do
 		if obj:IsA("ParticleEmitter") then
@@ -199,7 +205,12 @@ local function bindSword(tool)
 		stopTrack(walkTrack, 0.08)
 		local track = attackTracks[index]
 		if track then track:Play(0.06, 1, 1) end
-		emitSlash(tool)
+		-- Slightly delay the burst so it lands during the visible part of the swing.
+		task.delay(0.06, function()
+			if equipped and tool.Parent == player.Character then
+				emitSlash(tool, index)
+			end
+		end)
 		combatRemote:FireServer(index)
 		local duration = 0.48
 		if track and track.Length > 0 then duration = math.clamp(track.Length * 0.75, 0.32, 0.8) end
