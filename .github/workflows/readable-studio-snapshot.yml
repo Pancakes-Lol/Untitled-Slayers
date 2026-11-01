@@ -8,30 +8,26 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
-  group: readable-studio-snapshot
-  cancel-in-progress: false
+  group: readable-studio-snapshot-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   split:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          persist-credentials: true
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
       - name: Split and validate snapshot
         run: python scripts/split_studio_snapshot.py
-      - name: Commit readable snapshot parts
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A studio-export/readable/
-          if ! git diff --cached --quiet; then
-            git commit -m "chore: refresh readable Studio snapshot parts"
-            git push
-          fi
+      - name: Upload readable snapshot
+        uses: actions/upload-artifact@v4
+        with:
+          name: readable-studio-snapshot-${{ github.sha }}
+          path: studio-export/readable/
+          if-no-files-found: error
+          retention-days: 30
