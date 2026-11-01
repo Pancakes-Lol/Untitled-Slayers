@@ -1,1078 +1,1866 @@
-        "Texture": "rbxassetid://6430908053"
-      },
-      "class": "ParticleEmitter"
-    },
-    {
-      "path": "Workspace/Particle Emitter/ParticleEmitter",
+      "path": "Workspace/TemplateR6/AnimSaves/Attack3/Keyframe/HumanoidRootPart/Torso/Head",
       "properties": {
-        "Enabled": true,
-        "Name": "ParticleEmitter",
-        "Shape": "Enum.ParticleEmitterShape.Cylinder",
-        "LightEmission": 1,
-        "Brightness": 1,
+        "CFrame": "0, 0, 0, 0.793002725, -0.609218061, 0, 0.609218061, 0.793002725, 0, 0, 0, 1",
         "Archivable": true,
-        "Texture": "rbxassetid://6430908053"
+        "Name": "Head"
       },
-      "class": "ParticleEmitter"
+      "class": "Pose"
     },
     {
-      "path": "Workspace/Particle Emitter/ParticleEmitter",
+      "path": "Workspace/TemplateR6/AnimSaves/Attack3/Keyframe/HumanoidRootPart/Null",
       "properties": {
-        "Enabled": true,
-        "Name": "ParticleEmitter",
-        "Shape": "Enum.ParticleEmitterShape.Cylinder",
-        "LightEmission": 1,
-        "Brightness": 1,
+        "Value": 0,
         "Archivable": true,
-        "Texture": "rbxassetid://6430908053"
+        "Name": "Null"
       },
-      "class": "ParticleEmitter"
+      "class": "IntValue"
     },
     {
-      "path": "Workspace/Particle Emitter/ParticleEmitter",
+      "path": "Workspace/TemplateR6/AnimSaves/Attack3/Keyframe",
       "properties": {
-        "Enabled": true,
-        "Name": "ParticleEmitter",
-        "Shape": "Enum.ParticleEmitterShape.Cylinder",
-        "LightEmission": 1,
-        "Brightness": 1,
+        "Name": "Keyframe",
+        "Archivable": true
+      },
+      "class": "Keyframe"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Attack3/Keyframe/HumanoidRootPart",
+      "properties": {
+        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
         "Archivable": true,
-        "Texture": "rbxassetid://6430908053"
+        "Name": "HumanoidRootPart"
       },
-      "class": "ParticleEmitter"
+      "class": "Pose"
     },
     {
-      "path": "Workspace/Particle Emitter/ParticleEmitter",
+      "path": "Workspace/TemplateR6/AnimSaves/Attack3/Keyframe/HumanoidRootPart/Torso",
       "properties": {
-        "Enabled": true,
-        "Name": "ParticleEmitter",
-        "Shape": "Enum.ParticleEmitterShape.Cylinder",
-        "LightEmission": 1,
-        "Brightness": 1,
+        "CFrame": "0, 0, 0, 0.980471313, 0.196063593, -0.0153318346, -0.196565673, 0.974566102, -0.107623927, -0.0061592455, 0.108535893, 0.994073451",
         "Archivable": true,
-        "Texture": "rbxassetid://6430908053"
+        "Name": "Torso"
       },
-      "class": "ParticleEmitter"
+      "class": "Pose"
     },
     {
-      "path": "Workspace/Particle Emitter/ParticleEmitter",
+      "path": "Workspace/TemplateR6/AnimSaves/Attack3/Keyframe/HumanoidRootPart/Torso/Right Leg",
       "properties": {
-        "Enabled": true,
-        "Name": "ParticleEmitter",
-        "Shape": "Enum.ParticleEmitterShape.Cylinder",
-        "LightEmission": 1,
-        "Brightness": 1,
+        "CFrame": "0.135894716, 0.00766527653, 0.0278101861, 0.970765173, -0.0276432447, -0.238434106, 0.0441690125, 0.996955812, 0.064246811, 0.23593235, -0.0728999302, 0.969031215",
         "Archivable": true,
-        "Texture": "rbxassetid://6430908053"
+        "Name": "Right Leg"
       },
-      "class": "ParticleEmitter"
+      "class": "Pose"
     },
     {
-      "path": "Workspace/Hills",
+      "path": "Workspace/TemplateR6/AnimSaves/Attack3/Keyframe/HumanoidRootPart/Torso/Left Leg",
       "properties": {
-        "Name": "Hills",
+        "CFrame": "-0.19789277, -0.0582453609, 0.0781119764, 0.910537958, -0.314554602, 0.268283427, 0.308513254, 0.948958457, 0.0655515045, -0.275209427, 0.0230818354, 0.961107194",
+        "Archivable": true,
+        "Name": "Left Leg"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Attack3/Keyframe/HumanoidRootPart/Torso/Head",
+      "properties": {
+        "CFrame": "0, 0, 0, 0.969468892, -0.245214403, 0, 0.245214403, 0.969468892, 0, 0, 0, 1",
+        "Archivable": true,
+        "Name": "Head"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Attack3/Keyframe/HumanoidRootPart/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Attack3/Keyframe",
+      "properties": {
+        "Name": "Keyframe",
+        "Archivable": true
+      },
+      "class": "Keyframe"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Attack3/Keyframe/HumanoidRootPart",
+      "properties": {
+        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Name": "HumanoidRootPart"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Attack3/Keyframe/HumanoidRootPart/Torso",
+      "properties": {
+        "CFrame": "0, 0, 0, 0.831800461, 0.554797411, -0.0175442435, -0.55417335, 0.828234196, -0.0831868276, -0.0316210836, 0.0789173916, 0.996379495",
+        "Archivable": true,
+        "Name": "Torso"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Attack3/Keyframe/HumanoidRootPart/Torso/Right Arm",
+      "properties": {
+        "CFrame": "0.01296404, 0.638758421, 0.1413427, -0.584039986, -0.791401982, -0.180499613, 0.434861988, -0.117287971, -0.892826438, 0.685414374, -0.599938154, 0.41265133",
+        "Archivable": true,
+        "Name": "Right Arm"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Attack3/Keyframe/HumanoidRootPart/Torso/Left Leg",
+      "properties": {
+        "CFrame": "-0.141728356, -0.0218828917, 0.0938469172, 0.88441062, -0.231013, 0.405525386, 0.221305877, 0.972586811, 0.0714013204, -0.410903394, 0.0265970454, 0.911290824",
+        "Archivable": true,
+        "Name": "Left Leg"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Attack3/Keyframe/HumanoidRootPart/Torso/Head",
+      "properties": {
+        "CFrame": "0, 0, 0, 0.919335663, -0.393474191, 0, 0.393474191, 0.919335663, 0, 0, 0, 1",
+        "Archivable": true,
+        "Name": "Head"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Attack3/Keyframe/HumanoidRootPart/Torso/Left Arm",
+      "properties": {
+        "CFrame": "-0.408029556, -0.146859989, -1.98676312, 0.122271493, 0.23427701, -0.964450061, -0.875754118, -0.431782901, -0.215912312, -0.467016518, 0.871020675, 0.152374327",
+        "Archivable": true,
+        "Name": "Left Arm"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Attack3/Keyframe/HumanoidRootPart/Torso/Right Leg",
+      "properties": {
+        "CFrame": "0.103903413, 0.0057965517, 0.021501869, 0.962451279, -0.0152115198, -0.271027863, 0.0338073373, 0.997371972, 0.0640759319, 0.269340992, -0.0708326697, 0.960436463",
+        "Archivable": true,
+        "Name": "Right Leg"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Attack3/Keyframe/HumanoidRootPart/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Attack3/Keyframe",
+      "properties": {
+        "Name": "Keyframe",
+        "Archivable": true
+      },
+      "class": "Keyframe"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Attack3/Keyframe/HumanoidRootPart",
+      "properties": {
+        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Name": "HumanoidRootPart"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Attack3/Keyframe/HumanoidRootPart/Torso",
+      "properties": {
+        "CFrame": "0, 0, 0, 0.275877953, -0.947303772, 0.162810296, 0.951941252, 0.245830119, -0.18268995, 0.133039176, 0.205385968, 0.969596446",
+        "Archivable": true,
+        "Name": "Torso"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Attack3/Keyframe/HumanoidRootPart/Torso/Head",
+      "properties": {
+        "CFrame": "0.000329103321, -0.000692409463, -2.26795673e-05, 0.505902529, 0.861926436, 0.0338459127, -0.862583876, 0.505353212, 0.0238156542, 0.00342319626, -0.0412433371, 0.999143243",
+        "Archivable": true,
+        "Name": "Head"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Attack3/Keyframe/HumanoidRootPart/Torso/Left Leg",
+      "properties": {
+        "CFrame": "-0.488500804, -0.396898806, 0.0700834394, 0.639746428, -0.761038959, 0.107442558, 0.761748374, 0.646434188, 0.0431497991, -0.102293253, 0.0542392433, 0.99327445",
+        "Archivable": true,
+        "Name": "Left Leg"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Attack3/Keyframe/HumanoidRootPart/Torso/Right Arm",
+      "properties": {
+        "CFrame": "0.708592415, 0.5257774, 0.0976581275, 0.734846294, -0.66773653, -0.118864238, 0.094594419, 0.274446368, -0.956938565, 0.671604753, 0.691958725, 0.264840066",
+        "Archivable": true,
+        "Name": "Right Arm"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Attack3/Keyframe/HumanoidRootPart/Torso/Right Leg",
+      "properties": {
+        "CFrame": "-0.0855389535, 0.0119641423, 0.207355887, 0.593398571, -0.0418029726, -0.803822517, 0.0849265009, 0.996327579, 0.0108802393, 0.800415874, -0.0747221187, 0.594769716",
+        "Archivable": true,
+        "Name": "Right Leg"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Attack3/Keyframe/HumanoidRootPart/Torso/Left Arm",
+      "properties": {
+        "CFrame": "-0.39558053, -0.333201468, -0.522604704, 0.237068415, 0.467055917, -0.851855159, -0.969709873, 0.0606617182, -0.236607313, -0.0588338077, 0.882144213, 0.467289746",
+        "Archivable": true,
+        "Name": "Left Arm"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Attack3/Keyframe/HumanoidRootPart/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Attack3/Keyframe",
+      "properties": {
+        "Name": "Keyframe",
+        "Archivable": true
+      },
+      "class": "Keyframe"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Attack3/Keyframe/HumanoidRootPart",
+      "properties": {
+        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Name": "HumanoidRootPart"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Attack3/Keyframe/HumanoidRootPart/Torso",
+      "properties": {
+        "CFrame": "0, 0, 0, 0.633245289, -0.768366575, 0.0928083211, 0.769280195, 0.61172694, -0.184386119, 0.0849027485, 0.188157246, 0.978462219",
+        "Archivable": true,
+        "Name": "Torso"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Attack3/Keyframe/HumanoidRootPart/Torso/Head",
+      "properties": {
+        "CFrame": "0.00074667763, -0.00132272858, -4.72664833e-05, 0.822306871, 0.568773866, 0.0175443385, -0.569033623, 0.822089791, 0.0192122441, -0.00349560147, -0.025781678, 0.999661505",
+        "Archivable": true,
+        "Name": "Head"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Attack3/Keyframe/HumanoidRootPart/Torso/Left Leg",
+      "properties": {
+        "CFrame": "-0.404543042, -0.279332638, 0.0558942854, 0.763918161, -0.63630563, 0.107442543, 0.635824621, 0.770626187, 0.0431497581, -0.110254511, 0.0353517123, 0.99327445",
+        "Archivable": true,
+        "Name": "Left Leg"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Attack3/Keyframe/HumanoidRootPart/Torso/Right Leg",
+      "properties": {
+        "CFrame": "0.00861909986, 0.011572361, 0.149463326, 0.796560109, -0.04180298, -0.60311234, 0.0783791617, 0.996327579, 0.0344616249, 0.599457026, -0.0747221634, 0.796911478",
+        "Archivable": true,
+        "Name": "Right Leg"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Attack3/Keyframe/HumanoidRootPart/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Attack3/Keyframe",
+      "properties": {
+        "Name": "Keyframe",
+        "Archivable": true
+      },
+      "class": "Keyframe"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Attack3/Keyframe/HumanoidRootPart",
+      "properties": {
+        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Name": "HumanoidRootPart"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Attack3/Keyframe/HumanoidRootPart/Torso",
+      "properties": {
+        "CFrame": "0, 0, 0, 0.457632422, -0.879715204, 0.129126668, 0.882446289, 0.431582928, -0.187149152, 0.108909085, 0.199592873, 0.973807693",
+        "Archivable": true,
+        "Name": "Torso"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Attack3/Keyframe/HumanoidRootPart/Torso/Right Arm",
+      "properties": {
+        "CFrame": "0.523749828, 0.644284129, 0.162915856, 0.356942058, -0.932378173, -0.0571213663, 0.275671601, 0.163566589, -0.947233438, 0.89252317, 0.322360635, 0.315414011",
+        "Archivable": true,
+        "Name": "Right Arm"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Attack3/Keyframe/HumanoidRootPart/Torso/Right Leg",
+      "properties": {
+        "CFrame": "-0.0459227562, 0.0121504068, 0.187685072, 0.698600352, -0.04180298, -0.714289963, 0.0826140121, 0.996327579, 0.022490453, 0.710726798, -0.0747221559, 0.699488521",
+        "Archivable": true,
+        "Name": "Right Leg"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Attack3/Keyframe/HumanoidRootPart/Torso/Left Arm",
+      "properties": {
+        "CFrame": "-0.618348897, -0.276263803, -1.05468249, 0.136608839, 0.468561888, -0.872804523, -0.955915809, -0.168829858, -0.240252972, -0.259928852, 0.867148042, 0.424842119",
+        "Archivable": true,
+        "Name": "Left Arm"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Attack3/Keyframe/HumanoidRootPart/Torso/Head",
+      "properties": {
+        "CFrame": "0.000995571725, -0.00176363532, -6.31511211e-05, 0.674507499, 0.737819493, 0.0257329438, -0.73826772, 0.674133003, 0.0224852636, -0.000757366419, -0.034164276, 0.999415934",
+        "Archivable": true,
+        "Name": "Head"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Attack3/Keyframe/HumanoidRootPart/Torso/Left Leg",
+      "properties": {
+        "CFrame": "-0.452819079, -0.334076524, 0.0634942353, 0.702412009, -0.703614295, 0.107442543, 0.703749955, 0.709136009, 0.0431497619, -0.106552199, 0.0453037471, 0.99327451",
+        "Archivable": true,
+        "Name": "Left Leg"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Attack3/Keyframe/HumanoidRootPart/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Attack3/Keyframe",
+      "properties": {
+        "Name": "Keyframe",
+        "Archivable": true
+      },
+      "class": "Keyframe"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Attack3/Keyframe/HumanoidRootPart",
+      "properties": {
+        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Name": "HumanoidRootPart"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Attack3/Keyframe/HumanoidRootPart/Torso",
+      "properties": {
+        "CFrame": "0, 0, 0, -0.0987294018, 0.994874597, 0.0218391884, -0.994697809, -0.0980294049, -0.0310862474, -0.0287860353, -0.0247925203, 0.999278069",
+        "Archivable": true,
+        "Name": "Torso"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Attack3/Keyframe/HumanoidRootPart/Torso/Left Arm",
+      "properties": {
+        "CFrame": "-0.0311552584, -0.0226120949, -0.590320349, 0.921001136, 0.297000021, -0.252086878, -0.373553187, 0.856907904, -0.355199158, 0.110521123, 0.421306551, 0.900158763",
+        "Archivable": true,
+        "Name": "Left Arm"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Attack3/Keyframe/HumanoidRootPart/Torso/Head",
+      "properties": {
+        "CFrame": "0, 0, 0, 0.617102742, -0.786882639, 0, 0.786882639, 0.617102742, 0, 0, 0, 1",
+        "Archivable": true,
+        "Name": "Head"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Attack3/Keyframe/HumanoidRootPart/Torso/Left Leg",
+      "properties": {
+        "CFrame": "-0.00166222453, 0.00103962421, 0.00388559699, 0.635637045, 0.0333768316, 0.771266222, -0.0557828359, 0.998438895, 0.00276543573, -0.769970059, -0.0447812155, 0.636506677",
+        "Archivable": true,
+        "Name": "Left Leg"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Attack3/Keyframe/HumanoidRootPart/Torso/Right Leg",
+      "properties": {
+        "CFrame": "0.00211067498, 0.000114560127, 0.000451982021, 0.927519798, 0.0239868201, -0.373003602, 0.000687320717, 0.997827291, 0.0658766404, 0.373773456, -0.061358247, 0.925488293",
+        "Archivable": true,
+        "Name": "Right Leg"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Attack3/Keyframe/HumanoidRootPart/Torso/Right Arm",
+      "properties": {
+        "CFrame": "-0.0379652195, 0.139891416, 0.0497187972, 0.797685564, -0.491492838, -0.349474519, 0.490407974, 0.865915895, -0.0984344408, 0.350995451, -0.0928653255, 0.931760848",
+        "Archivable": true,
+        "Name": "Right Arm"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Attack3/Keyframe/HumanoidRootPart/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Attack3/Keyframe",
+      "properties": {
+        "Name": "Keyframe",
+        "Archivable": true
+      },
+      "class": "Keyframe"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Attack3/Keyframe/HumanoidRootPart",
+      "properties": {
+        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Name": "HumanoidRootPart"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Attack3/Keyframe/HumanoidRootPart/Torso",
+      "properties": {
+        "CFrame": "0, 0, 0, -0.0688277856, 0.997426391, 0.0200814269, -0.997165918, -0.0681689978, -0.0318278596, -0.0303770155, -0.0222151559, 0.999291599",
+        "Archivable": true,
+        "Name": "Torso"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Attack3/Keyframe/HumanoidRootPart/Torso/Right Leg",
+      "properties": {
+        "CFrame": "0.00844492018, 0.000456929207, 0.00180494785, 0.930069327, 0.0215693116, -0.366750389, 0.00275029521, 0.99783808, 0.0656595305, 0.367373794, -0.0620765723, 0.927999437",
+        "Archivable": true,
+        "Name": "Right Leg"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Attack3/Keyframe/HumanoidRootPart/Torso/Left Arm",
+      "properties": {
+        "CFrame": "-0.0623107255, -0.045225203, -1.18063962, 0.709436834, 0.421833336, -0.564584732, -0.703400671, 0.473698378, -0.529940844, 0.0438962281, 0.773088574, 0.632777035",
+        "Archivable": true,
+        "Name": "Left Arm"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Attack3/Keyframe/HumanoidRootPart/Torso/Right Arm",
+      "properties": {
+        "CFrame": "-0.0759304464, 0.279782593, 0.099437058, 0.272606313, -0.785194159, -0.556017637, 0.781293392, 0.51791966, -0.348338366, 0.561485887, -0.339453518, 0.754655421",
+        "Archivable": true,
+        "Name": "Right Arm"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Attack3/Keyframe/HumanoidRootPart/Torso/Head",
+      "properties": {
+        "CFrame": "0, 0, 0, 0.641451538, -0.767163575, 0, 0.767163575, 0.641451538, 0, 0, 0, 1",
+        "Archivable": true,
+        "Name": "Head"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Attack3/Keyframe/HumanoidRootPart/Torso/Left Leg",
+      "properties": {
+        "CFrame": "-0.00705462694, 0.00379574299, 0.0151093006, 0.657768011, 0.0179141797, 0.753007531, -0.0395273939, 0.999160349, 0.0107578011, -0.752182722, -0.0368405506, 0.657923996",
+        "Archivable": true,
+        "Name": "Left Leg"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Attack3/Keyframe/HumanoidRootPart/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Attack3/Keyframe",
+      "properties": {
+        "Name": "Keyframe",
+        "Archivable": true
+      },
+      "class": "Keyframe"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Attack3/Keyframe/HumanoidRootPart",
+      "properties": {
+        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Name": "HumanoidRootPart"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Attack3/Keyframe/HumanoidRootPart/Torso",
+      "properties": {
+        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Name": "Torso"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Attack3/Keyframe/HumanoidRootPart/Torso/Left Arm",
+      "properties": {
+        "CFrame": "0, 4.17232513e-07, 0, 1, 0, 0, 0, 0.999999762, 0, 0, 0, 1",
+        "Archivable": true,
+        "Name": "Left Arm"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Attack3/Keyframe/HumanoidRootPart/Torso/Head",
+      "properties": {
+        "CFrame": "0, 0, 0, 0.608850777, -0.793284774, 0, 0.793284774, 0.608850777, 0, 0, 0, 1",
+        "Archivable": true,
+        "Name": "Head"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Attack3/Keyframe/HumanoidRootPart/Torso/Right Arm",
+      "properties": {
+        "CFrame": "0, 4.17232513e-07, 0, 1, 0, 0, 0, 0.999999762, 0, 0, 0, 1",
+        "Archivable": true,
+        "Name": "Right Arm"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Attack3/Keyframe/HumanoidRootPart/Torso/Left Leg",
+      "properties": {
+        "CFrame": "8.94069672e-08, 9.53674316e-07, 0, 0.62809062, 0.0384778529, 0.777188301, -0.0611470155, 0.998128533, 0, -0.775734007, -0.0475227311, 0.62926811",
+        "Archivable": true,
+        "Name": "Left Leg"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Attack3/Keyframe/HumanoidRootPart/Torso/Right Leg",
+      "properties": {
+        "CFrame": "1.04308128e-07, 1.31130219e-06, -1.1920929e-07, 0.926659286, 0.0247915406, -0.375083953, 0, 0.997822523, 0.0659520924, 0.375902385, -0.0611151047, 0.924641728",
+        "Archivable": true,
+        "Name": "Right Leg"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Attack3/Keyframe/HumanoidRootPart/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword",
+      "properties": {
+        "Name": "UnsheathingSword",
+        "Archivable": true
+      },
+      "class": "KeyframeSequence"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe",
+      "properties": {
+        "Name": "Keyframe",
+        "Archivable": true
+      },
+      "class": "Keyframe"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart",
+      "properties": {
+        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Name": "HumanoidRootPart"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Torso",
+      "properties": {
+        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Name": "Torso"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Torso/Right Arm",
+      "properties": {
+        "CFrame": "-0.0106274001, -0.0126372874, 0.00141894817, 0.993907452, -0.0242896266, -0.107507698, 0.0561767854, 0.950845897, 0.304525346, 0.0948264822, -0.308709353, 0.94641763",
+        "Archivable": true,
+        "Name": "Right Arm"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Torso/Right Arm/Ease",
+      "properties": {
+        "Name": "Ease",
         "Archivable": true
       },
       "class": "Folder"
     },
     {
-      "path": "Workspace/Hills/StoneHill1",
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Torso/Right Arm/Ease/Params",
       "properties": {
-        "CanCollide": true,
-        "Color": "0.384314, 0.419608, 0.443137",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "0, 7.979000091552734, 0",
-        "Transparency": 0,
-        "Name": "StoneHill1",
-        "Position": "-58.33763122558594, 11, 62.255859375",
-        "CFrame": "-58.3376312, 11, 62.2558594, 0.990318298, 0, 0.138815001, 0, 1, 0, -0.138815001, 0, 0.990318298",
-        "Material": "Enum.Material.Slate",
-        "Archivable": true,
-        "Size": "33.75, 22, 30"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Hills/Stonehill2",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.384314, 0.419608, 0.443137",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "0, -11.982999801635742, 0",
-        "Transparency": 0,
-        "Name": "Stonehill2",
-        "Position": "-31.75, 15.875, 37.75",
-        "CFrame": "-31.75, 15.875, 37.75, 0.978210211, 0, -0.207616881, 0, 1, 0, 0.207616881, 0, 0.978210211",
-        "Material": "Enum.Material.Slate",
-        "Archivable": true,
-        "Size": "30.528846740722656, 31.75, 30.528846740722656"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Hills/Hill3",
-      "properties": {
-        "Name": "Hill3",
-        "Archivable": true
-      },
-      "class": "Model"
-    },
-    {
-      "path": "Workspace/Hills/Hill3/Part",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.45098, 0.423529, 0.380392",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "0, 66.04499816894531, 0",
-        "Transparency": 0,
-        "Name": "Part",
-        "Position": "-124.62626647949219, 4.5, -8.342491149902344",
-        "CFrame": "-124.626266, 4.5, -8.34249115, 0.406013846, 0, 0.913866878, 0, 1, 0, -0.913866878, 0, 0.406013846",
-        "Material": "Enum.Material.Grass",
-        "Archivable": true,
-        "Size": "33.25, 13, 29.5"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Hills/Hill3/Part",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.384314, 0.419608, 0.443137",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "0, 66.04499816894531, 0",
-        "Transparency": 0,
-        "Name": "Part",
-        "Position": "-124.62626647949219, 4.25, -8.342491149902344",
-        "CFrame": "-124.626266, 4.25, -8.34249115, 0.406013846, 0, 0.913866878, 0, 1, 0, -0.913866878, 0, 0.406013846",
-        "Material": "Enum.Material.Slate",
-        "Archivable": true,
-        "Size": "33.75, 13, 30"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Hills/Hill4",
-      "properties": {
-        "Name": "Hill4",
-        "Archivable": true
-      },
-      "class": "Model"
-    },
-    {
-      "path": "Workspace/Hills/Hill4/Part",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.45098, 0.423529, 0.380392",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "-171.00399780273438, 53.95600128173828, 169.6219940185547",
-        "Transparency": 0,
-        "Name": "Part",
-        "Position": "-77.96855163574219, 0.7325162887573242, 78.375732421875",
-        "CFrame": "-77.9685516, 0.732516289, 78.3757324, -0.578778446, -0.105993882, 0.808567286, -0.0535605475, 0.994316816, 0.0920043588, -0.813723922, 0.00994284824, -0.581166267",
-        "Material": "Enum.Material.Grass",
-        "Archivable": true,
-        "Size": "25.721696853637695, 10.056602478027344, 22.82075309753418"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Hills/Hill4/Part",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.384314, 0.419608, 0.443137",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "-171.00399780273438, 53.95600128173828, 169.6219940185547",
-        "Transparency": 0,
-        "Name": "Part",
-        "Position": "-77.94805145263672, 0.5402183532714844, 78.37380981445312",
-        "CFrame": "-77.9480515, 0.540218353, 78.3738098, -0.578778446, -0.105993882, 0.808567286, -0.0535605475, 0.994316816, 0.0920043588, -0.813723922, 0.00994284824, -0.581166267",
-        "Material": "Enum.Material.Slate",
-        "Archivable": true,
-        "Size": "26.108488082885742, 10.056602478027344, 23.20754623413086"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Hills/Hill1",
-      "properties": {
-        "Name": "Hill1",
-        "Archivable": true
-      },
-      "class": "Model"
-    },
-    {
-      "path": "Workspace/Hills/Hill1/Part",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.45098, 0.423529, 0.380392",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "0, 10.043000221252441, 0",
-        "Transparency": 0,
-        "Name": "Part",
-        "Position": "-100.58724212646484, 5, -69.92560577392578",
-        "CFrame": "-100.587242, 5, -69.9256058, 0.984676182, 0, 0.174393207, 0, 1, 0, -0.174393207, 0, 0.984676182",
-        "Material": "Enum.Material.Grass",
-        "Archivable": true,
-        "Size": "43.75, 10, 51.5"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Hills/Hill1/Part",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.384314, 0.419608, 0.443137",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "0, 10.043000221252441, 0",
-        "Transparency": 0,
-        "Name": "Part",
-        "Position": "-100.58724212646484, 4.875, -69.92560577392578",
-        "CFrame": "-100.587242, 4.875, -69.9256058, 0.984676182, 0, 0.174393207, 0, 1, 0, -0.174393207, 0, 0.984676182",
-        "Material": "Enum.Material.Slate",
-        "Archivable": true,
-        "Size": "44.25, 9.75, 52"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Hills/Hill2",
-      "properties": {
-        "Name": "Hill2",
-        "Archivable": true
-      },
-      "class": "Model"
-    },
-    {
-      "path": "Workspace/Hills/Hill2/Part",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.384314, 0.419608, 0.443137",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "0, 29.67799949645996, 0",
-        "Transparency": 0,
-        "Name": "Part",
-        "Position": "-101.12626647949219, 6.5, -35.09248733520508",
-        "CFrame": "-101.126266, 6.5, -35.0924873, 0.868817389, 0, 0.495132387, 0, 1, 0, -0.495132387, 0, 0.868817389",
-        "Material": "Enum.Material.Slate",
-        "Archivable": true,
-        "Size": "33.75, 13, 30"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Hills/Hill2/Part",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.45098, 0.423529, 0.380392",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "0, 29.67799949645996, 0",
-        "Transparency": 0,
-        "Name": "Part",
-        "Position": "-101.12626647949219, 6.75, -35.09248733520508",
-        "CFrame": "-101.126266, 6.75, -35.0924873, 0.868817389, 0, 0.495132387, 0, 1, 0, -0.495132387, 0, 0.868817389",
-        "Material": "Enum.Material.Grass",
-        "Archivable": true,
-        "Size": "33.25, 13, 29.5"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Hills/Hill5",
-      "properties": {
-        "Name": "Hill5",
-        "Archivable": true
-      },
-      "class": "Model"
-    },
-    {
-      "path": "Workspace/Hills/Hill5/Part",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.45098, 0.423529, 0.380392",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "0, 0, 0",
-        "Transparency": 0,
-        "Name": "Part",
-        "Position": "-71.25, -4.625, 33.75",
-        "CFrame": "-71.25, -4.625, 33.75, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Material": "Enum.Material.Grass",
-        "Archivable": true,
-        "Size": "66, 11.25, 78"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Hills/Hill5/Part",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.384314, 0.419608, 0.443137",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "0, 7.120999813079834, 0",
-        "Transparency": 0,
-        "Name": "Part",
-        "Position": "-78.19600677490234, -4.75, 34.61774444580078",
-        "CFrame": "-78.1960068, -4.75, 34.6177444, 0.992286801, 0, 0.123963304, 0, 1, 0, -0.123963304, 0, 0.992286801",
-        "Material": "Enum.Material.Slate",
-        "Archivable": true,
-        "Size": "67, 11, 79"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Hills/Hill6",
-      "properties": {
-        "Name": "Hill6",
-        "Archivable": true
-      },
-      "class": "Model"
-    },
-    {
-      "path": "Workspace/Hills/Hill6/Part",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.384314, 0.419608, 0.443137",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "-5.894999980926514, 12.63700008392334, 6.422999858856201",
-        "Transparency": 0,
-        "Name": "Part",
-        "Position": "-30.910484313964844, 8.250000953674316, 12.236714363098145",
-        "CFrame": "-30.9104843, 8.25000095, 12.2367144, 0.969649136, -0.109165847, 0.218777671, 0.0889564827, 0.990981221, 0.100214824, -0.227744669, -0.0777114332, 0.97061497",
-        "Material": "Enum.Material.Slate",
-        "Archivable": true,
-        "Size": "30.528846740722656, 16.5, 30.528846740722656"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Hills/Hill6/Part",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.45098, 0.423529, 0.380392",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "-5.894999980926514, 12.63700008392334, 6.422999858856201",
-        "Transparency": 0,
-        "Name": "Part",
-        "Position": "-30.924129486083984, 8.373873710632324, 12.22700023651123",
-        "CFrame": "-30.9241295, 8.37387371, 12.2270002, 0.969649136, -0.109165847, 0.218777671, 0.0889564827, 0.990981221, 0.100214824, -0.227744669, -0.0777114332, 0.97061497",
-        "Material": "Enum.Material.Grass",
-        "Archivable": true,
-        "Size": "30.028846740722656, 16.75, 30.028846740722656"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Hills/Hill7",
-      "properties": {
-        "Name": "Hill7",
-        "Archivable": true
-      },
-      "class": "Model"
-    },
-    {
-      "path": "Workspace/Hills/Hill7/Part",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.45098, 0.423529, 0.380392",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "180, 62.71900177001953, 180",
-        "Transparency": 0,
-        "Name": "Part",
-        "Position": "-136.64932250976562, -0.27830183506011963, 9.597129821777344",
-        "CFrame": "-136.649323, -0.278301835, 9.59712982, -0.458361298, 0, 0.888766706, 0, 1, 0, -0.888766706, 0, -0.458361298",
-        "Material": "Enum.Material.Grass",
-        "Archivable": true,
-        "Size": "25.721696853637695, 10.056602478027344, 22.82075309753418"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Hills/Hill7/Part",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.384314, 0.419608, 0.443137",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "180, 62.71900177001953, 180",
-        "Transparency": 0,
-        "Name": "Part",
-        "Position": "-136.64932250976562, -0.47169816493988037, 9.597129821777344",
-        "CFrame": "-136.649323, -0.471698165, 9.59712982, -0.458361298, 0, 0.888766706, 0, 1, 0, -0.888766706, 0, -0.458361298",
-        "Material": "Enum.Material.Slate",
-        "Archivable": true,
-        "Size": "26.108488082885742, 10.056602478027344, 23.20754623413086"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Brickpath",
-      "properties": {
-        "Name": "Brickpath",
+        "Name": "Params",
         "Archivable": true
       },
       "class": "Folder"
     },
     {
-      "path": "Workspace/Brickpath/Part",
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Torso/Right Arm/Ease/Params/Direction",
       "properties": {
-        "CanCollide": true,
-        "Color": "0.352941, 0.282353, 0.231373",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "0, 0, 0",
-        "Transparency": 0,
-        "Name": "Part",
-        "Position": "-71.5, 1.2500001192092896, 16.999988555908203",
-        "CFrame": "-71.5, 1.25000012, 16.9999886, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Material": "Enum.Material.Brick",
+        "Value": "InOut",
         "Archivable": true,
-        "Size": "8, 0.5, 13.999977111816406"
+        "Name": "Direction"
       },
-      "class": "Part"
+      "class": "StringValue"
     },
     {
-      "path": "Workspace/Brickpath/Part",
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Torso/Right Arm/Ease/Type",
       "properties": {
-        "CanCollide": true,
-        "Color": "0.352941, 0.282353, 0.231373",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "22.333999633789062, 0, 0",
-        "Transparency": 0,
-        "Name": "Part",
-        "Position": "-71.5, 1.178857684135437, 16.173158645629883",
-        "CFrame": "-71.5, 1.17885768, 16.1731586, 1, 0, 0, 0, 0.924983799, -0.380006492, 0, 0.380006492, 0.924983799",
-        "Material": "Enum.Material.Brick",
+        "Value": "Sine",
         "Archivable": true,
-        "Size": "8, 0.5, 13.625550270080566"
+        "Name": "Type"
       },
-      "class": "Part"
+      "class": "StringValue"
     },
     {
-      "path": "Workspace/Brickpath/Part",
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Torso/Null",
       "properties": {
-        "CanCollide": true,
-        "Color": "0.352941, 0.282353, 0.231373",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "0, 0, 0",
-        "Transparency": 0,
-        "Name": "Part",
-        "Position": "-71.5, 3.75, 2.999988555908203",
-        "CFrame": "-71.5, 3.75, 2.99998856, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Material": "Enum.Material.Brick",
+        "Value": 0,
         "Archivable": true,
-        "Size": "8, 0.5, 13.999977111816406"
+        "Name": "Null"
       },
-      "class": "Part"
+      "class": "IntValue"
     },
     {
-      "path": "Workspace/Brickpath/Part",
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Null",
       "properties": {
-        "CanCollide": true,
-        "Color": "0.352941, 0.282353, 0.231373",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "0, 0, 0",
-        "Transparency": 0,
-        "Name": "Part",
-        "Position": "-71.5, 1.2500001192092896, 34",
-        "CFrame": "-71.5, 1.25000012, 34, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Material": "Enum.Material.Brick",
+        "Value": 0,
         "Archivable": true,
-        "Size": "20, 0.5, 20"
+        "Name": "Null"
       },
-      "class": "Part"
+      "class": "IntValue"
     },
     {
-      "path": "Workspace/Brickpath/Part",
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe",
       "properties": {
-        "CanCollide": true,
-        "Color": "0.352941, 0.282353, 0.231373",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "0, 0, 0",
-        "Transparency": 0,
-        "Name": "Part",
-        "Position": "-71.5, 1.2500001192092896, 16.999988555908203",
-        "CFrame": "-71.5, 1.25000012, 16.9999886, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Material": "Enum.Material.Brick",
-        "Archivable": true,
-        "Size": "8, 0.5, 13.999977111816406"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Brickpath/Part",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.352941, 0.282353, 0.231373",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "0, 0, 0",
-        "Transparency": 0,
-        "Name": "Part",
-        "Position": "-71.5, 3.75, 2.999988555908203",
-        "CFrame": "-71.5, 3.75, 2.99998856, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Material": "Enum.Material.Brick",
-        "Archivable": true,
-        "Size": "8, 0.5, 13.999977111816406"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "Workspace/Brickpath/Part",
-      "properties": {
-        "CanCollide": true,
-        "Color": "0.352941, 0.282353, 0.231373",
-        "Anchored": true,
-        "Shape": "Enum.PartType.Block",
-        "Rotation": "0, 0, 0",
-        "Transparency": 0,
-        "Name": "Part",
-        "Position": "-71.5, 1.2500001192092896, 34",
-        "CFrame": "-71.5, 1.25000012, 34, 1, 0, 0, 0, 1, 0, 0, 0, 1",
-        "Material": "Enum.Material.Brick",
-        "Archivable": true,
-        "Size": "20, 0.5, 20"
-      },
-      "class": "Part"
-    },
-    {
-      "path": "ReplicatedStorage",
-      "properties": {
-        "Name": "ReplicatedStorage",
+        "Name": "Keyframe",
         "Archivable": true
       },
-      "class": "ReplicatedStorage"
+      "class": "Keyframe"
     },
     {
-      "path": "ReplicatedStorage/GameShared",
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart",
       "properties": {
-        "Name": "GameShared",
+        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Name": "HumanoidRootPart"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Torso",
+      "properties": {
+        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Name": "Torso"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Torso/Right Arm",
+      "properties": {
+        "CFrame": "-0.0170786977, -0.0337762833, 0.00688189268, 0.99252528, 0.0194885992, -0.120472625, 0.0182143524, 0.952453911, 0.30413723, 0.120671853, -0.304058194, 0.944979787",
+        "Archivable": true,
+        "Name": "Right Arm"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Torso/Right Arm/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Torso/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe",
+      "properties": {
+        "Name": "Keyframe",
+        "Archivable": true
+      },
+      "class": "Keyframe"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart",
+      "properties": {
+        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Name": "HumanoidRootPart"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Torso",
+      "properties": {
+        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Name": "Torso"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Torso/Right Arm",
+      "properties": {
+        "CFrame": "-0.0127778314, -0.0196835995, 0.00323992968, 0.993679941, -0.00969198346, -0.111831345, 0.0435325652, 0.951567829, 0.304340899, 0.10346546, -0.307285666, 0.9459759",
+        "Archivable": true,
+        "Name": "Right Arm"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Torso/Right Arm/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Torso/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe",
+      "properties": {
+        "Name": "Keyframe",
+        "Archivable": true
+      },
+      "class": "Keyframe"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart",
+      "properties": {
+        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Name": "HumanoidRootPart"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Torso",
+      "properties": {
+        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Name": "Torso"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Torso/Right Arm",
+      "properties": {
+        "CFrame": "-0.00348622538, -0.0157849193, 0.00381326675, 0.992789268, -0.0775945038, -0.0913704634, 0.102198377, 0.946253717, 0.306853235, 0.0626495332, -0.313978374, 0.947360814",
+        "Archivable": true,
+        "Name": "Right Arm"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Torso/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe",
+      "properties": {
+        "Name": "Keyframe",
+        "Archivable": true
+      },
+      "class": "Keyframe"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart",
+      "properties": {
+        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Name": "HumanoidRootPart"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Torso",
+      "properties": {
+        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Name": "Torso"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Torso/Right Arm",
+      "properties": {
+        "CFrame": "-0.00935792923, -0.0115900636, 0.00133442879, 0.993966818, -0.0336373597, -0.104395933, 0.0641824231, 0.950212181, 0.304921299, 0.0889415517, -0.309781939, 0.946638525",
+        "Archivable": true,
+        "Name": "Right Arm"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Torso/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe",
+      "properties": {
+        "Name": "Keyframe",
+        "Archivable": true
+      },
+      "class": "Keyframe"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart",
+      "properties": {
+        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Name": "HumanoidRootPart"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Torso",
+      "properties": {
+        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Name": "Torso"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Torso/Right Arm",
+      "properties": {
+        "CFrame": "-0.00235117832, -0.0335848927, 0.00968837738, 0.991970837, -0.0874374956, -0.0913704634, 0.111578628, 0.94519347, 0.306853235, 0.0595323108, -0.314584255, 0.947360873",
+        "Archivable": true,
+        "Name": "Right Arm"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Torso/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe",
+      "properties": {
+        "Name": "Keyframe",
+        "Archivable": true
+      },
+      "class": "Keyframe"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart",
+      "properties": {
+        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Name": "HumanoidRootPart"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Torso",
+      "properties": {
+        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Name": "Torso"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Torso/Right Arm",
+      "properties": {
+        "CFrame": "-0.00235118577, -0.0335848629, 0.00968843699, 0.991970837, -0.0874374956, -0.0913704634, 0.111578599, 0.945193589, 0.306853145, 0.0595323145, -0.314584225, 0.947360873",
+        "Archivable": true,
+        "Name": "Right Arm"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Torso/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe",
+      "properties": {
+        "Name": "Keyframe",
+        "Archivable": true
+      },
+      "class": "Keyframe"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart",
+      "properties": {
+        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Name": "HumanoidRootPart"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Torso",
+      "properties": {
+        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Name": "Torso"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Torso/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Torso/Right Arm",
+      "properties": {
+        "CFrame": "0.689457238, 0.00790539384, 0.427593797, 0.630995333, -0.738779426, 0.236747682, -0.136839449, 0.194395483, 0.971331716, -0.76362282, -0.645301938, 0.0215684772",
+        "Archivable": true,
+        "Name": "Right Arm"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe",
+      "properties": {
+        "Name": "Keyframe",
+        "Archivable": true
+      },
+      "class": "Keyframe"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart",
+      "properties": {
+        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Name": "HumanoidRootPart"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Torso",
+      "properties": {
+        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Name": "Torso"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Torso/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Torso/Right Arm",
+      "properties": {
+        "CFrame": "1.05347395, 0.0584132075, 0.404806823, 0.374386728, -0.927016616, 0.0217823684, -0.315463811, -0.105243996, 0.943083525, -0.871961713, -0.35994938, -0.331842273",
+        "Archivable": true,
+        "Name": "Right Arm"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe",
+      "properties": {
+        "Name": "Keyframe",
+        "Archivable": true
+      },
+      "class": "Keyframe"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart",
+      "properties": {
+        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Name": "HumanoidRootPart"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Torso",
+      "properties": {
+        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Name": "Torso"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Torso/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Torso/Right Arm",
+      "properties": {
+        "CFrame": "1.12809289, 0.0542117953, 0.35538435, 0.30850035, -0.951079369, -0.0165910721, -0.347031444, -0.128771663, 0.928971171, -0.88566184, -0.280830294, -0.369780749",
+        "Archivable": true,
+        "Name": "Right Arm"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe",
+      "properties": {
+        "Name": "Keyframe",
+        "Archivable": true
+      },
+      "class": "Keyframe"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart",
+      "properties": {
+        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Name": "HumanoidRootPart"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Torso",
+      "properties": {
+        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Name": "Torso"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Torso/Right Arm",
+      "properties": {
+        "CFrame": "0.596451759, -0.00788444281, 0.421835303, 0.693364024, -0.666977763, 0.27273947, -0.100777835, 0.285019755, 0.953209102, -0.713505626, -0.688406765, 0.130405888",
+        "Archivable": true,
+        "Name": "Right Arm"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Torso/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe",
+      "properties": {
+        "Name": "Keyframe",
+        "Archivable": true
+      },
+      "class": "Keyframe"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart",
+      "properties": {
+        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Name": "HumanoidRootPart"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Torso",
+      "properties": {
+        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Name": "Torso"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Torso/Right Arm",
+      "properties": {
+        "CFrame": "0.16460672, -0.0798375458, 0.237838387, 0.967527151, -0.167324692, 0.18945618, 0.00713379681, 0.767305791, 0.641241431, -0.252666444, -0.619066715, 0.743583024",
+        "Archivable": true,
+        "Name": "Right Arm"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Torso/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe",
+      "properties": {
+        "Name": "Keyframe",
+        "Archivable": true
+      },
+      "class": "Keyframe"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart",
+      "properties": {
+        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Name": "HumanoidRootPart"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Torso",
+      "properties": {
+        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Name": "Torso"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Torso/Right Arm",
+      "properties": {
+        "CFrame": "0.0105902562, -0.0988110453, 0.105871797, 0.999361098, 0.0356892087, -0.00190569647, -0.0316737331, 0.909099579, 0.415372401, 0.0165567864, -0.415046543, 0.909649432",
+        "Archivable": true,
+        "Name": "Right Arm"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Torso/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe",
+      "properties": {
+        "Name": "Keyframe",
+        "Archivable": true
+      },
+      "class": "Keyframe"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart",
+      "properties": {
+        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Name": "HumanoidRootPart"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Torso",
+      "properties": {
+        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Name": "Torso"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Torso/Right Arm",
+      "properties": {
+        "CFrame": "-0.0153562054, -0.0626931489, 0.0330252647, 0.993668735, 0.0505717099, -0.1003244, -0.0147172678, 0.94386065, 0.330015212, 0.111381717, -0.326449186, 0.938629329",
+        "Archivable": true,
+        "Name": "Right Arm"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Torso/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe",
+      "properties": {
+        "Name": "Keyframe",
+        "Archivable": true
+      },
+      "class": "Keyframe"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart",
+      "properties": {
+        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Name": "HumanoidRootPart"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Torso",
+      "properties": {
+        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Name": "Torso"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Torso/Right Arm",
+      "properties": {
+        "CFrame": "-0.0198040977, -0.0427825451, 0.0092138052, 0.991316378, 0.0379295573, -0.125909582, 0.00217941776, 0.952626944, 0.304132789, 0.1314805, -0.301766127, 0.94427222",
+        "Archivable": true,
+        "Name": "Right Arm"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Torso/Right Arm/Ease",
+      "properties": {
+        "Name": "Ease",
         "Archivable": true
       },
       "class": "Folder"
     },
     {
-      "path": "ReplicatedStorage/Assets",
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Torso/Right Arm/Ease/Params",
       "properties": {
-        "Name": "Assets",
+        "Name": "Params",
         "Archivable": true
       },
       "class": "Folder"
     },
     {
-      "path": "ReplicatedStorage/Assets/Swords",
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Torso/Right Arm/Ease/Params/Direction",
       "properties": {
-        "Name": "Swords",
+        "Value": "Out",
+        "Archivable": true,
+        "Name": "Direction"
+      },
+      "class": "StringValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Torso/Right Arm/Ease/Type",
+      "properties": {
+        "Value": "Quad",
+        "Archivable": true,
+        "Name": "Type"
+      },
+      "class": "StringValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Torso/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe",
+      "properties": {
+        "Name": "Keyframe",
+        "Archivable": true
+      },
+      "class": "Keyframe"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart",
+      "properties": {
+        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Name": "HumanoidRootPart"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Torso",
+      "properties": {
+        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Name": "Torso"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Torso/Right Arm",
+      "properties": {
+        "CFrame": "-0.019229129, -0.0408227742, 0.00870287418, 0.991598666, 0.0340612531, -0.124787197, 0.00554926787, 0.952617943, 0.304118037, 0.129233196, -0.302255392, 0.944425941",
+        "Archivable": true,
+        "Name": "Right Arm"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Torso/Right Arm/Ease",
+      "properties": {
+        "Name": "Ease",
         "Archivable": true
       },
       "class": "Folder"
     },
     {
-      "path": "ReplicatedStorage/Assets/Swords/Sword",
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Torso/Right Arm/Ease/Params",
       "properties": {
-        "Enabled": true,
-        "Archivable": true,
-        "Name": "Sword"
-      },
-      "class": "Tool"
-    },
-    {
-      "path": "ReplicatedStorage/Assets/Swords/Sword/Handle",
-      "properties": {
-        "CanCollide": false,
-        "Color": "0.639216, 0.635294, 0.647059",
-        "Anchored": false,
-        "TextureID": "rbxassetid://13662522227",
-        "MeshId": "rbxassetid://13662643071",
-        "Rotation": "-79.45099639892578, 90, 0",
-        "Transparency": 0,
-        "Name": "Handle",
-        "Position": "-114.75009155273438, 0.6348333358764648, 35.97504806518555",
-        "CFrame": "-114.750092, 0.634833336, 35.9750481, 0, 0, 1.00000036, -0.983098745, 0.183076113, 0, -0.183076113, -0.983098745, 0",
-        "Material": "Enum.Material.Plastic",
-        "Archivable": true,
-        "Size": "0.4206775724887848, 4.6761860847473145, 0.39863264560699463"
-      },
-      "class": "MeshPart"
-    },
-    {
-      "path": "ReplicatedStorage/Assets/Swords/Sword/Handle/SwordLines",
-      "properties": {
-        "Enabled": true,
-        "Name": "SwordLines",
-        "Archivable": true,
-        "Active": false
-      },
-      "class": "Motor6D"
-    },
-    {
-      "path": "ReplicatedStorage/Assets/Swords/Sword/Handle/ManualWeld",
-      "properties": {
-        "Enabled": true,
-        "Name": "ManualWeld",
-        "Archivable": true,
-        "Active": false
-      },
-      "class": "ManualWeld"
-    },
-    {
-      "path": "ReplicatedStorage/Assets/Swords/Sword/Handle/Weld",
-      "properties": {
-        "Enabled": true,
-        "Name": "Weld",
-        "Archivable": true,
-        "Active": false
-      },
-      "class": "Weld"
-    },
-    {
-      "path": "ReplicatedStorage/Assets/Swords/Sword/Handle/Trail3",
-      "properties": {
-        "Enabled": true,
-        "Name": "Trail3",
-        "LightEmission": 0.3499999940395355,
-        "Brightness": 2,
-        "Archivable": true,
-        "Texture": "rbxassetid://9035819980"
-      },
-      "class": "Trail"
-    },
-    {
-      "path": "ReplicatedStorage/Assets/Swords/Sword/Handle/Attachment",
-      "properties": {
-        "Visible": false,
-        "Name": "Attachment",
-        "Position": "-0.010235786437988281, -0.9125518798828125, -0.0000457763671875",
-        "CFrame": "-0.0102357864, -0.91255188, -4.57763672e-05, 0.999358892, -0.035803061, -1.94044401e-06, 0.035803061, 0.999358892, 5.72221595e-08, 1.93715118e-06, -1.26659302e-07, 1.00000012",
-        "Archivable": true,
-        "Rotation": "-0.000003278587655586307, -0.00011117925168946385, 2.051802635192871"
-      },
-      "class": "Attachment"
-    },
-    {
-      "path": "ReplicatedStorage/Assets/Swords/Sword/Handle/Trail",
-      "properties": {
-        "Enabled": true,
-        "Name": "Trail",
-        "LightEmission": 0.3499999940395355,
-        "Brightness": 2,
-        "Archivable": true,
-        "Texture": "rbxassetid://9035801067"
-      },
-      "class": "Trail"
-    },
-    {
-      "path": "ReplicatedStorage/Assets/Swords/Sword/Handle/Trail2",
-      "properties": {
-        "Enabled": true,
-        "Name": "Trail2",
-        "LightEmission": 0.44999998807907104,
-        "Brightness": 10,
-        "Archivable": true,
-        "Texture": "rbxassetid://9035800962"
-      },
-      "class": "Trail"
-    },
-    {
-      "path": "ReplicatedStorage/Assets/Swords/Sword/Handle/Attachment",
-      "properties": {
-        "Visible": false,
-        "Name": "Attachment",
-        "Position": "-0.12395477294921875, 2.261444091796875, -0.000030517578125",
-        "CFrame": "-0.123954773, 2.26144409, -3.05175781e-05, 0.999358952, -0.0358029418, -2.44915987e-06, 0.0358029455, 0.999358892, 1.06095357e-07, 2.44379112e-06, -1.93714442e-07, 1.00000012",
-        "Archivable": true,
-        "Rotation": "-0.00000607881520409137, -0.00014032651961315423, 2.051795721054077"
-      },
-      "class": "Attachment"
-    },
-    {
-      "path": "ReplicatedStorage/Assets/Enemies",
-      "properties": {
-        "Name": "Enemies",
+        "Name": "Params",
         "Archivable": true
       },
       "class": "Folder"
     },
     {
-      "path": "ReplicatedStorage/Assets/Configs",
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Torso/Right Arm/Ease/Params/Direction",
       "properties": {
-        "Name": "Configs",
+        "Value": "InOut",
+        "Archivable": true,
+        "Name": "Direction"
+      },
+      "class": "StringValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Torso/Right Arm/Ease/Type",
+      "properties": {
+        "Value": "Sine",
+        "Archivable": true,
+        "Name": "Type"
+      },
+      "class": "StringValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Torso/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe",
+      "properties": {
+        "Name": "Keyframe",
         "Archivable": true
       },
-      "class": "Folder"
+      "class": "Keyframe"
     },
     {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart",
       "properties": {
-        "Name": "SwordsConfig",
+        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Name": "HumanoidRootPart"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Torso",
+      "properties": {
+        "CFrame": "0, 0.0339355469, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Name": "Torso"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Torso/Right Arm",
+      "properties": {
+        "CFrame": "1.24236059, -0.169397295, -0.719254315, -0.91356504, -0.236852244, 0.330605656, -0.149095312, 0.95136404, 0.269581735, -0.378378183, 0.196987867, -0.904447675",
+        "Archivable": true,
+        "Name": "Right Arm"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe",
+      "properties": {
+        "Name": "Keyframe",
         "Archivable": true
       },
-      "path": "ReplicatedStorage/Assets/Configs/SwordsConfig",
-      "source": "local SwordsConfig = {\n\t\n\t[\"Sword1\"] = {\n\t\t[\"Damage\"] = 10,\n\t\t[\"Cooldown\"] = 1,\n\t\t[\"Type\"] = \"Sword\",\n\t\t[\"Rarity\"] = \"Common\",\n\t\t[\"ModelName\"] = \"Sword1\",\n\t\t[\"DisplayName\"] = \"Basic Katana\",\n\t\n}\n\nreturn SwordsConfig",
-      "class": "ModuleScript"
+      "class": "Keyframe"
     },
     {
-      "path": "ServerScriptService",
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart",
       "properties": {
-        "Name": "ServerScriptService",
+        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Name": "HumanoidRootPart"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Torso",
+      "properties": {
+        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+        "Archivable": true,
+        "Name": "Torso"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Torso/Null",
+      "properties": {
+        "Value": 0,
+        "Archivable": true,
+        "Name": "Null"
+      },
+      "class": "IntValue"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Torso/Right Arm",
+      "properties": {
+        "CFrame": "1.32420349, -0.433836848, -0.0460414886, -0.493139118, -0.869948745, 0.00163766742, -0.421740919, 0.240713358, 0.874180675, -0.760886788, 0.430401742, -0.485598385",
+        "Archivable": true,
+        "Name": "Right Arm"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe",
+      "properties": {
+        "Name": "Keyframe",
         "Archivable": true
       },
-      "class": "ServerScriptService"
+      "class": "Keyframe"
     },
     {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart",
       "properties": {
-        "Enabled": true,
+        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
         "Archivable": true,
-        "Name": "GameServer"
+        "Name": "HumanoidRootPart"
       },
-      "path": "ServerScriptService/GameServer",
-      "source": "-- Server entry point. Gameplay systems live in separate scripts.\n",
-      "class": "Script"
+      "class": "Pose"
     },
     {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Null",
       "properties": {
-        "Enabled": true,
+        "Value": 0,
         "Archivable": true,
-        "Name": "Init"
+        "Name": "Null"
       },
-      "path": "ServerScriptService/GameServer/Init",
-      "source": "-- Server entry point. Gameplay systems live in separate scripts.\n",
-      "class": "Script"
+      "class": "IntValue"
     },
     {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Torso",
       "properties": {
-        "Enabled": true,
+        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
         "Archivable": true,
-        "Name": "FloatBrick"
+        "Name": "Torso"
       },
-      "path": "ServerScriptService/GameServer/FloatBrick",
-      "source": "-- A smooth, floating pet that follows about five studs behind each player.\nlocal Players = game:GetService(\"Players\")\nlocal RunService = game:GetService(\"RunService\")\nlocal ServerStorage = game:GetService(\"ServerStorage\")\n\nlocal template = workspace:WaitForChild(\"Float Brick\", 20)\nif not template or not template:IsA(\"BasePart\") then\n\twarn(\"[Untitled Slayers] Workspace.Float Brick was not found.\")\n\treturn\nend\ntemplate.Anchored = true\ntemplate.CanCollide = false\ntemplate.Parent = ServerStorage\n\nlocal active = {}\nlocal connections = {}\n\nlocal function clearBrick(player)\n\tlocal state = active[player]\n\tif state then\n\t\tstate.brick:Destroy()\n\t\tactive[player] = nil\n\tend\nend\n\nlocal function setupCharacter(player, character)\n\tclearBrick(player)\n\tlocal root = character:WaitForChild(\"HumanoidRootPart\", 10)\n\tif not root or not character.Parent then return end\n\n\tlocal brick = template:Clone()\n\tbrick.Name = \"Float Brick\"\n\tbrick.Anchored = true\n\tbrick.CanCollide = false\n\tbrick.CanTouch = false\n\tbrick.CanQuery = false\n\tbrick.CFrame = root.CFrame * CFrame.new(0, 1.5, 5)\n\tbrick.Parent = workspace\n\tactive[player] = {brick = brick, root = root, elapsed = 0}\nend\n\nlocal function addPlayer(player)\n\tlocal added = player.CharacterAdded:Connect(function(character)\n\t\tsetupCharacter(player, character)\n\tend)\n\tlocal removing = player.CharacterRemoving:Connect(function()\n\t\tclearBrick(player)\n\tend)\n\tconnections[player] = {added, removing}\n\tif player.Character then\n\t\ttask.spawn(setupCharacter, player, player.Character)\n\tend\nend\n\nPlayers.PlayerAdded:Connect(addPlayer)\nPlayers.PlayerRemoving:Connect(function(player)\n\tclearBrick(player)\n\tfor _, connection in connections[player] or {} do\n\t\tconnection:Disconnect()\n\tend\n\tconnections[player] = nil\nend)\nfor _, player in Players:GetPlayers() do\n\taddPlayer(player)\nend\n\nRunService.Heartbeat:Connect(function(dt)\n\tfor player, state in pairs(active) do\n\t\tlocal root, brick = state.root, state.brick\n\t\tif root.Parent and brick.Parent and player.Character == root.Parent then\n\t\t\tstate.elapsed += dt\n\t\t\tlocal bob = math.sin(state.elapsed * 2.6) * 0.35\n\t\t\tlocal target = root.CFrame * CFrame.new(0, 1.5 + bob, 5)\n\t\t\tlocal alpha = 1 - math.exp(-7 * dt)\n\t\t\tbrick.CFrame = brick.CFrame:Lerp(target, alpha)\n\t\tend\n\tend\nend)\n",
-      "class": "Script"
+      "class": "Pose"
     },
     {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Torso/Null",
       "properties": {
-        "Enabled": true,
+        "Value": 0,
         "Archivable": true,
-        "Name": "Leaderstats"
+        "Name": "Null"
       },
-      "path": "ServerScriptService/GameServer/Leaderstats",
-      "source": "-- Temporary session-only currency values for the existing MainUI scripts.\n-- Replace with your persistent currency system when it is ready.\nlocal Players = game:GetService(\"Players\")\n\nlocal function setup(player)\n\tlocal stats = player:FindFirstChild(\"leaderstats\")\n\tif not stats then\n\t\tstats = Instance.new(\"Folder\")\n\t\tstats.Name = \"leaderstats\"\n\t\tstats.Parent = player\n\tend\n\n\tfor _, name in {\"Coins\", \"Gems\"} do\n\t\tif not stats:FindFirstChild(name) then\n\t\t\tlocal value = Instance.new(\"IntValue\")\n\t\t\tvalue.Name = name\n\t\t\tvalue.Value = 0\n\t\t\tvalue.Parent = stats\n\t\tend\n\tend\nend\n\nPlayers.PlayerAdded:Connect(setup)\nfor _, player in Players:GetPlayers() do\n\tsetup(player)\nend\n",
-      "class": "Script"
+      "class": "IntValue"
     },
     {
+      "path": "Workspace/TemplateR6/AnimSaves/UnsheathingSword/Keyframe/HumanoidRootPart/Torso/Right Arm",
       "properties": {
-        "Enabled": true,
+        "CFrame": "1.3735944, -0.0832439363, -0.00225120783, -0.19930622, -0.976095676, -0.0866835713, -0.475532413, 0.018992804, 0.879493237, -0.856823325, 0.216509134, -0.467950702",
         "Archivable": true,
-        "Name": "TetsuDialogue"
+        "Name": "Right Arm"
       },
-      "path": "ServerScriptService/GameServer/TetsuDialogue",
-      "source": "-- Tetsu slayer onboarding. Server validates names, quest state and combat.\nlocal Players = game:GetService(\"Players\")\nlocal ReplicatedStorage = game:GetService(\"ReplicatedStorage\")\nlocal TextService = game:GetService(\"TextService\")\nlocal DataStoreService = game:GetService(\"DataStoreService\")\n\nlocal npc = workspace:WaitForChild(\"Tetsu\", 30)\nif not npc then warn(\"[Tetsu] Workspace/Tetsu missing\") return end\nlocal torso = npc:FindFirstChild(\"Torso\") or npc:FindFirstChild(\"UpperTorso\") or npc:FindFirstChild(\"HumanoidRootPart\")\nif not torso or not torso:IsA(\"BasePart\") then warn(\"[Tetsu] Missing torso\") return end\nlocal remote = ReplicatedStorage:FindFirstChild(\"TetsuDialogue\") or Instance.new(\"RemoteEvent\")\nremote.Name = \"TetsuDialogue\"\nremote.Parent = ReplicatedStorage\nlocal prompt = torso:FindFirstChild(\"TetsuTalkPrompt\") or Instance.new(\"ProximityPrompt\")\nprompt.Name = \"TetsuTalkPrompt\"\nprompt.ActionText = \"Talk\"\nprompt.ObjectText = \"Tetsu\"\nprompt.KeyboardKeyCode = Enum.KeyCode.E\nprompt.HoldDuration = 0\nprompt.MaxActivationDistance = 12\nprompt.RequiresLineOfSight = false\nprompt.Parent = torso\n\nlocal store = DataStoreService:GetDataStore(\"TetsuSlayerJourneyV1\")\nlocal state = {}\nlocal dummy\nlocal DUMMY_DISTANCE = 19\n\nlocal function send(player, kind, data)\n\tremote:FireClient(player, kind, data or {})\nend\nlocal function nearby(player)\n\tlocal character = player.Character\n\tlocal root = character and character:FindFirstChild(\"HumanoidRootPart\")\n\tlocal humanoid = character and character:FindFirstChildOfClass(\"Humanoid\")\n\treturn root and humanoid and humanoid.Health > 0 and (root.Position - torso.Position).Magnitude <= 18\nend\nlocal function persist(player)\n\tlocal s = state[player]\n\tif not s or not s.loaded then return end\n\tlocal saved = {name=s.name, stage=s.stage}\n\tlocal ok, err = pcall(function() store:SetAsync(tostring(player.UserId), saved) end)\n\tif not ok then warn(\"[Tetsu] Could not save \"..player.Name..\": \"..tostring(err)) end\nend\nlocal function setName(player, name)\n\tlocal s = state[player]\n\tif not s then return end\n\ts.name = name\n\tplayer:SetAttribute(\"SlayerName\", name)\n\tlocal hum = player.Character and player.Character:FindFirstChildOfClass(\"Humanoid\")\n\tif hum then hum.DisplayName = name end\nend\nlocal function grantSword(player)\n\tlocal s = state[player]\n\tif not s or (s.stage ~= \"hunt\" and s.stage ~= \"return\" and s.stage ~= \"done\") then return end\n\tlocal backpack = player:FindFirstChildOfClass(\"Backpack\")\n\tif not backpack then return end\n\tif backpack:FindFirstChild(\"Novice Slayer Sword\") or (player.Character and player.Character:FindFirstChild(\"Novice Slayer Sword\")) then return end\n\tlocal tool = Instance.new(\"Tool\")\n\ttool.Name = \"Novice Slayer Sword\"\n\ttool.ToolTip = \"Your first weapon. Click to strike the training enemy.\"\n\ttool.RequiresHandle = true\n\ttool.CanBeDropped = false\n\t-- Roblox attaches the character's hand to the Tool's Handle.\n\t-- Make the HANDLE the hilt itself, rather than the blade, so grip offsets cannot misplace the hand.\n\tlocal handle = Instance.new(\"Part\")\n\thandle.Name = \"Handle\"\n\thandle.Size = Vector3.new(0.4, 1.2, 0.5)\n\thandle.Color = Color3.fromRGB(36, 34, 49)\n\thandle.Material = Enum.Material.SmoothPlastic\n\thandle.CanCollide = false\n\thandle.Massless = true\n\thandle.Parent = tool\n\n\tlocal blade = Instance.new(\"Part\")\n\tblade.Name = \"Blade\"\n\tblade.Size = Vector3.new(0.28, 3.1, 0.6)\n\tblade.Color = Color3.fromRGB(205, 215, 233)\n\tblade.Material = Enum.Material.Metal\n\tblade.CanCollide = false\n\tblade.Massless = true\n\tblade.CFrame = handle.CFrame * CFrame.new(0, 2.15, 0)\n\tblade.Parent = tool\n\tlocal bladeWeld = Instance.new(\"WeldConstraint\")\n\tbladeWeld.Part0 = handle\n\tbladeWeld.Part1 = blade\n\tbladeWeld.Parent = blade\n\n\tlocal guard = Instance.new(\"Part\")\n\tguard.Name = \"Crossguard\"\n\tguard.Size = Vector3.new(1.35, 0.2, 0.7)\n\tguard.Color = Color3.fromRGB(85, 79, 110)\n\tguard.Material = Enum.Material.Metal\n\tguard.CanCollide = false\n\tguard.Massless = true\n\tguard.CFrame = handle.CFrame * CFrame.new(0, 0.68, 0)\n\tguard.Parent = tool\n\tlocal guardWeld = Instance.new(\"WeldConstraint\")\n\tguardWeld.Part0 = handle\n\tguardWeld.Part1 = guard\n\tguardWeld.Parent = guard\n\n\t-- The hand now naturally holds the middle of the dark Handle.\n\ttool.Grip = CFrame.new(0, 0, 0)\n\tlocal lastAttack = 0\n\ttool.Activated:Connect(function()\n\t\tif os.clock() - lastAttack < 0.55 then return end\n\t\tlastAttack = os.clock()\n\t\tif tool.Parent ~= player.Character then return end\n\t\tlocal character = player.Character\n\t\tlocal root = character and character:FindFirstChild(\"HumanoidRootPart\")\n\t\tlocal playerHum = character and character:FindFirstChildOfClass(\"Humanoid\")\n\t\tlocal enemyHum = dummy and dummy:FindFirstChildOfClass(\"Humanoid\")\n\t\tlocal enemyPart = dummy and dummy.PrimaryPart\n\t\tif not root or not playerHum or playerHum.Health <= 0 or not enemyHum or enemyHum.Health <= 0 or not enemyPart then return end\n\t\tlocal offset = enemyPart.Position - root.Position\n\t\tif offset.Magnitude > 9 or offset.Magnitude < 0.01 or root.CFrame.LookVector:Dot(offset.Unit) < 0.1 then return end\n\t\tenemyHum:SetAttribute(\"LastHitUserId\", player.UserId)\n\t\tenemyHum:TakeDamage(25)\n\tend)\n\ttool.Parent = backpack\nend\nlocal function spawnDummy()\n\tif dummy and dummy.Parent then dummy:Destroy() end\n\tlocal model = Instance.new(\"Model\")\n\tmodel.Name = \"Slayer Training Enemy\"\n\tlocal body = Instance.new(\"Part\")\n\tbody.Name = \"HumanoidRootPart\"\n\tbody.Size = Vector3.new(3, 4, 2)\n\tbody.Anchored = true\n\tbody.Color = Color3.fromRGB(127, 78, 58)\n\tbody.Material = Enum.Material.Wood\n\tbody.CFrame = torso.CFrame * CFrame.new(0, 0, -DUMMY_DISTANCE)\n\tbody.Parent = model\n\tlocal head = Instance.new(\"Part\")\n\thead.Name = \"Head\"\n\thead.Shape = Enum.PartType.Ball\n\thead.Size = Vector3.new(2.2, 2.2, 2.2)\n\thead.Anchored = true\n\thead.CanCollide = false\n\thead.Color = Color3.fromRGB(154, 108, 79)\n\thead.CFrame = body.CFrame * CFrame.new(0, 3, 0)\n\thead.Parent = model\n\tlocal humanoid = Instance.new(\"Humanoid\")\n\thumanoid.MaxHealth = 100\n\thumanoid.Health = 100\n\thumanoid.Parent = model\n\tmodel.PrimaryPart = body\n\tmodel.Parent = workspace\n\tdummy = model\n\thumanoid.Died:Connect(function()\n\t\tlocal userId = humanoid:GetAttribute(\"LastHitUserId\")\n\t\tlocal player = userId and Players:GetPlayerByUserId(userId)\n\t\tlocal s = player and state[player]\n\t\tif s and s.stage == \"hunt\" then\n\t\t\ts.stage = \"return\"\n\t\t\tsend(player, \"Quest\", {text=\"Training enemy defeated! Return to Tetsu to finish your first quest.\"})\n\t\t\ttask.spawn(persist, player)\n\t\tend\n\t\ttask.delay(5, function()\n\t\t\tif dummy == model then spawnDummy() end\n\t\tend)\n\tend)\nend\nspawnDummy()\n\nlocal function talk(player)\n\tlocal s = state[player]\n\tif not s or not s.loaded or not nearby(player) then return end\n\tif s.stage == \"name\" then\n\t\tsend(player, \"Question\", {question=\"Welcome, traveler. What should I call you?\", answers={\"Captain Noodles\", player.DisplayName, \"Choose my own name...\"}})\n\telseif s.stage == \"math\" then\n\t\tsend(player, \"Question\", {question=\"One last test. What's 9 + 10?\", answers={\"19\", \"21\", \"910\"}})\n\telseif s.stage == \"offer\" then\n\t\tsend(player, \"Story\", {text=\"You have potential, \"..(s.name or \"traveler\")..\". Take this sword and defeat the training enemy to begin your slayer journey.\", button=\"Accept sword & quest\"})\n\telseif s.stage == \"hunt\" then\n\t\tgrantSword(player)\n\t\tsend(player, \"Story\", {text=\"Equip your Novice Slayer Sword and defeat the training enemy near me. Click or tap to attack!\", button=\"Let's go\"})\n\telseif s.stage == \"return\" then\n\t\ts.stage = \"done\"\n\t\ttask.spawn(persist, player)\n\t\tsend(player, \"Story\", {text=\"Well done, \"..(s.name or \"slayer\")..\"! You defeated your first enemy. Your slayer journey has officially begun!\", button=\"Thank you!\"})\n\telse\n\t\tsend(player, \"Story\", {text=\"Welcome back, \"..(s.name or \"slayer\")..\". Keep training. Your greatest battles are still ahead!\", button=\"Goodbye\"})\n\tend\nend\nprompt.Triggered:Connect(talk)\n\nremote.OnServerEvent:Connect(function(player, action, value)\n\tlocal s = state[player]\n\tif not s or not s.loaded or not nearby(player) then return end\n\tif action == \"Close\" then return end\n\tif action == \"Choose\" and s.stage == \"name\" and type(value) == \"number\" and value % 1 == 0 then\n\t\tif value == 3 then send(player, \"NameEntry\") return end\n\t\tif value ~= 1 and value ~= 2 then return end\n\t\tsetName(player, value == 1 and \"Captain Noodles\" or player.DisplayName)\n\t\ts.stage = \"math\"\n\t\ttalk(player)\n\telseif action == \"CustomName\" and s.stage == \"name\" and type(value) == \"string\" then\n\t\tlocal name = value:match(\"^%s*(.-)%s*$\")\n\t\tif #name < 3 or #name > 20 or not name:match(\"^[%w_ ]+$\") then\n\t\t\tsend(player, \"NameError\", {text=\"Use 3–20 letters, numbers, spaces or underscores.\"}) return\n\t\tend\n\t\tlocal ok, filtered = pcall(function()\n\t\t\treturn TextService:FilterStringAsync(name, player.UserId):GetNonChatStringForBroadcastAsync()\n\t\tend)\n\t\tif not ok or not filtered or filtered == \"\" or filtered:find(\"#\", 1, true) then\n\t\t\tsend(player, \"NameError\", {text=\"That name can't be used. Try another.\"}) return\n\t\tend\n\t\tsetName(player, filtered)\n\t\ts.stage = \"math\"\n\t\ttalk(player)\n\telseif action == \"Choose\" and s.stage == \"math\" and type(value) == \"number\" and value % 1 == 0 and value >= 1 and value <= 3 then\n\t\ts.stage = \"offer\"\n\t\tsend(player, \"Story\", {text=(value == 2 and \"21?! Ha! I like your confidence. \" or value == 1 and \"Correct! \" or \"That's... creative. \")..\"Now let's begin your slayer journey.\", button=\"Continue\"})\n\telseif action == \"Continue\" and s.stage == \"offer\" then\n\t\ttalk(player)\n\telseif action == \"Accept\" and s.stage == \"offer\" then\n\t\ts.stage = \"hunt\"\n\t\tgrantSword(player)\n\t\ttask.spawn(persist, player)\n\t\ttalk(player)\n\telseif action == \"Continue\" then\n\t\tsend(player, \"Close\")\n\tend\nend)\n\nPlayers.PlayerAdded:Connect(function(player)\n\tlocal s = {stage=\"name\", loaded=false}\n\tstate[player] = s\n\tlocal ok, data = pcall(function() return store:GetAsync(tostring(player.UserId)) end)\n\tif ok and type(data) == \"table\" then\n\t\tif type(data.name) == \"string\" and #data.name <= 20 then s.name = data.name end\n\t\tif data.stage == \"hunt\" or data.stage == \"return\" or data.stage == \"done\" then s.stage = data.stage\n\t\telseif s.name then s.stage = \"math\" end\n\tend\n\ts.loaded = true\n\tplayer.CharacterAdded:Connect(function()\n\t\ttask.wait(0.5)\n\t\tif state[player] ~= s then return end\n\t\tif s.name then setName(player, s.name) end\n\t\tgrantSword(player)\n\tend)\n\tif player.Character then\n\t\ttask.defer(function()\n\t\t\tif s.name then setName(player, s.name) end\n\t\t\tgrantSword(player)\n\t\tend)\n\tend\nend)\nPlayers.PlayerRemoving:Connect(function(player)\n\tpersist(player)\n\tstate[player] = nil\nend)\ngame:BindToClose(function()\n\tfor player in pairs(state) do persist(player) end\nend)\n",
-      "class": "Script"
+      "class": "Pose"
     },
     {
+      "path": "Workspace/TemplateR6/AnimSaves/Attack2",
       "properties": {
-        "Enabled": true,
-        "Archivable": true,
-        "Name": "SlayerOverhead"
-      },
-      "path": "ServerScriptService/GameServer/SlayerOverhead",
-      "source": "-- Visible overhead Slayer Name tag for all players, including the local player.\nlocal Players = game:GetService(\"Players\")\n\nlocal function attachTag(player, character)\n\tlocal head = character:WaitForChild(\"Head\", 10)\n\tlocal humanoid = character:WaitForChild(\"Humanoid\", 10)\n\tif not head or not humanoid then return end\n\tif player.Character ~= character then return end\n\n\t-- Hide Roblox's default name to prevent duplicate labels.\n\thumanoid.DisplayDistanceType = Enum.HumanoidDisplayDistanceType.None\n\tlocal old = head:FindFirstChild(\"SlayerOverheadTag\")\n\tif old then old:Destroy() end\n\n\tlocal gui = Instance.new(\"BillboardGui\")\n\tgui.Name = \"SlayerOverheadTag\"\n\tgui.Adornee = head\n\tgui.AlwaysOnTop = true\n\tgui.Size = UDim2.fromOffset(220, 66)\n\tgui.StudsOffsetWorldSpace = Vector3.new(0, 2.7, 0)\n\tgui.MaxDistance = 110\n\tgui.ResetOnSpawn = false\n\tgui.Parent = head\n\n\tlocal name = Instance.new(\"TextLabel\")\n\tname.Name = \"SlayerName\"\n\tname.BackgroundTransparency = 1\n\tname.Size = UDim2.new(1, 0, 0, 34)\n\tname.Position = UDim2.fromOffset(0, 0)\n\tname.Font = Enum.Font.GothamBold\n\tname.TextSize = 19\n\tname.TextColor3 = Color3.fromRGB(247, 240, 255)\n\tname.TextStrokeColor3 = Color3.fromRGB(18, 14, 34)\n\tname.TextStrokeTransparency = 0.25\n\tname.TextScaled = false\n\tname.Text = player:GetAttribute(\"SlayerName\") or player.DisplayName\n\tname.Parent = gui\n\n\tlocal title = Instance.new(\"TextLabel\")\n\ttitle.Name = \"SlayerTitle\"\n\ttitle.BackgroundTransparency = 1\n\ttitle.Size = UDim2.new(1, 0, 0, 25)\n\ttitle.Position = UDim2.fromOffset(0, 32)\n\ttitle.Font = Enum.Font.GothamSemibold\n\ttitle.TextSize = 13\n\ttitle.TextColor3 = Color3.fromRGB(186, 165, 255)\n\ttitle.TextStrokeColor3 = Color3.fromRGB(18, 14, 34)\n\ttitle.TextStrokeTransparency = 0.3\n\ttitle.Text = \"NOVICE SLAYER\"\n\ttitle.Parent = gui\n\n\tlocal connection\n\tconnection = player:GetAttributeChangedSignal(\"SlayerName\"):Connect(function()\n\t\tif not gui.Parent then\n\t\t\tconnection:Disconnect()\n\t\t\treturn\n\t\tend\n\t\tname.Text = player:GetAttribute(\"SlayerName\") or player.DisplayName\n\tend)\n\tgui.Destroying:Connect(function()\n\t\tif connection then connection:Disconnect() end\n\tend)\nend\n\nlocal function onPlayer(player)\n\tplayer.CharacterAdded:Connect(function(character)\n\t\ttask.spawn(attachTag, player, character)\n\tend)\n\tif player.Character then\n\t\ttask.spawn(attachTag, player, player.Character)\n\tend\nend\n\nPlayers.PlayerAdded:Connect(onPlayer)\nfor _, player in ipairs(Players:GetPlayers()) do\n\tonPlayer(player)\nend\n",
-      "class": "Script"
-    },
-    {
-      "path": "ServerStorage",
-      "properties": {
-        "Name": "ServerStorage",
+        "Name": "Attack2",
         "Archivable": true
       },
-      "class": "ServerStorage"
+      "class": "KeyframeSequence"
     },
     {
-      "path": "ServerStorage/__Rojo_SessionLock",
+      "path": "Workspace/TemplateR6/AnimSaves/Attack2/Keyframe",
       "properties": {
-        "Name": "__Rojo_SessionLock",
-        "Archivable": false
-      },
-      "class": "ObjectValue"
-    },
-    {
-      "path": "StarterGui",
-      "properties": {
-        "Name": "StarterGui",
+        "Name": "Keyframe",
         "Archivable": true
       },
-      "class": "StarterGui"
+      "class": "Keyframe"
     },
     {
-      "path": "StarterGui/MainUI",
+      "path": "Workspace/TemplateR6/AnimSaves/Attack2/Keyframe/HumanoidRootPart",
       "properties": {
-        "Enabled": true,
-        "ResetOnSpawn": true,
+        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
         "Archivable": true,
-        "Name": "MainUI"
+        "Name": "HumanoidRootPart"
       },
-      "class": "ScreenGui"
+      "class": "Pose"
     },
     {
-      "path": "StarterGui/MainUI/MainFrame",
+      "path": "Workspace/TemplateR6/AnimSaves/Attack2/Keyframe/HumanoidRootPart/Torso",
       "properties": {
-        "Visible": true,
-        "ClipsDescendants": false,
-        "Active": false,
-        "LayoutOrder": 0,
-        "AutomaticSize": "Enum.AutomaticSize.None",
-        "Rotation": 0,
-        "Size": "{1, 0}, {1, 0}",
-        "AnchorPoint": "0.5, 0.5",
-        "Transparency": 1,
-        "BackgroundTransparency": 1,
-        "Position": "{0.5, 0}, {0.5, 0}",
-        "Name": "MainFrame",
-        "ZIndex": 1,
+        "CFrame": "0, 0, 0, 0.199235216, 0.971239388, -0.130381495, -0.969456434, 0.175928652, -0.170889974, -0.14303723, 0.16044648, 0.976625502",
         "Archivable": true,
-        "BackgroundColor3": "1, 1, 1"
+        "Name": "Torso"
       },
-      "class": "Frame"
+      "class": "Pose"
     },
     {
-      "path": "StarterGui/MainUI/MainFrame/CashLabel",
+      "path": "Workspace/TemplateR6/AnimSaves/Attack2/Keyframe/HumanoidRootPart/Torso/Head",
       "properties": {
-        "Visible": true,
-        "Active": false,
-        "AnchorPoint": "0, 0",
-        "ZIndex": 1,
+        "CFrame": "-1.11758709e-08, -3.7252903e-09, 0, 0.262098104, -0.957777143, -0.118184537, 0.963081241, 0.251795709, 0.0952544808, -0.061474219, -0.138787314, 0.988412321",
         "Archivable": true,
-        "Size": "{0.0841472596, 0}, {0.0471544713, 0}",
-        "TextColor3": "1, 1, 1",
-        "ClipsDescendants": false,
-        "Text": "100,000,000$",
-        "LayoutOrder": 0,
-        "AutomaticSize": "Enum.AutomaticSize.None",
-        "Rotation": 0,
-        "Transparency": 1,
-        "Name": "CashLabel",
-        "Position": "{0.0458302014, 0}, {0.934782624, 0}",
-        "Font": "Enum.Font.FredokaOne",
-        "BackgroundTransparency": 1,
-        "TextSize": 14,
-        "BackgroundColor3": "1, 1, 1"
+        "Name": "Head"
       },
-      "class": "TextLabel"
+      "class": "Pose"
     },
     {
+      "path": "Workspace/TemplateR6/AnimSaves/Attack2/Keyframe/HumanoidRootPart/Torso/Right Arm",
       "properties": {
-        "Enabled": true,
+        "CFrame": "0.662809491, -0.51966095, -1.76717949, 0.559707403, -0.821327507, -0.110220626, 0.250453383, 0.0408704132, 0.967265725, -0.789937198, -0.568990827, 0.228579789",
         "Archivable": true,
-        "Name": "CoinsLabel"
+        "Name": "Right Arm"
       },
-      "path": "StarterGui/MainUI/MainFrame/CashLabel/CoinsLabel",
-      "source": "-- CoinsLabel (LocalScript) > TextLabel\nlocal Players = game:GetService(\"Players\")\n\nlocal player      = Players.LocalPlayer\nlocal coinsLabel  = script.Parent\n\n-- ─── Format number with commas ────────────────────────────────────────────────\n\nlocal function formatCoins(n)\n\tlocal str     = tostring(math.floor(n))\n\tlocal result  = \"\"\n\tlocal count   = 0\n\n\tfor i = #str, 1, -1 do\n\t\tif count > 0 and count % 3 == 0 then\n\t\t\tresult = \",\" .. result\n\t\tend\n\t\tresult = str:sub(i, i) .. result\n\t\tcount += 1\n\tend\n\n\treturn result .. \"$\"\nend\n\n-- ─── Update label ─────────────────────────────────────────────────────────────\n\nlocal function updateLabel(coins)\n\tcoinsLabel.Text = formatCoins(coins)\nend\n\n-- ─── Hook into leaderstats ────────────────────────────────────────────────────\n\nlocal function setupCoins()\n\tlocal leaderstats = player:WaitForChild(\"leaderstats\")\n\tlocal coins       = leaderstats:WaitForChild(\"Coins\")\n\n\tupdateLabel(coins.Value)\n\n\tcoins:GetPropertyChangedSignal(\"Value\"):Connect(function()\n\t\tupdateLabel(coins.Value)\n\tend)\nend\n\nsetupCoins()",
-      "class": "LocalScript"
+      "class": "Pose"
     },
     {
-      "path": "StarterGui/MainUI/MainFrame/CashLabel/UIStroke",
+      "path": "Workspace/TemplateR6/AnimSaves/Attack2/Keyframe/HumanoidRootPart/Torso/Left Arm",
       "properties": {
-        "Enabled": true,
-        "Transparency": 0,
-        "Name": "UIStroke",
-        "Color": "0.352941, 0.235294, 0",
-        "ZIndex": 1,
+        "CFrame": "-0.737512589, 0.0363108218, -2.1569705, -0.708019137, 0.619838953, -0.338391483, 0.146584362, -0.339747846, -0.929023504, -0.690812886, -0.707368851, 0.149689198",
+        "Archivable": true,
+        "Name": "Left Arm"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Attack2/Keyframe/HumanoidRootPart/Torso/Left Leg",
+      "properties": {
+        "CFrame": "0.0993555784, 0.0118264556, 0.213275343, 0.408209324, 0.0418029949, 0.911930799, -0.0852921829, 0.996327758, -0.00749225868, -0.908895195, -0.0747221634, 0.410275757",
+        "Archivable": true,
+        "Name": "Left Leg"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Attack2/Keyframe/HumanoidRootPart/Torso/Right Leg",
+      "properties": {
+        "CFrame": "0.501276493, -0.42384541, 0.072635591, 0.613102198, 0.782663465, -0.107442491, -0.783603013, 0.619761705, 0.0431497134, 0.100360438, 0.0577370711, 0.99327457",
+        "Archivable": true,
+        "Name": "Right Leg"
+      },
+      "class": "Pose"
+    },
+    {
+      "path": "Workspace/TemplateR6/AnimSaves/Attack2/Keyframe",
+      "properties": {
+        "Name": "Keyframe",
         "Archivable": true
       },
-      "class": "UIStroke"
+      "class": "Keyframe"
     },
     {
-      "path": "StarterGui/MainUI/MainFrame/CashLabel/ImageLabel",
+      "path": "Workspace/TemplateR6/AnimSaves/Attack2/Keyframe/HumanoidRootPart",
       "properties": {
-        "ImageColor3": "1, 1, 1",
-        "ImageTransparency": 0,
-        "AnchorPoint": "0, 0",
-        "Image": "rbxassetid://96578222489735",
-        "ZIndex": 1,
+        "CFrame": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
         "Archivable": true,
-        "Size": "{0.400000006, 0}, {1.60000002, 0}",
-        "ClipsDescendants": false,
-        "LayoutOrder": 0,
-        "Visible": true,
-        "Rotation": 0,
-        "Transparency": 1,
-        "Name": "ImageLabel",
-        "Position": "{-0.400000006, 0}, {-0.300000429, 0}",
-        "AutomaticSize": "Enum.AutomaticSize.None",
-        "Active": false,
-        "BackgroundTransparency": 1,
-        "BackgroundColor3": "1, 1, 1"
+        "Name": "HumanoidRootPart"
       },
-      "class": "ImageLabel"
+      "class": "Pose"
     },
     {
-      "path": "StarterGui/MainUI/MainFrame/CashLabel/UIGradient",
+      "path": "Workspace/TemplateR6/AnimSaves/Attack2/Keyframe/HumanoidRootPart/Torso",
       "properties": {
-        "Rotation": 80,
-        "Name": "UIGradient",
-        "Scale": 1,
+        "CFrame": "0, 0, 0, 0.214429453, 0.968412817, -0.127266556, -0.966570079, 0.191634655, -0.170348182, -0.140578657, 0.159539714, 0.97713083",
         "Archivable": true,
-        "Enabled": true
-      },
-      "class": "UIGradient"
-    },
-    {
-      "path": "StarterGui/MainUI/MainFrame/GemLabel",
-      "properties": {
-        "Visible": true,
-        "Active": false,
-        "AnchorPoint": "0, 0",
-        "ZIndex": 1,
-        "Archivable": true,
-        "Size": "{0.0841472596, 0}, {0.0471544713, 0}",
-        "TextColor3": "1, 1, 1",
-        "ClipsDescendants": false,
-        "Text": "100,000,000",
-        "LayoutOrder": 0,
-        "AutomaticSize": "Enum.AutomaticSize.None",
-        "Rotation": 0,
-        "Transparency": 1,
-        "Name": "GemLabel",
-        "Position": "{0.0458302014, 0}, {0.87577641, 0}",
-        "Font": "Enum.Font.FredokaOne",
-        "BackgroundTransparency": 1,
-        "TextSize": 14,
-        "BackgroundColor3": "1, 1, 1"
-      },
-      "class": "TextLabel"
-    },
-    {
-      "properties": {
-        "Enabled": true,
-        "Archivable": true,
-        "Name": "GemsLabel"
-      },
-      "path": "StarterGui/MainUI/MainFrame/GemLabel/GemsLabel",
-      "source": "-- CoinsLabel (LocalScript) > TextLabel\nlocal Players = game:GetService(\"Players\")\n\nlocal player      = Players.LocalPlayer\nlocal coinsLabel  = script.Parent\n\n-- ─── Format number with commas ────────────────────────────────────────────────\n\nlocal function formatCoins(n)\n\tlocal str     = tostring(math.floor(n))\n\tlocal result  = \"\"\n\tlocal count   = 0\n\n\tfor i = #str, 1, -1 do\n\t\tif count > 0 and count % 3 == 0 then\n\t\t\tresult = \",\" .. result\n\t\tend\n\t\tresult = str:sub(i, i) .. result\n\t\tcount += 1\n\tend\n\n\treturn result .. \"\"\nend\n\n-- ─── Update label ─────────────────────────────────────────────────────────────\n\nlocal function updateLabel(coins)\n\tcoinsLabel.Text = formatCoins(coins)\nend\n\n-- ─── Hook into leaderstats ────────────────────────────────────────────────────\n\nlocal function setupCoins()\n\tlocal leaderstats = player:WaitForChild(\"leaderstats\")\n\tlocal coins       = leaderstats:WaitForChild(\"Gems\")\n\n\tupdateLabel(coins.Value)\n\n\tcoins:GetPropertyChangedSignal(\"Value\"):Connect(function()\n\t\tupdateLabel(coins.Value)\n\tend)\nend\n\nsetupCoins()",
-      "class": "LocalScript"
-    },
-    {
-      "path": "StarterGui/MainUI/MainFrame/GemLabel/UIStroke",
-      "properties": {
-        "Enabled": true,
-        "Transparency": 0,
-        "Name": "UIStroke",
-        "Color": "0, 0.00392157, 0.345098",
-        "ZIndex": 1,
-        "Archivable": true
-      },
-      "class": "UIStroke"
-    },
-    {
-      "path": "StarterGui/MainUI/MainFrame/GemLabel/ImageLabel",
-      "properties": {
-        "ImageColor3": "1, 1, 1",
-        "ImageTransparency": 0,
-        "AnchorPoint": "0, 0",
-        "Image": "rbxassetid://135227335050960",
-        "ZIndex": 1,
-        "Archivable": true,
-        "Size": "{0.400000006, 0}, {1.60000002, 0}",
-        "ClipsDescendants": false,
-        "LayoutOrder": 0,
-        "Visible": true,
-        "Rotation": 0,
-        "Transparency": 1,
-        "Name": "ImageLabel",
-        "Position": "{-0.400000006, 0}, {-0.300000012, 0}",
-        "AutomaticSize": "Enum.AutomaticSize.None",
-        "Active": false,
-        "BackgroundTransparency": 1,
-        "BackgroundColor3": "1, 1, 1"
-      },
-      "class": "ImageLabel"
-    },
-    {
-      "path": "StarterGui/MainUI/MainFrame/GemLabel/UIGradient",
-      "properties": {
-        "Rotation": 80,
-        "Name": "UIGradient",
-        "Scale": 1,
-        "Archivable": true,
-        "Enabled": true
-      },
-      "class": "UIGradient"
-    },
-    {
-      "path": "StarterPack",
-      "properties": {
-        "Name": "StarterPack",
-        "Archivable": true
-      },
-      "class": "StarterPack"
-    },
-    {
-      "path": "StarterPlayer",
-      "properties": {
-        "Name": "StarterPlayer",
-        "Archivable": true
-      },
-      "class": "StarterPlayer"
-    },
-    {
-      "path": "StarterPlayer/StarterPlayerScripts",
-      "properties": {
-        "Name": "StarterPlayerScripts",
-        "Archivable": true
-      },
-      "class": "StarterPlayerScripts"
-    },
-    {
-      "properties": {
-        "Enabled": true,
-        "Archivable": true,
-        "Name": "GameClient"
-      },
-      "path": "StarterPlayer/StarterPlayerScripts/GameClient",
-      "source": "-- Client entry point. Client systems can be added here.\n",
-      "class": "LocalScript"
-    },
-    {
-      "properties": {
-        "Enabled": true,
-        "Archivable": true,
-        "Name": "Init"
-      },
-      "path": "StarterPlayer/StarterPlayerScripts/GameClient/Init",
-      "source": "-- Client entry point. Client systems can be added here.\n",
-      "class": "LocalScript"
-    },
-    {
-      "properties": {
-        "Enabled": true,
-        "Archivable": true,
-        "Name": "TetsuDialogue"
-      },
-      "path": "StarterPlayer/StarterPlayerScripts/GameClient/TetsuDialogue",
-      "source": "-- Tetsu dialogue UI: choices, custom name entry, quest notifications.\nlocal Players = game:GetService(\"Players\")\nlocal ReplicatedStorage = game:GetService(\"ReplicatedStorage\")\nlocal UserInputService = game:GetService(\"UserInputService\")\nlocal player = Players.LocalPlayer\nlocal remote = ReplicatedStorage:WaitForChild(\"TetsuDialogue\")\n\nlocal gui = Instance.new(\"ScreenGui\")\ngui.Name = \"TetsuDialogueUI\"\ngui.ResetOnSpawn = false\ngui.DisplayOrder = 40\ngui.Parent = player:WaitForChild(\"PlayerGui\")\nlocal panel = Instance.new(\"Frame\")\npanel.Name = \"DialoguePanel\"\npanel.AnchorPoint = Vector2.new(0.5, 1)\npanel.Position = UDim2.new(0.5, 0, 1, -28)\npanel.Size = UDim2.new(0.9, 0, 0, 280)\npanel.BackgroundColor3 = Color3.fromRGB(18, 22, 34)\npanel.BorderSizePixel = 0\npanel.Visible = false\npanel.Parent = gui\nlocal limit = Instance.new(\"UISizeConstraint\")\nlimit.MaxSize = Vector2.new(570, 280)\nlimit.Parent = panel\nInstance.new(\"UICorner\", panel).CornerRadius = UDim.new(0, 14)\nlocal stroke = Instance.new(\"UIStroke\")\nstroke.Color = Color3.fromRGB(130, 112, 235)\nstroke.Thickness = 2\nstroke.Parent = panel\n\nlocal function textLabel(name, value, y, height, size)\n\tlocal label = Instance.new(\"TextLabel\")\n\tlabel.Name = name\n\tlabel.BackgroundTransparency = 1\n\tlabel.Position = UDim2.new(0, 18, 0, y)\n\tlabel.Size = UDim2.new(1, -36, 0, height)\n\tlabel.Font = Enum.Font.GothamSemibold\n\tlabel.TextColor3 = Color3.new(1, 1, 1)\n\tlabel.TextSize = size\n\tlabel.TextWrapped = true\n\tlabel.TextXAlignment = Enum.TextXAlignment.Left\n\tlabel.Text = value\n\tlabel.Parent = panel\n\treturn label\nend\ntextLabel(\"Heading\", \"TETSU  •  YOUR SLAYER JOURNEY\", 7, 29, 14)\nlocal message = textLabel(\"Message\", \"\", 40, 62, 17)\nlocal function button(name, y, height)\n\tlocal b = Instance.new(\"TextButton\")\n\tb.Name = name\n\tb.Position = UDim2.new(0, 18, 0, y)\n\tb.Size = UDim2.new(1, -36, 0, height)\n\tb.BackgroundColor3 = Color3.fromRGB(52, 58, 83)\n\tb.TextColor3 = Color3.new(1, 1, 1)\n\tb.TextSize = 15\n\tb.Font = Enum.Font.GothamMedium\n\tb.TextWrapped = true\n\tb.Parent = panel\n\tInstance.new(\"UICorner\", b).CornerRadius = UDim.new(0, 8)\n\treturn b\nend\nlocal choices = {button(\"Choice1\", 103, 40), button(\"Choice2\", 148, 40), button(\"Choice3\", 193, 40)}\nlocal nextButton = button(\"Continue\", 137, 46)\nnextButton.Visible = false\nlocal nameInput = Instance.new(\"TextBox\")\nnameInput.Name = \"CustomName\"\nnameInput.Position = UDim2.new(0, 18, 0, 113)\nnameInput.Size = UDim2.new(1, -36, 0, 43)\nnameInput.BackgroundColor3 = Color3.fromRGB(43, 48, 68)\nnameInput.TextColor3 = Color3.new(1, 1, 1)\nnameInput.PlaceholderText = \"Your slayer name (3–20 characters)\"\nnameInput.Text = \"\"\nnameInput.ClearTextOnFocus = false\nnameInput.Font = Enum.Font.GothamMedium\nnameInput.TextSize = 15\nnameInput.Visible = false\nnameInput.Parent = panel\nInstance.new(\"UICorner\", nameInput).CornerRadius = UDim.new(0, 8)\nlocal confirm = button(\"ConfirmName\", 166, 43)\nconfirm.Text = \"Confirm my name\"\nconfirm.Visible = false\nlocal close = Instance.new(\"TextButton\")\nclose.Name = \"Close\"\nclose.Position = UDim2.new(1, -50, 0, 6)\nclose.Size = UDim2.fromOffset(34, 30)\nclose.BackgroundTransparency = 1\nclose.TextColor3 = Color3.new(1, 1, 1)\nclose.Text = \"X\"\nclose.Font = Enum.Font.GothamBold\nclose.TextSize = 17\nclose.Parent = panel\nlocal phase = \"Closed\"\nlocal storyAction = \"Continue\"\nlocal function hideControls()\n\tfor _, b in ipairs(choices) do b.Visible = false end\n\tnextButton.Visible = false\n\tnameInput.Visible = false\n\tconfirm.Visible = false\nend\nlocal function dismiss()\n\tpanel.Visible = false\n\tphase = \"Closed\"\n\tremote:FireServer(\"Close\")\nend\nclose.Activated:Connect(dismiss)\nlocal function choose(i)\n\tif phase ~= \"Question\" then return end\n\tphase = \"Waiting\"\n\tremote:FireServer(\"Choose\", i)\nend\nfor i, b in ipairs(choices) do\n\tb.Activated:Connect(function() choose(i) end)\nend\nconfirm.Activated:Connect(function()\n\tif phase ~= \"NameEntry\" then return end\n\tphase = \"Waiting\"\n\tremote:FireServer(\"CustomName\", nameInput.Text)\nend)\nnextButton.Activated:Connect(function()\n\tif phase ~= \"Story\" then return end\n\tphase = \"Waiting\"\n\tremote:FireServer(storyAction)\nend)\nremote.OnClientEvent:Connect(function(action, data)\n\tdata = data or {}\n\tif action == \"Close\" then\n\t\tpanel.Visible = false\n\t\tphase = \"Closed\"\n\t\treturn\n\tend\n\tif action == \"Quest\" then\n\t\tpanel.Visible = true\n\t\thideControls()\n\t\tphase = \"Story\"\n\t\tstoryAction = \"Continue\"\n\t\tmessage.Text = data.text\n\t\tnextButton.Text = \"Got it\"\n\t\tnextButton.Visible = true\n\t\treturn\n\tend\n\tpanel.Visible = true\n\thideControls()\n\tif action == \"Question\" then\n\t\tphase = \"Question\"\n\t\tmessage.Text = data.question\n\t\tfor i, b in ipairs(choices) do\n\t\t\tb.Text = tostring(i)..\".  \"..tostring(data.answers[i])\n\t\t\tb.Visible = true\n\t\tend\n\telseif action == \"NameEntry\" or action == \"NameError\" then\n\t\tphase = \"NameEntry\"\n\t\tmessage.Text = action == \"NameError\" and data.text or \"Choose your custom in-game slayer name.\"\n\t\tnameInput.Visible = true\n\t\tconfirm.Visible = true\n\telseif action == \"Story\" then\n\t\tphase = \"Story\"\n\t\tmessage.Text = data.text\n\t\tnextButton.Text = data.button or \"Continue\"\n\t\tstoryAction = data.button == \"Accept sword & quest\" and \"Accept\" or \"Continue\"\n\t\tnextButton.Visible = true\n\tend\nend)\nUserInputService.InputBegan:Connect(function(input, processed)\n\tif processed or phase ~= \"Question\" or UserInputService:GetFocusedTextBox() then return end\n\tlocal keys = {[Enum.KeyCode.One]=1, [Enum.KeyCode.Two]=2, [Enum.KeyCode.Three]=3}\n\tif keys[input.KeyCode] then choose(keys[input.KeyCode]) end\nend)\n",
-      "class": "LocalScript"
-    },
-    {
-      "properties": {
-        "Enabled": true,
-        "Archivable": true,
-        "Name": "SwordSwing"
-      },
-      "path": "StarterPlayer/StarterPlayerScripts/GameClient/SwordSwing",
