@@ -10,7 +10,7 @@ local EnemyConfig = {
 		AttackRange = 4.5,
 		AttackCooldown = 1.2,
 		AggroRange = 16,
-		LeashDistance = 10,
+		LeashDistance = 20,
 		WalkSpeed = 10,
 		XPReward = {Min = 1, Max = 10},
 		PossibleRewards = {
@@ -27,7 +27,7 @@ local EnemyConfig = {
 		AttackRange = 4.75,
 		AttackCooldown = 1.05,
 		AggroRange = 18,
-		LeashDistance = 10,
+		LeashDistance = 20,
 		WalkSpeed = 12,
 		XPReward = {Min = 10, Max = 20},
 		PossibleRewards = {
