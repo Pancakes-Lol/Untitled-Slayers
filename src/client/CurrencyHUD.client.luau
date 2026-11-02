@@ -1,5 +1,5 @@
 -- Bridges the existing MainUI currency display to the hidden Currency folder.
--- Coins/Gems stay out of leaderstats while the original bottom-left GUI keeps working.
+-- Coins/Gems stay out of leaderstats while the original GUI keeps working.
 local Players = game:GetService("Players")
 
 local player = Players.LocalPlayer
@@ -22,6 +22,7 @@ local mainUI = playerGui:WaitForChild("MainUI")
 local mainFrame = mainUI:WaitForChild("MainFrame")
 local cashContainer = mainFrame:WaitForChild("CashLabel")
 local gemContainer = mainFrame:WaitForChild("GemLabel")
+local dialogUI = playerGui:FindFirstChild("DialogUI")
 
 -- Run one more targeted pass now that the existing MainUI is guaranteed to exist.
 for _, obj in ipairs(cashContainer:GetDescendants()) do
@@ -56,16 +57,54 @@ end
 local cashText = findDisplayLabel(cashContainer)
 local gemText = findDisplayLabel(gemContainer)
 
+local function setGuiObjectVisible(obj, visible)
+	if obj:IsA("GuiObject") then
+		obj.Visible = visible
+	end
+end
+
+local function refreshVisibility()
+	local dialogueOpen = dialogUI and dialogUI:IsA("ScreenGui") and dialogUI.Enabled
+	if not dialogueOpen then
+		mainUI.Enabled = true
+		setGuiObjectVisible(mainFrame, true)
+		setGuiObjectVisible(cashContainer, true)
+		setGuiObjectVisible(gemContainer, true)
+		if cashText then cashText.Visible = true end
+		if gemText then gemText.Visible = true end
+	end
+end
+
 local function refreshCoins()
 	if cashText then cashText.Text = tostring(coins.Value) end
+	refreshVisibility()
 end
 
 local function refreshGems()
 	if gemText then gemText.Text = tostring(gems.Value) end
+	refreshVisibility()
 end
 
 coins:GetPropertyChangedSignal("Value"):Connect(refreshCoins)
 gems:GetPropertyChangedSignal("Value"):Connect(refreshGems)
 
+if dialogUI and dialogUI:IsA("ScreenGui") then
+	dialogUI:GetPropertyChangedSignal("Enabled"):Connect(function()
+		if not dialogUI.Enabled then
+			task.defer(refreshVisibility)
+		end
+	end)
+else
+	playerGui.ChildAdded:Connect(function(child)
+		if child.Name == "DialogUI" and child:IsA("ScreenGui") then
+			dialogUI = child
+			dialogUI:GetPropertyChangedSignal("Enabled"):Connect(function()
+				if not dialogUI.Enabled then task.defer(refreshVisibility) end
+			end)
+		end
+	end)
+end
+
 refreshCoins()
 refreshGems()
+refreshVisibility()
