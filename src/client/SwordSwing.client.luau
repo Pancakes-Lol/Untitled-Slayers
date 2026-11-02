@@ -1,6 +1,7 @@
 -- Player sword animation controller.
 -- Uses the developer animation pack in Workspace.TemplateR6.AnimSaves.
--- Sword slash VFX uses the Studio-authored Workspace["Slash Particle"] attachment on each swing.
+-- Sword slash VFX copies only ParticleEmitter visuals from Workspace["Slash Particle"].
+-- Attachment position/orientation from the Studio template are intentionally ignored.
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local KeyframeSequenceProvider = game:GetService("KeyframeSequenceProvider")
@@ -11,14 +12,15 @@ local combatRemote = ReplicatedStorage:WaitForChild("SwordCombat")
 local animSaves = workspace:WaitForChild("TemplateR6"):WaitForChild("AnimSaves")
 local slashTemplate = workspace:FindFirstChild("Slash Particle") or workspace:WaitForChild("Slash Particle", 10)
 
--- Per-attack slash direction. These are applied on top of the Attachment/Emitter setup authored in Studio.
--- Z controls the visible diagonal of the slash; X adds a little pitch so the VFX follows the sword arc better.
-local ATTACK_SLASH_ANGLE = {
-	[1] = {X = 10, Z = -50},
-	[2] = {X = -10, Z = 50},
-	[3] = {X = 20, Z = -30},
-	[4] = {X = -20, Z = 30},
-	[5] = {X = 0, Z = 0},
+-- Code owns all slash placement/orientation now.
+-- Position is relative to the sword Handle; orientation is selected per Attack1-Attack5.
+local SLASH_LOCAL_POSITION = Vector3.new(0, 0, 0)
+local ATTACK_SLASH_ORIENTATION = {
+	[1] = Vector3.new(0, 0, -50),
+	[2] = Vector3.new(0, 0, 50),
+	[3] = Vector3.new(0, 0, -30),
+	[4] = Vector3.new(0, 0, 30),
+	[5] = Vector3.new(0, 0, 0),
 }
 local SLASH_EMIT_DELAY = 0.08
 local SLASH_CLEANUP_TIME = 2.5
@@ -59,52 +61,49 @@ local function loadTrack(animator, name, priority, looped)
 	return track
 end
 
-local function findSlashAttachmentTemplate()
-	if not slashTemplate then return nil end
+local function findSlashEmitterTemplates()
+	local emitters = {}
+	if not slashTemplate then return emitters end
 	for _, obj in ipairs(slashTemplate:GetDescendants()) do
-		if obj:IsA("Attachment") then
-			return obj
+		if obj:IsA("ParticleEmitter") then
+			table.insert(emitters, obj)
 		end
 	end
-	return nil
+	return emitters
 end
 
-local slashAttachmentTemplate = findSlashAttachmentTemplate()
+local slashEmitterTemplates = findSlashEmitterTemplates()
 
 local function emitSlashVFX(tool, attackIndex)
 	local handle = tool:FindFirstChild("Handle")
 	if not handle or not handle:IsA("BasePart") then return end
-	if not slashAttachmentTemplate then
-		warn("[SwordCombat] Slash Particle contains no Attachment")
+	if #slashEmitterTemplates == 0 then
+		warn("[SwordCombat] Slash Particle contains no ParticleEmitter")
 		return
 	end
 
-	local slash = slashAttachmentTemplate:Clone()
-	slash.Name = "SlashParticleSwing"
-	local angles = ATTACK_SLASH_ANGLE[attackIndex] or ATTACK_SLASH_ANGLE[5]
-	local baseCFrame = slash.CFrame
-	slash.CFrame = baseCFrame * CFrame.Angles(math.rad(angles.X), 0, math.rad(angles.Z))
-	slash.Parent = handle
+	local slashAttachment = Instance.new("Attachment")
+	slashAttachment.Name = "SlashParticleSwing"
+	slashAttachment.Position = SLASH_LOCAL_POSITION
+	slashAttachment.Orientation = ATTACK_SLASH_ORIENTATION[attackIndex] or Vector3.zero
+	slashAttachment.Parent = handle
 
 	local emitted = false
-	for _, obj in ipairs(slash:GetDescendants()) do
-		if obj:IsA("ParticleEmitter") then
-			-- Keep the authored emitter look, but rotate the particle image with this attack.
-			local baseRotation = obj.Rotation
-			obj.Rotation = NumberRange.new(baseRotation.Min + angles.Z, baseRotation.Max + angles.Z)
-			local emitCount = tonumber(obj:GetAttribute("EmitCount")) or 1
-			obj:Emit(math.max(1, math.floor(emitCount)))
-			emitted = true
-		end
+	for _, emitterTemplate in ipairs(slashEmitterTemplates) do
+		local emitter = emitterTemplate:Clone()
+		emitter.Enabled = false
+		emitter.Parent = slashAttachment
+		local emitCount = tonumber(emitter:GetAttribute("EmitCount")) or 1
+		emitter:Emit(math.max(1, math.floor(emitCount)))
+		emitted = true
 	end
 
 	if not emitted then
-		slash:Destroy()
+		slashAttachment:Destroy()
 		return
 	end
 
-	-- Leave this exact swing orientation in place for the whole particle lifetime.
-	Debris:AddItem(slash, SLASH_CLEANUP_TIME)
+	Debris:AddItem(slashAttachment, SLASH_CLEANUP_TIME)
 end
 
 local function bindSword(tool)
