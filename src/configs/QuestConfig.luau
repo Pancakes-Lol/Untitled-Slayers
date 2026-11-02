@@ -11,6 +11,7 @@ local QuestConfig = {
 		},
 		AmountOfEnemy = 6,
 		QuestDescription = "Defeat 6 AshenPups to finish this quest.",
+		QuestDescriptiom = "Defeat 6 AshenPups to finish this quest.", -- compatibility with the requested field spelling
 		LevelRequired = 1,
 	},
 
@@ -24,6 +25,7 @@ local QuestConfig = {
 		},
 		AmountOfEnemy = 6,
 		QuestDescription = "Defeat 6 WolfScouts to finish this quest.",
+		QuestDescriptiom = "Defeat 6 WolfScouts to finish this quest.", -- compatibility with the requested field spelling
 		LevelRequired = 1,
 	},
 }
