@@ -61,9 +61,8 @@ local function loadTrack(animator, name, priority, looped)
 end
 
 -- Placement only. The VFX itself comes directly from Workspace > Slash Particle.
--- Its visual angle is controlled entirely by the Studio asset (Attachment/emitter),
--- so the script does not add an extra roll rotation anymore.
-local SLASH_DISTANCE = 1.75
+-- Its visual angle is controlled entirely by the Studio asset.
+local SLASH_DISTANCE = 1.25
 local SLASH_HEIGHT = 0.65
 local SLASH_SIDE_OFFSET = 0
 local SLASH_LIFETIME = 1.5
@@ -88,8 +87,7 @@ local function emitSlash(tool)
 	slash.Transparency = 1
 	slash.LocalTransparencyModifier = 0
 
-	-- Always place it on the player's forward side using the character's facing,
-	-- never the camera direction.
+	-- Always place it on the player's forward side using character facing only.
 	local forward = root.CFrame.LookVector
 	local right = root.CFrame.RightVector
 	local slashPosition = root.Position
@@ -99,13 +97,17 @@ local function emitSlash(tool)
 	slash.CFrame = CFrame.lookAt(slashPosition, slashPosition + forward, root.CFrame.UpVector)
 	slash.Parent = workspace
 
-	-- Keep emission on the forward face only so the effect cannot alternate to the
-	-- player's back side. Other visual properties still come from the Studio asset.
+	-- Keep every emitted particle essentially fixed at the front-side spawn point.
+	-- This prevents Attachment rotation / emission velocity from carrying the VFX
+	-- through the character and making it appear on the back side.
 	for _, obj in ipairs(slash:GetDescendants()) do
 		if obj:IsA("ParticleEmitter") then
 			obj.EmissionDirection = Enum.NormalId.Front
 			obj.SpreadAngle = Vector2.new(0, 0)
 			obj.LockedToPart = true
+			obj.Speed = NumberRange.new(0.01)
+			obj.Drag = 1000
+			obj.Acceleration = Vector3.zero
 
 			if obj.Enabled then
 				task.delay(SLASH_EMIT_WINDOW, function()
