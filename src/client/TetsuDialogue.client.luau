@@ -8,6 +8,10 @@ local player = Players.LocalPlayer
 local remote = ReplicatedStorage:WaitForChild("TetsuDialogue")
 local playerGui = player:WaitForChild("PlayerGui")
 
+local TYPE_CHAR_DELAY = 0.035
+local TYPE_COMMA_PAUSE = 0.075
+local TYPE_SENTENCE_PAUSE = 0.14
+
 local gui
 local mainFrame
 local dialogFrame
@@ -23,6 +27,11 @@ local uiLocked = false
 local savedGuiStates = {}
 local playerGuiChildConnection
 local savedEquippedTool = nil
+local typingToken = 0
+
+local function cancelTyping()
+	typingToken += 1
+end
 
 local function disconnectButtons()
 	for _, connection in ipairs(buttonConnections) do
@@ -67,6 +76,7 @@ local function bindDialogGui()
 	end
 
 	if gui ~= currentGui then
+		cancelTyping()
 		disconnectButtons()
 		gui = currentGui
 		gui.ResetOnSpawn = false
@@ -148,8 +158,6 @@ local function lockOtherUI()
 	table.clear(savedGuiStates)
 
 	for _, child in ipairs(playerGui:GetChildren()) do
-		-- Compare by name as well as reference so a newly respawned DialogUI is never
-		-- mistaken for a HUD just because the old DialogUI reference was destroyed.
 		if child:IsA("ScreenGui") and child.Name ~= "DialogUI" then
 			savedGuiStates[child] = child.Enabled
 			child.Enabled = false
@@ -198,6 +206,7 @@ local function hideButtons()
 end
 
 local function closeDialogue(notifyServer)
+	cancelTyping()
 	disconnectButtons()
 	hideButtons()
 	if gui and gui.Parent == playerGui then
@@ -217,7 +226,7 @@ local function bindButton(index, text, callback)
 	button.Visible = true
 	button.Active = true
 	local connection = button.Activated:Connect(function()
-		if phase == "Waiting" or phase == "Closed" then return end
+		if phase == "Waiting" or phase == "Closed" or phase == "Typing" then return end
 		disconnectButtons()
 		hideButtons()
 		callback()
@@ -225,18 +234,51 @@ local function bindButton(index, text, callback)
 	table.insert(buttonConnections, connection)
 end
 
-local function beginDisplay(text)
-	-- Always bind to the current DialogUI before hiding any other HUD. This is the
-	-- important respawn fix: never lock the live HUD while trying to open a dead GUI.
+local function typeMessage(text, finished)
+	cancelTyping()
+	local myToken = typingToken
+	local fullText = tostring(text or "")
+	message.Text = ""
+	phase = "Typing"
+
+	task.spawn(function()
+		if fullText == "" then
+			if myToken == typingToken and finished then finished() end
+			return
+		end
+
+		for firstByte, lastByte in utf8.graphemes(fullText) do
+			if myToken ~= typingToken then return end
+			if not message or not message.Parent then return end
+			if not gui or gui.Parent ~= playerGui or not gui.Enabled then return end
+
+			message.Text = string.sub(fullText, 1, lastByte)
+			local character = string.sub(fullText, firstByte, lastByte)
+			local delayTime = TYPE_CHAR_DELAY
+			if character == "," or character == ";" or character == ":" then
+				delayTime += TYPE_COMMA_PAUSE
+			elseif character == "." or character == "!" or character == "?" then
+				delayTime += TYPE_SENTENCE_PAUSE
+			end
+			task.wait(delayTime)
+		end
+
+		if myToken ~= typingToken then return end
+		if finished then finished() end
+	end)
+end
+
+local function beginDisplay(text, finished)
 	if not bindDialogGui() then
 		return false
 	end
 	disconnectButtons()
 	hideButtons()
 	npcName.Text = "Tetsu"
-	message.Text = text or ""
+	message.Text = ""
 	lockOtherUI()
 	gui.Enabled = true
+	typeMessage(text, finished)
 	return true
 end
 
@@ -248,49 +290,54 @@ remote.OnClientEvent:Connect(function(action, data)
 	end
 
 	if action == "Question" then
-		if not beginDisplay(data.question) then return end
-		phase = "Question"
-		for i = 1, math.min(3, #optionButtons) do
-			local answer = data.answers and data.answers[i]
-			if answer ~= nil then
-				bindButton(i, tostring(i) .. ".  " .. tostring(answer), function()
-					phase = "Waiting"
-					remote:FireServer("Choose", i)
-				end)
+		beginDisplay(data.question, function()
+			phase = "Question"
+			for i = 1, math.min(3, #optionButtons) do
+				local answer = data.answers and data.answers[i]
+				if answer ~= nil then
+					bindButton(i, tostring(i) .. ".  " .. tostring(answer), function()
+						phase = "Waiting"
+						remote:FireServer("Choose", i)
+					end)
+				end
 			end
-		end
+		end)
 		return
 	end
 
 	if action == "Quest" then
-		if not beginDisplay(data.text) then return end
-		phase = "Story"
 		storyAction = "Continue"
-		bindButton(1, "Got it", function()
-			phase = "Waiting"
-			remote:FireServer("Continue")
+		beginDisplay(data.text, function()
+			phase = "Story"
+			bindButton(1, "Got it", function()
+				phase = "Waiting"
+				remote:FireServer("Continue")
+			end)
 		end)
 		return
 	end
 
 	if action == "Story" then
-		if not beginDisplay(data.text) then return end
-		phase = "Story"
 		local buttonText = data.button or "Continue"
 		storyAction = buttonText == "Accept sword & quest" and "Accept" or "Continue"
-		bindButton(1, buttonText, function()
-			phase = "Waiting"
-			remote:FireServer(storyAction)
+		beginDisplay(data.text, function()
+			phase = "Story"
+			bindButton(1, buttonText, function()
+				phase = "Waiting"
+				remote:FireServer(storyAction)
+			end)
 		end)
 		return
 	end
 
 	if action == "NameEntry" or action == "NameError" then
-		if not beginDisplay(action == "NameError" and data.text or "Tetsu already knows your slayer name.") then return end
-		phase = "Story"
-		bindButton(1, "Continue", function()
-			phase = "Waiting"
-			remote:FireServer("Continue")
+		local displayText = action == "NameError" and data.text or "Tetsu already knows your slayer name."
+		beginDisplay(displayText, function()
+			phase = "Story"
+			bindButton(1, "Continue", function()
+				phase = "Waiting"
+				remote:FireServer("Continue")
+			end)
 		end)
 	end
 end)
@@ -327,9 +374,8 @@ playerGui.ChildAdded:Connect(function(child)
 end)
 
 player.CharacterAdded:Connect(function()
+	cancelTyping()
 	savedEquippedTool = nil
-	-- Unlock any HUD state left over from the old character first, then bind the
-	-- fresh DialogUI that Roblox may have recreated for this character.
 	restoreOtherUI()
 	phase = "Closed"
 	for _, delayTime in ipairs({0.05, 0.35, 0.9}) do
