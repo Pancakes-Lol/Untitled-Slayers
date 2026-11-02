@@ -10,6 +10,17 @@ local combatRemote = ReplicatedStorage:WaitForChild("SwordCombat")
 local animSaves = workspace:WaitForChild("TemplateR6"):WaitForChild("AnimSaves")
 local slashTemplate = workspace:FindFirstChild("Slash Particle") or workspace:WaitForChild("Slash Particle", 10)
 
+-- Rotation offsets applied on top of the slash angle authored in Studio.
+-- These make the visual alternate with the direction of Attack1-Attack5 instead of every swing using one angle.
+local ATTACK_SLASH_ROTATION = {
+	[1] = -45,
+	[2] = 45,
+	[3] = -25,
+	[4] = 25,
+	[5] = 0,
+}
+local SLASH_EMIT_DELAY = 0.08
+
 local animationCache = {}
 local function resolveAnimation(name)
 	if animationCache[name] then return animationCache[name] end
@@ -64,6 +75,12 @@ local function attachSlashVFX(tool)
 			local clone = child:Clone()
 			clone.Name = "SlashParticleAttachment"
 			clone.Parent = handle
+			for _, obj in ipairs(clone:GetDescendants()) do
+				if obj:IsA("ParticleEmitter") then
+					obj:SetAttribute("BaseSlashRotationMin", obj.Rotation.Min)
+					obj:SetAttribute("BaseSlashRotationMax", obj.Rotation.Max)
+				end
+			end
 			attached = true
 		end
 	end
@@ -75,16 +92,25 @@ local function attachSlashVFX(tool)
 	end
 end
 
-local function emitSlashVFX(tool)
+local function emitSlashVFX(tool, attackIndex)
 	local handle = tool:FindFirstChild("Handle")
 	if not handle then return end
 
+	local rotationOffset = ATTACK_SLASH_ROTATION[attackIndex] or 0
 	for _, obj in ipairs(handle:GetDescendants()) do
-		if obj:IsA("ParticleEmitter") and obj:IsDescendantOf(handle) then
+		if obj:IsA("ParticleEmitter") then
 			local attachment = obj.Parent
 			if attachment and attachment:IsA("Attachment") and attachment.Name == "SlashParticleAttachment" then
+				local baseMin = tonumber(obj:GetAttribute("BaseSlashRotationMin")) or obj.Rotation.Min
+				local baseMax = tonumber(obj:GetAttribute("BaseSlashRotationMax")) or obj.Rotation.Max
+				obj.Rotation = NumberRange.new(baseMin + rotationOffset, baseMax + rotationOffset)
 				local emitCount = tonumber(obj:GetAttribute("EmitCount")) or 1
 				obj:Emit(math.max(1, math.floor(emitCount)))
+				task.defer(function()
+					if obj.Parent then
+						obj.Rotation = NumberRange.new(baseMin, baseMax)
+					end
+				end)
 			end
 		end
 	end
@@ -235,7 +261,11 @@ local function bindSword(tool)
 		stopTrack(walkTrack, 0.1)
 		local track = attackTracks[index]
 		if track then track:Play(0.1, 1, 1) end
-		emitSlashVFX(tool)
+		task.delay(SLASH_EMIT_DELAY, function()
+			if equipped and attacking and tool.Parent == player.Character then
+				emitSlashVFX(tool, index)
+			end
+		end)
 		combatRemote:FireServer(index)
 		local duration = track and track.Length > 0 and math.clamp(track.Length * 0.75, 0.32, 0.8) or 0.48
 		task.delay(duration, function()
