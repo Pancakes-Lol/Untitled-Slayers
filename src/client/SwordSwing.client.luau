@@ -63,7 +63,7 @@ end
 -- Placement only. The VFX itself comes directly from Workspace > Slash Particle.
 -- Its visual angle is controlled entirely by the Studio asset (Attachment/emitter),
 -- so the script does not add an extra roll rotation anymore.
-local SLASH_DISTANCE = 3.1
+local SLASH_DISTANCE = 1.75
 local SLASH_HEIGHT = 0.65
 local SLASH_SIDE_OFFSET = 0
 local SLASH_LIFETIME = 1.5
@@ -88,14 +88,25 @@ local function emitSlash(tool)
 	slash.Transparency = 1
 	slash.LocalTransparencyModifier = 0
 
-	-- Position in front of the player, but preserve the asset's own authored angle.
-	slash.CFrame = root.CFrame * CFrame.new(SLASH_SIDE_OFFSET, SLASH_HEIGHT, -SLASH_DISTANCE)
+	-- Always place it on the player's forward side using the character's facing,
+	-- never the camera direction.
+	local forward = root.CFrame.LookVector
+	local right = root.CFrame.RightVector
+	local slashPosition = root.Position
+		+ forward * SLASH_DISTANCE
+		+ right * SLASH_SIDE_OFFSET
+		+ Vector3.new(0, SLASH_HEIGHT, 0)
+	slash.CFrame = CFrame.lookAt(slashPosition, slashPosition + forward, root.CFrame.UpVector)
 	slash.Parent = workspace
 
-	-- Play each emitter as authored. If it is Enabled in Studio, let it run briefly
-	-- so the complete VFX appears. If disabled, use its Rate to create a burst.
+	-- Keep emission on the forward face only so the effect cannot alternate to the
+	-- player's back side. Other visual properties still come from the Studio asset.
 	for _, obj in ipairs(slash:GetDescendants()) do
 		if obj:IsA("ParticleEmitter") then
+			obj.EmissionDirection = Enum.NormalId.Front
+			obj.SpreadAngle = Vector2.new(0, 0)
+			obj.LockedToPart = true
+
 			if obj.Enabled then
 				task.delay(SLASH_EMIT_WINDOW, function()
 					if obj.Parent then
