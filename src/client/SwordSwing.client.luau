@@ -1,5 +1,6 @@
 -- Player sword animation controller.
 -- Uses the developer animation pack in Workspace.TemplateR6.AnimSaves.
+-- Sword slash VFX clones the Studio-authored Workspace["Slash Particle"] attachments directly onto the sword Handle.
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local KeyframeSequenceProvider = game:GetService("KeyframeSequenceProvider")
@@ -7,6 +8,7 @@ local KeyframeSequenceProvider = game:GetService("KeyframeSequenceProvider")
 local player = Players.LocalPlayer
 local combatRemote = ReplicatedStorage:WaitForChild("SwordCombat")
 local animSaves = workspace:WaitForChild("TemplateR6"):WaitForChild("AnimSaves")
+local slashTemplate = workspace:FindFirstChild("Slash Particle") or workspace:WaitForChild("Slash Particle", 10)
 
 local animationCache = {}
 local function resolveAnimation(name)
@@ -44,11 +46,56 @@ local function loadTrack(animator, name, priority, looped)
 	return track
 end
 
+local function attachSlashVFX(tool)
+	if tool:GetAttribute("SlashVFXAttached") then return end
+	local handle = tool:FindFirstChild("Handle")
+	if not handle or not handle:IsA("BasePart") then
+		warn("[SwordCombat] Sword has no Handle for Slash Particle VFX")
+		return
+	end
+	if not slashTemplate then
+		warn("[SwordCombat] Workspace/Slash Particle missing")
+		return
+	end
+
+	local attached = false
+	for _, child in ipairs(slashTemplate:GetDescendants()) do
+		if child:IsA("Attachment") then
+			local clone = child:Clone()
+			clone.Name = "SlashParticleAttachment"
+			clone.Parent = handle
+			attached = true
+		end
+	end
+
+	if attached then
+		tool:SetAttribute("SlashVFXAttached", true)
+	else
+		warn("[SwordCombat] Slash Particle contains no Attachment to copy onto the sword")
+	end
+end
+
+local function emitSlashVFX(tool)
+	local handle = tool:FindFirstChild("Handle")
+	if not handle then return end
+
+	for _, obj in ipairs(handle:GetDescendants()) do
+		if obj:IsA("ParticleEmitter") and obj:IsDescendantOf(handle) then
+			local attachment = obj.Parent
+			if attachment and attachment:IsA("Attachment") and attachment.Name == "SlashParticleAttachment" then
+				local emitCount = tonumber(obj:GetAttribute("EmitCount")) or 1
+				obj:Emit(math.max(1, math.floor(emitCount)))
+			end
+		end
+	end
+end
+
 local function bindSword(tool)
 	if not tool:IsA("Tool") then return end
 	if not tool:GetAttribute("SlayerSword") and tool.Name ~= "Novice Slayer Sword" then return end
 	if tool:GetAttribute("CombatClientBound") then return end
 	tool:SetAttribute("CombatClientBound", true)
+	attachSlashVFX(tool)
 
 	local equipped = false
 	local attacking = false
@@ -188,6 +235,7 @@ local function bindSword(tool)
 		stopTrack(walkTrack, 0.1)
 		local track = attackTracks[index]
 		if track then track:Play(0.1, 1, 1) end
+		emitSlashVFX(tool)
 		combatRemote:FireServer(index)
 		local duration = track and track.Length > 0 and math.clamp(track.Length * 0.75, 0.32, 0.8) or 0.48
 		task.delay(duration, function()
