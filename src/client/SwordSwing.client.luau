@@ -60,14 +60,14 @@ local function loadTrack(animator, name, priority, looped)
 	return track
 end
 
--- Placement only. The VFX itself comes directly from Workspace > Slash Particle.
--- Its visual angle is controlled entirely by the Studio asset.
-local SLASH_DISTANCE = 1.25
+-- Placement/timing only. The VFX itself still comes from Workspace > Slash Particle.
+local SLASH_DISTANCE = 1.35
 local SLASH_HEIGHT = 0.65
 local SLASH_SIDE_OFFSET = 0
-local SLASH_LIFETIME = 1.5
+local SLASH_LIFETIME = 2.4
 local SLASH_DELAY = 0.09
-local SLASH_EMIT_WINDOW = 0.12
+local SLASH_EMIT_WINDOW = 0.22
+local PARTICLE_LIFETIME_SCALE = 1.8
 
 local function emitSlash(tool)
 	if not slashSourceTemplate or not slashSourceTemplate:IsA("BasePart") then return end
@@ -79,7 +79,8 @@ local function emitSlash(tool)
 	-- Clone the preserved Studio asset exactly as it was authored at play start.
 	local slash = slashSourceTemplate:Clone()
 	slash.Name = "Player Slash Particle"
-	slash.Anchored = true
+	slash.Anchored = false
+	slash.Massless = true
 	slash.CanCollide = false
 	slash.CanTouch = false
 	slash.CanQuery = false
@@ -87,19 +88,20 @@ local function emitSlash(tool)
 	slash.Transparency = 1
 	slash.LocalTransparencyModifier = 0
 
-	-- Always place it on the player's forward side using character facing only.
-	local forward = root.CFrame.LookVector
-	local right = root.CFrame.RightVector
-	local slashPosition = root.Position
-		+ forward * SLASH_DISTANCE
-		+ right * SLASH_SIDE_OFFSET
-		+ Vector3.new(0, SLASH_HEIGHT, 0)
-	slash.CFrame = CFrame.lookAt(slashPosition, slashPosition + forward, root.CFrame.UpVector)
+	-- Keep the slash physically attached to the player's front side. This means
+	-- moving/turning during the attack cannot leave the effect behind the player.
+	local localOffset = CFrame.new(SLASH_SIDE_OFFSET, SLASH_HEIGHT, -SLASH_DISTANCE)
+	slash.CFrame = root.CFrame * localOffset
 	slash.Parent = workspace
 
-	-- Keep every emitted particle essentially fixed at the front-side spawn point.
-	-- This prevents Attachment rotation / emission velocity from carrying the VFX
-	-- through the character and making it appear on the back side.
+	local weld = Instance.new("WeldConstraint")
+	weld.Name = "SlashFrontWeld"
+	weld.Part0 = root
+	weld.Part1 = slash
+	weld.Parent = slash
+
+	-- Keep particles centered on the attached slash and make them last longer.
+	-- Texture, color, size, transparency curve, rotation, etc. remain Studio-authored.
 	for _, obj in ipairs(slash:GetDescendants()) do
 		if obj:IsA("ParticleEmitter") then
 			obj.EmissionDirection = Enum.NormalId.Front
@@ -108,6 +110,10 @@ local function emitSlash(tool)
 			obj.Speed = NumberRange.new(0.01)
 			obj.Drag = 1000
 			obj.Acceleration = Vector3.zero
+			obj.Lifetime = NumberRange.new(
+				math.max(0.05, obj.Lifetime.Min * PARTICLE_LIFETIME_SCALE),
+				math.max(0.05, obj.Lifetime.Max * PARTICLE_LIFETIME_SCALE)
+			)
 
 			if obj.Enabled then
 				task.delay(SLASH_EMIT_WINDOW, function()
