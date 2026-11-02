@@ -5,16 +5,20 @@ local player = Players.LocalPlayer
 local stats = player:WaitForChild("leaderstats")
 local level = stats:WaitForChild("Level")
 local xp = stats:WaitForChild("XP")
+local playerGui = player:WaitForChild("PlayerGui")
 
 local function xpNeededForLevel(currentLevel)
 	return 100 + math.max(0, currentLevel - 1) * 50
 end
 
+local oldGui = playerGui:FindFirstChild("ProgressionHUD")
+if oldGui then oldGui:Destroy() end
+
 local gui = Instance.new("ScreenGui")
 gui.Name = "ProgressionHUD"
 gui.ResetOnSpawn = false
 gui.IgnoreGuiInset = false
-gui.Parent = player:WaitForChild("PlayerGui")
+gui.Parent = playerGui
 
 local card = Instance.new("Frame")
 card.Name = "LevelCard"
@@ -150,6 +154,31 @@ local function refresh(instant)
 	end
 end
 
+local dialogGui = playerGui:FindFirstChild("DialogUI") or playerGui:WaitForChild("DialogUI", 10)
+local function syncVisibility()
+	if not gui.Parent then return end
+	local dialogueOpen = dialogGui and dialogGui.Enabled == true
+	gui.Enabled = not dialogueOpen
+	card.Visible = true
+end
+
+if dialogGui then
+	dialogGui:GetPropertyChangedSignal("Enabled"):Connect(function()
+		-- Tetsu hides every other UI while talking. Explicitly bring this HUD back
+		-- as soon as the dialogue closes so it cannot stay disabled accidentally.
+		task.defer(syncVisibility)
+	end)
+end
+
+player.CharacterAdded:Connect(function()
+	for _, delayTime in ipairs({0.15, 0.6, 1.2}) do
+		task.delay(delayTime, function()
+			refresh(true)
+			syncVisibility()
+		end)
+	end
+end)
+
 level:GetPropertyChangedSignal("Value"):Connect(function()
 	refresh(false)
 end)
@@ -159,3 +188,4 @@ xp:GetPropertyChangedSignal("Value"):Connect(function()
 end)
 
 refresh(true)
+syncVisibility()
