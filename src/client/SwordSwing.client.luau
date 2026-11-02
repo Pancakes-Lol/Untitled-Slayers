@@ -14,6 +14,7 @@ local slashTemplate = workspace:FindFirstChild("Slash Particle") or workspace:Wa
 
 local SLASH_EMIT_DELAY = 0.08
 local SLASH_CLEANUP_TIME = 2.5
+local SLASH_FORWARD_OFFSET = 1.25
 
 local animationCache = {}
 local function resolveAnimation(name)
@@ -76,15 +77,17 @@ local function getBladeCFrame(handle)
 				local p1 = a1.Position
 				local delta = p1 - p0
 				if delta.Magnitude > 0.001 then
+					local bladeDirection = delta.Unit
 					local midpoint = (p0 + p1) * 0.5
-					return CFrame.lookAt(midpoint, midpoint + delta.Unit)
+					local slashPosition = midpoint + bladeDirection * SLASH_FORWARD_OFFSET
+					return CFrame.lookAt(slashPosition, slashPosition + bladeDirection)
 				end
 			end
 		end
 	end
 
 	-- Fallback if this sword has no usable Trail attachments.
-	return CFrame.new(0, handle.Size.Y * 0.25, 0)
+	return CFrame.new(0, handle.Size.Y * 0.25 + SLASH_FORWARD_OFFSET, 0)
 end
 
 local function emitSlashVFX(tool)
