@@ -22,7 +22,6 @@ for _, child in ipairs(optionsFrame:GetChildren()) do
 	end
 end
 table.sort(optionButtons, function(a, b)
-	if a.LayoutOrder == b.LayoutOrder then return a:GetDebugId() < b:GetDebugId() end
 	return a.LayoutOrder < b.LayoutOrder
 end)
 
