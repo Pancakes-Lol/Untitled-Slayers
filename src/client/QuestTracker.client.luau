@@ -1,4 +1,5 @@
 -- Quest tracking UI using the Studio-authored MainUI QuestTrackerFrame.
+-- Rebinds to the current PlayerGui copies after respawn so quest state survives UI replacement.
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
@@ -6,28 +7,78 @@ local player = Players.LocalPlayer
 local playerGui = player:WaitForChild("PlayerGui")
 local remote = ReplicatedStorage:WaitForChild("QuestUpdate")
 
-local mainUI = playerGui:WaitForChild("MainUI")
-mainUI.ResetOnSpawn = false
+local latestData = {Visible = false}
 
-local dialogGui = playerGui:FindFirstChild("DialogUI") or playerGui:WaitForChild("DialogUI", 10)
-if dialogGui then
-	dialogGui.ResetOnSpawn = false
+local mainUI
+local mainFrame
+local questFrame
+local questTitleLabel
+local questDescriptionLabel
+local trackingLabel
+local cashLabel
+local expLabel
+local progressBar
+local progressFill
+local dialogGui
+local dialogConnection
+
+local function disconnectDialogConnection()
+	if dialogConnection then
+		dialogConnection:Disconnect()
+		dialogConnection = nil
+	end
 end
 
-local mainFrame = mainUI:WaitForChild("MainFrame")
-local questFrame = mainFrame:WaitForChild("QuestTrackerFrame")
-local questTitleLabel = questFrame:WaitForChild("QuestTitleLabel")
-local questDescriptionLabel = questFrame:WaitForChild("QuestDescriptionLabel")
-local trackingLabel = questFrame:WaitForChild("TrackingLabel")
-local cashLabel = questFrame:WaitForChild("CashLabel")
-local expLabel = questFrame:WaitForChild("EXPLabel")
-local progressBar = questFrame:FindFirstChild("ProgressBar")
-local progressFill = progressBar and progressBar:FindFirstChild("ProgressBarFrame")
+local function bindCurrentUI()
+	local newMainUI = playerGui:FindFirstChild("MainUI") or playerGui:WaitForChild("MainUI", 10)
+	if not newMainUI or not newMainUI:IsA("ScreenGui") then
+		return false
+	end
 
-local latestData = {Visible = false}
-questFrame.Visible = false
+	local newMainFrame = newMainUI:FindFirstChild("MainFrame") or newMainUI:WaitForChild("MainFrame", 5)
+	local newQuestFrame = newMainFrame and (newMainFrame:FindFirstChild("QuestTrackerFrame") or newMainFrame:WaitForChild("QuestTrackerFrame", 5))
+	if not newMainFrame or not newQuestFrame then
+		return false
+	end
+
+	local newTitle = newQuestFrame:FindFirstChild("QuestTitleLabel") or newQuestFrame:WaitForChild("QuestTitleLabel", 5)
+	local newDescription = newQuestFrame:FindFirstChild("QuestDescriptionLabel") or newQuestFrame:WaitForChild("QuestDescriptionLabel", 5)
+	local newTracking = newQuestFrame:FindFirstChild("TrackingLabel") or newQuestFrame:WaitForChild("TrackingLabel", 5)
+	local newCash = newQuestFrame:FindFirstChild("CashLabel") or newQuestFrame:WaitForChild("CashLabel", 5)
+	local newEXP = newQuestFrame:FindFirstChild("EXPLabel") or newQuestFrame:WaitForChild("EXPLabel", 5)
+	if not newTitle or not newDescription or not newTracking or not newCash or not newEXP then
+		return false
+	end
+
+	mainUI = newMainUI
+	mainFrame = newMainFrame
+	questFrame = newQuestFrame
+	questTitleLabel = newTitle
+	questDescriptionLabel = newDescription
+	trackingLabel = newTracking
+	cashLabel = newCash
+	expLabel = newEXP
+	progressBar = questFrame:FindFirstChild("ProgressBar")
+	progressFill = progressBar and progressBar:FindFirstChild("ProgressBarFrame")
+
+	mainUI.ResetOnSpawn = false
+
+	local newDialogGui = playerGui:FindFirstChild("DialogUI")
+	if newDialogGui and newDialogGui:IsA("ScreenGui") then
+		newDialogGui.ResetOnSpawn = false
+	end
+
+	if newDialogGui ~= dialogGui then
+		disconnectDialogConnection()
+		dialogGui = newDialogGui
+	end
+
+	return true
+end
 
 local function setProgress(progress, amount)
+	if not trackingLabel then return end
+
 	progress = tonumber(progress) or 0
 	amount = tonumber(amount) or 0
 	local ratio = amount > 0 and math.clamp(progress / amount, 0, 1) or 0
@@ -44,15 +95,19 @@ local function setProgress(progress, amount)
 end
 
 local function render(data)
-	data = data or {}
+	data = data or latestData or {Visible = false}
 	latestData = data
+
+	if not mainUI or mainUI.Parent ~= playerGui or not questFrame or not questFrame.Parent then
+		if not bindCurrentUI() then return end
+	end
 
 	if data.Visible ~= true then
 		questFrame.Visible = false
 		return
 	end
 
-	if dialogGui and dialogGui.Enabled then
+	if dialogGui and dialogGui.Parent == playerGui and dialogGui.Enabled then
 		questFrame.Visible = false
 		return
 	end
@@ -80,10 +135,13 @@ local function render(data)
 	questFrame.Visible = true
 end
 
-remote.OnClientEvent:Connect(render)
-
-if dialogGui then
-	dialogGui:GetPropertyChangedSignal("Enabled"):Connect(function()
+local function connectDialogWatcher()
+	if not dialogGui or dialogConnection then return end
+	dialogConnection = dialogGui:GetPropertyChangedSignal("Enabled"):Connect(function()
+		if not questFrame or not questFrame.Parent then
+			bindCurrentUI()
+		end
+		if not questFrame then return end
 		if dialogGui.Enabled then
 			questFrame.Visible = false
 		else
@@ -92,19 +150,35 @@ if dialogGui then
 	end)
 end
 
-local function restoreQuestAfterRespawn()
-	-- CharacterAdded fires before every GUI/system has finished reacting to the respawn.
-	-- Reapply the current quest a few times so later respawn UI changes cannot leave it hidden.
-	for _, delayTime in ipairs({0.15, 0.6, 1.25, 2.0}) do
-		task.delay(delayTime, function()
-			if latestData.Visible ~= true then return end
-			if not mainUI.Parent or not questFrame.Parent then return end
-			if dialogGui and dialogGui.Enabled then return end
-			mainUI.Enabled = true
-			mainFrame.Visible = true
-			render(latestData)
-		end)
+local function rebindAndRender()
+	if bindCurrentUI() then
+		connectDialogWatcher()
+		render(latestData)
 	end
 end
 
-player.CharacterAdded:Connect(restoreQuestAfterRespawn)
+remote.OnClientEvent:Connect(function(data)
+	if not mainUI or mainUI.Parent ~= playerGui then
+		rebindAndRender()
+	end
+	render(data)
+end)
+
+rebindAndRender()
+if questFrame and latestData.Visible ~= true then
+	questFrame.Visible = false
+end
+
+-- Roblox or another UI script may replace MainUI/DialogUI during respawn.
+-- Always bind to the newest copies instead of keeping stale object references.
+playerGui.ChildAdded:Connect(function(child)
+	if child.Name == "MainUI" or child.Name == "DialogUI" then
+		task.defer(rebindAndRender)
+	end
+end)
+
+player.CharacterAdded:Connect(function()
+	for _, delayTime in ipairs({0, 0.15, 0.6, 1.25, 2.0}) do
+		task.delay(delayTime, rebindAndRender)
+	end
+end)
