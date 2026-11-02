@@ -5,6 +5,7 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local player = Players.LocalPlayer
 local playerGui = player:WaitForChild("PlayerGui")
 local remote = ReplicatedStorage:WaitForChild("QuestUpdate")
+local dialogGui = playerGui:FindFirstChild("DialogUI") or playerGui:WaitForChild("DialogUI", 10)
 
 local function findExistingGui()
 	for _, name in ipairs({"QuestUI", "QuestTrackerUI", "QuestTrackingUI", "QuestTracker"}) do
@@ -84,6 +85,7 @@ local titleLabel = findText(gui, {"QuestTitle", "Title", "QuestName"})
 local descriptionLabel = findText(gui, {"QuestDescription", "Description", "QuestText"})
 local progressLabel = findText(gui, {"QuestProgress", "Progress", "Amount"})
 local rewardsLabel = findText(gui, {"QuestRewards", "Rewards", "RewardText"})
+local latestData = {Visible = false}
 
 local function rewardText(rewards)
 	if type(rewards) ~= "table" then return "" end
@@ -102,13 +104,16 @@ local function setText(label, value)
 	if label then label.Text = tostring(value or "") end
 end
 
-remote.OnClientEvent:Connect(function(data)
+local function render(data)
 	data = data or {}
+	if dialogGui and dialogGui.Enabled then
+		gui.Enabled = false
+		return
+	end
 	if data.Visible == false then
 		gui.Enabled = false
 		return
 	end
-
 	setText(titleLabel, data.Title or "Quest")
 	setText(descriptionLabel, data.Description or "")
 	if data.Complete then
@@ -118,4 +123,19 @@ remote.OnClientEvent:Connect(function(data)
 	end
 	setText(rewardsLabel, rewardText(data.Rewards))
 	gui.Enabled = true
+end
+
+remote.OnClientEvent:Connect(function(data)
+	latestData = data or {Visible = false}
+	render(latestData)
 end)
+
+if dialogGui then
+	dialogGui:GetPropertyChangedSignal("Enabled"):Connect(function()
+		if dialogGui.Enabled then
+			gui.Enabled = false
+		else
+			render(latestData)
+		end
+	end)
+end
