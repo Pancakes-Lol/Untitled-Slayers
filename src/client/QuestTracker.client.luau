@@ -92,9 +92,19 @@ if dialogGui then
 	end)
 end
 
-player.CharacterAdded:Connect(function()
-	task.defer(function()
-		if mainUI.Parent ~= playerGui then return end
-		render(latestData)
-	end)
-end)
+local function restoreQuestAfterRespawn()
+	-- CharacterAdded fires before every GUI/system has finished reacting to the respawn.
+	-- Reapply the current quest a few times so later respawn UI changes cannot leave it hidden.
+	for _, delayTime in ipairs({0.15, 0.6, 1.25, 2.0}) do
+		task.delay(delayTime, function()
+			if latestData.Visible ~= true then return end
+			if not mainUI.Parent or not questFrame.Parent then return end
+			if dialogGui and dialogGui.Enabled then return end
+			mainUI.Enabled = true
+			mainFrame.Visible = true
+			render(latestData)
+		end)
+	end
+end
+
+player.CharacterAdded:Connect(restoreQuestAfterRespawn)
