@@ -1,6 +1,6 @@
 -- Player sword animation controller.
 -- Uses the developer animation pack in Workspace.TemplateR6.AnimSaves.
--- Slash VFX releases a short-range visual wave from the sword instead of becoming a real projectile.
+-- Attacks are allowed while sprinting; Action animations override sprint movement temporarily.
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local KeyframeSequenceProvider = game:GetService("KeyframeSequenceProvider")
@@ -18,16 +18,20 @@ local SLASH_TRAVEL_TIME = 0.20
 local SLASH_START_FORWARD = 1.0
 local SLASH_SCALE = Vector3.new(5.5, 3.1, 0.08)
 local SLASH_LIFETIME = 0.32
+local ATTACK_COOLDOWN = 0.42
 
 local animationCache = {}
+
 local function resolveAnimation(name)
 	if animationCache[name] then return animationCache[name] end
+
 	for _, obj in ipairs(ReplicatedStorage:GetDescendants()) do
 		if obj:IsA("Animation") and obj.Name == name and obj.AnimationId ~= "" then
 			animationCache[name] = obj
 			return obj
 		end
 	end
+
 	local sequence = animSaves:FindFirstChild(name)
 	if sequence and sequence:IsA("KeyframeSequence") then
 		local ok, id = pcall(function()
@@ -41,6 +45,7 @@ local function resolveAnimation(name)
 			return anim
 		end
 	end
+
 	warn("[SwordCombat] Missing animation: " .. name)
 	return nil
 end
@@ -48,7 +53,9 @@ end
 local function loadTrack(animator, name, priority, looped)
 	local anim = resolveAnimation(name)
 	if not anim then return nil end
-	local ok, track = pcall(function() return animator:LoadAnimation(anim) end)
+	local ok, track = pcall(function()
+		return animator:LoadAnimation(anim)
+	end)
 	if not ok then return nil end
 	track.Priority = priority
 	track.Looped = looped
@@ -58,9 +65,7 @@ end
 local function getSlashEmitterTemplate()
 	if not slashTemplate then return nil end
 	for _, obj in ipairs(slashTemplate:GetDescendants()) do
-		if obj:IsA("ParticleEmitter") then
-			return obj
-		end
+		if obj:IsA("ParticleEmitter") then return obj end
 	end
 	return nil
 end
@@ -70,13 +75,10 @@ local slashEmitterTemplate = getSlashEmitterTemplate()
 local function getBladeDirection(handle)
 	for _, obj in ipairs(handle:GetDescendants()) do
 		if obj:IsA("Trail") and obj.Attachment0 and obj.Attachment1 then
-			local a0 = obj.Attachment0
-			local a1 = obj.Attachment1
+			local a0, a1 = obj.Attachment0, obj.Attachment1
 			if a0.Parent == handle and a1.Parent == handle then
 				local delta = a1.Position - a0.Position
-				if delta.Magnitude > 0.001 then
-					return delta.Unit
-				end
+				if delta.Magnitude > 0.001 then return delta.Unit end
 			end
 		end
 	end
@@ -84,28 +86,21 @@ local function getBladeDirection(handle)
 end
 
 local function getSlashTexture()
-	if slashEmitterTemplate and slashEmitterTemplate.Texture ~= "" then
-		return slashEmitterTemplate.Texture
-	end
-	return ""
+	return slashEmitterTemplate and slashEmitterTemplate.Texture or ""
 end
 
 local function getSlashColor()
 	if slashEmitterTemplate then
-		local keypoints = slashEmitterTemplate.Color.Keypoints
-		if #keypoints > 0 then
-			return keypoints[1].Value
-		end
+		local points = slashEmitterTemplate.Color.Keypoints
+		if #points > 0 then return points[1].Value end
 	end
 	return Color3.fromRGB(120, 220, 255)
 end
 
 local function getSlashTransparency()
 	if slashEmitterTemplate then
-		local keypoints = slashEmitterTemplate.Transparency.Keypoints
-		if #keypoints > 0 then
-			return math.clamp(keypoints[1].Value, 0, 1)
-		end
+		local points = slashEmitterTemplate.Transparency.Keypoints
+		if #points > 0 then return math.clamp(points[1].Value, 0, 1) end
 	end
 	return 0.05
 end
@@ -116,27 +111,14 @@ local function createSlashWave(tool)
 	local root = character and character:FindFirstChild("HumanoidRootPart")
 	if not handle or not handle:IsA("BasePart") or not root then return end
 
-	local bladeDirectionLocal = getBladeDirection(handle)
-	local bladeDirectionWorld = handle.CFrame:VectorToWorldSpace(bladeDirectionLocal).Unit
+	local bladeDirectionWorld = handle.CFrame:VectorToWorldSpace(getBladeDirection(handle)).Unit
 	local playerForward = root.CFrame.LookVector
-
-	-- The wave leaves the blade but travels mainly forward from the player,
-	-- so it looks thrown from the swing without behaving like a projectile.
-	local travelDirection = (playerForward * 0.85 + bladeDirectionWorld * 0.15)
-	if travelDirection.Magnitude < 0.001 then
-		travelDirection = playerForward
-	else
-		travelDirection = travelDirection.Unit
-	end
+	local travelDirection = playerForward * 0.85 + bladeDirectionWorld * 0.15
+	travelDirection = travelDirection.Magnitude > 0.001 and travelDirection.Unit or playerForward
 
 	local startPosition = handle.Position + playerForward * SLASH_START_FORWARD
-	local bladeUp = bladeDirectionWorld
-	local right = travelDirection:Cross(bladeUp)
-	if right.Magnitude < 0.01 then
-		right = root.CFrame.RightVector
-	else
-		right = right.Unit
-	end
+	local right = travelDirection:Cross(bladeDirectionWorld)
+	right = right.Magnitude > 0.01 and right.Unit or root.CFrame.RightVector
 	local up = right:Cross(travelDirection).Unit
 
 	local wave = Instance.new("Part")
@@ -164,7 +146,6 @@ local function createSlashWave(tool)
 	image.Name = "SlashImage"
 	image.BackgroundTransparency = 1
 	image.Size = UDim2.fromScale(1, 1)
-	image.Position = UDim2.fromScale(0, 0)
 	image.Image = getSlashTexture()
 	image.ImageColor3 = getSlashColor()
 	image.ImageTransparency = getSlashTransparency()
@@ -175,31 +156,25 @@ local function createSlashWave(tool)
 	backGui.Name = "SlashSurfaceBack"
 	backGui.Face = Enum.NormalId.Back
 	backGui.Parent = wave
+	local backImage = backGui:FindFirstChild("SlashImage")
 
-	local targetCFrame = wave.CFrame + travelDirection * SLASH_TRAVEL_DISTANCE
-	local moveTween = TweenService:Create(
+	TweenService:Create(
 		wave,
 		TweenInfo.new(SLASH_TRAVEL_TIME, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-		{CFrame = targetCFrame}
-	)
-	local fadeTween = TweenService:Create(
+		{CFrame = wave.CFrame + travelDirection * SLASH_TRAVEL_DISTANCE}
+	):Play()
+	TweenService:Create(
 		image,
 		TweenInfo.new(SLASH_LIFETIME, Enum.EasingStyle.Quad, Enum.EasingDirection.In),
 		{ImageTransparency = 1}
-	)
-	local backImage = backGui:FindFirstChild("SlashImage")
-	local backFadeTween
+	):Play()
 	if backImage and backImage:IsA("ImageLabel") then
-		backFadeTween = TweenService:Create(
+		TweenService:Create(
 			backImage,
 			TweenInfo.new(SLASH_LIFETIME, Enum.EasingStyle.Quad, Enum.EasingDirection.In),
 			{ImageTransparency = 1}
-		)
+		):Play()
 	end
-
-	moveTween:Play()
-	fadeTween:Play()
-	if backFadeTween then backFadeTween:Play() end
 	Debris:AddItem(wave, SLASH_LIFETIME + 0.08)
 end
 
@@ -215,8 +190,7 @@ local function bindSword(tool)
 	local humanoid, animator
 	local idleTrack, walkTrack, unsheathTrack, sheathTrack
 	local attackTracks = {}
-	local runningConnection
-	local sprintConnection
+	local runningConnection, sprintConnection
 	local lastAttackIndex = 0
 	local lastAttackTime = 0
 	local equipToken = 0
@@ -228,8 +202,8 @@ local function bindSword(tool)
 	local function setLocomotion(speed)
 		if not equipped or attacking or transitioning then return end
 		if player:GetAttribute("IsSprinting") then
-			stopTrack(idleTrack, 0.16)
-			stopTrack(walkTrack, 0.16)
+			stopTrack(idleTrack, 0.12)
+			stopTrack(walkTrack, 0.12)
 			return
 		end
 		if speed > 0.5 then
@@ -292,8 +266,6 @@ local function bindSword(tool)
 		equipToken += 1
 		local thisEquip = equipToken
 		setupTracks()
-		stopTrack(idleTrack, 0)
-		stopTrack(walkTrack, 0)
 
 		if unsheathTrack then
 			unsheathTrack:Play(0.12, 1, 1)
@@ -335,23 +307,28 @@ local function bindSword(tool)
 	end)
 
 	tool.Activated:Connect(function()
-		if not equipped or attacking or transitioning or player:GetAttribute("IsSprinting") then return end
-		if os.clock() - lastAttackTime < 0.42 then return end
+		-- Sprinting no longer blocks katana attacks.
+		if not equipped or attacking or transitioning then return end
+		if os.clock() - lastAttackTime < ATTACK_COOLDOWN then return end
 		local character = player.Character
 		if not character or tool.Parent ~= character then return end
+
 		local index = chooseAttack()
 		if not index then return end
 		lastAttackTime = os.clock()
 		attacking = true
-		stopTrack(idleTrack, 0.1)
-		stopTrack(walkTrack, 0.1)
+		stopTrack(idleTrack, 0.08)
+		stopTrack(walkTrack, 0.08)
+
 		local track = attackTracks[index]
-		if track then track:Play(0.1, 1, 1) end
+		if track then track:Play(0.08, 1, 1) end
+
 		task.delay(SLASH_START_DELAY, function()
 			if equipped and attacking and tool.Parent == player.Character then
 				createSlashWave(tool)
 			end
 		end)
+
 		combatRemote:FireServer(index)
 		local duration = track and track.Length > 0 and math.clamp(track.Length * 0.75, 0.32, 0.8) or 0.48
 		task.delay(duration, function()
