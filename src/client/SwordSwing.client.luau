@@ -61,10 +61,11 @@ local function loadTrack(animator, name, priority, looped)
 end
 
 -- Placement only. The VFX itself comes directly from Workspace > Slash Particle.
+-- Its visual angle is controlled entirely by the Studio asset (Attachment/emitter),
+-- so the script does not add an extra roll rotation anymore.
 local SLASH_DISTANCE = 3.1
 local SLASH_HEIGHT = 0.65
 local SLASH_SIDE_OFFSET = 0
-local SLASH_DIAGONAL_ANGLE = -42
 local SLASH_LIFETIME = 1.5
 local SLASH_DELAY = 0.09
 local SLASH_EMIT_WINDOW = 0.12
@@ -87,9 +88,8 @@ local function emitSlash(tool)
 	slash.Transparency = 1
 	slash.LocalTransparencyModifier = 0
 
-	slash.CFrame = root.CFrame
-		* CFrame.new(SLASH_SIDE_OFFSET, SLASH_HEIGHT, -SLASH_DISTANCE)
-		* CFrame.Angles(0, 0, math.rad(SLASH_DIAGONAL_ANGLE))
+	-- Position in front of the player, but preserve the asset's own authored angle.
+	slash.CFrame = root.CFrame * CFrame.new(SLASH_SIDE_OFFSET, SLASH_HEIGHT, -SLASH_DISTANCE)
 	slash.Parent = workspace
 
 	-- Play each emitter as authored. If it is Enabled in Studio, let it run briefly
