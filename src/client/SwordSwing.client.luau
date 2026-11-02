@@ -1,11 +1,9 @@
 -- Player sword animation controller.
 -- Uses the developer animation pack in Workspace.TemplateR6.AnimSaves.
--- Slash VFX copies only ParticleEmitter visuals from Workspace["Slash Particle"].
--- The particle template's Attachment position/orientation are ignored; the sword blade defines both.
+-- Slash VFX is mounted to the sword once, so the animation carries the VFX through the swing.
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local KeyframeSequenceProvider = game:GetService("KeyframeSequenceProvider")
-local Debris = game:GetService("Debris")
 
 local player = Players.LocalPlayer
 local combatRemote = ReplicatedStorage:WaitForChild("SwordCombat")
@@ -13,8 +11,8 @@ local animSaves = workspace:WaitForChild("TemplateR6"):WaitForChild("AnimSaves")
 local slashTemplate = workspace:FindFirstChild("Slash Particle") or workspace:WaitForChild("Slash Particle", 10)
 
 local SLASH_EMIT_DELAY = 0.08
-local SLASH_CLEANUP_TIME = 2.5
 local SLASH_FORWARD_OFFSET = 1.25
+local SLASH_ATTACHMENT_NAME = "SwordSlashVFX"
 
 local animationCache = {}
 local function resolveAnimation(name)
@@ -65,8 +63,6 @@ end
 
 local slashEmitterTemplates = findSlashEmitterTemplates()
 
--- Use the sword's existing Trail attachments to find the actual blade line.
--- This makes the slash inherit the same movement/orientation as the sword animation.
 local function getBladeCFrame(handle)
 	for _, obj in ipairs(handle:GetDescendants()) do
 		if obj:IsA("Trail") then
@@ -85,49 +81,48 @@ local function getBladeCFrame(handle)
 			end
 		end
 	end
-
-	-- Fallback if this sword has no usable Trail attachments.
 	return CFrame.new(0, handle.Size.Y * 0.25 + SLASH_FORWARD_OFFSET, 0)
 end
 
-local function emitSlashVFX(tool)
+local function ensureSlashVFX(tool)
 	local handle = tool:FindFirstChild("Handle")
-	if not handle or not handle:IsA("BasePart") then return end
-	if #slashEmitterTemplates == 0 then
-		warn("[SwordCombat] Slash Particle contains no ParticleEmitter")
-		return
+	if not handle or not handle:IsA("BasePart") then return nil end
+
+	local existing = handle:FindFirstChild(SLASH_ATTACHMENT_NAME)
+	if existing and existing:IsA("Attachment") then
+		return existing
 	end
 
-	local slashAttachment = Instance.new("Attachment")
-	slashAttachment.Name = "SlashParticleSwing"
-	slashAttachment.CFrame = getBladeCFrame(handle)
-	slashAttachment.Parent = handle
+	if #slashEmitterTemplates == 0 then
+		warn("[SwordCombat] Slash Particle contains no ParticleEmitter")
+		return nil
+	end
 
-	local emitted = false
+	local attachment = Instance.new("Attachment")
+	attachment.Name = SLASH_ATTACHMENT_NAME
+	attachment.CFrame = getBladeCFrame(handle)
+	attachment.Parent = handle
+
 	for _, emitterTemplate in ipairs(slashEmitterTemplates) do
 		local emitter = emitterTemplate:Clone()
 		emitter.Enabled = false
-
-		-- Ignore the template's spatial behavior. The sword controls the slash plane.
 		emitter.LockedToPart = true
-		emitter.Orientation = Enum.ParticleOrientation.VelocityPerpendicular
-		emitter.EmissionDirection = Enum.NormalId.Front
-		emitter.Speed = NumberRange.new(0.01)
-		emitter.Drag = 100
-		emitter.SpreadAngle = Vector2.zero
-		emitter.Parent = slashAttachment
-
-		local emitCount = tonumber(emitter:GetAttribute("EmitCount")) or 1
-		emitter:Emit(math.max(1, math.floor(emitCount)))
-		emitted = true
+		emitter.Parent = attachment
 	end
 
-	if not emitted then
-		slashAttachment:Destroy()
-		return
-	end
+	return attachment
+end
 
-	Debris:AddItem(slashAttachment, SLASH_CLEANUP_TIME)
+local function emitSlashVFX(tool)
+	local attachment = ensureSlashVFX(tool)
+	if not attachment then return end
+
+	for _, obj in ipairs(attachment:GetChildren()) do
+		if obj:IsA("ParticleEmitter") then
+			local emitCount = tonumber(obj:GetAttribute("EmitCount")) or 1
+			obj:Emit(math.max(1, math.floor(emitCount)))
+		end
+	end
 end
 
 local function bindSword(tool)
@@ -135,6 +130,7 @@ local function bindSword(tool)
 	if not tool:GetAttribute("SlayerSword") and tool.Name ~= "Novice Slayer Sword" then return end
 	if tool:GetAttribute("CombatClientBound") then return end
 	tool:SetAttribute("CombatClientBound", true)
+	ensureSlashVFX(tool)
 
 	local equipped = false
 	local attacking = false
@@ -218,6 +214,7 @@ local function bindSword(tool)
 		transitioning = true
 		equipToken += 1
 		local thisEquip = equipToken
+		ensureSlashVFX(tool)
 		setupTracks()
 		stopTrack(idleTrack, 0)
 		stopTrack(walkTrack, 0)
