@@ -1,6 +1,6 @@
 -- Player sword animation controller.
 -- Uses the developer animation pack in Workspace.TemplateR6.AnimSaves.
--- Slash VFX is mounted to the sword once, so the animation carries the VFX through the swing.
+-- Slash VFX is mounted to the sword once, then emits along the moving blade during each swing.
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local KeyframeSequenceProvider = game:GetService("KeyframeSequenceProvider")
@@ -10,7 +10,9 @@ local combatRemote = ReplicatedStorage:WaitForChild("SwordCombat")
 local animSaves = workspace:WaitForChild("TemplateR6"):WaitForChild("AnimSaves")
 local slashTemplate = workspace:FindFirstChild("Slash Particle") or workspace:WaitForChild("Slash Particle", 10)
 
-local SLASH_EMIT_DELAY = 0.08
+local SLASH_EMIT_DELAY = 0.05
+local SLASH_EMIT_WINDOW = 0.16
+local SLASH_SAMPLE_INTERVAL = 0.025
 local SLASH_FORWARD_OFFSET = 1.25
 local SLASH_ATTACHMENT_NAME = "SwordSlashVFX"
 
@@ -106,23 +108,34 @@ local function ensureSlashVFX(tool)
 	for _, emitterTemplate in ipairs(slashEmitterTemplates) do
 		local emitter = emitterTemplate:Clone()
 		emitter.Enabled = false
-		emitter.LockedToPart = true
+		-- The emitter moves with the sword, but emitted particles stay where the blade passed.
+		-- That creates the same kind of slash trail seen in the reference video.
+		emitter.LockedToPart = false
 		emitter.Parent = attachment
 	end
 
 	return attachment
 end
 
-local function emitSlashVFX(tool)
+local function playSlashVFX(tool)
 	local attachment = ensureSlashVFX(tool)
 	if not attachment then return end
 
-	for _, obj in ipairs(attachment:GetChildren()) do
-		if obj:IsA("ParticleEmitter") then
-			local emitCount = tonumber(obj:GetAttribute("EmitCount")) or 1
-			obj:Emit(math.max(1, math.floor(emitCount)))
+	task.spawn(function()
+		local started = os.clock()
+		while os.clock() - started < SLASH_EMIT_WINDOW do
+			if not attachment.Parent or tool.Parent ~= player.Character then
+				break
+			end
+			for _, obj in ipairs(attachment:GetChildren()) do
+				if obj:IsA("ParticleEmitter") then
+					local emitCount = tonumber(obj:GetAttribute("EmitCount")) or 1
+					obj:Emit(math.max(1, math.floor(emitCount)))
+				end
+			end
+			task.wait(SLASH_SAMPLE_INTERVAL)
 		end
-	end
+	end)
 end
 
 local function bindSword(tool)
@@ -273,7 +286,7 @@ local function bindSword(tool)
 		if track then track:Play(0.1, 1, 1) end
 		task.delay(SLASH_EMIT_DELAY, function()
 			if equipped and attacking and tool.Parent == player.Character then
-				emitSlashVFX(tool)
+				playSlashVFX(tool)
 			end
 		end)
 		combatRemote:FireServer(index)
