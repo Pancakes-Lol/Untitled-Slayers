@@ -21,6 +21,9 @@
           "$ignoreUnknownInstances": true,
           "EnemyConfig": {
             "$path": "src/configs/EnemyConfig.luau"
+          },
+          "QuestConfig": {
+            "$path": "src/configs/QuestConfig.luau"
           }
         }
       }
