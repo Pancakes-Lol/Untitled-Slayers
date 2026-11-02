@@ -154,25 +154,52 @@ local function refresh(instant)
 	end
 end
 
-local dialogGui = playerGui:FindFirstChild("DialogUI") or playerGui:WaitForChild("DialogUI", 10)
+local dialogConnections = {}
+local function disconnectDialogConnections()
+	for _, connection in ipairs(dialogConnections) do
+		connection:Disconnect()
+	end
+	table.clear(dialogConnections)
+end
+
+local function currentDialogGui()
+	local current = playerGui:FindFirstChild("DialogUI")
+	return current and current:IsA("ScreenGui") and current or nil
+end
+
 local function syncVisibility()
 	if not gui.Parent then return end
+	local dialogGui = currentDialogGui()
 	local dialogueOpen = dialogGui and dialogGui.Enabled == true
 	gui.Enabled = not dialogueOpen
 	card.Visible = true
 end
 
-if dialogGui then
-	dialogGui:GetPropertyChangedSignal("Enabled"):Connect(function()
-		-- Tetsu hides every other UI while talking. Explicitly bring this HUD back
-		-- as soon as the dialogue closes so it cannot stay disabled accidentally.
-		task.defer(syncVisibility)
-	end)
+local function hookDialog(dialogGui)
+	if not dialogGui or not dialogGui:IsA("ScreenGui") then return end
+	disconnectDialogConnections()
+	table.insert(dialogConnections, dialogGui:GetPropertyChangedSignal("Enabled"):Connect(function()
+		if dialogGui.Parent == playerGui then
+			task.defer(syncVisibility)
+		end
+	end))
 end
+
+local initialDialog = currentDialogGui()
+if initialDialog then hookDialog(initialDialog) end
+
+playerGui.ChildAdded:Connect(function(child)
+	if child.Name == "DialogUI" and child:IsA("ScreenGui") then
+		hookDialog(child)
+		task.defer(syncVisibility)
+	end
+end)
 
 player.CharacterAdded:Connect(function()
 	for _, delayTime in ipairs({0.15, 0.6, 1.2}) do
 		task.delay(delayTime, function()
+			local current = currentDialogGui()
+			if current then hookDialog(current) end
 			refresh(true)
 			syncVisibility()
 		end)
