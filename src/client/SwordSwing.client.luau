@@ -1,18 +1,23 @@
 -- Player sword animation controller.
 -- Uses the developer animation pack in Workspace.TemplateR6.AnimSaves.
--- Slash VFX uses a custom Trail on the sword blade so the animation physically draws the slash path.
+-- Slash VFX releases a short-range visual wave from the sword instead of becoming a real projectile.
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local KeyframeSequenceProvider = game:GetService("KeyframeSequenceProvider")
+local TweenService = game:GetService("TweenService")
+local Debris = game:GetService("Debris")
 
 local player = Players.LocalPlayer
 local combatRemote = ReplicatedStorage:WaitForChild("SwordCombat")
 local animSaves = workspace:WaitForChild("TemplateR6"):WaitForChild("AnimSaves")
 local slashTemplate = workspace:FindFirstChild("Slash Particle") or workspace:WaitForChild("Slash Particle", 10)
 
-local SLASH_START_DELAY = 0.04
-local SLASH_ACTIVE_TIME = 0.20
-local SLASH_TRAIL_NAME = "SwordSlashTrailVFX"
+local SLASH_START_DELAY = 0.07
+local SLASH_TRAVEL_DISTANCE = 5.5
+local SLASH_TRAVEL_TIME = 0.20
+local SLASH_START_FORWARD = 1.0
+local SLASH_SCALE = Vector3.new(5.5, 3.1, 0.08)
+local SLASH_LIFETIME = 0.32
 
 local animationCache = {}
 local function resolveAnimation(name)
@@ -62,86 +67,140 @@ end
 
 local slashEmitterTemplate = getSlashEmitterTemplate()
 
-local function getBladeTrailAttachments(handle)
+local function getBladeDirection(handle)
 	for _, obj in ipairs(handle:GetDescendants()) do
 		if obj:IsA("Trail") and obj.Attachment0 and obj.Attachment1 then
-			return obj.Attachment0, obj.Attachment1
+			local a0 = obj.Attachment0
+			local a1 = obj.Attachment1
+			if a0.Parent == handle and a1.Parent == handle then
+				local delta = a1.Position - a0.Position
+				if delta.Magnitude > 0.001 then
+					return delta.Unit
+				end
+			end
 		end
 	end
-
-	local attachments = {}
-	for _, obj in ipairs(handle:GetDescendants()) do
-		if obj:IsA("Attachment") then
-			table.insert(attachments, obj)
-		end
-	end
-	if #attachments >= 2 then
-		return attachments[1], attachments[2]
-	end
-	return nil, nil
+	return Vector3.new(0, 1, 0)
 end
 
-local function ensureSlashTrail(tool)
-	local handle = tool:FindFirstChild("Handle")
-	if not handle or not handle:IsA("BasePart") then return nil end
-
-	local existing = handle:FindFirstChild(SLASH_TRAIL_NAME)
-	if existing and existing:IsA("Trail") then
-		return existing
+local function getSlashTexture()
+	if slashEmitterTemplate and slashEmitterTemplate.Texture ~= "" then
+		return slashEmitterTemplate.Texture
 	end
+	return ""
+end
 
-	local attachment0, attachment1 = getBladeTrailAttachments(handle)
-	if not attachment0 or not attachment1 then
-		warn("[SwordCombat] Could not find two blade attachments for slash trail")
-		return nil
-	end
-
-	local trail = Instance.new("Trail")
-	trail.Name = SLASH_TRAIL_NAME
-	trail.Attachment0 = attachment0
-	trail.Attachment1 = attachment1
-	trail.Enabled = false
-	trail.Lifetime = 0.18
-	trail.MinLength = 0.02
-	trail.FaceCamera = true
-	trail.LightEmission = 1
-	trail.LightInfluence = 0
-	trail.TextureMode = Enum.TextureMode.Stretch
-	trail.TextureLength = 1
-	trail.WidthScale = NumberSequence.new({
-		NumberSequenceKeypoint.new(0, 1.15),
-		NumberSequenceKeypoint.new(0.65, 0.9),
-		NumberSequenceKeypoint.new(1, 0),
-	})
-
+local function getSlashColor()
 	if slashEmitterTemplate then
-		trail.Color = slashEmitterTemplate.Color
-		trail.Texture = slashEmitterTemplate.Texture
-	else
-		trail.Color = ColorSequence.new(Color3.fromRGB(120, 220, 255), Color3.fromRGB(235, 250, 255))
+		local keypoints = slashEmitterTemplate.Color.Keypoints
+		if #keypoints > 0 then
+			return keypoints[1].Value
+		end
 	end
-
-	trail.Transparency = NumberSequence.new({
-		NumberSequenceKeypoint.new(0, 0.08),
-		NumberSequenceKeypoint.new(0.75, 0.18),
-		NumberSequenceKeypoint.new(1, 1),
-	})
-	trail.Parent = handle
-	return trail
+	return Color3.fromRGB(120, 220, 255)
 end
 
-local function playSlashVFX(tool)
-	local trail = ensureSlashTrail(tool)
-	if not trail then return end
-
-	trail.Enabled = false
-	task.wait()
-	trail.Enabled = true
-	task.delay(SLASH_ACTIVE_TIME, function()
-		if trail.Parent then
-			trail.Enabled = false
+local function getSlashTransparency()
+	if slashEmitterTemplate then
+		local keypoints = slashEmitterTemplate.Transparency.Keypoints
+		if #keypoints > 0 then
+			return math.clamp(keypoints[1].Value, 0, 1)
 		end
-	end)
+	end
+	return 0.05
+end
+
+local function createSlashWave(tool)
+	local handle = tool:FindFirstChild("Handle")
+	local character = player.Character
+	local root = character and character:FindFirstChild("HumanoidRootPart")
+	if not handle or not handle:IsA("BasePart") or not root then return end
+
+	local bladeDirectionLocal = getBladeDirection(handle)
+	local bladeDirectionWorld = handle.CFrame:VectorToWorldSpace(bladeDirectionLocal).Unit
+	local playerForward = root.CFrame.LookVector
+
+	-- The wave leaves the blade but travels mainly forward from the player,
+	-- so it looks thrown from the swing without behaving like a projectile.
+	local travelDirection = (playerForward * 0.85 + bladeDirectionWorld * 0.15)
+	if travelDirection.Magnitude < 0.001 then
+		travelDirection = playerForward
+	else
+		travelDirection = travelDirection.Unit
+	end
+
+	local startPosition = handle.Position + playerForward * SLASH_START_FORWARD
+	local bladeUp = bladeDirectionWorld
+	local right = travelDirection:Cross(bladeUp)
+	if right.Magnitude < 0.01 then
+		right = root.CFrame.RightVector
+	else
+		right = right.Unit
+	end
+	local up = right:Cross(travelDirection).Unit
+
+	local wave = Instance.new("Part")
+	wave.Name = "SwordSlashWave"
+	wave.Size = SLASH_SCALE
+	wave.Anchored = true
+	wave.CanCollide = false
+	wave.CanTouch = false
+	wave.CanQuery = false
+	wave.CastShadow = false
+	wave.Transparency = 1
+	wave.CFrame = CFrame.fromMatrix(startPosition, right, up, -travelDirection)
+	wave.Parent = workspace
+
+	local gui = Instance.new("SurfaceGui")
+	gui.Name = "SlashSurface"
+	gui.Face = Enum.NormalId.Front
+	gui.AlwaysOnTop = false
+	gui.LightInfluence = 0
+	gui.PixelsPerStud = 100
+	gui.SizingMode = Enum.SurfaceGuiSizingMode.PixelsPerStud
+	gui.Parent = wave
+
+	local image = Instance.new("ImageLabel")
+	image.Name = "SlashImage"
+	image.BackgroundTransparency = 1
+	image.Size = UDim2.fromScale(1, 1)
+	image.Position = UDim2.fromScale(0, 0)
+	image.Image = getSlashTexture()
+	image.ImageColor3 = getSlashColor()
+	image.ImageTransparency = getSlashTransparency()
+	image.ScaleType = Enum.ScaleType.Stretch
+	image.Parent = gui
+
+	local backGui = gui:Clone()
+	backGui.Name = "SlashSurfaceBack"
+	backGui.Face = Enum.NormalId.Back
+	backGui.Parent = wave
+
+	local targetCFrame = wave.CFrame + travelDirection * SLASH_TRAVEL_DISTANCE
+	local moveTween = TweenService:Create(
+		wave,
+		TweenInfo.new(SLASH_TRAVEL_TIME, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+		{CFrame = targetCFrame}
+	)
+	local fadeTween = TweenService:Create(
+		image,
+		TweenInfo.new(SLASH_LIFETIME, Enum.EasingStyle.Quad, Enum.EasingDirection.In),
+		{ImageTransparency = 1}
+	)
+	local backImage = backGui:FindFirstChild("SlashImage")
+	local backFadeTween
+	if backImage and backImage:IsA("ImageLabel") then
+		backFadeTween = TweenService:Create(
+			backImage,
+			TweenInfo.new(SLASH_LIFETIME, Enum.EasingStyle.Quad, Enum.EasingDirection.In),
+			{ImageTransparency = 1}
+		)
+	end
+
+	moveTween:Play()
+	fadeTween:Play()
+	if backFadeTween then backFadeTween:Play() end
+	Debris:AddItem(wave, SLASH_LIFETIME + 0.08)
 end
 
 local function bindSword(tool)
@@ -149,7 +208,6 @@ local function bindSword(tool)
 	if not tool:GetAttribute("SlayerSword") and tool.Name ~= "Novice Slayer Sword" then return end
 	if tool:GetAttribute("CombatClientBound") then return end
 	tool:SetAttribute("CombatClientBound", true)
-	ensureSlashTrail(tool)
 
 	local equipped = false
 	local attacking = false
@@ -233,7 +291,6 @@ local function bindSword(tool)
 		transitioning = true
 		equipToken += 1
 		local thisEquip = equipToken
-		ensureSlashTrail(tool)
 		setupTracks()
 		stopTrack(idleTrack, 0)
 		stopTrack(walkTrack, 0)
@@ -258,8 +315,6 @@ local function bindSword(tool)
 		transitioning = true
 		equipToken += 1
 		local thisEquip = equipToken
-		local slashTrail = tool:FindFirstChild("Handle") and tool.Handle:FindFirstChild(SLASH_TRAIL_NAME)
-		if slashTrail then slashTrail.Enabled = false end
 		stopTrack(idleTrack, 0.16)
 		stopTrack(walkTrack, 0.16)
 		stopTrack(unsheathTrack, 0.08)
@@ -294,7 +349,7 @@ local function bindSword(tool)
 		if track then track:Play(0.1, 1, 1) end
 		task.delay(SLASH_START_DELAY, function()
 			if equipped and attacking and tool.Parent == player.Character then
-				playSlashVFX(tool)
+				createSlashWave(tool)
 			end
 		end)
 		combatRemote:FireServer(index)
