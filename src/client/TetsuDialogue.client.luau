@@ -9,6 +9,12 @@ local remote = ReplicatedStorage:WaitForChild("TetsuDialogue")
 local playerGui = player:WaitForChild("PlayerGui")
 
 local gui = playerGui:WaitForChild("DialogUI")
+gui.ResetOnSpawn = false
+local mainUI = playerGui:FindFirstChild("MainUI")
+if mainUI and mainUI:IsA("ScreenGui") then
+	mainUI.ResetOnSpawn = false
+end
+
 local mainFrame = gui:WaitForChild("MainFrame")
 local dialogFrame = mainFrame:WaitForChild("DialogFrame")
 local npcName = dialogFrame:WaitForChild("NPCNameTextHolder")
@@ -64,6 +70,7 @@ local storyAction = "Continue"
 local uiLocked = false
 local savedGuiStates = {}
 local playerGuiChildConnection
+local buttonConnections = {}
 
 local function setBackpackEnabled(enabled)
 	pcall(function()
@@ -92,16 +99,17 @@ local function lockOtherUI()
 end
 
 local function restoreOtherUI()
-	if not uiLocked then return end
-	uiLocked = false
 	if playerGuiChildConnection then
 		playerGuiChildConnection:Disconnect()
 		playerGuiChildConnection = nil
 	end
-	for screenGui, wasEnabled in pairs(savedGuiStates) do
-		if screenGui.Parent == playerGui then screenGui.Enabled = wasEnabled end
+	if uiLocked then
+		uiLocked = false
+		for screenGui, wasEnabled in pairs(savedGuiStates) do
+			if screenGui.Parent == playerGui then screenGui.Enabled = wasEnabled end
+		end
+		table.clear(savedGuiStates)
 	end
-	table.clear(savedGuiStates)
 	setBackpackEnabled(true)
 end
 
@@ -112,7 +120,6 @@ local function hideButtons()
 	end
 end
 
-local buttonConnections = {}
 local function disconnectButtons()
 	for _, connection in ipairs(buttonConnections) do connection:Disconnect() end
 	table.clear(buttonConnections)
@@ -217,4 +224,11 @@ UserInputService.InputBegan:Connect(function(input, processed)
 	hideButtons()
 	phase = "Waiting"
 	remote:FireServer("Choose", index)
+end)
+
+player.CharacterAdded:Connect(function()
+	-- Dialogue UI persists through death; always reset it to a clean closed state on respawn.
+	task.defer(function()
+		closeDialogue(false)
+	end)
 end)
