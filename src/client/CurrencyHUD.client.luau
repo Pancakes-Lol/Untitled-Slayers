@@ -1,12 +1,21 @@
 -- Bridges the existing MainUI currency display to the hidden Currency folder.
--- Coins/Gems stay out of leaderstats while the original GUI keeps working.
+-- Rebinds to the current MainUI after respawn so Studio placeholder values never return.
 local Players = game:GetService("Players")
 
 local player = Players.LocalPlayer
 local playerGui = player:WaitForChild("PlayerGui")
+local currency = player:WaitForChild("Currency")
+local coins = currency:WaitForChild("Coins")
+local gems = currency:WaitForChild("Gems")
 
--- Shut down the old currency LocalScripts as early as possible so they never wait
--- for leaderstats.Coins/Gems and produce infinite-yield warnings.
+local mainUI
+local mainFrame
+local cashContainer
+local gemContainer
+local cashText
+local gemText
+local dialogUI
+
 local function disableLegacyCurrencyScript(obj)
 	if obj:IsA("LocalScript") and (obj.Name == "CoinsLabel" or obj.Name == "GemsLabel") then
 		obj.Disabled = true
@@ -18,25 +27,8 @@ for _, obj in ipairs(playerGui:GetDescendants()) do
 end
 playerGui.DescendantAdded:Connect(disableLegacyCurrencyScript)
 
-local mainUI = playerGui:WaitForChild("MainUI")
-local mainFrame = mainUI:WaitForChild("MainFrame")
-local cashContainer = mainFrame:WaitForChild("CashLabel")
-local gemContainer = mainFrame:WaitForChild("GemLabel")
-local dialogUI = playerGui:FindFirstChild("DialogUI")
-
--- Run one more targeted pass now that the existing MainUI is guaranteed to exist.
-for _, obj in ipairs(cashContainer:GetDescendants()) do
-	disableLegacyCurrencyScript(obj)
-end
-for _, obj in ipairs(gemContainer:GetDescendants()) do
-	disableLegacyCurrencyScript(obj)
-end
-
-local currency = player:WaitForChild("Currency")
-local coins = currency:WaitForChild("Coins")
-local gems = currency:WaitForChild("Gems")
-
 local function findDisplayLabel(container)
+	if not container then return nil end
 	if container:IsA("TextLabel") or container:IsA("TextButton") then
 		return container
 	end
@@ -48,63 +40,137 @@ local function findDisplayLabel(container)
 	return nil
 end
 
--- Remove any captions created by the previous version.
-for _, container in ipairs({cashContainer, gemContainer}) do
-	local caption = container:FindFirstChild("CurrencyCaption")
-	if caption then caption:Destroy() end
+local function bindCurrentGui()
+	local currentMainUI = playerGui:FindFirstChild("MainUI")
+	if not currentMainUI or not currentMainUI:IsA("ScreenGui") then
+		return false
+	end
+
+	if mainUI ~= currentMainUI then
+		mainUI = currentMainUI
+		mainUI.ResetOnSpawn = false
+		mainFrame = mainUI:WaitForChild("MainFrame")
+		cashContainer = mainFrame:WaitForChild("CashLabel")
+		gemContainer = mainFrame:WaitForChild("GemLabel")
+
+		for _, obj in ipairs(cashContainer:GetDescendants()) do
+			disableLegacyCurrencyScript(obj)
+		end
+		for _, obj in ipairs(gemContainer:GetDescendants()) do
+			disableLegacyCurrencyScript(obj)
+		end
+
+		for _, container in ipairs({cashContainer, gemContainer}) do
+			local caption = container:FindFirstChild("CurrencyCaption")
+			if caption then caption:Destroy() end
+		end
+
+		cashText = findDisplayLabel(cashContainer)
+		gemText = findDisplayLabel(gemContainer)
+	end
+
+	local currentDialog = playerGui:FindFirstChild("DialogUI")
+	if currentDialog and currentDialog:IsA("ScreenGui") then
+		dialogUI = currentDialog
+	end
+	return true
 end
 
-local cashText = findDisplayLabel(cashContainer)
-local gemText = findDisplayLabel(gemContainer)
-
 local function setGuiObjectVisible(obj, visible)
-	if obj:IsA("GuiObject") then
+	if obj and obj:IsA("GuiObject") then
 		obj.Visible = visible
 	end
 end
 
-local function refreshVisibility()
-	local dialogueOpen = dialogUI and dialogUI:IsA("ScreenGui") and dialogUI.Enabled
-	if not dialogueOpen then
-		mainUI.Enabled = true
-		setGuiObjectVisible(mainFrame, true)
-		setGuiObjectVisible(cashContainer, true)
-		setGuiObjectVisible(gemContainer, true)
-		if cashText then cashText.Visible = true end
-		if gemText then gemText.Visible = true end
+local function dialogueIsOpen()
+	local currentDialog = playerGui:FindFirstChild("DialogUI")
+	if currentDialog and currentDialog:IsA("ScreenGui") then
+		dialogUI = currentDialog
+		return currentDialog.Enabled
 	end
+	return false
+end
+
+local function refreshVisibility()
+	if not bindCurrentGui() then return end
+	if dialogueIsOpen() then return end
+
+	mainUI.Enabled = true
+	setGuiObjectVisible(mainFrame, true)
+	setGuiObjectVisible(cashContainer, true)
+	setGuiObjectVisible(gemContainer, true)
+	if cashText then cashText.Visible = true end
+	if gemText then gemText.Visible = true end
 end
 
 local function refreshCoins()
-	if cashText then cashText.Text = tostring(coins.Value) end
+	if not bindCurrentGui() then return end
+	if cashText then
+		cashText.Text = tostring(coins.Value)
+	end
 	refreshVisibility()
 end
 
 local function refreshGems()
-	if gemText then gemText.Text = tostring(gems.Value) end
+	if not bindCurrentGui() then return end
+	if gemText then
+		gemText.Text = tostring(gems.Value)
+	end
 	refreshVisibility()
+end
+
+local function refreshAll()
+	if not bindCurrentGui() then return end
+	refreshCoins()
+	refreshGems()
 end
 
 coins:GetPropertyChangedSignal("Value"):Connect(refreshCoins)
 gems:GetPropertyChangedSignal("Value"):Connect(refreshGems)
 
-if dialogUI and dialogUI:IsA("ScreenGui") then
-	dialogUI:GetPropertyChangedSignal("Enabled"):Connect(function()
-		if not dialogUI.Enabled then
-			task.defer(refreshVisibility)
-		end
-	end)
-else
-	playerGui.ChildAdded:Connect(function(child)
-		if child.Name == "DialogUI" and child:IsA("ScreenGui") then
-			dialogUI = child
-			dialogUI:GetPropertyChangedSignal("Enabled"):Connect(function()
-				if not dialogUI.Enabled then task.defer(refreshVisibility) end
-			end)
+local function hookDialog(currentDialog)
+	if not currentDialog or not currentDialog:IsA("ScreenGui") then return end
+	dialogUI = currentDialog
+	currentDialog:GetPropertyChangedSignal("Enabled"):Connect(function()
+		if currentDialog.Parent == playerGui and not currentDialog.Enabled then
+			task.defer(refreshAll)
 		end
 	end)
 end
 
-refreshCoins()
-refreshGems()
-refreshVisibility()
+local existingDialog = playerGui:FindFirstChild("DialogUI")
+if existingDialog then
+	hookDialog(existingDialog)
+end
+
+playerGui.ChildAdded:Connect(function(child)
+	if child.Name == "MainUI" and child:IsA("ScreenGui") then
+		-- Roblox can recreate MainUI after respawn. Rebind immediately and overwrite
+		-- the Studio placeholder text with the player's real currency values.
+		task.defer(function()
+			if child.Parent == playerGui then
+				mainUI = nil
+				bindCurrentGui()
+				refreshAll()
+			end
+		end)
+	elseif child.Name == "DialogUI" and child:IsA("ScreenGui") then
+		hookDialog(child)
+	end
+end)
+
+player.CharacterAdded:Connect(function()
+	-- Rebind more than once because PlayerGui replacement timing varies during respawn.
+	for _, delayTime in ipairs({0.05, 0.35, 0.9, 1.5}) do
+		task.delay(delayTime, function()
+			local currentMainUI = playerGui:FindFirstChild("MainUI")
+			if currentMainUI ~= mainUI then
+				mainUI = nil
+			end
+			refreshAll()
+		end)
+	end
+end)
+
+bindCurrentGui()
+refreshAll()
