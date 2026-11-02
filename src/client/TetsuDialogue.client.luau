@@ -71,6 +71,7 @@ local uiLocked = false
 local savedGuiStates = {}
 local playerGuiChildConnection
 local buttonConnections = {}
+local savedEquippedTool = nil
 
 local function setBackpackEnabled(enabled)
 	pcall(function()
@@ -78,9 +79,40 @@ local function setBackpackEnabled(enabled)
 	end)
 end
 
+local function rememberEquippedTool()
+	savedEquippedTool = nil
+	local character = player.Character
+	if not character then return end
+	for _, child in ipairs(character:GetChildren()) do
+		if child:IsA("Tool") then
+			savedEquippedTool = child
+			return
+		end
+	end
+end
+
+local function restoreEquippedTool()
+	local tool = savedEquippedTool
+	savedEquippedTool = nil
+	if not tool or not tool.Parent then return end
+
+	local character = player.Character
+	local humanoid = character and character:FindFirstChildOfClass("Humanoid")
+	local backpack = player:FindFirstChildOfClass("Backpack")
+	if not character or not humanoid or humanoid.Health <= 0 then return end
+
+	if tool.Parent == character then
+		return
+	end
+	if backpack and tool.Parent == backpack then
+		humanoid:EquipTool(tool)
+	end
+end
+
 local function lockOtherUI()
 	if uiLocked then return end
 	uiLocked = true
+	rememberEquippedTool()
 	table.clear(savedGuiStates)
 	for _, child in ipairs(playerGui:GetChildren()) do
 		if child:IsA("ScreenGui") and child ~= gui then
@@ -111,6 +143,9 @@ local function restoreOtherUI()
 		table.clear(savedGuiStates)
 	end
 	setBackpackEnabled(true)
+	-- Hiding/showing the Roblox backpack can disturb the equipped-tool state.
+	-- Re-equip exactly what the player was holding before the dialogue opened.
+	task.delay(0.05, restoreEquippedTool)
 end
 
 local function hideButtons()
@@ -228,6 +263,7 @@ end)
 
 player.CharacterAdded:Connect(function()
 	-- Dialogue UI persists through death; always reset it to a clean closed state on respawn.
+	savedEquippedTool = nil
 	task.defer(function()
 		closeDialogue(false)
 	end)
