@@ -7,10 +7,10 @@ local KeyframeSequenceProvider = game:GetService("KeyframeSequenceProvider")
 
 local player = Players.LocalPlayer
 local NORMAL_SPEED = 16
-local SPRINT_SPEED = 24
+local SPRINT_SPEED = 32
 local FADE_TIME = 0.18
 
-local sprintHeld = false
+local sprintEnabled = false
 local humanoid
 local animator
 local normalTrack
@@ -63,11 +63,17 @@ end
 local function updateAnimation()
 	if not humanoid or humanoid.Health <= 0 then return end
 	local moving = humanoid.MoveDirection.Magnitude > 0.05
-	local shouldSprint = sprintHeld and moving
+	local shouldSprint = sprintEnabled and moving
+	player:SetAttribute("SprintEnabled", sprintEnabled)
 	player:SetAttribute("IsSprinting", shouldSprint)
 
-	if shouldSprint then
+	if sprintEnabled then
 		humanoid.WalkSpeed = SPRINT_SPEED
+	else
+		humanoid.WalkSpeed = NORMAL_SPEED
+	end
+
+	if shouldSprint then
 		if hasSwordEquipped() then
 			stopTrack(normalTrack)
 			if swordTrack and not swordTrack.IsPlaying then swordTrack:Play(FADE_TIME) end
@@ -76,7 +82,6 @@ local function updateAnimation()
 			if normalTrack and not normalTrack.IsPlaying then normalTrack:Play(FADE_TIME) end
 		end
 	else
-		humanoid.WalkSpeed = NORMAL_SPEED
 		stopTrack(normalTrack)
 		stopTrack(swordTrack)
 	end
@@ -106,9 +111,7 @@ local function setupCharacter(character)
 	normalTrack = loadTrack(normalSaves:WaitForChild("Sprint"), Enum.AnimationPriority.Movement)
 	swordTrack = loadTrack(swordSaves:WaitForChild("Sword Run"), Enum.AnimationPriority.Movement)
 
-	runningConnection = humanoid.Running:Connect(function()
-		updateAnimation()
-	end)
+	runningConnection = humanoid.Running:Connect(updateAnimation)
 	childAddedConnection = character.ChildAdded:Connect(function(child)
 		if child:IsA("Tool") then task.defer(updateAnimation) end
 	end)
@@ -120,15 +123,8 @@ end
 
 UserInputService.InputBegan:Connect(function(input, processed)
 	if processed or UserInputService:GetFocusedTextBox() then return end
-	if input.KeyCode == Enum.KeyCode.LeftShift or input.KeyCode == Enum.KeyCode.RightShift then
-		sprintHeld = true
-		updateAnimation()
-	end
-end)
-
-UserInputService.InputEnded:Connect(function(input)
-	if input.KeyCode == Enum.KeyCode.LeftShift or input.KeyCode == Enum.KeyCode.RightShift then
-		sprintHeld = false
+	if input.KeyCode == Enum.KeyCode.LeftControl or input.KeyCode == Enum.KeyCode.RightControl then
+		sprintEnabled = not sprintEnabled
 		updateAnimation()
 	end
 end)
