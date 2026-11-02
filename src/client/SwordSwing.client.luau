@@ -1,7 +1,7 @@
 -- Player sword animation controller.
 -- Uses the developer animation pack in Workspace.TemplateR6.AnimSaves.
--- Sword slash VFX copies only ParticleEmitter visuals from Workspace["Slash Particle"].
--- Attachment position/orientation from the Studio template are intentionally ignored.
+-- Slash VFX copies only ParticleEmitter visuals from Workspace["Slash Particle"].
+-- The particle template's Attachment position/orientation are ignored; the sword blade defines both.
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local KeyframeSequenceProvider = game:GetService("KeyframeSequenceProvider")
@@ -12,16 +12,6 @@ local combatRemote = ReplicatedStorage:WaitForChild("SwordCombat")
 local animSaves = workspace:WaitForChild("TemplateR6"):WaitForChild("AnimSaves")
 local slashTemplate = workspace:FindFirstChild("Slash Particle") or workspace:WaitForChild("Slash Particle", 10)
 
--- Code owns all slash placement/orientation now.
--- Position is relative to the sword Handle; orientation is selected per Attack1-Attack5.
-local SLASH_LOCAL_POSITION = Vector3.new(0, 0, 0)
-local ATTACK_SLASH_ORIENTATION = {
-	[1] = Vector3.new(0, 0, -50),
-	[2] = Vector3.new(0, 0, 50),
-	[3] = Vector3.new(0, 0, -30),
-	[4] = Vector3.new(0, 0, 30),
-	[5] = Vector3.new(0, 0, 0),
-}
 local SLASH_EMIT_DELAY = 0.08
 local SLASH_CLEANUP_TIME = 2.5
 
@@ -74,7 +64,30 @@ end
 
 local slashEmitterTemplates = findSlashEmitterTemplates()
 
-local function emitSlashVFX(tool, attackIndex)
+-- Use the sword's existing Trail attachments to find the actual blade line.
+-- This makes the slash inherit the same movement/orientation as the sword animation.
+local function getBladeCFrame(handle)
+	for _, obj in ipairs(handle:GetDescendants()) do
+		if obj:IsA("Trail") then
+			local a0 = obj.Attachment0
+			local a1 = obj.Attachment1
+			if a0 and a1 and a0.Parent == handle and a1.Parent == handle then
+				local p0 = a0.Position
+				local p1 = a1.Position
+				local delta = p1 - p0
+				if delta.Magnitude > 0.001 then
+					local midpoint = (p0 + p1) * 0.5
+					return CFrame.lookAt(midpoint, midpoint + delta.Unit)
+				end
+			end
+		end
+	end
+
+	-- Fallback if this sword has no usable Trail attachments.
+	return CFrame.new(0, handle.Size.Y * 0.25, 0)
+end
+
+local function emitSlashVFX(tool)
 	local handle = tool:FindFirstChild("Handle")
 	if not handle or not handle:IsA("BasePart") then return end
 	if #slashEmitterTemplates == 0 then
@@ -84,15 +97,23 @@ local function emitSlashVFX(tool, attackIndex)
 
 	local slashAttachment = Instance.new("Attachment")
 	slashAttachment.Name = "SlashParticleSwing"
-	slashAttachment.Position = SLASH_LOCAL_POSITION
-	slashAttachment.Orientation = ATTACK_SLASH_ORIENTATION[attackIndex] or Vector3.zero
+	slashAttachment.CFrame = getBladeCFrame(handle)
 	slashAttachment.Parent = handle
 
 	local emitted = false
 	for _, emitterTemplate in ipairs(slashEmitterTemplates) do
 		local emitter = emitterTemplate:Clone()
 		emitter.Enabled = false
+
+		-- Ignore the template's spatial behavior. The sword controls the slash plane.
+		emitter.LockedToPart = true
+		emitter.Orientation = Enum.ParticleOrientation.VelocityPerpendicular
+		emitter.EmissionDirection = Enum.NormalId.Front
+		emitter.Speed = NumberRange.new(0.01)
+		emitter.Drag = 100
+		emitter.SpreadAngle = Vector2.zero
 		emitter.Parent = slashAttachment
+
 		local emitCount = tonumber(emitter:GetAttribute("EmitCount")) or 1
 		emitter:Emit(math.max(1, math.floor(emitCount)))
 		emitted = true
@@ -252,7 +273,7 @@ local function bindSword(tool)
 		if track then track:Play(0.1, 1, 1) end
 		task.delay(SLASH_EMIT_DELAY, function()
 			if equipped and attacking and tool.Parent == player.Character then
-				emitSlashVFX(tool, index)
+				emitSlashVFX(tool)
 			end
 		end)
 		combatRemote:FireServer(index)
