@@ -40,7 +40,7 @@ enemyFolder.Name = "LiveEnemies"
 enemyFolder.Parent = workspace
 
 local PLAYER_ATTACK_COOLDOWN = 0.42
-local PLAYER_DAMAGE = 20
+local BASE_PLAYER_DAMAGE = 20
 
 local function xpNeededForLevel(level)
 	return 100 + math.max(0, level - 1) * 50
@@ -48,10 +48,11 @@ end
 
 local function awardPlayer(player, xpAmount, coinAmount)
 	local stats = player and player:FindFirstChild("leaderstats")
-	if not stats then return end
+	local currency = player and player:FindFirstChild("Currency")
+	if not stats or not currency then return end
 	local level = stats:FindFirstChild("Level")
 	local xp = stats:FindFirstChild("XP")
-	local coins = stats:FindFirstChild("Coins")
+	local coins = currency:FindFirstChild("Coins")
 	if not level or not xp or not coins then return end
 	coins.Value += coinAmount
 	xp.Value += xpAmount
@@ -360,7 +361,8 @@ combatRemote.OnServerEvent:Connect(function(player)
 	end
 	if bestHum then
 		bestHum:SetAttribute("LastHitUserId", player.UserId)
-		bestHum:TakeDamage(PLAYER_DAMAGE)
+		local damage = math.max(1, tonumber(player:GetAttribute("SwordDamage")) or BASE_PLAYER_DAMAGE)
+		bestHum:TakeDamage(damage)
 	end
 end)
 
