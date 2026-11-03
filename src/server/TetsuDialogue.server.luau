@@ -50,6 +50,7 @@ prompt.Parent = torso
 local QUEST_ORDER = {"AshenPup", "WolfScout"}
 local QUEST_COOLDOWN_SECONDS = 60
 local state = {}
+local questChoicePending = {}
 local dummy
 local DUMMY_DISTANCE = 19
 
@@ -326,11 +327,48 @@ local function cooldownRemaining(s)
 	return remaining
 end
 
+local function firstRoundComplete(s)
+	if type(s.completedQuests) ~= "table" then return false end
+	for _, questId in ipairs(QUEST_ORDER) do
+		if s.completedQuests[questId] ~= true then
+			return false
+		end
+	end
+	return #QUEST_ORDER > 0
+end
+
 local function nextQuestId(s)
 	return normalizeQuestIndex(s)
 end
 
+local function showQuestDetails(player, s, questId)
+	local quest = questId and QuestConfig[questId]
+	if not quest then
+		s.pendingQuest = nil
+		send(player, "Story", {text = "I don't have that hunt ready right now.", button = "Goodbye"})
+		return
+	end
+
+	local requiredLevel = tonumber(quest.LevelRequired) or 1
+	if playerLevel(player) < requiredLevel then
+		s.pendingQuest = nil
+		send(player, "Story", {
+			text = string.format("Come back at level %d for that quest.", requiredLevel),
+			button = "Got it",
+		})
+		return
+	end
+
+	s.pendingQuest = questId
+	local rewards = quest.Rewards or {}
+	send(player, "Story", {
+		text = string.format("%s Reward: %d cash and %d XP.", quest.QuestDescription or quest.QuestDescriptiom or "I have a hunt for you.", rewards.Cash or 0, rewards.XP or 0),
+		button = "Accept quest",
+	})
+end
+
 local function offerNextQuest(player, s)
+	questChoicePending[player] = nil
 	local remaining = cooldownRemaining(s)
 	if remaining > 0 then
 		s.pendingQuest = nil
@@ -341,28 +379,22 @@ local function offerNextQuest(player, s)
 		return
 	end
 
-	local questId = nextQuestId(s)
-	local quest = questId and QuestConfig[questId]
-	if not quest then
+	if firstRoundComplete(s) then
 		s.pendingQuest = nil
-		send(player, "Story", {text = "I don't have a hunt ready right now.", button = "Goodbye"})
-		return
-	end
-	local requiredLevel = tonumber(quest.LevelRequired) or 1
-	if playerLevel(player) < requiredLevel then
-		s.pendingQuest = nil
-		send(player, "Story", {
-			text = string.format("Come back at level %d for your next quest.", requiredLevel),
-			button = "Got it",
+		questChoicePending[player] = true
+		local answers = {}
+		for i, questId in ipairs(QUEST_ORDER) do
+			local quest = QuestConfig[questId]
+			answers[i] = quest and (quest.Title or questId) or questId
+		end
+		send(player, "Question", {
+			question = "Which quest do you want to take?",
+			answers = answers,
 		})
 		return
 	end
-	s.pendingQuest = questId
-	local rewards = quest.Rewards or {}
-	send(player, "Story", {
-		text = string.format("%s Reward: %d cash and %d XP.", quest.QuestDescription or quest.QuestDescriptiom or "I have a hunt for you.", rewards.Cash or 0, rewards.XP or 0),
-		button = "Accept quest",
-	})
+
+	showQuestDetails(player, s, nextQuestId(s))
 end
 
 local function talk(player)
@@ -398,8 +430,11 @@ local function talk(player)
 			s.completedQuests[completedId] = true
 			s.activeQuest = nil
 			s.questKills = 0
-			s.questIndex = (math.max(1, math.floor(tonumber(s.questIndex) or 1)) % #QUEST_ORDER) + 1
+			if not firstRoundComplete(s) then
+				s.questIndex = (math.max(1, math.floor(tonumber(s.questIndex) or 1)) % #QUEST_ORDER) + 1
+			end
 			s.questCooldownUntil = os.time() + QUEST_COOLDOWN_SECONDS
+			questChoicePending[player] = nil
 			syncTracker(player, s)
 			task.spawn(PlayerData.SavePlayer, player)
 			local rewards = quest.Rewards or {}
@@ -423,7 +458,10 @@ prompt.Triggered:Connect(talk)
 remote.OnServerEvent:Connect(function(player, action, value)
 	local s = state[player]
 	if not s then return end
-	if action == "Close" then return end
+	if action == "Close" then
+		questChoicePending[player] = nil
+		return
+	end
 	if not nearby(player) then return end
 
 	if action == "Choose" and s.stage == "math" and type(value) == "number" and value % 1 == 0 and value >= 1 and value <= 3 then
@@ -432,6 +470,17 @@ remote.OnServerEvent:Connect(function(player, action, value)
 			text = (value == 2 and "21?! Ha! I like your confidence. " or value == 1 and "Correct! " or "That's... creative. ") .. "Now let's begin your slayer journey.",
 			button = "Continue",
 		})
+	elseif action == "Choose" and s.stage == "done" and questChoicePending[player] then
+		questChoicePending[player] = nil
+		if type(value) ~= "number" or value % 1 ~= 0 or value < 1 or value > #QUEST_ORDER then
+			send(player, "Close")
+			return
+		end
+		if cooldownRemaining(s) > 0 then
+			offerNextQuest(player, s)
+			return
+		end
+		showQuestDetails(player, s, QUEST_ORDER[value])
 	elseif action == "Continue" and s.stage == "offer" then
 		talk(player)
 	elseif action == "Accept" and s.stage == "offer" then
@@ -519,5 +568,6 @@ for _, player in ipairs(Players:GetPlayers()) do
 	task.spawn(setupPlayer, player)
 end
 Players.PlayerRemoving:Connect(function(player)
+	questChoicePending[player] = nil
 	state[player] = nil
 end)
