@@ -93,9 +93,25 @@ local function isGreenish(frame)
 end
 
 local function findHealthFill(instance)
-	local fallbackNamed
-	local fallbackGreen
+	-- Prefer the actual green frame from the authored GUI. The old lookup could grab
+	-- the black health-bar container when its name included "fill/progress".
+	local bestGreen
+	local bestGreenScore = -math.huge
+	for _, obj in ipairs(instance:GetDescendants()) do
+		if obj:IsA("Frame") and isGreenish(obj) and obj.Parent and obj.Parent:IsA("GuiObject") then
+			local color = obj.BackgroundColor3
+			local score = color.G - math.max(color.R, color.B)
+			if score > bestGreenScore then
+				bestGreen = obj
+				bestGreenScore = score
+			end
+		end
+	end
+	if bestGreen then
+		return bestGreen
+	end
 
+	-- Fallback only if the template is later redesigned without a green fill.
 	for _, obj in ipairs(instance:GetDescendants()) do
 		if obj:IsA("Frame") then
 			local lowerName = string.lower(obj.Name)
@@ -106,21 +122,9 @@ local function findHealthFill(instance)
 			then
 				return obj
 			end
-
-			if not fallbackNamed and (
-				string.find(lowerName, "fill", 1, true)
-				or string.find(lowerName, "progressbarframe", 1, true)
-			) then
-				fallbackNamed = obj
-			end
-
-			if not fallbackGreen and isGreenish(obj) and obj.Parent and obj.Parent:IsA("GuiObject") then
-				fallbackGreen = obj
-			end
 		end
 	end
-
-	return fallbackNamed or fallbackGreen
+	return nil
 end
 
 local function updatePercentText(instance, ratio)
@@ -142,19 +146,25 @@ end
 
 local function bindHealth(display, humanoid)
 	local fill = findHealthFill(display)
-	local fullSize = fill and fill.Size
+
+	if fill then
+		-- Treat the green frame as the real health fill. At full health it spans the
+		-- entire bar, then shrinks from right to left while staying anchored on the left.
+		fill.AnchorPoint = Vector2.new(0, fill.AnchorPoint.Y)
+		fill.Position = UDim2.new(0, 0, fill.Position.Y.Scale, fill.Position.Y.Offset)
+	end
 
 	local function refresh()
 		if not display.Parent or not humanoid.Parent then return end
 		local maxHealth = math.max(humanoid.MaxHealth, 1)
 		local ratio = math.clamp(humanoid.Health / maxHealth, 0, 1)
 
-		if fill and fill.Parent and fullSize then
+		if fill and fill.Parent then
 			fill.Size = UDim2.new(
-				fullSize.X.Scale * ratio,
-				math.floor(fullSize.X.Offset * ratio + 0.5),
-				fullSize.Y.Scale,
-				fullSize.Y.Offset
+				ratio,
+				0,
+				fill.Size.Y.Scale,
+				fill.Size.Y.Offset
 			)
 		end
 		updatePercentText(display, ratio)
