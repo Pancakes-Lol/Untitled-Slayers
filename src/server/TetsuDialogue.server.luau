@@ -1,6 +1,8 @@
--- Tetsu onboarding + data-driven early quests.
+-- Tetsu onboarding + data-driven early quests with persistent quest state.
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+local PlayerData = require(script.Parent:WaitForChild("PlayerData"))
 
 local npc = workspace:WaitForChild("Tetsu", 30)
 if not npc then warn("[Tetsu] Workspace/Tetsu missing") return end
@@ -133,6 +135,48 @@ local function fireTracker(player, questId, progress, complete)
 	})
 end
 
+local function syncTracker(player, s)
+	if not s then
+		questRemote:FireClient(player, {Visible = false})
+		return
+	end
+
+	if s.stage == "hunt" then
+		questRemote:FireClient(player, {
+			Visible = true,
+			Title = "Tutorial",
+			Description = "Defeat the training enemy, then return to Tetsu.",
+			Progress = 0,
+			Amount = 1,
+			Rewards = {},
+			Complete = false,
+		})
+		return
+	end
+
+	if s.stage == "return" then
+		questRemote:FireClient(player, {
+			Visible = true,
+			Title = "Tutorial",
+			Description = "Defeat the training enemy, then return to Tetsu.",
+			Progress = 1,
+			Amount = 1,
+			Rewards = {},
+			Complete = true,
+		})
+		return
+	end
+
+	if s.activeQuest then
+		local quest = QuestConfig[s.activeQuest]
+		local amount = quest and (tonumber(quest.AmountOfEnemy) or 0) or 0
+		fireTracker(player, s.activeQuest, s.questKills or 0, (s.questKills or 0) >= amount)
+		return
+	end
+
+	questRemote:FireClient(player, {Visible = false})
+end
+
 local function playerLevel(player)
 	local stats = player:FindFirstChild("leaderstats")
 	local level = stats and stats:FindFirstChild("Level")
@@ -254,15 +298,7 @@ local function spawnDummy()
 		local s = player and state[player]
 		if s and s.stage == "hunt" then
 			s.stage = "return"
-			questRemote:FireClient(player, {
-				Visible = true,
-				Title = "Tutorial",
-				Description = "Defeat the training enemy, then return to Tetsu.",
-				Progress = 1,
-				Amount = 1,
-				Rewards = {},
-				Complete = true,
-			})
+			syncTracker(player, s)
 		end
 		task.delay(5, function()
 			if dummy == model then spawnDummy() end
@@ -279,6 +315,7 @@ local function offerNextQuest(player, s)
 	local questId = nextQuestId(s)
 	local quest = questId and QuestConfig[questId]
 	if not quest then
+		s.pendingQuest = nil
 		send(player, "Story", {text = "You've handled every job I have for now. Keep training.", button = "Goodbye"})
 		return
 	end
@@ -318,7 +355,7 @@ local function talk(player)
 		send(player, "Story", {text = "Equip your katana and defeat the training enemy near me.", button = "Let's go"})
 	elseif s.stage == "return" then
 		s.stage = "done"
-		questRemote:FireClient(player, {Visible = false})
+		syncTracker(player, s)
 		send(player, "Story", {
 			text = "Well done! You defeated your first enemy. Your slayer journey has officially begun.",
 			button = "Thank you!",
@@ -333,7 +370,7 @@ local function talk(player)
 			s.activeQuest = nil
 			s.questKills = 0
 			s.questIndex += 1
-			questRemote:FireClient(player, {Visible = false})
+			syncTracker(player, s)
 			local rewards = quest.Rewards or {}
 			send(player, "Story", {
 				text = string.format("Good work. %s complete! You earned %d cash and %d XP.", quest.Title or completedId, rewards.Cash or 0, rewards.XP or 0),
@@ -369,15 +406,7 @@ remote.OnServerEvent:Connect(function(player, action, value)
 	elseif action == "Accept" and s.stage == "offer" then
 		s.stage = "hunt"
 		grantSword(player)
-		questRemote:FireClient(player, {
-			Visible = true,
-			Title = "Tutorial",
-			Description = "Defeat the training enemy, then return to Tetsu.",
-			Progress = 0,
-			Amount = 1,
-			Rewards = {},
-			Complete = false,
-		})
+		syncTracker(player, s)
 		talk(player)
 	elseif action == "Continue" and s.stage == "done" and s.pendingQuest then
 		local questId = s.pendingQuest
@@ -387,10 +416,8 @@ remote.OnServerEvent:Connect(function(player, action, value)
 			s.activeQuest = questId
 			s.questKills = 0
 			fireTracker(player, questId, 0, false)
-			send(player, "Close")
-		else
-			send(player, "Close")
 		end
+		send(player, "Close")
 	elseif action == "Continue" then
 		send(player, "Close")
 	end
@@ -410,7 +437,7 @@ local function bindEnemy(model)
 		local quest = QuestConfig[s.activeQuest]
 		if not quest or quest.Enemy ~= enemyType then return end
 		local amount = tonumber(quest.AmountOfEnemy) or 0
-		s.questKills = math.min(s.questKills + 1, amount)
+		s.questKills = math.min((s.questKills or 0) + 1, amount)
 		fireTracker(player, s.activeQuest, s.questKills, s.questKills >= amount)
 	end)
 end
@@ -423,30 +450,39 @@ end
 task.spawn(watchLiveEnemies)
 
 local function setupPlayer(player)
-	state[player] = {
-		stage = "math",
-		questIndex = 1,
-		pendingQuest = nil,
-		activeQuest = nil,
-		questKills = 0,
-		completedQuests = {},
-	}
+	local profile = PlayerData.LoadPlayer(player)
+	local savedQuest = profile and profile.Quest
+	if not savedQuest then return end
+
+	savedQuest.stage = type(savedQuest.stage) == "string" and savedQuest.stage or "math"
+	savedQuest.questIndex = math.max(1, math.floor(tonumber(savedQuest.questIndex) or 1))
+	savedQuest.questKills = math.max(0, math.floor(tonumber(savedQuest.questKills) or 0))
+	savedQuest.completedQuests = type(savedQuest.completedQuests) == "table" and savedQuest.completedQuests or {}
+	state[player] = savedQuest
+
 	applyRegularName(player)
 	player.CharacterAdded:Connect(function()
-		task.wait(0.5)
-		if not state[player] then return end
+		task.wait(0.6)
+		local s = state[player]
+		if not s then return end
 		applyRegularName(player)
 		grantSword(player)
-		local s = state[player]
-		if s.activeQuest then
-			local quest = QuestConfig[s.activeQuest]
-			local amount = quest and (tonumber(quest.AmountOfEnemy) or 0) or 0
-			fireTracker(player, s.activeQuest, s.questKills, s.questKills >= amount)
-		end
+		syncTracker(player, s)
 	end)
-	if player.Character then task.defer(grantSword, player) end
+
+	if player.Character then
+		task.delay(0.6, function()
+			if not state[player] then return end
+			grantSword(player)
+			syncTracker(player, state[player])
+		end)
+	end
 end
 
 Players.PlayerAdded:Connect(setupPlayer)
-for _, player in Players:GetPlayers() do setupPlayer(player) end
-Players.PlayerRemoving:Connect(function(player) state[player] = nil end)
+for _, player in ipairs(Players:GetPlayers()) do
+	task.spawn(setupPlayer, player)
+end
+Players.PlayerRemoving:Connect(function(player)
+	state[player] = nil
+end)
