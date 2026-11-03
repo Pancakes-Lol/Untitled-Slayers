@@ -14,16 +14,17 @@ local loading = {}
 local writable = {}
 
 local DEFAULT_PROFILE = {
-	Version = 1,
+	Version = 2,
 	Level = 1,
 	XP = 0,
 	Coins = 0,
 	Gems = 0,
 	StatPoints = 0,
+	LevelRewardsThrough = 1,
 	Stats = {
-		Stat1 = 0,
-		Stat2 = 0,
-		Stat3 = 0,
+		Agility = 0,
+		Defense = 0,
+		Attack = 0,
 	},
 	Materials = {},
 	Quest = {
@@ -65,17 +66,30 @@ local function clampInteger(value, minimum)
 end
 
 local function sanitizeProfile(profile)
+	profile = type(profile) == "table" and profile or {}
+
+	-- Migrate the original placeholder Stat1/Stat2/Stat3 save fields if they exist.
+	if type(profile.Stats) == "table" then
+		if profile.Stats.Agility == nil and profile.Stats.Stat1 ~= nil then profile.Stats.Agility = profile.Stats.Stat1 end
+		if profile.Stats.Defense == nil and profile.Stats.Stat2 ~= nil then profile.Stats.Defense = profile.Stats.Stat2 end
+		if profile.Stats.Attack == nil and profile.Stats.Stat3 ~= nil then profile.Stats.Attack = profile.Stats.Stat3 end
+	end
+
 	profile = reconcile(profile, DEFAULT_PROFILE)
-	profile.Version = 1
+	profile.Version = 2
 	profile.Level = clampInteger(profile.Level, 1)
 	profile.XP = clampInteger(profile.XP, 0)
 	profile.Coins = clampInteger(profile.Coins, 0)
 	profile.Gems = clampInteger(profile.Gems, 0)
 	profile.StatPoints = clampInteger(profile.StatPoints, 0)
+	profile.LevelRewardsThrough = clampInteger(profile.LevelRewardsThrough, 1)
 	profile.Stats = type(profile.Stats) == "table" and profile.Stats or {}
-	for statId, defaultValue in pairs(DEFAULT_PROFILE.Stats) do
-		profile.Stats[statId] = clampInteger(profile.Stats[statId], defaultValue)
-	end
+	profile.Stats.Agility = clampInteger(profile.Stats.Agility, 0)
+	profile.Stats.Defense = clampInteger(profile.Stats.Defense, 0)
+	profile.Stats.Attack = clampInteger(profile.Stats.Attack, 0)
+	profile.Stats.Stat1 = nil
+	profile.Stats.Stat2 = nil
+	profile.Stats.Stat3 = nil
 	profile.Materials = type(profile.Materials) == "table" and profile.Materials or {}
 
 	local quest = profile.Quest
@@ -132,10 +146,12 @@ local function applyProfileToPlayer(player, profile)
 		upgradeStats.Parent = player
 	end
 	ensureInt(upgradeStats, "StatPoints", profile.StatPoints)
-	for statId, amount in pairs(profile.Stats) do
-		if type(statId) == "string" and tonumber(amount) then
-			ensureInt(upgradeStats, statId, amount)
-		end
+	ensureInt(upgradeStats, "Agility", profile.Stats.Agility)
+	ensureInt(upgradeStats, "Defense", profile.Stats.Defense)
+	ensureInt(upgradeStats, "Attack", profile.Stats.Attack)
+	for _, oldName in ipairs({"Stat1", "Stat2", "Stat3"}) do
+		local old = upgradeStats:FindFirstChild(oldName)
+		if old then old:Destroy() end
 	end
 
 	local materials = player:FindFirstChild("Materials")
@@ -179,12 +195,11 @@ local function capturePlayerValues(player, profile)
 		if points and points:IsA("IntValue") then
 			profile.StatPoints = math.max(0, points.Value)
 		end
-		local statData = {}
-		for statId in pairs(DEFAULT_PROFILE.Stats) do
+		profile.Stats = profile.Stats or {}
+		for _, statId in ipairs({"Agility", "Defense", "Attack"}) do
 			local value = upgradeStats:FindFirstChild(statId)
-			statData[statId] = value and value:IsA("IntValue") and math.max(0, value.Value) or 0
+			profile.Stats[statId] = value and value:IsA("IntValue") and math.max(0, value.Value) or 0
 		end
-		profile.Stats = statData
 	end
 
 	local materialData = {}
