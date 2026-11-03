@@ -4,6 +4,7 @@ return {
 	AshenPup = {
 		ModelName = "AshenPup",
 		SpawnFolder = "AshenPup",
+		Level = 1,
 		RespawnTime = 5,
 		Health = 60,
 		AttackDamage = 7,
@@ -18,6 +19,7 @@ return {
 	WolfScout = {
 		ModelName = "WolfScout",
 		SpawnFolder = "WolfScout",
+		Level = 3,
 		RespawnTime = 7,
 		Health = 110,
 		AttackDamage = 12,
