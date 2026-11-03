@@ -1,5 +1,5 @@
 -- Shared persistent player profile service for Untitled Slayers.
--- Saves progression, currency, materials, and Tetsu/quest progress in one DataStore.
+-- Saves progression, currency, materials, stats, and Tetsu/quest progress in one DataStore.
 local DataStoreService = game:GetService("DataStoreService")
 local Players = game:GetService("Players")
 
@@ -19,6 +19,12 @@ local DEFAULT_PROFILE = {
 	XP = 0,
 	Coins = 0,
 	Gems = 0,
+	StatPoints = 0,
+	Stats = {
+		Stat1 = 0,
+		Stat2 = 0,
+		Stat3 = 0,
+	},
 	Materials = {},
 	Quest = {
 		stage = "math",
@@ -65,6 +71,11 @@ local function sanitizeProfile(profile)
 	profile.XP = clampInteger(profile.XP, 0)
 	profile.Coins = clampInteger(profile.Coins, 0)
 	profile.Gems = clampInteger(profile.Gems, 0)
+	profile.StatPoints = clampInteger(profile.StatPoints, 0)
+	profile.Stats = type(profile.Stats) == "table" and profile.Stats or {}
+	for statId, defaultValue in pairs(DEFAULT_PROFILE.Stats) do
+		profile.Stats[statId] = clampInteger(profile.Stats[statId], defaultValue)
+	end
 	profile.Materials = type(profile.Materials) == "table" and profile.Materials or {}
 
 	local quest = profile.Quest
@@ -114,6 +125,19 @@ local function applyProfileToPlayer(player, profile)
 	ensureInt(currency, "Coins", profile.Coins)
 	ensureInt(currency, "Gems", profile.Gems)
 
+	local upgradeStats = player:FindFirstChild("Stats")
+	if not upgradeStats then
+		upgradeStats = Instance.new("Folder")
+		upgradeStats.Name = "Stats"
+		upgradeStats.Parent = player
+	end
+	ensureInt(upgradeStats, "StatPoints", profile.StatPoints)
+	for statId, amount in pairs(profile.Stats) do
+		if type(statId) == "string" and tonumber(amount) then
+			ensureInt(upgradeStats, statId, amount)
+		end
+	end
+
 	local materials = player:FindFirstChild("Materials")
 	if not materials then
 		materials = Instance.new("Folder")
@@ -137,6 +161,7 @@ end
 local function capturePlayerValues(player, profile)
 	local stats = player:FindFirstChild("leaderstats")
 	local currency = player:FindFirstChild("Currency")
+	local upgradeStats = player:FindFirstChild("Stats")
 	local materials = player:FindFirstChild("Materials")
 
 	local level = stats and stats:FindFirstChild("Level")
@@ -148,6 +173,19 @@ local function capturePlayerValues(player, profile)
 	if xp and xp:IsA("IntValue") then profile.XP = math.max(0, xp.Value) end
 	if coins and coins:IsA("IntValue") then profile.Coins = math.max(0, coins.Value) end
 	if gems and gems:IsA("IntValue") then profile.Gems = math.max(0, gems.Value) end
+
+	if upgradeStats then
+		local points = upgradeStats:FindFirstChild("StatPoints")
+		if points and points:IsA("IntValue") then
+			profile.StatPoints = math.max(0, points.Value)
+		end
+		local statData = {}
+		for statId in pairs(DEFAULT_PROFILE.Stats) do
+			local value = upgradeStats:FindFirstChild(statId)
+			statData[statId] = value and value:IsA("IntValue") and math.max(0, value.Value) or 0
+		end
+		profile.Stats = statData
+	end
 
 	local materialData = {}
 	if materials then
