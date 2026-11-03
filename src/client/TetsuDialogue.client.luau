@@ -28,9 +28,38 @@ local savedGuiStates = {}
 local playerGuiChildConnection
 local savedEquippedTool = nil
 local typingToken = 0
+local activeTypingText = nil
+local activeTypingFinished = nil
+local activeTypingToken = 0
 
 local function cancelTyping()
 	typingToken += 1
+	activeTypingText = nil
+	activeTypingFinished = nil
+	activeTypingToken = 0
+end
+
+local function skipTyping()
+	if phase ~= "Typing" or activeTypingToken == 0 then
+		return false
+	end
+
+	local fullText = activeTypingText or ""
+	local finished = activeTypingFinished
+
+	-- Invalidate the running typewriter task before revealing the whole line.
+	typingToken += 1
+	activeTypingText = nil
+	activeTypingFinished = nil
+	activeTypingToken = 0
+
+	if message and message.Parent then
+		message.Text = fullText
+	end
+	if finished then
+		finished()
+	end
+	return true
 end
 
 local function disconnectButtons()
@@ -238,12 +267,19 @@ local function typeMessage(text, finished)
 	cancelTyping()
 	local myToken = typingToken
 	local fullText = tostring(text or "")
+	activeTypingText = fullText
+	activeTypingFinished = finished
+	activeTypingToken = myToken
 	message.Text = ""
 	phase = "Typing"
 
 	task.spawn(function()
 		if fullText == "" then
-			if myToken == typingToken and finished then finished() end
+			if myToken ~= typingToken or activeTypingToken ~= myToken then return end
+			activeTypingText = nil
+			activeTypingFinished = nil
+			activeTypingToken = 0
+			if finished then finished() end
 			return
 		end
 
@@ -263,7 +299,10 @@ local function typeMessage(text, finished)
 			task.wait(delayTime)
 		end
 
-		if myToken ~= typingToken then return end
+		if myToken ~= typingToken or activeTypingToken ~= myToken then return end
+		activeTypingText = nil
+		activeTypingFinished = nil
+		activeTypingToken = 0
 		if finished then finished() end
 	end)
 end
@@ -343,8 +382,21 @@ remote.OnClientEvent:Connect(function(action, data)
 end)
 
 UserInputService.InputBegan:Connect(function(input, processed)
-	if processed then return end
 	local currentGui = playerGui:FindFirstChild("DialogUI")
+
+	-- Clicking while the line is typing only reveals the full line. It does not
+	-- activate a response option, so the player still chooses normally afterward.
+	if input.UserInputType == Enum.UserInputType.MouseButton1
+		and phase == "Typing"
+		and currentGui
+		and currentGui:IsA("ScreenGui")
+		and currentGui.Enabled then
+		if skipTyping() then
+			return
+		end
+	end
+
+	if processed then return end
 	if input.KeyCode == Enum.KeyCode.Escape and currentGui and currentGui:IsA("ScreenGui") and currentGui.Enabled then
 		closeDialogue(true)
 		return
