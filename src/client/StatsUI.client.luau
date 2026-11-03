@@ -43,7 +43,7 @@ local panel = Instance.new("Frame")
 panel.Name = "StatsPanel"
 panel.AnchorPoint = Vector2.new(0, 0.5)
 panel.Position = UDim2.new(0, 18, 0.5, 35)
-panel.Size = UDim2.fromOffset(340, 270)
+panel.Size = UDim2.fromOffset(340, 300)
 panel.BackgroundColor3 = Color3.fromRGB(18, 18, 22)
 panel.BackgroundTransparency = 0.08
 panel.BorderSizePixel = 0
@@ -177,8 +177,8 @@ makeRow(3, "Attack", "Attack Stat", "+2 sword damage per point")
 
 local footer = Instance.new("TextLabel")
 footer.BackgroundTransparency = 1
-footer.Position = UDim2.new(0, 16, 1, -24)
-footer.Size = UDim2.new(1, -32, 0, 16)
+footer.Position = UDim2.new(0, 16, 1, -28)
+footer.Size = UDim2.new(1, -32, 0, 18)
 footer.Text = "+2 stat points and +5 gems every level"
 footer.TextColor3 = Color3.fromRGB(160, 160, 168)
 footer.Font = Enum.Font.Gotham
