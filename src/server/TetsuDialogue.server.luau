@@ -48,6 +48,7 @@ prompt.RequiresLineOfSight = false
 prompt.Parent = torso
 
 local QUEST_ORDER = {"AshenPup", "WolfScout"}
+local QUEST_COOLDOWN_SECONDS = 60
 local state = {}
 local dummy
 local DUMMY_DISTANCE = 19
@@ -307,16 +308,44 @@ local function spawnDummy()
 end
 spawnDummy()
 
+local function normalizeQuestIndex(s)
+	if #QUEST_ORDER == 0 then return nil end
+	local index = math.max(1, math.floor(tonumber(s.questIndex) or 1))
+	index = ((index - 1) % #QUEST_ORDER) + 1
+	s.questIndex = index
+	return QUEST_ORDER[index]
+end
+
+local function cooldownRemaining(s)
+	local cooldownUntil = math.max(0, math.floor(tonumber(s.questCooldownUntil) or 0))
+	local remaining = cooldownUntil - os.time()
+	if remaining <= 0 then
+		s.questCooldownUntil = 0
+		return 0
+	end
+	return remaining
+end
+
 local function nextQuestId(s)
-	return QUEST_ORDER[s.questIndex]
+	return normalizeQuestIndex(s)
 end
 
 local function offerNextQuest(player, s)
+	local remaining = cooldownRemaining(s)
+	if remaining > 0 then
+		s.pendingQuest = nil
+		send(player, "Story", {
+			text = string.format("I need a little time before the next job. Come back in %d seconds.", remaining),
+			button = "Got it",
+		})
+		return
+	end
+
 	local questId = nextQuestId(s)
 	local quest = questId and QuestConfig[questId]
 	if not quest then
 		s.pendingQuest = nil
-		send(player, "Story", {text = "You've handled every job I have for now. Keep training.", button = "Goodbye"})
+		send(player, "Story", {text = "I don't have a hunt ready right now.", button = "Goodbye"})
 		return
 	end
 	local requiredLevel = tonumber(quest.LevelRequired) or 1
@@ -369,11 +398,13 @@ local function talk(player)
 			s.completedQuests[completedId] = true
 			s.activeQuest = nil
 			s.questKills = 0
-			s.questIndex += 1
+			s.questIndex = (math.max(1, math.floor(tonumber(s.questIndex) or 1)) % #QUEST_ORDER) + 1
+			s.questCooldownUntil = os.time() + QUEST_COOLDOWN_SECONDS
 			syncTracker(player, s)
+			task.spawn(PlayerData.SavePlayer, player)
 			local rewards = quest.Rewards or {}
 			send(player, "Story", {
-				text = string.format("Good work. %s complete! You earned %d cash and %d XP.", quest.Title or completedId, rewards.Cash or 0, rewards.XP or 0),
+				text = string.format("Good work. %s complete! You earned %d cash and %d XP. Come back in 60 seconds for another quest.", quest.Title or completedId, rewards.Cash or 0, rewards.XP or 0),
 				button = "Collect reward",
 			})
 		else
@@ -412,7 +443,7 @@ remote.OnServerEvent:Connect(function(player, action, value)
 		local questId = s.pendingQuest
 		local quest = QuestConfig[questId]
 		s.pendingQuest = nil
-		if quest and playerLevel(player) >= (tonumber(quest.LevelRequired) or 1) then
+		if quest and cooldownRemaining(s) <= 0 and playerLevel(player) >= (tonumber(quest.LevelRequired) or 1) then
 			s.activeQuest = questId
 			s.questKills = 0
 			fireTracker(player, questId, 0, false)
@@ -456,7 +487,11 @@ local function setupPlayer(player)
 
 	savedQuest.stage = type(savedQuest.stage) == "string" and savedQuest.stage or "math"
 	savedQuest.questIndex = math.max(1, math.floor(tonumber(savedQuest.questIndex) or 1))
+	if #QUEST_ORDER > 0 then
+		savedQuest.questIndex = ((savedQuest.questIndex - 1) % #QUEST_ORDER) + 1
+	end
 	savedQuest.questKills = math.max(0, math.floor(tonumber(savedQuest.questKills) or 0))
+	savedQuest.questCooldownUntil = math.max(0, math.floor(tonumber(savedQuest.questCooldownUntil) or 0))
 	savedQuest.completedQuests = type(savedQuest.completedQuests) == "table" and savedQuest.completedQuests or {}
 	state[player] = savedQuest
 
