@@ -5,11 +5,13 @@ local Players = game:GetService("Players")
 
 local STORE_NAME = "UntitledSlayers_PlayerData_v1"
 local AUTOSAVE_SECONDS = 60
+local LOAD_ATTEMPTS = 3
 local store = DataStoreService:GetDataStore(STORE_NAME)
 
 local PlayerData = {}
 local profiles = {}
 local loading = {}
+local writable = {}
 
 local DEFAULT_PROFILE = {
 	Version = 1,
@@ -169,21 +171,36 @@ function PlayerData.LoadPlayer(player)
 
 	loading[player] = true
 	local loadedData
-	local success, result = pcall(function()
-		return store:GetAsync(keyFor(player))
-	end)
-	if success then
-		loadedData = result
-	else
-		warn("[PlayerData] Load failed for " .. player.Name .. ": " .. tostring(result))
+	local loadSucceeded = false
+	local lastError
+
+	for attempt = 1, LOAD_ATTEMPTS do
+		local success, result = pcall(function()
+			return store:GetAsync(keyFor(player))
+		end)
+		if success then
+			loadedData = result
+			loadSucceeded = true
+			break
+		end
+		lastError = result
+		if attempt < LOAD_ATTEMPTS then
+			task.wait(attempt)
+		end
+	end
+
+	if not loadSucceeded then
+		warn("[PlayerData] Load failed for " .. player.Name .. " after retries: " .. tostring(lastError))
 	end
 
 	local profile = sanitizeProfile(loadedData)
 	profiles[player] = profile
+	writable[player] = loadSucceeded
 	loading[player] = nil
 
 	if player.Parent == Players then
 		applyProfileToPlayer(player, profile)
+		player:SetAttribute("PlayerDataPersistent", loadSucceeded)
 	end
 	return profile
 end
@@ -200,10 +217,13 @@ end
 function PlayerData.SavePlayer(player)
 	local profile = profiles[player]
 	if not profile then return false end
+	-- Never overwrite a real save with defaults when GetAsync failed.
+	if writable[player] ~= true then return false end
+
 	capturePlayerValues(player, profile)
 	profile = sanitizeProfile(profile)
-
 	local payload = deepCopy(profile)
+
 	local success, err = pcall(function()
 		store:UpdateAsync(keyFor(player), function()
 			return payload
@@ -220,6 +240,7 @@ function PlayerData.ReleasePlayer(player)
 	PlayerData.SavePlayer(player)
 	profiles[player] = nil
 	loading[player] = nil
+	writable[player] = nil
 end
 
 Players.PlayerRemoving:Connect(function(player)
