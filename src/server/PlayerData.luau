@@ -24,6 +24,7 @@ local DEFAULT_PROFILE = {
 		stage = "math",
 		questIndex = 1,
 		questKills = 0,
+		questCooldownUntil = 0,
 		completedQuests = {},
 	},
 }
@@ -70,6 +71,7 @@ local function sanitizeProfile(profile)
 	quest.stage = type(quest.stage) == "string" and quest.stage or "math"
 	quest.questIndex = clampInteger(quest.questIndex, 1)
 	quest.questKills = clampInteger(quest.questKills, 0)
+	quest.questCooldownUntil = clampInteger(quest.questCooldownUntil, 0)
 	quest.pendingQuest = type(quest.pendingQuest) == "string" and quest.pendingQuest or nil
 	quest.activeQuest = type(quest.activeQuest) == "string" and quest.activeQuest or nil
 	quest.completedQuests = type(quest.completedQuests) == "table" and quest.completedQuests or {}
