@@ -27,6 +27,9 @@
           },
           "SwordsConfig": {
             "$path": "src/configs/SwordsConfig.luau"
+          },
+          "StatConfig": {
+            "$path": "src/configs/StatConfig.luau"
           }
         }
       }
