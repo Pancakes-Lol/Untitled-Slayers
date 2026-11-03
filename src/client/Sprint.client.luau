@@ -6,8 +6,8 @@ local UserInputService = game:GetService("UserInputService")
 local KeyframeSequenceProvider = game:GetService("KeyframeSequenceProvider")
 
 local player = Players.LocalPlayer
-local NORMAL_SPEED = 16
-local SPRINT_SPEED = 32
+local DEFAULT_NORMAL_SPEED = 16
+local DEFAULT_SPRINT_SPEED = 32
 local FADE_TIME = 0.18
 
 local sprintEnabled = false
@@ -18,6 +18,14 @@ local swordTrack
 local runningConnection
 local childAddedConnection
 local childRemovedConnection
+
+local function normalSpeed()
+	return tonumber(player:GetAttribute("BaseWalkSpeed")) or DEFAULT_NORMAL_SPEED
+end
+
+local function sprintSpeed()
+	return tonumber(player:GetAttribute("SprintWalkSpeed")) or DEFAULT_SPRINT_SPEED
+end
 
 local function animationFromSequence(sequence)
 	if not sequence or not sequence:IsA("KeyframeSequence") then return nil end
@@ -68,9 +76,9 @@ local function updateAnimation()
 	player:SetAttribute("IsSprinting", shouldSprint)
 
 	if sprintEnabled then
-		humanoid.WalkSpeed = SPRINT_SPEED
+		humanoid.WalkSpeed = sprintSpeed()
 	else
-		humanoid.WalkSpeed = NORMAL_SPEED
+		humanoid.WalkSpeed = normalSpeed()
 	end
 
 	if shouldSprint then
@@ -128,6 +136,9 @@ UserInputService.InputBegan:Connect(function(input, processed)
 		updateAnimation()
 	end
 end)
+
+player:GetAttributeChangedSignal("BaseWalkSpeed"):Connect(updateAnimation)
+player:GetAttributeChangedSignal("SprintWalkSpeed"):Connect(updateAnimation)
 
 player.CharacterAdded:Connect(setupCharacter)
 if player.Character then task.defer(setupCharacter, player.Character) end
